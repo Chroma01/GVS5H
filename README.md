@@ -1,5 +1,7 @@
 # GVS5H: Five Qwen3.8-27B Models Match Claude Fable 5 on LiveCodeBench Hard
 
+**Fable 5 Level Coding for a Fifth the Price - or on a Single GPU**
+
 Everything behind the paper's numbers: the paper itself, both versions of the
 manager–worker scaffold, the benchmark harness they call, and the complete transcripts and
 workspaces of every run the paper reports.

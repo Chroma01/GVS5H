@@ -1,4 +1,4 @@
-# GVS5H: Fable 5 - Level Coding for a Fifth the Price - or on a Single GPU
+# GVS5H: Five Qwen3.8-27B Agents Match Claude Fable 5 on LiveCodeBench Hard
 
 Everything behind the paper's numbers: the paper itself, both versions of the
 manager–worker scaffold, the benchmark harness they call, and the complete transcripts and

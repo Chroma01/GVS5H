@@ -29,3 +29,10 @@ uv run --no-project --python 3.12 --with 'datasets<4' --with numpy --with anthro
 - `--engine multiagent` runs the manager; `--engine single` is the one-call baseline.
 - Other models: `anthropic:<model>`, `dashscope:<model>`, `openrouter:<model>`, each with its own `*_API_KEY`.
 - The pass@1 score prints at the end. Results are written to `runs/results.json`, workspaces to `runs/ws/`.
+
+## License
+
+Code is under the [MIT License](LICENSE). The paper, figures and run data are under
+[CC BY 4.0](LICENSE-CC-BY-4.0). The LiveCodeBench fork, the benchmark problem statements
+and the LaTeX template files keep their own licenses. See [NOTICE.md](NOTICE.md) for
+which license covers which path.

@@ -1,5 +1,6 @@
 # Credentials. Never tracked; see the note at the top of README.md.
 .env*
+!.env.sample
 *.key
 .credentials*
 

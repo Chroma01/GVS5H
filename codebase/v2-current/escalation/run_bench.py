@@ -5,6 +5,7 @@ import re
 import sys
 import json
 import argparse
+import threading
 import traceback
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -36,6 +37,42 @@ def _parallel_map(fn, items):
     from concurrent.futures import ThreadPoolExecutor
     with ThreadPoolExecutor(max_workers=PARALLEL) as ex:
         return list(ex.map(fn, items))
+
+
+# --------------------------------------------------------------------------
+# Per-problem checkpoint (opt-in). BENCH_CHECKPOINT=<file.jsonl> appends one line
+# per solved problem; a rerun with the same file reuses every non-infra record and
+# only re-solves what is missing or infra-failed. Grading is redone for all.
+# --------------------------------------------------------------------------
+CHECKPOINT = os.environ.get("BENCH_CHECKPOINT", "")
+_ckpt_lock = threading.Lock()
+
+
+def _ckpt_load():
+    done = {}
+    if not CHECKPOINT or not os.path.exists(CHECKPOINT):
+        return done
+    with open(CHECKPOINT) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r = json.loads(line)
+            except json.JSONDecodeError:   # torn last line from a hard kill
+                continue
+            done[r["question_id"]] = r
+    return done
+
+
+def _ckpt_append(rec):
+    if not CHECKPOINT:
+        return
+    with _ckpt_lock:
+        with open(CHECKPOINT, "a") as f:
+            f.write(json.dumps(rec) + "\n")
+            f.flush()
+            os.fsync(f.fileno())
 
 
 def _status_counts(records):
@@ -104,8 +141,19 @@ def run_lcb(n, ids_file):
         picked = [by_id[i] for i in wanted if i in by_id][:n]
         log(f"\n=== LiveCodeBench: {len(picked)} problems ===")
 
+    prior = _ckpt_load()
+    reusable = {q: r for q, r in prior.items() if (r.get("status") or {}).get("class") != "infra"}
+    if CHECKPOINT:
+        log(f"checkpoint {CHECKPOINT}: {len(reusable)} reusable, "
+            f"{len(prior) - len(reusable)} infra (will redo), "
+            f"{sum(1 for p in picked if p.question_id not in reusable)} to solve")
+
     def _solve_lcb(prob):
         plog = lambda m: log(f"[{prob.question_id}] {m}")
+        r = reusable.get(prob.question_id)
+        if r is not None:
+            plog(f"done ({r['status']['class']}) [checkpoint]")
+            return r["code"], r["status"]
         plog(f"start ({prob.difficulty.value})")
         status = {}
         try:
@@ -117,6 +165,7 @@ def run_lcb(n, ids_file):
             raw = ""
         code = extract_code(raw, LMStyle.ClaudeCode)
         status["class"] = _classify_status(bool(code.strip()), status)
+        _ckpt_append({"question_id": prob.question_id, "code": code, "status": status})
         plog(f"done ({status['class']})")
         return code, status
 

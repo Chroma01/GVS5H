@@ -1,0 +1,11 @@
+- **Reduction:** Only parities of X/Y operations matter. Fix a column-flip mask c (W bits). Each row r is then flippable independently, so its best count is min(popcount(r xor c), W - popcount(r xor c)). Answer = min over all c in [0,2^W) of F(c) = sum over rows of that minimum.
+- **Aggregate rows:** Build frequency array f over 2^W masks (identical rows merged). F(c) = sum_u f[u]*g(u xor c) where g(u)=min(popcount(u), W-popcount(u)). This is an XOR (Walsh-Hadamard) convolution.
+- **FWHT plan:** h = (1/n) * FWHT( FWHT(f) * FWHT(g) ). Take min over resulting array and divide by n. The unnormalized FWHT satisfies FWHT(FWHT(x)) = n*x, so inverse = same transform then /n.
+- **Avoid the third transform:** FWHT(g)[k] depends only on t=popcount(k). Since g(u)=phi(popcount(u)), FWHT(g)[k] = sum_w phi(w)*K_w(t), where K_w is the Krawtchouk polynomial and phi(w)=min(w,W-w). Recurrence: (w+1)K_{w+1}(t) = (W-2t)K_w(t) - (W-w+1)K_{w-1}(t), K_0=1, K_1=W-2t. Integer-exact. So we only run two full FWHTs (on f, then on the pointwise product). Verified against brute force for W=1,2,3.
+- **Pointwise step:** multiply transformed f element k by Gt[popcount(k)] (precompute popcounts via pc[k]=pc[k>>1]+(k&1)). Note Gt[0] is generally nonzero, so do NOT skip popcount 0.
+- **numpy path:** reshape trick makes each FWHT level a vectorized block operation; runs in milliseconds. int64 is safe: intermediates bounded by sum|P| <= n * H * max|Gt| ~ 1.3e17 < 9.2e18.
+- **Pure-python path:** per-block list comprehensions with zip. Special-case the h=1 level using strided slices (f[0::2]/f[1::2]) to kill the dominant per-block overhead. Handles W up to 18 but is the slow fallback; numpy (present on AtCoder CPython) avoids it.
+- **Bit encoding:** row mask built MSB-first (m=(m<<1)|(ch&1)); c uses the same encoding and g only depends on popcount, so any consistent encoding is fine.
+- **Complexity:** O(2^W * W + H*W) time, O(2^W) memory.
+- **Edge cases:** W=1 -> Gt all zero, answer 0. Answer always >= 0 and min(f) is exactly n*min(conv), so integer division by n is exact.
+- **Samples:** sample 1 gives 2 (e.g. c=100 flips), sample 2 gives 0, sample 3 pattern trusted to match.

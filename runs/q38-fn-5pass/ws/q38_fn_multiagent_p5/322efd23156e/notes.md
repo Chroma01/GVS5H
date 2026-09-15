@@ -1,0 +1,11 @@
+- **Core idea:** Each food contributes to exactly one vitamin, so the three vitamin types are independent except for the shared calorie budget. For each vitamin, compute the best vitamin amount obtainable for every calorie capacity.
+- **Per-vitamin DP:** For vitamin type k, run a 0/1 knapsack over calories up to X. `dp[c]` stores the maximum amount of vitamin k obtainable using at most `c` calories from foods of that type.
+- **DP update:** Process each food `(calories w, vitamin val)` with descending capacities: `dp[cap] = max(dp[cap], dp[cap - w] + val)`. Descending order prevents reusing the same food.
+- **At-most capacity:** The standard capacity DP already represents at-most capacity, but a final prefix maximum is applied to guarantee `dp` is nondecreasing. This makes `bisect_left` valid for finding the minimum calories needed to reach a target.
+- **Feasibility check:** For a target minimum vitamin amount `T`, each vitamin type independently needs the smallest calorie amount `c_k` such that `dp_k[c_k] >= T`. Target `T` is feasible iff `c_1 + c_2 + c_3 <= X`.
+- **Why feasibility is exact:** If a subset achieves min vitamin at least `T`, splitting its calories by vitamin type gives three valid subsets, so the independent minimum calorie requirements sum to no more than the total calories. Conversely, if the three independent minimum-calorie subsets sum to at most `X`, their union is valid because foods of different vitamin types are disjoint.
+- **Binary search:** Feasibility is monotone in `T`. Search between `0` and `min(total_vitamin_1, total_vitamin_2, total_vitamin_3) + 1`. The upper bound is infeasible because one vitamin type cannot exceed its total available amount.
+- **Empty vitamin groups:** If any vitamin total is zero, the answer is immediately `0`. This also avoids unnecessary DP work.
+- **Complexity:** DP work is `O(NX)` total across all three vitamin groups, at most about 25 million updates. Binary search adds `O(log(sum A) * log X)`, negligible. Memory is `O(X)`.
+- **Edge cases handled:** zero answer when all three vitamins cannot be obtained within budget, large vitamin values, single-food groups, and calorie budget exactly equal to required sum.
+- **Performance notes:** The implementation uses local variables, a local `range` binding, and early exit in feasibility when the calorie sum already exceeds `X`.

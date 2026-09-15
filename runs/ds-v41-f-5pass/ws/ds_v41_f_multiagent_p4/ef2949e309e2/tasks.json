@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement coordinate compression plus incremental left/right frequency structures (cntL/cntR, sumsqL/sumsqR) so leftX/rightX and non-x counts are available for each center p.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the k>=2 case: sum over (a,b) with a+b>=2 of C(leftX,a)*C(nonxL,2-a)*C(rightX,b)*C(nonxR,2-b).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the k=1 case: split by which side holds the single x, count 3 non-x positions pairwise distinct via TR/TL minus pairs touching v.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle k=0 as invalid and accumulate all contributions mod 1e9+7.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Brute-force enumerator confirmed equality on the three provided examples (6, 4, 0) and 500 random small arrays; SAMPLE TESTS verdict: PASS.",
+    "status": "done",
+    "result": ""
+  }
+]

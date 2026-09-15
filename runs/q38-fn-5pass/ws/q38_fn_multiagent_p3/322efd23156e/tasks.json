@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select per-vitamin knapsack + binary search on answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse input and group foods into three lists by vitamin type.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute per-vitamin 0/1 knapsack DP arrays over calories 0..X and ensure prefix-max/nondecreasing behavior.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement feasibility check for candidate T using bisect_left to find minimum calories per vitamin, with impossible thresholds treated as failure.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Binary search maximum T using upper bound min(total vitamin amount per group) + 1 and print result.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test edge cases: missing vitamin type, all calories unused, large A_i, sample inputs, and performance for N=X=5000.",
+    "status": "done",
+    "result": ""
+  }
+]

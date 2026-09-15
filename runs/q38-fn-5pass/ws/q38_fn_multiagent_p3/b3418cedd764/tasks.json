@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the complete solution: parse input, build graph, detect cycles via indegree pruning, compute DP arrays for non-cycle nodes in removal order, compute cycle contributions, and output the final answer modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle edge cases explicitly: self-loops, multiple components, M = 1, and memory-efficient storage/freeing of child DP arrays if needed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the implementation against the provided samples and additional edge cases, then fix any failures.",
+    "status": "done",
+    "result": ""
+  }
+]

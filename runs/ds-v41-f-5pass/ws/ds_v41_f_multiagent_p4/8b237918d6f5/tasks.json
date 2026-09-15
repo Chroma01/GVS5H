@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement Dinic max-flow (add_edge with residual reverse edge, BFS level graph, DFS blocking flow, max_flow(s,t)); INF set to 1<<30 (> M).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement feasible(L): build nodes A(v,t); add INF monotonicity, INF transition (d(v)<=d(u)+1) edges, cap-1 cost edges, and INF edges forcing d(1)=0 and d(N)=L; return max_flow <= K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Scan L from N-1 down to 1 for the largest feasible L (answer bounded by N-1), defaulting to 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify against all three provided samples (including multi-edge Sample 3 and L=0 boundary) -- all passed.",
+    "status": "done",
+    "result": ""
+  }
+]

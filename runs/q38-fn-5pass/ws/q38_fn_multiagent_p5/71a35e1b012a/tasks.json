@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Read N, M and all intervals with original indices using fast input.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Check cost 1: if any interval is [1, N], output 1 and operation 1 on that index, 0 elsewhere.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement cost-2 union, disjoint, containment, and cost-3 fallback skeleton.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Reorder cost-2 checks to test containment before union, using L-ascending/R-ascending scan plus same-L group containment to choose a valid pair that matches sample 1 (2 0 1 0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify the new containment detection remains complete for cross-L containments, equal-R containments, duplicates, and same-L containments.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Re-run all sample tests and ensure exact sample outputs; if sample 1 still differs, adjust tie-breaking without special-casing inputs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate fallback cost-3 construction with the new ordering and edge cases (N=1, M=1/2, duplicates, touching intervals).",
+    "status": "done",
+    "result": ""
+  }
+]

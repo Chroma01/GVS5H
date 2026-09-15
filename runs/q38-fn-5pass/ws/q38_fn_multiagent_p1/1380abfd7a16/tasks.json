@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: identify reverse construction and candidate data structures.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement full Python solution using reverse Fenwick tree with binary lifting for k-th empty slot.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Check correctness on samples and edge cases (N=1, P_i=i, P_i=1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If Fenwick implementation fails or is too slow, try iterative segment tree or sqrt-decomposition fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

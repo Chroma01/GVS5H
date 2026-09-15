@@ -1,0 +1,10 @@
+- **Problem:** Given sorted sizes A (N up to 5e5), maximize K such that K disjoint pairs (top, bottom) satisfy 2*top <= bottom.
+- **Key condition (feasible(K)):** feasible iff for all i in [0, K): 2*A[i] <= A[N-K+i]. I.e. match the K smallest elements (as tops) to the K largest (as bottoms), in sorted order.
+- **Why necessary (exchange lemma):** Take any valid K pairs. Let T be tops, B bottoms. If x is among the K smallest but not a top, then some top t is outside the K smallest (t > x), and t > x >= ... ; swapping works: if x is a bottom paired with top t' (2*t' <= x < t), repair both pairs since 2*x < 2*t <= (bottom of t) and 2*t' <= x < t. If x is unused, just put x on t's bottom. Repeat until the K smallest are exactly the tops.
+- **Sorted matching optimal:** With tops t_1<=...<=t_K and bottoms b_1<=...<=b_K, if any perfect matching exists, then 2*t_i <= b_i for all i (the K-i+1 tops {t_i..t_K} need distinct bottoms >= 2*t_i, forcing the i-th smallest bottom b_i >= 2*t_i). Applying to tops = A[0..K-1], bottoms = A[N-K..N-1] gives the stated condition. This avoids the role-conflict overcount of naive bipartite matching (e.g. [1,2,4] has two edges but only one pair).
+- **Sufficiency:** The condition itself exhibits K explicit valid pairs, so it is exactly feasibility.
+- **Monotonicity:** feasible(K) => feasible(K-1): for i in [0,K-1), A[N-K+i] <= A[N-K+1+i], so 2*A[i] <= A[N-K+i] <= A[N-K+1+i]. Hence binary search on K over [0, N//2] is valid.
+- **Complexity:** O(N log N) total; each check is O(K) with early exit, ~19 checks worst case (~5e6 ops), well within limits. Use Python ints (no overflow; 2*A_i up to 2e9).
+- **Edge cases:** N odd -> hi = N//2 correct. K=0 always feasible -> answer can be 0. a is already ascending per constraints.
+- **Samples verified:** Sample1 [2,3,4,4,7,10] -> 3; Sample2 [387,388,389] -> 0; Sample3 -> 6. All match.
+- **Pitfall avoided:** Do NOT model as bipartite matching over duplicated copies; that overcounts due to a single mochi taking both roles.

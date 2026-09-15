@@ -1,0 +1,11 @@
+- **Model:** answer = sum over all valid cells v of f(v), where f(v)=1+f(left)+f(down) (0 on the hole / outside board). Moves are right/up only.
+- **Full board closed form:** F(x,y)=C(x+y+2,x+1)-1 counts full-board paths ending at (x,y). Check F(0,0)=1, recurrence F=1+F(left)+F(down).
+- **Rectangle prefix:** A(a,b)=sum_{x=0}^{a}sum_{y=0}^{b}F(x,y)=C(a+b+4,a+2)-(a+3)-(b+1)-(a+1)(b+1), with A(-1,*) = A(*,-1) = 0.
+- **Hole removal:** sum over valid F = A(W,H) - (A(R,U)-A(L-1,U)-A(R,D-1)+A(L-1,D-1)).
+- **Correction g = f - F:** g=-F on the hole, g=0 outside and for cells with x<L or y<D; for valid v the recurrence g(v)=g(left)+g(down) holds, with a hole neighbour injecting -F(hole cell). Only hole cells having a valid right/up neighbour inject: right column x=R and top row y=U. All interior/bottom/left hole cells have hole neighbours, so they inject nothing.
+- **Reachability count:** from a source u (outside the hole, NE propagation stays valid) the number of paths to all valid ends is F(W-u_x, H-u_y). Hence SG := sum_{valid v} g(v) = -[R<W]*sum_{y=D}^{U} F(R,y)*F(W-R-1,H-y) - [U<H]*sum_{x=L}^{R} F(x,U)*F(W-x,H-U-1).
+- **Final formula:** answer = A(W,H) - holeSum - SG (mod 998244353).
+- **Implementation details:** precompute factorials to W+H+4. Inline binomials in the loops. t1,t2 are taken mod, so they can equal -1 (when a binomial is 0 mod p); products/sums remain correct modulo. Loop sizes are (U-D+1)+(R-L+1) <= W+H+2.
+- **Edge cases:** R=W kills the right-edge loop; U=H kills the top-edge loop. L=0 or D=0 zero out the corresponding A terms. When the hole's corner (R,U) exists it is counted in both loops, which is correct (two injections). The partial binomial convolution has no elementary closed form, so enumeration is used.
+- **Validated by hand:** sample 1 gives 192; W=2,H=2,hole(1,1) gives 28; W=3,H=3,hole 1..2 x 1..2 gives 54; W=1,H=2,hole(0,1) gives 12. All match direct DP.
+- **Complexity:** O(W+H) time and memory.

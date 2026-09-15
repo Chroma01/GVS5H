@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Establish the reduction: N = s^2 is a 400 number iff s has exactly two distinct prime factors; N <= A iff s <= isqrt(A).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm precompute bound: A <= 10^12 implies s <= 10^6.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Sieve distinct-prime-factor counts for s in [2, 10^6] and collect those with count exactly 2 into sorted `vals`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each query A, use math.isqrt(A) plus bisect_right to find largest s <= isqrt(A) and output s*s.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify against the sample input, all cases pass including A=36 and A=10^12.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Reject brute-force downward scanning as unproven and too slow for 2\u00d710^5 queries.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,8 @@
+- **Problem model:** Maximize total units under budget M. Each product i has convex cost P_i * k^2. Marginal cost of the j-th unit is P_i * (2j - 1). The optimal purchase is a prefix of all marginal costs sorted globally.
+- **Threshold method:** For an integer threshold λ, let c_i(λ) = max(0, floor((floor(λ / P_i) + 1) / 2)). Then count(λ) = Σ c_i is the number of marginals ≤ λ, and cost(λ) = Σ P_i * c_i^2 is the total cost of buying all those units. Both are non-decreasing in λ.
+- **Binary search:** Find the smallest λ with cost(λ) > M. Let hi = λ, lo = λ - 1. Since cost(lo) ≤ M, remaining = M - cost(lo). The next available marginal costs are exactly hi, so we can buy floor(remaining / hi) additional units. Answer = count(lo) + remaining // hi.
+- **Bounds:** Exponential search for hi (starting from 1, doubling) is safe and efficient. It avoids needing a tight analytic upper bound.
+- **Early exit:** In cost_gt, return True as soon as accumulated cost exceeds M. Since P is sorted, break when P_i > L (then c_i = 0 for all remaining).
+- **Complexity:** Sorting O(N log N). Each cost_gt call is O(number of P_i ≤ L). Exponential search takes O(log λ) calls, binary search O(log λ) calls. Total operations well within limits for N ≤ 2×10^5, M ≤ 10^18.
+- **Edge cases:** If M < min(P), answer is 0 (handled early). If cost(1) > M, hi = 1, lo = 0, answer = M // 1 = M (correct, since each unit costs at least 1). Large integers are handled natively by Python.
+- **Correctness of remaining // hi:** Since cost(hi) > M, remaining < cost(hi) - cost(lo) = hi * (count(hi) - count(lo)). Thus remaining // hi is strictly less than the number of marginals equal to hi, so we never exceed available units at that cost.

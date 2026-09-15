@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the reduction to half-sum values for even segments and the odd-N split over odd original indices.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete Python solution using two heaps to compute even-prefix and even-suffix half-sum tables in O(N log N).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Combine prefix and suffix tables correctly for odd N and handle even N directly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run sample tests and edge cases such as N=2, all equal values, strictly increasing/decreasing arrays, and maximum constraints; fix any failures.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If the two-heap implementation has correctness or performance issues, switch to a coordinate-compressed Fenwick-tree approach for sum-of-smallest-k queries.",
+    "status": "done",
+    "result": ""
+  }
+]

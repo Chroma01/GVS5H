@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Discover the reduction: optimal type-2 set has size \u22642; answer in {-1,1,2,3}; conditions for each cost.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement detection of containment (type-1 s containing type-2 t) in O(M log M) via prefix-max R and second-min L per R, and select smallest-index valid pair.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle cost-1 ([1,N] op), cost-2 empty-intersection (maxL>minR), cost-2 two-type-1 cover, and cost-3 fallback.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Correct output tie-breaking so all four public samples pass (verified by running: PASSED all 4 samples).",
+    "status": "done",
+    "result": ""
+  }
+]

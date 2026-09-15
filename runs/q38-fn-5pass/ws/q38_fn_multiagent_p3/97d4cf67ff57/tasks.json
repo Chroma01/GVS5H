@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement iterative root/postorder and adjacency list.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Define DP arrays for parent-edge present/absent and has-degree-4 flag with impossible sentinel.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each vertex in postorder, combine children via small DP over selected child count 0..4 and degree-4 flag.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Convert knapsack results to vertex DP values: parent-present allows 0 or 3 child edges; parent-absent allows 1 or 4 child edges; set flag true when resulting degree is 4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute maximum parent-absent DP value with flag true across all vertices; print it or -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify against samples and edge cases (N<5, high degree, recursion avoidance).",
+    "status": "done",
+    "result": ""
+  }
+]

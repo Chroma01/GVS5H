@@ -1,0 +1,9 @@
+- **Core reduction:** Let d = x - y. Since N > 0, x > y and d is positive. Then x = y + d and N = x^3 - y^3 = d(3y^2 + 3dy + d^2). Therefore d must divide N.
+- **Bound on d:** The factor 3y^2 + 3dy + d^2 is at least d^2, so N >= d^3. Thus d <= floor(cuberoot(N)). For N <= 10^18 this is at most 10^6, making enumeration feasible.
+- **Quadratic check:** For a divisor d, set m = N / d. We need 3y^2 + 3dy + d^2 = m. Completing the square gives 3(2y + d)^2 = 4m - d^2. Let u = 2y + d. Then u^2 = (4m - d^2) / 3.
+- **Integer validation:** For each divisor d, compute val = 4m - d^2. If val is not divisible by 3, skip. Otherwise let u2 = val / 3 and check whether u2 is a perfect square using math.isqrt. If u = sqrt(u2), then y = (u - d) / 2. This is valid exactly when u > d and u - d is even.
+- **Positive y:** The condition u > d excludes y = 0. This matters for perfect cubes: for N = d^3, the algebra gives u = d and y = 0, which is not allowed because y must be positive.
+- **Cube root implementation:** The integer cube root is computed by binary search with exact integer multiplication. This avoids floating-point precision issues near 10^18.
+- **Complexity:** The loop runs at most floor(cuberoot(N)) <= 10^6 times. Each iteration does one modulo operation; only divisors trigger integer square root checks. This is comfortably fast in Python.
+- **Edge cases:** N = 1 has no solution because d = 1 gives y = 0. Small cases like N = 7 and N = 26 are handled by d = 1 and d = 2 respectively. Large solutions with small d are handled because y is recovered from a square root rather than iterated.
+- **Sample checks:** For N = 397, d = 1 gives m = 397, val = 1587, u2 = 529, u = 23, y = 11, x = 12. For N = 1, d = 1 gives u = d, so y = 0 and the answer is -1. The third sample is found when d = 276544, yielding x = 342756 and y = 66212.

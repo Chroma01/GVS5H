@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate and select the Cartesian-tree approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement and validate the Cartesian-tree solution end-to-end (iterative tree build, subtree intervals/sums, local absorbability, passable-edge topmost ancestors, output, sample and small random brute-force checks).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If validation fails, debug the failing case; if the approach is fundamentally wrong, switch to an alternative approach.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,10 @@
+- **Problem reduction:** Normalize each pair so a < b. A subarray [l, r] contains some conflicting pair iff there exists a pair with b <= r and l <= a. Let M(r) = max{ a : b <= r } over the remaining pairs (0 if none). Valid l for right endpoint r are l in (M(r), r], count r - M(r). Total = sum over r = 1..n.
+- **Removal effect:** Removing pair p only changes M(r) for r >= b_p, and only while p is the unique active pair attaining M(r). The new bound becomes max2(r), the largest active a strictly below max1. Per-pair gain = sum over such r of (max1 - max2). Answer = baseline + max(0, best gain).
+- **Sweep implementation (chosen):** Bucket pairs by b. Sweep r = 1..n, activating pairs at b = r. Maintain max1, max2 (distinct second), cnt1 (multiplicity of max1), owner1 (pair id when cnt1 == 1). Add r - max1 to baseline; if cnt1 == 1 add max1 - max2 to owner1's gain. take best gain with 0 fallback. O(n + m) time, O(n + m) space.
+- **Update rules:** a > max1 -> max2 = max1, max1 = a, cnt1 = 1, owner1 = i. a == max1 -> cnt1 += 1, owner1 = -1. a < max1 and a > max2 -> max2 = a. Invariant preserved because active set only grows.
+- **Why owner id, not value:** Two pairs may share the same a; a tie (cnt1 >= 2) makes removal useless, so gain is suppressed and attributed to the specific unique-max pair id, invalidated on ties.
+- **Sentinel and 64-bit:** max1 = max2 = 0 when no pair is active; Python ints avoid overflow.
+- **Sample verdict (executed as shipped):** ex1 prints 9 = expected 9 (pass); ex2 prints 12 = expected 12 (pass).
+- **Randomized checker verdict:** seed=1, 20000 trials, n in [2,7], m in [1, 2n], duplicates and either-order pairs allowed; printed "brute-force mismatches: 0" against the O(n^2 * m * m) exhaustive checker. Pass.
+- **Edge cases handled:** either input order (normalized); duplicate pairs (cnt1 grows, no gain); max1 = 0 sentinel; exactly one removal always performed; gain can be 0.
+- **Superseded ideas:** Fenwick/segment-tree and interval-decomposition approaches are unnecessary; incremental top-two maintenance suffices since the active set is monotone in r.

@@ -1,0 +1,1 @@
+The array is sorted, so for a fixed K, the best chance to pair K mochi is to use the K smallest as tops and the K largest as bottoms. Thus feasibility of K reduces to checking if for all i from 0 to K-1, A[i]*2 <= A[N-K+i]. We can binary search K in [0, N//2] to find the maximum feasible K. Each check is O(K) and total O(N log N) with N up to 5e5, which is efficient.

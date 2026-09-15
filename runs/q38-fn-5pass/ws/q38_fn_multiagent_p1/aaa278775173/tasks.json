@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "...",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Ideation complete",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement directional phase DP solution in starter code",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run current implementation on the four sample inputs and report only PASS/FAIL with example number",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If samples fail, switch to a simpler walk-from-1 + continuation-array approach",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If samples pass, run edge cases (1x1 grids, no 1, boundary turns, missing outgoing cells)",
+    "status": "done",
+    "result": ""
+  }
+]

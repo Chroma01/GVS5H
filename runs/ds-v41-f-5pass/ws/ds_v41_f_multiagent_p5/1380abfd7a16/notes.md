@@ -1,0 +1,10 @@
+- **Problem essence:** Up to 5e5 insertions at position P_i (1-indexed, P_i <= i). Naive list insert is O(N^2) -> TLE.
+- **Key reverse trick:** The last inserted element i=N is never shifted afterwards, so its final position equals P_N. Removing it conceptually leaves N-1 slots; element N-1 then sits at the P_{N-1}-th still-empty slot, and so on down to 1. This converts the dynamic insertion into: repeatedly pick the k-th unused position from a static 1..N universe and mark it used.
+- **Data structure:** Fenwick (BIT) over N slots, all initialised to 1. k-th-empty query = smallest idx with prefix sum >= k, found by binary lifting in O(log N) (no O(log^2 N) binary search). After placing, decrement BIT at idx.
+- **All-ones BIT build shortcut:** tree[i] = i & (-i) directly, avoiding an O(N log N) build.
+- **Binary lifting details:** start bit = highest power of two <= N (N.bit_length()-1). Maintain pos, rem; if pos+bit <= N and tree[pos+bit] < rem, move pos and subtract. Final slot = pos+1. Guard `nxt <= n` is required.
+- **Complexity:** O(N log N) time, O(N) memory. ~1.9e7 inner-loop steps for N=5e5; fine in CPython with local variables.
+- **Verification (done by hand):**
+  - Sample 1: N=4, P=1 1 2 1 -> "4 2 3 1".
+  - Sample 2: N=5, P=1 2 3 4 5 -> "1 2 3 4 5".
+- **Edge cases:** N=1 (topbit=1, idx=1, output "1"); P_i=1 everywhere (each new element goes to front -> output is N, N-1, ..., 1).

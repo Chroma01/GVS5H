@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Model removal as a non-crossing matching; even-length segment value = total_sum - 2*sum(smaller half); odd N leaves an odd-index unmatched element splitting into two independent even segments.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(N log N) two-heap scan to compute value for every even-length prefix and suffix.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Combine prefix/suffix values over valid odd split positions for odd N (whole array for even N).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Produce final stdin/stdout Python solution and verify all 3 public samples (pass), plus reasoning for N=2, all-equal, and monotone edge cases.",
+    "status": "done",
+    "result": ""
+  }
+]

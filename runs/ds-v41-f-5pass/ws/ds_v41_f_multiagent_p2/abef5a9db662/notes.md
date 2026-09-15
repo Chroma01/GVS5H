@@ -1,0 +1,11 @@
+- **Problem model:** Let F(x) = final rating from initial x. Each contest [L,R] adds 1 to F(x) exactly for those x with F(x) in [L,R].
+- **Monotonicity:** F is nondecreasing in x (composition of nondecreasing maps x -> x + [L<=x<=R]). Hence, for one contest, the set of affected x is a contiguous range [a,b].
+- **Difference representation:** Store base = F(1) and D[i] = F(i+1)-F(i) for i=1..n, where n = M-1 and M = max query X. Then F(x) = base + prefixD(x-1). D >= 0 always, so prefixD is nondecreasing.
+- **Finding a:** smallest x with F(x) >= L. T = L - base. If T<=0 -> a=1. If T>total -> a=M+1. Else a = (smallest k with prefixD(k) >= T) + 1, i.e. lower_bound(T)+1 = pos+2.
+- **Finding b:** largest x with F(x) <= R. U = R - base. If U<0 -> b=0. If U>=total -> b=M. Else b = smallest k with prefixD(k) >= U+1 = lower_bound(U+1) = pos+1.
+- **Applying update on [a,b] (if a<=b):** range add +1 to F becomes: base+=1 if a==1; D[a-1]+=1 if a>1; D[b]-=1 if b<=n. total changes by (a>1)-(b<=n) = (b==M)-(a==1).
+- **Fenwick structure:** point updates + prefix sums + binary-lifting lower_bound. Initial all-ones D builds in O(n) with tree[i]=lowbit(i). bm0 = highest power of two <= n gives the lower_bound lifting start.
+- **Domain restriction:** Only initial ratings up to M=max query X matter; each F(x) evolves independently, so truncating the domain to [1,M] is valid and never changes answers for query X<=M.
+- **Complexity:** O((N+Q) log M) time, O(M) space; M <= 5e5.
+- **Edge cases handled:** M=1 (n=0) -> tree=[0], bm0=0, all updates collapse to base; empty ranges (a>b) skipped; T>total and U<0 guards avoid out-of-range lower_bound.
+- **Verified:** matches all three provided samples (including full-range updates leaving D unchanged and n=0 logic).

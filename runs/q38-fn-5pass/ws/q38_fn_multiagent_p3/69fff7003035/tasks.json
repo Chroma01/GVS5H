@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement digit-length counts cnt[d], sumVal[d], and q[d]=10^d mod 998244353 for active digit lengths.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute fact[0..N] and modular inverses inv[1..N] modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build Q(z)=\u220f(1+q_d z) and R(z)=\u2211 cnt_d q_d Q/(1+q_d z) over active digit lengths.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Use the recurrence from QP'=RP to compute coefficients e[0..N] of P(z) in O(N\u00b7D).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each active digit length d, recover coefficients of P(z)/(1+q_d z) sequentially, compute F_d=\u03a3 fact[k]\u00b7fact[N-1-k]\u00b7coeff[k], and accumulate sumVal[d]\u00b7F_d.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Print the final accumulated answer modulo 998244353 and verify the sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

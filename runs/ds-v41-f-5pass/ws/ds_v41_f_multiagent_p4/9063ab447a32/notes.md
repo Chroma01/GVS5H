@@ -1,0 +1,9 @@
+- **Problem reduction:** Buying k_i units of product i costs P_i k_i^2; the k-th unit has marginal cost P_i(2k-1). For a fixed total T, the minimum cost is the sum of the T smallest marginal costs across all products.
+- **Threshold characterization:** For an integer threshold x, let k_i(x) = (x + P_i) // (2 P_i). This is the number of units of product i with marginal cost <= x. Define C(x) = sum k_i(x) and F(x) = sum P_i k_i(x)^2. F is nondecreasing in x.
+- **Main algorithm:** Binary search the largest x such that F(x) <= M. Then the answer is C(x) + (M - F(x)) // (x + 1).
+- **Correctness of extra term:** If x is maximal, then F(x+1) > M. Since F only increases at marginal costs, x+1 must be a marginal value. The remaining budget R = M - F(x) satisfies R < (x+1) * cnt_{x+1}, so we can afford floor(R / (x+1)) extra units, each costing exactly x+1. Ties are handled exactly by integer arithmetic.
+- **Upper bound for x:** For each p, let s = isqrt(M // p). Then p*(s+1)^2 > M. Setting H = max_p p*(2s+1) guarantees F(H) > M. With M <= 1e18 and P_i <= 2e9, H <= ~8.94e13, so ~47 binary search steps.
+- **Complexity:** O(N log H) time, O(N) memory. Early break when the running sum exceeds M, combined with sorting P ascending, keeps the inner loop fast; worst-case around 10M simple operations.
+- **Edge cases:** If M < min P_i, answer is 0. x can exceed M (e.g., P=10, M=10 gives x=29). x+1 may be larger than M, making the extra term zero. The formula also handles exact budget exhaustion.
+- **Validation:** Samples 1 and 2 pass. Brute-force checks on small cases match (e.g., N=2, P=[10,10], M=130 -> 5; N=2, P=[2,5], M=20 -> 3; N=3, P=[10,10,10], M=200 -> 7).
+- **Implementation details:** Use sys.stdin.buffer.read().split() for fast input. Compute k with (x + p) // (p << 1). Python big integers avoid overflow. Sorting P ascending improves early termination.

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: derive cyclic-shift sweep and per-value wrap delta approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the sweep solution in Python: read N, M, A; compute initial inversion count for k=0 with a Fenwick tree; precompute delta[v] for each value v using the positional wrap formula; sweep k=0..M-1 printing current answer and updating with delta[(M-1-k) mod M].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the delta formula handles duplicate values, same-value pairs, and non-wrapping elements correctly; include M=1 and N=1 edge cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If the positional formula is uncertain, implement or cross-check an explicit delta computation using sorted position lists and counts of non-wrapping elements before/after each wrapping position.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test against provided samples and edge cases: all equal, strictly increasing, strictly decreasing, empty position lists.",
+    "status": "done",
+    "result": ""
+  }
+]

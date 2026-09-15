@@ -1,0 +1,8 @@
+- **State model:** The only global thing that matters is the current orientation of the whole graph. Encode state as (vertex, orientation bit): normal states 0..N-1, reversed states N..2N-1. Total 2N states.
+- **Start / goal:** Start at state 0 (vertex 1, normal). Goal is vertex N in either orientation, i.e. min(dist[N-1], dist[2N-1]).
+- **Edge construction:** For each original edge u->v add cost-1 edge u->v (normal layer) AND v+N -> u+N (reversed layer). The reversed-layer direction is the one to be careful about: an original u->v becomes v->u after reversal, so it goes from reversed-state of v to reversed-state of u.
+- **Switch edges:** For every vertex v add v <-> v+N with cost X. Switching at the goal is allowed, so include both directions.
+- **Algorithm:** Dijkstra from state 0 with a heapq, nonnegative weights, skip stale entries (d > dist[u]); early-exit when popping either goal state. O((N+M) log N).
+- **Ranges:** N,M <= 2e5, X <= 1e9, answer can exceed 32-bit (sample 3 ~4.29e9), so use Python big ints (avoid 32-bit truncation).
+- **Pitfalls addressed:** reversed-layer direction, orientation switch allowed at goal, self-loops/multi-edges are harmless, stale-PQ handling, early exit is safe because Dijkstra pops in nondecreasing distance order.
+- **Indexing:** All internal vertices 0-based; conversion from 1-based input done once at read time.

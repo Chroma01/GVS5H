@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Precompute q[p] = smallest index with A[q] >= 2*A[p] (else N), and D[p] = q[p] - p via two-pointer sweep.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build a sparse table over D for O(1) range maximum queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each query (L,R) with S=R-L+1, binary search largest K in [0,S//2] with maxD(L,L+K-1)+K <= S; output K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Fast I/O; verified against Sample 1 (2,3,1,0,5) and Sample 2 outputs, plus edge cases (all equal, small intervals).",
+    "status": "done",
+    "result": ""
+  }
+]

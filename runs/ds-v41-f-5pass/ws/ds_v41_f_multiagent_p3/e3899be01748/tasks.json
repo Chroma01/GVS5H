@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement residue DP in `countSubstrings`: ragged `cnt[m][r]` for m=1..9 over suffixes ending at previous index; per digit x compute new residues (r*10+x)%m including new one-char substring; if x>0 add `new_cnt[x][0]` to answer, if x==0 add nothing; swap counts each step.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Execute the solution on samples \"12936\",\"5701283\",\"1010101010\" and edge cases \"0\",\"1\",\"01\",\"00\",\"10\",\"202\"; cross-check with brute-force on random short strings; time n=10^5 \u2014 all PASS (11, 18, 25, 0, 1, 2, 0, 1, 4), random cross-check zero mismatches, n=1e5 ~1s.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirmed integer arithmetic uses unbounded Python ints so the answer can exceed 32-bit range.",
+    "status": "done",
+    "result": ""
+  }
+]

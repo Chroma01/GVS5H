@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate the pair-state outward expansion approach for shortest palindrome paths.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement compact bitset parity BFS full program (code only) as described.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify correctness on samples and edge cases (self-loop odd centers, N=1, unreachable pairs).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If performance is insufficient, optimize bit iteration or label/pred structures.",
+    "status": "done",
+    "result": ""
+  }
+]

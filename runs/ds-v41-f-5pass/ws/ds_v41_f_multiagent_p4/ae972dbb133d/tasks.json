@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the GF(2) cell equations: Type A \u21d2 top\u2295bottom=1 and left\u2295right=1; Type B \u21d2 top\u2295bottom=0, left\u2295right=0, top\u2295left=1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Identify torus boundary variables and glue half-edges into one variable per physical edge (wrap-around included); 2HW variables total.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Reduce Hh-chain and V-chain per column/row: consistency requires every row and every column to contain an even number of A tiles; otherwise answer 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Express general solution as x[i][j]=a_j\u2295G[i][j], y[i][j]=b_i\u2295Hh[i][j]; each B cell gives a_j\u2295b_i = 1\u2295G[i][j]\u2295Hh[i][j].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Conclude answer = 0 if any row/column A-count is odd or the XOR system is contradictory; else 2^C mod 998244353 where C = number of connected components over the H+W nodes (isolated included).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Implement the O(HW) DSU-with-parity solver (par[x]=value[x]\u2295value[parent[x]], union-by-size, path compression), running Gcol/hprefix prefix parities in O(1) per cell, fast stdin/stdout, and modular power.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate implementation on Sample 1 (PASSED: 2, 0, 2) along with hand checks (all-A 2\u00d72 = 16, all-B 2\u00d72 = 2, H=2 column-parity edge case, odd row-sum \u21d2 0).",
+    "status": "done",
+    "result": ""
+  }
+]

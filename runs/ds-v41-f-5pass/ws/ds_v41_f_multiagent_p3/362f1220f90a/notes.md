@@ -1,0 +1,15 @@
+- **Problem model:** Lexicographically smallest word of length L = n + m - 1 where, for each i, window word[i..i+m-1] equals str2 if str1[i]=='T', else differs from str2. n <= 1e4, m <= 500, str2 lowercase.
+- **Greedy algorithm:** ans length L filled with sentinel FREE. Pass 1: for each 'T' at i, write str2 into ans[i..i+m-1]; a conflict returns "". Pass 2: for each 'F' at i, left to right, treat FREE as 'a'; if the window equals str2, set the rightmost FREE slot in that window to 'b'; if no FREE slot exists, return "". Pass 3: map every remaining FREE to 'a'.
+- **Why 'b' at the rightmost free slot:** In a matching window every FREE slot sits at an offset where str2 == 'a' (otherwise FREE='a' would already mismatch). So 'b' is the smallest character that breaks that slot, and choosing the rightmost slot delays the forced larger character as far right as possible, which is lexicographically optimal.
+- **Free slots are never covered by T windows:** A T window always assigns its whole range, so any position it covers is non-FREE. Hence FREE -> 'b' can never violate a T constraint.
+- **Retroactive repair impossibility:** A later F bump cannot turn an earlier F window back into a match. That would require a single position k to simultaneously satisfy str2[k - i'] = 'b' (earlier window mismatch) and str2[k - i] = 'a' (later window match), with i' < i. The T constraint covering the position immediately right of k (which must exist because k is the rightmost FREE) forces shift-periodicity that collapses into a direct character conflict. Exhaustive search confirms this.
+- **Verification (this run):** Implemented an independent brute-force reference that enumerates all strings of length L over the relevant alphabet in lexicographic order and returns the first valid one. Cross-checked against the greedy:
+  - Exhaustive {a,b}: n<=5, m<=4 -> 1860 cases, 0 mismatches.
+  - Exhaustive {a,b,c}: n<=5, m<=3 -> 2418 cases, 0 mismatches.
+  - Random {a,b}: 50 cases n<=8, m<=8 -> 0 mismatches.
+  - Random {a,b,c}: 50 cases n<=6, m<=4 -> 0 mismatches.
+  - Targeted probes (str2 in "aab","aabb","aabbb","aba","baa","ab","ba","aa","bb","a","b"): n<=7 over all str1 -> 2794 cases, 0 mismatches.
+  - Total ~7172 cases, 0 mismatches. No counterexample found.
+- **Complexity:** O(n*m) time (<= ~5e6 simple char operations) and O(n+m) space. No hashing needed.
+- **Pitfalls resolved:** FREE treated as 'a' only during the match test, never stored as 'a'; already-set 'b' slots compared as ordinary chars; T conflicts caught in pass 1; sentinel '#' safe (str2 lowercase); a fully T-covered matching F window (no FREE slot) correctly returns "".
+- **Edge cases:** n=1, m=1, all-T, all-F, overlapping T windows, single-character windows, and str2 with no 'b' are all handled by the same three passes.

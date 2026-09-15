@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement input parsing and adjacency-list construction for all M weighted undirected XOR constraints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Traverse each connected component iteratively to compute XOR potentials from a root and detect contradictions, including self-loops and parallel edges.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If any contradiction is found, output -1 and terminate.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each consistent component, count per-bit ones among base values and choose the offset bit that minimizes the component sum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Construct and print the final sequence A using the chosen offsets and stored potentials.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify the implementation against the provided sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

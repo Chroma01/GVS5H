@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the game reduction to state (c,z,P) with b_i=(A_i-1) mod 2, and prove for N>=4: Fennec wins iff count of odd A_i is odd; N=3: Fennec wins iff any A_i is odd; N=2: Snuke; N=1: Fennec (verified by induction on the recursion W(c,z,0)=(z odd) for c+z>=4).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Write Python code reading N and A from stdin, applying: N==1->Fennec, N==2->Snuke, N==3->Fennec iff any odd else Snuke, N>=4->Fennec iff count of odd A_i is odd else Snuke.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test implementation on the three provided samples (1 9 2 -> Fennec; 25 29 -> Snuke; 1 9 2 25 2 9 -> Snuke) and edge cases (N=1, N=2, N=3 all-even, N=4, N=5) -- all confirmed correct.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm solution runs in O(N) time and O(1) extra space for N up to 2x10^5 and A_i up to 1e9.",
+    "status": "done",
+    "result": ""
+  }
+]

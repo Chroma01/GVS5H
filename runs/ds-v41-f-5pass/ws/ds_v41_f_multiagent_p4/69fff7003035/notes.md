@@ -1,0 +1,9 @@
+- **Contribution model:** Summing the concatenation over all permutations equals summing, for each element x, x * 10^(number of digits appearing after x). So answer = sum_x x * M_{len(x)}, where M_L is the same for every x of digit length L.
+- **Per-length multiplier:** For fixed x of length L, the other N-1 elements' lengths are fixed as a multiset (c_L-1 of length L, c_m of length m). Choosing the subset S placed after x and ordering both sides gives |S|! (N-1-|S|)! arrangements, weight 10^{digits(S)}. Hence M_L = sum_k [t^k] Q/(1+w_L t) * k! (N-1-k)!, with Q = prod_l (1+w_l t)^{c_l}, w_l = 10^l, and the factor 1/(1+w_L t) removes the single x itself.
+- **Only 6 lengths:** N <= 2e5 < 10^6, so digit lengths are 1..6 (fewer for small N). Group counts c_l and sums sumx_l by ranges [10^{l-1}, min(10^l-1, N)]. Skip absent lengths (c_l = 0) entirely, including them in A would break the identity.
+- **Fast Q coefficients:** Do not multiply the six big polynomials. Use A*Q' = B*Q where A = prod_{present}(1+w_l t) (degree d <= 7) and B = sum_l c_l w_l prod_{m != l}(1+w_m t) (degree d-1). Comparing coefficients of t^m yields (m+1) q_{m+1} = sum_i B_i q_{m-i} - sum_{i>=1} A_i (m+1-i) q_{m+1-i}, giving all q_0..q_N in O(N d). q_0 = 1.
+- **Per-length h and M:** h_k = [t^k] Q/(1+w_L t) satisfies h_k = q_k - w_L h_{k-1} (h_{-1}=0). Accumulate M_L = sum_{k=0}^{N-1} h_k * k! * (N-1-k)! with a precomputed pf[k] = k! (N-1-k)! reused across all L.
+- **Final:** ans = sum_L sumx_L * M_L mod 998244353. Complexity O(N * #lengths) <= O(6N).
+- **Precomputes:** linear-time modular inverses inv[1..N] and factorials fact[0..N]. MOD is prime > 2e5 so inverses exist.
+- **Verified:** N=3 (all length 1): Q=(1+10t)^3, Q/(1+10t)=(1+10t)^2, M=2+20+200=222, ans=6*222=1332 matches sample 1. N=1 gives 1; N=2 gives 33 (=12+21).
+- **Derivation check:** Q'(0)=sum c_l w_l = B_0 gives q_1 = B_0, consistent with Q = prod(1+w_l t)^{c_l}.

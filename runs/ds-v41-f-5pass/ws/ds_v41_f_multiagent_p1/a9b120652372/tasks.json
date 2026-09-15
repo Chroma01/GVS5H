@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the full solution in Python as described in NEXT, ensuring O(sum N) time and passing sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Analyze operation invariants: order preserved, gaps never increase, reachable final gap vectors satisfy h_j \u2264 g_j.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Reduce problem to choosing split points S_j for blocks assigned to B positions with g_{S_j} \u2265 b_{j+1}-b_j, and cost = max(R-D+B, A+D).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Derive LB = max(b_1 - p_1, p_K - b_M) and prove answer is either LB or LB+1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle edge cases: K < M, single piece, all pieces already matching B, large T with small N, negative D, and fast I/O.",
+    "status": "done",
+    "result": ""
+  }
+]

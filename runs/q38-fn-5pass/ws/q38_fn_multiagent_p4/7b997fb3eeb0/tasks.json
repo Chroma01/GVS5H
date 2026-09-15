@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: reduce query feasibility to max D in prefix of length K <= len-K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with fast input, two-pointer p/D, sparse-table RMQ, per-query binary search, and buffered output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on sample tests and random brute-force edge cases (length 2, duplicates, no pairs, large values).",
+    "status": "done",
+    "result": ""
+  }
+]

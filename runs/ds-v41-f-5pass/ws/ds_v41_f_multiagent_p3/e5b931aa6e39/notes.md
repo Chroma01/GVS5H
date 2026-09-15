@@ -1,0 +1,14 @@
+- **Reduction:** x^3 - y^3 = (x-y)(x^2+xy+y^2). Let d = x-y (>0), x = y+d, so x^2+xy+y^2 = 3y^2 + 3dy + d^2. Thus N = d(3y^2 + 3dy + d^2).
+- **Bound on d:** For y >= 1, 3y^2+3dy+d^2 >= 3+3d+d^2 > d^2, so N > d^3, hence d <= cbrt(N) <= 10^6. Enumerate d from 1 while d*d*d <= N (inclusive is safe since N > d^3 strictly for any real solution).
+- **Divisor filter:** A valid d must divide N. Only when N % d == 0 do we set Q = N/d and proceed.
+- **Quadratic in y:** 3y^2 + 3dy + (d^2 - Q) = 0. Discriminant = (3d)^2 - 4*3*(d^2-Q) = 12Q - 3d^2. Root y = (r - 3d)/6 with r = +sqrt(disc).
+- **Exact integer checks (critical):** use math.isqrt for the square root, require disc >= 0, r*r == disc, (r - 3d) > 0 (forces y > 0), and (r - 3d) % 6 == 0. Never use floating point sqrt — N up to 1e18 makes float rounding unsafe.
+- **Output:** x = y + d; print "x y". If loop exhausts d with no hit, print "-1". Returning on the first valid d is fine (any valid pair is accepted).
+- **Complexity:** O(cbrt(N)) <= ~10^6 iterations, each O(1) big-int work; runs well under 1 second in Python. No need for sieve/factorization.
+- **Verification results (all pass):**
+  - N=397 -> "12 11" (d=1, Q=397, disc=4761=69^2, y=11, x=12). Matches sample 1.
+  - N=1 -> "-1" (disc=9=3^2 but r-3d=0, rejected since y must be positive). Matches sample 2.
+  - N=39977273855577088 -> solves with d=276544 (found before completing the loop), giving a valid pair; any correct pair is accepted. Matches sample 3 format.
+- **Small-N brute force cross-check (1..20):** Only N=7 (d=1,Q=7,disc=81=9^2,y=1,x=2) and N=19 (d=1,Q=19,disc=225=15^2,y=2,x=3) have solutions; all others (2,3,4,5,6,8..18,20) correctly return -1. The smallest possible difference x^3-y^3 over positive x>y is 2^3-1^3=7, consistent.
+- **Boundary:** for N near 10^18 the loop runs ~10^6 times (d up to floor(cbrt(N))=10^6). The largest candidate d=10^6 gives d^3=10^18, handled exactly.
+- **Edge cases handled:** N=1, prime N (only d=1 or d=N tried; d=N impossible since d<=cbrt(N)), perfect cubes, and N with several divisor choices — first found returned.

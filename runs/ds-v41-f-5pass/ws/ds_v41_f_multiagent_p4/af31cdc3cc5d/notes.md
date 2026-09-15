@@ -1,0 +1,10 @@
+- **Problem model:** Removals of adjacent pairs = a noncrossing perfect matching. For odd N one element survives; cross pairs are impossible, so the survivor splits the array into two independently matched even blocks.
+- **Key lemma:** For any even-length block, the max noncrossing score equals (sum of largest half) - (sum of smallest half). Upper bound: any perfect matching satisfies sum|a-b| <= sum(top m) - sum(bottom m). Achievability: color top half + and bottom half -, find an adjacent +-, pair it, recurse (adjacent removal keeps matching noncrossing since spanning pairs only nest). A balanced +/- sequence always has an adjacent opposite pair.
+- **Survivor position (odd N):** With 1-based index i, left has i-1 elements and right has N-i; both must be even, forcing i odd, i.e. 0-indexed even position s. Then score = pref[s] + suf[N-1-s] where s even in [0, N-1].
+- **Even N:** no survivor, answer = pref[N].
+- **Reformulation:** score of an even block = totalSum - 2*(sum of m smallest), m = length/2.
+- **Computation:** For each even prefix/suffix length, maintain the m smallest via two heaps. lower = max-heap (negated), upper = min-heap; keep len(lower)=k//2, all lower <= all upper, track lowerSum and totalSum. Query at even k: res[k]=totalSum-2*lowerSum. Do this on A for prefixes and on reversed A for suffix lengths. O(N log N), Python heapq (C) makes it fast.
+- **Ties:** Duplicate values and the median boundary are harmless; any split of equal values into halves still satisfies top >= bottom per pair.
+- **Edge cases:** N=2 -> pref[2]=|A1-A2|; all-equal -> 0; odd best initialized 0 (scores nonnegative).
+- **Independent verification:** Sample 1 = 5, sample 2 = 14 (achieved at s=0, block [1,4,1,5,9,2] top-half 18 minus bottom 4), sample 3 = 0; hand-brute cases [1,2,3,4,5] -> 4 and [5,1,5,1,5] -> 8 match.
+- **Superseded approach:** Coordinate-compressed Fenwick (count+sum trees with kth-order-statistic descent) also works but is slower and more error-prone than the two-heap method; dropped.

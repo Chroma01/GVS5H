@@ -1,0 +1,11 @@
+- **Problem essence:** Alternating = adjacent elements have different parity (odd/even), not up-down zigzag. Confirmed by all examples.
+- **Parity pattern forced:** Once the first element's parity is picked, every subsequent parity is forced to alternate. Validity depends only on counts of remaining odds/evens, never on concrete values.
+- **Counts:** odds = (n+1)//2, evens = n//2. Odd n admits only an odd start; even n admits both. Greedy handles infeasible starts automatically since they evaluate to 0 completions.
+- **Closed-form completion count:** With `o` unused odds, `e` unused evens, required next parity `req`, let `t=o+e`. Odd slots = ceil/floor of t//2 depending on `req`; if odd_slots==o and even_slots==e the count is `o! * e!`, else 0. Exact because remaining numbers are distinct and freely permutable within their parity slots.
+- **Block size independent of value:** After fixing required parity, every candidate of that parity yields the same completion count. At position 0 both parities appear interleaved by value, so iterate candidates one-by-one in increasing order (this correctly respects lex order); from position 1 on only the opposite parity qualifies.
+- **Greedy unranking:** 1-indexed k-th selection: for each candidate in increasing order compute its block; if `k > block` subtract and continue, else pick it and break. If no candidate fits, return [].
+- **Edge cases:** n=1 -> [1] for k=1 else []; k exceeding total completions -> greedy exhausts, returns []; completions(0,0,*) = 1 (t=0 both slots 0); block 0 skipped safely via k-=0.
+- **Total counts:** even n: 2*((n/2)!)^2; odd n: ((n+1)//2)! * (n//2)!. n=4->8, n=3->2, n=2->2, n=5->12, n=8->1152.
+- **Big integers:** Python ints avoid overflow; 100! trivial. k<=1e15, comparisons cheap.
+- **Complexity:** O(n^2) time, O(n) space, independent of k.
+- **Verification:** Brute-force enumerator (`itertools.permutations` filtered by alternation, sorted) compared against `permute` for all n in 1..8 and every k in 1..(total+2) — all match, including out-of-range [] returns and the n=4,k=6 -> [3,4,1,2] and n=3,k=2 -> [3,2,1] samples.

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate the structural algorithm and identify cost bounds/pitfalls.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement initial solver with cost-1, cost-2, and cost-3 checks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Reorder cost-2 checks to prefer disjoint/containment sweep before two type-1 cover to match sample 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Re-run all sample tests and edge cases: N=1, M=1/2, equal intervals, adjacent intervals, and maxL/minR tie handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If sample exact still fails, adjust deterministic tie-breaking or switch to a different constructive approach.",
+    "status": "done",
+    "result": ""
+  }
+]

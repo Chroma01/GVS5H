@@ -1,0 +1,15 @@
+- **Reduction:** Let S1 = ops chosen as type 1, S2 = ops chosen as type 2 (disjoint). Final x_j = 1 iff j lies in some interval of S1 or outside some interval of S2. Positions not covered by any type-2 op are exactly the intersection of all intervals in S2, so the requirement is intersection(S2) ⊆ union(S1). Cost = |S1| + |S2|.
+- **At most two type-2 ops matter:** Intersection of any family equals [max L, min R], realized by the max-L and min-R ops already. Extra type-2 ops can be dropped, so optimal |S2| <= 2.
+- **Answer is in {-1, 1, 2, 3}:**
+  - K=1 iff some interval equals [1, N] (a lone type-2 never covers its own nonempty interval).
+  - K=2 configs: (a) two type-1 ops covering [1, N]; (b) one type-2 op t and one type-1 op s with s ⊇ t (containment); (c) two type-2 ops whose intervals intersect empty, i.e. maxL > minR.
+  - K=3 when the intersection [maxL, minR] is common, no cost-2 witness exists, and M >= 3: take max-L and min-R ops as type-2 and any third op as type-1 (every interval contains [maxL, minR]).
+  - -1 only for M <= 2 with common intersection and no cost-1/2 witness.
+- **Containment first:** In the common case, the containment construction is checked BEFORE the two-type-1 cover. This is required to reproduce sample 1 exactly (containment gives `2 0 1 0`; two-type-1 would give `2 0 1 1`).
+- **Containment detection in O(M log M) without a segment tree:** t has a container iff ∃ j != t with L_j <= L_t and R_j >= R_t. This holds iff `pref[L_t] > R_t` (prefix max R over all points with L <= L_t) OR `secondMinL[R_t] <= L_t` (>= 2 points share rank R_t with L <= L_t). Both quantities are precomputed in O(M log M) / O(M). proof: a strict-greater R gives pref; equal R needs a same-rank partner.
+- **Tie-breaking:** Scan t = 0,1,... and take the first with a container. This is the globally smallest contained index. Then scan j = 0,1,... and take the first j != t with L_j <= L_t and R_j >= R_t; this is the smallest container index. Output ans[container]=1, ans[t]=2.
+- **Two-type-1 cover check:** Need an L=1 interval A with max R and an R=N interval B with min L; require A != B and B_L <= A_R + 1.
+- **Non-common correctness:** If maxL > minR, complements of the max-L and min-R intervals cover [1, N] entirely at cost 2 (and cost 1 was already excluded).
+- **Cost-3 reachability:** If maxL <= minR and the max-L op equals the min-R op in index, that op is contained in every other op, so containment would have fired; thus reaching cost-3 implies distinct p, q and a valid third op when M >= 3.
+- **Pitfalls handled:** cost-1 tested before everything; (a) requires distinct indices; duplicate-coordinate ops count as distinct and make secondMinL valid; r differs from p and q; ans array defaults to 0 (operation "do nothing").
+- **Complexity / memory:** O(M log M) time (only sorting of L values), O(M) memory. N is used only for equality/threshold comparisons, so it never drives complexity.

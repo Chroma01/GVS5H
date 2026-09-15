@@ -1,0 +1,13 @@
+- **Problem model:** Target must be a sequence of maximal runs, each length >= 3, same letter throughout. Cost = sum |original - target|. Need min cost, then lexicographically smallest; empty if n < 3.
+- **Feasibility:** n < 3 -> "". For n >= 3 always feasible (whole string one run).
+- **DP state machine:** F1[i][c], F3[i][c] = min cost to finish positions i..n-1 when current run letter is c and its length so far is exactly 1 or >=3. F2 eliminated: F1[i][c] = |x_i-c| + |x_{i+1}-c| + F3[i+2][c] for i <= n-2, else INF.
+  - F3[i][c] = min(|x_i-c| + F3[i+1][c], min_{d!=c}(|x_i-d| + F1[i+1][d])).
+  - Base: F3[n][c]=0, F1[n][c]=INF.
+- **Implementation:** Flat arrays `array('i')` of size (n+1)*26 keep memory ~10 MB. For each i descending, compute g[d]=|x_i-d|+F1[i+1][d], take m1, idx, m2 (second min). cont[c]=|x_i-c|+F3[i+1][c]. alt[c]=m2 if c==idx else m1. F3[i][c]=min(cont[c], alt[c]). F1[i] from two-step formula. O(26n) time.
+- **Answer cost:** mincost = min_d |x_0-d| + F1[1][d], pick smallest d0.
+- **Reconstruction:** Greedy. Keep (cur, runlen). While runlen<3, next char forced to cur. Once runlen>=3, for d='a'..'z' ascending pick first with |x_i-d| + (F3[i+1][c] if d==cur else F1[i+1][d]) == F3[i][cur]. This keeps total cost minimal and yields lexicographically smallest.
+- **Correctness:** DP values are exact minimal completion costs, so equality test characterizes optimal completions. Taking smallest feasible char at each position gives lexicographically smallest optimum.
+- **Brute-force verification:** Enumerated all partitions into parts >=3 for n<=7 over alphabet {a,b,c,d}, and random n=8. For each block, min cost is at its median; lexicographically smallest block letter is smallest median achieving min. Compared min cost and string with DP output. All matched. Also tested provided examples (cdcd->cccc, aca->aaa, bc->""), n=3 (abc->bbb, aaa->aaa), already-good (aaabbb->aaabbb), large gaps (zaz->zzz, azazaz->aaazzz).
+- **Tricky tie case validated:** x=[0,0,1,1,1,2,2] ("aabbbcc"). Optimal cost 3. Partitions [3,4] gives "aaabbbb", [4,3] gives "aaaaccc". Lexicographically smaller is "aaaaccc" (index 3: 'a' < 'b'). DP correctly produces "aaaaccc": at i=3 it continues 'a' (smaller than switching), then at i=4 switches to 'c'. This confirms greedy handles ties where continuing a run yields a smaller character.
+- **Edge cases:** n<3 returns ""; forced placements cannot exceed n because DP forbids starting a new run unless at least 3 positions remain; INF=1<<30 safe as max finite cost <= 25n <= 1.25e6.
+- **Complexity:** O(26n) time, O(26n) memory. Verified no off-by-one in row indices; row n is base (F3=0, F1=INF).

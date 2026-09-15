@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "desc": "Sort intervals by right endpoint while keeping original indices.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute p[i] = bisect_left(sorted_right_endpoints, l_i) for each sorted interval (strict r < l overlap rule).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Initialize dp[0][0]=(0,()) and dp[0][c]=None for c>0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each interval i and c=1..4, compute candidate from dp[p[i]][c-1] by adding weight and inserting original index; set dp[i][c] = better(dp[i-1][c], candidate).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Define better(a,b): higher weight wins; tie broken by lexicographically smaller tuple (Python tuple comparison).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "After all intervals, select best among dp[n][c] for c=0..4 and return list of indices.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Run sample tests: Example 1 -> [2,3] PASS; Example 2 -> [1,3,5,6] PASS.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Brute-force stress test over ~20k random cases (all subsets \u22644, small n, many weight ties, equal endpoints, duplicates): zero mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 9,
+    "desc": "Spot-check edge cases (n=1, mutually overlapping intervals, shared boundaries counted as overlap, duplicate right endpoints, same-weight cross-cardinality ties) and confirm lexicographic correctness proof.",
+    "status": "done",
+    "result": ""
+  }
+]

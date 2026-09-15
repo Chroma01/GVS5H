@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: reachable strings are exactly all ordered parenthesis trees with the same unordered rooted tree shape; the count is the product over all nodes of multinomial factors for child isomorphism classes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement deterministic canonical-ID algorithm in Python: stack-parse S into children lists, process nodes bottom-up, intern sorted child canonical IDs, compute factorial/invfactorial modulo 998244353, and multiply each node's multinomial factor including the super-root.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the implementation on the samples and edge cases: single pair, repeated identical subtrees, deep chains, multiple top-level trees, and maximum-size balanced strings.",
+    "status": "done",
+    "result": ""
+  }
+]

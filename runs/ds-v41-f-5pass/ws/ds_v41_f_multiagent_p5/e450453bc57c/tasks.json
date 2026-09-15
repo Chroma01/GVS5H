@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Compute cost[i] for every length-x window via sliding Fenwick (counts + sums) and kth order statistic; cost formula verified against naive median baseline.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the selection DP with prefix minima: dp[t][i] = cost[i] + min_{p <= i-x} dp[t-1][p], returning min cost for exactly k non-overlapping windows (exactly-k == at-least-k since costs are nonnegative).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Execute the solution and confirm Example 1 -> 8 and Example 2 -> 3, plus edge cases (x==len(nums), k*x==len(nums), k==1, all-equal -> 0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Random brute-force cross-check on ~11500 small/duplicate/negative/wide-value/maximal-packing inputs against a naive DFS reference (zero mismatches).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm performance at n=10^5, k=15 with worst-case distinct values (Fenwick slide O(n log U) dominates; DP ~14*1e5 steps) and verify INF handling when DP states are infeasible (tight packing n=k*x) \u2014 all cases PASS, peak memory in the tens of MB.",
+    "status": "done",
+    "result": ""
+  }
+]

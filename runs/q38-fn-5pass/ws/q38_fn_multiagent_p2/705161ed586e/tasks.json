@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: choose suffix DP with greedy reconstruction.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Define the DP state, indexing, INF value, and base cases; return an empty string immediately when n < 3 or when the minimum cost remains unreachable.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the backward DP transitions: continuing the current run, switching only when the current run length is at least 3, and using best/second-best minima over letters to avoid O(26^2) work.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Store compact decisions for length-3 states to support reconstruction.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute the overall minimum cost by trying all possible first characters and selecting the smallest one that achieves the optimum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Reconstruct the answer left to right using stored decisions, forcing continuation for run lengths 1 and 2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate the current solution on sample tests and edge cases, including impossible short inputs, all-equal strings, multiple optimal run lengths, and lexicographic tie-breaking.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "If validation fails, debug the failing case and adjust the DP/tie-breaking or switch to a full forward DP decision approach.",
+    "status": "done",
+    "result": ""
+  }
+]

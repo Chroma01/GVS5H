@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select greedy min-heap frontier expansion.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with fast input, flat grid, bytearray states, min-heap, strict integer condition, and stdout output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify on sample tests and edge cases (1x1, no absorbable cells, X=1, large sums); if it fails, switch to DSU activation fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

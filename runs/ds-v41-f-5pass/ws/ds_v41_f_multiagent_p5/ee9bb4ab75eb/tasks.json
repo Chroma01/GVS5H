@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce answer for removal i to max depth prefix still shared by >= k remaining strings (on-path prefixes need cnt>=k+1, off-path need cnt>=k).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement trie-based solution using heavy nodes (cnt>=k): handle no-heavy, >=2 heavy at deepest depth G, and unique deepest heavy v with G2 = deepest heavy non-ancestor of v.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the two provided examples and a randomized brute-force stress test (small alphabet/n, vary k); confirmed PASS with no counterexample (20000 cases).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate edge cases: k=1, n=k (all zeros), duplicates/ties, unique longest word removed, all-distinct words, words shorter than G, and max-length inputs for performance/recursion safety.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove and document the reduction: f(L,R) is the number of consecutive-value components, equivalently distinct values minus adjacent present pairs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N) last-occurrence vertex-edge solution maintaining sum_x last[x] and sum_x min(last[x], last[x+1]) while scanning right endpoints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation on the provided samples and edge cases such as N=1, all equal values, all distinct consecutive values, and missing intermediate values.",
+    "status": "done",
+    "result": ""
+  }
+]

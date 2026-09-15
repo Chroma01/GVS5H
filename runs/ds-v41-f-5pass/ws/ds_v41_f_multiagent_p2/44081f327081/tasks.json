@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove equivalence: g achievable iff g|A_i and cnt[g]>=K, so answer = max valid divisor d of A_i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement freq counting over 1..M and prime sieve up to M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute cnt[d] via multiple-zeta transform (prime p: d from M//p down to 1, cnt[d]+=cnt[d*p]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Threshold to f[d]=d if cnt[d]>=K else 0, then compute ans via max-zeta transform (prime p: x from 1 to M//p, f[x*p]=max(f[x*p],f[x])).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Map each A_i to ans[A_i] and write N lines with fast I/O.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test sample inputs, edge cases (K=1, K=N, duplicates, single element) and large-constraint performance.",
+    "status": "done",
+    "result": ""
+  }
+]

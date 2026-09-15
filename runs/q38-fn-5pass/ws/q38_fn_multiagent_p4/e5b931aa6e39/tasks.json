@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approach based on factoring x^3-y^3=(x-y)(x^2+xy+y^2) and bounding d=x-y by d^3<N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution as described above.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Include exact integer square-root helper and avoid floating-point cube-root/square-root errors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify against sample cases and edge cases such as N=1, small N, and large sample.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Confirm reduction: bottleneck m = maximin of min(F) over paths; answer = (hi-lo) + 2*max(0, lo-m); u==v gives m=F[u].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Rewrite solution cleanly: sort cells by F desc, add cells and union with already-added 4-neighbors at cap=F[cell]; DSU with small-to-large per-root query-id sets; resolve m on duplicate id; plain sets only.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on Sample 1 (\"10\\n2\") \u2014 passed all public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

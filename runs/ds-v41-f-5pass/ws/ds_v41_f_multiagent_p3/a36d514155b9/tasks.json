@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement distanceSum combining binomial factor C(N-2, k-2) mod 1e9+7 with row contribution n^2*m(m^2-1)/6 and column contribution m^2*n(n^2-1)/6, using modular inverses.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle edge cases: k=N (binomial = C(N-2,N-2) = 1), k=2 (C(N-2,0)=1), and one-dimensional boards where one dimension's contribution is 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify against provided examples (m=2,n=2,k=2 -> 8; m=1,n=4,k=3 -> 20) by running the code.",
+    "status": "done",
+    "result": ""
+  }
+]

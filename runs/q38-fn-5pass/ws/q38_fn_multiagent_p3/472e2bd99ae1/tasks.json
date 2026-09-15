@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input, sort A, B, and C in descending order, and define the value function for a triple.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Initialize a max-heap with the triple (0,0,0) using negative values for Python heap ordering.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement visited tracking with a packed integer key such as `(i * M + j) * M + k`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Pop triples K times; after each pop, push valid unvisited neighbors `(i+1,j,k)`, `(i,j+1,k)`, and `(i,j,k+1)`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Output the value of the K-th popped triple, ensuring large integer arithmetic is handled correctly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test edge cases such as N=1, all values equal, K=N^3 for small N, and maximum-value inputs.",
+    "status": "done",
+    "result": ""
+  }
+]

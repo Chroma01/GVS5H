@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce each T/F window to a KMP-state constraint on end position i+m-1 ('T' -> state==m, 'F' -> state!=m); DP over (position, state).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement KMP automaton (including correct fail/transition from full-match state m), backward bitset feasibility DP F[p] using chunked preimage-OR, and greedy forward lexicographically-smallest construction; return \"\" when state 0 is infeasible in F[0].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on examples 1-3 (got \"ababa\", \"\", \"a\") and brute-force exhaustively for n<=4, m<=3 over all T/F patterns and str2 alphabets, plus randomized trials; no counterexamples found.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm larger random validity sweep (n<=40, m<=8): every nonempty output satisfies all T/F constraints.",
+    "status": "done",
+    "result": ""
+  }
+]

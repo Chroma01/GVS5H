@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full offline value-sweep DP solution with Fenwick tree over positions, equal-value batching, and offline query answering.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify the implementation on the provided samples and edge cases such as duplicate values, R = 1, and X values between distinct A values.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select A-block square-root decomposition with offline partial subqueries as the primary plan.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement input parsing, block-size selection, and query classification into base_blocks plus prefix/suffix partial ranges, handling last-block and zero-remainder cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Generate packed partial subqueries (A_i, Y, query_id, sign) and solve them offline by sorting subqueries and B values, using Fenwick trees over B positions for active B_j <= A_i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute cumulative full-A-block contributions: for each A block, sort its values, sweep sorted B to compute per-B-index block contribution, prefix-sum over original B order, update cumulative base array, and add base[Y] to queries grouped by base_blocks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run sample tests and verify the solution passes the public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Tune block size, packing, and Fenwick loops for performance and memory constraints.",
+    "status": "done",
+    "result": ""
+  }
+]

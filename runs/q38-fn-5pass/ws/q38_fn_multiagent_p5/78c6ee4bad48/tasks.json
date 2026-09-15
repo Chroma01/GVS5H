@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate the gap-parity reduction and rearrangement-inequality approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the Python solution using the gap-parity reduction described above.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the sorting direction and parity indexing on the provided samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Check edge cases mentally or with small brute force: `N = 4`, `N = 5`, equal gaps, and large coordinates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm the final implementation runs in `O(N log N)` time and uses Python integers for large values.",
+    "status": "done",
+    "result": ""
+  }
+]

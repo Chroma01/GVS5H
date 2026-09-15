@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and verify the exact compressed DP transition table from the block model, including the dummy second-last owner for the first block and the dominance rule that forbids extending a non-last block with suffix size at least 2; validate the table with a brute-force solver for all short sequences over small alphabets.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the per-test state representation: current value, cost for last-block size >= 2, a small collection of at most two `(second_last_owner, cost)` entries for last-block size 1, and one optional `(last_owner, cost)` entry where the current value is the second-last owner; merge duplicate owners by taking minimum cost.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the transition for `x == current_value`: the new last-size>=2 cost is the minimum of the old last-size>=2 cost and all old last-size1 costs; the old second-last-current state, if present, produces both a new last-size1 state and a new second-last-current state with cost increased by 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the transition for `x != current_value`: new last-size>=2 comes from the old second-last-current state only if its last owner is `x`; create a new last-size1 state with second-last owner equal to the old current value from the best old state ending at the old current value plus 1; create other last-size1 states from the old second-last-current state plus 1 when its last owner is not `x`; create a new second-last-current state from the old last-size1 state whose second-last owner is `x`, with cost increased by 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Initialize after the first element with cost 1 and dummy second-last owner 0, compute the answer as the minimum over all final DP states, and test on samples plus edge cases such as all equal, all distinct, long runs, alternating sequences, and many small test cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If the compressed DP fails brute-force or sample validation, switch to an occurrence-interval DP or reverse-process formulation rather than continuing to polish the same state reduction.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,19 @@
+- **Core reduction:** Fix the middle index `k`, with value `x = nums[k]`. A valid size-5 subsequence is formed by choosing two indices before `k` and two after `k`. Let `a` be the number of `x` values chosen on the left and `b` on the right.
+- **Validity cases:** The middle value `x` is the unique mode iff either:
+  - `a + b >= 2`, so `x` appears at least 3 times total; or
+  - `a + b = 1`, so `x` appears exactly twice total and the three non-`x` chosen values are pairwise distinct.
+  - `a + b = 0` is never valid because `x` appears only once.
+- **Side pair categories:** For each side, count unordered pairs by how many copies of `x` they contain:
+  - `2` copies: `C(cnt_x, 2)`
+  - `1` copy: `cnt_x * non_x`
+  - `0` copies: `C(non_x, 2)`
+- **High-frequency contribution:** All combinations with `a + b >= 2` are valid:
+  - `L2 * (R0 + R1 + R2) + L1 * (R1 + R2) + L0 * R2`.
+- **Distinct-pair helper:** For a side, maintain `totalC2 = sum_v C(cnt[v], 2)`, the number of equal unordered pairs in that side. The number of zero-`x` pairs with two distinct values is:
+  - `D = C(non_x, 2) - (totalC2 - C(cnt_x, 2))`.
+- **Exactly one extra x:** If the left side contributes the single extra `x` and a non-`x` value `y`, the right side must contribute a zero-`x` distinct pair not containing `y`. For a given `y`, subtract `cntR[y] * (nonR - cntR[y])` from `D_R`. Multiply by `cntLx * cntL[y]` and sum over `y != x`. The symmetric case is handled with left and right swapped.
+- **Sweep maintenance:** Initialize left counts for indices `0,1` and right counts for indices `3..n-1`. Sweep `k = 2..n-3`. After processing `k`, add `nums[k]` to the left side and remove `nums[k+1]` from the right side.
+- **Equal-pair maintenance:** When adding a value with current count `c`, `totalC2 += c`. When removing a value with current count `c`, `totalC2 -= c - 1`.
+- **Complexity:** The sweep is `O(n^2)` because each middle index may iterate over the distinct values present on the left and right sides. With `n <= 1000`, this is easily fast enough. Space is `O(n)`.
+- **Edge cases checked:** `n = 5`, all elements equal, all elements distinct, negative values, unordered index pairs, modulo arithmetic, and ensuring the middle element itself is excluded from both side counts.
+- **Implementation gotchas:** Do not include `y == x` in the distinctness sum; `D_side` already excludes pairs containing `x`. Pair counts must be unordered index pairs. Keep `totalC2` exact, not modulo, because it is used to compute exact distinct-pair counts.

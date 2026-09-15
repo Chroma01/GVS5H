@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement cycle detection (indegree pruning), forest construction for non-cycle nodes, and bottom-up tree DP g_v(c) with prefix sums in O(NM).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Combine cycle nodes per component via pointwise product over c, sum over c=1..M mod 998244353, multiply component totals; handle self-loops, multiple cycles, N=1, M=1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the code on Samples 1, 2, 3 \u2014 PASSED all three (6, 2025, 10010).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm O(NM) complexity acceptable for N,M \u2264 2025 and that no stored P array is mutated in place (aliasing safety).",
+    "status": "done",
+    "result": ""
+  }
+]

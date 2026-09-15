@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove and document that f(L,R) is the number of connected components of the distinct value set in A[L..R], and derive the identity f(L,R) = distinct_count(L,R) - adjacent_pair_count(L,R).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the occurrence-list gap arithmetic solution in Python, including efficient input/output and 64-bit integer handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the implementation on the provided samples and edge cases: N=1, all values equal, all values distinct, long consecutive value blocks, and sparse values.",
+    "status": "done",
+    "result": ""
+  }
+]

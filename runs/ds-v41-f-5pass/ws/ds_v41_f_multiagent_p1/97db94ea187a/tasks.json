@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Precompute factorials, inverse factorials, and binomial coefficients modulo P up to N(N-1)/2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute transition polynomial factors ((1+x)^a - 1)^b * (1+x)^{C(b,2)} as z-shift lists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the layer DP over states (used_even, used_odd, last_size) holding edge-count polynomials in z, multiplying 1/b! per layer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "At termination (used_even=used_odd=N/2) sum weights, multiply by (N-1)!, and emit M=N-1..C(N,2) via binomial transform mod P.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify against all three samples \u2014 worker reports all 3 public samples pass (N=4: 12 9 3 0; N=6 and N=10 match).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the formula for the number of divisions by 4 needed for a single value x to reach zero.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove that the minimum operations for a fixed array is ceil(total_required_divisions / 2), including handling the case where only one positive element remains.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement a helper function to compute the prefix sum of required division counts from 1 to n using powers of 4, avoiding floating-point logs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement minOperations by computing each query's range sum with the prefix helper and converting it to ceil(total / 2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate the implementation against the sample tests and edge cases such as odd total depths, ranges crossing powers of 4, and large ranges.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm the overall complexity is O(Q log_4 R) and memory usage is O(1).",
+    "status": "done",
+    "result": ""
+  }
+]

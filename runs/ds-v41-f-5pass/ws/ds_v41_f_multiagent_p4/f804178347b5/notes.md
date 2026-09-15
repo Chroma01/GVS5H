@@ -1,0 +1,10 @@
+- **Model:** Repeated majority over groups of 3 is a ternary tree; leaves are chars of A, each internal node = majority of its 3 children. Goal: min flips so the root equals the opposite of its original value.
+- **Key invariant:** For any node, the min flips to make it equal its OWN original value is 0 (do nothing). So each node only needs a pair (o, g): o = original majority value of its subtree, g = min flips to force that node to 1-o.
+- **Leaf bases:** o = original bit, g = 1 (flip that single character).
+- **Internal recurrence (correct):** children have (o_i, g_i). Let o = majority(o_1,o_2,o_3) (computed from children's o_i). To force node = 1-o, at least two children must become 1-o; the third can stay at its original value (cost 0). Define per child d_i = (o_i == o) ? g_i : 0  (cost to convert child to 1-o). Then g = sum of the two smallest d_i = (d_1+d_2+d_3) - max(d_i).
+- **Equivalent closed form:** since o is the majority, at most one child differs from o. If a child differs, g = min g_i over children equal to o; if all three equal o, g = sum of the two smallest g_i.
+- **Proven wrong (do not reuse):** "g = sum of two smallest g_i of children" unconditionally. On Sample 1 leaf/level data this yields 4, but the true answer is 1. The plan hint "sum of children costs minus max" is only valid when all three children already equal o.
+- **Answer:** after reducing to a single node, output g (that is the flip cost of the root).
+- **Verified cases:** Sample1 "010011101" -> 1; Sample2 N=1 "000" -> 2; "111" -> 2; "010" -> 1; "001" -> 1; "101" -> 1; "000000000" (N=2) -> 4; "010010010" (N=2) -> 2.
+- **Complexity:** O(3^N) time and memory; total group merges = (3^N-1)/2 ≈ 8e5 for N=13.
+- **Implementation notes:** read via sys.stdin.buffer.read().split(); A as bytes, bit = c & 1 ('0'=48->0, '1'=49->1). Merge levels by zipping 3 slices (o[0::3], o[1::3], o[2::3], same for g) to avoid indexing overhead. Final reduction shrinks length by factor 3 each round until size 1.

@@ -1,0 +1,7 @@
+- **Problem:** Given N (1 <= N <= 1e18), find positive integers (x,y) with x^3 - y^3 = N, else print -1. Any valid pair accepted.
+- **Key reduction (d = x - y):** With x = y + d, expand: x^3 - y^3 = d(3y^2 + 3dy + d^2) = N. Since y >= 1, N >= d^3 + 3d^2 + 3d > d^3, so d^3 < N. Thus only d up to cbrt(N) <= 1e6 need checking. Direct scan of x or y is impossible (up to ~6e8 for d=1).
+- **Per-d test:** Require d | N. Let Q = N/d. The quadratic 3y^2 + 3dy + (d^2 - Q) = 0 has positive root y = (-3d + sqrt(12Q - 3d^2)) / 6. Compute Delta = 12Q - 3d^2; if Delta < 0 skip. Let s = isqrt(Delta). Need s*s == Delta (perfect square), s > 3d (ensures y > 0), and (s - 3d) % 6 == 0. Then y = (s - 3d)//6, x = y + d.
+- **Bounds and correctness:** Loop condition `while d*d*d <= N` covers all feasible d (since N > d^3 strictly, this is a safe superset). Final verification `x^3 - y^3 == N` guards against any residual arithmetic edge case.
+- **Pitfalls handled:** integer-only math (isqrt, no floats); explicit perfect-square check; s > 3d to keep y >= 1; parity/mod-6 condition; N=1 correctly yields -1 (d=1 gives s=3, s > 3d fails).
+- **Sample checks:** N=397,d=1 -> Delta=4761,s=69,y=(69-3)/6=11,x=12. N=1 -> -1. Large sample: d=276544 (x=342756,y=66212) reached within the cbrt bound.
+- **Complexity:** O(cbrt(N)) time (~1e6 iterations), O(1) space; comfortably fast in Python.

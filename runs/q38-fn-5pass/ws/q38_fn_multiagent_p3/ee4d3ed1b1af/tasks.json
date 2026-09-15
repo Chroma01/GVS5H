@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: split pattern into three literal fragments and plan occurrence-list/sweep optimization.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a reusable linear-time occurrence finder for a literal fragment in s using KMP or Z-function, returning sorted start indices.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Split p into left, middle, and right fragments and handle empty fragments, including p == \"**\" returning 0 and missing required literals returning -1.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Precompute for each position the latest valid left start whose occurrence ends at or before that position, treating an empty left fragment as matching at the current position.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Precompute for each position the earliest valid right end whose occurrence starts at or after that position, treating an empty right fragment as matching at the current position.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Scan middle occurrences to combine best left start and right end, handling the empty-middle case by directly pairing left and right occurrences.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Track the global minimum span and return -1 if no valid triple exists.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Add and run tests covering all-empty patterns, empty prefix/middle/suffix, adjacent stars, overlapping literal parts, no match, and the provided examples.",
+    "status": "pending",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Model the operation as swapping gaps i and i+2, so odd/even gap classes can be permuted independently while the leftmost coordinate is fixed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the objective sum = N*x_1 + sum_{k=1}^{N-1} (N-k)*g_k and apply the rearrangement inequality separately to each parity class.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the Python solution with integer arithmetic and O(N log N) sorting.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate samples and edge cases (N=4, large coordinates, equal gaps) and ensure output is an integer.",
+    "status": "done",
+    "result": ""
+  }
+]

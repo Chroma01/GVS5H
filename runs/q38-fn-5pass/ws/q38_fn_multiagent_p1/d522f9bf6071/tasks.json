@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement exact-cardinality weighted interval scheduling DP for `k = 1..4` with tuple tie-breaking and strict boundary handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation on the provided examples and edge cases: strict boundary overlap, fewer than 4 compatible intervals, equal-score ties across different tuple lengths, and large weights.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If validation fails, debug the failing case and either fix the DP/tie-breaking or switch to an alternative approach.",
+    "status": "done",
+    "result": ""
+  }
+]

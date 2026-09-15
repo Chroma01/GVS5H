@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: bottom-up DP on the ternary majority tree.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement efficient parsing of N and A, handling both a contiguous binary string and whitespace-separated bits without creating a huge token list.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement in-place level reduction using compact storage, e.g. bytearray for current bits and list/array for flip costs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each triple, compute parent current bit by majority and parent flip cost by selecting the two smallest child costs needed to force the opposite parent bit.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Print the root flip cost as the answer; do not print min(dp0, dp1), since the current root value has cost 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify with sample tests and edge cases such as N=1, all bits equal, and mixed bits.",
+    "status": "done",
+    "result": ""
+  }
+]

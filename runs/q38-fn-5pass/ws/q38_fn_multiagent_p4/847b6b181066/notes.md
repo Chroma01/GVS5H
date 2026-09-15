@@ -1,0 +1,7 @@
+- **Core model:** Let P_t be the cumulative wind displacement after t steps. A smoke particle generated when prefix sum P_k first appears is located at P_t - P_k after the t-th wind.
+- **Generation rule:** After wind t, the origin is occupied iff P_t has appeared among earlier prefix sums. Therefore new smoke is generated exactly at first occurrences of prefix sums, and the set of generated prefix sums is exactly the set of prefix sums seen so far.
+- **Query condition:** For target (R,C), smoke exists after wind t iff P_t - (R,C) is already in the seen prefix-sum set. Since (R,C) != (0,0), checking before inserting P_t is safe and matches the generation timing.
+- **Implementation:** Maintain current prefix (r,c), a set of packed seen prefix sums initialized with (0,0), update (r,c) for each wind character, query packed (r-R, c-C), then insert packed (r,c).
+- **Packing:** All queried coordinates lie in [-2N, 2N]. Use offset 2N+1 and shift (4N+2).bit_length(), so both shifted coordinates are nonnegative and the column part fits below 2^shift. Pack as ((x+off)<<sh) | (y+off), avoiding tuple overhead and collisions.
+- **Performance:** The algorithm is expected O(N) time and O(N) memory. Reading input as bytes and comparing ASCII codes for N, S, W, E keeps the loop fast for N=200000.
+- **Verification:** Manual prefix-sum checks match samples 1 and 2; sample 3 follows the same invariant.

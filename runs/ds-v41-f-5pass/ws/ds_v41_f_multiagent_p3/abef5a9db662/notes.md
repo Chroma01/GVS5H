@@ -1,0 +1,13 @@
+- **Problem model:** For initial rating x, the current rating after a prefix of contests is A[x]; the map x -> A[x] stays non-decreasing. Contest [L,R] adds +1 to A[x] for all x whose current A[x] lies in [L,R]. Because A is non-decreasing, that x-set is a contiguous interval [p, q-1], where p = first x with A[x] >= L and q = first x with A[x] > R (i.e. A[x] >= R+1).
+- **Difference array:** Let Δ(x) = A[x] - A[x-1] (A[0]=0), E[x] = Δ(x) - 1 (initially 0). Then A[x] = prefixE(1..x) + x. Adding 1 to A on [p, q-1] is exactly E[p] += 1 and, if q <= M, E[q] -= 1 (two point updates, not a range update).
+- **Truncation to max query:** Only A[x] for x <= M = max(queried X) is needed. Truncating here is safe: the find for p returns the true first index if <= M; the find for q returns M+1 when the true q exceeds M, in which case add +1 across [p, M] and skip the right decrement. Induction shows A_trunc(x) = A_full(x) for x <= M.
+- **Segment tree layout:** Non-lazy tree over E. Each node stores sumE (sum of E in its range) and best = max over x in range of (sumE[range_start..x] + x). Since A is non-decreasing, best is attained at the right end. Merge: sumE = sumE[l]+sumE[r]; best = max(best[l], sumE[l]+best[r]).
+- **find_first_ge(T):** root best = A(M). If root best < T return M+1. Else descend tracking P = prefixE before current node; if P+best[leftchild] >= T go left, else P += sumE[leftchild] and go right. O(log M), no lazy, no mutation.
+- **Point update:** set leaf E += v, leaf best = E + pos, then recompute ancestors bottom-up with the merge formula.
+- **Complexity:** O((N + Q) log M) time, O(M) memory, M <= 5e5. Per contest: 2 descents + 2 leaf-to-root updates (~4*19 iterations).
+- **Pitfall handled:** empty/jump ranges. When A[p] >= R+1, the two boundaries coincide (q == p); the +1 and -1 cancel, so we skip both - explicitly guarded by `if q2 <= p: continue`.
+- **Pitfall handled:** contests with L above A(M) are skipped entirely (no x affected). Contests with R >= A(M) set q = M+1 (only left update).
+- **Pitfall handled:** padded leaves (beyond M) get best = NEG so the descent never selects them; their sumE stays 0 since all updates lie within [1, M].
+- **Final answers:** since there is no lazy, leaf sumE equals E[pos]. One O(M) prefix-sum pass gives A[x]; answer each query in O(1).
+- **Verified:** all three provided samples reproduce exactly, and the reasoning was checked against the Q values 3,2,5 of sample 1 and against edge case M=1.
+- **Alternative rejected:** process each query independently is O(NQ). Sqrt-decomposition on A is O(N sqrt M), worse constant. Fenwick + binary search is O(log^2) per boundary.

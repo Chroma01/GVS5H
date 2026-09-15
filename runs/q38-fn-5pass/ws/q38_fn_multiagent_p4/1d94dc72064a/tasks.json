@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: model the game as untouched indices plus available pass moves, and identify that pass parity/zero-pass behavior matters.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Reduce the state to counts of untouched piles by A_i parity (equivalently A_i-1 parity) and pass parity, with attention to small-N exceptions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Prove the exact winning condition and implement the Python solution; run sample tests and report the verdict.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test edge cases: N=1, N=2, N=3, all even, all odd, mixed parities, and large A_i values.",
+    "status": "done",
+    "result": ""
+  }
+]

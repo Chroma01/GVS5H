@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the BFS-level polynomial DP: state (used vertices, last level size, even-level sum, parity of current level) -> edge-count polynomial; transition for next level size c with label choice C(remaining,c), coverage cross-edge polynomial, and same-level factor (1+x)^{C(c,2)}.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute the between-adjacent-levels edge polynomial via inclusion-exclusion over j forced-isolated vertices: sum_j (-1)^j C(c,j) (1+x)^{a(c-j)}.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the implemented DP reproduces Sample 1 (N=4: 12 9 3 0), Sample 2 (N=6: 810 2100 3060 3030 2230 1210 450 100 10 0 0), Sample 3 (N=10 full output) and the edge case N=2 exactly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize polynomial convolution (big-integer packing with base 2^72, precompute same-level factors) so N=30 with D=435 runs within time limits.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Accumulate coefficients for M=N-1..N(N-1)/2 and print space-separated in order; ensure all arithmetic is modulo P.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "(contingency) Fallback to evaluation-interpolation was available but not needed since the packed polynomial DP passed all samples.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select direct center enumeration as primary.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement direct center-enumeration solution as described.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and edge cases (N=3 path, star, all degrees) to verify output.",
+    "status": "done",
+    "result": ""
+  }
+]

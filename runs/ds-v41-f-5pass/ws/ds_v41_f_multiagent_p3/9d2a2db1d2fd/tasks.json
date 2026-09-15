@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Validate reduction: answer = |Y-Z| + 2*max(0, min(Y,Z) - bottleneck), same-cell -> |Y-Z|; verified on Sample 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement node-activation offline DSU (descending F order) with small-to-large query-set merging to resolve each cross-cell query's bottleneck M at first-connection weight.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Output |Y-Z| + 2*max(0, min(Y,Z) - M) with fast stdin parsing and joined output buffer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Sample tests PASSED (all 1 public sample).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle edge cases: same-cell queries, equal F values, indices/base conversions.",
+    "status": "done",
+    "result": ""
+  }
+]

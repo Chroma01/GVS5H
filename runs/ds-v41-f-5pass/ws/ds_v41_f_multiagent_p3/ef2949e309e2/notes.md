@@ -1,0 +1,13 @@
+- **Problem:** count index-based 5-subsequences whose 3rd selected element is a strict unique mode, mod 1e9+7, n<=1000.
+- **Reduction:** fix the middle index m (value x); choose 2 indices left and 2 right. Let a = #x in the left pair, b = #x in the right pair. The subset's x-count is 1+a+b.
+- **Validity trichotomy:** a+b>=2 gives x-count>=3 with <=2 non-x slots, so x is always the strict unique mode. a+b==1 gives x-count=2 and needs the 3 non-x values pairwise distinct. a+b==0 gives x-count=1, never a mode. The three cases are disjoint, so no double counting.
+- **valid_ge2:** C(L,2)C(R,2) - C(PL,2)C(PR,2) - (lx*PL*C(PR,2) + C(PL,2)*rx*PR), where L=m, R=n-1-m, lx/rx are side counts of x, PL=L-lx, PR=R-rx.
+- **c10 (a=1,b=0):** lx * (PL*(C(PR,2)-SR) - T). SR = sum over non-x right values of C(cr,2). T = sum over left non-x values cl*cr*(PR-cr). For each left non-x y, valid right pairs are distinct-valued right pairs minus those containing exactly one y.
+- **c01 (a=0,b=1):** rx * (PR*(C(PL,2)-SL) - U). SL = sum over non-x left values of C(cl,2). U = sum over right non-x values cr*cl*(PL-cl).
+- **Negative-safety:** each bracket is algebraically a sum of non-negative per-element counts, so values do not go negative; modulo is applied per middle index regardless.
+- **Implementation:** right = Counter(nums[1:]), left starts empty; per m compute the three terms, then left[x]+=1 and right[nums[m+1]]-=1 (drop zero keys). Dict/Counter hashing handles huge and negative values, so no coordinate compression is needed.
+- **Complexity:** O(n^2) time (two dict sweeps per index, <= ~2e6 iterations for n=1000), O(n) space.
+- **Verification harness:** brute force uses itertools.combinations(range(n),5) and checks middle count strictly greater than every other count. Examples [1]*6 -> 6, [1,2,2,3,3,4] -> 4, all-distinct 0..8 -> 0, all match exactly.
+- **Random cross-check:** seed 123456, 5000 random arrays with n=5..9 and alphabets of size 2..4 (values 0..k-1). Result: 5000 matches, 0 mismatches; no failing input. Structured tests (all equal, half equal, alternating, single odd element) also passed.
+- **Pitfalls handled:** strict-mode ties rejected; a+b=2 with a repeated non-x value is still valid (x-count 3); unordered pairs within each side; the three cases are mutually exclusive; c10/c01 exclude any right/left pair containing the same non-x value as the other side.
+- **Edge notes:** n=5 is only the whole array; all-equal arrays give C(n,5); all-distinct arrays give 0. Side frequencies never exceed side length, so (PR-cr), (PL-cl) and C(side,2) terms stay consistent.

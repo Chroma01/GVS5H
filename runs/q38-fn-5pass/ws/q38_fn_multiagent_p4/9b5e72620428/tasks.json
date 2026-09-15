@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement input parsing, frequency maps, `maxKnown`, and early cases `uA + uB >= N` / `T <= 1`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement exact pair-sum check using packed `(sum, weight=min(cntA[a], cntB[b]))` entries, filtering sums below `maxKnown`, sorting, and aggregating weights by sum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate on samples and edge cases: all `-1`, duplicates, `T=1`, large values, and sums below `maxKnown`.",
+    "status": "done",
+    "result": ""
+  }
+]

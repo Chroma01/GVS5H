@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement numpy-vectorized evaluation DP over BFS-layer states with transition polynomial T(a,b;x)=((1+x)^a\u22121)^b (1+x)^{C(b,2)}, pruning odd_sum\u2264N/2 and used\u2212odd_sum\u2264N/2",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Recover A(x) coefficients via Newton forward differences and falling factorials mod P",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify N=4 (12 9 3 0), N=6 (11 values), N=10 samples, and N=2 edge case \u2014 all passed",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Provide numpy-based solution with modular safety and correct output range M=N-1..D",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the lexicographic sorting plus adjacent LCP array plus sliding-window minima approach: sort words with original indices, compute adjacent LCPs, derive all k-window and (k+1)-window LCP values, combine global baseline with prefix/suffix maxima to answer each removal, and map results back to original order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Explicitly handle edge cases in code: k = 1, n = k, n = k + 1, all words identical, one word being a prefix of another, and duplicate words with different original indices.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run sample tests and targeted edge cases against the current implementation; report SAMPLE TESTS verdict and fix any failing case.",
+    "status": "done",
+    "result": ""
+  }
+]

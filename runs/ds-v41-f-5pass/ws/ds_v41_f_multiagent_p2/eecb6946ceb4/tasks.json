@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement end-to-end solution with dense self-convolution (indicator array), accumulate (conv[2*B]-1)//2 over B in S, and fast I/O.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle convolution backend choice: numpy.rfft with rounding if importable, else pure-Python NTT.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on samples 1-3 (expect 3, 5, 10).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Guard edge cases: N<3, self-pair (B,B) exclusion, symmetry divide-by-2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify correctness of the full pipeline against public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

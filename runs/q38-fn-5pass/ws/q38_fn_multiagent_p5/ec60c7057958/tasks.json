@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the greedy unranking solution using capped factorials, explicit parity-count feasibility checks, and lexicographic candidate scanning from 1 to n.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute capped factorials up to n and a helper that returns the number of valid completions from a given state, capped at 10^15 + 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute the total number of alternating permutations for n and return an empty list immediately if k is larger than this total.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the unranking loop that maintains used numbers, remaining odd/even counts, and the required next parity.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "At each position, iterate candidate numbers from 1 to n in increasing order, test parity feasibility, compute completions for choosing that candidate, and update k to select the k-th valid branch.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Add edge-case handling for n = 1, n = 2, and cases where only one parity pattern is possible.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate the implementation against the provided examples and additional boundary tests.",
+    "status": "done",
+    "result": ""
+  }
+]

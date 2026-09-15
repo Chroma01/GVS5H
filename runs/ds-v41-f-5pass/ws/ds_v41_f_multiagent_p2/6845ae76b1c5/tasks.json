@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation of viable approaches (wavelet matrix + block decomposition)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement numpy block-decomposition solution with wavelet matrix for partial rows",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute full-row cumulative array P using O(N+nb log N) block updates",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify on Sample 1 and Sample 2 (both PASSED)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Stress test and tune BL for N=1e5, K=1e4",
+    "status": "done",
+    "result": ""
+  }
+]

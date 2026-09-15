@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N and string A; compute original final bit via iterative majority reduction (group triples, shrink by factor 3).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Bottom-up DP over levels: leaf g = 1; internal node recurrence g = sum of two smallest of the three children's per-child costs d_i (d_i = g_i if child original equals node original else 0) \u2014 this equals (sum d_i) \u2212 max(d_i).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Reduce level by level (discarding previous level) until one root cost remains; print g[0].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate against Sample 1 (\"010011101\" -> 1) and Sample 2 (\"000\" -> 2), plus edge cases (\"111\" -> 2, \"010\" -> 1, \"000000000\" -> 4); confirmed DAG/DP exactness and O(3^N) performance for N=13.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Rejected the incorrect unconditional \"sum of two smallest child g_i\" formulation; adopted the correct d_i-based recurrence which passed all sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

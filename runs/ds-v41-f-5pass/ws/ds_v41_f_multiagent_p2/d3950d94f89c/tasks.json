@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Build adjacency list from edges and set up iterative DFS state carrying node, parent, depth, root distance, and inherited cur_start.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement rollback sliding window: maintain path_dist indexed by depth, last-occurrence array per value, compute new start = max(parent_ns, last[x]+1), set last[x]=dep, and restore on exit.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "At each node compute length = d - path_dist[ns] and node count = dep-ns+1, updating global best with length-max then count-min tie-breaking.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Ensure rollback correctness across branching subtrees (restore last[x] via exit frames) and cleanly handle first-time values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify edge cases: single-node paths (best initialized to [0,1]), repeated values along a chain (Example 2 -> [0,1]), and both provided examples (Example 1 -> [6,2]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirmed running-max constraint is monotonic and last[x]+1<=ns handles already-excluded duplicates without extra checks; path_dist remains valid for current path.",
+    "status": "done",
+    "result": ""
+  }
+]

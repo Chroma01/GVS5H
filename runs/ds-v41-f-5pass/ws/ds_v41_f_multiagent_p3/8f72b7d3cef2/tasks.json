@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Build max-Cartesian tree with monotonic stack and compute subtree sums S[u].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute g[u] (start can absorb at least one strictly smaller neighbour) and top[u] via pre-order with crossing condition S[c] > A[parent].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Answer = S[top[u]] if g[u] else A[u]; iterative O(N) solution using sys.stdin.buffer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verified against both public samples and tie-heavy cases; sample tests PASSED.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Coordinate-compress nums and initialize left/right frequency arrays, side lengths, and running sums of squared frequencies.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Sweep each possible middle index, moving nums[i] from the right side to the left side and computing x frequencies and pair counts for 0/1/2 copies of x on both sides.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Count all choices with k >= 2 using pair-category products.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the distinct-value pair formula excluding x and a given y using side length, sum of squared frequencies, and frequency of y.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Add valid k = 1 choices by looping over y != x for both left-supplies-x and right-supplies-x cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Accumulate the answer modulo 10^9 + 7 and verify against the provided examples.",
+    "status": "done",
+    "result": ""
+  }
+]

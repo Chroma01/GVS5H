@@ -1,0 +1,11 @@
+- **Core reduction:** For each middle value B, count ordered pairs (A, C) in S with A + C = 2B. The ordered count includes exactly one invalid self-pair (B, B), and every valid pair appears twice, so contribution is `(total - 1) // 2`.
+- **Parity split:** Let E[h] indicate 2h in S and O[h] indicate 2h+1 in S. Even-even pairs contribute `convE[B]`; odd-odd pairs contribute `convO[B-1]`. Thus `total = convE[B] + convO[B-1]`.
+- **NumPy path:** Build float indicator arrays for E and O, autocorrelate each by `rfft`, square the spectrum, inverse `irfft`, and round to int64. Pad convolution arrays to length `maxv + 1`, then compute `ce[vals] + co[vals - 1]` vectorized.
+- **FFT size:** Parity split halves the transform length. For an indicator of length L, convolution length is `2L - 1`; zero-pad to the next power of two.
+- **Precision:** Coefficients are at most about 500000. Double-precision FFT rounding is normally safe for binary indicators; `np.maximum(total - 1, 0)` also prevents negative artifacts.
+- **Fallback input:** If NumPy is unavailable or fails, parse with `split()` and choose between sparse enumeration and exact big-integer convolution.
+- **Sparse fallback:** Separate even and odd values. Enumerate unordered pairs within each parity; if their midpoint is in the set, it forms one fine triplet. Used when total same-parity pairs is at most 8 million.
+- **Big-integer fallback:** Pack each parity indicator into a Python integer in base `2^20`: coefficient h is represented by setting bit `20*h`. Squaring the integer gives exact convolution coefficients because all coefficients are below `2^20`.
+- **Coefficient extraction:** Product bytes are little-endian. For coefficient index t: if t is even, read 3 bytes at offset `5*(t//2)` and mask 20 bits; if t is odd, read 3 bytes at offset `5*(t//2)+2`, shift right 4, and mask. For each B, extract `ce[B]` and `co[B-1]`, then add `(sum - 1) >> 1`.
+- **Edge cases:** N < 3 returns 0. If one parity is empty, only the corresponding convolution is needed. Padding product bytes to the maximum queried index avoids bounds checks during extraction.
+- **Complexity:** NumPy path is roughly O(M log M) with M around 1e6. Sparse fallback is O(P) for P same-parity pairs. Big-integer fallback uses two multiplications of about 1.25 MB packed integers in the worst case.

@@ -1,0 +1,14 @@
+- **BFS-layer model:** A connected graph has a unique BFS layer sequence from vertex 1. Layer 0 is `{1}`; all later layers are nonempty. Edges may only be inside a layer or between consecutive layers. Every vertex in layer i>0 needs at least one neighbor in layer i-1. These conditions are also sufficient for exact BFS distances.
+- **Fixed layer sizes:** For ordered sizes `1, l_1, ..., l_D`, labels contribute `prod C(remaining, l_i)`. Edges inside layer size s contribute `(1+x)^{C(s,2)}`. Edges from previous size t to new size s with every new vertex having a parent contribute `((1+x)^t - 1)^s`.
+- **y-basis:** Put `y=1+x`. The factor becomes `y^{C(s,2)}(y^t-1)^s`. The final answer in x is `F(1+x)` where `F(y)` is the DP polynomial in y.
+- **Parity state:** Track `d = even_count - odd_count`. Start `(u=1,d=1,last_parity=0)`. Adding an even layer increases d by s; adding an odd layer decreases d by s. Valid final states have `u=N,d=0`.
+- **Degree bound:** In any balanced graph, the other `N/2-1` even-distance vertices are at distance at least 2 from vertex 1, so edges from vertex 1 to them are forbidden. Hence y-degree <= `E - (N/2-1)`. Use `K = E - N//2 + 2` interpolation points. This matches trailing zeros in samples.
+- **Group aggregation:** Instead of states `(u,d,p,last_size)`, use groups `(u,d,p)` with a vector over last_size. A transition adding size s sends all last_size contributions to one target vector position s:
+  `target_vec[s] += C(N-u,s) * sum_t vec[t] * base[t][s]`.
+  This greatly reduces modulo operations and state count.
+- **Reachable last sizes:** During group construction, maintain a bitmask of possible last sizes. Only those vector entries are inspected. Prune states with `abs(d) > remaining_vertices`.
+- **Evaluation DP:** For each point `z=0..K-1`, compute `base_by_s[s][t] = z^{C(s,2)}(z^t-1)^s mod P`, then run the scalar group DP. `z=1` is known to give 0 because `x=0` has no connected graph, so its DP is skipped.
+- **Interpolation:** Values at consecutive points `0..K-1` are converted to y-coefficients using Newton forward differences. Since `P > K`, all needed inverses exist.
+- **Final transform:** If `F(y)=sum a_k y^k`, then `G(x)=F(1+x)` has coefficients `b_m = sum_{k>=m} a_k C(k,m)`. Output `b_m` for `m=N-1..E`; coefficients with `m>=K` are zero by the degree bound.
+- **Implementation details:** Precompute binomials modulo P. Skip transitions whose label `C(N-u,s)` is 0 modulo P. Process groups in increasing `u`. Store transitions as flat target positions. Dot products are accumulated without intermediate modulo, then one modulo per transition.
+- **Complexity:** Groups are O(N^3) worst-case but small for N=30; transitions are a few thousand. For each of <=422 evaluation points, work is roughly transitions times possible last sizes (<=15), easily feasible in Python. Interpolation and final transform are O(K^2).

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: evaluate DP approaches and pitfalls.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement product-major DP with dp[parity][product] bitsets over alternating sums.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute the safe sum range as [-12 * len(nums), 12 * len(nums)], choose an offset, and create bit masks for shifting sums left or right while staying in range.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement transitions for each number: add it as a singleton subsequence, and extend existing states by multiplying the product, toggling parity, and shifting the sum bitset according to the current parity.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle multiplication by zero and products exceeding limit: zero always maps to product 0, and any product larger than limit should be discarded.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Maintain only non-empty states, optionally using active product lists or dictionaries to avoid scanning all products every iteration.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "After processing all numbers, scan products from limit down to 0 and return the first product whose bitset contains k in either parity; return -1 if none exists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Review zero-product, positive-product, and edge-case correctness.",
+    "status": "done",
+    "result": ""
+  }
+]

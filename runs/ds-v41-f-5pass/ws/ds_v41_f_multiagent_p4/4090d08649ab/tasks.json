@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the O(N) fixed-R last-occurrence sweep: S = sum_v max(0, last[v]-last[v-1]) with last[0]=0; on reading x at position R, subtract old contribs of x and x+1, set last[x]=R, add new contribs of x and x+1, then add S to answer. Handle x=N (no x+1), use old last before update.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate the implementation against samples (16, 23, 129) and confirm f(L,R) equals number of value-block starts.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Brief justification that f = #value-blocks = sum over v of indicator(v present, v-1 absent), matching the sweep identity.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Ensure 64-bit-safe totals and O(N) time/memory for N up to 3e5.",
+    "status": "done",
+    "result": ""
+  }
+]

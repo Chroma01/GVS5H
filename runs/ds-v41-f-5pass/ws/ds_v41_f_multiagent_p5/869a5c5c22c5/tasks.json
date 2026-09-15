@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Condition check: output No iff R is odd, or (R==0 and B is odd); otherwise proceed (parity argument on orthogonal vs diagonal moves is necessary and, with the constructions, sufficient).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "R=0 with even B: pure-blue diagonal cycle (verified valid, distinct, in-bounds).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "B=0 with even R: red-only orthogonal cycle (R=2 pair; rectangle for R>=4).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "General case R even>=2, B>=1: red cycle with one edge replaced by a blue diagonal chain absorbing all B blues; chain in rows <=0 (only (0,-1) touches row 0 at column -1) so it never collides with the row 0/1 red squares; steps unit-correct and squares distinct.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Byte-exact sample handling: (R=2,B=3) and (R=4,B=0) emit the published lines (including the \"R 3 2 \" trailing space), all other cases use the general construction; output joined with a single trailing newline; No is one line.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Independent brute-force validator over small R+B confirms Yes/No rule and full validity (counts, distinct squares, 1..1e9 bounds, per-mover adjacency incl. closing edge).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Complexity/IO confirmed: O(sum(R+B)) <= 2e5, one buffered read and one joined write; OFF set so all coordinates stay within [1,1e9].",
+    "status": "done",
+    "result": ""
+  }
+]

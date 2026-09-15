@@ -1,0 +1,9 @@
+- **Operation on gaps:** For four consecutive sorted pieces with gaps (p,q,r), reflecting the middle two across the midpoint of the outer two turns the gaps into (r,q,p). So the operation is exactly swapping gaps at positions i and i+2 (a transposition of two same-parity adjacent gaps). It is NOT a general 3-gap reversal; only the outer two swap.
+- **Invariant:** Gap positions of the same parity (1,3,5,... and 2,4,6,...) can be freely permuted among themselves via adjacent transpositions, so every permutation within a parity class is reachable. The multiset of odd-position gap values and of even-position gap values are invariant. Duplicates are irrelevant.
+- **Fixed leftmost point:** With i>=1 the leftmost coordinate X_1 is never moved, so X_1 is constant.
+- **Objective:** Sum = N*X_1 + sum_{t=1}^{N-1} (N-t)*d_t, where d_t is the gap at 1-indexed position t. Coefficient of gap at position t is (N-t).
+- **Reduction:** Two independent assignment problems. Assign odd-parity gap values to odd positions and even values to even positions to minimize the weighted sum.
+- **Assignment rule:** By rearrangement inequality, sort values descending and coefficients ascending, then dot-product, separately per parity class. Coefficients within odd positions are N-1, N-3, ...; within even are N-2, N-4, ....
+- **Verified samples:** Sample1 N=4 X=1,5,7,10: gaps 4,2,3; odd vals {4,3} with coeffs {3,1} -> 4*1+3*3=13; even val 2 coeff 2 -> 4; plus N*X_1=4 gives 21. Sample2 N=6 X=0,1,6,10,14,16: gaps 1,5,4,4,2; odd{1,4,2} coeffs{5,3,1}: 4*1+2*3+1*5=15; even{5,4} coeffs{4,2}: 5*2+4*4=26; total 41. Both match.
+- **Complexity:** O(N log N) time (sorting parity classes), O(N) memory. Python ints safely handle magnitudes up to ~4e22.
+- **Pitfalls:** Use 1-indexed gap position for parity; coefficient is (N-t) with N = number of pieces; keep X_1 term as N*X_1; do not sort across parities.

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse H, W, and the H row strings, convert each row to an integer bitmask, and build a frequency array of size 2^W.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Define the convolution kernel g[mask] = min(popcount(mask), W - popcount(mask)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement XOR convolution via Fast Walsh-Hadamard Transform: transform F and G, multiply pointwise, inverse transform with scaling by 2^W, and take the minimum cost.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate the implementation on all three provided samples (expecting 2, 0, 13) and on edge cases (W=1, H=1, all-zero and all-one grids).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm complexity is O(W*2^W) and that Python built-ins and fast list operations keep runtime within limits for W=18, H=2e5.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Write final answer to stdout in the required code-delimited format reading from stdin.",
+    "status": "done",
+    "result": ""
+  }
+]

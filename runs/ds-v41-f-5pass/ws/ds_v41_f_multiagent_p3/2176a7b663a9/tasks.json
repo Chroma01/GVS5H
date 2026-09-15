@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input (N, weights, intervals, Q, queries) and build coordinate-sorted arrays: one sorted by R with prefix-min weights, one sorted by L with suffix-min weights.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(log N)-per-query case analysis: direct edge if disjoint; else base W_s+W_t plus min of (common-neighbor via left/right, cross left-right and right-left), returning -1 if no valid candidate.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify against both sample inputs (hand-traced: 11/6/-1 and 157/124/-1/114/114) \u2014 all match.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Ideation: exploit interval-order structure (2+2-free \u21d2 no induced P5 \u21d2 optimal path is an induced path of \u22643 edges) to derive the prefix/suffix-min formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Reasoning audit: confirm positive weights \u21d2 min-weight path is chordless; common neighbor cannot straddle; same-side length-3 cases are dominated by a cheaper common-neighbor path; cross-case intermediates are automatically adjacent and distinct; -1 iff disconnected.",
+    "status": "done",
+    "result": ""
+  }
+]

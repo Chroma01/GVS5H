@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate reduction to maximizing kept vertices and per-center capacities.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution using direct per-center sorting: read input, build adjacency and degrees, for each vertex collect positive capacities deg(neighbor)-1, sort descending, evaluate 1 + k*(capacity+1), track max kept, and print N - max_kept.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify edge cases: paths, stars, all vertices as centers, x/y positive, minimum 3-vertex snowflake.",
+    "status": "done",
+    "result": ""
+  }
+]

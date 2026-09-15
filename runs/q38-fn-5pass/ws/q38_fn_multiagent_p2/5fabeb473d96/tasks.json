@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: linearity over edges and prefix-sum approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive and document the edge contribution probabilities: `i = v` gives `1`, `u < i < v` gives `1/i`, `i = u` gives `1 - 1/u`, `2 <= i < u` gives `2(i-1)/(i(i+1))`, and `i > v` gives `0`; multiply by `(N-1)!`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute `(N-1)! mod 998244353` and modular inverses up to `N+1`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Build prefix arrays for `sum A_i / i` and `sum A_i * 2(i-1)/(i(i+1))` modulo `998244353`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement the `O(1)` query formula separately for `u = 1` and `u >= 2`, using prefix differences and handling negative modulo values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate on the samples and edge cases such as `N = 2`, `u = 1`, and adjacent vertices `v = u + 1`, ensuring efficient input/output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Optionally brute-force validate derived probabilities for very small `N` before final implementation.",
+    "status": "done",
+    "result": ""
+  }
+]

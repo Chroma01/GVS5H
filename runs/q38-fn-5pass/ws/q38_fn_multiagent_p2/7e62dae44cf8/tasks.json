@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select min-heap boundary expansion as the primary method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse input, convert starting coordinates to zero-based indexing, and store the grid efficiently.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Initialize current strength from the starting cell, mark it visited, and push its unvisited neighbors into a min-heap keyed by strength.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the main expansion loop: pop the weakest frontier cell, skip if already visited, absorb it only if `current_strength > X * strength`, update strength, mark visited, and push unvisited neighbors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Ensure duplicate heap entries are safely ignored and use integer arithmetic for the strict inequality.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Print the final strength and verify against sample cases and edge cases.",
+    "status": "done",
+    "result": ""
+  }
+]

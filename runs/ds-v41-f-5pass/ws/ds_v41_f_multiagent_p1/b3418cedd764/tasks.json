@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Detect cycles via indegree peeling and establish children-before-parents processing order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N*M) bottom-up DP F_i(k)=prod_children prefixsum(F_c)(k), folding child arrays into the parent and freeing them to bound memory.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement per-component aggregation: H_v for cycle nodes over non-cycle children, then sum_{k=1..M} prod_{cycle j} H_j(k); multiply across components; handle self-loops and direction correctly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Passed all 3 provided public samples (6, 2025, 10010).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Finalize stdin/stdout solution with modular arithmetic mod 998244353 (numpy fast path with pure-Python fallback).",
+    "status": "done",
+    "result": ""
+  }
+]

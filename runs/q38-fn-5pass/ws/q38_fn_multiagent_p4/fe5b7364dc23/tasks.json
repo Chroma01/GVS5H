@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the prefix-sum moment solution in Python with stdin/stdout handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute binomial coefficients C[n][k] for 0 <= k <= n <= K modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Initialize prefix=0, S[0]=1, S[1..K]=0, and ans=0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each A_i, update prefix modulo 998244353, compute P^0..P^K with P^0=1, query the contribution using alternating signs, then update S[q] with P^q.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run sample tests and verify outputs 75, 0, and 428633385.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If sample tests fail, switch to the DP ending-subarray moments approach.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: derive reduction to shortest common supersequence of the two forced chains R and B; SCS = |R|+|B|-LCS.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement parsing, inverse permutations, backward cycle enumeration from X, and reachability check (occupied box off X's cycle \u21d2 -1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build red chain R and blue chain B as cycle[d], cycle[d-1], ..., cycle[1] with d = farthest occupied distance (excluding X); handle empty chains and balls already at X.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute LCS(R,B) via mapping R to indices and strict LIS over B's mapped indices (bisect_left); output len(R)+len(B)-LCS.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "All four public samples verified: 4, 0, -1, 8.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Stress-test against brute-force BFS over small cases to confirm the SCS reduction and implementation; sample tests passed.",
+    "status": "done",
+    "result": ""
+  }
+]

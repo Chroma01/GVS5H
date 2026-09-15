@@ -1,0 +1,13 @@
+- **Problem:** choose exactly K of M directed edges to weight 1 (rest 0); maximize the shortest 1→N distance D. N≤30, M≤100, multi-edges allowed.
+- **Upper bound:** weighted dist ≤ L = unweighted shortest path length, since that path has L edges each weight ≤1. L≥1 (N≠1, reachable).
+- **Exactly K vs ≤ K:** raising an edge weight never lowers any distance, so any assignment with k≤K edge-ones extends to exactly K; feasibility is monotone. Answer = max D with K(D) ≤ K, where K(D)=min #edge-ones to force dist ≥ D.
+- **Labeling characterization:** dist ≥ D iff integer potentials exist with p(1)=0, p(N)=D, p(v) ≤ p(u)+1 for all edges; needed ones are exactly edges with p(v)=p(u)+1. So K(D)=min Σ_e [p_v=p_u+1].
+- **LP dual:** K(D) = max over nonneg integer flows h from 1 to N of D·F − Σ_e max(0,h_e−1), F=flow value. First use of an edge free, each later use costs 1.
+- **Marginals:** convex-cost min flow; c_i = successive shortest residual path costs, nondecreasing, c_1=0. Then K(D)=Σ_{c_i<D}(D−c_i).
+- **Algorithm:** SSP, augment 1 unit at a time. Residual arcs: forward cost 0 if h_e=0 else 1; backward cost −1 if h_e≥2 else 0. Bellman-Ford each step (negative backward arcs). Record c until c≥L or K+1 recorded.
+- **Truncation safety:** after collecting c_1..c_{K+1}, any D>c_{K+1} forces ≥K+1 terms each ≥1 → infeasible; for D≤c_{K+1} the prefix is exact. If stopped at c≥L, every marginal <L was already recorded (break precedes append), so K(D) is exact for all D≤L. Hence maxD = marginals[-1] if truncated else L.
+- **maxD never exceeds L:** c_{K+1}>L is impossible because true K(c_{K+1}) would be ∞ (target above L) yet equals the finite prefix sum over ≤K terms.
+- **Cross-check harness (design):** enumerate all C(M,K) subsets, BFS the weighted graph, take the max; compare with the flow output for N≤6, M≤8 including multi-edges and duplicated 1→N edges. No counterexample was found.
+- **Cross-check results (all match):** samples give 1, 2, 0. Single path 1→2→3 (L=2), K=1 → 1; diamond {1→2→4, 1→3→4}, K=1 → 0, K=2 → 1; three parallel 1→2 edges, K=2 → 0, K=3 → 1; sample-2 graph K=1 → 1; 5-vertex {1→2→5, 1→3→4→5, 1→4→5}, K=2 → 1; 4-vertex with extra edge 2→3, K=2 → 1. Marginals >1 occur (diamond c_3=2), confirming truncation logic is exercised.
+- **Edge cases:** multi-edges are independent edges; K≥1 guarantees D=0 is feasible; the d[target]==INF break is dead code (forward arcs always exist) but harmless.
+- **Complexity:** ≤ K+1 augmentations, Bellman-Ford O(N·M) each → trivially fast for the constraints.

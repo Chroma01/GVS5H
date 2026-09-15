@@ -1,0 +1,13 @@
+- **Reduction:** For fixed deletion i, answer = max prefix length p such that at least k remaining words share p. In trie terms: deepest node whose post-deletion count >= k.
+- **Per-node validity by count c (trie node counts word-indices, duplicates counted):** c < k never valid; c > k valid for every deletion; c == k valid exactly for words NOT in its subtree (i.e. terminal position outside the node's Euler interval).
+- **Global part:** base = max depth among nodes with c > k (0 if none). Applies to every index; final answer = max(base, best c==k node not on the word's path).
+- **Path/subtree equivalence:** "w not in subtree of node" == "node not ancestor-or-self of w's terminal" == terminal tin outside [L,R].
+- **Euler trick (no segment tree needed):** Assign tin only to terminal nodes via iterative preorder; subtree terminals stay contiguous. For each c==k node with interval [L,R], it contributes depth to tins < L and tins > R. Encode B[L]=depth (suffix-max gives all positions < L) and C[R]=depth (prefix-max gives all positions > R). Point answer = max(suf[t+1], pre[t-1]).
+- **Complexity:** O(total chars + trie nodes + distinct words); memory O(nodes). Well within limits (sum lengths <= 1e5).
+- **k=1:** falls out naturally (c>1 nodes give base, c==1 nodes give unique-prefix-of-others depths). No special case needed beyond n==k.
+- **n==k:** return all zeros immediately (remaining n-1 < k for every removal).
+- **Duplicates:** share one terminal node/tin, hence identical answers; correctly, removing one duplicate still leaves the others.
+- **Prefix-of-another words:** terminal can be an internal node; subtree interval still correct (its own tin is the minimum of its subtree).
+- **Iterative everywhere:** avoid recursion; depth can reach 1e4. Bottom-up L/R works because a child index always exceeds its parent (creation order).
+- **Pointers:** Avoid range-max segment trees (overkill); complement-of-subtree decomposes into a prefix and a suffix, both handled with suffix/prefix max arrays.
+- **Verified:** Example 1 -> [3,4,4,3,4]; Example 2 -> [0,0,0]; plus ad-hoc cases for c==k exclusion, k=1, duplicates, prefix words, and n==k.

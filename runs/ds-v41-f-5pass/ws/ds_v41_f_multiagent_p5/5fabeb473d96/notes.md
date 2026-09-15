@@ -1,0 +1,10 @@
+- **Problem restated:** sum over all (N-1)! parent sequences P of dist(u,v) in T(P), modulo 998244353. Number of sequences = prod_{i=2..N}(i-1) = (N-1)!.
+- **Linearity over edges:** dist(u,v) = sum of A_i over edges i on the u-v path. So total = sum_i A_i * c_i where c_i = #sequences with edge i (vertex i-parent) on path. Equivalently total = (N-1)! * sum_i A_i * p_i, p_i = Pr[edge i on path] under uniform P.
+- **Subtree criterion:** edge i on u-v path iff exactly one of u,v lies in subtree(i). subtree(i) contains i and only vertices > i as possible descendants.
+- **Ancestor probabilities (random recursive tree):** for x>i, Pr(x in subtree(i)) = 1/i. For i<u<v, Pr(both u,v in subtree(i)) = 2/(i(i+1)) (joint, correlated). Verified by hand: i=2,u=3,v=5 gives 1/2 * 2/3 = 1/3 = 2/(2*3).
+- **Edge probability p_i (with u<v):** i<u: exactly-one = 2/i - 2*2/(i(i+1)) = 2(i-1)/(i(i+1)); i=u (only i<=N, and no edge if u=1): v not in subtree -> (u-1)/u; u<i<v: u never in subtree -> 1/i; i=v: 1; i>v: 0.
+- **Query formula:** if u==1: E = sum_{i=2..v-1} A_i/i + A_v. Else E = sum_{i=2..u-1} A_i*2(i-1)/(i(i+1)) + A_u(u-1)/u + sum_{i=u+1..v-1} A_i/i + A_v. Answer = E * (N-1)! mod p.
+- **Implementation:** linear inverse table up to N+1, prefix sums pref1 (A_i/i) and pref2 (A_i*2(i-1)/(i(i+1))), factorial (N-1)!, then O(1) per query. 0/1-indexed carefully: A size N+2, A[1]=0 unused; pref2[u-1] handles i in [2,u-1]; pref1[v-1]-pref1[u] handles (u,v).
+- **Modular notes:** A_i may exceed MOD (up to 1e9 > 998244353) so reduce on read; N<MOD so inverses exist; negative intermediate handled by Python %.
+- **Verified by hand:** sample 1 (2,3), sample 2 (100); brute-force N=4 cases: (u=2,v=4) E=11/6*6=11, (u=3,v=4) E=2*6=12 both match enumeration.
+- **Complexity:** O(N+Q) time, O(N) memory. No recursion.

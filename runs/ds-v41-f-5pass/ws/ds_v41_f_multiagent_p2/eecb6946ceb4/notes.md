@@ -1,0 +1,7 @@
+- **Problem:** Count triplets A < B < C from a set S of distinct positive integers such that A + C = 2B (i.e., B is the arithmetic mean of A and C).
+- **Core idea:** For each possible middle element B in S, count the number of pairs (A, C) in S with A + C = 2B. This is exactly the value of the self-convolution of the indicator vector of S at index 2B.
+- **Convolution definition:** Let f[x] = 1 if x in S, else 0. Let conv[s] = sum_{x+y=s} f[x] f[y]. Then conv[s] is the number of ordered pairs (x, y) in S with x + y = s.
+- **Counting formula:** For a fixed B in S, the ordered pairs with sum 2B include the self-pair (B, B) exactly once. All other pairs come in ordered pairs (A, C) and (C, A). Thus the number of fine triplets with middle B is (conv[2B] - 1) // 2. Sum this over all B in S.
+- **Implementation details:** Compute L = smallest power of two >= 2 * max(S) + 1 to avoid cyclic wrap in FFT. Use numpy.fft.rfft/irfft when available for speed; otherwise fall back to a pure-Python NTT modulo 998244353. Since the maximum possible convolution coefficient is at most N <= 10^6, which is less than 998244353, the NTT result is exact without modular wrap.
+- **Complexity:** Time O(L log L) with L <= 2^21, memory O(L). The numpy path comfortably handles N, max(S) up to 10^6.
+- **Edge cases:** N = 1 gives answer 0. All values distinct ensure the only self-pair is (B, B). Fast input parsing via sys.stdin.buffer.read().split() handles large inputs.

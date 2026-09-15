@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: reduce to sliding-window median costs plus k non-overlapping interval selection.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement sliding-window median/cost structure supporting add/remove and returning min operations to make current window equal.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute `cost[s]` for every valid window start `s`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement prefix-min DP selecting `t` non-overlapping windows with starts at least `x` apart.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle boundaries, negative numbers, duplicates, even `x`, and large integer costs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify on examples and edge cases and report a SAMPLE TESTS verdict.",
+    "status": "done",
+    "result": ""
+  }
+]

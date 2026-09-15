@@ -1,0 +1,9 @@
+- **Core transformation:** Let `P` be prefix sums of `nums` and `C` be prefix sums of `cost`. For boundaries `0 = b0 < b1 < ... < bm = n`, segment `t` contributes `(P[b_t] + k*t) * (C[b_t] - C[b_{t-1}])`. The ordinal part satisfies `sum_t t * (C[b_t] - C[b_{t-1}]) = sum_t (C[n] - C[b_{t-1}])`, so the total cost becomes a sum over consecutive boundaries.
+- **Edge weight:** A transition from previous boundary `i` to next boundary `j` has transformed weight `P[j] * (C[j] - C[i]) + k * (C[n] - C[i])`. This removes the explicit segment-count dimension.
+- **DP definition:** `dp[0] = 0`, and for each boundary `j`, `dp[j] = min(dp[i] + P[j] * (C[j] - C[i]) + k * (C[n] - C[i]))` over all `i < j`. The answer is `dp[n]`.
+- **Correctness intuition:** After the transformation, the contribution associated with a cut at boundary `i` is fixed as `k * (C[n] - C[i])` and does not change when the partition is extended later. Therefore an optimal prefix partition can be reused independently of future cuts.
+- **Implementation details:** Compute `P` and `C` in one pass, store `total_cost = C[n]`, initialize `dp` with a large integer, and run the `O(n^2)` transition. Python integers safely handle the maximum possible values.
+- **Example checks:** For `nums = [3,1,4]`, `cost = [4,6,6]`, `k = 1`, the DP gives `110`. For the second example, the optimal boundaries `0, 4, 7, 9` give transformed edge weights `581 + 236 + 168 = 985`, matching the expected output.
+- **Edge cases:** `n = 1` works directly: `dp[1] = P[1] * C[1] + k * C[1] = (nums[0] + k) * cost[0]`. Empty input is outside constraints but the code would return `0`.
+- **Complexity:** Time `O(n^2)`, memory `O(n)`. With `n <= 1000`, this is comfortably fast in Python.
+- **Pitfalls:** Use prefix sums through the right endpoint, not subarray sums of `nums`; do not forget that the ordinal term uses `C[n]`, not `C[j]`; off-by-one errors in prefix indexing are the main risk.

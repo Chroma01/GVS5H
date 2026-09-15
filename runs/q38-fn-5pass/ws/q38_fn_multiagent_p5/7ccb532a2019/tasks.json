@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: model each target frequency as a binary present/absent choice per letter with adjacent forward-change savings.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement frequency counting and the fixed-f two-state DP over the alphabet, including node costs for absent/present and savings `min(max(c_i - f*y_i, 0), max(f*y_{i+1} - c_{i+1}, 0))` with no wrap from `z`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Enumerate all target frequencies f from 1 to max(cnt) and take the minimum DP cost.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test on the provided examples and edge cases: already-good strings, one dominant letter, large two-letter imbalances, all distinct letters, and boundary behavior around `z`; sample-tests verdict pass.",
+    "status": "done",
+    "result": ""
+  }
+]

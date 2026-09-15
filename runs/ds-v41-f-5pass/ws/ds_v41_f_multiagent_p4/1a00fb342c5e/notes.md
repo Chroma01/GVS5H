@@ -1,0 +1,9 @@
+- **Problem restated:** Given N, M and edges (X_i,Y_i,Z_i), find non-negative integers A_v with A_X XOR A_Y = Z for all i, minimizing sum of A. Output -1 if impossible.
+- **GF(2) structure:** For each bit k independently, the equations become linear over GF(2) (right-hand side = k-th bit of Z_i), and the cost is 2^k times the count of vertices whose k-th bit is 1. Bits are fully independent, so minimize per bit.
+- **Component + two choices:** Build graph with weighted edges. Within a connected component, fixing one root value determines all others via XOR offset. For a given bit, the two root-bit choices give complementary 1-counts: with root bit b, ones in A = (count of offset bit =1) if b=0, else (comp_size - that count). Pick whichever is smaller -> root bit set iff `2*cnt > comp_size`.
+- **Consistency check:** During traversal verify every edge satisfies offset[u] XOR offset[v] == Z. A violation anywhere (cycle inconsistency or self-loop with Z!=0) -> print -1.
+- **Offset computation:** BFS/iterative-DFS from each unvisited vertex; offset[root]=0, offset[v]=offset[u] XOR Z. Then A[v] = root_value XOR offset[v]. No recursion (avoid limit); frontier via deque.
+- **Bit range:** Z <= 1e9 < 2^30, so bits 0..29 suffice. Higher bits only force equality within components, and choosing them 0 is optimal.
+- **Complexity:** O((N+M) + 30*N) time, O(N+M) memory. Counting per component: looping 30 bits x component size sums to 30*N total.
+- **Edge cases:** M=0 -> all zeros. Self-loops (X=Y) require Z=0. Multi-edges consistent automatically; every edge is checked from the endpoint processed after both are assigned (so all edges get checked).
+- **Implementation details:** Use forward-star arrays (head/nxt/to/wt) sized 2M to avoid per-vertex list overhead. Read all input via sys.stdin.buffer. Append edges both directions. Output space-separated ans[1:].

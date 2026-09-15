@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the structural reduction: degree-4 vertices of any alkane form a connected subtree S inside the forest of original vertices with degree at least 4; maximizing alkane size is equivalent to maximizing |S| under selected-degree <= 4, and the answer is 3|S| + 2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the internal-set reduction DP as described, including iterative traversal, top-four child aggregation, and final answer computation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on samples and edge cases: no degree>=4 vertex, single high-degree star, high-degree star with more than four high-degree neighbors, chain of high-degree vertices, N < 5, and large-path/large-star performance.",
+    "status": "done",
+    "result": ""
+  }
+]

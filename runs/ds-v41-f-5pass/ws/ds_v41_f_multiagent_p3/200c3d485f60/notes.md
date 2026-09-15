@@ -1,0 +1,11 @@
+- **Problem:** count length-`n` arrays with entries in `[1,m]` having exactly `k` indices with `arr[i-1]==arr[i]`. Return mod `1e9+7`.
+- **Closed form (confirmed):** `ans = C(n-1, k) * m * (m-1)^(n-1-k) mod MOD`.
+  - Reasoning: pick which `k` of the `n-1` adjacent gaps are equalities. These split the array into `n-k` maximal runs; first element `m` choices, each inequality gap `m-1` choices, equality gaps add no new choice. Position of equal gaps does not affect the count, so only `C(n-1,k)` matters.
+- **Implementation:** precompute factorials and inverse factorials up to `n` (need `n-1` at most, `n` is safe), `comb` uses Fermat inverse via `pow(fact[N], MOD-2, MOD)`. Exponent via builtin `pow(base, exp, MOD)` — O(log exp).
+- **Edge cases verified:**
+  - `n=1`: exponent `0`, `C(0,0)=1`, answer `m`. Correct.
+  - `m=1`: `(m-1)=0`; `pow(0,0,MOD)=1` in Python, so when `n-1-k=0` answer is `1` (all-same array), else `0`. Correct.
+  - `k>n-1` or `k<0`: return `0` (guard added).
+  - exponent `0`: `pow(x,0)=1`, fine.
+- **Complexity:** O(n) time and memory per call (factorial tables), acceptable for `n<=1e5`.
+- **Samples:** `(3,2,1)->4`, `(4,2,2)->6`, `(5,2,0)->2`, all match.

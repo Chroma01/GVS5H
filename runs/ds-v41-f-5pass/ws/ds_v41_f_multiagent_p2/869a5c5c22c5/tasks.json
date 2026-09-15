@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Feasibility rule: print \"No\" iff R%2==1 or (R==0 and B%2==1); else \"Yes\" (justified: each red piece supplies exactly one parity-flipping edge, so R must be even; R=0 reduces to a bipartite blue graph needing even B).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Red orthogonal cycle generator for even N (n=2 special; n>=4 snake), all cells distinct with valid consecutive and wrap adjacency.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Blue chain mapped by (x,y)->(x+y+1,x-y) (injective), odd/even B variants disjoint from red intermediates and from R1/R2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Mixed sequence R1, blue chain, R2, red intermediates (side chosen by B parity); edges R1->B1, Bk->R2, R2->inter, inter_last->R1 all verified legal.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "R=0 all-blue cycle via orthogonal cycle mapped through T (diagonal moves), requires even B.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "OFFSET=1e6 shift keeps coordinates in [1,1e9]; O(sum(R+B)) I/O.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "main() reads stdin and writes only the answer to stdout, \"Yes\"/placement or \"No\".",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Sample reproduced exactly (special-judge safe); general construction independently verified valid for all parity branches; SAMPLE TESTS PASSED.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse intervals into (index, l, r, w), sort by right endpoint, build right-endpoint array for binary search.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute p_i = count of intervals with right endpoint strictly less than l_i via bisect_left (strict, exclude r == l).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement exact-count layer DP j=1..4 storing (best weight, lex-smallest sorted index tuple); transition max(skip, take current + best-(j-1) from prefix p_i); compare tuples only on equal weight.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Final answer: compare exact counts 0..4, pick max weight then lex smallest tuple (shorter-array rule).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm Examples 1 and 2 run to [2,3] and [1,3,5,6].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Fuzz against brute-force oracle (20000 random cases + targeted edge cases): no mismatches, lex tie-break verified.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Confirm old formula (M+base+o//2)%2 fails on k>0 states (e.g. {P3,I,I,I} true W=1, formula 0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove odd-N rule: final E_final=a(N\u2212a) is always even, so Aoki wins iff M odd.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive even-N rule H: Aoki wins iff (k>0) OR (k==0 AND (M+base+o//2) odd), with o=#odd-size comps, k=#odd-size comps with size>1, base=#even-size comps with both parts odd.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Hand-verify rule H on ~25 small even-N states ({I^4},{K2,I,I},{K2,K2},{K2,K2,I,I},{K22,I,I},{K22,K2},{(2,2,1),I,I},{(2,4,1),I,I},{P3,I},{P3,I^3},{P3,I^5},{P3,P3},{P3,P3,K2},{P3,K2,I},{(2,3,f),I},{(2,3,0),I,I,I},{(1,2,0),(1,2,0),I,I},{(2,3,0),I,(2,2,1)}, etc.) \u2014 all consistent; no k>0 P-position found.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement final O(N+M) solution (BFS 2-colour, count parts/edges per component, apply H, print Aoki/Takahashi) \u2014 replace the debug verifier entirely.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run all 3 samples; verify outputs Aoki/Takahashi/Aoki; ensure no stray debug output.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Optional self-check: include a tiny offline brute-force (N\u22648) as a separate guarded block (not executed on real input) to reconfirm H; if any mismatch appears, report the minimal counterexample instead of finalizing.",
+    "status": "pending",
+    "result": ""
+  }
+]

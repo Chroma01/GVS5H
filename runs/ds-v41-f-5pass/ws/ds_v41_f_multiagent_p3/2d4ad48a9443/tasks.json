@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement reverse + two-pointer + monotonic deque `(value, count)` approach computing cost = sum_suffix_max - sum_window, shrinking left while cost > k, summing `right - left + 1`; verified examples give 17 and 12.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Test edge cases: n=1, strictly increasing, strictly decreasing, all equal, k=1e9, and large n for O(n) performance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Integrated into the provided `Solution` class method signature as a single self-contained function.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verified alternative approaches (two-stack aggregate, segment-tree-over-left-endpoints) unnecessary since deque solution is correct and O(n).",
+    "status": "done",
+    "result": ""
+  }
+]

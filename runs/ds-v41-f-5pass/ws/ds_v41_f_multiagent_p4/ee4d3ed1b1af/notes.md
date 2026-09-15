@@ -1,0 +1,10 @@
+- **Structure:** p has exactly two `*`, so `p.split('*')` yields exactly three literals A, B, C. A match is `A + u + B + v + C` inside a contiguous substring; the substring spans from A's start (if A nonempty) to C's end (if C nonempty).
+- **Boundary rules:** if A empty, minimal start = B's start (or C's start when B also empty, or 0 only when all empty). if C empty, minimal end = B's end (or A's end when B also empty). Empty wildcard matches zero chars, so these give the tightest bounds.
+- **Case split by emptiness (8 cases):** all empty → 0. Exactly one nonempty → its length if that literal occurs, else -1. A&C with B empty → for each A occurrence take earliest C at/after A_end. B&C with A empty → for each B occurrence take earliest C after B_end, start = b. A&B with C empty → for each B occurrence take latest A ending ≤ b, end = b+lb. All three nonempty → for each B occurrence take latest A ending ≤ b and earliest C starting ≥ b+lb.
+- **Helpers:** `nextC[x]` = earliest C start ≥ x (suffix-min array over start indices); `bestAend[x]` = largest A end ≤ x (prefix-max with n+1 size). Both O(n) build. Use integer INF=10**15, not float.
+- **Why iterating over B suffices (all three nonempty):** for fixed b the best A and best C choices are independent, so min over b equals the global optimum; any valid triple's length is ≥ the f(b) computed for its b.
+- **Why KMP:** need all overlapping occurrence start indices (e.g. "aa" in "aaa"), so KMP with `j = lps[j-1]` on match. Z-algorithm would also work.
+- **Key correctness check (sample 2):** s="baccbaadbc", p="cc*baa*adb": A at 2 (ends 4), B at 4 (ends 7), C="adb" at 6 — but 6 < 7 so C overlaps B; nextC[7]=INF → -1. Must reject overlapping segments.
+- **Verified samples:** "ba*c*ce"/"abaacbaecebce" → 8 (A@5,B@8,C@11); "*adlogi*" → 6; "**" → 0.
+- **Complexity:** O(n + |p|) time and O(n) space; handles n=1e5 easily.
+- **Pitfalls handled:** nextC/bestAend sized n+1 (index n valid, C start needs room so nextC[n]=INF when lc>0); A_end = a+la may equal b (adjacent, allowed); empty-substring answer 0 only for "**".

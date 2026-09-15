@@ -1,0 +1,9 @@
+- **Reduction:** For a substring ending at nonzero digit d, write its value as V = 10Q + d, where Q is the integer formed by the preceding part. Then d | V iff d | 10Q iff (d / gcd(d,10)) | Q. Let m = d / gcd(d,10).
+- **Moduli mapping:** d in {1,2,5} -> m=1; d in {3,6} -> m=3; d=4 -> m=2; d=7 -> m=7; d=8 -> m=4; d=9 -> m=9. Digit 0 is never a valid last digit and is skipped for counting.
+- **DP state:** For each modulus m, cnt_m[r] is the number of suffixes (including the empty suffix) of the current prefix whose integer value is congruent to r modulo m. Initial state: cnt_m[0] = 1 for all m.
+- **Transition:** At position j with digit d, if d != 0 add cnt_m[0] to the answer using the mapped m. Then update every cnt_m: new[(10*r + d) % m] += old[r], and new[0] += 1 for the new empty suffix. For m=1 this reduces to cnt1[0] += 1.
+- **Complexity:** O(n * (1+2+3+4+7+9)) = O(26n) time, O(1) extra space. n <= 1e5, so about 2.3M inner loop iterations.
+- **Implementation details:** For m=2, (10r+d)%2 = d%2, so new[d&1] = sum(old), and new[0] += 1. For m=3, 10%3=1; m=4, 10%4=2 (use &3); m=7, 10%7=3; m=9, 10%9=1. m=1 is a scalar incremented by 1 each character.
+- **Leading zeros:** Handled naturally, because appending digits computes the numeric value and leading zeros vanish. The empty Q represents a single-digit substring and is the empty suffix with value 0.
+- **Edge cases:** Strings with zeros are fine; substrings ending in '0' are ignored. Single nonzero digit contributes 1. Answer can reach n(n+1)/2 ~ 5e9, which Python int handles.
+- **Verification:** Manually traced "12936" -> 11, "1010101010" -> 25, and checked small cases "04" -> 2, "14" -> 2, "24" -> 3. All match expected results.

@@ -1,0 +1,11 @@
+- **Validation result:** The current implementation passes the provided examples and the checked edge cases. No failing case was found, so no functional fix was required.
+- **Example checks:** For `m=2, n=2, k=2`, total pair distance is `8` and multiplier is `C(2,0)=1`, returning `8`. For `m=1, n=4, k=3`, total pair distance is `10` and multiplier is `C(2,1)=2`, returning `20`.
+- **Edge case k=2:** The multiplier is `C(N-2,0)=1`, so the answer is exactly the total Manhattan distance over all unordered cell pairs. The factorial path also handles this correctly.
+- **Edge case k=m*n:** The multiplier is `C(N-2,N-2)=1`, corresponding to the single full-board arrangement. The implementation returns the total pair distance.
+- **Edge case one-dimensional grids:** If `m=1`, the row contribution is zero because `line_pair_sum(1)=0`. If `n=1`, the column contribution is zero. The remaining one-dimensional contribution is computed correctly.
+- **Minimal grid:** For `m*n=2`, `top=0`. The factorial arrays have length `1`, inverse factorial computation is valid, and `C(0,0)=1` is returned correctly.
+- **Invalid k guard:** If `k < 2` or `k > m*n`, the guard returns `0` before factorial allocation. This also avoids negative list sizes for degenerate invalid inputs.
+- **Formula correctness:** By linearity, each unordered cell pair contributes its Manhattan distance once for every arrangement containing both cells. That count is `C(m*n-2, k-2)`.
+- **Distance decomposition:** Row contribution is `n^2 * sum_{d=1}^{m-1} d*(m-d)`. Column contribution is `m^2 * sum_{d=1}^{n-1} d*(n-d)`. The closed form `L*(L-1)*(L+1)//6` is exact before modulo.
+- **Modular arithmetic:** Since `m*n <= 1e5 < MOD`, factorials up to `m*n-2` are invertible modulo `1e9+7`. Fermat inverses are valid.
+- **Complexity:** Time is `O(m*n)` due to factorial precomputation, and memory is `O(m*n)`, both within the constraint `m*n <= 1e5`.

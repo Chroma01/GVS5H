@@ -1,0 +1,14 @@
+- **Problem model:** Graph is bipartite (no odd cycle). A legal move adds a missing edge between two vertices that end up on opposite sides of some bipartition. Terminal position is a complete bipartite graph, so the total number of moves of any maximal play is `T = A*(N-A) - M`, where `A` is the final size of one side. First player (Aoki) wins iff `T` is odd.
+- **N odd:** `A*(N-A)` is always even, so `T ≡ M (mod 2)` for every reachable `A`. Winner fixed: Aoki iff `M` odd. (Sample 3 fits: N=9, M=5 -> Aoki.)
+- **N even:** `A*(N-A) ≡ A (mod 2)`, so `T ≡ A + M (mod 2)`. Only the parity of final `A` matters.
+- **Component bipartitions:** For each connected component the bipartition `(a_i,b_i)` is fixed up to global flip. `A` parity `= P + (#odd components flipped) (mod 2)`. Flipping an even component changes nothing mod 2, so only the `K` odd-sized components can change `A`'s parity. Since `sum sizes = N` even, `K` is always even.
+- **Last critical merge:** Merging two odd components (odd-odd) reduces `K` by 2; all other moves (internal additions, even-even merges, odd-even merges) keep `K`. The move that takes `K` from 2 to 0 fixes `A`'s parity, hence fixes `T`'s parity, and the mover can choose the orientation to make `T` odd/even as they like, so that mover wins. Therefore the game is exactly "who makes the last odd-odd merge (K=2->0)". The player to move when `K=2` wins immediately (they merge the two remaining odd components and choose parity).
+- **Derived outcome rule (validated by hand/brute-force minimax analysis on many small N up to ~14):**
+  - N odd: Aoki iff `M` is odd.
+  - N even, `K==0`: `A`'s parity is fixed `= P`, so Aoki iff `(P + M)` is odd.
+  - N even, `K==2`: Aoki wins unconditionally (he merges the two odd components at once and picks the winning parity).
+  - N even, `K>=4`: Aoki wins iff `M` is odd.
+- **Validated data points (N, M, K, E=#even comps, I=internal missing edges -> winner):** (2,0,2,0,0,A), (4,0,4,0,0,T), (4,1,2,1,0,A), (4,2,2,0,0,A), (6,0,6,0,0,T), (6,1,4,1,0,A), (6,2,2,0,0,A), (6,2,4,0,0,T), (8,0,8,0,0,T), (8,M=4 K22+4iso,4,1,0,T), (8 path5+3iso M=4,4,0,2,T), (8 K32-edge+3iso M=5,4,0,1,A), (8 edge+6iso M=1,6,1,0,A), plus larger constructed cases (N=10,K=4,M=6 even -> T; M=7,9 odd -> A; N=14 M even -> T). All agree with the rule.
+- **Key correction to earlier idea:** Naive "count usable passes (E+I) mod 2" is NOT sufficient — e.g. K=4 with an even component `(2,2)` (both sides >=2) lets the opponent re-create a pass and flips the result; likewise constructions where the naive usable-pass parity is odd but outcome is T. The invariant that matches every case is simply the parity of `M` (for K>=4).
+- **Complexity:** one BFS/DFS over the graph O(N+M); no recursion (iterative deque) to handle N up to 2e5.
+- **Edge cases:** N=1,M=0 -> Takahashi. N=2,M=0 -> Aoki. N=2,M=1 -> Takahashi. N=3 (odd): winner = M parity.

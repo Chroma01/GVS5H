@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and approach selection.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement prime-modulus solution (M = p = k\u00b7N + 1 prime, A = x^k mod p, exactness checked via the distinct prime factors of N) with N=1 handled, deterministic 64-bit Miller\u2013Rabin, and Pollard-rho factoring of N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify correctness: outputs satisfy ord(A)=N for N=3, 16, 1, 55; general construction is provably valid for all N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirmed performance is comfortable for T=1e4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Sample tests PASSED.",
+    "status": "done",
+    "result": ""
+  }
+]

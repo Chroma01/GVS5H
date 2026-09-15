@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive reduction: d=x-y divides N, N=d*(3y^2+3dy+d^2), d < N^(1/3) so d <= ~1e6.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the single-loop solution: L = exact integer cuberoot(N); for d in 1..L, if N%d==0 compute M=N//d, D=12*M-3*d*d, check D>=0 and isqrt(D)^2==D, y=(-3*d+isqrt(D))//6, verify y>0 and d*(3*y^2+3*d*y+d^2)==N, output x=y+d and y.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Keep arithmetic fully exact (use math.isqrt, integer cube-root correction) to avoid float errors near 1e18.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the program on samples 397, 1, 39977273855577088 and confirm outputs match (12 11, -1, 342756 66212).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test additional edge cases: N=1 (->-1), known difference 2^3-1^3=7 (->2 1), and small N with no solution.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,8 @@
+- **Core reduction:** A 400 number is exactly m^2 where m has exactly two distinct prime factors and both exponents are positive, so m >= 6. The query asks for the largest such m with m^2 <= A.
+- **Bound:** Since A <= 10^12, m <= isqrt(A) <= 10^6. Use math.isqrt to avoid floating-point errors near perfect squares.
+- **Distinct-factor sieve:** First build primes up to limit with a bytearray sieve. Then for each prime p, increment distinct[m] for every multiple m of p. This counts distinct primes, not prime multiplicity.
+- **Generation:** Scan m from 6 to limit; if distinct[m] == 2, append m*m. Because m increases, valid_squares is already sorted.
+- **Queries:** For each A, use bisect_right(valid_squares, A) - 1 to find the largest valid square <= A. The constraints guarantee an answer exists, so the index is valid.
+- **Complexity:** Sieve and factor-count are O(limit log log limit) with limit <= 10^6. Queries are O(Q log V), where V is the number of valid bases, about 2e5. Memory is O(limit).
+- **Edge checks:** A=36 gives 36. A=10^12 gives 10^12 because 10^6 = 2^6 * 5^6. The sample value 123456789 gives 11111^2 = 123454321.
+- **Pitfalls avoided:** Do not count total prime exponents; do not confuse base exponents with final exponents; do not use float sqrt; do not generate duplicates because each m is considered once.

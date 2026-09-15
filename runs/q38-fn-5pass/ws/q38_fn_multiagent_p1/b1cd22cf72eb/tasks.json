@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: choose binary search on H with forward reachable-interval propagation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with input parsing, feasible(H), binary search, and output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on samples and edge cases such as already-fitting teeth, very large answers, and extremely small/large X.",
+    "status": "done",
+    "result": ""
+  }
+]

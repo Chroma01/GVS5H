@@ -1,0 +1,11 @@
+- **Problem:** K-th largest of A_i B_j + B_j C_k + C_k A_i over N^3 triples; N<=2e5, K<=5e5, all values positive.
+- **Monotonicity:** values are positive, so sorting A,B,C descending makes f increasing in each chosen element, hence f non-increasing in each index. The set of triples with f>=T is a down-set in the product order.
+- **Truncation proof:** if a triple uses some index m>=K, the K triples got by replacing that index with each of 0..K-1 all have value >= it, so it cannot be in the top K. Keep only the first M=min(N,K) elements of each sequence; M<=2e5. Since K<=N^3, also M^3>=K, so K pops are always possible and the heap never empties early.
+- **Chosen algorithm:** dedup-free best-first expansion. Push start (0,0,0). On popping (i,j,k): push (i+1,j,k) always; push (i,j+1,k) iff i==0; push (i,j,k+1) iff i==0 and j==0. Every cell is generated exactly once, so no visited set is needed.
+- **Ordering correctness:** encode cell as code = i*2^36 + j*2^18 + k. A cell's unique predecessor always has strictly smaller code (decrement a coordinate subtracts 2^36/2^18/1). Storing keys as ((BIG-value)<<54)|code makes the min-heap pop largest value first and, on ties, smallest code first = predecessor first. Induction then guarantees each pop is the true current maximum of the unvisited down-set.
+- **Key packing:** single-int keys keep memory ~50MB for ~1e6 entries (vs tuple keys ~150MB). Decode: code=key&(2^54-1); i=code>>36; j=(code>>18)&(2^18-1); k=code&(2^18-1); value=BIG-(key>>54).
+- **Incremental code:** child codes are just code+(1<<36), code+(1<<18), code+1 (fields never overflow 18 bits), avoiding recomputation of shifts/ORs.
+- **Complexity:** O(N log N) sort + O(K log K) heap. Exactly K pops and at most ~2K pushes (i==0 cells give 2 pushes, others 1). Bounded and independent of any outer binary-search loop.
+- **Why not binary search:** an O(K)-per-call count_ge (fix k: (A_i+c)(B_j+c)>=T+c^2 with two pointers, global early stop at K) needs ~60 iterations of Python-level O(K) work (~3e7 inner steps) versus the heap's ~5e5 Python iterations plus C-level heapq ops. Stress test (N=2e5 random large values, K=5e5): heap ~3-4s, binary search >8s. Heap chosen.
+- **Edge cases:** K=1 returns the max triple; M=1 has a single triple; answer up to ~3e18 fits Python int. No overflow anywhere.
+- **Samples:** 31, 30000, 689589940713840351.

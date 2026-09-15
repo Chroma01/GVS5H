@@ -1,0 +1,18 @@
+- **Task:** This run emits the final self-contained submission (stdin -> stdout) with the brute-force validator kept behind the empty-stdin guard so it never executes under judging.
+- **Graph model:** edge iff intervals disjoint (strict: R_i < L_j or R_j < L_i; touching endpoints still intersect). Graph = complement of an interval graph, possibly dense.
+- **Connectivity structure:** p = argmin R, q = argmax L. If any edge (u,v) exists, WLOG R_u < L_v, then R_p <= R_u < L_v <= L_q, so p-q is an edge. Any v with a neighbour u: if v is right of u (R_u < L_v) then v adjacent p; else v left of u (R_v < L_u <= L_q) then v adjacent q. Hence every non-isolated vertex joins the single component of p,q; all others are isolated singletons.
+- **Isolated test:** v non-isolated iff (min_{j!=v} R_j) < L_v OR R_v < (max_{j!=v} L_j), from the two smallest R and two largest L (use second value when v is the arg-extreme; ties are handled correctly).
+- **Answer logic:** if either endpoint isolated -> -1. If disjoint -> W_s+W_t (direct edge is optimal since weights positive). Otherwise W_s+W_t+best.
+- **Candidate set (intersecting s,t):**
+  - common = min(fR(min(L_s,L_t)), fL(max(R_s,R_t))) — cheapest vertex disjoint from both.
+  - X = fL(R_s) + fR(L_t) — right-of-s vertex + left-of-t vertex (auto-adjacent since R_b < L_t <= R_s < L_a).
+  - Y = fR(L_s) + fL(R_t) — mirrored.
+  - best = min(common, X, Y).
+- **Preprocessing:** fR(x)=min W_i with R_i<x via sort-by-R + prefix minima + bisect_left (index c-1). fL(x)=min W_i with L_i>x via sort-by-L + suffix minima + bisect_right (index c). O(N log N + Q log N).
+- **Correctness proof (optimal path <= 3 edges):** minimal path is simple (positive weights). Take its first intermediate v1 and last intermediate v_{k-1}. If v1,v_{k-1} adjacent, s-v1-v_{k-1}-t is cheaper (contradiction). Geometry: v1 left/right of s and v_{k-1} left/right of t. If both on same side (both left or both right), the overlap l_s<=r_t, l_t<=r_s forces one of them to be adjacent to both s and t, giving a cheaper 2-path. If on opposite sides, they are always adjacent (e.g. v1 left of s, v_{k-1} right of t: R_1 < l_s <= r_t < L_{k-1}), giving a cheaper shortcut. So k<=3; k=3 cases with opposite sides are exactly X and Y, same-side reduce to common.
+- **Common set completeness:** other disjoint-from-both combos (R_w<l_s and L_w>r_t, etc.) force R_w<L_w, impossible; so fR(minL) ∪ fL(maxR) exactly equals the common-neighbor set.
+- **Distinctness/INF:** X,Y chosen vertices are strictly distinct from s,t and each other (no vertex lies both right of s and left of t when intersecting). INF = 1<<60; real answers <= ~4e14, so best>=INF safely flags -1.
+- **Validator:** seeds RNG, 60000 random trials (N=2..8), coordinate ranges [1,2N]/[1,N]/[1,6], weight modes small ties, medium, large, and mixed few-heavy-many-light. Builds explicit graph, Dijkstra with vertex weights (dist[s]=W_s, relax dist[v]=dist[u]+W_v) for all ordered pairs, compares to solve_all. Prints full case (N,W,L,R,s,t,true,computed) on mismatch.
+- **Sample checks:** Sample 1 -> 11,6,-1; Sample 2 -> 157,124,-1,114,114, all reproduced by hand through the candidate logic.
+- **Expected verdict:** by the proofs the formula is correct; validator should print "OK: no counterexamples in 60000 trials". No counterexample anticipated.
+- **Program behavior:** non-empty stdin runs the real solution; empty stdin runs the validator.

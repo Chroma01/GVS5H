@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the reduction: edge bits h/v, Type A \u21d2 t\u2295b=1 & l\u2295r=1, Type B \u21d2 t=b, l=r, t\u2295l=1; torus closure needs even A-count in every row and column.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(HW) parity-DSU solution over H+W nodes, output 2^(#components) mod 998244353; hand-verified on provided samples (2, 0, 2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle edge cases: H=2/W=2, all-A, all-B, isolated row/column nodes, and odd row/column parity forcing 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the brute-force cross-check to completion (exhaustive {2,3} sizes + random up to 4\u00d74/5\u00d73) and confirm zero mismatches (\"ALL OK\").",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Produce the final clean stdin/stdout submission (no diagnostics); sample tests PASSED, prints exactly 2,0,2.",
+    "status": "done",
+    "result": ""
+  }
+]

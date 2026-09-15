@@ -1,0 +1,12 @@
+- **Game model:** Start graph is bipartite (no odd cycle). A legal move adds an edge while keeping the graph bipartite; i.e. an edge within a component only between opposite-coloured vertices, or an edge between two different components (merges them after possibly flipping a colouring). Terminal position is one connected complete bipartite graph K_{X,Y} (a single component with no free internal edge), since any two components can always be merged (Type C merge is always available). Total number of moves made = X*Y - M.
+- **Colouring invariant:** In a connected component the same-colour relation is permanent; same-colour same-component pairs can never be joined. Let a component have parts (x≥y) and e internal edges; remaining internal moves r = x*y - e.
+- **Merge feasibility:** merging (x1,y1)+(x2,y2): Type S -> (x1+x2, y1+y2) possible iff (x1≥1 and y2≥1) or (y1≥1 and x2≥1); Type C -> (x1+y2, y1+x2) possible iff (x1≥1 and x2≥1) or (y1≥1 and y2≥1). Since x1,x2≥1 always, Type C is always possible between any two components; only two isolated vertices force Type C (giving (1,1)).
+- **Terminal parity (N odd):** X+Y=N odd ⇒ one class even ⇒ X*Y even ⇒ total moves ≡ M (mod 2) once fully determined; every play has this parity, so Aoki (first) wins iff M is odd.
+- **Terminal parity (N even):** X and Y have the same parity. Product X*Y is odd iff both classes odd, i.e. iff the parity P of the colour-0 class count is 1. Total moves parity = P XOR (M mod 2). Only odd-sized components can change P when flipped; even components contribute a fixed parity. Crucially the number of odd-sized components o is even when N is even (sum of sizes = N even).
+- **Winning rule (validated):**
+  - N odd: Aoki iff M is odd.
+  - N even, b = 0 (all odd components isolated): Aoki iff base is odd, where base = C(N,2) - M - S and S = Σ (C(x,2)+C(y,2)). Equivalent form base = Σ r_i + Σ_{i<j} s_i*s_j.
+  - N even, b > 0: Aoki iff (o % 4 == 2) or (b <= 2).
+  Here o = number of odd-sized components, iso = number of isolated vertices, b = o - iso.
+- **Verification:** An exhaustive verifier enumerated all labelled bipartite graphs for N=2,4,6,7 (DP over edge masks) and all abstract component multisets for N=8, comparing exact winners against this rule; no mismatches, and all three provided samples (Aoki, Takahashi, Aoki) match.
+- **Complexity:** O(N + M) time and memory for the single BFS/DFS with 2-colouring plus one pass over the edges.

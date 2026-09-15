@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce the problem to maximum bottleneck path queries on the grid and choose a Kruskal reconstruction tree / LCA approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete Python solution using a Kruskal reconstruction tree with compact arrays, fast input parsing, and efficient LCA preprocessing.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation on the sample and edge cases: single-cell grid, same block with different floors, B larger than both floors, B=1, and large input/output volume.",
+    "status": "done",
+    "result": ""
+  }
+]

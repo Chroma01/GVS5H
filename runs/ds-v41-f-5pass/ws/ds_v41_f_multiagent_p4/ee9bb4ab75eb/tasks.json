@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce to a per-depth condition and prove only the deepest depth with exactly one count==k node affects answers beyond D_all.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build a trie storing depth, count, parent pointer, and incoming char per node.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute D_all = max depth where >=2 nodes have count>=k, or >=1 node has count>=k+1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute D2 = max depth with exactly one node count==k and record that node; reconstruct its prefix.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Assign answer[i] = base (D_all) if words[i] starts with D2-node prefix, else D2, when D2 > D_all; otherwise all D_all.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate by provided examples and a brute-force randomized cross-check (k=1, k=n, duplicates, prefix-words): example1 -> [3,4,4,3,4] PASS, example2 -> [0,0,0] PASS; randomized/edge suite PASS.",
+    "status": "done",
+    "result": ""
+  }
+]

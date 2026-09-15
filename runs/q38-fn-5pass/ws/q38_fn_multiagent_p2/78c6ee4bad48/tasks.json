@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the gap-based representation and prove that each operation reverses three consecutive gaps while preserving the leftmost coordinate.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove that arbitrary permutations are reachable within the odd-indexed gaps and within the even-indexed gaps.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive the weighted-sum formula for the coordinate sum and the optimal sorting/assignment rule for each parity class.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the O(N log N) algorithm: compute gaps, separate by index parity, sort, pair with weights, and accumulate the answer using 64-bit integers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Add standard input/output handling and test on the samples plus edge cases such as `N = 4`, large coordinates, and already-optimal configurations.",
+    "status": "done",
+    "result": ""
+  }
+]

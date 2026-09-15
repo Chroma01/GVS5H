@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify marginal-cost arithmetic progressions P_i, 3P_i, 5P_i, ... and the threshold counting/summing formulas.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement direct threshold (water-level) binary search: find smallest X where total cost of units with marginal <= X exceeds M; then buy all units with marginal < X and floor((M - cost_below)/X) units at marginal X (capped at available units at cost X).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate algorithm against both samples (PASSED), plus edge cases: N=1, M=1, all P_i equal, optimal threshold exactly at a marginal cost, and large M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Write the final Python program reading stdin and printing the answer to stdout, ensuring integer-safe arithmetic for values up to 1e18 and capping intermediate sums at M+1 for speed.",
+    "status": "done",
+    "result": ""
+  }
+]

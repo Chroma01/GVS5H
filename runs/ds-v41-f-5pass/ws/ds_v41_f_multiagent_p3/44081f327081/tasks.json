@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and reduction: answer(x) = largest divisor d of x with cnt[d] >= K, where cnt[d] = count of elements divisible by d",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build freq array and M using fast IO (single sys.stdin.buffer.read)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute cnt[d] for all d via prime-based descending superset sum (primes from sieve)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute g[d] = max-over-divisors of (d if cnt[d]>=K else 0) via ascending prime loop",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Add K==1 shortcut and M==1 / all-equal edge-case handling",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Output g[A_i] for each i with joined string; verify samples 1,2,3 and edge cases",
+    "status": "done",
+    "result": ""
+  }
+]

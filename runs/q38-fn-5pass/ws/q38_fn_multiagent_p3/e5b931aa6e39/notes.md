@@ -1,0 +1,8 @@
+- **Core reduction:** Let d = x - y, where d is a positive integer. Then x = y + d and N = x^3 - y^3 = d(3y^2 + 3dy + d^2). Therefore d must divide N.
+- **Search bound:** Since y >= 1, we have 3y^2 + 3dy + d^2 > d^2, so N > d^3. Thus it is sufficient to test only d with d^3 < N. For N <= 10^18, this means d is at most about 10^6.
+- **Quadratic solution:** For each divisor d, set M = N // d. We need 3y^2 + 3dy + d^2 = M. The discriminant is D = 12M - 3d^2, and for a valid solution D = (6y + 3d)^2. If D is a perfect square s^2, then y = (s - 3d) / 6.
+- **Validity checks:** After computing s = isqrt(D), require s*s == D, s > 3d, and (s - 3d) divisible by 6. Then verify the candidate using the original quadratic expression to avoid accepting false positives.
+- **Implementation details:** The program uses only integer arithmetic and math.isqrt, avoiding floating-point cube-root or square-root errors. It iterates d from 1 upward while d^3 < N, checks divisibility, solves the quadratic when possible, and prints the first valid pair.
+- **Complexity:** The loop runs at most about 10^6 times for the maximum constraint. Each iteration does a modulo operation; isqrt is called only when d divides N, so the practical cost is very small. Memory usage is O(1).
+- **Edge cases:** N = 1 immediately fails because d^3 < N is false for d = 1. Cases where y would be 0 are rejected by requiring s > 3d. The strict condition d^3 < N correctly excludes invalid zero-y cases such as N = 8 or N = 27.
+- **Alternatives considered:** Factoring N to enumerate only divisors, binary searching y for each d, modular filtering, and searching over y using cube roots were considered. Direct enumeration of d is simple, robust, and fast enough for the constraints.

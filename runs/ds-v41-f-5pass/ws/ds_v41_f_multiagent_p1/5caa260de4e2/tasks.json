@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the reformulation: absorb the k*i term into a fixed charge k*(totalCost - preC[l-1]) for each group start l>0, plus k*totalCost for the first group.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(n^2) DP: dp[r+1] = min over l of dp[l] + preN[r]*(preC[r]-preC[l-1]) + (k*(totalCost-preC[l-1]) if l>0 else 0), returning dp[n] + k*totalCost.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify example 1 by hand (110) and confirm example 2 (985) plus edge cases (n=1, single group, all singletons).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm integer bounds (Python big ints) and complexity O(n^2)/O(n) is fine for n<=1000.",
+    "status": "done",
+    "result": ""
+  }
+]

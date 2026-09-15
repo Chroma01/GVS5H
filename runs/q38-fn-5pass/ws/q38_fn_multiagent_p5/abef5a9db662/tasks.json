@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove and use the invariant that the current-rating array over initial ratings is nondecreasing, so each contest affects a contiguous index range.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the Fenwick difference-array solution with prefix lower-bound search and range-add via two point updates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle edge cases: empty affected range, affected range reaching index 500000, target greater than current maximum, and final ratings exceeding 500000.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the sample tests and fix any failures.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If the Fenwick approach fails or is too slow, switch to the lazy segment tree fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

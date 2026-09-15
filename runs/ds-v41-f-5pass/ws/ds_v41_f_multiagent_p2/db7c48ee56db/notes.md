@@ -1,0 +1,6 @@
+- **Problem shape:** maximize XOR over all K-subsets of A; C(N,K) ≤ 1e6 guaranteed but K itself can be up to 2e5, so naive enumeration of K-subsets and their XOR is only viable when K is the small side.
+- **Key structural fact:** C(N,K)=C(N,N-K), so the constraint bounds the smaller side S=min(K,N-K). Since N≥2S (because S is the min) and C(N,S)≥C(2S,S), the bound C(N,K)≤1e6 forces S≤11 (C(22,11)=705432 ≤ 1e6, C(24,12)=2704156 > 1e6).
+- **Algorithm:** set S=min(K,N-K). If K≤N-K, enumerate all K-combinations of values with itertools.combinations and take max XOR. If K>N-K, let T=total XOR of all elements; enumerate all (N-K)-combinations of excluded values and take max of T XOR excluded-xor. K=N gives excluded size 0, answered by T.
+- **Efficiency:** number of generated tuples ≤ 1e6, each of length ≤11; reduce(operator.xor,...) is a fast C-level loop. Do NOT use plain recursive DFS maintaining running XOR — it explores huge numbers of partial prefixes (e.g. all 2-subsets), which is far more than 1e6.
+- **Pitfalls:** treat equal values as distinct by index (no dedup); handle S==0 (K==N) separately since the loop would otherwise be empty; initializing best=0 is safe since valid combinations always exist (C(N,S)≥1) and XOR is non-negative.
+- **Verified:** sample 1 (N=4,K=2,A=3 2 6 4) → 7; sample 2 → 2024.

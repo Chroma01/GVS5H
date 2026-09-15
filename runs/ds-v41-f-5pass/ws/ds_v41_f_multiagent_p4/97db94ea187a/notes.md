@@ -1,0 +1,11 @@
+- **Task:** Verified current solution on worst case N=30, P=998244353; samples 1-3 pass, N=2 prints `1`. No code changes needed.
+- **Model (confirmed correct):** BFS layers from vertex 1. Layer 0 = {1}; nonempty layers alternate parity; edges only within a layer or between consecutive layers; every vertex in Li (i>=1) has >=1 neighbor in L(i-1). Bijection graph <-> layering, so distance = layer index and connectivity automatic.
+- **Parity condition:** even side includes root; requirement #even = #odd = N/2 means sum of odd-index layer sizes o = N/2.
+- **Layer DP state:** (used u, odd-sum o, prev layer size p, last-layer parity par). Start (1,0,1,0)=1. Add layer size s: multiply by C(N-u, s) * ((1+x)^p - 1)^s * (1+x)^{C(s,2)}; u+=s; o+=s iff new layer odd; p=s; par flips.
+- **Pruning:** o and u-o are nondecreasing; require o<=N/2 and u-o<=N/2. Valid finals need u=N, o=N/2.
+- **Evaluation/Interp:** evaluate generating fn at x=t for t=0..D (D=C(N,2)), then Lagrange-interpolate to recover coefficients, output degrees N-1..D. Safe since P>=1e8 >> D+1.
+- **Vectorization:** DP holds numpy int64 arrays of length L=D+1; each scalar factor becomes an array op. int64 safety: reduced quantities < P < 2^30; products < 2^60; sums of at most N terms < 2^35.
+- **Performance (N=30, P=998244353):** D=435, L=436. Subprocess run: wall-clock ~0.5s, peak memory ~50MB. Exactly 407 space-separated outputs (M=29..435), all in [0,P). No numpy overflow or crash.
+- **First value (M=29):** number of trees with a 15-15 bipartition = (C(30,15)/2) * 15^{28} mod P. Last values (M>=421) are 0 because at most 14 vertices can be non-adjacent to 1.
+- **Samples:** Sample 1 (N=4) -> 12 9 3 0. Sample 2 (N=6) -> 11 values. Sample 3 (N=10) -> 37 values. N=2 -> `1`.
+- **Edge cases:** N=2 handled correctly.

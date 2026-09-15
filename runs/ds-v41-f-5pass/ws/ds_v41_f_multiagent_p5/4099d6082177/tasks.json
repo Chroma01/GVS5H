@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement iterative bottom-up DP with collapsed states closed/open(residue)/invalid for all nodes; output Yes iff root is closed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Define and enforce transition rules at each node for 0, 1, or 2+ open child fragments, including K=1, leaves, N=1, and high-degree vertices.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation against sample inputs 1 and 2 (both PASS) and verify correctness by hand-tracing small trees (paths, stars, multi-branch trees) for K=2,3,4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm no fallback needed: unique forced fragment length (s mod K) plus degree bound (ac<=2 closed, ac<=1 open) fully characterizes feasibility.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the validity condition for a fixed middle index: middle value frequency must be >= 3, or exactly 2 with all three non-middle values pairwise distinct.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the aggregate middle-index sweep with prefix/suffix frequency dictionaries, total equal-pair counts, and the a+b >= 2 counting cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the special a+b = 1 distinctness counting using D_L/D_R and per-value forbidden-pair corrections.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify against the provided examples and edge cases (n=5, all equal, all distinct, duplicates, negative values) and ensure modulo handling is correct.",
+    "status": "done",
+    "result": ""
+  }
+]

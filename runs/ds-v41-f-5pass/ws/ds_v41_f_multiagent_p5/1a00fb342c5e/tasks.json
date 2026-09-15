@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, M, and all constraints; build adjacency storing (neighbor, Z_i).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Traverse each component assigning p[v] = XOR along tree path; detect contradictions (incl. self-loop with Z != 0) and output -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Record component membership; count set bits of p[v] per component.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Choose offset bit = 1 iff count*2 > component_size, minimizing ones per component/bit.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Reconstruct A[v] = p[v] XOR offset; print space-separated.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verified against all 3 public samples (0 3 4; -1; 0 2 9 6 0).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Build rooted adjacency from undirected edges storing (neighbor, length).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement iterative DFS carrying depth, prefix-sum-by-depth, last-seen map, and parent boundary m0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute per-node maximal candidate: length = pref[depth] - pref[m0], nodes = depth-m0+1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Aggregate best as (max length, then min nodes) with best initialized (0,1); tie-break updates nodes on strict length tie.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Correctly save/restore last-seen and prefix-sum state on backtrack via explicit enter/exit stack markers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate on Example 1 [6,2], Example 2 [0,1], all-equal-values, and positive-edge chain cases (manually verified).",
+    "status": "done",
+    "result": ""
+  }
+]

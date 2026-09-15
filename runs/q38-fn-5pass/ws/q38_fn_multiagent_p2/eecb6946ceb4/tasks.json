@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce to counting 3-term arithmetic progressions via autocorrelation/convolution and consider parity split/fallbacks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete solution with fast input, NumPy FFT parity-split path, and no-NumPy fallback (sparse enumeration + packed big-integer convolution).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify on sample inputs and edge cases: N<3, all even/odd, sparse, dense/full set, maximum value 10^6, and answer size.",
+    "status": "done",
+    "result": ""
+  }
+]

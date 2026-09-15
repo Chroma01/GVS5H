@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Precompute capped factorials up to n (cap above 10^15) and determine initial odd/even counts for numbers 1..n.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a helper that counts valid completions as (remaining odds)! * (remaining evens)!.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Construct the result position by position: try unused numbers of the allowed parity in increasing order and subtract block sizes until k fits.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle the first position separately (feasibility by parity) and enforce forced alternation parity for all later positions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Return empty list when k exceeds the total count; handle n=1 explicitly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verified examples by hand: n=4,k=6 -> [3,4,1,2]; n=3,k=2 -> [3,2,1]; n=2,k=3 -> []; n=1 -> [1]/[].",
+    "status": "done",
+    "result": ""
+  }
+]

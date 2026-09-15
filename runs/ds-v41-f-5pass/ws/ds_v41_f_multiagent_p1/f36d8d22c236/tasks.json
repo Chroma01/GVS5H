@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse N, S, T from stdin.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate mapping: for each char c in S, all positions must share the same T; else print -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Build functional graph: edge c -> f(c) for distinct c in S with f(c)!=c; count E.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute indegree; count P = nontrivial cycles where every node has indegree exactly 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Impossibility: if len(set(T))==26 and P>0 print -1; else print E+P.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify samples 1-4 (4, 0, -1, 4) and edge cases (incoming cycle abc->baa = 3, multiple pure cycles, all-26 impossibility).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Code finalized and passed all public sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

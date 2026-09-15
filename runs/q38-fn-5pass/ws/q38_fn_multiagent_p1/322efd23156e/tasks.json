@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input and group foods by vitamin type.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute per-vitamin 0/1 knapsack DP over calorie capacity X.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Make each DP array nondecreasing prefix-max.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement feasibility check using bisect_left to sum minimum calories for target K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Binary search maximum feasible K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Handle edge cases and output answer.",
+    "status": "done",
+    "result": ""
+  }
+]

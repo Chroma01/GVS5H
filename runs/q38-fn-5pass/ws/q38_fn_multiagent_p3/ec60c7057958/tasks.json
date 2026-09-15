@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select closed-form capped factorial unranking as the primary method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute capped factorials up to n and implement count_completions(odd_left, even_left, next_parity) using parity-position matching with all counts capped above 1e15.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement greedy unranking in Solution.permute by maintaining unused odd/even values, scanning candidates in increasing order, subtracting block sizes from k, and fixing the chosen value at each position.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute the total number of valid alternating permutations and return an empty list if k is out of range.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle edge cases explicitly, including n = 1, n = 2, odd n, even n, and k near 1e15.",
+    "status": "done",
+    "result": ""
+  }
+]

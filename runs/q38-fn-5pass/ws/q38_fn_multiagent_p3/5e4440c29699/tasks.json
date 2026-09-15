@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: derive first-hit subtraction decomposition and formulas.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution using first-hit subtraction method, including modular combination utilities, F(a,b), T(n,m), start-inside subtraction, and left/bottom boundary corrections.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate implementation against samples and small brute-force DP edge cases, especially forbidden rectangle touching axes, spanning full width/height, or degenerating to a line/point.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If needed, optimize boundary sums or derive closed forms if performance issues arise.",
+    "status": "done",
+    "result": ""
+  }
+]

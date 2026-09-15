@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the O(W+H) formula (precompute factorials to W+H+5; closed forms for T_fullrect, start-in-F, left entries, bottom entries) and test all three samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify edge cases: L=0 (no left entries), D=0 (no bottom entries), hole touching grid borders, W=0 or H=0, single allowed cell (sample 3 covers L=0 and D=0).",
+    "status": "done",
+    "result": ""
+  }
+]

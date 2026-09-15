@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Validate the pairwise bad-pair characterization against the exact DSU/acyclicity oracle on random small cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(M log M) sliding-window segment-tree solver and confirm it passes the public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Optimize compute_min_left_arrays by removing the lazy heaps and maintaining direct leaf values for active intervals, then run random validation and performance stress on large adversarial cases.",
+    "status": "done",
+    "result": ""
+  }
+]

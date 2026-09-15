@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, M, S and set MOD=998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement transition trans[mask][c] via carry propagation e_i (bit i set => e_i=0 else e_i=max(e_{i-1},[S[i-1]==c]); new bit = old bit + e_i - e_{i-1}); precompute for all 2^N masks x 26 letters.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run M-step DP: dp[0]=1, dp_next[trans[mask][c]] += dp[mask] mod MOD for each position 1..M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Sum final dp by popcount(mask) to get ans_0..ans_N and print space-separated.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate against all three provided samples (all PASSED), plus sum of answers equals 26^M mod MOD.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify transition derivation e[i]=0 if bit_i==1 else max(e[i-1],[S[i-1]==c]) and newbit=bit_i+e[i]-e[i-1] \u2208 {0,1}; confirmed correct and matches samples.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze problem: lcm(a,b)=m<=T iff both a,b divide m<=T; values > T are isolated.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Choose efficient approach: streaming last-divisor per multiple with DSU over present values <= T.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement `countComponents`: split big vs small, build DSU with value->index mapping, union via last[m] over multiples, count distinct roots, add big count.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify examples (4 and 2), threshold=1, all-values>threshold, and chain cases through shared multiples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm performance bounds ~O(T log T) for T up to 2e5 and memory feasible.",
+    "status": "done",
+    "result": ""
+  }
+]

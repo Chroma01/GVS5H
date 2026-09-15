@@ -1,0 +1,1 @@
+Use the factorization x^3 - y^3 = (x-y)(x^2+xy+y^2). Let d = x-y, so d must divide N and satisfy N = d(3y^2+3dy+d^2). Since y >= 1, we have N > d^3, so d <= floor(cuberoot(N)) <= 10^6. Iterate d over this range, check divisibility, and test whether the resulting quadratic in y has a positive integer solution.

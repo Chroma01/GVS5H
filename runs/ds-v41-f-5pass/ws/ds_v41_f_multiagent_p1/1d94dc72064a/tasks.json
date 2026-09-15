@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derived the winning condition: model as m unvisited indices with pool P; base cases m=1 (mover wins), m=2 (mover wins iff P odd), m=3 (mover wins iff at least one unvisited value has parity \u2260 P); proved by induction that for m>=4 the mover wins iff (P+o) is odd.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Reduced initial position (P=0, o=count of odd A_i) to: N=1 -> Fennec; N=2 -> Snuke; N=3 -> Fennec iff any odd A_i; N>=4 -> Fennec iff count of odd A_i is odd.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implemented the O(N) time / O(1) space Python solution reading from stdin and writing the answer to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verified against all three public samples (3;1 9 2 -> Fennec, 2;25 29 -> Snuke, 6;1 9 2 25 2 9 -> Snuke) which all pass.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Cross-checked the closed-form rule against a hand-verified exhaustive analysis of small N (N=1,2,3,4 including all-even, single-odd, three-odd, two-odd, all-odd configurations).",
+    "status": "done",
+    "result": ""
+  }
+]

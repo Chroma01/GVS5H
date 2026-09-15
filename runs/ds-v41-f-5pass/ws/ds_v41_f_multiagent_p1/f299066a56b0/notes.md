@@ -1,0 +1,8 @@
+- **Problem restated:** Pick disjoint pairs (top, bottom) with top <= bottom/2, i.e. 2*top <= bottom. Maximize number of pairs K.
+- **Key optimality claim (proved via exchange):** If K pairs are possible at all, then the configuration using the K smallest mochi as tops and the K largest as bottoms is feasible. Reason: making a top smaller never breaks 2*top<=bottom, and making a bottom larger never breaks it. So extremes dominate any choice.
+- **Feasibility check for fixed K:** sort tops ascending = A[0..K-1], bottoms ascending = A[N-K..N-1]; these are disjoint since 2K<=N. A matching exists (Hall's / greedy) iff for all i in [0,K): 2*A[i] <= A[N-K+i]. No need to sort explicitly -- input is already ascending.
+- **Monotonicity:** Feasible(K) => Feasible(K-1) (drop one pair). So binary search K in [0, N//2] is valid. Upper bound N//2 because each pair uses 2 mochi.
+- **Complexity:** each check O(K), binary search O(N log N) total; fine for N up to 5e5. Memory O(N) for the array.
+- **Edge cases handled:** K=0 always feasible -> answer 0 when no pairing possible (e.g. sample 2). N=2 gives range [0,1]. Duplicate sizes fine. Uses Python big ints, so A[i]*2 cannot overflow (values <=1e9).
+- **Implementation detail:** binary search uses mid=(lo+hi+1)//2 to avoid infinite loop when lo,hi adjacent.
+- **Sample checks:** S1 [2,3,4,4,7,10]: K=3 -> 4<=4,6<=7,8<=10 true -> 3. S2 -> 774>389 -> 0. S3 -> 6.

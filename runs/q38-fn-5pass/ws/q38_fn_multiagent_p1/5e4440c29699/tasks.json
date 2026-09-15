@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement modular binomial helpers with factorials/inv factorials up to `W+H+4`, and a `total_paths(w,h)` function for the number of monotone paths in a full rectangle `[0..w] x [0..h]` with arbitrary start/end, returning `0` for negative dimensions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute the universe of paths with allowed start/end via inclusion-exclusion: full rectangle minus starts in the hole, minus ends in the hole, plus both in the hole; use `total_paths` as a 2D prefix for the start/end sums over the hole.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive and implement the first-entry invalid count for the left boundary `y=D..U` when `L>0`: prefix `C(y+L+1,L)-1` times suffix `C(W-L+H-y+2,W-L+1)-C(R-L+U-y+2,R-L+1)`, using O(1) multiplicative updates per `y`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Derive and implement the analogous bottom-boundary invalid count for `x=L..R` when `D>0`: prefix `C(x+D+1,D)-1` times suffix `C(W-x+H-D+2,H-D+1)-C(R-x+U-D+2,U-D+1)`, using O(1) multiplicative updates per `x`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle the corner case where the first forbidden point can be entered from both left and bottom by separating contributions according to the last step, avoiding double counting.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Subtract the invalid count from the allowed-start/end universe, normalize modulo `998244353`, and test edge cases such as `L=0`, `D=0`, `R=W`, `U=H`, zero-width/height holes, and holes touching the grid boundary.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Prepare a small brute-force validation plan for tiny grids to verify the final implementation against sample and edge cases.",
+    "status": "done",
+    "result": ""
+  }
+]

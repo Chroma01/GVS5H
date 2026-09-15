@@ -1,0 +1,11 @@
+- **Problem characterization:** N is a 400 number iff N = m^2 where m has exactly two distinct prime factors. Proof: even exponents (each at least 2) force N = p^(2a) q^(2b) = (p^a q^b)^2, and conversely any such square qualifies.
+- **Bounding the base:** A <= 10^12 implies m = isqrt(N) <= isqrt(10^12) = 10^6. So all answers come from squaring bases m <= 10^6. Never enumerate values up to 10^12 directly.
+- **Smallest case:** smallest valid base is 6 = 2*3, giving 36, consistent with the guaranteed A >= 36 lower bound (so the bisect predecessor always exists).
+- **Counting distinct primes:** must count distinct primes, not total factors or exponent sum. m=4 -> omega 1 (invalid); m=12 -> omega 2 (valid, gives 144).
+- **Sieve choice:** increment a bytearray `omega` once per multiple of each prime (sum over primes of n/p ~ 2.9e6 for n=1e6), plus a standard composite flag sieve. Max omega for m <= 10^6 is 7 (2*3*5*7*11*13*17 = 510510), so a bytearray suffices and there is no overflow risk.
+- **Sieve correctness detail:** only mark composites from i*i when i*i <= n; smaller multiples were already marked by smaller primes, so the flags stay correct.
+- **Sorting:** since m is traversed increasingly, m^2 is already strictly increasing, so the collected list is sorted with no extra sort call needed.
+- **Query handling:** all queries answered offline from one fixed list via `bisect_right(vals, A) - 1`. Complexity O(10^6 log log 10^6 + Q log M), M ~ 2*10^5 answers.
+- **Precision:** use `math.isqrt`, never float `sqrt`, to get LIM exactly (floating point is unreliable near 10^12).
+- **Sample check:** 404 -> 400 (20^2); 36 -> 36 (6^2); 60 -> 36 (49=7^2 invalid, 64=8^2 invalid); 10^12 -> 10^12 (10^6 = 2^6*5^6); 123456789 -> 123454321 (11111^2 = 41^2 * 271^2).
+- **I/O:** read all input at once via `sys.stdin.buffer`, join output lines once for speed with Q up to 2*10^5.

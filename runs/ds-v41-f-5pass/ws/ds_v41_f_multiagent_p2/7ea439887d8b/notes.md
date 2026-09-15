@@ -1,0 +1,10 @@
+- **Model:** State = (current vertex, current orientation). Only two orientations exist, so the whole process is a shortest path on a layered graph of 2N nodes.
+- **Layers:** normal layer node id = v; reversed layer node id = N + v (0-indexed internally). Start state is (vertex 1, normal) i.e. node 0.
+- **Move edges (cost 1):** for each input edge u->v, add u->v in normal layer and (N+v)->(N+u) in reversed layer. The reversed layer simply has every original edge direction flipped.
+- **Flip edges (cost X):** bidirectional edge between v and N+v for every v. This encodes paying X to switch orientation at the current vertex without moving.
+- **Answer:** min(dist[vertex N in normal], dist[vertex N in reversed]) = min(dist[N-1], dist[2N-1]).
+- **Algorithm:** Dijkstra from node 0 over up to 2N nodes and about (2M + 2N) directed edges, O((N+M) log N).
+- **Integers:** Python ints are arbitrary precision; no overflow concern (sample 3 answer exceeds 32-bit). No need for 64-bit special handling.
+- **Pitfalls handled:** convert input 1-indexed to 0-indexed; both flip directions added; start only at (1, normal); take min over both ending orientations; guarantee of reachability means no INF result.
+- **Verified against samples:** Sample 1 = 4 (pure forward path). Sample 2 = 3 (1->2, flip at 2, then reversed edge 2->5). Sample 3 = 4294967299. Sample 4 = 21.
+- **I/O:** read entire stdin with sys.stdin.buffer.read().split() and write a single integer to stdout.

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: largest-first greedy with Fenwick rank formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement largest-first Fenwick solution with fast stdin/stdout and 64-bit-safe arithmetic.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate against samples and edge cases (sorted, reverse, N=2); samples passed.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the characterization: absorbed set is a contiguous interval with an order-independent closure; final interval is the minimal interval containing K whose two boundaries (if present) are >= the interval sum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N) max Cartesian tree (leftmost-max tie-break via strict `<` pop), subtree sums T, local \"stuck\" check, and reach[] climbing DP producing per-node answers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the reach DP argument: final closure interval equals subtree(m) for the leftmost maximum m; climb requires T[c] > A[parent] (necessary since sum \u2286 subtree(c), and sufficient by induction), and stops exactly at m since A[parent(m)] >= T[m]. Confirmed on multiple hand-worked cases including ties.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Stress-test against a brute-force closure simulator on many random small arrays, emphasizing duplicates and ties; no mismatches. Re-verified both public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

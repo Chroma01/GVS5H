@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: chose the bottom-up open-path propagation greedy as the primary approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the bottom-up greedy (root tree, iterative post-order, per-node open-length return) and run on Sample 1 (Yes) and Sample 2 (No); both PASSED.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm greedy correctness by reasoning: every subtree exposes at most one open path (single boundary edge), child return values are uniquely forced, 0/1/2/\u22653 open-child cases handled, merge requires exact sum L1+L2+1 == K, and K==1 always yields Yes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm edge cases (K=1, N=1, single vertex, pure path, star, deep path) are handled by the forced-state logic and iterative post-order (recursion-safe).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm complexity O(N*K) time and memory, within NK \u2264 2e5.",
+    "status": "done",
+    "result": ""
+  }
+]

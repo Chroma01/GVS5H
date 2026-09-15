@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement functional graph parsing and reverse adjacency lists for children of each node.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Detect all cycle nodes using indegree peeling and identify each component's cycle.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement bottom-up cumulative DP for non-cycle nodes, storing at-most-v counts and merging child arrays into parent arrays modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each cycle node, compute the attached-subtree cumulative array from non-cycle children only.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each component, multiply cycle-node attached arrays over the common cycle value, sum over v=1..M, and multiply component answers modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test on the provided samples and edge cases such as self-loops, pure cycles, M=1, and multiple components.",
+    "status": "done",
+    "result": ""
+  }
+]

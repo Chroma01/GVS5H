@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Fix the four diagonal directions [(1,1),(1,-1),(-1,-1),(-1,1)] and clockwise mapping cw[i]=(i+1)%4 (confirmed clockwise via examples 1 and 2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute g0/g2 no-turn alternating-run tables for all 4 directions with correct reverse scan orders.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute h0/h2 turn-available tables per direction (continue via same-direction h; single clockwise turn via g of cell+cw(direction); stop allowed).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Assemble full Solution.lenOfVDiagonal with answer = max over value-1 cells of 1+h2, no-1 returns 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run the 4 provided examples (produced 5,4,5,1 = expected) and cross-check against independent brute force on random small grids (all trials PASS, no counterexample).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm O(n*m) time and acceptable memory for n,m up to 500; degenerate grids (all-1 / no-1) handled.",
+    "status": "done",
+    "result": ""
+  }
+]

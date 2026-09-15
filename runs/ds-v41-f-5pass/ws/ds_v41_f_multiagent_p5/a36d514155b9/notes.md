@@ -1,0 +1,9 @@
+- **Reduction (linearity of summation):** Sum of pairwise Manhattan distances over all valid arrangements = (sum over unordered cell pairs of Manhattan distance) × (number of arrangements containing a fixed pair). A fixed unordered pair of cells appears in exactly C(N-2, k-2) of the C(N,k) arrangements, where N = m·n. So answer = S · C(N-2, k-2) mod p.
+- **Separating Manhattan:** S = (row part) + (column part). Row part = n² · A(m), column part = m² · A(n). The n² factor counts the column choices for each cell in a row-index pair (n each → n² cell pairs); symmetrically m² for columns. Do not swap these.
+- **1D absolute-difference sum:** A(L) = Σ_{d=1}^{L-1} d·(L−d) = L(L−1)(L+1)/6. Valid for L ≥ 1; A(1) = 0. Multiply by inv6 mod p (p = 1e9+7 prime), since the product is divisible by 6 over integers.
+- **Binomial edge cases:** k = 2 → C(N-2, 0) = 1. k = N → C(N-2, N-2) = 1. When k < 2 (not in constraints) or k > N, comb returns 0; guard b<0 or b>a.
+- **Unordered vs ordered:** Everything is over unordered pairs of cells and unordered pairs of pieces. Using ordered pairs would double-count; avoid.
+- **Complexity:** O(N) time/memory for factorial tables, N ≤ 1e5. All other work is O(1). Well within limits.
+- **Verified examples:** (2,2,2): A(2)=1, S = 4·1 + 4·1 = 8, C(2,0)=1 → 8. (1,4,3): A(1)=0, A(4)=10, S = 16·0 + 1·10 = 10, C(2,1)=2 → 20. Both match.
+- **Brute-force cross-check:** (2,3,2): A(2)=1, A(3)=4, S = 9·1 + 4·4 = 25, C(4,0)=1 → 25; direct enumeration of all 15 cell pairs gives row part 9 (cross-row pairs) + column part 16 = 25. Confirmed.
+- **Pitfall avoided:** forgetting the n²/m² multiplicity, using ordered pairs, mishandling modular division (use inv6 / inv_fact), and the degenerate single-row/column case (A(1)=0 handled naturally).

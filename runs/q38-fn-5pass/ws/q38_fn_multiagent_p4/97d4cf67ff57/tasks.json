@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce the alkane problem to finding the maximum connected set of original-degree-at-least-4 vertices with selected internal degree at most 4; answer is 3K+2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N) iterative rooted DP described above and produce a complete Python program reading stdin and writing stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation on the samples and edge cases: no eligible vertices, exactly one eligible vertex, ineligible vertices separating eligible components, and high-degree eligible vertices with many eligible branches.",
+    "status": "done",
+    "result": ""
+  }
+]

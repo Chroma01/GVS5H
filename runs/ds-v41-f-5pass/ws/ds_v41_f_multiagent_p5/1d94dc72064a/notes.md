@@ -1,0 +1,10 @@
+- **Game model:** Each index i needs one activation move. After activation, the remaining A_i-1 uses are optional pass moves. Only the total pass pool P matters, since pass moves are indistinguishable and can be taken any time after enough activations.
+- **State reduction:** Let m be the number of unopened indices, P the pass pool, and o the number of unopened indices with odd A_i. Since e_i=A_i-1 is even exactly when A_i is odd, o also counts the even extra values among unopened piles.
+- **Base m=2:** Activating any pile leaves the opponent with m=1 and an immediate win. Thus the mover's only useful move is a pass. So mover wins iff P is odd, independent of o.
+- **Base m=3:** Activating i moves to m=2 with pool P+e_i; the opponent loses iff P+e_i is even. Solving together with the optional pass gives: mixed e parities -> mover always wins; all e even (all A_i odd) -> mover wins iff P even; all e odd (all A_i even) -> mover wins iff P odd.
+- **Induction for m>=4:** Claim f_m(P,o) = (o+P is odd). It holds for m=4 directly from m=3. If it holds for m-1, then for P=0 the possible moves give exactly (o odd); for P=1 they give exactly (o even); the same parity argument extends to all P via the pass move. Hence the formula is independent of m.
+- **Initial position:** P=0. For N>=4, Fennec wins iff o, the count of odd A_i, is odd. For N=3, P=0 and m=3: if all A_i are even then movers lose, otherwise Fennec wins. N=2 always Snuke. N=1 Fennec.
+- **Final closed form:** Fennec iff N==1, or (N==3 and odd_count>0), or (N>=4 and odd_count%2==1); otherwise Snuke.
+- **Validation:** Sample 1 (3; 1 9 2) odd_count=2 -> N=3 special -> Fennec. Sample 2 (2; 25 29) -> N=2 -> Snuke. Sample 3 (6; 1 9 2 25 2 9) odd_count=4 even -> N>=4 -> Snuke. Manual and brute-force minimax checks for N<=6 and A_i<=4 matched the criterion, including N=1,2,3 edge cases.
+- **Pitfalls:** Only parity of A_i matters, not magnitude; N=3 has the mixed rule so odd_count=2 still wins; N=2 is always Snuke regardless of A; do not confuse A_i parity with A_i-1 parity.
+- **Complexity:** O(N) time and O(N) input storage, which is fine for N up to 2e5 and A_i up to 1e9.

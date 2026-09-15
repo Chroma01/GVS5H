@@ -1,0 +1,10 @@
+- **Problem:** Answer K queries of sum_{i<=X, j<=Y} |A_i-B_j| for prefixes of A and B.
+- **Approach:** Sqrt decomposition on indices. Choose S = max(1, int(N / sqrt(K))). Number of full blocks M = N//S ≈ sqrt(K) ≤ 101.
+- **Decomposition:** Write X = p*S + r, Y = q*S + s. Answer = P(p,Y) + Q(q,X) - C(p,q) + tailtail, where P(p,Y)=sum_{i<pS, j<Y}, Q(q,X)=sum_{i<X, j<qS}, C(p,q)=sum_{i<pS, j<qS} = P(p, qS). tailtail covers i in [pS,X), j in [qS,Y).
+- **Sweep P:** Process p=0..M. Maintain H[j] = sum over full A-blocks <p of sum_{a in block}|a-B_j|. Add block p-1 by sorting block A, then for each B_j in sorted order use two-pointer to compute sum |a-B_j| in O(1) amortized; update H[orig_B]. For queries with this p, sort events (Y for P, q*S for C) and compute prefix sums of H on the fly.
+- **Sweep Q:** Symmetric: maintain H2[i] = sum over full B-blocks <q of sum_{b in block}|A_i-b|; answer Q(q,X) via events sorted by X.
+- **Tailtail:** For each query, extract A[pS:X] and B[qS:Y] (length < S). Sort both, use prefix sum and two-pointer: for each a in sorted A_tail, advance ptr over B_tail <= a, accumulate a*ptr - sum_le + (sumB - sum_le) - a*(szB-ptr).
+- **Complexity:** Block additions: M*N ≈ N*sqrt(K) ≤ 1e7. Prefix/event processing: O(N sqrt K + K log K). Tailtail: O(K * S log S) = O(N sqrt K log S). Total ~1e7-2e7 ops for max constraints. Memory O(N+K).
+- **Key bound:** M = N//S is ≈ sqrt(K) because S = N/sqrt(K). Since K≤1e4, M≤101, so block addition loops are few.
+- **Edge cases:** p=0 or q=0 gives P=0, Q=0, C=0; tails handle entire prefix. X=N may leave remainder tail if N not divisible by S. S>N handled by S=N, Pmax=1.
+- **Implementation details:** Use 0-based indexing internally. B_sorted and orderB precomputed once. Events sorted per p-group. Python ints handle large sums (up to ~2e18). Avoid full N×N table.

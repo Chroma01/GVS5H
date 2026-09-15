@@ -1,0 +1,10 @@
+- **Problem shape:** count length-n sequences over alphabet [1, m] with exactly k adjacent equal pairs, mod 1e9+7.
+- **Run model:** each equal adjacency merges into the same run; each unequal adjacency splits runs. With exactly k equal pairs among the n-1 adjacencies, there are (n-1-k) change boundaries, hence (n-1-k)+1 = n-k runs.
+- **Closed form (verified against all 3 examples):** answer = C(n-1, k) * m * (m-1)^(n-1-k) mod p.
+  - C(n-1, k): choose which adjacencies are equal.
+  - m: value of the first run.
+  - (m-1)^(n-1-k): each of the other n-k-1 = n-1-k runs must differ from its predecessor.
+- **Example checks:** n=3,m=2,k=1 -> C(2,1)*2*1^1=4; n=4,m=2,k=2 -> C(3,2)*2*1^1=6; n=5,m=2,k=0 -> C(4,0)*2*1^4=2. All match.
+- **Edge cases:** k>n-1 impossible (return 0). k=n-1 (all equal): exponent 0 -> C(n-1,n-1)*m*1 = m, correct. m=1: if k=n-1, pow(0,0)=1 -> answer 1 (all ones); if k<n-1, pow(0,positive)=0 -> answer 0. Python's pow(0,0,MOD)=1 handles this cleanly.
+- **Complexity:** O(n) preprocessing of factorials/inv-factorials via Fermat's little theorem; O(1) combination + O(log n) modpow. Fine for n,m up to 1e5.
+- **No DP needed:** direct enumeration / O(nk) DP is too slow; structural run argument collapses it to a single binomial term.

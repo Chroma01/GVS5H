@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement convolution-based counting: answer = sum over B in S of (c[2B]-1)/2, where c[2B] = # ordered pairs (x,y) in S with x+y=2B.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Correctness of reduction verified: self-pair (B,B) always present so c[2B] \u2265 1 and (c[2B]-1) is even; samples 1\u20133 produce 3, 5, 10.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement fast numpy FFT path: L = next power of two > 2*maxS (\u2264 2^21), arr[S]=1, conv = irfft(rfft(arr)^2, L), np.rint to int64, then sum((conv[2B]-1)//2). Precision error \u226a 0.5 since coefficients \u2264 N \u2264 1e6.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement pure big-int base-2^20 fallback (X = sum 2^(20x), P = X*X, extract 20-bit slot at byte 5B) with correct buffer sizing (xlen = 20*maxS/8+1, plen = 5*maxS+5).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle edge case n < 3 \u2192 print 0; numpy-missing fallback via try/except ImportError.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "All 3 provided samples PASS; no further refinement needed since algorithm is optimal O(M log M) and both paths are verified correct.",
+    "status": "done",
+    "result": ""
+  }
+]

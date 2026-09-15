@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: model the problem as parity constraints over row/column variables and choose the parity DSU approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement fast input handling for up to 1e5 test cases and total 1e6 cells, and efficiently compute powers of 2 modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each test case, compute the parity of A-tile counts in every row and column; immediately output 0 if any row or column parity is odd.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Scan the grid while maintaining row-prefix and column-prefix XORs of A-tile constraints to determine, for each B cell, the required parity between its row-flip variable and column-flip variable.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Add each B-cell parity equation to a DSU with parity over H row variables and W column variables, detecting contradictions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If no contradiction exists, count the connected components among all H+W variables, including isolated ones, and output 2^components modulo 998244353; otherwise output 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Test the implementation on the provided samples and edge cases such as all A, all B, and grids with isolated row/column variables.",
+    "status": "done",
+    "result": ""
+  }
+]

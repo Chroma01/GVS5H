@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select the canonical-tree best-first heap as the primary solution.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the canonical-tree 3D heap solution with packed heap keys and incremental value updates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on samples and edge cases: N=1, K=1, K=N^3 for small N, all equal values, large values, and K<N truncation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm complexity O(N log N + K log K) and memory are acceptable; no fallback needed.",
+    "status": "done",
+    "result": ""
+  }
+]

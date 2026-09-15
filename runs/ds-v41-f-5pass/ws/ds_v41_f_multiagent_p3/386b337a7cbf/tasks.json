@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement positive-product bitset DP over nonzero nums (parity, product, offset sums).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement separate zero-feasibility DP tracking used_zero to detect product-0 solutions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Return largest positive product p<=limit with alt sum k, else 0 if zero-feasible, else -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run provided examples (1,2,3)/(0,2,3)/(2,2,3,3) and edge cases (single element, k out of range, limit=1, zeros, value=limit) \u2014 all outputs matched expected.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "No mismatches found; parity-shift sign, singleton init, product cap, and zero/exclusion logic confirmed correct.",
+    "status": "done",
+    "result": ""
+  }
+]

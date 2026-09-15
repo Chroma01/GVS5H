@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Read N, M, X and the M edges, building out-adjacency and in-adjacency lists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement two-layer Dijkstra: state (vertex, layer); layer 0 uses out-edges cost 1, layer 1 uses in-edges cost 1; layer-switch cost X.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Use Python big-int distances; answer = min(dist[N][0], dist[N][1]); write to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validated against all four samples (4, 3, 4294967299, 21) -- all passed.",
+    "status": "done",
+    "result": ""
+  }
+]

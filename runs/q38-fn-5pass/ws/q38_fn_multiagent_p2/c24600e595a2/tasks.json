@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove the V-shape structure using adjacent swaps: eliminate any 0\u21921 flip before a 1\u21920 flip, and remove useless extra flips, leaving only optional off/on pairs for common 1s.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove the monotonicity/exchange property for common 1s, and define the three categories: Q = 1\u21920, P = 0\u21921, K = common 1s; sort K by cost.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive the cost for a fixed removed set as DownCost + UpCost, and derive marginal update formulas when inserting one common cost into the descending down set and ascending up set.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the prefix-scan algorithm for the optimal flip schedule: classify positions, sort categories, and scan common 1s from largest to smallest while maintaining the current cost and answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test edge cases such as A = B, only Q, only P, all common, equal costs, and large N, while ensuring O(N log N) time and 64-bit integer arithmetic.",
+    "status": "done",
+    "result": ""
+  }
+]

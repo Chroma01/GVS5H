@@ -1,0 +1,11 @@
+- **Reformulation:** Let final lengths be \(u_i,d_i\). Condition \(u_i+d_i=H\) gives \(d_i=H-u_i\), so cost for pair \(i\) is \(U_i+D_i-H\), independent of \(u_i\). Total cost \(=S-NH\) where \(S=\sum(U_i+D_i)\). Thus minimize cost = maximize feasible \(H\).
+- **Bounds on \(u_i\):** \(u_i\ge 0\), \(d_i=H-u_i\ge 0\), \(u_i\le U_i\), \(d_i\le D_i\) imply \(\max(0,H-D_i)\le u_i\le \min(U_i,H)\).
+- **Feasibility lemma:** Intervals \([L_i,R_i]\) admit an integer sequence with \(|u_i-u_{i+1}|\le X\) iff \(L_i\le R_j+X|i-j|\) for all \(i,j\). (Construction: \(u_i=\min_j(R_j+X|i-j|)\).)
+- **Reduction:** Substituting \(L_i,R_j\) and splitting cases shows feasible \(H\) iff \(H\le U_j+D_i+X|i-j|\) for all \(i,j\). Hence \(H_{\max}=\min_{i,j}(U_i+D_j+X|i-j|)\).
+- **O(N) computation:** Split absolute value:
+  - \(j\le i\): \(U_i+X i+\min_{j\le i}(D_j-X j)\).
+  - \(j\ge i\): \(U_i-X i+\min_{j\ge i}(D_j+X j)\).
+  Use prefix min of \(D_j-X j\) and suffix min of \(D_j+X j\).
+- **Answer:** \(S-N\cdot H_{\max}\). All arithmetic fits Python ints (values up to \(\sim 4\cdot 10^{14}\)).
+- **Verification:** Samples 1–3 checked manually: 15, 0, 5999999994. Sample 4 matches expected 9460 by the formula.
+- **Pitfalls:** 0-indexed indexing must be consistent; \(H_{\max}\ge 2\) since \(U_i,D_i\ge 1\), so no negative \(H\) concerns; ensure suffix/prefix minima are taken over correct index ranges.

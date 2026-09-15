@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement segment tree node merge for active/inactive elements storing sum, max prefix, max suffix, max subarray, and an inactive neutral element.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build the tree with all nums active and initialize the answer with the root's max subarray sum (no deletion baseline).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Group indices of distinct negative values only, since deleting non-negative values cannot improve the baseline.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each negative value whose frequency is less than n, deactivate all its indices, read the root's max subarray sum, update the answer, then reactivate those indices.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle edge cases in the implementation: n=1, all elements equal, all-negative arrays, empty active sequence after deletion, and the non-empty subarray requirement.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate against examples and random brute-force tests, then finalize Solution.maxSubarraySum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify performance on n=10^5 and optimize if needed.",
+    "status": "done",
+    "result": ""
+  }
+]

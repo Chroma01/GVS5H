@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate bitmask DP/set-cover approach exploiting target.length <= 4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Select a simpler alternative: enumerate target partitions and use top-m candidates per group for distinct assignment.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the partition-enumeration + top-m candidates algorithm compactly in the starter code.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run only the three provided sample tests and fix any failures.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Check edge cases: target 1, duplicate targets, already satisfied targets, large LCMs, duplicate nums values.",
+    "status": "done",
+    "result": ""
+  }
+]

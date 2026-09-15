@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Establish the structural reduction: type-2 ops leave exactly the intersection interval to cover; min cost \u2208 {1,2,3} or -1, and cost 2 is exactly one of {two type-1 with union [1,N], type-1 containing type-2, two disjoint type-2}.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the corrected O(M log M) algorithm: cost1; containment first; then union-of-two-op1; then two-disjoint-op2; then cost3 construction for M>=3; else -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Re-validate all 4 samples (passing).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Brute-force checker: exhaustively verified for small N,M that reported K equals the true minimum and the printed assignment achieves all x_j=1; cross-checked against the implementation with no counterexamples found.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement minOperations: integer-based d(x), prefix F(n) via threshold counting over powers of 4, per-query max(d(r), ceil(S/2)), sum and return.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate against provided examples and a brute-force checker on small ranges; report pass/fail and any off-by-one.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm whether max(d(r), ceil(S/2)) simplifies to ceil(S/2) for all l<r; keep the safe max form.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize/verify performance for 1e5 queries with r up to 1e9 (each query O(log_4 r) == ~15 iterations, precomputed powers of 4).",
+    "status": "done",
+    "result": ""
+  }
+]

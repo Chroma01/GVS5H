@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Show the old generating-function/prefix formula is wrong (fails sample 2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Reduce the problem: distinct in-degree sequences \u2194 length-N label strings admitting a closed walk in the 2-state (b) automaton whose transitions depend on s_i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the exact minimal 13-state deterministic subset DP with precomputed flat (src,dst) transition lists for s_i=0/1; initial dp[1]=1; output sum over accepting states {1,4,5,6,7,8,9,10,11,12} mod 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify sample1=14 and sample2=261339902 via the sample-test run.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Optimize (flat transition arrays, single list-comprehension reduction per position) to handle N=10^6.",
+    "status": "done",
+    "result": ""
+  }
+]

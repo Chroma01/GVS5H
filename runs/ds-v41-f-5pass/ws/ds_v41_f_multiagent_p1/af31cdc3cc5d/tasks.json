@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove and document the reduction: even segment optimum equals sum of largest half minus sum of smallest half; odd N requires choosing an unmatched position that splits into two even segments.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement even-length prefix scores leftScore[L] via two-heap (max-heap lower half, min-heap upper half) maintenance, recording f only at even L.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement even-length suffix scores via reversed-array prefix scan.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Combine: for odd N, answer = max over odd 1-indexed split i of leftScore(i-1)+rightScore(N-i); for even N, output the whole-array half-sum difference.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify on all three samples and edge cases (N=2, all-equal, [1,2,100]); use 64-bit integers and ensure it handles N up to 3e5 within limits. (All 3 public samples PASSED.)",
+    "status": "done",
+    "result": ""
+  }
+]

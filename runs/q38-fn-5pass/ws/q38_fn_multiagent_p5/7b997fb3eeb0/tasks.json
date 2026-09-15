@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the primary solution in Python: compute f[i] and h[i], build a sparse table RMQ over h, answer each query by binary searching K with rmq(L, L+K-1)+K <= length, and verify on samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify feasibility transformation and sentinel handling when no valid bottom exists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test edge cases: N=2, all equal sizes, no possible pairs, odd/even query lengths, f[i]=N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If sparse table memory/time is problematic, implement segment tree or sqrt-decomposition RMQ fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

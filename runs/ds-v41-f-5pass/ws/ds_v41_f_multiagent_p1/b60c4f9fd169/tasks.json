@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse K, S, and T from standard input; if |len(S)-len(T)| > K, immediately output No.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Optionally trim matching prefix and suffix from S and T to reduce the DP range, while preserving the edit-distance answer for the bounded check.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the Landau-Vishkin diagonal frontier algorithm: maintain V[d] = furthest i for each diagonal d = i - j, initialize with LCE(0,0), then for e = 1..K compute new frontier via substitution/deletion/insertion, validate bounds, and extend by LCE.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compare the target diagonal n-m against n after each edit count e; if reached, print Yes and exit.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test with samples and randomized brute-force verification for small strings, ensuring correctness for edge cases like length difference, empty matching, and single-character edits.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Analyze problem constraints and select Landau-Vishkin with direct LCE as the most suitable approach for K \u2264 20 and string lengths up to 500000.",
+    "status": "done",
+    "result": ""
+  }
+]

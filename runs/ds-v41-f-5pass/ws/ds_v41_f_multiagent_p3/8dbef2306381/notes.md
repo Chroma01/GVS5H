@@ -1,0 +1,10 @@
+- **State model:** `reach[j]` for position `j` satisfies `reach[j] = good(j) AND OR_{i=A..B} reach[j-i]`, with `reach[1]=1`. Only the last `B` positions matter, so the state is a `B`-bit mask; bit `k` = reachability of `cur-k`.
+- **Immediate block:** A bad interval of length `>= B` is uncrossable. To pass from `x <= L-1` to `y >= R+1` needs a jump `>= (R+1)-(L-1)=length+1 > B`. Exit `No` at once. This also guarantees every bad block has length `<= B-1`, so a whole bad block can be applied as a single shift `(mask << blen) & full` (bit0 of every bad step is 0).
+- **Linear transition:** A good step is linear over the boolean semiring: `v'_0 = OR` of bits `A-1..B-1`, and `v'_k = v_{k-1}` for `k>=1`. So a good run of length `L` is `M^L` applied to the mask.
+- **Matrix exponentiation:** `M` is `B x B` (B<=20). Precompute `M^(2^t)` as row bitmask tuples via boolean `matmul` (each `O(B^2)`); only ~`log2(N) <= 41` levels. Per good run apply `M^(2^t)` for set bits of `L`, each application `O(B)`. Powers of `M` commute, so applying in increasing `t` order is valid.
+- **Absorbing states:** `full` and `0` are fixed points of `M`, so `apply` returns early on them. This speeds up saturated runs; once the window is all-reachable it stays so, once all-zero no future position is reachable.
+- **Segment sweep:** Start `mask = 1` (window ending at 1). For each bad interval `[L,R]`: process the good run `[prev, L-1]` with `apply`, then shift by `R-L+1`, set `prev=R+1`. Finally process good run `[prev, N]`. Answer is bit0 of the mask (reach of `N`).
+- **Early exit on `mask==0`:** zero is absorbing, so if it appears before `N`, output `No`.
+- **A == B handled uniformly:** with `A=B` the matrix uses only bit `A-1`, correctly modelling jump `= A`; the length-`>=B` check plus the residue/period behaviour are all captured by the same code, no special case needed.
+- **Complexity:** precompute `~41*B^2`; each of `<= M+1` good runs costs `<= ~40*B`; bad work `O(M)`. Well within limits.
+- **Edge cases verified:** `B=1,A=1` (any bad square blocks); `N=2`; `M=0`; `A=B` residue failures; bad block exactly length `B-1` (crossable via jump `B` from `L-1`).

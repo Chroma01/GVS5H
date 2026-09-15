@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full solution: sliding-window Fenwick (counts+sums) over compressed values for median cost of every length-x window, plus O(n*k) DP selecting k non-overlapping windows.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify both provided examples hand-traced: [5,-2,1,3,7,3,6,4,-1],x=3,k=2 -> 8 (windows s=1 cost 5 + s=5 cost 3) and [9,-2,-2,-2,1,5],x=2,k=2 -> 3 (windows s=1 cost 0 + s=3 cost 3).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm edge cases conceptually: lower median for even x (equal cost either median), adjacent non-overlapping windows handled by prev[i-x]+costs[i-x], k*x<=n guarantees feasibility, duplicates handled via rank counts, Python big ints avoid overflow (INF=10**30).",
+    "status": "done",
+    "result": ""
+  }
+]

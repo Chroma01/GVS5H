@@ -1,0 +1,9 @@
+- **Model:** The global reversal operation only changes the parity of the current edge direction. A state is therefore `(vertex, parity)`, where parity `0` means original directions and parity `1` means all edges are reversed.
+- **Transitions:** From `(u, 0)`, an original edge `u -> v` gives `(v, 0)` with cost `1`. From `(u, 1)`, a reversed move follows an original edge `v -> u`, implemented using the reversed adjacency list. At every vertex, toggling parity costs `X`.
+- **Answer:** The minimum distance to `(N, 0)` or `(N, 1)`. Since Dijkstra pops states in nondecreasing distance order, the first valid popped state whose vertex is `N` is already the final answer.
+- **Implementation:** Two adjacency lists are built: `adj` for original edges and `radj` for reversed traversal. Two distance arrays `dist0` and `dist1` store distances for the two parities.
+- **State encoding:** Heap entries use `(distance, state)` with `state = 2 * vertex + parity`. This keeps heap tuples small and avoids storing three-element tuples.
+- **Complexity:** There are `2N` states and `2M + 2N` implicit edges, so the runtime is `O((N + M) log N)` and memory is `O(N + M)`.
+- **Large values:** `X` can be `10^9`, and the answer can exceed 32-bit range. Python integers handle this naturally; `INF = 10**30` is safely large.
+- **Edge cases:** Self-loops and multiple edges are handled naturally by Dijkstra. The problem guarantees reachability, but the code still has a fallback answer if the heap empties.
+- **Performance:** Input is read once, the input list is deleted after building the graph, and local references to `heappush` and `heappop` are used to reduce overhead.

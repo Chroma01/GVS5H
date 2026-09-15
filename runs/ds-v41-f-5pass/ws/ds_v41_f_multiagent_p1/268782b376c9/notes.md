@@ -1,0 +1,12 @@
+- **Problem model:** Walk on path 0..n-1. First move enters index 0 (costs 1), then +/-1 staying in [0,n-1]; each landing at i adds points[i] to gameScore[i]. Want max over walks of min_i gameScore[i] after at most m moves. Unvisited indices score 0.
+- **Binary search:** Answer X is monotone. feasible(X) iff the minimum number of moves to make every score_i >= X is <= m. Set r_i = ceil(X/points[i]) (required landings). X=0 trivially feasible; so m<n always yields answer 0.
+- **Edge/visit identity:** Let x_i = traversals of edge (i,i+1), e = final index, b_i = [i=0]+[i=e]. Then x_{i-1}+x_i = 2 v_i - b_i with v_i >= r_i. Total moves T = 1 + sum x_i (the +1 is the initial entry into index 0).
+- **Parity by end index:** e>0: x_i odd for i<e, even for i>=e; base x_i^0 = 1 if i<e else 2. e=0: all even, base 2.
+- **Reduction to MWIS:** x_i = x_i^0 + 2 y_i gives y_{i-1}+y_i >= R'_i = max(0, r_i - C_i). Min sum y equals max-weight independent set on a path with weights R'_i (LP dual is integral for a path).
+- **C_i values:** e>0: C_i=1 for i<e; C_i=2 for e<=i<=n-2; C_{n-1}=1. e=0: C_i=2 for i<=n-2, C_{n-1}=1.
+- **Move count:** L(e) = 1 + 2(n-1) - e + 2*MWIS(e) for e>0; L(0) = 1 + 2(n-1) + 2*MWIS0. feasible(X) iff min_e L(e) <= m.
+- **Implementation:** Right DP over suffixes with weights r_i-2 (i<=n-2), r_{n-1}-1 gives MWIS0 and every suffix MWIS. Left DP over prefixes with weights r_i-1. Combine with mwis = max(l0+max(r0,r1), l1+r0) to forbid selecting adjacent e-1 and e. All weights clamped at 0. O(n) per check, O(n log(max_p*m)) total, O(n) space.
+- **Walk realizability:** Every edge has base >= 1, so the multigraph is connected; degree parities (odd only at 0 and e) match an Euler path, so the derived x always corresponds to a valid walk.
+- **Reported outputs (harness run):** [2,4],m=3 -> 4; [1,2,3],m=5 -> 2; [2,4],m=2 -> 2; [5,7],m=1 -> 0; [1,2,3,4],m=3 -> 0 (m<n); [1,1],m=1 -> 0; [1,1],m=1e9 -> 500000000; [1000000,1],m=3 -> 1; [1e6]*50000, m=1e9 -> 20000000000.
+- **Large symmetric case rationale:** with all points equal and e=n-1, L = n*r exactly, so r = m/n = 20000 and X = 20000*1e6 = 2e10.
+- **Robustness:** Python big ints handle r up to ~1e15 (X up to max_p*m = 1e15). Example 1 matches prior brute-force verification; logic cross-checked on small cases.

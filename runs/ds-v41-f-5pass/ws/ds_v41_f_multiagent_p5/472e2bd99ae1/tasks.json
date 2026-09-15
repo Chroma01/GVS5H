@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze complexity and select a feasible approach for N=2e5 and K<=5e5.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement best-first max-heap expansion over sorted-descending A,B,C with packed encoded state and the unique-parent successor rule (push k+1 always; j+1 only if k==0; i+1 only if j==0 and k==0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify frontier completeness and tie handling: every triple has a unique parent, all N^3 triples generated exactly once, and popping in non-increasing order yields the k-th largest with correct multiplicity.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test samples 1-3 and edge cases N=1, all-equal values, K near min(N^3,5e5), and large 1e9 inputs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Finalize code that reads stdin, runs the algorithm, and writes only the answer to stdout.",
+    "status": "done",
+    "result": ""
+  }
+]

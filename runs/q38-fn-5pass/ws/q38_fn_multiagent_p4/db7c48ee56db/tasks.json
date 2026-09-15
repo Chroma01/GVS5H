@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: complement reduction plus enumeration approaches evaluated.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with complement reduction and DFS incremental XOR, including M=0 handling and sample verification.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Review edge cases: M=0, K=N, duplicates, large N with small M, and maximum combination count near 10^6.",
+    "status": "done",
+    "result": ""
+  }
+]

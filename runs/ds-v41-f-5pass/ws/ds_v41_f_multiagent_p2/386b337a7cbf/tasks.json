@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze constraints: bound the alternating sum by sum(nums) <= 1800, pre-check k outside this range, and note product states only need values 0..limit.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Design the DP state and transitions: process nums sequentially, track selected-count parity, current alternating sum, and capped product; include/skip with sign flipping.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle zero values and the empty subsequence carefully: exclude empty states, add valid singletons, and let zero flip parity while forcing product 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the product-first bitset DP (Part 1: all-positive exact-product bitsets; Part 2: zero-existence bitset DP without product bound).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate with the provided examples and brute-force small cases, especially zeros, ones, values above limit, k outside range, empty-subsequence exclusion, and returning -1 when no subsequence works; report exact verdict.",
+    "status": "done",
+    "result": ""
+  }
+]

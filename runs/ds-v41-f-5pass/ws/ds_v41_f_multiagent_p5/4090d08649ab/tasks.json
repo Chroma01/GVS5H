@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive that f(L,R) = (#distinct) \u2212 (#present adjacent pairs) = number of maximal consecutive runs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N) right-endpoint last-occurrence sweep (D=\u03a3last[v], P=\u03a3 min(last[v-1],last[v]); update only the two min-terms involving A[R]; contribution D-P) with sentinels last[0]=last[N+1]=0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify sample outputs 16, 23, 129 (all 3 public samples PASSED).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Ensure the final program reads all input from stdin and writes only the answer to stdout.",
+    "status": "done",
+    "result": ""
+  }
+]

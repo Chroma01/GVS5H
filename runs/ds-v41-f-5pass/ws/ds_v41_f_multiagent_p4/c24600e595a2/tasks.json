@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Classify indices into D (1->0), U (0->1), E (1->1), ignored (0->0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Establish ordering: all removals (D \u222a X) before all additions (U \u222a X); removals by descending C, additions by ascending C; optimal X is a prefix of E sorted by descending C.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive cost formula: costR + costS + M * sum_{E\\X} C, with M=|R|+|S|.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement Fenwick-tree incremental prefix evaluation: insert D into R and U into S using the derived deltas, then process E descending C, updating costR/costS/M/Esum and tracking the minimum total.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Brute-force validation via Dijkstra over bitmask states on random small-N cases (tie handling, mixed parities) plus all 3 public samples -- all passed.",
+    "status": "done",
+    "result": ""
+  }
+]

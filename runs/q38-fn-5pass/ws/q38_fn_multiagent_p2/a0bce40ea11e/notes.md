@@ -1,0 +1,11 @@
+- **Core formula:** For odd prime p, expand each completion as A plus variables times matrix units. Summing each variable over F_p^* kills all terms except all-A terms and terms with exactly one variable used p-1 times and one A factor. The total coefficient is (-1)^K, where K is the number of zero positions.
+- **Corrections:** For each diagonal zero (i,i), add column i and row i of A. For p=3 only, each off-diagonal zero (i,j) adds A[j][i] to position (i,j). Then multiply the whole matrix by (-1)^K modulo p.
+- **p=2 simplification:** The only nonzero replacement is 1, so every completed matrix is the all-ones matrix. Its square has every entry N mod 2. Bitsets are unnecessary.
+- **p<=1:** Although p is specified prime, handle p<=1 by printing zeros modulo 1.
+- **Early exits:** For odd p, if A is all zero, the answer is zero. If A has no nonzero off-diagonal entries, A is diagonal and A^p = A over F_p, so matrix exponentiation can be skipped.
+- **Matrix power:** Compute A^p by binary exponentiation. Starting with res=A and exponent p-1 saves one multiplication compared with res=I.
+- **Pure Python performance:** PyPy uses a sparse i-k-j multiplication with modulo applied once per row. CPython without numpy uses dense dot products via operator.mul, with a hybrid switch to sparse multiplication when the left matrix is at least 75% zero.
+- **Optional numpy path:** For CPython with large N and p, use numpy int64 matrices. To avoid overflow, split the inner dimension into chunks whose product-sum plus current accumulator stays below 2^63, then reduce modulo p after each chunk. This is safe for p <= 1e9 and N <= 100.
+- **Pure Python overflow:** Accumulating a full dot product or row sum can reach about N*p^2 <= 1e20, which is fine for Python integers.
+- **Complexity:** Dominated by O(N^3 log p) modular matrix multiplications, with log p <= 30. Corrections and output are O(N^2 + K*N) in the worst diagonal-correction case, easily small for N=100.
+- **Edge cases checked:** N=1, p=2, p=3 off-diagonal corrections, diagonal zeros, all-zero matrix, diagonal matrix, parity of K, and invalid p<=1.

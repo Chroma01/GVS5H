@@ -1,0 +1,6 @@
+- **Core reduction:** Pieces are identical, so an arrangement is a k-subset of cells. Fix an unordered pair of cells; the number of arrangements containing it is C(N-2, k-2) with N = m*n. By linearity the answer is C(N-2, k-2) * (sum of Manhattan distances over all unordered cell pairs).
+- **Separable 1D sums:** Total = C(N-2,k-2) * (n^2 * T(m) + m^2 * T(n)) mod p, where T(L) = sum_{0<=r<s<L}(s-r) = (L^3-L)/6 = L(L-1)(L+1)/6. Row part: each ordered pair of rows r<s contributes n^2 cell pairs, each with row-difference s-r. Column part symmetric.
+- **Verified samples:** (2,2,2): C(2,0)=1, n^2*T(m)+m^2*T(n)=4*1+4*1=8 -> 8. (1,4,3): C(2,1)=2, 16*0+1*10=10 -> 20. Both match.
+- **Boundary checks:** k=2 gives C(N-2,0)=1. k=N gives C(N-2,N-2)=1 (a single arrangement = all cells). 1D boards (m=1 or n=1) handled automatically since T(1)=0.
+- **Modular arithmetic:** Division by 6 done via modular inverse inv6 = pow(6, p-2, p). Precompute factorials/inverses up to N only (N <= 1e5), so the whole solution is O(m*n) time and memory.
+- **Formula structure (canonical):** answer = C(N-2, k-2) * (n^2 * T(m) + m^2 * T(n)) mod 1e9+7.

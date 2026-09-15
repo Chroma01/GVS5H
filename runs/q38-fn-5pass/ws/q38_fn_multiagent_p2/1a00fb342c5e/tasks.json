@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement graph traversal solution end-to-end: parse N, M and edges; build adjacency list; iterative BFS/DFS per component; compute relative values d[v]; validate d[u] xor d[v] == Z for every edge.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "For each consistent component, count set bits among d-values and choose optimal constant C by setting each bit to 1 when that reduces the number of set bits in the component.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle edge cases explicitly: self-loops, parallel edges, isolated vertices, M = 0, and bit range sufficient for all Z_i (e.g. 0..30 or 0..60).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Assign answer[v] = C xor d[v] for each component, leave isolated vertices as 0, and print the final sequence or -1 on contradiction.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run sample tests and verify the solution passes all public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

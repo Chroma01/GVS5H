@@ -1,0 +1,9 @@
+- **Problem:** count fine triplets (A,B,C) in S, A<B<C, A+C=2B. N, S_i ≤ 1e6, S distinct.
+- **Reduction:** fix B; number of unordered pairs {A,C} from S with A+C=2B, A≠B is (c[2B]-1)/2, where c[k] = # ordered pairs (x,y)∈S² with x+y=k. Sum over B∈S. c[2B] always includes the self-pair (B,B), so c≥1.
+- **Primary implementation:** numpy FFT convolution of the 0/1 indicator array f. Length L = next power of two > 2*maxS (L ≤ 2^21 for maxS=1e6). F = np.fft.rfft(f); conv = np.fft.irfft(F*F, L); round to int64. coeff at 2B = conv[2B]. Answer = sum((conv[2B]-1)//2). Total memory ~64 MB (float64 arrays of length L plus complex spectrum).
+- **Precision:** max convolution coefficient ≤ N ≤ 1e6. Double-precision FFT rounding error is ≪ 0.5, so np.rint is exact.
+- **Fallback:** if numpy import fails, use pure big-int base-2^20 convolution. X = sum 2^(20x); P = X*X. Slot for sum k starts at bit 20k. For k=2B this is bit 40B = byte 5B, byte-aligned. Extract c = Y[5B] | Y[5B+1]<<8 | (Y[5B+2]&0xF)<<16; ans += (c-1)>>1. Buffer sizes: xlen = (20*maxS>>3)+1; plen = 5*maxS+5.
+- **Fallback caveat:** CPython Karatsuba on ~20M-bit operands (~667k limbs) is too slow for the dense worst case (estimated >20s). The numpy path avoids this.
+- **Edge cases:** n<3 → 0; any B with no matching pair contributes (1-1)//2=0; distinctness bounds every convolution coefficient by N.
+- **Benchmark note:** not executed in this environment; analysis of Karatsuba vs FFT and typical AtCoder numpy runtime put the numpy path around 0.5s at maxS=1e6, while pure big-int would be far beyond typical limits. The fallback is only a safety net when numpy is unavailable.
+- **Memory ordering:** for numpy path, S_np indices are at most maxS < L, and 2*S_np indices are at most 2*maxS < L, so all reads are in range.

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: define state, recurrence, and clockwise direction mapping (DR->DL->UL->UR->DR).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement iterative DP: T[d][i][j] (no-turn alternating run) and F[d][i][j] (at most one clockwise turn), with value rule nxt = 2 if v!=2 else 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Filter answer to cells with grid value 1 (correct greedy brute forces embedded).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the full harness: examples (5,4,5,1), 15 edge cases, 2000 random (n,m<=6) vs brute_greedy, 400 random (n,m<=5) vs two brutes, 300 planted-segment grids \u2014 all report 0 mismatches / ALL OK.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verified correctness against two independent brute-force implementations and hand-verified edge facts; complexity O(n*m) time and memory, fits n,m<=500.",
+    "status": "done",
+    "result": ""
+  }
+]

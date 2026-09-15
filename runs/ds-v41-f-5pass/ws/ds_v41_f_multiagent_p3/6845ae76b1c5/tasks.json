@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input: read N, arrays A,B (0-indexed), K, and the K queries (X,Y); keep original query order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Reduce problem to 2D prefix sums of |A_i-B_j|; choose block size S and build distinctY + yidx mapping, grouping queries by P=X//S.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Full-block precompute: for each block compute D(j)=|\u00b7| via searchsorted + prefix sums, cumsum over B, sample at distinctY, maintain accumulator C, and assign full-block contribution to queries with matching P before adding the block.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Partial suffix handling: offline Y-sweep Fenwick (count+sum) over compressed B with batched np.add.at insertions; per-element g=2*a*cnt-2*sum+SY-a*Y via vectorized Fenwick prefix queries, summed per query with reduceat; chunked to bound memory.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Output all answers in original query order; verified Sample 1 and Sample 2 exactly (both passed).",
+    "status": "done",
+    "result": ""
+  }
+]

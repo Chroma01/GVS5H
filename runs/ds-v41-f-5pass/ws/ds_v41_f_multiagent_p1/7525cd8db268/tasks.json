@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement right-endpoint sweep: normalize a<b, bucket by b, maintain max1/max2/cnt1/owner1, accumulate baseline sum(r-max1) and per-pair gain (max1-max2), return baseline + max(0, best gain)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run final solution on both provided examples and the randomized brute-force checker; SAMPLE TESTS verdict: PASS (ex1=9, ex2=12; 20000 random trials, 0 mismatches)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "(Superseded) symmetric left-endpoint sweep with min/second-min right endpoints \u2014 not needed; right sweep is correct",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "(Superseded) Fenwick/segment-tree or record-interval decomposition variant \u2014 not needed; incremental top-two suffices",
+    "status": "done",
+    "result": ""
+  }
+]

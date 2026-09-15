@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Characterize via max Cartesian tree: subtree intervals, can_start from original immediate neighbors, upward propagation with strict `>`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N) iterative max Cartesian tree + linear reach DP with fast I/O.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Brute-force verification: simulate exhaustively for small N against the DP, confirm samples and edge families match with no counterexample.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm O(N) performance and Python int safety for N = 5e5, A_i up to 1e9.",
+    "status": "done",
+    "result": ""
+  }
+]

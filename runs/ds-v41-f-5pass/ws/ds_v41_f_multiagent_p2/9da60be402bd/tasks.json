@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N and the N\u00d7N grid; build per-label in_mask/out_mask bitsets for predecessor x\u2192v and successor v\u2192y.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Initialize ans to -1, set diagonal 0 and single-edge 1 states, enqueue them, tracking unvisited_rows.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run multi-source BFS on pair states extending by matching label c on both ends, setting ans[x][y]=d+2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Output N rows space-separated; verified against both public samples (PASSED).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirmed bitset BFS is correct and efficient for N\u2264100; no fallback needed.",
+    "status": "done",
+    "result": ""
+  }
+]

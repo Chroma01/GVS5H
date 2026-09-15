@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Deduplicate targets and drop any target that divides another remaining target (auto-covered).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute LCM for every subset of reduced targets and the minimal increment cost of each nums element to become a multiple of that LCM.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the per-element 0/1 subset DP over the pruned candidate pool, returning dp[(1<<m)-1].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Apply candidate pruning keeping the m cheapest elements per subset and cap m via the redundant-target filter.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run the three examples (got 1/2/0) and a brute-force stress test on 500 random small inputs (500/500 matched); SAMPLE TESTS: PASS.",
+    "status": "done",
+    "result": ""
+  }
+]

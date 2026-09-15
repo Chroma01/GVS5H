@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement count_after(o, e, next_par) using odd/even slot counts and factorial completion counts",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement greedy unranking loop over positions with increasing candidate order and per-candidate count subtraction",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle edge cases n=1, forced-parity start, and k out of range (return [])",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Brute-force verify for all n in 1..8 and all k in 1..(total+2); assert match with sorted brute-force list, and confirm the three provided examples",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm no off-by-one in k accounting at position 0 vs later positions and that factorial counts never overflow/round (Python big ints)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Drop redundant alternative approaches (memoized DP, bipartite matching) now that factorial-count greedy covers all cases",
+    "status": "done",
+    "result": ""
+  }
+]

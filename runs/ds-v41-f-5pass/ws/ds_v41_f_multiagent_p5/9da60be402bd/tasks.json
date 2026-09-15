@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify pair-state BFS (center-outward stripping) as the correct approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse N and the N\u00d7N grid; build reverse adjacency (incoming edges grouped by label) and forward adjacency (outgoing edges grouped by label).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Initialize queue and N\u00d7N dist array with INF; set dist[i][i]=0 and enqueue (i,i) for all i; for every direct edge u->v set dist[u][v]=1 and enqueue (u,v).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "BFS transitions: pop (u,v) with distance d; for each label c present in both rev[u] and fwd[v], for each predecessor x and successor y, if dist[x][y] > d+2 set it and enqueue (x,y). Orientation verified (prepend x->u, append v->y).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify base cases cover empty (diagonal 0) and single-edge (length 1) palindromes, and each +2 extension preserves the palindrome invariant; revisits allowed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Print each row with INF replaced by -1, space-separated, N rows.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Run against Sample 1 and Sample 2 and confirm outputs match exactly (bitset/row_mask acceleration used for N=100 dense grids).",
+    "status": "done",
+    "result": ""
+  }
+]

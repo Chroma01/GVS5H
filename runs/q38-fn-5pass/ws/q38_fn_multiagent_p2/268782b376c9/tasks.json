@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate reduction to binary search plus path MWIS feasibility.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete `maxScore` solution with binary search and linear `can(x)` prefix/suffix MWIS DP, including edge cases and sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and edge cases; if any fail, debug boundary bugs or switch to primal edge-pair covering DP / max-plus segment tree alternative.",
+    "status": "done",
+    "result": ""
+  }
+]

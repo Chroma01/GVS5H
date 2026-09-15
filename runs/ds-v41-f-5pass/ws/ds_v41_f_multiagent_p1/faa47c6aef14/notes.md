@@ -1,0 +1,11 @@
+- **Model:** Red balls move along permutation P (box i red goes to P_i), blue along Q. Balls never leave their permutation cycle.
+- **Feasibility:** Every box i with A_i=1 must be on the cycle of P containing X; every box with B_i=1 on the cycle of Q containing X. Otherwise print -1 (a ball on a different cycle can never reach X).
+- **Cycle order:** For P write seq = [X, P_X, P^2_X, ..., P^{m-1}_X] (seq[0]=X). Index j means forward distance m-j to X. Farthest ball = smallest j>=1 with a red ball.
+- **Required sequence per color:** For red, let D=min j>=1 with A[seq[j]]=1 (none -> empty). The needed operations are exactly c_D, c_{D+1}, ..., c_{m-1} in that order (every intermediate box must be operated to push the ball along). So R = pc[D:]. Same for blue giving Bs = qc[E:] (E=min index j>=1 with blue). Balls already at X need no op; X is never operated (would push balls out).
+- **Lower bound:** Any valid op sequence must contain R as a subsequence (ball cannot skip boxes) and Bs as a subsequence. So ops >= SCS(R, Bs).
+- **Upper bound / sufficiency:** Any common supersequence works. For a ball starting at required index q, use the designated occurrences i_q<...<i_L. Ball position along the cycle is non-decreasing; op at i_k on required box t_k forces position >= k+1 after i_k, ending at X after i_L. Extra ops on non-current boxes are harmless; extra ops on the current box only help. Hence answer = SCS = |R|+|Bs|-LCS(R,Bs).
+- **LCS computation:** R and Bs each contain distinct boxes. Map R boxes to positions; scan Bs and collect positions of common boxes; LCS = LIS strictly increasing (patience sorting with bisect_left), O(N log N).
+- **Pitfalls:** Do not operate X; ignore red/blue balls already at X; intermediate empty boxes on the required segment still count as operations; handle empty R or Bs (answer |other|); balls can merge in a box (fine); P_i or Q_i fixed points are harmless.
+- **Sample 1 check:** pc=[3,2,1,4] -> R=[2,1,4]; qc=[3,5,1] -> Bs=[5,1]; LCS=1; 3+2-1=4.
+- **Sample 4 check:** pc=[10,7,3,9] -> R=[7,3,9]; qc=[10,5,6,3,9,8,2,4] -> Bs=[5,6,3,9,8,2,4]; LCS=2; 3+7-2=8.
+- **Complexity:** O(N log N) time, O(N) memory; N up to 2e5.

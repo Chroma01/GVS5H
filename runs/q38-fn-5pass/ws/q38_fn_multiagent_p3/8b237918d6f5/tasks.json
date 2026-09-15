@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate min-cut threshold feasibility approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse input, store all directed edges, and compute the unweighted shortest path length L from 1 to N by BFS; set the search upper bound to hi=min(L,K).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement Dinic max-flow/min-cut and feasible(D) threshold-network construction, including terminal forcing, monotonicity, edge constraints, and unit cost edges.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "In main, loop D from hi down to 0 (or binary search), call feasible(D), print the first feasible D, and ensure parallel edges are represented by separate unit capacity edges or summed capacities.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run sample tests and edge cases (multi-edges, K large, D=0) to verify.",
+    "status": "done",
+    "result": ""
+  }
+]

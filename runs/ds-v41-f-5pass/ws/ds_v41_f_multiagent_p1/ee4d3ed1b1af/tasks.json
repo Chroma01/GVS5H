@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse p by splitting on '*' into segments A, B, C and handle the all-empty \"**\" case (return 0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement all-occurrence collection for each non-empty segment using KMP (O(n+m), handles overlaps).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build latestA[x] (running prefix max of A-starts ending <= x) and nextC[x] (suffix min of C-starts >= x) arrays of size n+1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For non-empty B: iterate its occurrences, compute best start (b0 if A empty else latestA[b0]) and best end (b1 if C empty else nextC[b1]+len(C)), skip invalid ones, track min span.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For empty B: handle A*C with both non-empty via latestA over C occurrences, and single-segment cases \"*C\"->lenC / \"A*\"->lenA when the segment occurs, else -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Return -1 if no valid match found; verified all four provided examples produce 8, -1, 0, 6.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Build functional graph from A, detect cycle nodes via indegree peeling, and process non-cycle nodes bottom-up.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "DP dp_v[t] = product over non-cycle children of prefixsum(dp_c)[t] mod 998244353, using O(M) prefix sums per node for O(NM) total.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each cycle compute S[t] = elementwise product of f_v[t] over members; add sum_{t=1..M} S[t] to the answer, multiply across cycles.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement full solution in Python without O(N*M^2); recursion-free iterative peeling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run on sample inputs 1,2,3 -- all passed (6, 2025, 10010).",
+    "status": "done",
+    "result": ""
+  }
+]

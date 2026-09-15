@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive visibility condition: building i visible from (0,h) iff (H_i-h)/X_i > max_{j<i} (H_j-h)/X_j.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Reduce to strict increase of g_i(h)=(H_i-h)/X_i, equivalent to adjacent thresholds T_i=(H_i*X_{i+1}-H_{i+1}*X_i)/(X_{i+1}-X_i).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Establish answer = M = max_i T_i if M>=0 else -1 (N==1 gives -1); verified arithmetically on all 4 samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Fix output to 18 decimal places (`:.18f`) so the printed string matches the sample format exactly; keep exact-fraction max and the N==1 / M<0 -> -1 handling; all 4 samples confirmed string-exact.",
+    "status": "done",
+    "result": ""
+  }
+]

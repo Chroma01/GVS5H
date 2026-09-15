@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: equivalence to even-color assignment and top-2K parity T-join correction framework.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement input parsing, base top-2K selection, base sum, default colors, and parity mask.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build exact top-two aggregates for selected M by color, directed recolor losses, and unselected color values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement single-edge and two-edge pair cost with resource-distinct constraints (RR, RS, SR, SS).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute minimum parity loss (direct or path via third color), output answers, and test against samples and brute force for small N.",
+    "status": "done",
+    "result": ""
+  }
+]

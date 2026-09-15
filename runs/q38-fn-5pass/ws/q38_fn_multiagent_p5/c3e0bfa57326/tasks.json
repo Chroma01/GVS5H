@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reachable strings are exactly all ordered forests with the same unordered rooted tree shape; adjacent sibling swaps generate arbitrary independent child permutations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete solution with parsing, canonical type IDs, factorial/invfactorial precomputation, and DP counting modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and validate the counting formula.",
+    "status": "done",
+    "result": ""
+  }
+]

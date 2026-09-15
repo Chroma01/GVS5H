@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the interval/sign feasibility model and pairwise-conflict lemma.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate the lemma with brute-force/difference constraints on small cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Parse input and normalize people to `(idx,l,r,sign)`, preserving original order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute endpoint conflicts via latest same-left and same-right conflicts with prefix maxima.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement compressed segment-tree monotonic-deque sliding window for same-sign crossing condition A.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Apply the crossing solver to original and reversed coordinates for each sign to cover both crossing orientations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Combine endpoint and crossing prefix maxima into `minL[R]` and answer queries by `L >= minL[R]`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Test on samples and small brute-force instances; optimize Python performance and memory.",
+    "status": "done",
+    "result": ""
+  }
+]

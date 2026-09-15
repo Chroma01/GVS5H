@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement `count_up_to(n)` using a digit DP parameterized by target digit sum `s` from 1 to 81: for each `s`, memoize states `(pos, tight, started, current_sum, product_mod_s)` over the decimal digits of `n`, prune when `current_sum > s`, and count numbers that are started, end with `current_sum == s`, and `product_mod_s == 0`.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle leading zeros correctly: keep `started=False` for leading zeros, do not add them to `current_sum` or change `product_mod_s`; once started, digit 0 sets `product_mod_s=0`.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement `beautifulNumbers(l, r)` as `count_up_to(r) - count_up_to(l - 1)` and test on examples plus edge cases such as single-digit numbers, numbers containing zeros, and `l=1`.",
+    "status": "pending",
+    "result": ""
+  }
+]

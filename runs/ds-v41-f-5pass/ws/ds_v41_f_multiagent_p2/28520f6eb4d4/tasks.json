@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive reduction: all buildings visible iff s_i(h)=(H_i-h)/X_i strictly increasing, equivalently h > b_{i,i+1}=(H_i*X_{i+1}-H_{i+1}*X_i)/(X_{i+1}-X_i) for every adjacent pair.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm answer T = max adjacent b_i; output -1 when T<0 (and N==1); T==0 gives 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Change output to match reference format: print max b_i as a float with f\"{ans:.18f}\" (18 fractional digits); N==1 or max<0 -> \"-1\"; max==0 -> \"0.000000000000000000\".",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify exact big-integer sign/max logic and .18f formatting against all 4 samples (exact string match confirmed).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Double-check visibility argument: optimal Q is building top; strict inequality handles touching case (sample 1 at h=1.5 blocked, giving answer 1.5).",
+    "status": "done",
+    "result": ""
+  }
+]

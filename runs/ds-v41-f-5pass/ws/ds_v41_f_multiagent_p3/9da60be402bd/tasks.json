@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse the input grid and build label-grouped incoming/outgoing adjacency (pred[c][u], succ[c][v]) plus base distance initialization (diagonal 0, direct edges 1, else unreachable).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the core pair-state BFS: enqueue all diagonals (level 0) then all single edges (level 1), then relax each state (u,v) by matching label c with p in pred[c][u] and q in succ[c][v], setting dist[p][q] = dist[u][v] + 2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Bound runtime for N <= 100 using bitmask succ[c][v] and per-left-endpoint vis masks to avoid rescanning the full Cartesian product.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Preserve the diagonal 0 (never overwrite with self-loop) and output the matrix rows space-separated, converting unreachable entries to -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify on both public samples (both PASSED).",
+    "status": "done",
+    "result": ""
+  }
+]

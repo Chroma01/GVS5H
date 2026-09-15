@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive formula: for fixed center C and y>=1, max kept = 1 + cnt(C,y)*(y+1) where cnt(C,y)=#{neighbors M of C : deg(M)-1 >= y}; answer = N - max over C,y.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Recognize optimal y for a center equals one of its neighbors' (deg(M)-1) values, and only y>=1 counts.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement Approach 1: build adjacency/degrees; per center C sort [deg(M)-1] descending; scan prefix while value>=1 computing 1+(i+1)*(a+1); track best; print N-best.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate on Sample 1 (N=8 -> 1), Sample 2 (N=3 -> 0), Sample 3 (N=10 -> 3); all passed.",
+    "status": "done",
+    "result": ""
+  }
+]

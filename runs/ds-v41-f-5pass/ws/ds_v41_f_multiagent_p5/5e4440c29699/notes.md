@@ -1,0 +1,11 @@
+- **Problem model:** valid blocks = full grid [0,W]x[0,H] minus hole rectangle [L,R]x[D,U] (inclusive). A path is any sequence of right/up moves on valid blocks, including a length-0 path (stand still). Answer = number of such monotone walks, summed over all starts (any end).
+- **Decomposition (verified):** Let g(v) = number of full-grid walks starting at v = C((W-vx)+(H-vy)+2,(W-vx)+1)-1. Let T = sum over all cells of g(v). Then Answer = T - (walks starting in hole) - (walks starting valid and touching hole). The last two are disjoint and cover every walk that uses the hole.
+- **T (verified numerically):** T = C(W+H+4, W+2) - (H+3) - (W+1)(H+2). Equivalent to the earlier form C(W+H+4,H+2)-(H+3)-(W+1)(H+2). Sanity: W=4,H=3 -> 431.
+- **StartTerm:** sum over hole cells of g. Set I=W-x, J=H-y so hole -> I in [i1,i2]=[W-R,W-L], J in [j1,j2]=[H-U,H-D]. Prefix F(I,J)=C(I+J+4,J+2)-(J+3)-(I+1) (0 if I<0 or J<0) equals sum_{I'<=I,J'<=J} C(I'+J'+2,I'+1). SumC = F(i2,j2)-F(i1-1,j2)-F(i2,j1-1)+F(i1-1,j1-1); StartTerm = SumC - (R-L+1)(U-D+1).
+- **TermA (entry from below, only if D>=1):** sum_{x=L}^{R} [C(x+D+1,D)-1]*[C(W-x+H-D+2,H-D+1)-1].
+- **TermB (entry from left, only if L>=1):** sum_{y=D}^{U} [C(L+y+1,L)-1]*[C(W-L+H-y+2,W-L+1)-1].
+- **Correct binomial argument checks:** C(x+D+1,D)=f[x+D+1]*inv[D]*inv[x+1]; C(W-x+H-D+2,H-D+1)=f[...]*inv[H-D+1]*inv[W-x+1]. TermB analog uses inv[L],inv[y+1] and inv[W-L+1],inv[H-y+1].
+- **Precompute factorials:** up to N=W+H+6. Max index needed is W+H+4 (T and F), so N is safe.
+- **Verification done:** brute force (cell DP f=1+f(right)+f(up)) matched the formula for: (W=1,H=1,hole(0,0)->5); (W=2,H=2,hole[1,1]x[1,1]->28); (W=2,H=2,hole[0,1]x[0,1]->11); (W=2,H=2,hole[0,1]x[1,2]->15); (W=2,H=2,hole[1,2]x[0,1]->15); (W=3,H=3,hole[1,2]x[1,2]->54); (W=2,H=2,hole[1,2]x[0,2]->6); (W=0,H=2,hole(0,1)->2). Sample 1 hand-computed = 192 matches (T=431, StartTerm=30, TermA=151, TermB=58).
+- **Edge handling:** guard TermA with D>=1 and TermB with L>=1 (no entry from below/left otherwise). Degenerate single-cell hole (L=R,D=U) works; holes touching any boundary work; W=0 or H=0 works.
+- **Complexity:** O(W+H) precompute + O((R-L)+(U-D)) loops, all mod 998244353.

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the KMP prefix-function solution for the shortest palindrome with prefix S.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify edge cases: already palindrome, single character, all distinct characters, and maximum length 500000.",
+    "status": "done",
+    "result": ""
+  }
+]

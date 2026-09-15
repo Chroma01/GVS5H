@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive/verify the edge-on-path probability formula (i<u: 2(i-1)/(i(i+1)); i=u: (u-1)/u; u<i<v: 1/i; i=v: 1; else 0) and confirm on small sample cases; hand-verified joint prob 2/(i(i+1)) for i=2,u=3,v=5.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(N+Q) Python solution with prefix sums pref1 (A_i/i) and pref2 (A_i*2(i-1)/(i(i+1))), modular inverses, factorial (N-1)!, correct handling of u==1 and N==2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test against all three provided samples (all PASSED) and brute-force verify on small cases (N=4 matches enumeration).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize I/O and memory for N,Q up to 200,000 using sys.stdin.buffer, iterative prefix arrays, O(N) memory.",
+    "status": "done",
+    "result": ""
+  }
+]

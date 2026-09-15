@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and choose the DSU surplus greedy method as the primary solution.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the direct Kruskal DSU surplus algorithm in Python, using iterative DSU with path compression and union by size, and 64-bit integer accumulation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle duplicate vertices in A and B, equal-weight edges, and redundant edges correctly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the implementation on the sample tests and check the outputs.",
+    "status": "done",
+    "result": ""
+  }
+]

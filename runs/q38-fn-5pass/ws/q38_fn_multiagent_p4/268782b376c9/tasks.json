@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the correct feasibility model: endpoint t has base visits 1 for i < t, 2 for t <= i <= n - 2, and 1 for the last index; deficits form a path MWIS problem.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Solution.maxScore with binary search and the O(n) prefix/suffix MWIS feasibility check using the correct a/b segment weights.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the provided sample tests and a small brute-force verifier for the current Solution.maxScore; if any test fails, debug the endpoint/DP combination or switch to an alternative feasibility formulation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Add edge-case handling and validation: s = 0, m < n, n = 2, large values, integer ceiling division, no floats, and safe negative infinity for empty DP states.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: identify DSU greedy / Kruskal reconstruction tree approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python DSU greedy solution and verify sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If sample tests fail, debug equal-weight handling or switch to grouped same-weight / Kruskal reconstruction tree approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Check edge cases: K=1, duplicate vertices within A/B, large weights/answer, connected graph final surplus zero.",
+    "status": "done",
+    "result": ""
+  }
+]

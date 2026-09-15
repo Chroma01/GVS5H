@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement functional graph decomposition and bottom-up at-most-value DP solution in Python, reading stdin and writing stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Find cycle nodes via indegree-zero removal and process non-cycle nodes in reverse topological order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each node compute exact-value product of child prefix arrays and prefix sums modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each cycle compute sum over common value of product of attached-tree factors and multiply into answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify on samples and edge cases such as self-loops, pure cycles, and chains feeding into cycles.",
+    "status": "done",
+    "result": ""
+  }
+]

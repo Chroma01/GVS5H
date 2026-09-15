@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove descending-value greedy: each inverted pair crosses once, largest-first minimizes each crossing's index (frozen larger values already at the right).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive per-value formula: c_k = #{v < k | pos[v] < pos[k]}, p_k = c_k + 1, cost_k = sum_{j=p_k}^{k-1} j = (p_k + k - 1)(k - p_k)/2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the O(N log N) Fenwick solution in Python (read N, P from stdin; print answer to stdout) using the per-value formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate on provided samples (expect 4, 6, 0) and against an exhaustive brute force over all permutations with N \u2264 7.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Sanity-check worst case N = 2*10^5 (reversed permutation) for runtime and that Python big-int accumulation is correct.",
+    "status": "done",
+    "result": ""
+  }
+]

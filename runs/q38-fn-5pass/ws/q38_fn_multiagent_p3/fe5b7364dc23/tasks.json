@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: choose prefix-sum/binomial-expansion O(NK) approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with prefix sums, binomial coefficients, and modular power-sum maintenance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and edge cases (N=1, A_i=0, K=10) to confirm correctness.",
+    "status": "done",
+    "result": ""
+  }
+]

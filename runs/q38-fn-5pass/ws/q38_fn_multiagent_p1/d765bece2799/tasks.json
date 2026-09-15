@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select monotonic-stack per-element contribution as the primary method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement monotonic-stack boundary computation for subarray minima and maxima.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive and implement an O(1) function to count valid left/right extension pairs with total length at most k.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Accumulate total minimum and maximum contributions using the boundary arrays and bounded pair-counting formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify duplicate tie-breaking so every subarray minimum and maximum is assigned exactly once.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test against the provided examples and edge cases such as k=1, k=n, duplicates, negative values, and large intermediate sums.",
+    "status": "done",
+    "result": ""
+  }
+]

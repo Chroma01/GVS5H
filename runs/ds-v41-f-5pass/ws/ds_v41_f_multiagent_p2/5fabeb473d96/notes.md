@@ -1,0 +1,18 @@
+- **Reduction:** sum over all parent assignments by linearity over edges \(i=2..N\). Edge \(i\) with weight \(A_i\) lies on path \(u\)-\(v\) iff exactly one of \(u,v\) is in the subtree of \(i\). Answer is \((N-1)!\) times the probability-weighted sum.
+- **Subtree structure:** because parents have smaller labels, subtree of \(i\) contains only vertices \(j \ge i\). For \(j>i\), \(P(i \text{ ancestor of } j)=1/i\).
+- **Joint descendant fact:** for \(i<a<b\), \(P(\text{both } a,b \text{ are descendants of } i)=2/(i(i+1))\), independent of \(a,b\). This follows from the subtree-size process \(s_k=s_{k-1}+Bern(s_{k-1}/(k-1))\).
+- **Per-edge probabilities for \(u<v\):**
+  - \(i<u\): \(p_i=2(i-1)/(i(i+1))\)
+  - \(i=u\): \(p_i=(u-1)/u\)
+  - \(u<i<v\): \(p_i=1/i\)
+  - \(i=v\): \(p_i=1\)
+  - \(i>v\): \(p_i=0\)
+- **Prefixes:**
+  - \(C[x]=\sum_{i=2}^{x} A_i\cdot 2(i-1)/(i(i+1))\)
+  - \(I[x]=\sum_{i=2}^{x} A_i/i\)
+- **Query formula:** let \(S\) be the weighted sum before multiplying by \((N-1)!\).
+  - \(u=1\): \(S=I[v-1]+A_v\)
+  - \(u\ge2\): \(S=C[u-1]+A_u(u-1)/u+I[v-1]-I[u]+A_v\)
+- **Modulo:** use mod \(998244353\), precompute inverses up to \(N+1\) with linear recurrence, multiply by \((N-1)!\) at the end.
+- **Verification:** samples 1, 2, and 3 all match; for sample 3, query \(3\,8\) expands to \((A_2+2A_3)/3+A_4/4+A_5/5+A_6/6+A_7/7+A_8\), times \(8!\), giving \(55973424\).
+- **Pitfalls:** do not omit \(\mathrm{inv}[i+1]\) in the \(C\) term; the \(i=v\) contribution is exactly \(A_v\) with coefficient \(1\); the \(i=u\) coefficient is \((u-1)/u\), not \(1/u\).

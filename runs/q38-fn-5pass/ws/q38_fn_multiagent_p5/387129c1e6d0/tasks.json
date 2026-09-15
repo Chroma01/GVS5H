@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Abandon the global sorted/diff-array implementation after the token-limit failure.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the simpler per-line merged-interval solution described above.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify sample tests and edge cases: inclusive endpoints, overlapping/touching segments, houses at intersections, large coordinate sums, and lines with no houses.",
+    "status": "done",
+    "result": ""
+  }
+]

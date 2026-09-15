@@ -1,0 +1,12 @@
+- **Problem:** pick exactly K edges to weight 1 (rest 0), maximize shortest 1->N distance. Answer bounded by N-1 (any simple 1->N path caps the min). Feasible set of L is downward closed: a selection achieving shortest >= L also achieves >= L-1.
+- **Exact vs at-most:** need only min number of edges f(L) <= K. Extra edges can always be added (weights only grow, shortest cannot drop), and K <= M guarantees enough padding. So f(L) <= K is the right test.
+- **Duality (distance labeling):** for fixed L, selecting set S is valid (every 1->N path has >= L S-edges) iff there is a labeling d:V->{0..L} with d(1)=0, d(N)=L, d(v) <= d(u)+1 for every edge u->v. Any valid S gives such a labeling (cap the S-weight shortest distances at L), and the tight edges (d(v)=d(u)+1) are a subset of S; conversely any labeling's tight edges form a valid selection. Hence min |S| = min number of tight edges.
+- **Path argument:** along any path d rises from 0 to L, each step rises by at most 1, so at least L steps are tight. (Checked: a direct edge 1->3 with d(3)-d(1)=2 is forbidden by d(3)<=d(1)+1, so it never sneaks through.)
+- **Min-cut model:** node A(v,t), t=1..L, source side means d(v) >= t.
+  - monotonicity: A(v,t) -> A(v,t-1) INF.
+  - d(1)=0: A(1,t) -> sink INF. d(N)=L: source -> A(N,t) INF.
+  - constraint u->v: A(v,t) -> A(u,t-1) INF for t>=2.
+  - cost u->v: A(v,t) -> A(u,t) capacity 1 for all t. Cut iff A(v,t) source and A(u,t) sink, i.e. d(u) < t <= d(v); summing over t gives max(0, d(v)-d(u)), which equals the tight count once feasibility (difference <= 1) is enforced.
+- **Check:** min cut value = f(L). Feasible iff f(L) <= K. INF = 2^30 (any value > M). Sample outputs verified: 1 / 2 / 0.
+- **Implementation:** Dinic max-flow with early exit once flow > K (keeps infeasible/INF-heavy cases fast). Scan L from N-1 down to 1, return first feasible; default 0. Recursion depth needs sys.setrecursionlimit (num nodes up to ~900).
+- **Complexity:** per L: ~N*L+2 nodes, ~(2M+N)*L edges (<= ~6000). At most N-1 flow computations; tiny.

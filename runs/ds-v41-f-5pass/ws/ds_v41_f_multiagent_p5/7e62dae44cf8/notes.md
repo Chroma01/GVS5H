@@ -1,0 +1,8 @@
+- **Problem model:** Expanding region from (P,Q). Initially Takahashi has strength S[P][Q]. He may absorb an adjacent slime v if S[v] * X < current_strength. Absorbing adds S[v] and makes v's neighbors adjacent.
+- **Greedy correctness:** Absorbing any available slime only increases strength and expands the boundary, so no previously absorbable slime becomes harder to absorb. The set of absorbable cells is monotone; the final reachable closure is independent of the order of absorption. Therefore, always absorbing the weakest boundary slime is optimal.
+- **Stopping condition:** Maintain a min-heap of boundary slimes. If the smallest boundary slime s satisfies s * X >= current, then every boundary slime has strength >= s, so none are absorbable. Stop and output current.
+- **Integer arithmetic:** Strict inequality S * X < current uses Python big ints, avoiding floating‑point precision issues for up to 10^21.
+- **Visited array:** Mark a cell as visited when it is first pushed into the heap. This prevents duplicate heap entries (each cell pushed at most once) and serves as the absorbed/discovered flag. No separate absorbed check is needed.
+- **Complexity:** O(HW log(HW)) time, O(HW) memory. HW ≤ 250,000, easily within limits.
+- **Edge cases:** H=W=1 yields the initial strength with no neighbors. X=1 uses s < current. Large X makes s*X huge, correctly blocking absorption.
+- **Verification:** Samples produce 28, 5, 1343 as expected. Sample 1 order: absorb 4 (13), 6 (19), 9 (28); next 14 fails strict inequality 14*2=28 < 28. Sample 2: start 5, neighbors 10, 10*1=10 < 5 false, output 5.

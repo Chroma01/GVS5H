@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduction to ternary tree, pair-cost DP, \"sum of bases + two smallest extras\" recurrence.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse N and the binary string A from stdin.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute L = 3^N and initialize leaf cost arrays: cost0/cost1 per leaf from each character.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement bottom-up level-by-level DP combining triples with cost_v = sum_i c_i(v) - max_i max(0, c_i(v)-c_i(1-v)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Extract answer as max(root_cost0, root_cost1) since the original root value costs 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Output the DP cost and verify on samples 1 and 2 (both PASSED).",
+    "status": "done",
+    "result": ""
+  }
+]

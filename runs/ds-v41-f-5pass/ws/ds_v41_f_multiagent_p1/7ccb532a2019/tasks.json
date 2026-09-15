@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: fixed-k binary DP over 26 letters with adjacent-shift savings is the leading O(26n) approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement fixed-k 2-state DP (dp0/dp1), unary |c_i - d_i|, edge saving min(excess_{i-1}, deficit_i), no 25->0 edge, best initialized to n.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the 3 official samples and confirm outputs 1, 0, 2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Stress-test DP against a brute-force solver on random small strings / reduced alphabets \u2014 1000 random cases matched, no counterexamples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Performance-check the DP at n = 2*10^4 \u2014 runs well under time limit.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirmed only adjacent (distance-1) shifts ever yield a saving; distance>=2 equals delete+insert, so no carry/multi-edge model is needed.",
+    "status": "done",
+    "result": ""
+  }
+]

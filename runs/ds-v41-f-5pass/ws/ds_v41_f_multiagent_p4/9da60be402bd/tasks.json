@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identified product-graph BFS recurrence dist(u,v)=0 if u=v, 1 for single edges, else min over same-label edges u->x and y->v of dist(x,y)+2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the full solution (bitmask level BFS over vertex pairs): parse input, precompute outmask/inlist/vchars, initialize levels 0 and 1, expand each settled state (x,y) to d+2 via same-label edge pairs, and print the distance matrix with -1 for unreachable pairs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the implementation on both provided samples and confirm outputs match exactly (PASSED both).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Cross-check against an independent brute-force product-graph shortest-path reference on many small random graphs; no mismatches found (verified parity, self-loop, and bitmask-indexing cases).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm complexity bound O(N^3) with N\u2264100 (per-state expansion is O(indeg(x)) \u2264 N, total ~1e6) \u2014 performance is safe without extra pruning.",
+    "status": "done",
+    "result": ""
+  }
+]

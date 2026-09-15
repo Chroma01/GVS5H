@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: choose convolution-based counting (answer = sum over B in S of (pair-sum-count at 2B minus 1)/2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement numpy.fft self-convolution solution (L = next pow2 > 2*maxS, rfft/irfft of indicator, round to int64, answer = (sum over B in S of conv[2B] - N)//2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Add pure-Python big-integer packing fallback (24-bit/3-byte slots) triggered if numpy import fails.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify against samples 1-3 (expect 3, 5, 10) \u2014 all passed.",
+    "status": "done",
+    "result": ""
+  }
+]

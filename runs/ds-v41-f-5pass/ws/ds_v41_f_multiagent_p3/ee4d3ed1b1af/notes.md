@@ -1,0 +1,11 @@
+- **Pattern structure:** `p` has exactly two `*`, so it decomposes as `A*B*C` with three literal segments (any may be empty). A matched substring equals `A + gap + B + gap + C`, hence must start at an occurrence of `A` (if nonempty) and end at an occurrence of `C` (if nonempty).
+- **Non-overlap constraints (inclusive indices):** `A` occurrence `a` must satisfy `a+len(A) <= b` for `B` start `b`; similarly `b+len(B) <= c`. The `<=` is right since a gap of zero is allowed (`a+lenA-1 < b`).
+- **Length formula:** For a chosen triple `(a,b,c)`, substring length is `c+len(C) - a` (start `a`, inclusive end `c+lenC-1`).
+- **Key reduction:** For a fixed `B` occurrence `b`, the best `A` is the largest `a` in `occA` with `a <= b-lenA` (maximize `a`), and the best `C` is the smallest `c` in `occC` with `c >= b+lenB` (minimize `c`). These constraints are independent, so this is optimal per `b`; iterate all `b`.
+- **Two-segment case:** If exactly two literals `X` then `Y` are nonempty (the third empty), minimize `y+len(Y)-x` over `x in occX`, `y in occY` with `x+lenX <= y`. For each `y`, take the largest feasible `x` via bisect.
+- **One-segment case:** Only one literal present means pattern is `*L*` (or `L**`/`**L`); answer is `len(L)` if `L` occurs, else -1.
+- **All empty:** `p="**"`, answer 0 (empty substring valid).
+- **Occurrences:** KMP collects all overlapping matches in O(n+m) each; overlap must be retained. Nonempty parts only.
+- **Verified examples:** Ex1 `ba*c*ce` -> 8 (a=5,b=8,c=11); Ex2 no `"adb"` -> -1; Ex3 `**` -> 0; Ex4 `*adlogi*` -> 6.
+- **Edge sanity:** `a*a*` on `"aa"` -> 2; `*B*` -> len(B); `**ab` -> 2; `a**b`/`a*C` handled by two-seg; `ab**` -> len(ab).
+- **Complexity:** O((n+m) + occ*log(occ)) total, fine for 1e5.

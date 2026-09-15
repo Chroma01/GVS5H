@@ -1,0 +1,10 @@
+- **Problem:** sum over all subarrays (sum)^K mod 998244353, N<=2e5, K<=10.
+- **Key reduction:** prefix sums P_0=0, P_i=cumsum. Each subarray [l,r] sum = P_r - P_{l-1}. Answer = sum over pairs 0<=i<j<=N of (P_j - P_i)^K.
+- **Binomial expansion:** sweep j=1..N; (P_j - P_i)^K = sum_{t=0}^K C(K,t) P_j^{K-t} (-1)^t P_i^t. For each j accumulate over i<j.
+- **Maintained state:** M_t = sum_{i<j} P_i^t for t=0..K. Initialize with i=0: M_0=1 (0^0=1), M_t=0 for t>=1.
+- **Per step:** compute pw[t]=P_j^t, term = sum_t C(K,t)(-1)^t M_t pw[K-t], add to answer, then update M_t += pw[t]. Crucially update AFTER using (keeps i<j strict).
+- **Complexity:** O(NK) with tiny K; all arithmetic mod 998244353. Pure Python ~4M ops for N=2e5, comfortably fast.
+- **Pitfall:** 0^0=1 must hold for pw[0] and initial M_0; do not treat P=0 specially.
+- **Pitfall:** sign is (-1)^t attached to P_i term (the subtracted one), not P_j.
+- **Verification:** sample1 (N=3,K=2,A=3,1,2) -> 75; sample2 (N=1,K=10,A=0) -> 0. Both confirmed by hand through the algorithm.
+- **Verified trace (sample1):** P=[0,3,4,6]; j=1 term=9 (M=[2,3,9]); j=2 term=17 (M=[3,7,25]); j=3 term=49 -> total 75.

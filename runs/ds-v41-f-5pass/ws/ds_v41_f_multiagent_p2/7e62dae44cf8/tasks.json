@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the min-heap/BFS-frontier greedy: read input, seed heap with neighbors of (P,Q), loop popping min frontier strength, absorb iff `X * strength < cur`, else break, accumulate into `cur`, push unvisited orthogonal neighbors; output `cur`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle correctness details: zero-based indices, strict inequality `X*s < cur`, mark visited when a cell enters the heap to prevent duplicates, always include start cell, use Python arbitrary-precision ints for `X*s`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the three provided samples and verify outputs exactly (28, 5, 1343).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Complexity/robustness check for H,W up to 500 (250k cells): O(N log N) iterative traversal confirmed.",
+    "status": "done",
+    "result": ""
+  }
+]

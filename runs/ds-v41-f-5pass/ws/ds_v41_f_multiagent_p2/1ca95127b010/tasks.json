@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze operations as block swaps 0^X1^Y <-> 1^Y0^X; establish necessary invariants (1-positions mod X preserved in order, 0-positions mod Y preserved in order; counts encoded).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N) residue-invariant solution (sig(S)==sig(T)) with bytes parsing; confirmed passing both public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Exhaustive BFS verification for all N<=12 and all X,Y: reachability components matched signature-equality classes, including X+Y>N no-move case and N=1; no counterexample found.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Edge-case reasoning: S==T, all-0/all-1, X=1 or Y=1, X+Y>N forces S==T \u2014 all consistent with the invariant.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Complexity confirmed O(N) time / O(N) memory via bytes reading, adequate for N<=5x10^5.",
+    "status": "done",
+    "result": ""
+  }
+]

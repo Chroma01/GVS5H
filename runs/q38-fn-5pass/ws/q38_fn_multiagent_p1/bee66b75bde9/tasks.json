@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select the row-sweep / 2D dominance check.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Python program reading stdin and applying the row-sweep check.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle edge cases: same-row white-before-black ordering, equal columns, no white or black cells, large N, M=1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run sample tests and verify output.",
+    "status": "done",
+    "result": ""
+  }
+]

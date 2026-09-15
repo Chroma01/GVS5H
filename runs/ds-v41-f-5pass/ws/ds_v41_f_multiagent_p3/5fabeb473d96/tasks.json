@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive/verify edge contribution probabilities: for i<u, p=2(i-1)/(i(i+1)); for i=u, p=(u-1)/u; for u<i<v, p=1/i; for i=v, p=1; otherwise p=0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute modular inverses for 1..N+1, and compute factorial (N-1)! modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build prefix sums S1 and S2 mod 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each query compute inner = S2[u-1] + A_u*(u-1)/u + (S1[v-1]-S1[u]) + A_v.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Multiply each inner by (N-1)! and output with fast I/O.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Implement full program and validate against all provided samples (all 3 passed).",
+    "status": "done",
+    "result": ""
+  }
+]

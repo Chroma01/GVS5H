@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the median transformed-position solution in Python.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Read N and S, and collect the 0-based positions of all characters equal to '1'.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Transform each one-position p_i into p_i - i, where i is the 0-based rank among the ones.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Select the median transformed value and compute the total cost as the sum of absolute differences.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Ensure the implementation runs efficiently for N up to 5e5 and uses Python integer arithmetic for large answers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate edge cases: single '1', all '1's, already contiguous '1's, leading/trailing zeros, and even number of '1's.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select two-layer Dijkstra over `(vertex, parity)` as the primary solution.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse `N`, `M`, `X` and build adjacency lists for original outgoing edges and original incoming edges.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement Dijkstra over `2N` states with transitions: move along outgoing edges in parity 0, move along incoming edges in parity 1, and switch parity at the same vertex with cost `X`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Initialize only `(1, 0)` with distance 0, use 64-bit integer distances, and output `min(dist[N][0], dist[N][1])`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Optimize for Python performance using compact adjacency lists, a heap, and early exit when a target state is finalized.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify the implementation against the provided sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

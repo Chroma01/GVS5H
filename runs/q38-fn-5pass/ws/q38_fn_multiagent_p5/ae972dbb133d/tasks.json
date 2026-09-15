@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive reduced row/column XOR constraints and prefix offsets for A/B tiles.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement fast input handling and parity DSU over H+W vertices with component count and inconsistency flag.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement row/column parity checks and B-cell union equations using prefix XORs of A tiles.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate against samples and edge cases (all A, all B, no B, parity failures, small brute force) and ensure O(sum HW alpha) time, O(H+W) memory.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Establish optimal structure: all 1\u21920 flips precede all 0\u21921 flips (exchange argument); order by decreasing (down)/increasing (up) C.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive cost formula and prove optimal Q is a prefix of P sorted descending; reduce to per-prefix closed form.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the O(N log N) algorithm (stdin\u2192stdout) with PR/PS/g(c)/prefix-sum formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm samples 1\u20133 pass (16, 0, 2867).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Execute the brute-force Dijkstra validator over 2^N states vs. the fast solver on exhaustive N\u22644 and 3000 random N\u226410 cases; no mismatches (ALL TESTS PASSED).",
+    "status": "done",
+    "result": ""
+  }
+]

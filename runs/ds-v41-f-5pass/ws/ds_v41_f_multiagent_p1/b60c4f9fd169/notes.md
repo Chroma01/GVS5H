@@ -1,0 +1,16 @@
+- **Problem:** Decide if edit distance between S and T is ≤ K, with K ≤ 20 and string lengths up to 500000. Operations: insert, delete, substitute (all cost 1).
+- **Core algorithm:** Landau-Vishkin bounded edit distance. Maintain for each diagonal d = i - j the farthest i reachable with at most e edits. e runs from 0 to K.
+- **Target:** d_target = n - m. Success when V[d_target] ≥ n (which implies j = m because j = i - d_target = n - (n-m) = m).
+- **Initialization:** e = 0: V[0] = LCP(S, T). All other diagonals unreachable (-1).
+- **Transitions (e from 1 to K):** For each reachable old diagonal d with i = V[d], j = i - d:
+  - substitution: new d = d, candidate i+1 (if i < n and j < m)
+  - deletion: new d = d+1, candidate i+1 (if i < n)
+  - insertion: new d = d-1, candidate i (if j < m)
+  - carry: new d = d, candidate i (state already reachable with fewer edits)
+  Take the maximum per diagonal, then extend by longest common prefix from (i, j).
+- **Safety of carry:** V[d] is nondecreasing in e. A carried state was already maximally extended, so it yields no new matches but ensures monotonicity and correct boundary handling.
+- **Substitution on equal characters:** The algorithm may “substitute” equal characters, paying 1 edit to advance a match. This cannot cause false positives because the same match could be taken for free, reducing the true edit distance. So the decision remains correct.
+- **Complexity:** Number of diagonals is O(K). Each diagonal’s frontier advances monotonically up to n, so total LCP extension work is O(n·K) worst-case, but typically much less. With n ≤ 500000 and K ≤ 20, at most ~10M character comparisons, easily fast in Python using bytes.
+- **Implementation details:** Use `sys.stdin.buffer.read().split()` to get bytes for fast indexing. Array with offset K+2 stores V[d]. Iterate only over reachable diagonals. Early exit once target is reached.
+- **Edge cases:** `abs(n-m) > K` → immediate No. `S == T` → Yes at e=0. Lengths 1..500000, K≥1. Substitution allowed even when characters are equal (safe as argued).
+- **Validation:** Sample 1 (K=3, abc→awtf) → Yes; Sample 2 (K=2) → No; Sample 3 → Yes. Manual checks: K=1 `a`→`b` → Yes; K=1 `ab`→`ba` → No; K=2 `ab`→`ba` → Yes; length diff > K → No.

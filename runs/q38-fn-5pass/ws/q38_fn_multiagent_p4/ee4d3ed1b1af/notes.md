@@ -1,0 +1,4 @@
+- **Sample results:** Example 1 PASS, expected 8, actual 8. Example 2 PASS, expected -1, actual -1. Example 3 PASS, expected 0, actual 0. Example 4 PASS, expected 6, actual 6.
+- **Current approach:** unchanged; split `p` into three literal parts around the two stars, find occurrences with KMP, then choose compatible ordered occurrences using binary search.
+- **Complexity:** KMP scans `s` once per non-empty literal part. The main loop runs over occurrences of the middle literal, or the suffix when the middle is empty, with binary searches. This is suitable for the given constraints.
+- **Edge cases:** empty literal parts are handled by collapsing boundaries; the empty substring is valid only when `p == "**"`.

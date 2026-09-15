@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, X, Y and the strings S, T.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Reject if the number of '1's differs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the k-th '1' positions of S and T match mod X (order preserved).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify the k-th '0' positions of S and T match mod Y (order preserved).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Output Yes only when all invariant checks hold; verified against both provided samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm necessity (each 1 moves by \u00b1X, each 0 by \u00b1Y, orders preserved) and sufficiency via exhaustive small-N component analysis; no counterexample found.",
+    "status": "done",
+    "result": ""
+  }
+]

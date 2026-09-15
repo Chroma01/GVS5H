@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and candidate approaches for the implicit interval-disjointness graph.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove and validate the path-shape bound and query formula with brute-force small tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement coordinate prefix/suffix minima solution with strict left/right conditions and INF-safe arithmetic.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle isolated vertices and boundary cases via sentinels; formula naturally returns -1 when no intermediate exists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate final implementation on samples and edge cases.",
+    "status": "done",
+    "result": ""
+  }
+]

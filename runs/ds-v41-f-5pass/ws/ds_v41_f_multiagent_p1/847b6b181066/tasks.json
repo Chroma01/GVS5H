@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive cumulative prefix positions P(k) and prove generation g exists iff P(g) is a first occurrence of its value among P(0..g), so the answer at t is 1 iff P(t)-D appears in {P(0),...,P(t)} (D=(R,C) != (0,0)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N) online set sweep (initialize seen with (0,0), check pos-D then insert pos each step) reading stdin and writing the N-character string to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation against Sample 1 (001010), Sample 2 (0001101011), Sample 3 (00100111111000101111), plus edge cases; all samples passed.",
+    "status": "done",
+    "result": ""
+  }
+]

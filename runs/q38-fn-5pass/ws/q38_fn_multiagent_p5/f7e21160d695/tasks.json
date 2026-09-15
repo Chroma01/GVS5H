@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce the problem to bottleneck connectivity/ultrametric matching and choose a DSU merge-counting approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement DSU merge-counting solution with fast input, sorted edges, component A/B counts, and 64-bit accumulation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify correctness on samples and edge cases (duplicate A/B vertices, equal edge weights, K=1, large weights).",
+    "status": "done",
+    "result": ""
+  }
+]

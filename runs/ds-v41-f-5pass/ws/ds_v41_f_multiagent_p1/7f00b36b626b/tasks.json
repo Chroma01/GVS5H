@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the DSU + streaming-representative-per-multiple solution; verified on Example 1 (output 4) and Example 2 (output 2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate edge cases: all nums > threshold (answer = n), value 1 present (unions via lcm(x,1)=x), threshold = 1, and n = 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify complexity/memory: O(threshold log threshold) union work with rep array of size threshold+1; values above threshold never indexed into DSU.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Split nums into large values (> threshold, each isolated) and small values (<= threshold) needing DSU processing.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm correctness of unioning through shared multiples: a,b connected iff lcm(a,b) <= threshold, captured transitively by clique-per-multiple.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Chose streaming-rep approach to avoid list-of-lists bucket memory overhead.",
+    "status": "done",
+    "result": ""
+  }
+]

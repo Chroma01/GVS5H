@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove/confirm the minimax-path/MST/Kruskal-tree equivalence and that an optimal matching equals matching greedily within the smallest merging components.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Design the DSU merge-time accumulation (Approach A): each root stores (unmatchedA, unmatchedB); union adds w*(min(sA_L,sB_R)+min(sA_R,sB_L)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement Approach A end-to-end: fast input parsing, edge sort, DSU with surplus counts, 64-bit accumulation, stdout output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate implementation on Sample 1 (expect 8) and Sample 2 (expect 3), plus edge cases K=1, duplicate A or B, weight ties.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Optimize for N,M up to 2e5 (iterative DSU with path compression/union by size, avoid Python recursion) and ensure within time limits.",
+    "status": "done",
+    "result": ""
+  }
+]

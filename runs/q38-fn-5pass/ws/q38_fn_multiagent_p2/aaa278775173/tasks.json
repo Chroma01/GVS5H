@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select reverse straight-run DP over forward state DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete reverse straight-run DP solution as described, including direction vectors, clockwise mapping, parity expectations, and answer updates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Manually trace all provided examples for the current DP implementation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the current solution against the four provided sample tests and report exact pass/fail results.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate edge cases by reasoning: no 1, single cell, straight-only, turn at corner, one-row/one-column grids.",
+    "status": "done",
+    "result": ""
+  }
+]

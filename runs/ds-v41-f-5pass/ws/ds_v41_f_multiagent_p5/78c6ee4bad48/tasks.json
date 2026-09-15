@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the exact effect of one operation on the gap sequence (swap g_i and g_{i+2}, leave g_{i+1} fixed) and confirm parity classes are preserved.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Establish reachability: swaps of gaps two apart generate all permutations within each index-parity class; total = N*X_1 + sum_j (N-j)*g_j with X_1 invariant.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the solver: group gaps by index parity, sort each group ascending, place ascending gaps into ascending position indices per parity class, compute N*X_1 + sum (N-j)*g_j, print to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate on given samples (expect 21 and 41) -- both passed; logic verified by hand for both samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm performance/edge cases: O(N log N), Python big ints handle 2e5 * 1e12 range.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,10 @@
+- **Core reduction:** total over arrangements = (number of arrangements containing a fixed unordered cell pair) x (sum of Manhattan distances over all unordered cell pairs). Every unordered pair of cells is symmetric under permutations, so it appears in exactly C(N-2, k-2) of the C(N, k) arrangements, where N = m*n. This removes all per-arrangement enumeration.
+- **Why the factor is uniform:** the count of k-subsets containing a given 2-element subset is C(N-2, k-2), independent of which pair, by a bijection. No over/under counting of ordered vs unordered pairs arises because we only ever fix unordered pairs and the factor is the same.
+- **Manhattan splits by dimension:** |dx| + |dy| sums independently. The pair-distance sum S = (sum of |row differences| over cell pairs) + (sum of |col differences| over cell pairs).
+- **Row aggregate:** for each unordered pair of rows i<j there are n choices of cell in each row, giving n^2 cell pairs with row-distance j-i. So row part = n^2 * sum_{0<=i<j<m}(j-i). The identity sum_{i<j}(j-i) = (m-1)m(m+1)/6 = C(m+1,3) holds; verified m=2 -> 1, m=3 -> 4.
+- **Column aggregate:** symmetric, m^2 * (n-1)n(n+1)/6.
+- **Final formula:** answer = C(N-2, k-2) * [ n^2*(m-1)m(m+1)/6 + m^2*(n-1)n(n+1)/6 ] mod 1e9+7.
+- **Integer-division safety:** (m-1)m(m+1) is always divisible by 6, so exact integer //6 before taking mod is valid and avoids needing a modular inverse; magnitudes stay small (m,n <= 1e5).
+- **Binomial safety:** k >= 2 guarantees k-2 >= 0; N >= 2 guarantees N-2 >= 0; k <= N guarantees k-2 <= N-2. So C(N-2,k-2) is always a valid binomial. k=2 gives C(N-2,0)=1; k=N gives C(N-2,N-2)=1 (single arrangement).
+- **Complexity:** O(N) time and memory for factorials (N = m*n <= 1e5), fine for constraints. Modular inverse via Fermat (modulus prime).
+- **Verification:** m=2,n=2,k=2 -> S=8, C(2,0)=1 -> 8 (matches). m=1,n=4,k=3 -> row part 0, col part 1*(3*4*5/6)=10, C(2,1)=2 -> 20 (matches).

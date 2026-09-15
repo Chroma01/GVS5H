@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the element-by-element bitmask DP (dedupe targets -> bits; per-element cost[mask] = next-multiple-of-LCM increment; dp[mask] = min ops to cover mask; new_dp[mask|sub] = min(dp[mask] + cost[sub]); return dp[full]) without reusing a nums element.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Reason-check correctness: next-multiple-of-LCM cost formula, dominance of restricting sub to uncovered bits, and O(n \u00b7 3^m) transitions with m \u2264 4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the three provided examples (PASS: 1, 2, 0) plus an independent brute-force stress test on small random inputs (exhaustive/random n \u2264 6, values \u2264 20, target length \u2264 4 with duplicates); all matched, no counterexamples; explicit PASS verdict recorded.",
+    "status": "done",
+    "result": ""
+  }
+]

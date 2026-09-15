@@ -1,0 +1,8 @@
+- **Core idea:** Process the unknown length-M string left to right. Keep only the LCS DP row against S after each processed prefix. Since N <= 10, this row has a compact bitmask representation.
+- **State encoding:** For a row f[0..N], bit j is set iff f[j+1] - f[j] = 1. The row values are recovered as prefix popcounts of the mask. The final LCS length is f[N], which equals popcount(mask).
+- **Transition:** Given a mask and a character c, reconstruct f from the mask and compute the next row g by the standard recurrence: g[0]=0 and g[j]=max(f[j], g[j-1], f[j-1]+1 if c == S[j-1]). Encode g back into a mask. This correctly handles repeated characters because it uses the full max recurrence.
+- **Aggregation:** For each mask, the 26 letters are grouped by their resulting next mask, storing multiplicities. This reduces the DP transition cost and avoids iterating over duplicate letters.
+- **DP:** dp[mask] is the number of processed prefixes leading to that LCS row. Start with dp[0]=1. For each of M positions, update ndp[next] += dp[mask] * multiplicity modulo 998244353.
+- **Answer extraction:** After M steps, sum dp[mask] into ans[popcount(mask)] for k=0..N.
+- **Complexity:** Precomputation is O(2^N * 26 * N). DP is O(M * 2^N * T), where T <= 26 is the number of distinct transitions per state. With N <= 10 and M <= 100, this is easily fast enough.
+- **Implementation details:** The transition loop keeps only prev_g = g[j-1], so no full g array is needed. Popcounts are precomputed. All masks are included in the automaton even if unreachable; unreachable states simply remain zero.

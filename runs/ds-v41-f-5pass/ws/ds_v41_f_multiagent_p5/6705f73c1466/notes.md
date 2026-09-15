@@ -1,0 +1,9 @@
+- **Setup:** Adjacent swaps preserve both the count and the relative order of the `1`s. The final string is a contiguous block of exactly `m` ones, so the k-th original one (in order) must end at position `L + k - 1` for some block start `L`.
+- **Cost formula:** Total cost `= sum_k |p_k - (L + k - 1)| = sum_k |(p_k - k) - (L - 1)|`, where `p_k` is the 1-based position of the k-th one. Define `a_k = p_k - k`; minimizing over the shift `t = L - 1` is a classic sum-of-absolute-deviations problem solved by a median.
+- **Why median is safe:** `a_{k+1} = p_{k+1} - (k+1) >= p_k + 1 - k - 1 = a_k`, so `a` is already non-decreasing; the middle element `a[m//2]` is a valid median and requires no sorting.
+- **Block-fit constraint:** Feasible `t` satisfies `0 <= t <= N - m`. Since `a_1 = p_1 - 1 >= 0` and `a_m = p_m - m <= N - m`, the median always lies inside this interval, so the constraint never binds and no clamping is needed.
+- **Complexity:** O(N) time, O(m) memory; fine for N up to 5e5.
+- **Big integers:** The answer can be ~O(N^2) (~6e10), so Python's arbitrary precision matters; no 32-bit concern here.
+- **Edge cases:** Single `1` -> `a = [0]`, answer 0. Already-contiguous ones -> all `a_k` equal -> answer 0. All ones -> `a = [0,0,...]` -> 0.
+- **Recommended approach:** Implement the median-of-`a` formula directly; do NOT use an O(N^2) DP.
+- **Implementation detail:** Read `S` as bytes; compare against integer `49` (`ord('1')`) to avoid per-char decoding overhead.

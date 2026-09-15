@@ -1,0 +1,12 @@
+- **Problem summary:** Given N×N matrix A over F_p, replace each 0 with any value in 1..p-1. Sum B^p mod p over all (p-1)^K fillings. Output resulting matrix mod p.
+- **Key identity:** For d≥0, sum_{x∈F_p^*} x^d = -1 if (p-1)|d, else 0.
+- **Decomposition (p>2):** Expand B^p into length-p walks. Each zero entry is an independent variable. Total degree p < 2(p-1), so each zero variable appears either 0 or p-1 times. Every zero variable contributes a factor -1 regardless of usage, yielding S = (-1)^K (C + T).
+- **C term:** C = A0^p mod p, where A0 is A with zeros kept as 0. Computed via binary matrix exponentiation.
+- **T term:** Exactly one zero entry is used p-1 times; the remaining single step uses a fixed nonzero entry.
+  - p>3: only zero diagonal entries (u,u) can repeat p-1 times. For each such u, add A0[u][b] to T[u][b] for all b, and add A0[a][u] to T[a][u] for all a.
+  - p=3: additionally zero off-diagonal (u,v), u≠v, can be used twice with fixed (v,u) between: T[u][v] += A0[v][u].
+- **p=2 special:** Only value 1 is allowed, so B becomes the all-ones matrix. B^2 entry = N mod 2. Output N%2 in every cell.
+- **Sign:** sign = pow(p-1, K, p) = (-1)^K mod p. Final answer = sign * (C + T) mod p.
+- **Matrix exponentiation:** p up to 1e9 → ~30 bits, up to ~60 matmuls of size 100. Use numpy int64 with inner block L=8: partial sum of 8 products max 8*(1e9)^2 < 2^63, then reduce mod p after each block. Fallback pure-Python triple loop with mod after each row.
+- **Verification:** Hand-verified Sample 1 (p=3) and Sample 2 (p=2). Sample 3 matches given output. Also checked N=1 cases and an off-diagonal p=3 case by brute force.
+- **Edge cases handled:** N=1; p=2; p=3; large p; zero diagonal vs off-diagonal; sign factor.

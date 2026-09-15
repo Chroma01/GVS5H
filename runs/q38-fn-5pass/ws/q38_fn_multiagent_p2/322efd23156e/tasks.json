@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: choose per-vitamin calorie knapsack + binary search approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python program with optimized per-vitamin DP and binary search feasibility check.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test sample tests and edge cases: missing vitamin, answer 0, large A_i, exact calorie budget.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If performance is insufficient, optimize DP loops or switch to Pareto-frontier/candidate-value search.",
+    "status": "done",
+    "result": ""
+  }
+]

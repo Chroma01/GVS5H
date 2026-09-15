@@ -1,0 +1,14 @@
+- **Reduction:** For a subarray, the distinct values form a set S. One operation erases a contiguous range of values all currently present, so it can only erase within a single maximal run of consecutive integers in S; gaps block merging. Hence f(L,R) = number of maximal consecutive runs of the distinct values in A[L..R] = (# distinct values) − (# pairs (v,v+1) both present). Verified by hand on sample 1.
+- **Per-right-endpoint identity:** Fix R and sweep L. With last[v] = last occurrence of v at or before R:
+  - sum over L of distinct(A[L..R]) = Σ_v last[v] = D, because value v is counted for exactly L=1..last[v].
+  - sum over L of (#adjacent pairs both present) = Σ_{v=1}^{N-1} min(last[v], last[v+1]) = P, since (v,v+1) both appear iff L ≤ min(last[v], last[v+1]).
+  - contribution of R is D − P.
+- **Incremental update (O(1) per R):** on reading x = A[R] with old = last[x]:
+  - D += R − old.
+  - Only P-terms touching last[x] change: subtract min(old,last[x-1]) + min(old,last[x+1]), set last[x]=R, add min(R,last[x-1]) + min(R,last[x+1]).
+  - ans += D − P.
+- **Sentinel handling:** allocate last of size N+2; last[0]=last[N+1]=0. When x=1 the term min(last[0],last[1]) is identically 0 (v=0 not in sum); when x=N the term min(last[N],last[N+1]) is identically 0 (v=N not in sum). Both harmless.
+- **Key correctness detail:** last[x-1] and last[x+1] are unaffected by writing last[x], so reading them before/after the assignment makes no difference; capturing them once avoids redundant lookups.
+- **Complexity:** O(N) time, O(N) memory. Fits N ≤ 3×10^5 easily.
+- **Validation:** sample 1 yields 16 and sample 2 yields 23 by manual step-through of the sweep. Formula is equivalent to the merged-occurrence-list counting method but simpler.
+- **Pitfalls avoided:** 64-bit-scale result (Python big ints fine); no off-by-one in D += R − old; updating P with old value before overwriting last[x].

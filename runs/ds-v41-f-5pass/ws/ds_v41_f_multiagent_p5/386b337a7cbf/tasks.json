@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Compute S=sum(nums) and offset S; return -1 when k is outside [-S, S] (target bit out of range).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Positive-product DP: per parity, dict product -> bitset of alternating sums; seed single elements, transition p -> p*x (pruned if >limit) with +x (even) / -x (odd) shifts; scan products high-to-low for bit k+offset.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Zero-product DP: four bitsets (even/odd \u00d7 zero-free/has-zero) over all elements including zeros; check has-zero reachability for sum k.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Combine: return largest positive product if present, else 0 if zero-product reachable, else -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate examples and edge cases (zeros, product-1 from ones with k=0, k out of range, limit=1, element >limit before a zero); manual trace of all three provided examples passes.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Read N, K, array A, and compute total_xor.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle trivial cases: K == N (answer total_xor), K == 1 (answer max(A)), and N-K == 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Choose enumeration side: if K <= N-K enumerate chosen K elements; otherwise enumerate excluded N-K elements and use total_xor ^ excluded_xor.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement efficient r-combination enumeration with incremental XOR, avoiding materializing all combinations; include fast paths for r=0,1,2 and a recursive/iterative fallback for larger r.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each complete combination, compute candidate XOR and update global maximum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test on sample inputs and edge cases (K=N, K=1, duplicate values, large N with small K/N-K).",
+    "status": "done",
+    "result": ""
+  }
+]

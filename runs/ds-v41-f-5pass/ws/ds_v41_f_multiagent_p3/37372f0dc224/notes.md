@@ -1,0 +1,8 @@
+- **Problem reduction:** A palindrome with prefix S has form S + reverse(S[:k]) and is valid exactly when S[k:] is already a palindrome. To get the shortest answer, minimize k, i.e. maximize the length L of a palindromic suffix of S. Then k = n - L.
+- **Finding L:** Build T = reverse(S) + separator + S. The final prefix-function value pi[-1] equals the longest suffix of S that matches a prefix of reverse(S), which is exactly the longest palindromic suffix length L.
+- **Separator:** Use a byte like '#' that cannot appear in the uppercase input, so matches cannot cross between the two copies of S.
+- **Construction:** answer = S + reverse(S[:k]); equivalently answer = S + reverse(S)[L:], since n - k = L.
+- **Complexity:** KMP prefix function is iterative and runs in O(n) time and O(n) memory. n <= 500000, so T length is at most 1000001.
+- **Bytes are better here:** Reading with sys.stdin.buffer and writing with sys.stdout.buffer avoids Unicode overhead and makes concatenation fast for outputs up to ~1 MB.
+- **Edge cases:** If S is already a palindrome, L = n and k = 0, so the answer is S. For nonempty S, L is at least 1 because the last character always matches itself. S = "Z" gives L = 1, k = 0, answer = "Z".
+- **Avoided pitfalls:** No hashing, no recursion, no O(n^2) suffix checks, no odd/even special cases, and no separator collision with input characters.

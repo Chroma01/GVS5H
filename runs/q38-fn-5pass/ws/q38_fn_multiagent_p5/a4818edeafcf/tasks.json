@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: choose a sweep over the second cut with a lazy segment tree over first cuts.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Read input and compute `prefix_distinct[i]` for `i = 1..N-2`, `suffix_distinct[k]` for `k = 2..N`, and `prev_occurrence[j]` for all positions in O(N).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build a lazy segment tree over first cuts `i = 1..N-2`, initialized with `prefix_distinct[i]`, supporting range add and range maximum query.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Sweep `j = 2..N-1`: add `+1` to the range of first cuts `i` where `A[j]` is the first occurrence of its value in `A[i+1..j]`, namely `[max(1, prev_occurrence[j]), min(j-1, N-2)]`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each `j`, query the segment tree maximum over valid first cuts `[1, min(j-1, N-2)]` and update the answer with `query_max + suffix_distinct[j+1]`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Ensure the implementation handles `N = 3`, empty update/query ranges, and invalid first cuts correctly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify correctness and performance on samples and edge cases such as all equal values, all distinct values, and maximum N.",
+    "status": "done",
+    "result": ""
+  }
+]

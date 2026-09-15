@@ -1,0 +1,9 @@
+- **Problem:** Sorted sizes A[1..N]; a "kagamimochi" pairs top a on bottom b iff a*2 <= b. For each query [L,R], maximize the number of disjoint valid pairs.
+- **Key exact condition (proved):** For a sorted subarray b_1<=...<=b_m, the max number of pairs equals the largest k <= m/2 with b_{m-k+i} >= 2*b_i for all i=1..k. Sufficiency: pair b_i (top) with b_{m-k+i} (bottom); disjoint since i <= k < m-k+i. Necessity: sort the k chosen tops t_i and bottoms u_i; a matching forces u_i >= 2*t_i (else k-i+1 tops need bottoms above u_i but only k-i exist); also t_i >= b_i and u_i <= b_{m-k+i} (order statistics of k largest dominate any k-subset). Hence b_{m-k+i} >= u_i >= 2*t_i >= 2*b_i.
+- **Monotonicity:** The condition is monotone in k (raising k only raises required bottoms and lowers tops), so binary search applies.
+- **Reduction to range-max:** Let nxt[i]=first j with A[j] >= 2*A[i]. Condition A[R-k+i] >= 2*A[L+i-1] becomes nxt[L+i-1] <= R-k+i, i.e. h[p]+k <= m with h[p]=nxt[p]-p, maximized over p in [L, L+k-1]. So answer = largest k<=m/2 with (max h over [L,L+k-1]) + k <= m. k=0 always feasible.
+- **Sentinel:** If no partner exists, set nxt[i]=N (0-indexed). Then h[p]+k = N-p+k >= N-L+1 > m (since R<=N-1), so the condition correctly fails; no separate special-casing needed.
+- **nxt computation:** 2*A[i] non-decreasing, so one forward pointer; j never resets. Ensure j>i (guaranteed anyway since 2*A[i]>A[i] in a sorted array).
+- **Complexity:** O(N log N) sparse-table build + O(log N) per query, total O((N+Q) log N). ~3.6M sparse cells, fine for N,Q=2e5.
+- **Implementation notes:** sparse table as list of lists; range-max index second endpoint is L+mid-(1<<kk); inline the max in the binary-search body for speed. Read all input with sys.stdin.buffer.read().split().
+- **Verification:** Matches sample 1 (2,3,1,0,5) and sample 2 (0,0,0,0,2,6,0,1,1,0,0,0,3,5,0); checked queries 2,5,6,13,14 of sample 2 by hand.

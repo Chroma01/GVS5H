@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove the reduction: answer(R,X) = max{ dp[i] : i \u2264 R, A_i \u2264 X }, where dp[i] is the LIS ending at i (strict, equal values excluded).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Approach 1 end-to-end: coordinate compression + max-Fenwick; single left-to-right pass computing dp[i] (strict prefix-max via rank-1), insert dp[i], then answer R=i queries (prefix-max at rank = largest value \u2264 X via bisect_right), preserving output order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Ensure strictness/i-o correctness: rank-1 for dp, bisect_right for \u2264 X cap, handle X beyond max, fast I/O, no recursion.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate: passed both provided samples (and approach is O((N+Q) log N)).",
+    "status": "done",
+    "result": ""
+  }
+]

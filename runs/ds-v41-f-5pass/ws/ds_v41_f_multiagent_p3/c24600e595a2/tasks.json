@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: establish that all 1->0 flips precede all 0->1 flips (exchange argument), giving cost = sum over steps of current total weight.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove optimal optional (1,1) selection is a prefix in descending C (swap argument yielding delta < 0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive and implement cost(0) formula for F/T with pair sums (PFF/PTT) and CT terms.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement per-prefix marginal delta formula using sorted F, T, M with prefix sums and bisect; take min over all prefix sizes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test implementation on sample 1 (16), sample 2 (0), sample 3 (2867); O(N log N) and 64-bit-safe arithmetic confirmed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate sample tests all pass (SAMPLE TESTS: PASSED all 3 public samples).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement backward DP with state (i, char, run-length-class L\u2208{1,2,3}), base case accepting only L=3, start handled separately.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Store lexicographically smallest next char per (i, char, L=3) state; tie-break cont==switch by min(c, sx).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Fix best/second-best argmin (b2 \u2190 b1 before overwriting b1); use best2 only when best1_x == c.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Hand-validate examples \"cdcd\"\u2192\"cccc\", \"aca\"\u2192\"aaa\", \"bc\"\u2192\"\".",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Execute the embedded harness and the three examples; reported CROSS-CHECK OK over 28440 inputs, zero mismatches, plus crafted best1_x==c case \"aaaaabc\"\u2192\"aaaabbb\".",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Measure runtime/memory for n=5*10^4: completes in ~2.6 s with a valid good caption, well within limits.",
+    "status": "done",
+    "result": ""
+  }
+]

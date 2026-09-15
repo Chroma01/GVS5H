@@ -1,0 +1,10 @@
+- **Core DP:** Root the tree at 1 and process bottom-up. For each subtree, keep one state: `-1` impossible, `0` fully decomposable, or positive `x` meaning there is exactly one unfinished path of `x` vertices containing the subtree root as an endpoint, which must be extended to the parent.
+- **Why one state is enough:** If a path crosses the edge from a subtree to its parent, let its inside length be `x`. All other vertices in the subtree are partitioned into full `K`-vertex paths, so `subtree_size - x` is divisible by `K`. Since the path must also use at least one vertex outside, `1 <= x < K`. Thus `x` is forced by `subtree_size mod K`; there cannot be two different feasible open lengths.
+- **Transitions at a node:** Every open child state must connect through the current node. The current node can belong to only one path, so more than two open children is impossible.
+  - `cnt = 0`: start a new open path of length `1` (for `K > 1`).
+  - `cnt = 1` with child length `a`: if `a + 1 == K`, close the path; if `a + 1 < K`, extend upward with length `a + 1`; otherwise impossible.
+  - `cnt = 2` with child lengths `a, b`: the only valid possibility is `a + b + 1 == K`, closing the path at the current node. If the sum is smaller, the current node would be internal and cannot extend upward; if larger, the path is too long.
+- **Root condition:** The root has no parent, so it must end in state `0`. If it ends open, the decomposition is incomplete.
+- **K = 1:** Every single vertex is a valid path, so the answer is always `Yes`.
+- **Implementation details:** Use iterative DFS to avoid recursion depth issues. Build parent and preorder, then process `reversed(order)`. Children are identified by `parent[to] == v`. The algorithm is linear in `N*K` time and memory.
+- **Sample checks:** Sample 1 closes as paths `1-2`, `3-4`, `5-6`. Sample 2 has a node with two open length-1 children for `K=2`, which would require length 3, so it is impossible.

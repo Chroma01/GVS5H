@@ -1,0 +1,10 @@
+- **Model:** Red balls move along permutation P, blue along Q. Each color's graph is a disjoint union of directed cycles. A ball can only reach X if it starts on X's cycle for that color.
+- **Impossible check:** If any i with A_i=1 has distR[i]==-1, or any i with B_i=1 has distB[i]==-1, answer is -1.
+- **Distance direction (critical bug):** Starting from X and following perm gives cycle order cyc[0]=X, cyc[1]=perm[X], ...; the distance from cyc[k] to X is (L-k)%L, NOT k. Mixing this up flips the answer. distR[X]=distB[X]=0.
+- **Required sets:** For one color, if D = max distance among that color's balls, then boxes at distances 1..D must each be operated exactly once (a ball passes through every such box). So minimum single-color ops = D_R and D_B. These are paths on the cycles; |required| equals D since cycle distances are unique.
+- **Why merged ops are safe within a color plan:** Red balls are only ever located on red-required boxes or X (paths move toward X monotonically); blue likewise. So operating a blue-only box never touches a red ball and vice versa. X is never operated (distance 0 excluded), so balls never overshoot.
+- **Merging:** A box in I = red-required ∩ blue-required can use one operation instead of two, saving 1. Conflict occurs iff two merged boxes u,v have (distR[u]-distR[v]) and (distB[u]-distB[v]) of opposite sign -> they impose contradictory order (2-cycle). A mergeable set is exactly a chain where both orders agree.
+- **Answer:** max merges = longest strictly increasing subsequence of distB when I is sorted by distR. Answer = D_R + D_B - LIS. (Equivalently |R∪B| + |I| - LIS, but |R|=D_R, |B|=D_B.)
+- **Ties:** Within a cycle all nodes have distinct distances, so dr values in I are distinct and db values are distinct; strict vs non-strict LIS is irrelevant, use bisect_left.
+- **Sample checks:** S1: DR=3, DB=2, I={(distR2,distB1)} -> LIS 1 -> 4. S2: all zero -> 0. S3: red ball off X's cycle -> -1. S4: DR=3, DB=7, I={(1,4),(2,5)} -> LIS 2 -> 8. All match.
+- **Complexity:** O(N log N) time (sorting) and O(N) space. N up to 2e5 is fine.

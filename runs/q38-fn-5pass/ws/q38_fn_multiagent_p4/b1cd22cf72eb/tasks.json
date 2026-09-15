@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with binary search on H and one-pass interval feasibility.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate against sample cases and edge cases; if feasibility is wrong, debug off-by-one or switch to a two-pass/distance-transform feasibility check.",
+    "status": "done",
+    "result": ""
+  }
+]

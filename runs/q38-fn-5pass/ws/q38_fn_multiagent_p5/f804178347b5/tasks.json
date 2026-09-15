@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement robust input parsing for N and A (contiguous or whitespace-separated bits).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement bottom-up value+flip-cost DP over the ternary majority tree using compact arrays/bytearray for N up to 13.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Combine triples: parent value = majority of child values; parent flip cost = sum of the two smallest child costs to become the parent's opposite value (0 if the child already has it, otherwise the child's flip cost).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Output the root flip cost and run sample tests/edge cases; if failures occur, switch to an explicit two-cost DP or debug.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,9 @@
+- **Task:** Given S (uppercase, len <= 500000), output one shortest palindrome with S as prefix.
+- **Key reduction:** Answer = S + reverse(S[:n-k]) where k = length of the longest palindromic suffix of S. This is minimal because the suffix P=S[n-k:] is already a palindrome; mirroring only the non-palindromic head S[:n-k] yields a palindrome of length 2n-k, and larger k gives shorter output. Any valid palindrome with S as prefix must incorporate a palindromic suffix at its center, so no shorter answer exists.
+- **Construction identity:** reverse(S[:n-k]) equals rev[k:] where rev = reverse(S). Proof: rev[i]=S[n-1-i], so rev[k:]=S[n-1-k],S[n-2-k],...,S[0]=reverse(S[:n-k]). So just print S + rev[k:] (no slicing of S needed).
+- **KMP trick:** Build combined = reverse(S) + separator + S. The longest palindromic suffix of S (length k) equals the final value of the KMP prefix (failure) function of combined. Reason: a suffix of S of length k equals reverse(S)[:k] iff S[n-k:] is a palindrome. Sentinel `#` prevents cross-boundary false matches (S is only uppercase letters, so `#` is safe).
+- **Algorithm:** Compute prefix function iteratively in O(N) amortized (N = 2n+1 <= 1000001). Need full pi array for backtracking.
+- **Avoiding pitfalls:** No off-by-one: k = pi[-1]; answer uses rev[k:]. Single char S='Z' -> rev='Z', combined='Z#Z', pi[-1]=1, ans='Z'. Already palindrome S='ABA' -> k=3, rev[3:]='', ans='ABA'. All-equal 'AAAA' -> k=4 -> 'AAAA'. Even-length pal suffix (TREE -> 'EE', k=2) handled naturally.
+- **Performance:** Pure-Python byte-level loop over ~1e6 elements is linear and acceptable; use bytes (not str) so comparisons are integer-based. Read via sys.stdin.buffer, write via sys.stdout.buffer.
+- **Verified samples:** ABC -> k=1 -> ABC+BA = ABCBA. Z -> Z. TREE -> k=2 -> TREE+RT = TREERT.
+- **Alternatives (not needed):** Manacher, palindromic tree, hashing. KMP is simplest and exact.

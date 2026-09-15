@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement KMP automaton: prefix function pi and transition table next_state[s][c] for s in 0..m, c in 0..25, aliasing state m to its border.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Backward bitset DP over KMP states with per-position constraints: 'T' requires state m, 'F' forbids state m; return \"\" if bit 0 of dp[0] unset.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Forward greedy reconstruction choosing smallest feasible char via dp[p+1].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verified examples: \"TFTF\"/\"ab\" -> \"ababa\"; \"TFTF\"/\"abc\" -> \"\"; \"F\"/\"d\" -> \"a\"; plus overlapping T/F and repeated-pattern edge cases.",
+    "status": "done",
+    "result": ""
+  }
+]

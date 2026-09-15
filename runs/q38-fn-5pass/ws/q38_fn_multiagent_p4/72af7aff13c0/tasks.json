@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select lazy column/row DP with small dimension.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete solution: input parsing, optional transpose, initial forward/backward DP, query loop with refreshes, answer update, modulo handling, output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify on samples and edge cases (zeros, boundaries, oscillating moves, transposed directions).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the BFS-layer counting formula: label factor C(rem,b), internal-edge factor (1+x)^{C(b,2)}, and cross-edge factor ((1+x)^a-1)^b for adding a layer of size b after a layer of size a.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute binomial coefficients modulo P and transition evaluations T_{a,b}(t)=((1+t)^a-1)^b(1+t)^{C(b,2)} for all needed t and 1<=a,b<=N/2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build the reachable DP state graph over (used_even, used_odd, previous_layer_size, last_parity), generate transitions that add one nonempty opposite-parity layer, attach label-choice factors C(remaining,b), and order states by used vertices for topological processing.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each evaluation point t, run the scalar DP modulo P: start from layer 0, propagate through transitions using T_{a,b}(t), and accumulate values of balanced terminal states (used_even=used_odd=N/2) to obtain F(t).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Interpolate the degree-D polynomial from F(0),...,F(L) modulo P using Newton forward differences and conversion from binomial basis to standard coefficients, then output coefficients for M=N-1..D.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Integrate stdin/stdout handling and validate against the samples and edge cases such as N=2 and trailing zero answers, ensuring all arithmetic is performed modulo P.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Optimize evaluation DP with pruning, grouped transition factors, delayed modular reduction, and reduced evaluation points using the maximum possible valid edge count.",
+    "status": "done",
+    "result": ""
+  }
+]

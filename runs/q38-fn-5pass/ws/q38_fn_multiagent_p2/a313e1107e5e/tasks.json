@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select offline LIS tails method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Python solution using offline LIS tails (read input, sort queries by R, update tails with bisect_left, answer with bisect_right, restore original order).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and verify outputs.",
+    "status": "done",
+    "result": ""
+  }
+]

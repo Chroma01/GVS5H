@@ -1,0 +1,9 @@
+- **Reduction:** Let `P_0 = 0` and `P_j = (A_1 + ... + A_j) mod MOD`. Every subarray sum is `P_r - P_{l-1}` with `0 <= l-1 < r <= N`, so the answer is `sum_{0 <= i < j <= N} (P_j - P_i)^K`.
+- **Binomial expansion:** For fixed `j`, the contribution from all previous prefixes is `sum_{t=0}^K C(K,t) * (-1)^(K-t) * P_j^t * M[K-t]`, where `M[e] = sum_{i<j} P_i^e`.
+- **Maintained state:** `M[e]` holds the `e`-th power sum of already processed prefix values. Initialize `M[0] = 1` for `P_0 = 0`, and all other entries to `0`.
+- **Processing order:** Iterate over prefix sums left to right. Compute the contribution for current `j`, add to answer, then insert `P_j` into `M`.
+- **Power computation:** Since `K <= 10`, compute `P_j^0 ... P_j^K` iteratively using `powers[t] = powers[t-1] * P_j % MOD`. No repeated `pow()` calls are needed.
+- **Coefficients:** Precompute `coeff[t] = C(K,t) * (-1)^(K-t) mod MOD` using `math.comb`; `K` is tiny, so this is safe.
+- **Edge cases:** `N = 1` is handled by the pair `(P_0, P_1)`. Zeros produce zero contributions naturally. Empty subarrays are not counted because only pairs with `i < j` are used.
+- **Complexity:** Time `O(NK)` with small constants, memory `O(K)`. For `N = 2e5`, `K = 10`, this is easily fast enough.
+- **Verification:** The implementation matches the sample outputs `75`, `0`, and `428633385`.

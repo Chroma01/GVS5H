@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: exploit monotonicity of the composed rating function and choose a forward query-only lazy segment tree approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse input, store contests and queries, build sorted unique query initial ratings, and create a mapping from each query value to its compressed index.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement an iterative lazy segment tree over the compressed query points with range_add and find_first_ge, using segment maxima and dummy leaves set to a very negative value.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Process contests in original order: for each [L,R], compute l = find_first_ge(L), r = find_first_ge(R+1), and if l < r apply range_add(l, r, 1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Push all pending lazy values to leaves, retrieve final ratings for compressed query points, and output answers in the original query order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate on samples and edge cases such as a single unique query, no effective updates, all queries updated every contest, and maximum initial rating 500000.",
+    "status": "done",
+    "result": ""
+  }
+]

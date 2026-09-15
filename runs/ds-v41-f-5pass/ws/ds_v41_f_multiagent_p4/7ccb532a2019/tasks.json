@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Count frequencies of all 26 letters in the input string.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(26 * maxFreq) 2-state DP over letters a..z for each f=1..max_freq (state = previous letter Deleted vs Kept-at-f), taking the min over all f.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm samples pass: \"acab\"->1, \"wddw\"->0, \"aaabc\"->2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Cross-check the DP against an independent brute-force reference on many small random strings; report mismatches (reported no mismatches over 10000+ cases).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm the f-range bound (f <= max_freq) and that shifting never needs to exceed the immediate next letter's deficit (distance>=2 moves tie delete+insert).",
+    "status": "done",
+    "result": ""
+  }
+]

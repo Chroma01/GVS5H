@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Verify operation swaps d_i and d_{i+2} (three gaps reverse to (d_{i+2}, d_{i+1}, d_i)); adjacent transpositions generate full permutations within each parity class.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm invariants: x_1 and x_N fixed; total sum = N*x_1 + sum_{j=1}^{N-1} (N-j)*d_j.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive minimization rule: within each parity class pair largest gaps with smallest weights (rearrangement inequality).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement O(N log N) solution (sort odd/even gaps descending, weights ascending) and validate against both samples and boundary cases.",
+    "status": "done",
+    "result": ""
+  }
+]

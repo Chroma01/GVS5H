@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N and S, compute M = max(S), and set convolution length L = smallest power of two > 2*M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build a 0/1 indicator array of length L with 1 at indices in S.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute the self-convolution of the indicator via NumPy rfft/irfft (primary); pure-Python NTT fallback retained for environments without numpy.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each B in S accumulate conv[2*B]; answer = (sum - N) // 2, printed to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle edge case N < 3 -> print 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verified against all three public samples (PASSED).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Reformulation and counting identity verified by hand (sum conv[2B] = 11, (11-5)//2 = 3 on sample 1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Exactness argument: coefficients <= N <= 1e6, float64 FFT rounding safe; single NTT would also be exact mod 998244353.",
+    "status": "done",
+    "result": ""
+  }
+]

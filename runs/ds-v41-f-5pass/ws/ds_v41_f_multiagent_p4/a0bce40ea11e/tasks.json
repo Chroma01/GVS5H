@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and verify formula: for p>2, answer = (p-1)^K (A0^p + T) mod p, where A0 has zeros kept 0, and T gets (a) for each zero loop (u,u): T[u][b] += A0[u][b] and T[a][u] += A0[a][u], (b) for p==3 only, for each zero non-loop (u,v): T[u][v] += A0[v][u]. Sign factor is (p-1)^K. Verified by hand on Sample 1 and an extra p=3 zero-loop case.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm p==2 special case: only one filling (zeros\u21921) since F_2^*={1}, so output B^2 mod 2 (matches Sample 2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the full program: parse input, count K zeros, p==2 branch, fast matrix exponentiation C=A0^p mod p (overflow-safe: numpy int64 with chunked accumulation or optimized pure Python), build T per the derived rules, output sign*(C+T) mod p row by row.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the implementation on all three provided sample inputs and verify exact output match; fix any discrepancies (especially p==3 off-diagonal handling and matrix-power correctness).",
+    "status": "done",
+    "result": ""
+  }
+]

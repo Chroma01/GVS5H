@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify the visibility threshold, strict inequality semantics, and candidate approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive and document the visibility threshold: prove top-only visibility, obtain the pair threshold, and reduce the answer to the maximum pair threshold with N=1 and height-0 special cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Prove the adjacent-pair domination property: for any three buildings in increasing X order, the non-adjacent pair threshold is a positive weighted average of the two adjacent thresholds, so the global maximum is among adjacent pairs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the exact adjacent-pair scan: compute each adjacent threshold as an integer numerator over a positive denominator, maintain the maximum by cross multiplication, and handle N=1/no pairs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Fix output formatting to match sample-style double output: print non-negative answers as `f\"{best_num / best_den:.18f}\"`, and print exactly `-1` for negative/no-pair cases.",
+    "status": "done",
+    "result": ""
+  }
+]

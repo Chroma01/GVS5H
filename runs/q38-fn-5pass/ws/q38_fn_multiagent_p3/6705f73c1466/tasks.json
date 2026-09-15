@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: use adjusted positions p[i]-i and median minimization.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the adjusted-position median solution in Python: read N and S, collect the 0-based positions of all '1' characters, transform each position p[i] to p[i] - i, choose the median adjusted position, sum the absolute differences to that median, and print the result.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Design exact compressed graph algorithm using important positions near interval boundaries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement compressed important-position graph solution (as described) and ensure it reads stdin/writes stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test on samples and edge cases: M=0, A=B, short good intervals, jumps crossing multiple bad intervals, large N.",
+    "status": "done",
+    "result": ""
+  }
+]

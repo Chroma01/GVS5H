@@ -1,0 +1,11 @@
+- **Problem:** Sum over all permutations of concatenation f(P). For each number x, its contribution is x * 10^{sum of digit lengths of elements after x}.
+- **Linearity:** Sum over x. Fix x in digit-length class d. Let O be other numbers. The multiplier for a chosen suffix set S is 10^{sum_{y in S} len(y)} = prod_{y in S} X_y with X_y = 10^{len(y)}.
+- **Counting permutations for fixed x and S:** |S|! (N-1-|S|)! ways. So W_d = sum_{S subset O} |S|!(N-1-|S|)! prod_{y in S} X_y.
+- **Beta integral reduction:** |S|!(N-1-|S|)! = N! * Beta(|S|+1, N-|S|). Hence W_d = N! * sum_{k=0}^{N-1} q_k/(k+1), where q_k = [t^k] prod_{y in O} (1+(X_y-1)t).
+- **Generating function P:** prod_{all y} (1+(X_y-1)t) = P(t) = prod_{e} (1+a_e t)^{c_e}, with a_e = 10^e - 1, c_e count of numbers with digit length e. For x in class d, q = P(t)/(1+a_d t).
+- **Answer:** sum_d V_d * W_d, where V_d = sum of numbers in class d.
+- **Recurrence for P:** P'/P = sum_e c_e a_e/(1+a_e t). Let Q = prod_e (1+a_e t), R = sum_e c_e a_e prod_{f≠e} (1+a_f t). Then Q P' = R P. With Q = sum q_i t^i, R = sum r_j t^j, coefficients satisfy (m+1)p_{m+1} = sum_{j=0}^{L-1} r_j p_{m-j} - sum_{i=1}^{L} q_i (m-i+1) p_{m-i+1}, where p_k = [t^k] P. Compute p_0..p_N in O(N*L).
+- **Implementation:** L = len(str(N)) ≤ 6. Precompute a_e mod 998244353. Build Q and R via small polynomial multiplications. Precompute modular inverses 1..N. For each d, compute q_k = p_k - a_d q_{k-1} for k=0..N-1, accumulate s = sum q_k * inv(k+1), W_d = N! * s mod. Answer = sum V_d * W_d mod.
+- **Edge cases:** N=1 -> 1. All classes for e ≤ L are nonempty when N ≥ 10^{L-1}. Modular arithmetic with prime 998244353, N < MOD so inverses exist.
+- **Verification:** N=2 -> 33, N=3 -> 1332. Recurrence tested against direct expansion for L=1 (N≤9) and L=2 (N=10).
+- **Complexity:** O(N*L) time, O(N) memory. L≤6.

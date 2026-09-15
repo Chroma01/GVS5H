@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive window cost formula: optimal target is a median; cost is sum of absolute deviations; for even x the lower median is valid and optimal.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm \"at least k\" reduces to \"exactly k\" since all costs are nonnegative (dropping a window never increases total).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement coordinate compression plus two Fenwick trees (count and sum) for O(log n) sliding-window median and absolute-deviation cost over all length-x windows.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the layered DP over window starts selecting k non-overlapping windows with transition dp[i][j] = min(dp[i-1][j], dp[i-x][j-1] + cost[i]) and handle indices/base cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify against both provided examples, edge cases (k=1, x=nums.length, minimum feasible placements, all-equal values), and a brute-force cross-check on small random inputs; reported PASS (samples 8 and 3, edge cases, and 3000 random brute-force cases).",
+    "status": "done",
+    "result": ""
+  }
+]

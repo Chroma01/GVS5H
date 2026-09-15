@@ -1,0 +1,7 @@
+- **Core invariant:** Let `P[t]` be the cumulative wind displacement after `t` steps. A smoke particle generated when the cumulative displacement was `P[g]` is at `P[t] - P[g]` after the wind at time `t`.
+- **Target condition:** For target `(R, C)`, smoke exists iff there is some earlier generation displacement `P[g]` such that `P[t] - P[g] = (R, C)`, i.e. `P[g] = P[t] - (R, C)`.
+- **Generation rule:** A new particle is generated exactly when the current prefix displacement `P[t]` has not appeared before, because then the origin is empty after the wind. Thus the set of all possible generation displacements is exactly the set of distinct prefix displacements seen so far.
+- **Query/update order:** Since `(R, C) != (0, 0)`, a particle generated at the current time is at the origin and cannot affect the answer. Checking membership before inserting `P[t]` is correct and conceptually clean.
+- **Initial particle:** The initial smoke at time `0` corresponds to prefix displacement `(0, 0)`, so the seen set must start with `(0, 0)`.
+- **Implementation details:** Coordinates are encoded into a single integer to reduce Python overhead. The offset and base are chosen so that both stored prefix coordinates and shifted query coordinates are nonnegative and collision-free.
+- **Complexity:** `O(N)` time and `O(N)` memory.

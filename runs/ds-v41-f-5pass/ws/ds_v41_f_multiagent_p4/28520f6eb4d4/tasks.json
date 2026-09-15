@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Verify and document the reduction: all buildings are visible from (0,h) iff h strictly exceeds the maximum adjacent-pair intercept f_i = (H_i*X_{i+1} - H_{i+1}*X_i)/(X_{i+1}-X_i); max over adjacent pairs suffices.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the solution: parse input preserving integer precision, handle N=1 -> -1, compute the exact max adjacent intercept via cross-multiplication, output -1 if it is negative, else print the value.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Change output formatting to `f\"{best_num / best_den:.18f}\"` (float, correctly rounded) so sample 4 matches 17.142857142857142350 exactly; keep the exact big-int comparison for selecting the max.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the program on all four sample inputs and confirm exact expected outputs (1.500000000000000000, -1, 0.000000000000000000, 17.142857142857142350).",
+    "status": "done",
+    "result": ""
+  }
+]

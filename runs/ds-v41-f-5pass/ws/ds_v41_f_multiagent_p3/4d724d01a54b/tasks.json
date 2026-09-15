@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the per-element contribution formula: cost = c_i*i - c_i*(c_i+1)/2 with c_i = #{j<i : P_j > P_i}; matches Samples 1-3 and hand-checked cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(N log N) Fenwick-tree scan (c_i = seen count minus #seen <= P_i), accumulate c_i*i - c_i*(c_i+1)//2; passed all 3 public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm optimality/lower bound: each swap is the unique leftward crossing of the smaller element; doing a element's c crossings consecutively at positions i-1,\u2026,i-c is both forced-minimal and achievable by left-bubbling in original position order (verified across many cases, incl. trickier [2,4,3,1]\u21928, [1,4,3,2]\u21927, [2,3,4,1]\u21926).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm direction/order matters (right-pushing greedy overcounts, e.g. 5 vs 4 on [3,2,1]); left-insertion is correct.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Ensure 1-based positions, correct off-by-one in c_i arithmetic, and arbitrary-precision (no overflow; worst case ~2.7e15).",
+    "status": "done",
+    "result": ""
+  }
+]

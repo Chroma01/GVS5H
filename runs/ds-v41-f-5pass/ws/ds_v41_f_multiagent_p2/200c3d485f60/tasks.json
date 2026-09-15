@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement solution using answer = C(n-1, k) * m * (m-1)^(n-1-k) mod 1e9+7 with precomputed factorials/inverse factorials and modular exponentiation (handle exponent 0, base 0, m=1, n=1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify against the three provided examples (3,2,1)\u21924, (4,2,2)\u21926, (5,2,0)\u21922 and brute-force small cases (m=1, k=0, k=n-1, n=1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Formula-based approach confirmed correct; inclusion-exclusion fallback not needed.",
+    "status": "done",
+    "result": ""
+  }
+]

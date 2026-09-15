@@ -1,0 +1,8 @@
+- **Formula:** Let \(P_i=A_1+\cdots+A_i\), \(P_0=0\). Then each subarray sum is \(P_r-P_{l-1}\), so answer is \(\sum_{j=1}^{N}\sum_{i=0}^{j-1}(P_j-P_i)^K\).
+- **Binomial expansion:** \((P_j-P_i)^K=\sum_{t=0}^{K}\binom Kt(-1)^t P_j^{K-t}P_i^t\). Thus for each right endpoint \(j\), contribution is \(\sum_t \binom Kt(-1)^t P_j^{K-t}S_t\), where \(S_t=\sum_{i=0}^{j-1}P_i^t\).
+- **Online maintenance:** Scan prefixes in order, maintain \(S_0,\dots,S_K\). Add the contribution for the current prefix using the previous \(S_t\), then update \(S_t\mathrel{+}=P_j^t\). This avoids enumerating subarrays.
+- **Small K:** \(K\le10\), so keeping only \(K+1\) moments is enough; time is \(O(NK)\), memory \(O(K)\).
+- **Zero exponent:** \(S_0\) counts prefix indices. Initialize \(S_0=1\) for \(i=0\), even though \(P_0=0\); this matches the combinatorial \(x^0=1\) convention needed by the binomial theorem.
+- **Signs and mod:** Precompute coefficients \(\binom Kt(-1)^t\bmod 998244353\). For odd \(t\), use \((-c)\%MOD\). All prefix sums and moments are kept modulo the prime.
+- **Edge cases:** If all \(A_i=0\), the result is \(0\) for \(K\ge1\); the power table gives \(0^t=0\) for \(t>0\), while \(0^0=1\), so the formula handles it. \(K=0\) also works accidentally, though constraints start at \(K=1\).
+- **Complexity:** \(O(NK)\) modular multiplications plus exponentiation of each current prefix; well within limits for \(N=2\cdot10^5\), \(K\le10\).

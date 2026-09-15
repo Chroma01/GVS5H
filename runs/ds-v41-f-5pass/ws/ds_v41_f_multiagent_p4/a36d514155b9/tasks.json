@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Establish the fixed-pair counting identity: total over all arrangements = C(N-2, k-2) * (sum of Manhattan distances over all unordered cell pairs), with N=m*n.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive closed forms for the 1-D geometric sums: sum_{i<j}|i-j| over 0..L-1 equals (L-1)*L*(L+1)/6; cell-level row sum is n^2 times this with L=m, column sum is m^2 times this with L=n.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement `distanceSum`: precompute factorials/inverse factorials up to N, compute C(N-2, k-2) mod p, compute S = n^2*rowSum + m^2*colSum mod p, multiply and return; handle k=2 and k=N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify against the two provided examples and brute-force enumeration on small (m,n,k) cases including boundaries k=2, k=N, and m=1 or n=1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Switch away from enumeration/cut-DP/generating-function approaches in favor of the closed-form symmetry reduction.",
+    "status": "done",
+    "result": ""
+  }
+]

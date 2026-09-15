@@ -1,0 +1,11 @@
+- **Mapping consistency:** For each letter appearing in S, all corresponding positions in T must require the same target letter. If one source letter maps to two different letters, print -1 immediately.
+- **Mandatory operations:** For every present source letter c with target f(c) != c, c must be chosen as x at least once. Thus there is a lower bound of E, the number of non-identity mappings.
+- **Graph model:** Build directed edges c -> f(c) only for present c with f(c) != c. Fixed letters are not edges and do not need operations.
+- **Cycle cost refinement:** A nontrivial directed cycle does not always add one operation. It adds one extra operation only if it is closed, meaning no present letter outside the cycle maps into any vertex of the cycle.
+- **Free cycles:** If some outside present letter maps into a cycle vertex, that outside letter has the same final target as the cycle predecessor. Merging them can create a temporary empty letter while still using exactly one operation for each non-fixed source, so the cycle adds no extra cost.
+- **Closed cycles:** A closed cycle needs one additional operation using a temporary empty letter. Multiple closed cycles can reuse the same temporary letter, so each closed cycle contributes exactly +1.
+- **Temporary letter availability:** A temporary letter exists initially if some lowercase letter is absent from S. If all letters appear in S but some letter is absent from T, the mapping is not surjective, so two present sources share a target; merging them can create a temporary empty letter.
+- **Impossibility:** If there is at least one closed cycle and all 26 letters appear in both S and T, no temporary letter can ever be created, so the answer is -1.
+- **Final formula:** When possible, the minimum number of operations is E + closed_cycles, not E + all_cycles.
+- **Runtime fix:** The previous code called `any(not present_s)`, which is invalid because `not present_s` is a boolean. The corrected implementation uses `all(present_s)` and `all(present_t)` directly.
+- **Samples:** The corrected implementation produces 4, 0, -1, and 4 for the four provided samples.

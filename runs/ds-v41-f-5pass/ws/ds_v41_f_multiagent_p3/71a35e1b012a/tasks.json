@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, M and all intervals.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove optimal cost is always 1, 2, 3, or -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Characterize all cost-2 possibilities: two op1 covering [1,N], nested op1/op2 pair, or two disjoint op2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Derive cost-3 construction for M>=3 when cost 2 is impossible.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement O(M log M) core algorithm (cost-1, containment, disjoint, union, cost-3 branches).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Replace cost-2 containment selection with min-index container computation (sort by (L,R) + Fenwick suffix-min over R + duplicate-batch handling) and choose smallest inner index.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Re-run all 4 samples for exact match (all pass: \"2 0 1 0\", \"1 0 1 0 0\", \"1 1\", \"-1\").",
+    "status": "done",
+    "result": ""
+  }
+]

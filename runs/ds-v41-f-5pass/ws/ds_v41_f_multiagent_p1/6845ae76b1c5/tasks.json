@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Fast input parsing; choose block size S=max(1,min(N,int(N/sqrt(K)))); compute p=X//S, q=Y//S per query.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Offline P-row sweep: maintain H[j] over A-blocks, record P(p,Y) and C(p,q) for queries grouped by p via sorted events.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Symmetric Q-row sweep: maintain H2[i] over B-blocks, record Q(q,X) for queries grouped by q.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Tail-tail term: compute sum over i in [pS,X), j in [qS,Y) using sorted small arrays and two-pointer; combine ans = P_val + Q_val - C_val + tailtail.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate sample 1 and sample 2; edge cases (X<S, Y<S, empty tails, X=N/Y=N, ties, zeros, max values) and 64-bit arithmetic confirmed by passing public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Implementation efficient (O(N sqrt K) sweeps, O(K S log S) tails), pure Python, reads stdin and writes stdout.",
+    "status": "done",
+    "result": ""
+  }
+]

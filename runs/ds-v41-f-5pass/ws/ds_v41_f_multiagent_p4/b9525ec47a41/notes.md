@@ -1,0 +1,8 @@
+- **Problem reduction:** Total edges = N + (#1s in s). d_N is determined by d_0..d_{N-1}, so count distinct achievable prefixes (d_0..d_{N-1}).
+- **Variables:** Let x_i encode orientation of cycle edge (i, i+1 mod N): x_i=1 if i→i+1. For star edge at i (if s_i=1), let a_i=1 if N→i. Then d_i = x_{i-1} + 1 - x_i + a_i (indices mod N).
+- **NFA state:** For a prefix, relation R ⊆ {0,1}² between start edge x_{N-1} and current edge x_i. (p,q)∈R iff there exists an assignment consistent with prefix where x_{N-1}=p and x_i=q. Initially i=-1, R = {(0,0),(1,1)} = mask 9.
+- **Transition:** For a character d and fixed s_i, define T_s[d] ⊆ {q,q'}² as the set of (x_{i-1}, x_i) pairs yielding d. Then new R = R ∘ T_s[d] (boolean composition). Empty result means d is not a valid extension.
+- **T masks:** s=0: d=0→{(0,1)}=2, d=1→{(0,0),(1,1)}=9, d=2→{(1,0)}=4. s=1: d=0→2, d=1→{(0,0),(0,1),(1,1)}=11, d=2→{(0,0),(1,0),(1,1)}=13, d=3→4.
+- **Determinization:** Exactly 12 nonempty relations are reachable from mask 9. DP over these 12 states counts distinct prefixes: dp[R] = number of distinct d-prefixes leading to R. For each s_i, apply the appropriate flat transition list (precomputed with multiplicities for duplicate next states).
+- **Acceptance:** After all N positions, a prefix is valid iff the final relation contains (0,0) or (1,1), i.e., mask & 9 ≠ 0. Sum dp over those states.
+- **Complexity:** O(N * K * avg_out_degree) ≈ 35M simple additions for N=10^6, K=12. Modulo applied once per step. Validated on samples: N=3 s=010 → 14; N=3 s=000 → 7 (brute force).

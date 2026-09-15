@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: select sweep-right-cut with lazy segment tree as primary approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Read N and A, compute prefix distinct counts L[i] and suffix distinct counts R[i].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement an efficient lazy segment tree over possible left cuts supporting range add and range max query.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Sweep right cut j from 2 to N-1, update segment tree using previous occurrence of A[j], query best left cut i<j, and combine with R[j+1] to update answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test edge cases (N=3, all equal, all distinct, repeats near ends) and sample tests; if too slow, switch to iterative lazy segment tree or sqrt decomposition.",
+    "status": "done",
+    "result": ""
+  }
+]

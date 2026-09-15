@@ -1,0 +1,16 @@
+- **Problem model:** Pick exactly K edges to weight 1 (others 0) to maximize shortest 1→N distance. Since extra chosen edges never decrease distances, this equals: find a set S of size ≤ K such that every 1→N path uses ≥ d edges of S.
+- **Answer range:** distance is an integer in [0, N-1] (every simple path has ≤ N-1 edges). Scan d from N-1 down to 0, print first feasible; monotonicity of feasibility holds by the theorem below.
+- **Key theorem (equivalence):** distance ≥ d is achievable with |S| ≤ K iff there is a labelling h:V→{0..d} with h(1)=0, h(N)=d, h(v) ≤ h(u)+1 for every edge u→v, and #{edges with h(v)=h(u)+1} ≤ K.
+  - Forward: take h = clamped shortest distances min(dist(v), d); tight increasing edges all belong to S.
+  - Backward: set S = {h(v)=h(u)+1}; for every edge weight(e) ≥ h(v)-h(u), so path weight ≥ h(N)-h(1)=d. Pad S up to K arbitrarily (M ≥ K).
+- **Reduction to min cut (Ishikawa layers):** nodes (v,i) for v=1..N, i=1..d. Interpret (v,i) ∈ source side S ⟺ h(v) < i.
+  - force source→(1,1) INF (h(1)=0); (N,d)→sink INF (h(N)=d).
+  - chain (v,i)→(v,i+1) INF keeps h well-defined (z monotone nondecreasing in i).
+  - constraint h(v) ≤ h(u)+1 via (u,i-1)→(v,i) INF for i=2..d (forbids difference ≥2).
+  - cost edge (u,i)→(v,i) cap 1 for i=1..d contributes exactly 1 iff h(v)=h(u)+1 (given h(v)≤h(u)+1, only one index i crosses).
+- **INF choice:** INF = K+1. Any cut using an INF edge costs ≥ K+1 > K, and source has a single outgoing edge so max flow ≤ K+1. Then feasible(d) ⟺ maxflow ≤ K, correct whether true min cost is ≤K or >K.
+- **Multi-edges:** each input edge adds its own constraint + cost edges (parallel), handled correctly.
+- **Complexity:** ≤ N·d ≤ 870 nodes, ~ (N + 2M)·d edges; at most N-1≈29 flow runs; Dinic tiny (flow ≤ ~101). Very fast.
+- **Recursion:** Dinic DFS recursion depth bounded by node count (~870), so set recursionlimit high.
+- **Sample checks:** S1 d=2 infeasible (1→3 forces 2≤1), d=1 cost 2=K → answer 1. S2 d=3 infeasible, d=2 min cut 3=K → answer 2. S3 d=1 cost 2>K=1, d=0 → answer 0.
+- **K=M sanity:** answer becomes plain BFS distance (all weights 1); labelling ceiling is shortest path length, consistent.

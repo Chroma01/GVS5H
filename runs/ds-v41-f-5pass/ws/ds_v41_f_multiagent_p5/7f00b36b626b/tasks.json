@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the solution: split nums at threshold, build DSU over labels 1..threshold, union each present x <= threshold with its multiples m (2x, 3x, ... <= threshold), count distinct roots among present values <= threshold, add one per value > threshold",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run provided examples + randomized brute-force cross-check (pairwise math.lcm union-find) to confirm the shared-common-multiple reduction is correct; both examples PASS and zero mismatches observed",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate O(T log T) performance with T = 2e5 and n = 1e5 worst case, confirming runtime/memory are acceptable",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm correctness proof and edge cases (T=1, single element, value == threshold, all values > threshold)",
+    "status": "done",
+    "result": ""
+  }
+]

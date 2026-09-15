@@ -1,0 +1,12 @@
+- **Reduction:** For a fixed integer x, its contribution over all permutations is x times sum over subsets S of the other numbers of 10^{total digit length of S} * |S|! * (N-1-|S|)!. The multiplier depends only on len(x) and the multiset of other digit lengths, so numbers of the same digit length d share a coefficient E_d.
+- **Grouping:** Let S_d = sum of integers in 1..N with d digits, c_d = their count. Answer = sum_d S_d * E_d mod 998244353. Digit lengths only 1..6 for N <= 2e5.
+- **Polynomial Q:** Q(z) = prod_{i=1}^N (1 + 10^{len(i)} z) = sum_k q_k z^k, where q_k = sum over k-subsets of 10^{total length}. For a length-d element, the relevant polynomial is R(z) = Q(z)/(1+10^d z), giving R_m for m-subsets of the others, and E_d = sum_{m=0}^{N-1} R_m * m! * (N-1-m)!.
+- **Computing Q without NTT:** Q = prod_d (1+10^d z)^{c_d}. Let F(z) = prod_d (1+10^d z) (degree t <= 6) and G(z) = sum_d c_d 10^d * F(z)/(1+10^d z). Then F * Q' = G * Q. Comparing coefficient of z^{n-1} gives the O(N) recurrence: n*q_n = sum_{j=0}^{n-1} G_j q_{n-1-j} - sum_{j=1}^{n-1} F_j (n-j) q_{n-j}, so q_n = (that) * inv(n). Inner sums have at most 6 (G) and 7 (F) terms.
+- **Building F and G:** Multiply F incrementally by (1+a_d z) with a_d = 10^d mod p. H^{(d)} = F/(1+a_d z) via H_0 = 1, H_j = F_j - a_d H_{j-1}; then G_j = sum_d c_d a_d H^{(d)}_j.
+- **Recovering R:** Synthetic division: R_0 = 1, R_m = q_m - 10^d * R_{m-1} mod p. Then E_d = sum_{m=0}^{N-1} R_m * m! * (N-1-m)!.
+- **Result:** answer = sum over present d of S_d * E_d mod p. Group-presence matters: skip d with c_d = 0 (no division needed).
+- **Sums per class:** Use arithmetic series over ranges [10^{d-1}, min(N,10^d-1)]: cnt = hi-lo+1, S_d = (lo+hi)*cnt//2 mod p. Avoids str() calls.
+- **Precomputation:** factorials fact[0..N]; modular inverses inv[1..N] via inv[i] = -(p//i)*inv[p%i] mod p. Precompute w_m = fact[m]*fact[N-1-m] % p to save multiplications.
+- **Complexity:** O(N) time, O(N) memory. Inner loops are bounded by 6-7, so constant is small. NTT is unnecessary, superseding the earlier NTT plan.
+- **Edge cases:** N=1 gives answer 1 (only permutation (1)); singleton digit class handled by R_0 = 1 and empty m-loop. Only one length class present is fine. Accumulate E without per-step mod (values stay ~2e23, well within Python big-int speed) and mod at the end.
+- **Verification:** N=3 -> q=(1,30,300,1000), R=(1,20,100), E=222, S_1=6, answer 1332. N=2 -> 33. N=4 -> 66660. Matches brute force and samples 1-3.

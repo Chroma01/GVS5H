@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: closed-form combinatorial count selected as the primary approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement modular binomial coefficient `C(n-1, k)` using factorials and inverse factorials modulo `1e9 + 7`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement modular exponentiation or use Python's built-in `pow` with modulus for `(m-1)^(n-1-k)`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Combine the formula components in `countGoodArrays` and return the result modulo `1e9 + 7`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Add or mentally verify tests for the provided examples and boundary constraints, especially `m = 1`, `k = 0`, `k = n-1`, and `n = 1`.",
+    "status": "done",
+    "result": ""
+  }
+]

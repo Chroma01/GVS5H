@@ -1,0 +1,10 @@
+- **Problem restatement:** Increment nums elements by 1 (cost 1 each). Each target value must divide at least one final nums element. Minimize total cost.
+- **Key modelling:** One element can serve many targets at once if raised to a multiple of L = lcm of that target subset. Cost to raise v to next multiple of L is `(-v) % L`. Take subset S assigned to element e; the cost is this value with L = lcm(S).
+- **Element-at-most-once:** A single nums element can only be incremented to one final value, so it can only be "assigned" one subset. A naive per-target min over all elements underestimates (e.g. nums=[2,16], target=[3,5] gives 5, not the bogus 1+3=4). Must use 0/1 DP over masks.
+- **Target count <= 4:** so <= 16 subsets and <= 4 bits. Deduplicate targets (exact duplicates need coverage once only).
+- **LCM note:** lcm of up to 4 values can exceed 1e4 (up to ~1e16); Python big ints are safe, other langs need 64-bit.
+- **Pruning (proven correct):** An inclusion-minimal optimal solution uses at most m elements (each remaining element owns a private target). For each subset keep the K = m cheapest candidate elements: if an optimal element is not among them, there are m cheaper candidates, ≤ m-1 other used elements, so a cheaper unused one can be swapped in. Thus union of candidates (<= m*2^m <= 64) suffices.
+- **DP definition:** dp[mask] = min cost so the union of assigned subsets equals mask. For each candidate element produce costs[mask]; new dp copies old dp (skip) and transitions `ndp[mask|S] = min(ndp[mask|S], dp[mask] + cost_e[S])` reading from OLD dp to forbid reuse. Answer dp[full].
+- **Extra coverage not an issue:** The value reached may be a multiple of extra targets out of S. This only helps; assigning the full covered set C gives cost <= actual, and DP over all subsets covers this, so DP min = optimum.
+- **Verified examples:** [1,2,3]&[4]->1; [8,4]&[10,5]->2; [7,9,10]&[7]->0; [2,16]&[3,5]->5.
+- **Complexity:** Candidate generation O(n * 2^m * log K); DP O(2^m * 2^m * |candidates|), tiny. Fine for n=5e4, m<=4.

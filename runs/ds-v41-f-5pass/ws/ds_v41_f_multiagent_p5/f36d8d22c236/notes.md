@@ -1,0 +1,10 @@
+- **Problem shape:** Operation renames a whole letter globally. Only the mapping f (each letter of S -> its required letter in T) matters; N only builds that mapping. Alphabet fixed at 26.
+- **Feasibility of f:** For each position S[i]=c, T[i]=d, require f[c]=d. If the same c demands two different d, print -1.
+- **Already equal:** If S == T, answer 0.
+- **Key impossibility case:** If S uses all 26 distinct letters AND T uses all 26 distinct letters AND S != T, then f is a non-identity permutation. Every label is occupied, so any nontrivial rename merges two labels and the distinct count can never return to 26. Output -1.
+- **Base cost:** E = number of letters c present in S with f[c] != c. Each such letter must be relabeled at least once.
+- **Cycle extra cost:** In the functional graph on letters present in S, a cycle of length >= 2 needs one extra operation iff every node on the cycle has in-degree exactly 1 (counting incoming edges from present letters only). If any cycle node has in-degree >= 2, there is an incoming edge from outside the cycle, which can act as a temporary and the cycle costs no extra.
+- **Verification:** A brute-force BFS verifier was written and run for alphabets k = 2,3,4 and all S,T of length up to 5. For each pair, the true minimum number of operations was computed by BFS over reachable strings (edges: replace every occurrence of x with y for any x,y in the k-letter alphabet). The formula (including the -1 special case) was compared. No mismatches were found; full agreement was confirmed. The same cases were fed into the current main() and produced identical answers.
+- **Answer:** E + (number of length >= 2 cycles whose every node has in-degree exactly 1), unless the -1 case triggers.
+- **Cycle detection:** Color-walk (unvisited / on-stack / done) from each present letter following f; a back-edge to an on-stack node yields a cycle. Letters mapping outside S are sinks.
+- **Complexity:** O(N + 26). Samples verified: 4, 0, -1, 4.

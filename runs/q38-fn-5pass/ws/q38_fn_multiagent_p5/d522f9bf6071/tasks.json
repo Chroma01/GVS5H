@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the exact-count DP sorted by right endpoint with tuple states and strict `bisect_left` compatibility.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Ensure tuple insertion keeps original indices sorted and comparator handles shorter-prefix lexicographic ties correctly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the current solution against the provided sample tests and report a SAMPLE TESTS verdict.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate edge cases: touching boundaries, equal endpoints, ties between different tuple lengths, and cases where fewer than 4 intervals are optimal.",
+    "status": "done",
+    "result": ""
+  }
+]

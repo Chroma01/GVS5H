@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select Fenwick sliding median + DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement sliding-window median cost calculator for all length-x subarrays using coordinate compression and Fenwick trees for counts and sums.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive and implement the cost formula for making a window equal using the lower median, left count/sum, and right count/sum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement DP table or rolling arrays where dp[t][i] is the minimum cost to choose t non-overlapping valid windows within the first i elements.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Define the DP transition carefully: skip position i, or take the window ending at i using cost[i-x] plus dp[t-1][i-x].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Handle boundary conditions, invalid states, large integer answers, and examples with negative numbers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Run sample tests and edge cases; if failures occur, adjust the implementation or switch to a different approach.",
+    "status": "done",
+    "result": ""
+  }
+]

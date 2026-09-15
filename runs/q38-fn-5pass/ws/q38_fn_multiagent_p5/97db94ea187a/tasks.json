@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the core y-basis BFS-layer DP with reduced state and sparse transitions, including precomputation of factorials, inverse factorials, binomial coefficients, and transition coefficients for (y^t-1)^s.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Add the final binomial transform from y-basis to x-basis and produce outputs for all required edge counts M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test against the provided samples and small brute-force verifier, including N=2, negative inclusion-exclusion coefficients modulo P, and performance checks for N=30.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If the core DP is too slow or memory-heavy, try the exponential-generating-function variant or a further reduced-state optimization; keep direct x-basis convolution only as a fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

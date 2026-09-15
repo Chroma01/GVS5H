@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify prefix-sum + binomial expansion as the O(NK) solution.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse N, K, A and maintain prefix sums P_j mod 998244353 incrementally.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute binomial coefficients C(K,t) for t=0..K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Maintain moments M[e] = sum over previous prefix indices i<j of P_i^e, initialized M[0]=1 (P_0=0), M[e]=0 for e>=1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each j, add sum_t C(K,t)*P_j^t*(-1)^(K-t)*M[K-t] to the answer using running powers of P_j.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "After processing each j, update M[e] += P_j^e for all e.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Output the accumulated answer modulo 998244353 and validate against the three samples (75, 0, 428633385).",
+    "status": "done",
+    "result": ""
+  }
+]

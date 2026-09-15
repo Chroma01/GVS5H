@@ -1,0 +1,13 @@
+- **Problem reduction:** Count index-5-tuples whose 3rd chosen index is the unique mode. Fix middle index i (value x); choose 2 indices left and 2 right of i; every valid subsequence is counted exactly once by its middle index.
+- **x-frequency:** t = 1 + cL + cR, where cL, cR are how many of the two left/right picks equal x.
+- **t >= 3 automatic:** x has frequency >= 3 while at most 2 other slots exist, so x is trivially the unique mode; no distinctness constraint needed.
+- **t == 2 (cL+cR==1):** the three non-x values must be pairwise distinct, otherwise some non-x value ties x at frequency 2. Two sub-cases: extra x on left (cL=1,cR=0) or extra x on right (cL=0,cR=1).
+- **t == 1 invalid:** four non-x with x frequency 1 always tie or lose.
+- **Counts at i:** a = left count of x, b = right count of x, nL = i, nR = n-1-i, M_L = nL-a (non-x left), M_R = nR-b (non-x right).
+- **Automatic count:** leftCount for cL = 0,1,2 is [C2(M_L), a*M_L, C2(a)]; same shape on the right. Sum products over (cL,cR) in {(2,0),(2,1),(2,2),(1,1),(1,2),(0,2)}.
+- **t==2 case A (extra x left):** a * Σ_u left_freq[u] * Q_R(u), where Q_R(u) = C2(M_R - c_u) - S2_R_nonx + C2(c_u), with c_u = right_freq[u] and S2_R_nonx = Σ_{v≠x} C2(right_freq[v]). Q_R(u) counts right pairs with distinct values both ≠ u; always non-negative.
+- **t==2 case B (extra x right):** symmetric, b * Σ_u right_freq[u] * (C2(M_L - d_u) - S2_L_nonx + C2(d_u)), d_u = left_freq[u].
+- **Incremental maintenance:** sweep i; decrement right_freq before processing i, increment left_freq after. S2_L = Σ C2(left_freq), S2_R = Σ C2(right_freq) updated in O(1): decrement k→k-1 gives -(k-1), increment k→k+1 gives +k. Subtract C2(a)/C2(b) to exclude x from the non-x aggregates.
+- **Complexity:** O(n * D) steps with D distinct values; n, D <= 1000 so ~2e6 inner iterations. Precompute c2[k].
+- **Verified:** Example 1 (all equal, n=6) gives Σ C(i,2)C(5-i,2)=6; Example 2 gives 2 at i=2 and 2 at i=3 => 4; Example 3 (all distinct) gives 0.
+- **Pitfalls avoided:** count index-tuples not value-tuples; exclude x from non-x aggregates; enforce three-way distinctness only when t==2; index bounds of c2 safe since M_R-c_u, M_L-d_u ∈ [0,n].

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive per-element contribution formula: x contributes x * sum over suffix subsets S of |S|!(N-1-|S|)! * 10^{sum_{y in S} len(y)}.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Group 1..N by digit length; compute c_e (counts) and V_e (value sums) per class e in {1..6}.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Reduce weights to beta integrals: W_d = N! * sum_k q_k/(k+1) with Q = P/(1+(10^d-1)t).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement P(t) coefficients p_0..p_N via the logarithmic-derivative linear recurrence Q P' = R P (order \u22646), using modular inverses of (m+1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each nonempty class d, divide P by (1+(10^d-1)t) in O(N), accumulate sum q_k*inv(k+1), multiply by N! and V_d.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Handle edge cases (N=1, empty classes, modulo 998244353) and precompute modular inverses 1..N+1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verified on samples N=3 (1332), N=390 (727611652), N=79223 (184895744) -- all passed.",
+    "status": "done",
+    "result": ""
+  }
+]

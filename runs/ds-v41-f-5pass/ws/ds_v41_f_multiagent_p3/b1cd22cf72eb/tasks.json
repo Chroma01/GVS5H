@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the cost identity: answer = sum(U_i+D_i) - N\u00b7H, where H is the final common upper+lower sum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(N) H_max = min_{i,j}(D_i + U_j + X\u00b7|i-j|) via split at i: min( D_i + min_{j<=i}(U_j - X\u00b7j) + X\u00b7i, D_i + min_{j>=i}(U_j + X\u00b7j) - X\u00b7i ).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Print S - N\u00b7H_max as a 64-bit integer and test all provided samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate with a small-N brute force over feasible final lengths for random tests, especially H=0, large X, N=2, and large sums.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "(Fallback) Binary search on H with interval propagation noted; unnecessary given closed form passes all samples.",
+    "status": "done",
+    "result": ""
+  }
+]

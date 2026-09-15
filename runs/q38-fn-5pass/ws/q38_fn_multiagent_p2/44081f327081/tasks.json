@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement and test the baseline multiple-count sieve with descending assignment, including K=1 and K=N special cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Optimize input parsing and output writing for N up to 1.2e6, using chunked output if needed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate edge cases: K=1, K=N, max(A)=1, all values equal, and many duplicate values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If the baseline approach fails sample tests or is too slow/memory-heavy, switch to an alternative based on divisor accumulation using smallest-prime-factor divisor generation for distinct values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Consider early-break counting for valid divisors and other micro-optimizations if the baseline is close to the time limit.",
+    "status": "done",
+    "result": ""
+  }
+]

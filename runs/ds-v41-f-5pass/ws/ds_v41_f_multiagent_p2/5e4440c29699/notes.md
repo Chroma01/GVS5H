@@ -1,0 +1,9 @@
+- **Problem model:** Town is the full grid [0,W]×[0,H] minus the hole B=[L,R]×[D,U]. Count all monotone paths (start anywhere, end anywhere, zero moves allowed).
+- **Full grid count:** N(x,y)=C(x+y+2,x+1)-1 counts paths from any start in [0,x]×[0,y] to (x,y). SumN(X,Y)=sum_{x=0}^X sum_{y=0}^Y N(x,y)=C(X+Y+4,X+2)-(X+Y+4)-(X+1)(Y+1). Return 0 when X<0 or Y<0. FullTotal=SumN(W,H).
+- **Invalid decomposition:** Classify each path visiting the hole by its last cell in the hole. Since moves are only right/up, the last hole cell lies on the right edge (R,b), the top edge (a,U), or the path ends inside the hole.
+- **Paths ending inside hole:** E1 = sum_{(x,y) in B} N(x,y) = SumN(R,U)-SumN(L-1,U)-SumN(R,D-1)+SumN(L-1,D-1).
+- **Exit through right edge:** E2 = sum_{b=D}^{U} N(R,b) * N(W-R-1, H-b) if R<W else 0. The suffix count N(W-R-1, H-b) sums over all valid endpoints in the remaining rectangle.
+- **Exit through top edge:** E3 = sum_{a=L}^{R} N(a,U) * N(W-a, H-U-1) if U<H else 0.
+- **Corner cell (R,U):** If the last hole cell is the corner, the first move after it is either right (counted in E2) or up (counted in E3). This partitions all such paths without overlap.
+- **Final answer:** (FullTotal - E1 - E2 - E3) mod 998244353.
+- **Implementation details:** Precompute factorials and inverse factorials up to W+H+5. Inside the E2/E3 loops, compute binomials directly using constant inverse-factorial factors to avoid incremental updates. Accumulate the sums without modulo inside the loops; the total fits easily in Python integers, and take modulo only at the end. This keeps the O(W+H) loops fast for up to 2×10^6 iterations.

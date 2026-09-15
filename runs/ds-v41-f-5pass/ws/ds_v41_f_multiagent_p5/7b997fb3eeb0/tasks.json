@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full solution: two-pointer nxt[i], h[i]=nxt[i]-i, sparse table for range max, binary search largest K with max_h(L,L+K-1)+K<=m, print answers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run implementation on both sample inputs; outputs matched 2,3,1,0,5 and 0,0,0,0,2,6,0,1,1,0,0,0,3,5,0 (SAMPLE TESTS: PASSED).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Correctness of h+sparse-table binary search formulation established by proof (order-statistics necessity/sufficiency, monotonicity in K, sentinel handling).",
+    "status": "done",
+    "result": ""
+  }
+]

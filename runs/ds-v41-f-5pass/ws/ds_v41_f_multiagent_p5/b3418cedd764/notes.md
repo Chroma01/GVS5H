@@ -1,0 +1,11 @@
+- **Model:** Constraints x_i <= x_{A_i} define a functional graph with edges i -> A_i. Values are nondecreasing along edges.
+- **Cycle property:** Every weak component has exactly one directed cycle; all nodes on it must share the same value t.
+- **Tree DP:** For non-cycle node u, let F_u(t) = number of valid assignments in u's subtree with x_u <= t. Then F_u(t) = sum_{s=1..t} prod_{v child of u} F_v(s). Children are reverse edges (v with A_v = u).
+- **Cycle contribution:** For a cycle node c with value t, its non-cycle children contribute prod F_v(t). Let P[c][t] be that product (initially 1). The component's count for cycle value t is prod_{c in cycle} P[c][t]. Total component = sum_t prod P[c][t].
+- **Kahn pruning:** Compute indegree (incoming edges). Queue indegree-0 nodes, remove iteratively; order is leaf-to-root. Remaining nodes (indeg > 0) are exactly cycle nodes.
+- **Processing order:** Process non-cycle nodes in Kahn order. For u, G[u] accumulates product of children's F. Compute prefix sum in place to get F_u. Then multiply F_u into parent A[u]'s accumulator: P[A[u]] if A[u] is cycle, else G[A[u]].
+- **Optimization:** If parent accumulator is None, assign F_u directly instead of multiplying by 1. Only allocate [1]*(M+1) for leaves. This saves O(NM) multiplications.
+- **Cycle processing:** For each unvisited cycle node, follow A to collect the cycle. If all P[c] are None, total = M. If exactly one P[c] exists, total = sum(P[c][1..M]). Otherwise multiply P[c] pointwise then sum.
+- **Complexity:** O(N*M) time and memory. N,M <= 2025 so ~4M elements. Python lists are fine; using in-place operations and local variables for speed.
+- **Edge cases:** N=1 self-loop -> answer M. M=1 -> answer 1. Multiple cycles multiply. Self-loops handled as cycles.
+- **Modulo:** MOD = 998244353. Prefix sum uses one conditional subtraction. Multiplications use % MOD. Final sum modulo.

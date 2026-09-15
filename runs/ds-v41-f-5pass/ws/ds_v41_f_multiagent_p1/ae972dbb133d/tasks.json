@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive exact local equations for A and B cells (A: top xor bottom = 1, left xor right = 1; B: top xor bottom = 0, left xor right = 0, top xor left = 1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement parity DSU with find(x) returning (root, xor_to_root) and union(x,y,c) enforcing x xor y = c, tracking consistency and component count.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Reduce the system to H+W variables (row/column params) using prefix XORs, plus the row/column parity precondition.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Solve the bipartite cross system over H+W nodes with parity DSU, abandoning on contradiction.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Output pow(2, components, 998244353) if consistent, else 0, for each test case.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Optimize input parsing and DSU memory/time for sum HW \u2264 10^6 and T up to 10^5.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify against sample inputs (2,0,2) and additional edge cases.",
+    "status": "done",
+    "result": ""
+  }
+]

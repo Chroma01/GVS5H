@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select the threshold min-cut formulation as the primary method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete solution: input parsing, BFS upper bound, Dinic max-flow, feasible(D) min-cut construction, descending search over D, and output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify sample tests and edge cases: parallel edges, direct edges, K=M, small K, answer 0, D=0, and vertices not lying on any 1-to-N path.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run sample tests; all 3 public samples passed.",
+    "status": "done",
+    "result": ""
+  }
+]

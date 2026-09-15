@@ -1,0 +1,14 @@
+- **Problem:** For fixed S (N<=10), count length-M strings T over 26 letters by k = LCS(S,T), output k=0..N modulo 998244353.
+- **State encoding:** The LCS DP row L[0..N] against the current prefix of T is nondecreasing and increases by 0 or 1. Encode as an N-bit mask: bit (i-1) set iff L[i] > L[i-1]. Current LCS length = popcount(mask). All 2^N masks are valid states.
+- **Transition recurrence:** For a new character c, new[i] = max(new[i-1], old[i]); if S[i-1]==c also new[i] = max(new[i], old[i-1]+1). Rebuild mask from positions where new[i] > new[i-1].
+- **Letter compression:** Only distinct characters in S need distinct transitions. A character not in S produces the identity transition (new[i]=old[i], verified since old is nondecreasing), so all 26-D such letters share one weight.
+- **DP:** Start mask 0 with count 1. For M steps: multiply each state's count by non into the same state, and add it once into each distinct-letter transition target. Reduces counts modulo MOD.
+- **Final aggregation:** Sum counts after M steps into ans[popcount(state)]; print ans[0..N].
+- **Complexity:** Precompute O(2^N * D * N), DP O(M * 2^N * D), D<=min(26,N)<=10. N=10, M=100 trivial.
+- **Validation performed:**
+  - N=1,M=1,S="a" -> 25 1 (25 non-'a' give LCS 0, "a" gives LCS 1).
+  - N=2,M=1,S="ab" -> 24 2 0 (only 'a','b' give LCS 1).
+  - N=2,M=2,S="ab" -> 576 99 1 (matches sample; 24^2 avoiding a,b; only "ab" reaches 2).
+  - N=3,M=4,S="aaa" -> 390625 62500 3750 101 (matches sample; min(#a's,3): 25^4, 4*25^3, 6*25^2, 4*25+1).
+  - M=100,N=10 runs instantly. D<=N<=10 always, so "all 26 letters in S" is unreachable given constraints but non=0 path is handled correctly (non guarded by `if non`).
+- **Implementation choice:** Row-based transition computation for clarity; the identity (non-matching) transition is applied as a multiplicative weight rather than a per-letter loop.

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the cut/coverage characterization: strongly connected iff every proper cut has a backward matching edge; forces S_1=B, S_{2N}=W.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Reduce to the inclusion-exclusion recurrence dp[i] = -inv_fact(w_i-i)*sum_{j<i} dp[j]*fact(w_i-j), answer sum dp[i]*fact(N-i).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Cross-check recurrence against brute force for all small N and confirm the 3 public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement full solution (factorials + CDQ divide-and-conquer + numpy NTT).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify edge cases N=1 (S='BW' -> 1), w_i<i dp zeros, and output 0 when S[0]!='B' or S[-1]!='W'.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Add thresholded direct path to remove the pathological NTT blow-up on small blocks with huge W-runs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Actually run the solution on the 3 samples (expect 1, 0, 240792) with raw stdout reported; build an independent O(N^2) plain-Python reference of the same recurrence and confirm identical outputs on samples and random small cases; benchmark N=200000 worst cases for runtime/peak memory and report failures exactly.",
+    "status": "pending",
+    "result": ""
+  }
+]

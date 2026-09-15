@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement `Solution.minLength` with binary search over L in [1, n]; check(L) = sum of run_length // (L+1) for L >= 2, and for L == 1 compute min Hamming distance to \"0101...\" and \"1010...\"",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate against Example 1 (\"000001\", 1 -> 2), Example 2 (\"0000\", 2 -> 1), Example 3 (\"0101\", 0 -> 1), and edge cases: n == 1, numOps == 0, all characters equal, numOps == n",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm the L == 1 special case is correct (alternating pattern Hamming distance)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify off-by-one in floor(m/(L+1)): m=3,L=2 -> 1; m=4,L=2 -> 1; m=5,L=2 -> 1 (confirmed achievable via two pieces of size 2)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Final integration review: single-pass O(n log n) complexity, monotone feasibility, correct handling when L=1 is already satisfied with 0 flips",
+    "status": "done",
+    "result": ""
+  }
+]

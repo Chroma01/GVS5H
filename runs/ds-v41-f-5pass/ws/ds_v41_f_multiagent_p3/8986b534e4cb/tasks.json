@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive feasibility condition via prefix sums / potentials (f(a)=f(b), positivity on interior towns, direction-aware sign).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive pairwise conflict characterization (same left endpoint, same right endpoint, same-sign crossing intervals).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement next[] computation: next_same via last-occurrence arrays; next_cross via reflection plus segment trees with lazy-deletion heaps.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement suffix-min boundary array and answer queries (Yes iff R < boundary[L]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Write independent brute-force verifier + O(M^2) conflict-pair replica + query-level checks; samples reproduce Yes/No.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run the built-in verifier to completion: PASS, all counters 0, no counterexamples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Generate worst-case N=4e5, M=Q=2e5 input with many same-sign properly-crossing intervals; run and record wall-clock and peak RSS.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "If performance exceeds limits, optimize by inlining hot loops or reusing segment-tree arrays; otherwise keep current implementation.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 9,
+    "desc": "Final submission-format check: confirm the program reads stdin only and writes the Q answer lines to stdout without triggering any bundled verifier.",
+    "status": "pending",
+    "result": ""
+  }
+]

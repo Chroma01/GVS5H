@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Formalize directed-edge DP: branch(v,u) = max(1, 1 + top-3 sum of branch(n,v) for neighbors n\u2260u); internal state valid only when v has >=3 other neighbors; degree-4 root uses top-4 incident branches (1 + top-4 sum).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N) rerooting DP (iterative two-pass message passing): bottom-up up[v] for child->parent branch values, top-down pm[v] for parent->child branch values with top-3 excluding current child via tracked top-4 candidate list per vertex.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Evaluate every vertex with >=4 neighbors as a degree-4 root using its top-4 incident branch values; output maximum size, or -1 if none exists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle edge cases: N<5, star graph, path, trees where the only potential degree-4 vertex lacks enough selectable branches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run all three samples (8, -1, 11) \u2014 validated: PASSED all 3 public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

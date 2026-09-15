@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive reduction: for substring ending in nonzero digit d, value = 10Q+d, so d divides it iff m = d/gcd(d,10) divides Q.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement online remainder-count DP per modulus m in {1,2,3,4,7,9} with empty suffix included; query cnt_m[0] before updating with current digit, then update all arrays.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation on examples \"12936\" -> 11, \"5701283\" -> 18, \"1010101010\" -> 25, plus edge cases all zeros, single digit, and n=10^5.",
+    "status": "done",
+    "result": ""
+  }
+]

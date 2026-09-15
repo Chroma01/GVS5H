@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce x^3-y^3 to d(x^2+xy+y^2) with d = x-y, bounding d by cuberoot(N) ~ 10^6.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the d-iteration solution: loop d from 1 to floor(cuberoot(N)) inclusive (exact integer cube-root bound), require d | N, M = N//d, Delta = 12*M - 3*d^2, check Delta perfect square via math.isqrt with exact re-verification, compute y = (isqrt(Delta) - 3d)/6 requiring positive integer (num>0, num%6==0), then print x = y+d and y; else print -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the cube-root upper bound is safe (d^3 < N strictly) and that the loop covers all possible d including edge boundaries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test the code against the three provided samples and confirm exact expected outputs, including the large-value case with no floating-point error.",
+    "status": "done",
+    "result": ""
+  }
+]

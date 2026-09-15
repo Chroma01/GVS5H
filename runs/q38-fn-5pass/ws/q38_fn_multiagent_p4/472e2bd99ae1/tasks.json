@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the baseline monotone 3D best-first heap solution with descending sorted arrays, truncation to L = min(N, K), encoded triples, visited set, and K heap pops.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate against all provided public samples (passed all 3).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify correctness arguments: monotonicity, truncation, best-first frontier property, encoding/tie-breaking, and edge cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm complexity O(N log N + K log K) and memory O(K) is within constraints (K <= 5e5).",
+    "status": "done",
+    "result": ""
+  }
+]

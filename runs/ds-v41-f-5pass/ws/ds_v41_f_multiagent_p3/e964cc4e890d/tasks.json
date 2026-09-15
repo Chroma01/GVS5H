@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove strong connectivity \u21d4 every cut x\u2208[1,2N-1] is crossed by a matched pair; derive prefix-max condition M_k > q_k and boundary forces S[0]='B', S[-1]='W' (else 0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the inclusion\u2013exclusion chain recurrence over q-plateaus (blocks L_j,V_j), answer = sum_j e[j]*(N-L_j)!.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the CDQ online convolution with naive/numpy-NTT/big-int-Kronecker branches and N<=8 brute force.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm the 3 provided samples pass (BWBW\u21921, BWWBWBWB\u21920, sample3\u2192240792).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Self-test harness: fast path vs N<=8 brute force over all valid strings; vs independent O(m^2) recurrence for random N\u2208[500,3000] with numpy on/off.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Performance-test the fast path at N=200000 on worst-case inputs (alternating, plateau-heavy, all-B-then-all-W, random); measure runtime/memory, tune SMALL and thresholds, verify samples still pass.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Finalize the shipped single stdin/stdout program after performance tuning.",
+    "status": "pending",
+    "result": ""
+  }
+]

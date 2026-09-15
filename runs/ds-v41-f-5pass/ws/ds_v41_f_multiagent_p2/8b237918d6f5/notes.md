@@ -1,0 +1,12 @@
+- **Problem model:** Choose exactly K edges to weight 1, others 0. Shortest 1→N distance = min over paths of number of chosen edges on that path. Since increasing weights never helps, "exactly K" is equivalent to "at most K" (add extra chosen edges harmlessly).
+- **Key labeling reduction:** For target D, define t(v)=min(D, dist_S(v)). Then t(1)=0, t(N)=D, and t(v)≤t(u)+1 for every edge u→v. Conversely, any integer labeling with 0≤t≤D, t(1)=0, t(N)=D and t(v)≤t(u)+1 yields a valid chosen set S={u→v | t(v)=t(u)+1}; every 1→N path contains at least D edges of S. Thus min |S| = min cost labeling.
+- **Min-cut encoding:** Nodes (v,i) for v=1..N, i=1..D; source S0, sink T0. Let x_{v,i}=1 iff t(v)≥i (node on source side). Add:
+  - S0→(N,i) INF (forces t(N)=D)
+  - (1,i)→T0 INF (forces t(1)=0)
+  - (v,i+1)→(v,i) INF (monotonicity x_{i+1}⇒x_i)
+  - For each original edge u→v: (v,i)→(u,i−1) INF for i≥2 (enforces t(v)≤t(u)+1)
+  - For each original edge u→v: (v,i)→(u,i) capacity 1 for i=1..D (charges 1 when t(v)=t(u)+1)
+- **Correctness:** The capacity-1 edges charge exactly when t(v)>t(u), and the INF constraint ensures t(v)≤t(u)+1, so a charge occurs iff t(v)=t(u)+1. Parallel edges are distinct and each adds its own capacity-1 edge, correctly charging for every parallel edge that must be chosen.
+- **Feasibility:** D is feasible iff min cut ≤ K. D=0 always feasible. Answer is largest feasible D in [0, N−1] (shortest simple path has ≤ N−1 edges).
+- **Complexity:** V=2+N·D ≤ 872, E≈M·D (cost) + M·(D−1) (INF) + N·(D−1) + 2D ≤ ~7000. Dinic handles this easily for N≤30, M≤100. INF=10^9 safely exceeds K≤100.
+- **Edge cases:** Multi-edges handled by iterating over the edge list (duplicates preserved). K=M always allows choosing all edges. D>0 feasibility is monotone, so scanning D downward finds the maximum.

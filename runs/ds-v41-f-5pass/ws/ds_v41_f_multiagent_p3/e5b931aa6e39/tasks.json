@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full solution: d-enumeration with isqrt; disc = 12*(N//d) - 3*d*d; verify perfect square, positivity, and divisibility by 6; print x y or -1",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run the implementation on the three provided samples and confirm exact expected outputs",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Brute-force verify small N against the implementation to confirm correctness and the no-solution case",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test boundary values near 10^18 (including the large sample) and confirm performance is within limits",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Prove the bound d^3 <= N (so d <= cbrt(N) <= 10^6) and derive the quadratic 3y^2 + 3dy + d^2 = N/d",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Decide the primary approach: d-enumeration with exact integer quadratic solving (chosen over Pollard Rho, Eisenstein factorization, and alternate change of variables)",
+    "status": "done",
+    "result": ""
+  }
+]

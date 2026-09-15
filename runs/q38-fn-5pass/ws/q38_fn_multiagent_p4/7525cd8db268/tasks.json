@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the online right-endpoint sweep in `Solution.maxSubarrays` with normalization, bucketing by larger endpoint, top-two distinct active smaller endpoints, max count, unique max id, base count, and per-pair gains.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle edge cases: duplicate pairs, multiple pairs with the same `b`, multiple pairs sharing the same maximum `a`, pairs that are never unique maxima, a single conflicting pair, and pairs where removing one reveals a lower second maximum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate against the provided examples and random small brute-force tests to confirm gains, duplicate handling, and equal-`a`/equal-`b` behavior.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: derive prefix-set invariant and query/update order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement online prefix-set solution with safe coordinate handling and efficient output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify against samples and edge cases (negative coordinates, max N, repeated prefix positions).",
+    "status": "done",
+    "result": ""
+  }
+]

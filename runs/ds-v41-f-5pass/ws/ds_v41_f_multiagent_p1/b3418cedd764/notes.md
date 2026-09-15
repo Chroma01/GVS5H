@@ -1,0 +1,12 @@
+- **Problem model:** Constraints `x_i <= x_{A_i}` on functional graph `i -> A_i`. Values non-decreasing toward the cycle; every directed cycle forces one shared value. Weakly connected components are independent and each has exactly one cycle, so the answer is a product over cycles.
+- **Subtree DP:** For non-cycle node `i`, define `F_i(k)` = # valid assignments of its descendant subtree given `x_i = k`. Then `F_i(k) = prod over children c of P_c(k)` where `P_c(k) = sum_{u=1..k} F_c(u)`. Leaves have `F_i(k)=1`, so `P_leaf(k)=k`.
+- **Cycle contribution:** A cycle with value `k` contributes `prod_{j in cycle} H_j(k)` where `H_j(k) = prod over non-cycle children c of j of P_c(k)`. Component total is `sum_{k=1}^M prod_j H_j(k)`.
+- **Order:** Peel nodes with indegree 0 (queue) gives a children-before-parents order. Non-cycle nodes appear in `order`; a node's children are always processed first, so folding each node's prefix into `A[u]` works incrementally. Cycle nodes never appear in `order`.
+- **Detection:** After peeling, nodes with remaining indegree > 0 are exactly the cycle nodes. `removed[]` marks non-cycle. Self-loops stay as length-1 cycles; the cycle predecessor is automatically excluded because only non-cycle nodes are folded into `H`.
+- **Folding detail:** While processing `u`: prefix its accumulator (`F[u]`, or `[1..M]` if leaf) -> `P_u`; if `A[u]` is cycle accumulate into `H[A[u]]`, else multiply into `F[A[u]]`. Free `u`'s array. Each edge folded exactly once => `O(N*M)`.
+- **Memory:** Live accumulators = nodes with >=1 processed child but not all; max ~N/2 arrays of size M. Numpy int64 keeps this ~16MB; pure-Python lists ~80MB peak. Both fine.
+- **Overflow (numpy):** Values `< MOD < 2^30`; elementwise product `< 2^60`, cumulative sum `< M*MOD < 2^42`; both fit int64. Cycle sum `< 2^42`. Mod after cumsum/product.
+- **Verified sample 3 by hand:** cycles `{1,9,7}` and `{4,5}`. `P_2=[1,5,14,30,55]`, `H_4=P_2`, `H_5=P_3*P_8=[1,4,9,16,25]`. Cycle 2 total `=1+20+126+480+1375=2002`. Cycle 1 all ones -> `5`. Answer `2002*5=10010`. Matches.
+- **Samples:** #1: `H_1=[1,2,3]`, sum=6. #2: `H_1=(k)^3`, `sum_{k=1}^9 k^3=2025`.
+- **Pitfalls handled:** child<=parent direction; exclude cycle predecessor from a cycle node's children; self-loops; multiply (not add) across components; leaf fast-path avoids allocating leaf arrays.
+- **Code strategy:** numpy path (fast, low memory) with a pure-Python `itertools.accumulate` fallback if numpy is unavailable.

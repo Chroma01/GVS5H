@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive reduction: answer = (T + D)/2 with T = sum over ordered pairs f(A_i+A_j), D = sum_i f(A_i); f(x)=x - sum_{t>=1} x/2^t * [2^t | x].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement residue-class solution: parse input, compute S0=2*N*sum(A) and diagonal D=sum of odd parts; for each t with 2^t<=2*maxA build residue dicts (count,sum) mod 2^t, match r with (-r)%2^t, accumulate St, then T -= St//2^t; output (T+D)//2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify against samples: N=2 [4,8] -> 5; N=3 [51,44,63] -> 384; N=8 [577752,...] -> 20241214.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Sanity/performance check: dict-based residue approach runs within time for N=2e5 and t up to 24; complexity O(N*K) ~ 5e6 operations; no arrays of size 2^t.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: model valid parenthesis sequences as rooted ordered forests; operation mirrors sibling forests, so reachable strings are all plane embeddings of the fixed unordered tree/forest.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete Python solution: precompute factorials/invfact modulo 998244353, parse S with a stack of child-type lists, intern unordered subtree type IDs by sorting child IDs, multiply the multinomial factor deg! / product(count!) for every completed node and the dummy root, and print the answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation on the samples and small brute-force cases, including single pair, nested chains, repeated identical subtrees, and top-level forests.",
+    "status": "done",
+    "result": ""
+  }
+]

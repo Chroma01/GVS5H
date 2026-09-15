@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "desc": "Run exhaustive minimax on small states to discover the N-even winning condition.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement component traversal to compute component sizes, bipartition class sizes, edge counts, and missing-edge parity/zero status.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the N-odd branch: output Aoki iff M is odd.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test the current program on the three public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Extend targeted abstract minimax to larger families and collect counterexamples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Derive the correct even-N rule: K odd components, K=2 always winning, K>=4 depends on M parity, K=0 depends on M parity XOR parity of even components with both bipartition sides odd.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Implement the proven even-N rule as an O(N) solver and remove research/exact-minimax fallbacks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Test on edge cases: N=1, N=2, empty graph, terminal complete bipartite graphs, K=0/2/>=4, even components with both sides odd, and large sparse graphs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 9,
+    "desc": "Finalize the program to read stdin and print exactly Aoki or Takahashi.",
+    "status": "done",
+    "result": ""
+  }
+]

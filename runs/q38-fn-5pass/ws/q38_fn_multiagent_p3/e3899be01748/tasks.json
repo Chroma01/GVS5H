@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate candidate approaches and select safest primary approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm final complexity is O(45 * n) time and O(1) extra space.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement a compact residue-DP solution in the starter code using cnt[d] arrays for d=1..9, fresh arrays per character, and no precomputation/flattening.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Ensure zero-ending substrings are still updated in the DP state for future extensions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify the three sample tests and edge cases such as all zeros, single digits, many leading zeros, all ones, and long strings.",
+    "status": "done",
+    "result": ""
+  }
+]

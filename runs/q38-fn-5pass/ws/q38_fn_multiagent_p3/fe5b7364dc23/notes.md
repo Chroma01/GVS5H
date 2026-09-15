@@ -1,0 +1,13 @@
+- **Core idea:** Let `S_j = A_1 + ... + A_j`, with `S_0 = 0`. Every subarray sum is `S_r - S_{l-1}`, so the answer is `sum_{0 <= i < j <= N} (S_j - S_i)^K`.
+- **Binomial expansion:** `(S_j - S_i)^K = sum_{t=0}^K (-1)^t C(K,t) S_j^{K-t} S_i^t`. Since `K <= 10`, expanding is cheap.
+- **Maintained state:** While scanning prefixes left to right, maintain `power_sum[t] = sum S_i^t` over all previous prefixes `i`, modulo `998244353`.
+- **Processing one prefix:** For current prefix `S_j`, compute its powers `S_j^e`. Its contribution against all earlier prefixes is `sum_t signed[t] * S_j^{K-t} * power_sum[t]`, where `signed[t] = (-1)^t C(K,t)`. Then add `S_j^t` to `power_sum[t]`.
+- **Initialization:** Only `S_0 = 0` is initially present. Thus `power_sum[0] = 1` because `S_0^0 = 1`, and `power_sum[t] = 0` for `t > 0`.
+- **0^0 handling:** The code explicitly sets `powers[0] = 1`, so it never evaluates `0^0` via `pow`.
+- **Modulo correctness:** The final expression is a polynomial in prefix sums with integer coefficients, so reducing prefix sums and power sums modulo `998244353` is valid.
+- **Signed coefficients:** Because `K <= 10`, binomial coefficients are tiny. The implementation keeps signed coefficients as small integers and takes modulo once per prefix, which is correct and avoids many modulo operations.
+- **Prefix sum update:** Since `0 <= A_i < MOD` and `s` is maintained in `[0, MOD)`, `s += a` is less than `2*MOD`, so one conditional subtraction is enough.
+- **Complexity:** Time `O(NK)`, memory `O(K)` besides input storage. With `N <= 2e5` and `K <= 10`, this is easily fast enough.
+- **Edge cases covered:** `A_i = 0`, repeated prefix sums, `N = 1`, all-zero arrays, `K = 1`, and `K = 10`.
+- **Sample checks:** Sample 1 produces contributions `9`, `17`, and `49`, totaling `75`. Sample 2 has all subarray sums zero, so the answer is `0`. Sample 3 follows from the same modular prefix-sum/binomial computation.
+- **Implementation notes:** Input is read all at once from `stdin.buffer`; binomial coefficients are computed by exact integer recurrence; the powers array is reused across iterations; `power_sum` updates use conditional subtraction to stay modulo `MOD`.

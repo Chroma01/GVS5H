@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: pivot frequency-map approach selected.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement pivot frequency-map solution for each middle index, covering middle frequency >=3 and exactly 2, with distinct non-x pair counting.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate implementation against the provided examples and a brute-force checker on small random arrays.",
+    "status": "done",
+    "result": ""
+  }
+]

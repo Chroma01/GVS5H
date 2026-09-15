@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Define fixed-middle criterion: for x = nums[i], with t = count of x among the four side picks, t=0 invalid, t>=2 valid, t=1 valid iff the three non-x picks are pairwise distinct.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(n + V) fixed-middle-index counting with coordinate compression, incremental left/right frequency arrays, total pairs, t=0 subtraction, raw t=1 subtraction, and valid t=1 addition via aggregates PL, PR, Sab, Q1, Q2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify via brute-force checker on random small arrays and the three provided examples; all match (6, 4, 0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm modulo arithmetic stays non-negative, C(k,2)=0 for k<2, skip m with L<2 or R<2, and that the state-machine transition is correct even when arr[m]==arr[m+1].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Fallback enumeration not needed; formula confirmed correct by exhaustive testing.",
+    "status": "done",
+    "result": ""
+  }
+]

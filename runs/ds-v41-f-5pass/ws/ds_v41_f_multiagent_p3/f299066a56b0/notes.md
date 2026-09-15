@@ -1,0 +1,8 @@
+- **Problem model:** maximize K disjoint pairs (top, bottom) with 2*top <= bottom; input array is sorted ascending.
+- **Feasibility predicate (verified exact):** for candidate K, feasible iff for all i in [0, K-1] (0-indexed), 2*A[i] <= A[N-K+i]; i.e. the K smallest elements are tops and the K largest are bottoms, paired in sorted order.
+- **Proof sketch:** In any feasible configuration with sorted tops t_i and sorted bottoms b_i (t_i <= b_i/2), the (i+1)-th smallest top satisfies t_i >= A[i] (a K-subset's order statistic is >= the global one), and the (i+1)-th smallest bottom satisfies b_i <= A[N-K+i] (the K largest elements dominate every K-subset's order statistics). Hence 2*A[i] <= 2*t_i <= b_i <= A[N-K+i]. Conversely the construction A[i] with A[N-K+i] is disjoint since K <= N//2 and satisfies the condition. So the predicate is necessary and sufficient.
+- **Monotonicity:** if K is feasible, then for K-1 and i < K-1 we have A[N-K+i] <= A[N-K+1+i], so 2*A[i] <= A[N-K+i] <= A[(N-(K-1))+i]; thus K-1 is feasible. Binary search on K is valid.
+- **Algorithm:** read N and the sorted array A, binary search the largest K in [0, N//2] using the predicate, print it.
+- **Complexity:** O(N log N) time (about 18 iterations at N=5e5, each scanning <= K <= N/2 elements), O(N) memory.
+- **Pitfalls:** be careful with 0-indexing of N-K+i (an earlier arithmetic slip wrongly suggested the predicate fails on [1,2,3,100] at K=2); feasibility(0) is trivially true; duplicates are handled naturally by value comparison; K <= N//2 guarantees the top set 0..K-1 and bottom set N-K..N-1 do not overlap.
+- **Verification:** sample 1 -> 3, sample 2 -> 0, sample 3 -> 6.

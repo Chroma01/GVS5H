@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the fixed-set counting formula (valid subarrays ending at r = r - M(r)) and the deletion-gain characterization (gain = M - second-distinct when max is uniquely owned).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the direct O(n + m) right-endpoint sweep with cnt[] per smaller endpoint, monotonic top-two distinct active smaller endpoints M and S, owner[a] attribution, base = n(n+1)/2 - sum_r M(r), and return base + max(gain).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Execute Example 1 and Example 2 and report exact observed outputs (9 and 12); stress-test vs brute force on random small n (duplicates, shared a, shared b, nested, m=1) with zero mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Finalize the verified Python solution in `class Solution: def maxSubarrays(self, n, conflictingPairs)` with the `List` import and confirm O(n + m) complexity.",
+    "status": "done",
+    "result": ""
+  }
+]

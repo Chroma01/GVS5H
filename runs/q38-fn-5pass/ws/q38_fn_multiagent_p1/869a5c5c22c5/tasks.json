@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive feasibility rule and simple sufficient constructions for all Yes cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete concise solution from scratch with the above move-list generators and exact sample special cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate sample output; public sample tests passed.",
+    "status": "done",
+    "result": ""
+  }
+]

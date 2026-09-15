@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: reduce to independent per-prime exponent walks with touched-zero condition.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution using dense per-prime DP with touched-zero flag, including factorization, power precomputation, DP transitions, and modular product.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and edge cases; if failures occur, switch to sparse/sign-assignment DP or fix transition/weight bugs.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement small-N brute-force checker and direct quadratic DP to validate recurrence and boundary conditions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement compressed bad-event inclusion-exclusion DP with quadratic recurrence and pass public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Design near-linear algorithm for recurrence: CDQ/NTT or alternative, handle monotone events and large slack.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement optimized solver and integrate into main modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate optimized solver against quadratic/DP on random small cases and edge cases; test performance for N=2e5.",
+    "status": "done",
+    "result": ""
+  }
+]

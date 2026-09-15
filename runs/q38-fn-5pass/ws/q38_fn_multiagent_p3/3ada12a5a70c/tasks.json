@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: selected perimeter-coordinate reduction plus binary search and greedy circular packing.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a helper that converts each boundary point `(x, y)` to a unique clockwise perimeter coordinate in `[0, 4*side)` and sorts all coordinates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement `feasible(d)` for circular spacing: duplicate sorted coordinates, greedily select up to `k` points from each original start, and verify the final wrap-around gap is at least `d`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize `feasible(d)` using precomputed next-jump indices, two pointers, or binary search jumps to keep the check near `O(n*k)` or `O(n*k*log n)`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Integrate binary search over `[0, side]` inside `maxDistance` and return the maximum feasible distance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run sample tests and edge-case tests for corners, clustered points, `k == len(points)`, large `side`, and small distances; fix any failures.",
+    "status": "done",
+    "result": ""
+  }
+]

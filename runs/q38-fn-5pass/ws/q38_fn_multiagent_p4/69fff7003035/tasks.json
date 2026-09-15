@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: identify digit-length generating function, inverse-binomial weighting, and candidate recurrence/NTT approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse N; compute for each digit length d the count c_d and sum S_d of numbers in [1,N] with that length; set q_d=10^d modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute factorials and inverse factorials up to N, and invC[m]=1/C(N-1,m) for m=0..N-1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Derive and implement the small-degree differential recurrence for P(z)=\u220f(1+q_d z)^{c_d} to compute coefficients p_0..p_N in O(N\u00b7#lengths).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each present digit length d, recover coefficients of P_d(z)=P(z)/(1+q_d z) via p^d_0=1 and p^d_m=p_m-q_d\u00b7p^d_{m-1}, then compute T_d=\u2211_{m=0}^{N-1} p^d_m\u00b7invC[m] modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Output (N-1)!\u00b7\u2211_d S_d\u00b7T_d modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate the implementation against sample inputs 3, 390, and 79223.",
+    "status": "done",
+    "result": ""
+  }
+]

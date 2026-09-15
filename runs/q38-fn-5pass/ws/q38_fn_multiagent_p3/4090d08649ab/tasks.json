@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Establish and document the component characterization of f(L,R) and the identity components = distinct count - adjacent-present pairs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement last-occurrence aggregate sweep: maintain sum of last occurrences and sum of adjacent last-occurrence minima while scanning R, adding their difference to the answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the identity and sweep on small brute-force examples and the provided samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle boundary cases: N=1, values 1 and N, all equal values, all distinct values, and repeated occurrences.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Ensure O(N) time and memory, fast I/O, and Python big-integer accumulation.",
+    "status": "done",
+    "result": ""
+  }
+]

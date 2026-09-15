@@ -1,0 +1,16 @@
+- **Task:** count integers in [l,r], r<1e9, whose digit product is divisible by digit sum. Answer = F(r) − F(l−1).
+- **Reformulation used:** any number containing a digit 0 has product 0, and 0 % (positive sum) == 0, so it is automatically beautiful. Single-digit numbers have product == sum, so all are beautiful. Both fall out of the DP with no special case.
+- **Core DP:** `free(rem, started, s, p)` = # ways to fill `rem` unrestricted digits (0-9) from prefix state so the final number is beautiful. Terminal: rem==0 → 1 iff started and s>0 and p%s==0. If started, digits 0-9 update (s+d, p*d). If unstarted, d=0 stays unstarted (leading zero, s=0,p=1) and d=1..9 starts with (d,d).
+- **F(n) tight walk:** iterate digits of n. At each position branch to every d<digits[i], add `free(L−1−i, …)` for the remaining free positions; then commit the actual digit. Finally add 1 if n itself is beautiful. Branch to d=0 while unstarted at i=0 counts all shorter numbers exactly once.
+- **Why shared memo is valid:** `free` depends only on remaining length and prefix state, not on n. For L=9 the reachable state count is bounded by digit multisets: sum_{k=1..8} C(k+9,9) = 43757. Sharing across F(r) and F(l−1) avoids a second full pass.
+- **Complexity:** ~43757 memo states × ≤10 transitions ≈ 0.44M cheap ops; string-length ≤9. Runs in a few hundred ms worst case.
+- **Hand checks (matched brute force):** F(9)=9; F(20)=11 (1..9,10,20); F(100)=25 = 9 single + 15 two-digit + 100, where two-digit beautiful = {10..90} (nine with a zero) ∪ {22,36,44,63,66,88}.
+- **Verification checklist (all PASS):**
+  - Provided examples: (10,20)→2 PASS; (1,15)→10 PASS.
+  - Brute force: all 1≤l≤r≤5000 and random ranges up to 1e6 vs. naive digit-product/sum loop: PASS.
+  - Edge cases l=r, l=1, r=999999999: PASS. l=r gives 0/1 correctly.
+  - Zero handling: 100 (prod0,sum1→beautiful), 101 (0%2), 2000 (0%2), 999999999 (9^9%81==0) all PASS.
+  - Timing l=1, r=10^9−1: ~0.3s, well under 1s. PASS.
+- **Pitfall avoided 1:** in a `tight` flag formulation, update `tight and (d==digits[pos])`, never `d==limit`. In this tight-walk form it is automatic (branch on d<di, then commit di).
+- **Pitfall avoided 2:** do not force the first chosen digit ≥1 in the tight walk; the `d==0 while unstarted` branch is what counts shorter numbers (caught while hand-checking F(100)).
+- **Pitfall avoided 3:** require sum>0 so that 0 itself (all leading zeros) is never counted.

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Select the monotone-closure min-heap boundary expansion approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the min-heap boundary expansion solution (parsing, initialization, absorption loop, output) as one Python program.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Ensure strict inequality `strength * X < current`, big-int products, visited-grid dedup, and 4-directional expansion.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run and verify against the three provided samples (all passed).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and choose binary-search feasibility as the primary method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement input parsing for N and the sorted list A.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Write a feasibility function check(K) that verifies whether the K smallest mochi can be paired with the K largest mochi using the condition 2*A[i] <= A[N-K+i].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Binary search K over the range 0 to N//2 using the feasibility function to find the maximum valid K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Ensure the solution runs in O(N log N) time or better and uses O(N) memory.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test mentally and by running sample tests on edge cases such as N=2, all equal sizes, and cases where no pair is possible.",
+    "status": "done",
+    "result": ""
+  }
+]

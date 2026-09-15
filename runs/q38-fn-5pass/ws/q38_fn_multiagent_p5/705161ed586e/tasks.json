@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement compact suffix-DP solution with array storage, best/second-best switch, and greedy reconstruction; run sample/edge tests and report verdict.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate impossible cases (`n < 3`) and lexicographic tie-breaking.",
+    "status": "done",
+    "result": ""
+  }
+]

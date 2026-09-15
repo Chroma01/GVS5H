@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate the bottom-up DP formulation with two costs per node: minimum flips to make the node output 0 or 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement iterative bottom-up DP over triples of child cost pairs, avoiding explicit tree construction.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Ensure input parsing handles both contiguous binary strings and whitespace-separated bits.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify correctness on the sample tests and confirm efficiency for N <= 13.",
+    "status": "done",
+    "result": ""
+  }
+]

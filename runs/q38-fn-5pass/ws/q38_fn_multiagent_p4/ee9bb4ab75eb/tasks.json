@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Explore approaches and select the trie interval method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement trie construction with per-node counts and terminal linked lists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "DFS assign terminal positions and compute global/count==k interval contributions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Build prefix/suffix maxima and assemble answers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify sample and edge cases.",
+    "status": "done",
+    "result": ""
+  }
+]

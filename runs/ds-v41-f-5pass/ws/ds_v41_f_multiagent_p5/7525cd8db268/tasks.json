@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Normalize every conflicting pair to (a, b) with a < b; handle duplicate pairs (they matter for uniqueness of the maximum).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Bucket pairs by b and sweep R = 1..n, activating pairs with b <= R while maintaining top-two active a-values and the unique-owner id via Fenwick.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute base count = sum over R of (R - maxActiveA), using 0 when no conflict is active at R.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Credit per-pair gain only at R where a pair is the unique active maximum: gain[id] += top - second.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Return base + max(gain), with gains always >= 0 so exactly-one-removal is handled naturally.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verified Example 1 (n=4, [[2,3],[1,4]] -> 9) and Example 2 (n=5, [[1,2],[2,5],[3,5]] -> 12) by hand-tracing the sweep.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Confirmed edge cases: single pair yields full n(n+1)/2, duplicate pairs block gain (owner = -1), no-active R adds R with sentinel 0.",
+    "status": "done",
+    "result": ""
+  }
+]

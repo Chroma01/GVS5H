@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive/verify the gap transformation: for gaps d_j = X_{j+1}-X_j, operation at i swaps d_i and d_{i+2} and leaves d_{i+1}; note parity independence and arbitrary permutation via adjacent swaps.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement input reading and compute gaps from the sorted input coordinates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Partition gaps into two lists by 1-indexed parity (or 0-based even/odd), and sort each list ascending.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Reconstruct the minimum weighted sum: start with N*X_1, then for each gap position j=1..N-1 take the next gap from the corresponding sorted parity list and add (N-j)*gap.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Use Python integer arithmetic, print the answer, and test mentally on samples and edge cases such as N=4 and already sorted gaps.",
+    "status": "done",
+    "result": ""
+  }
+]

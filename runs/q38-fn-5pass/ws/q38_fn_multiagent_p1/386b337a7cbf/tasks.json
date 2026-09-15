@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement compact dense product-indexed bitset DP with dp0/dp1 lists, snapshots, inline transition, non-empty starts, and descending product scan.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run the three sample tests with a minimal harness and report PASS/FAIL only.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If any sample fails, switch to a simpler dictionary-based DP approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If samples pass, verify key edge cases: k=0 empty exclusion, zeros, overflow-to-zero, unreachable k, single element product > limit.",
+    "status": "done",
+    "result": ""
+  }
+]

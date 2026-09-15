@@ -1,0 +1,7 @@
+- **Reduction:** Adjacent swaps preserve the relative order of the 1s. If there are K ones at 1-indexed positions p1 < ... < pK and the final contiguous block starts at L, the j-th one must land at L+j-1 (j = 1..K), so the cost is sum_j |pj - (L+j-1)| = sum_j |(pj - j + 1) - L|.
+- **Transform:** Define a_j = pj - j + 1. Minimizing over L turns into an L1 median problem: answer = min_L sum_j |a_j - L|, attained at the median of the a_j.
+- **Median choice:** The a_j are already nondecreasing and lie in [1, N-K+1] (valid L range), so the median is always feasible. For even K any value between the two middle elements is optimal; picking a[K//2] (lower median) is correct and simplest.
+- **Implementation details:** Collect ones in one pass. Using 0-indexed i and a running count idx (= j-1), a_j = (i+1) - idx. Avoid storing positions separately by appending the transformed value directly.
+- **Edge cases:** K = 1 (answer 0, no swaps needed) and already-contiguous inputs are handled naturally by the formula (sum reduces to 0).
+- **Complexity:** O(N) time, O(K) extra memory. K <= N <= 5e5, so fine in Python. Reading via sys.stdin.buffer and testing bytes == 49 (ord of '1') keeps it fast.
+- **Verification:** Sample 1: positions [2,4,7] -> a=[2,3,5], median 3, cost 1+0+2=3. Sample 2: K=1 -> 0. Sample 3: positions [2,4,7,10] -> a=[2,3,5,7], median 5, cost 3+2+0+2=7.

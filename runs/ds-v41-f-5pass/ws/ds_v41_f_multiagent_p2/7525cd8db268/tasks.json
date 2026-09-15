@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate and select the core algorithm (right-endpoint sweep with active top-two values).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the right-endpoint sweep: normalize pairs to (a,b) with a<b, bucket by b, insert pairs with b==r before counting, maintain largest a, its owner id and multiplicity, and second-largest distinct a (0 if absent), accumulating base += r-largest and per-owner gain (largest-second) when multiplicity==1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Return base + max(gain) using 64-bit-safe arithmetic.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Execute the solution on Example 1 (got 9) and Example 2 (got 12); both match expected outputs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Cross-check against an independent brute-force solver on 20000 random small inputs (n in 2..8) covering duplicates, reversed pairs, tied a-values, a single pair, and never-bottleneck pairs; zero mismatches reported.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "No mismatch found, so no fallback (left-endpoint sweep / Fenwick top-two query) was needed.",
+    "status": "done",
+    "result": ""
+  }
+]

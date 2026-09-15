@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Establish that cost = sum(U)+sum(D) - N*H and feasibility is exactly H <= U_i + D_j + X*|i-j| for all pairs (necessity via Lipschitz and bounds; sufficiency via f_i = max_j(L_j - X*|i-j|), L_j = max(0, H-D_j)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the direct O(N) pairwise-min formula H_max = min_{i,j}(U_i + D_j + X*|i-j|) via two linear scans, output sum(U)+sum(D) - N*H_max, reading stdin and writing stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the implementation against all 4 provided samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm the two linear scans correctly cover all ordered pairs including i=j (pass 1 handles i<=j, pass 2 handles i>=j).",
+    "status": "done",
+    "result": ""
+  }
+]

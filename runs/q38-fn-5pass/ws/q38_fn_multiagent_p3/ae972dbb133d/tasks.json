@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: identify the reduced row/column XOR formulation and parity DSU as the primary approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete Python solution for the primary approach, reading all test cases from stdin and writing answers to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each test case, compute row and column parity of A cells; if any row or column has odd A parity, output 0 and skip DSU work.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle all-B and all-A shortcut cases correctly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Initialize a parity DSU on H+W nodes representing row bits and column bits, with path compression, union by size, xor-to-parent values, contradiction detection, and component counting.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "While scanning the grid, maintain row-prefix and column-prefix parities of A cells; for each B cell, union its row and column variables with the correct xor label.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Count valid placements as 2^(DSU components) modulo 998244353 when consistent, otherwise output 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Run the implementation on the provided sample tests and confirm the outputs are 2, 0, and 2.",
+    "status": "done",
+    "result": ""
+  }
+]

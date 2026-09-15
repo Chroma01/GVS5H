@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Identify that the previous complex solution is incomplete/failing and switch to a simpler hub+block-cut formulation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Refine the formulation: include all degree>=3 hub vertices and endpoint-side penalty 4 when the hub projects to the S or T endpoint articulation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the clean block-cut-tree + Suurballe solver described above and make it pass the public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize Tarjan, block adjacency construction, and per-block min-cost 2-flow for N,M up to 2e5.",
+    "status": "done",
+    "result": ""
+  }
+]

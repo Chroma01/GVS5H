@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full solution: split p into A,B,C; KMP occurrence lists for each nonempty segment (reporting overlapping matches); build nextC and bestAend helpers; iterate over B occurrences to minimize C_end - A_start; return min or -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle edge cases: pattern \"**\" -> 0, empty A/B/C semantics (free start/end), occurrence bounds up to n, non-overlap thresholds, no-valid-match sentinel.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate against the 4 provided examples and randomized brute-force on small strings.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify sample 2 correctly rejects overlapping B/C segments (nextC[b+lb] = INF when C starts before B ends) yielding -1.",
+    "status": "done",
+    "result": ""
+  }
+]

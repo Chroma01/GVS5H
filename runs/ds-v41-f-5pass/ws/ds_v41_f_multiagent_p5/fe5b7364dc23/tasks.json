@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement prefix-sum pair reduction: answer = sum_{0<=i<j<=N} (P_j-P_i)^K, maintaining running moments M_t = sum_{i<j} P_i^t for t=0..K, updated after each j.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute binomial coefficients C(K,t) mod 998244353 and apply alternating sign (-1)^t correctly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle empty prefix P_0 (M_0 starts at 1, higher moments start at 0) and reduce all arithmetic mod MOD.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test against samples: (3 2 / 3 1 2 -> 75), (1 10 / 0 -> 0), (10 5 / ... -> 428633385), plus edge cases N=1 and all-zeros.",
+    "status": "done",
+    "result": ""
+  }
+]

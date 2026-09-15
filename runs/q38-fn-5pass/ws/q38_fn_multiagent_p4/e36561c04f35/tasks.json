@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Explore approaches and derive the batch-label/inversion model.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement RLE + constant-state DP solver and validate on public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Brute-force verify the DP on all small equality patterns and random stress cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate structural lemmas: runs atomic, only last two batch labels matter, and only singleton-over-singleton backward merges are useful.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Finalize efficient Python code for T up to 1e5 and total N up to 2e5.",
+    "status": "done",
+    "result": ""
+  }
+]

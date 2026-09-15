@@ -1,0 +1,11 @@
+- **Region model:** After any sequence of absorptions, Takahashi occupies a connected region containing the start cell, and his strength is exactly the sum of the original strengths of cells in that region.
+- **Legal boundary cell:** A cell adjacent to the occupied region can be absorbed iff `X * S_cell < current_strength`. This uses integer arithmetic and handles the strict inequality directly.
+- **Monotonicity:** `current_strength` only increases and the boundary only expands when a new cell is absorbed. Thus a cell that is legal now remains legal later. Absorbing any legal boundary cell cannot hurt future options.
+- **Greedy closure:** The final maximum strength is the unique closure reached by repeatedly absorbing any legal boundary cell until none exist. Order among currently legal cells does not change the final region.
+- **Priority queue:** Maintain all boundary cells in a min-heap keyed by their original strength. Pop the smallest unoccupied boundary cell. If it satisfies `X * val < cur`, absorb it, add `val` to `cur`, and push its unoccupied orthogonal neighbors. If the smallest boundary cell is not legal, no boundary cell is legal, so stop.
+- **Correctness of stopping:** Because the heap is keyed by strength, the first unoccupied cell popped is the minimum boundary strength. If it fails the strict inequality, every other boundary cell also fails.
+- **Duplicates:** A cell may be pushed multiple times by different absorbed neighbors. This is harmless; already occupied cells are skipped when popped.
+- **Complexity:** Each grid edge causes at most one successful push from the first endpoint absorbed. Total heap pushes are O(HW), total pops O(HW), so time is O(HW log(HW)). Memory is O(HW).
+- **Overflow:** Python integers are arbitrary precision. Maximum `cur` is about `500 * 500 * 10^12 = 2.5 * 10^17`, and `X * S` can reach `10^21`.
+- **Edge cases:** A 1x1 grid has no neighbors, so the heap is empty and the answer is the start cell's strength. The same stopping condition handles grids where nothing can be absorbed initially.
+- **Implementation details:** Convert `P, Q` to 0-based. Store the grid as a list of lists and occupancy as a flat `bytearray`. Parse all integers at once from `sys.stdin.buffer.read().split()` for speed.

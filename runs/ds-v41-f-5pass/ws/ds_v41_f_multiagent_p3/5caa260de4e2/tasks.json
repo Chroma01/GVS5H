@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the cut-penalty transformation reducing `k*i*segCost` to `k*C_total + k*sum_cuts suffixCost(after cut)`; exact recurrence documented.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build 1-indexed prefix sums A (nums) and B (cost) with sentinel at index 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the O(n^2) DP `dp[j]` in `Solution.minimumCost`, with no cut penalty for the first segment and final `+ k*B[n]` constant.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify Example 1 = 110 (dp=[0,12,40,94], +16) and Example 2 = 985; logic hand-checked.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Edge case n=1 reduces to `(nums[0]+k)*cost[0]`, matching the single-segment formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Complexity confirmed O(n^2) time / O(n) space; n<=1000 so CHT/Li Chao/Monge optimization unnecessary.",
+    "status": "done",
+    "result": ""
+  }
+]

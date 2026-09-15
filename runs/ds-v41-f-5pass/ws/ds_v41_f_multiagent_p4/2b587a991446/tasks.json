@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement BFS from S and from T to compute dS[1..N] and dT[1..N].",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Tarjan's bridge-finding / biconnected-component decomposition to identify all blocks that contain at least one cycle (size \u2265 3 or more than one edge inside the block).",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If no cyclic block exists, print -1 and terminate.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each vertex v in a cyclic block, update the answer with 2*dS[v] + 2*dT[v] + 4.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each cyclic block, compute the minimum over distinct vertices x, y in the block (or over edges/cycles within the block) of 2*dS[x] + 2*dT[y] + shortest_cycle_length_containing_x_y; update the answer accordingly.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate the implementation against the provided samples and test edge cases (tree graph, single cycle, cycle with tails).",
+    "status": "pending",
+    "result": ""
+  }
+]

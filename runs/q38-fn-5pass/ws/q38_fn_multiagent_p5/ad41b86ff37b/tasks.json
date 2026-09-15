@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: derive per-center capacity formula and candidate approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Approach 1 per-center sorting of positive neighbor capacities and compute answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and edge cases (N=3 path, star, large star/path) to verify correctness and performance.",
+    "status": "done",
+    "result": ""
+  }
+]

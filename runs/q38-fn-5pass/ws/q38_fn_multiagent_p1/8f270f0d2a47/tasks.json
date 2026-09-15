@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select digit DP per target digit sum as the primary method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement `count_up_to(n)` with per-target-sum digit DP, counting numbers whose digit sum equals `S` and digit product is divisible by `S`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle leading zeros and internal zeros correctly: leading zeros must not start the number or zero the product, while an internal zero digit must make the product modulo `S` equal to 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Integrate `beautifulNumbers` to return `count_up_to(r) - count_up_to(l - 1)`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test against the provided examples and edge cases such as single-digit ranges, ranges containing zeros, and the maximum constraint `r = 999999999`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Fallback single DP tracking digit sum plus capped prime exponents is not needed because the current per-sum DP passes sample and edge checks.",
+    "status": "done",
+    "result": ""
+  }
+]

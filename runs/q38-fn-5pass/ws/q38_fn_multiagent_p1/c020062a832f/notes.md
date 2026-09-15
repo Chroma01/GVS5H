@@ -1,0 +1,10 @@
+- **Core idea:** Compute the inversion count for `k = 0` once, then update it in `O(1)` per shift. Increasing `k` by one only changes relative order for elements whose current value is `M-1`, because those wrap to `0`.
+- **Initial inversion count:** Use a Fenwick tree over values `0..M-1`. Scanning left to right, for current value `x`, the number of previous elements greater than `x` is `i - count(previous elements <= x)`. Summing this gives the inversion count for `k = 0`.
+- **Wrap transition:** At step `k -> k+1`, positions with current value `M-1` wrap. If a wrapping position is before a non-wrapping position, one inversion disappears. If it is after a non-wrapping position, one inversion appears. For a wrapping position `p` using 1-indexing, the net contribution is `2*p - N - 1`.
+- **Cancellation among wrapping positions:** If two positions wrap in the same step, their mutual comparison does not change. In the summed formula, their contributions cancel, so summing `2*p - N - 1` over all wrapping positions is correct even when multiple positions wrap simultaneously.
+- **Per-residue delta:** For each original value `v`, precompute `delta[v] = sum(2*p - N - 1)` over all 1-indexed positions `p` with `A_p = v`. When moving from `k` to `k+1`, the wrapping original value is `M-1-k`, so update `answer += delta[M-1-k]`.
+- **Output loop:** Print the initial answer for `k = 0`, then perform `M-1` updates to produce answers for `k = 1..M-1`. The transition from `k = M-1` back to `k = 0` is not needed.
+- **Indexing caution:** The formula `2*p - N - 1` assumes 1-indexed positions. If using 0-indexed positions, the equivalent formula is `2*p - N + 1`.
+- **Complexity:** Initial inversion count is `O(N log M)`. Building deltas and simulating all shifts is `O(N + M)`. Memory is `O(N + M)`, dominated by the input array, Fenwick tree, and delta array.
+- **Integer size:** The answer can be as large as `N(N-1)/2`, but Python integers handle this automatically.
+- **Edge cases:** `M = 1` works naturally: all values are `0`, the initial inversion count is `0`, and the update loop is skipped. Empty input is also handled safely.

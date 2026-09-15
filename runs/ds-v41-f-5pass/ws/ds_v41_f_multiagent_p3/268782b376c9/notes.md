@@ -1,0 +1,12 @@
+- **Model:** a walk from -1 over the path. Total moves = total edge crossings, including edge(-1,0). gameScore[j] = points[j]*v_j where v_j = visits. Maximize min over all j (unvisited => 0). More moves never hurt (points positive), so feasibility is about a minimum move count.
+- **Required visits:** r_i = ceil(X/points[i]) = (X-1)//points[i] + 1 = d_i + 1 with d_i = (X-1)//points[i].
+- **Ending position e:** edge i is crossed an odd number of times iff i<e, even iff i>=e. Edge(-1,0) once. Minimum baseline t_i=1 for i<e, t_i=2 for i>=e gives moves base-e = 2n-1-e and visit counts 1 for j<e and j=n-1, 2 for e<=j<=n-2.
+- **Round trips:** each additional +2 crossing of edge i costs 2 moves and adds 1 visit to both i and i+1. Deficits w_j = d_j for j<e, max(0,d_j-1) for e<=j<=n-2, d_{n-1} for j=n-1. Constraints q_{j-1}+q_j >= w_j with q_{-1}=q_{n-1}=0, minimize sum q.
+- **MWIS duality:** constraint matrix is an interval (totally unimodular) covering matrix, so min sum q = max-weight independent set on the path with weights w_j. Verified identity for n=2 (max(w0,w1)) and n=3 (max(w0+w2, w1)).
+- **O(n) over all e:** precompute suffix DP g0/g1 on reduced weights; sweep e keeping prefix DP f0p/f1p on original weights; combine mw = max(f0p+max(g0[e],g1[e]), f1p+g0[e]); moves = base-e+2*mw. Early return True on first feasible e.
+- **Binary search:** M(X) monotone in X. lo=0; hi = maxp*m//n + 1 because min <= average <= maxp*m/n. ~35 iterations.
+- **Complexity:** O(n log(maxp*m/n)) time, O(n) memory.
+- **SAMPLE TESTS verdict: all pass (verified by exact trace and by brute force).** Ex1 points=[2,4],m=3 -> 4 (feasible(4)=True, feasible(5)=False). Ex2 points=[1,2,3],m=5 -> 2 (feasible(2) True at e=0, feasible(3) False). Brute force (enumerate all 2^m walks, compute min of points[j]*v_j) agrees on random n<=5,m<=8 and on hand cases: [3,1,2],m=4 -> 2 (walk -1,0,1,2,1 gives [3,2,2]).
+- **Edge cases verified:** m<n -> 0 (index n-1 unreachable). n=2 [5,5]: m=3 -> 5 (walk 0,1,0 min 5), m=4 -> 10. All-equal [1,1,1] m=6 -> 1, m=7 -> 2. Baseline check: for m>=n, e=n-1 gives moves=n so X>=1 always feasible.
+- **Timing:** worst case n=50000, m=1e9, all points 1e6 -> answer ~2e10, ~35 binary-search steps x ~3n loop iterations (~5M ops) -> well within limits.
+- **Code state:** single self-contained Solution.maxScore; no dead code.

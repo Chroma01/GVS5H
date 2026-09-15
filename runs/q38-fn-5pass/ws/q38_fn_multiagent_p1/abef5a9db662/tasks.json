@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement forward lazy segment tree over initial ratings 1..500000 with range add and subtree maximum queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement boundary searches: first position with value >= L_i and first position with value > R_i, handling empty intervals correctly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Process all N contests by applying +1 to the affected initial-rating interval.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Read Q queries and output final ratings for each initial X.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test sample tests and edge cases: no affected interval, full-range updates, ratings exceeding 500000, and maximum constraints.",
+    "status": "done",
+    "result": ""
+  }
+]

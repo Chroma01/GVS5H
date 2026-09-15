@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the visibility condition using top slopes s_i(y) = (H_i-y)/X_i, including why only earlier buildings can block and why equality means hidden.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Justify that the maximum critical height over all pairs is attained by adjacent pairs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the adjacent threshold scan with exact integer rational comparison.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Fix output formatting to match the sample checker: use double-style fixed 18-decimal output for nonnegative answers, keep `-1` exact, and verify all samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test edge cases: N=1, threshold exactly 0, negative thresholds, very large coordinates/heights, and the provided samples.",
+    "status": "done",
+    "result": ""
+  }
+]

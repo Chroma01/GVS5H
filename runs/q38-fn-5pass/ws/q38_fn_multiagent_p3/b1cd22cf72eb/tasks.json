@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate and prove the closed-form and binary-search approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the direct closed-form O(N) solution described above.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the implementation on all samples and edge cases (large values, already valid teeth, X very large/small, answer > 32-bit).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If verification fails, implement the binary-search interval-propagation fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,11 @@
+- **Goal:** choose up to 4 pairwise non-overlapping closed intervals maximizing total weight; among all optimal-weight choices return the lexicographically smallest sorted index array.
+- **Non-overlap is strict:** sharing an endpoint counts as overlap, so interval ending at r is compatible only with intervals starting l > r.
+- **Verified examples:** Example 1 -> [2,3] (weight 8), Example 2 -> [1,3,5,6] (weight 21); both matched exactly.
+- **Deep brute-force check:** 20000 random trials with n <= 10, coords in [1,8], weights in [1,10] compared against exhaustive enumeration of all subsets of size 0..4 (strict r < l check). Zero mismatches. Touching-endpoint cases were present in most trials, so strictness handling is exercised and correct.
+- **DP definition:** dp_w[i][k], dp_t[i][k] for EXACTLY k chosen among first i sorted intervals. Copy dp[i-1][k]; then if dp_w[p(i)][k-1] >= 0, candidate weight = dp_w[p(i)][k-1] + w_i and candidate tuple = insert original index i into the sorted predecessor tuple, keeping it sorted. Compare weight first (maximize), then tuple lexicographically (minimize).
+- **Predecessor:** sort by right endpoint; p(i) = bisect_left(rs, l_i) = number of intervals with right endpoint strictly less than l_i. bisect_left correctly rejects touching (r == l).
+- **Why EXACT counts matter:** with "at most k", tuple lengths differ and the lex-best predecessor can change after insertion, making ties unreliable. Exact k gives equal-length states so comparisons are consistent; cross-length comparison only at the final pick over k=0..4 using Python tuple ordering (shorter-equal-prefix is smaller).
+- **Why tuple + insertion is safe:** inserting the same value x into two sorted equal-length sequences A < B preserves order (sorted(A∪{x}) <= sorted(B∪{x})). So keeping only the lex-min max-weight tuple per (i,k) suffices.
+- **Weights positive:** empty choice never wins; k=0 state (weight 0, ()) kept only as base.
+- **Complexity:** O(n log n) sort + O(n*4*4) DP, memory O(n*5) — fine for n up to 5*10^4.
+- **Timing:** n = 5*10^4 runs in well under a second; memory (two (n+1)x5 lists) is modest.

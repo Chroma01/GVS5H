@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the full algorithm (pref/suff/prev precomputation + iterative lazy segment tree with range add / point set / range max + right-cut sweep) and verify it produces 5 and 9 on the two samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Stress-test edge cases: N=3, all-same values, all-distinct values, prev[j]=0 boundary, and confirm correct handling of the last valid right cut j=N-1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Check performance at N=3e5 with the iterative segment tree and confirm it runs within limits.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm sample tests pass (5 and 9).",
+    "status": "done",
+    "result": ""
+  }
+]

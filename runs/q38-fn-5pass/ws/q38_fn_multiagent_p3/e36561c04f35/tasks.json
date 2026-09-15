@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "desc": "Build a brute-force BFS solver for small N to obtain exact answers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Test the supplied run-length \u201cgood boundary\u201d DP against brute force; confirm it fails on chains such as 1 2 1 3 2 3.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Explore the greedy pending-stack / max-of-two candidates and record counterexamples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement a brute-force validator for the leader-by-last assignment model.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement the candidate O(M log N) run-level greedy solver and combine it with a safe upper-bound heuristic.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run the leader-by-last validator against BFS on exhaustive/random small cases and report mismatches or optimal leader patterns.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "If mismatches appear, inspect their optimal leader assignments to identify the missing structural constraint.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "If no mismatches appear, derive a formal exchange proof for the run-level greedy rule and finalize it as the solution.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 9,
+    "desc": "Determine how runs of length greater than 1 are handled in the validated model (element-level vs run-level) using BFS counterexamples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 10,
+    "desc": "Implement the final solution, validate on samples and brute-force cases, and handle large T efficiently.",
+    "status": "done",
+    "result": ""
+  }
+]

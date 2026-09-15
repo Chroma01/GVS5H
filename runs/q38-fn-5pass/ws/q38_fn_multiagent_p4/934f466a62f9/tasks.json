@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: parity reformulation and Lagrangian DP approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement full Python solution with parity-mask Lagrangian DP: fast input, packed 8-state calc(penalty), binary search, answer conversion, and edge-case handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on the provided samples and small random brute-force instances to catch concavity, tie-breaking, and conversion bugs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize the DP transitions aggressively (unroll masks, local variables, avoid allocations).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,12 @@
+- **Model:** A replacement x->y merges the whole current group of x into y; groups never split. So each distinct char of S must map to one fixed char of T, else -1.
+- **Graph:** directed functional graph on letters, edge c->f(c) for c in set(S) with f(c)!=c. Each node has out-degree <=1.
+- **Lower bound / cost:** Each such edge needs at least one operation, so base cost is E = #edges. Trees feeding sinks cost exactly one op per edge (process sinks first).
+- **Cycles:** A nontrivial cycle is a deadlock needing one temporary label. Extra cost = 1 per *pure* cycle, where pure means every cycle node has indegree exactly 1 (no outside edge enters the cycle). A cycle with an incoming tree edge is resolvable with NO extra op: move the cycle predecessor into the incoming node c, rotate the cycle, then perform the edge c->cycle-root; c's tokens and the predecessor's tokens share the same target, so the merge is valid.
+- **Pure-cycle break:** move v1 -> z, rotate, z -> v2, costing L+1 = L edges + 1 extra. One spare label z (not in T) can be reused for every pure cycle, so total = E + P.
+- **Spare availability:** A letter not in set(T) is never inside a pure cycle (pure-cycle nodes lie in the image = set(T)). Its own component is a tree or a cycle that has an incoming tree edge; such components resolve without any buffer, emptying that label, after which it serves as the reusable buffer. Hence a buffer exists iff set(T) != all 26 letters.
+- **Impossibility case:** set(T)=all26 forces set(S)=all26 (since |set(T)|<=|set(S)|) and f is a bijection on 26 letters; no spare label exists, so any nontrivial cycle => -1. If f is the identity => 0. Equivalently: -1 iff |set(T)|==26 and P>0.
+- **Pitfall:** Use set(T), NOT set(S), in the all-26 test. set(S)=26 with set(T)<26 and a pure cycle is still solvable (e.g. f: a<->b, c->d, others fixed, universe of 26: E=3,P=1 -> answer 4 using c as buffer after draining c->d).
+- **Pitfall:** Ignore self-loops (f(c)=c) as edges; they are sinks, not cycles.
+- **Pitfall:** Count P as cycles with ALL nodes indegree==1; a single external in-edge to any cycle node kills purity.
+- **Complexity:** O(N) mapping check, O(26) graph work.
+- **Verified samples:** 1->4, 2->0, 3->-1, 4->4; incoming-cycle S=abc,T=baa -> 3 (cycle a-b has indeg-2 on a from c, so P=0, E=3).

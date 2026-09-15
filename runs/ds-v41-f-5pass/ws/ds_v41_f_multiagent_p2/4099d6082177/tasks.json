@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify that the cut set is forced (edge cut iff one side's size is divisible by K) and reduce to verifying the forced selected-edge forest is a disjoint union of paths of size K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle the K=1 case by immediately printing Yes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build adjacency list and iterative DFS (root at 1) to compute subtree sizes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Mark edges cut iff child subtree size % K == 0; build selected-edge forest from non-cut edges.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify each vertex has selected degree <= 2 and each selected component has exactly K vertices; print Yes iff all pass, else No.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run the solution on Sample 1 (Yes) and Sample 2 (No); sanity-check K=1 and single-path trees.",
+    "status": "done",
+    "result": ""
+  }
+]

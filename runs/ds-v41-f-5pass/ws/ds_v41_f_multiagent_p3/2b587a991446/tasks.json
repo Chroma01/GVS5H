@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Exact brute-force BFS over ordered pairs (a,b), a\u2260b \u2014 trusted ground truth; gives 3,-1,4 on samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Establish feasibility: possible iff G is not a simple path (a degree\u22653 vertex or a cycle gives a passing/parking structure); a path graph \u2192 -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Structural candidate solver: ans = 2d + min(case1 cycle-on-corridor block, case2 parking at an internal corridor vertex with an off-corridor neighbour = +2, case3 endpoint device = 4*(dist+1)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Produce the standalone SOLVER (stdin\u2192stdout) from the structural formula, with all validator/brute-force code removed; must print 3,-1,4 quickly.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run a fast brute-force validator (exhaustive N\u22645, random N=6,7) against exact config BFS and report every MISMATCH (graph,S,T,brute,struct).",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "For each mismatch family, reduce to a minimal graph, hand-trace the true optimum, and patch case1/case2/case3 (watch: cycles off-corridor reachable only via bridges from internal vertices, cycles beyond endpoints, blocks containing S/T, multi-block corridors).",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Re-run validation until zero mismatches on all enumerable small graphs, then confirm final solver on samples and N,M \u2264 2e5 performance.",
+    "status": "pending",
+    "result": ""
+  }
+]

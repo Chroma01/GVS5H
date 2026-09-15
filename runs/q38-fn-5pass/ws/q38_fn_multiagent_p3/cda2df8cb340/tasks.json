@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the primary solution: read input, compress values, compute diagonal_sum, compute H_t via residue counts/sums for moduli 2^t, derive ordered_sum = H0 - sum_H, and output (ordered_sum + diagonal_sum) // 2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate the implementation on the provided samples and edge cases such as N=1, all odd/even values, and large values near 10^7.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Optimize residue aggregation with hybrid dense arrays for small moduli and dictionaries for large moduli.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Keep fallback approaches (exact-valuation variant, LSB trie, parity divide-and-conquer) only if the primary residue-grouping approach fails or is too slow.",
+    "status": "done",
+    "result": ""
+  }
+]

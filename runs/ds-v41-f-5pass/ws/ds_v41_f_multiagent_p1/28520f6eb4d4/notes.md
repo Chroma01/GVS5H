@@ -1,0 +1,14 @@
+- **Model:** Buildings are vertical segments at x = X_i from y = 0 to H_i; observer is a point at (0, h), h >= 0. All X_i >= 1 > 0.
+- **Which buildings block i:** Only j < i can block the segment from (0,h) to a point on building i, because the segment spans x in [0, X_i] and buildings j > i sit at x = X_j > X_i (unreached).
+- **Line intersection with building j:** At x = X_j the sight segment's height is L = (1-t)h + t*y with t = X_j/X_i in (0,1). Since both h,y >= 0, L >= 0. So the segment hits building j (occupying [0, H_j]) iff L <= H_j. To avoid j we need L > H_j, i.e. slope to Q, (y-h)/X_i, must exceed slope to top of j, (H_j - h)/X_j.
+- **Visibility condition:** Building i is visible iff some y in [0, H_i] gives slope (y-h)/X_i > max_{j<i} (H_j - h)/X_j. Slope is maximized at y = H_i, so condition is exactly g_i(h) = (H_i - h)/X_i > max_{j<i} g_j(h).
+- **Key equivalence:** g_i(h) > max_{j<i} g_j(h) for all i  <=>  g_1 < g_2 < ... < g_N strictly. (Forward: g_i > g_{i-1} by induction, so all earlier are below current; backward trivial.) Hence all visible iff the g_i sequence is strictly increasing in i.
+- **Threshold per adjacent pair:** g_i < g_{i+1} <=> (H_i - h)X_{i+1} < (H_{i+1} - h)X_i <=> h > T_i where T_i = (H_i*X_{i+1} - H_{i+1}*X_i)/(X_{i+1} - X_i) (denominator positive).
+- **Answer:** All visible iff h > M with M = max_i T_i. Not-all-visible set is exactly [0, M] when M >= 0 (closed; strictness fails at h = M, e.g. tops of consecutive buildings are collinear with observer so equality means the nearer top blocks). So print M if M >= 0. If M < 0, h = 0 (and all h >= 0) already see everything -> print -1. N = 1 -> -1 (no constraints).
+- **Strictness matters:** at h = M the blocking building's top lies exactly on the sight line to the next top, so it still blocks -> M is achievable as the answer, not excluded.
+- **Exact max selection:** Store best as (P, Q) integers with Q > 0; update when P*bestQ > bestP*Q (cross-multiplication avoids float/ties). This makes M exact before the final division.
+- **Output format (corrected):** Use `f"{val:.18f}"` (18 decimal places), NOT `.20f`. Samples use 18 decimals; the harness compares strings exactly. `.18f` reproduces all four sample strings character-for-character.
+- **Why .18f matches sample 4:** val = float(120)/float(7). The nearest IEEE-754 double to 120/7 is 4825285315039817 * 2^-48 = 17.1428571428571423496..., whose 18-decimal rounding is 17.142857142857142350, exactly the sample. So printing the double with .18f is correct; do NOT rational-print the exact fraction (would give ...142857).
+- **Precision:** M can reach ~1e18 (H, X up to 1e9). float64 relative error ~1e-16, well within 1e-9 abs/rel tolerance.
+- **Verified samples (string-exact):** (1) val=1.5 -> `1.500000000000000000`. (2) bestP=-98<0 -> `-1`. (3) val=0 -> `0.000000000000000000`. (4) val=120/7 -> `17.142857142857142350`.
+- **Complexity:** O(N) time, O(N) memory.

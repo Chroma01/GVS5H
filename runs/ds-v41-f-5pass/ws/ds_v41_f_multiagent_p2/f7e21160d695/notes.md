@@ -1,0 +1,8 @@
+- **Reduction:** f(x,y) is the minimax/bottleneck distance. Kruskal processing edges in increasing weight connects x and y exactly at weight f(x,y), so the whole matching is captured by DSU merge events.
+- **Matching view:** We must match the multiset A to the multiset B, repetitions allowed, under cost f. Maintain for each DSU component balance b = count(A in component) - count(B in component).
+- **Greedy rule:** When an edge merges components with opposite-sign balances, match min(abs(b1),abs(b2)) pairs through this edge and add w * min. The merged balance is b1+b2. Same-sign merges just add balances; edges already inside a component are ignored.
+- **Correctness:** After processing all edges of weight <= t, every component has only one sign of surplus, and the number of remaining unmatched vertices in a component is forced to abs(#A - #B). Thus matching as many pairs as possible at the smallest current weight is optimal. For equal weights, the total cancellation in any connected group of equal-weight merges is invariant: (sum abs(initial balances) - abs(sum balances)) / 2.
+- **Samples:** sample 1 gives 1*1 + 2*1 + 5*1 = 8; sample 2 gives 1*1 + 2*1 = 3.
+- **Implementation:** iterative find with path halving plus union by size; balance is only meaningful at roots. Answer is at most K*1e9 <= 2e14, so Python ints are safe.
+- **Edge cases:** equal edge weights need no special handling; zero balances and repeated A or B vertices are handled naturally by the balance counts.
+- **Validation plan:** for small N,K compare against brute force over all permutations of B using Floyd-Warshall or repeated threshold DSU to compute f. The DSU sweep matches both provided samples and hand-built cases.

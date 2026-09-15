@@ -1,0 +1,9 @@
+- **Problem model:** Takahashi grows a connected region starting at (P,Q); each absorbed slime must have strength strictly less than current/X, i.e. `S * X < current`. Absorbing adds its strength; region spreads 4-directionally.
+- **Monotonicity insight:** current strength only increases, so once a boundary cell satisfies the condition it always will. Order of absorption does not affect the final reachable set, so a greedy min-first expansion is optimal.
+- **Min-heap argument:** all boundary cells are compared to the same `current`. If the smallest boundary cell fails `S*X < current`, every larger one fails too, so we can stop. Thus a min-heap keyed by cell strength suffices.
+- **Algorithm:** visited array; push start's unvisited 4-neighbors into heap; loop: peek smallest, if `S*X < current` pop and absorb (mark visited, add to current, push its unvisited neighbors); else break. Print current.
+- **Stale entries:** popping may yield already-visited cells (duplicates pushed from two directions); guard with `if visited: continue` after pop.
+- **Complexity:** O(HW log(HW)) time, O(HW) memory — fine for 500x500.
+- **Big integers:** S up to 1e12, X up to 1e9 -> S*X up to 1e21; Python native ints handle this, no overflow concerns.
+- **Strict inequality:** must be `<`, not `<=`. Sample 2 confirms: start strength 5, X=1, neighbors all >=5, so none absorbable -> answer 5.
+- **Zoom guard:** when region has absorbed everything reachable, heap empties and loop ends naturally.

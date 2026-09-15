@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement solution: parse N,K,A; compute total_xor; set s=min(K,N-K); enumerate smaller side with itertools.combinations (K-subsets if K<=N-K, else (N-K)-subsets combined via total_xor XOR subset_xor); handle s==0; print max.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Test on Sample 1 (expect 7), Sample 2 (expect 2024), and edge cases K=N and K=1, including arrays with duplicate values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Sanity-check performance/memory for the worst case where C(N,s) ~ 10^6 before finalizing.",
+    "status": "done",
+    "result": ""
+  }
+]

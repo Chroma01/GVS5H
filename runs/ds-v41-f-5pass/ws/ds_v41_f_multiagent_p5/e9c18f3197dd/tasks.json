@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Precompute LCM values for all non-empty subsets of target using gcd (handle duplicate and divide-redundant targets), with the empty subset cost treated as 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the layered per-element mask DP: for each nums value build a fresh dp2 (carry-over = don't use element), and for each mask/subset s update dp2[mask|s] = min(dp2[mask|s], dp[mask] + ((-x) % LCM(s))); this forbids reusing one element for multiple groups.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Initialize dp over 2^m masks with infinity except dp[0]=0, and return dp[(1<<m)-1] after processing candidates; verified against examples 1-3 (expected 1, 2, 0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Apply top-m candidate pruning per target subset (union of m cheapest elements for each subset) to keep the DP small and correct.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirmed correctness argument: any valid assignment is dominated by a DP assignment since the rounded value is a multiple of lcm(S_i), so DP cost <= optimal, while DP solutions are feasible.",
+    "status": "done",
+    "result": ""
+  }
+]

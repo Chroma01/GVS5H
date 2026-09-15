@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the exact-v2 residue bucketing solution: parse input, compute diag = sum of odd parts of A_i, accumulate pairs with v2(A_i+A_j)=t via complementary residue matching mod 2^(t+1), then print (total+diag)//2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate against all three provided sample inputs (5, 384, 20241214) and edge cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Optimize with bit-reversed block splitting so each level runs in O(N) via binary search and prefix sums.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm no double counting across t (modulus 2^(t+1) partitions ordered pairs exactly once) and integer divisions are exact.",
+    "status": "done",
+    "result": ""
+  }
+]

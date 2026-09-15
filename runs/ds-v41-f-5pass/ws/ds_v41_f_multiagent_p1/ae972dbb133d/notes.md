@@ -1,0 +1,11 @@
+- **Reformulation:** Put one boolean on every shared edge midpoint indicating an endpoint exists there. "No dead ends" is exactly endpoint matching across every shared edge, so a valid placement is an assignment satisfying per-cell constraints.
+- **Cell constraints (T,B,L,R = top,bottom,left,right endpoint bits):** Type A (segment between adjacent edges) is equivalent to T^B=1 and L^R=1 (4 solutions = 4 rotations). Type B (opposite edges) is equivalent to T=B, L=R, T^L=1 (2 solutions = 2 rotations). Verified by enumerating side-set configurations.
+- **Edge variables:** d(i,j)=bottom edge of cell (i,j)=top edge of (i+1,j); r(i,j)=right edge of (i,j)=left edge of (i,j+1). Useful identities: T=d(i-1,j), B=d(i,j), L=r(i,j-1), R=r(i,j).
+- **System:** Type A cells give d(i-1,j)^d(i,j)=1 and r(i,j-1)^r(i,j)=1; Type B give both =0 plus cross d(i-1,j)^r(i,j-1)=1. Naive solution: parity DSU over 2HW nodes, answer 2^(components) or 0. Correct but unnecessarily large.
+- **Reduction (implemented):** Each column is a cycle: equations force d(i,j)=alpha_j ^ Cpref(i,j) with Cpref(i,j)=XOR_{k=0..i} A(k,j). Rows likewise r(i,j)=beta_i ^ Rpref(i,j). So D/R parts have W+H free params (one per column/row) when consistent.
+- **Parity precondition:** D-cycle (each column) is solvable iff XOR of A-indicator over the column is 0; R-cycle iff row XOR is 0. Any odd row or column => answer 0 immediately. These are the only internal dependencies.
+- **Cross system:** Each Type B cell becomes alpha_j ^ beta_i = 1 ^ Cpref(i-1,j) ^ Rpref(i,j-1), a bipartite GF(2) system over H+W nodes. Solve with parity DSU; contradiction => 0, else answer = 2^(#components).
+- **Constants via running prefixes:** Maintain colPre[j]=XOR_{k=0}^{i-1} A(k,j) (0 at row 0, which equals full-column XOR=0) and rowPre=XOR_{k=0}^{j-1} A(i,j) within the row (0 at col 0, equals full-row XOR=0). Then const = 1 ^ colPre[j] ^ rowPre, avoiding any wrap special-casing.
+- **Why 2^components:** Total rank = (HW-W) + (HW-H) + ((H+W)-comp) = 2HW-comp, so free vars = comp. Each free boolean doubles solutions.
+- **Complexity:** O(HW) time, O(H+W) DSU memory, well within sum(HW)<=1e6.
+- **Checks:** Sample gives 2,0,2. All-A 2x2 -> 16 (four independent edge bits). All-B any H,W>=2 -> 2 (uniform orientation). Pattern `AA/BB` (2x2) -> 0 via column parity. Pattern `AAB/AAB` (2x3) -> 8.

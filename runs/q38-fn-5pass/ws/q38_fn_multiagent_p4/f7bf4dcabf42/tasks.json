@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement bitmask LCS-row automaton solution end-to-end as described.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Test on provided samples and edge cases (N=1, repeated characters, M=1, all characters same).",
+    "status": "done",
+    "result": ""
+  }
+]

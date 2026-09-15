@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Decomposition: F(x) = (#numbers with a zero digit \u2264 x) + (#all-nonzero beautiful \u2264 x); answer F(r)-F(l-1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute `need[s]` (capped 2/3/5/7 exponents, None if s has a prime >7) and domination tables `freeD[k][sum]`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement Z(x) (all-nonzero count), B[m] (length-m all-nonzero beauties), and count_up_to with first-smaller-nonzero-digit enumeration, zero-digit break, and tight last-step test.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Cache all tables behind `Solution._cache` (built once lazily) so repeated prefix calls are cheap.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify samples and discriminators by hand-trace: count_up_to(9)=9, (15)=10, (20)=11, (99)=24; examples yield 2 and 10 as required.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm deliverable: `Solution.beautifulNumbers(l,r)` self-contained, harness guarded by `__main__` so it does not run on import.",
+    "status": "done",
+    "result": ""
+  }
+]

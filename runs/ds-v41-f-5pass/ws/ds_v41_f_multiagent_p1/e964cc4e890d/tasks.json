@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduce strong connectivity to the cut condition: S_1=B, S_{2N}=W, and max(\u03c3(1..i)) > t_i for all i=1..N-1; handle N=1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive/verify inclusion-exclusion DP: W(0)=1, W(i)=-1/(t_i-i)!\u00b7\u03a3_{j<i}W(j)(t_i-j)!, answer=\u03a3 W(i)(N-i)!.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement run/live-index reduction + constant-(s,d) poly-inverse fast path + direct O(m^2) fallback; passes all 3 public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run `stress` + `targeted` and confirm TOTAL MISMATCHES = 0 (esp. N=2500..6000 non-arithmetic CDQ cases) and `bench` at N=2e5 recording per-case times; if no shell, hand-trace CDQ indexing on a small non-arithmetic staircase and estimate worst-case runtime.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Contingency: if a CDQ mismatch appears, isolate and fix the live-index filtering vs the CDQ slice/index algebra (offset, base=Tv[mid+1]-idx[mid], lenA/lenB, pos); if poly_inv or CDQ is too slow at N=2e5, switch the large-convolution scheme (numpy FFT if available, or retune _NAIVE/_DIRECT/poly_inv level count) \u2014 otherwise finalize.",
+    "status": "pending",
+    "result": ""
+  }
+]

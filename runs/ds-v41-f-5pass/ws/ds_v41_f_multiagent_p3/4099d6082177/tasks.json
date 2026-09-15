@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, K, and the NK-1 edges; build adjacency lists; handle K=1 as an immediate Yes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Root the tree at 1 and compute subtree sizes modulo K with an iterative post-order DFS to avoid recursion depth issues.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "At each vertex, count children with nonzero residue; if count > 2 -> No; if count == 2 require the two residues sum to K-1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Apply the root condition: for K>1, root cannot have count 0; if root count == 1 require its residue == K-1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Output Yes/No and test against the samples plus small brute-force trees.",
+    "status": "done",
+    "result": ""
+  }
+]

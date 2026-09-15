@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and problem analysis: reduce feasibility to checking max_{i in [L, L+K-1]} (nxt[i]-i) <= M-K, where nxt[i] is the first index with A[j] >= 2*A[i].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse N, sorted A[1..N], Q, and all (L,R) queries using 0-indexing internally.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute d[i] = nxt[i] - i via bisect_left (A is sorted), with INF if no valid j exists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Build a sparse table over d for O(1) range maximum queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each query, binary search K in [0, (R-L+1)//2] with feasibility max_d(L, L+K-1) <= (R-L+1)-K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Output each answer K on its own line.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Test against both sample inputs and edge cases: no possible pairs, all elements equal, K=0, and maximum K (both public samples PASSED).",
+    "status": "done",
+    "result": ""
+  }
+]

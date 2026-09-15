@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement iterative rollback sliding-window DFS solution in `longestSpecialPath`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build adjacency list and root the tree at node 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Maintain depth, distance from root, current path distances, and `last_depth` for node values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "On node entry compute `start_depth = max(parent_start_depth, last_depth[nums[node]] + 1)`, update `last_depth`, and evaluate the best special path ending at this node.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "On node exit restore previous `last_depth` and `start_depth`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Update global answer with longest length and minimum node count among longest paths.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Run actual sample tests and key edge cases, and report the SAMPLE TESTS verdict.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: model the problem as binary search + edge parity + MWIS edge-cover feasibility.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement `can(x)` for `x == 0`, required visits `r[i] = ceil(x / points[i])`, clipped high/low weights, prefix/suffix MWIS DP, and combine boundary states for every ending index `t`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement `maxScore` binary search with safe upper bound `min(points) * m`, early return `0` when `m < n`, and early exits inside `can(x)` when moves exceed `m`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the provided sample tests and a brute-force BFS/enumeration verifier for small n and m against the current solution; report whether it passes, and if not, identify the failing case.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,9 @@
+- **Chosen approach:** Use prefix sums modulo 998244353. For prefix sums P_i, every subarray sum is P_r - P_{l-1}. The required answer is sum over 0 <= t < r <= N of (P_r - P_t)^K.
+- **Moment maintenance:** Maintain S[j] = sum of P_t^j over all already processed prefix indices t, for j = 0..K. Initially only P_0 = 0 exists, so S[0] = 1 and S[j] = 0 for j > 0.
+- **Contribution formula:** For each new prefix P_r, add sum_{j=0}^K C(K, j) * (-1)^j * P_r^{K-j} * S[j]. This is the binomial expansion of (P_r - P_t)^K summed over all previous t.
+- **Update order:** Compute the contribution before adding P_r to S, so subarrays ending at r only pair with earlier prefixes t < r. After contribution, update S[j] += P_r^j.
+- **Power handling:** For each prefix, compute powP[0] = 1 and powP[e] = powP[e-1] * P_r mod MOD. This correctly treats 0^0 as 1 and positive powers of 0 as 0.
+- **Complexity:** O(NK) time and O(K) extra memory. Since K <= 10, this is easily fast enough for N <= 2e5.
+- **Modulo details:** Prefix sums and moment sums are kept reduced modulo MOD. Because A_i < MOD, prefix update can use one subtraction after addition. Negative binomial coefficients are kept as negative integers and normalized by the final modulo operation.
+- **Edge cases:** All-zero arrays give answer 0 for K >= 1 because positive powers of zero vanish. S[0] counts previous prefixes and must start at 1 for P_0. The code also works for K = 0, though constraints have K >= 1.
+- **Rejected alternatives:** Direct O(N^2) enumeration is impossible. Maintaining moments of subarray sums ending at each position is possible but less direct. Combinatorial monomial counting and divide-and-conquer are overkill for this small-K prefix-difference structure.

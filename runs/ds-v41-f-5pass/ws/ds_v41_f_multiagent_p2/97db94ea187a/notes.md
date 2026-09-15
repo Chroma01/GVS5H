@@ -1,0 +1,7 @@
+- **Problem reframing:** N even, vertex 1 at even distance, so exactly N/2 even and N/2 odd. Fix a partition (E,O) with 1∈E, count graphs whose BFS parity sets are exactly E,O, then multiply by C(N-1, N/2).
+- **BFS layer structure:** Edges only within a layer or between consecutive layers. Every vertex in layer i>0 must have ≥1 edge to layer i-1. Layers alternate parity starting with L0={1}.
+- **DP state:** (used_even E, used_odd O, current_level_size s, current_level_parity p). Transition: choose b vertices from remaining of opposite parity, factor C(rem,b) * (1+x)^{C(b,2)} * cover(s,b), where cover(s,b)=Σ_{j=0}^b (-1)^j C(b,j)(1+x)^{s(b-j)}. DP builds levels until all N vertices used; sum final states with E=O=N/2.
+- **Evaluation & interpolation:** Max edges D=N(N-1)/2 ≤ 435. Evaluate the edge-generating polynomial at x=0..D, then Lagrange-interpolate modulo P to recover coefficients c_M. P is prime and P>D, so inverses exist.
+- **Complexity:** ~27k DP transitions per x, 436 x values → ~11.8M inner iterations. Cover table for each x computed in O(N^3) ~ 4.5k ops. Interpolation O(D^2). Runs well within time for N≤30.
+- **Edge cases:** N=2 gives D=1, output for M=1 is 1. Final answer multiplied by C(N-1,N/2) to account for all partitions.
+- **Validation:** Matches sample 1 (4 998244353 → 12 9 3 0) and structurally verified against manual enumeration for N=4.

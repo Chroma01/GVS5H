@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete and candidate approaches documented.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement and verify the 16-state binary-relation DFA DP with precomputed transitions and multiplicities, including sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If the DFA fails sample tests, debug transition composition/acceptance or build a small brute-force oracle to identify the mismatch.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize the DP for N=10^6 using fast input, active-state iteration, and minimal modulo operations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Check edge cases such as all zeros and all ones.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive feasibility predicate can(D): exists labeling t with t(1)=0, t(N)=D, t(v)<=t(u)+1 for every edge, using <=K edges with t(v)=t(u)+1; \"at most K\" is equivalent since extra edges can be added harmlessly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement flow network for fixed D: threshold nodes (v,i), INF source/sink forcing edges, INF monotonicity edges (v,i+1)->(v,i), INF implication edges (v,i)->(u,i-1) for i>=2, capacity-1 cost edges (v,i)->(u,i); solve min cut with Dinic max-flow.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Combine into solve(): scan D from N-1 down to 0, take the maximum D with maxflow(D)<=K, print it; D=0 trivially feasible; INF=10**9 > K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Read stdin correctly (multigraph, duplicate edges kept distinct), write only the integer answer to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test on samples 1,2,3 (expect 1,2,0) plus edge cases: parallel edges, K=M, and infeasible D.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Fallback if min-cut misbehaves: switch to alternate exact method.",
+    "status": "done",
+    "result": ""
+  }
+]

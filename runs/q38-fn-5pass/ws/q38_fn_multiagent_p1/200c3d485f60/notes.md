@@ -1,0 +1,10 @@
+- **Core formula:** The answer is `C(n-1, k) * m * (m-1)^(n-1-k) mod 1e9+7`. There are `n-1` adjacent transitions; choose exactly `k` of them to be equal. The first array element has `m` choices, and each of the remaining `n-1-k` different transitions has `m-1` choices.
+- **Why transitions are independent:** Once the positions of equal transitions are fixed, the actual values can be assigned left to right. Equal transitions force the next value to be the same, while different transitions allow any of the other `m-1` values. No later constraint depends on earlier choices beyond the current value.
+- **Combination implementation:** Precompute factorials and inverse factorials up to `n-1` modulo `1e9+7`. This gives `O(n)` preprocessing and `O(1)` combination lookup. Since `n <= 1e5`, this is comfortably within limits.
+- **Modular exponentiation:** Use Python's built-in `pow(base, exp, MOD)` for `(m-1)^(n-1-k)`. This is fast and handles modular reduction directly.
+- **Edge case `n = 1`:** There are no adjacent indices, so only `k = 0` is valid. The formula becomes `C(0,0) * m * (m-1)^0 = m`, which is correct.
+- **Edge case `m = 1`:** If all values must be `1`, then every adjacent pair is equal. The answer is `1` when `k = n-1`, and `0` otherwise. The formula handles this naturally because `(m-1) = 0`; Python's `pow(0, 0, MOD)` returns `1`, while `pow(0, positive, MOD)` returns `0`.
+- **Edge case `k = 0`:** No adjacent equal pairs. The formula gives `m * (m-1)^(n-1)`, which matches alternating-style assignments where each next element must differ from the previous one.
+- **Edge case `k = n-1`:** All adjacent pairs are equal. The formula gives `C(n-1,n-1) * m * (m-1)^0 = m`, corresponding to constant arrays.
+- **Validation:** The provided examples match: `(3,2,1) -> 4`, `(4,2,2) -> 6`, `(5,2,0) -> 2`.
+- **Complexity:** Time `O(n + log n)` due to factorial precomputation and modular exponentiation; space `O(n)`.

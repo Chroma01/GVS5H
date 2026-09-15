@@ -1,0 +1,11 @@
+- **Problem reduction:** The mochi sizes are already sorted. A valid pair uses two distinct mochi with smaller size `x` and larger size `y` satisfying `2*x <= y`. The task is to maximize the number of disjoint valid pairs.
+- **Feasibility for a fixed K:** For a candidate `K`, it is enough to test whether the `K` smallest mochi can be paired with the `K` largest mochi in order:
+  `2*A[i] <= A[N-K+i]` for all `0 <= i < K`.
+- **Why first K and last K are sufficient:** If any `K` valid pairs exist, let their smaller elements sorted be `x_i` and their larger elements sorted be `y_i`. A valid matching implies `2*x_i <= y_i` for every `i`; otherwise too many small elements would require large elements strictly larger than `y_i`. Since `A[i] <= x_i` and `A[N-K+i] >= y_i`, the first-K versus last-K test must also pass. Conversely, if the test passes, those pairs are explicitly valid and disjoint.
+- **Monotonicity:** If `K` is feasible, then `K-1` is feasible. In the first-K/last-K test, decreasing `K` shifts the large side to the right, making the inequalities no harder. Therefore binary search over `K` is valid.
+- **Search range:** At most `N//2` pairs can be made, so binary search over `[0, N//2]`.
+- **Implementation details:** Use integer comparison `2*a <= b` to avoid floating-point issues. `K=0` is always feasible. Because `K <= N//2`, the first `K` indices and last `K` indices never overlap. For odd `N`, the middle element may simply remain unused.
+- **Complexity:** Binary search performs `O(log N)` feasibility checks, each taking `O(K) <= O(N)` time, so total time is `O(N log N)`. Memory is `O(N)` for the input array.
+- **Edge cases covered:** `N=2`, duplicate sizes, all equal sizes, very large values up to `10^9`, and odd `N`. Python integers safely handle `2*A[i]`.
+- **Sample verification:** Sample 1 returns `3`; sample 2 returns `0`; sample 3 returns `6`.
+- **Alternative approach:** A direct two-pointer greedy scan can solve the problem in `O(N)`, but the requested implementation uses the binary-search feasibility method.

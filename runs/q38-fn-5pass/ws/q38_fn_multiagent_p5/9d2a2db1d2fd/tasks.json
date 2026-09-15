@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python solution using Kruskal reconstruction tree + binary lifting as described.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate on sample and edge cases (H=W=1, same cell, equal weights) and ensure memory/time for N<=250000, Q<=200000.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input preserving the given sorted order of buildings by X-coordinate.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive that all buildings are visible iff s_i=(H_i-h)/X_i is strictly increasing, so \"not all visible\" equals {h <= max_i t_i} with t_i=(H_{i-1}X_i - H_i X_{i-1})/(X_i - X_{i-1}).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute the maximum t_i over adjacent pairs using exact integer cross-multiplication to avoid float loss.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Output -1 if N==1 or max t_i < 0, else output max t_i with 18-decimal precision; verified against all 4 samples.",
+    "status": "done",
+    "result": ""
+  }
+]

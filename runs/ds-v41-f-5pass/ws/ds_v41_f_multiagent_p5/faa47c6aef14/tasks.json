@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: derive that answer = |R_req| + |B_req| - (max mergeable intersection boxes), where a box can be merged iff no pair of merged boxes is inverted (r-order vs b-order), so max merges = LIS on blue distances after sorting intersection by red distance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse input; build red cycle of X under P and blue cycle of X under Q; assign distances to X; output -1 if any A_i=1 or B_i=1 lies outside X's corresponding cycle. Compute D_R, D_B as the farthest required distance for each color.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build intersection pairs (distR[i], distB[i]) with 1<=distR<=D_R and 1<=distB<=D_B; sort by distR; compute strict LIS of the distB values with bisect_left.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Output D_R + D_B - LIS; verified against all four samples (4, 0, -1, 8).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full solution: offset=S, target=k+off, guard target\u2208[0,2S].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Zero-product DP: bitsets over (hasZero, parity) for reachability of sum k with \u22651 zero.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Positive-product DP: product-indexed even/odd sum-bitsets with start and append transitions, skipping products>limit and elements>limit, excluding zeros.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Answer scan: p from limit down to 1 (return first match), else 0 if zeroReach, else -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verified examples: [1,2,3]/k=2/lim=10\u21926, [0,2,3]/k=-5/lim=12\u2192-1, [2,2,3,3]/k=0/lim=9\u21929.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verified edge cases: all-zeros k=0\u21920, single element >limit\u2192-1, ones with k=0, unreachable k, |k|>S, empty-subsequence exclusion.",
+    "status": "done",
+    "result": ""
+  }
+]

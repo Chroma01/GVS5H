@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement cost[s] for all length-x windows using a coordinate-compressed Fenwick tree of counts plus a Fenwick tree of sums, sliding the window and querying the lower median at rank (x+1)//2, then computing sum of absolute deviations around that median.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the selection DP dp[i][j] = min(dp[i-1][j], dp[i-x][j-1] + cost[i-x]) with correct boundaries so windows starting exactly x apart are allowed and k*x <= n.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the full solution by actually executing it: both provided examples (expect 8 and 3) plus randomized brute-force tests on small inputs, covering even x, odd x, negative values, duplicate-heavy arrays, and the boundary case k*x == n.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Fallback if any verification fails: implement a two-heap sliding median with lazy deletion plus running sums to obtain the same window costs, then reuse the identical DP.",
+    "status": "done",
+    "result": ""
+  }
+]

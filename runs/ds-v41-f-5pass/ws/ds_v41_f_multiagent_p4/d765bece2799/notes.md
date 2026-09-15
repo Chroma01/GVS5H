@@ -1,0 +1,13 @@
+- **Problem:** sum over all subarrays of length <= k of (min + max).
+- **Approach:** solve min-sum and max-sum separately, add. max-sum(arr) = -min-sum(-arr), so one helper suffices.
+- **Verification run (Python 3.11, actual execution):**
+  - `[1,2,3], k=2` -> `20` (matches). `min_sum=9`, `min_sum(neg)=-11`.
+  - `[1,-3,1], k=2` -> `-6` (matches).
+  - Edge `k=1` on several arrays -> equals `2*sum(nums)` (verified).
+  - Edge `k=n` -> equals full-array min/max sum (verified vs brute).
+  - Brute-force O(n^2) cross-check: 200 random arrays, n in 1..30, values in [-5,5], every k in 1..n -> 0 mismatches.
+- **Tie-breaking (key correctness point):** assign each subarray to the rightmost occurrence of its minimum. Then index `i` is canonical iff the subarray contains `i` and stays inside `(left[i], right[i])`, where `left[i]` = nearest index left with value strictly `< arr[i]` (stack pops `>=`), and `right[i]` = nearest index right with value `<= arr[i]` (right-to-left stack pops `>`). This makes every subarray counted exactly once.
+- **Counting lengths:** with `m = k-1`, `a = i-left[i]-1`, `b = right[i]-i-1`, count pairs `0<=x<=a, 0<=y<=b, x+y<=m` as `tri(m) - tri(m-a-1) - tri(m-b-1) + tri(m-a-b-2)`, `tri(s)=(s+1)(s+2)/2` and `tri(s<0)=0` (inclusion-exclusion on the diagonal). Contribution `arr[i]*cnt`.
+- **Complexities:** O(n) time, O(n) extra space per helper. Python big ints handle the totals (n=8e4 can yield ~1e15+ magnitudes, fine).
+- **Pitfalls covered:** k=1, k=n, duplicates (tie-break uniqueness), negatives (negation trick), large counts (no subarray enumeration).
+- **Implementation note:** `right` is computed inside the same right-to-left loop that also accumulates contributions, so `left` must be precomputed first; stack reuse is fine.

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive equivalence: any valid coloring is a top-left Ferrers/Young shape; a black cell (r,c) forces the whole top-left rectangle [1..r]x[1..c] black, a white cell (r',c') forces the bottom-right rectangle [r'..N]x[c'..N] white; a contradiction occurs iff some white lies in a black-forced rectangle, i.e. r' <= r and c' <= c.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement dominance detection in Python reading stdin: sort points by row (whites before blacks on ties), sweep maintaining prefix-min white column, reject if any black column >= min white column; else Yes. O(M log M).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on all 4 samples (Yes/No/Yes/No) and edge cases (N=1, single cell, all-same-color, same-row/same-column ties, black left of white in same row) -- all samples passed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm the union-of-rectangles construction gives a feasible coloring whenever no dominance pair exists (sufficiency), so the condition is exact.",
+    "status": "done",
+    "result": ""
+  }
+]

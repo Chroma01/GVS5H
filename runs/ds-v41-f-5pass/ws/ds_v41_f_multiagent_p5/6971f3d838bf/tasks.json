@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the O(n log n) active-flag iterative segment tree solution (arrays sum/pref/suff/best, sentinel -1e15 for padding; merge pref=max(prefL,sumL+prefR), suff=max(suffR,sumR+suffL), best=max(bestL,bestR,suffL+prefR)); build from nums and record no-op answer = root best.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "For each distinct negative value, deactivate all its occurrences (2n total point updates with reactivation), take global max with root best, and handle single-distinct-value / all-negative edge cases (operation forbidden when array becomes empty).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate against the two provided examples (7 and 10) and against a brute force (try every integer x, filter array, run Kadane) on random small arrays.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "No-op / non-negative removal reasoning confirmed: only negative x can help; candidate = M if M>0 else max_nonx (largest element not equal to x).",
+    "status": "done",
+    "result": ""
+  }
+]

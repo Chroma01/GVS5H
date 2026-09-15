@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select Kahn-style functional graph DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement parsing, indegrees, DP table, Kahn queue, prefix-sum folding into parents.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Identify remaining cycle nodes, traverse cycles, compute each component contribution as sum_v product_u DP[u][v].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Multiply contributions modulo 998244353, handle self-loops/multiple components, and verify sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

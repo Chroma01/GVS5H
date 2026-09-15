@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze how removing one string affects prefix counts and define a data structure to track counts per prefix.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Design an efficient method to compute, for every prefix node, the largest depth achievable with at least k strings after each possible removal.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement trie + Euler-interval (built-in L/R for c==k nodes) + suffix/prefix max arrays, avoiding recursion; answer per terminal = max(base from c>k nodes, best c==k node whose subtree excludes the terminal).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle edge cases: k=1, n==k (all zeros), duplicate words, words that are prefixes of others, deep recursion (iterative everywhere).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify on Examples 1 and 2 and confirm O(total_length) complexity.",
+    "status": "done",
+    "result": ""
+  }
+]

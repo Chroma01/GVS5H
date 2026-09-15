@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Build permutation cycles for P and Q; verify every node with A_i=1 or B_i=1 is in the cycle containing X, otherwise output -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute distances to X along P and Q within the relevant cycles; find D (max dist_P among red balls) and E (max dist_Q among blue balls), 0 if no such balls.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Construct red chain R = nodes at P-distances D, D-1, ..., 1 and blue chain B = nodes at Q-distances E, E-1, ..., 1; the answer if feasible uses |R|+|B|-LCS(R,B).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute LCS(R,B): map each node in R to its index, scan B collecting indices of nodes present in R, take strict LIS length via binary search in O(N log N).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle edge cases: empty chains / zero balls (answer 0 when already satisfied), and impossible cases (-1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Implement code reading stdin and writing answer to stdout, then validate against all four provided samples (all PASSED).",
+    "status": "done",
+    "result": ""
+  }
+]

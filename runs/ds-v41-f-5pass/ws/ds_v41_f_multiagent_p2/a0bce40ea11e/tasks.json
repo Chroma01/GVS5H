@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: derive combinatorial classification of surviving walks (exponent multiples of p-1; at most one zero variable used p-1 times; p>3 diagonal self-loop only; p=3 off-diagonal e,f,e; p=2 unique B all ones).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement input parsing, count K zeros, and build matrix A (zeros as 0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement O(N^3) matrix multiplication modulo p and binary exponentiation for C^p.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement p=2 case: output N%2 for every cell (since B is the all-ones matrix).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement p=3 case: base C^3; for each zero (i,j), if i==j add row i and column i of A; else add A[j][i] to ans[i][j]; multiply by (-1)^K mod 3.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Implement p>3 case: base C^p; for each diagonal zero (i,i) add row i and column i of A; multiply by (-1)^K mod p.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify against all three provided samples and edge cases (N=1, no zeros, all zeros, p=2, p=3, p>3).",
+    "status": "done",
+    "result": ""
+  }
+]

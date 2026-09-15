@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate algorithm and select separate even/odd BFS on pair-states with bitset optimization.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete solver: parse input; build pred[u][c] lists and succ_bits[v][c] bitsets; implement BFS(initial_states) returning half-length dist matrix; run on diagonal centers and edge centers; combine 2*even and 1+2*odd; print.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and verify outputs; fix any correctness issues.",
+    "status": "done",
+    "result": ""
+  }
+]

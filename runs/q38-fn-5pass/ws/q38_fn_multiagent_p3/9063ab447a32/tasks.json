@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: select marginal-cost threshold binary search as the primary exact integer approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement helper for threshold x that returns total units and total cost of all marginal costs <= x, using k = ((x // p) + 1) // 2 and early capping once cost exceeds M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Binary search the smallest integer X such that cost(<= X) > M, while maintaining low as the largest threshold with cost(<= low) <= M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute the final answer as units_low + (M - cost_low) // X, handling cases where no unit is affordable or leftover buys zero boundary units.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate edge cases: X = 1, no affordable units, exact budget matches a prefix cost, many equal marginal costs, and large values near constraints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run public sample tests; solution passed.",
+    "status": "done",
+    "result": ""
+  }
+]

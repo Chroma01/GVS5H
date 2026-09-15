@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Identify the zero-digit shortcut: any positive integer containing digit 0 is beautiful.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Switch to combinatorial multiset counting to avoid the token-heavy digit-DP approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement compact combinatorial multiset solution as described.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the provided sample tests and brute-force verify small ranges (e.g., 1..2000).",
+    "status": "done",
+    "result": ""
+  }
+]

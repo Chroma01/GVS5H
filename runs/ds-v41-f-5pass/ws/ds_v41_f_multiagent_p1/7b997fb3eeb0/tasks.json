@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input and compute nxt[x], gap[x] via two-pointer scan over sorted A.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build a sparse table over gap for range maximum queries on [L,t].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement validity check for query [L,R] and candidate t: range_max(L,t) + t <= R.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each query, binary-search the largest valid t in [L, floor((L+R-1)/2)], output t-L+1 or 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test on sample inputs and edge cases: duplicates, length-2 intervals, impossible pair, max constraints.",
+    "status": "done",
+    "result": ""
+  }
+]

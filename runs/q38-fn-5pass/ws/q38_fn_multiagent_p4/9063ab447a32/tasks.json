@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: choose marginal-cost threshold binary search.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with threshold binary search, capped cost accumulation, and final remainder handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and edge-case validation (N=1, M<min(P), exact budget, equal P, large values).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement solution using precomputed straight-run suffix/prefix DP per cell and direction with clockwise-turn combination",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Define the four diagonal direction vectors and the clockwise 90-degree turn mapping (DR->DL->UL->UR->DR); verified against Examples 1 and 2",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle edge cases: single-cell grid [[1]] -> 1, grids with no 1 -> 0, length-1 paths, and zero-turn straight segments",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the 4 provided examples in code and confirm outputs (5, 4, 5, 1)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Write a brute-force simulator and differentially test vs the DP on many small random grids (n,m <= 6); 0 mismatches",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Performance check on 500x500 grid; O(n*m) with small constants, no timeout",
+    "status": "done",
+    "result": ""
+  }
+]

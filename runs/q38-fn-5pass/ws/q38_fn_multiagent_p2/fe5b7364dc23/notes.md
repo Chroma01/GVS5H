@@ -1,0 +1,9 @@
+- **Core formula:** Let \(P_i = \sum_{j=1}^i A_j\). A subarray sum is \(P_r - P_t\) with \(0 \le t < r\). The answer is \(\sum_{r=1}^N \sum_{t=0}^{r-1} (P_r - P_t)^K\).
+- **Binomial expansion:** \((P_r - P_t)^K = \sum_{j=0}^K \binom{K}{j} (-1)^j P_r^{K-j} P_t^j\). For each \(r\), if we know \(S_j = \sum_{t<r} P_t^j\), the contribution is \(\sum_j \binom{K}{j}(-1)^j P_r^{K-j} S_j\).
+- **State initialization:** Before processing any array element, only \(P_0 = 0\) exists. Set \(S_0 = 1\) because \(0^0\) is treated as 1 in the binomial term, and \(S_j = 0\) for \(j > 0\).
+- **Processing order:** For each new prefix \(P_r\), first compute its contribution using the old \(S_j\), then update \(S_j \leftarrow S_j + P_r^j\). This ensures only \(t < r\) are counted.
+- **Modulo handling:** All prefix sums and power sums are maintained modulo 998244353. This is valid because polynomial evaluation modulo a prime depends only on residues.
+- **Signed coefficients:** Negative binomial terms are represented as `MOD - C(K, j)` for odd \(j\). The total contribution can be accumulated as a positive integer and reduced once per prefix.
+- **Performance choices:** Since \(K \le 10\), O(NK) is easily fast enough. The implementation reuses a small `powers` list, precomputes signed coefficients and reversed indices, and uses conditional subtraction for additions modulo MOD.
+- **Pitfalls checked:** Include \(P_0\) correctly; do not update power sums before computing the current contribution; handle \(P_r = 0\) correctly; ensure negative terms are converted to modulo form; prefix addition can use one subtraction because inputs satisfy \(0 \le A_i < MOD\).
+- **Complexity:** Time O(NK), memory O(N) for input plus O(K) for state.

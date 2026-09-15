@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation of algorithm (component-wise XOR minimization via independent per-bit root choice).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement iterative BFS/DFS solution: build labeled graph, detect self-loop contradictions (Z_i != 0 on X_i==Y_i), assign relative XOR D[v] per component, detect inconsistent cycles returning -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Per-component, per-bit root choice: set root bit b to 1 iff it strictly lowers the number of ones (count > size - count).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Reconstruct each node's value A[v] = D[v] XOR R_component and print space-separated.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate against samples 1 (0 3 4), 2 (-1), 3 (0 2 9 6 0) -- all PASSED.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Edge cases covered: M=0 (all zeros), disconnected components, conflicting duplicate edges, self-loops, large Z within bit range.",
+    "status": "done",
+    "result": ""
+  }
+]

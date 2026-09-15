@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: forced bottom-up open-length DP with uniqueness by subtree size modulo K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with iterative parent/postorder and rem DP, including K==1 and invalid propagation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and, if possible, small brute-force/state-set cross-check; if mismatch, switch to a more general DP.",
+    "status": "done",
+    "result": ""
+  }
+]

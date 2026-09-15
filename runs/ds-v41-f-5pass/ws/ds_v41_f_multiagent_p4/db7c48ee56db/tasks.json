@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Choose the smaller-side enumeration approach using m = min(K, N-K)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the Python solution with total_xor complement mode and itertools.combinations",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify sample outputs: Sample 1 prints 7, Sample 2 prints 2024",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm edge cases: K=N, K=1, and m=0 work correctly",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Ensure the implementation is efficient under C(N,K) <= 10^6",
+    "status": "done",
+    "result": ""
+  }
+]

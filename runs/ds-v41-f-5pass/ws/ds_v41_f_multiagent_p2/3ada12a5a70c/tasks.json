@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Confirm theoretically that answer <= side: for D>side at most one point per side, so k>=4 forces 4 distinct sides, and the four adjacent-side Manhattan gaps sum to exactly 4*side, giving D<=side. Hence answer always in [0, side].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm that for D<=side, Manhattan>=D is equivalent to the shorter circular perimeter gap>=D, so the problem reduces to circular max-min dispersion.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement perimeter coordinate mapping t (corner-consistent order), sort t, and build doubled array T of length 2n.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement feasible(D) with a two-pointer next-pointer array over T, binary lifting for O(n log k) checks, requiring pos<s+n and a wrap gap (T[s]+4*side)-T[pos]>=D.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Binary search the maximum feasible D over [0, side] and return it.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify against the three provided samples (2, 1, 1) and extra stress cases; all reported PASS.",
+    "status": "done",
+    "result": ""
+  }
+]

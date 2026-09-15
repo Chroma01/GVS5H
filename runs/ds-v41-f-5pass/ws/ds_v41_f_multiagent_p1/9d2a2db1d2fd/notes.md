@@ -1,0 +1,6 @@
+- **Algorithm:** Reduce to maximum bottleneck connectivity on grid. Edge weight = min(F[u], F[v]). Build Kruskal reconstruction tree (KRT) by processing edges descending, using DSU where a new node becomes parent of the two merged roots. Weight of internal node = current edge weight.
+- **Query answer:** For u != v, B = weight(LCA(u,v)). If B >= min(Y,Z), ans = |Y-Z|, else ans = Y+Z-2B. For u == v, ans = |Y-Z|.
+- **LCA computation:** Tarjan's offline LCA on the KRT. Build query adjacency using arrays (head, q_to, q_nxt, q_id). Iterative DFS with explicit stack and state machine (0=enter, 1=after left child, 2=after right child). Union each child into parent immediately after its subtree finishes, setting ancestor of the new DSU root to the parent. This ensures LCA correctness for cross-subtree queries.
+- **Memory optimization:** Use `array('i')` for large integer arrays. Pack edges into a single integer: `(w << 36) | (u << 18) | v` since u,v < 2^18 (250000) and w <= 1e6 < 2^20. Sort descending. Delete F and dsu_parent after KRT construction.
+- **Edge cases:** V=1 (single cell) handled by root=0 and direct ans. Same-cell queries handled separately as |Y-Z|. q arrays sized 2*Q. Custom fast int parser avoids `split()` memory overhead.
+- **Complexity:** O((HW + Q) α + E log E) time, O(HW + Q) memory. Works for H,W <= 500 and Q <= 2e5.

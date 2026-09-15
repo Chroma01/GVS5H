@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement a non-empty segment tree monoid `(sum, max_prefix, max_suffix, max_subarray)` with a correct merge operation and invalid/empty handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build occurrence lists for candidate values, preferably only negative values, and initialize the final answer with the maximum subarray sum of the original array.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each candidate value, query and merge all non-empty gaps between consecutive occurrences using the segment tree, updating the answer only when the resulting array is non-empty.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle edge cases carefully: all elements equal, all-negative arrays, zero values, adjacent occurrences, empty gaps, and ensure an empty subarray is never counted as sum `0`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Add and run sample tests plus additional edge-case/random brute-force tests; verify the implementation runs in `O(n log n)` time and `O(n)` memory.",
+    "status": "done",
+    "result": ""
+  }
+]

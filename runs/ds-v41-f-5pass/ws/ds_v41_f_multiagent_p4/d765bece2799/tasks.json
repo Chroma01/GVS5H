@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement monotonic-stack nearest-smaller boundaries (left = prev strictly smaller via pop>=, right = next smaller-or-equal via pop>) so each subarray has exactly one canonical minimum index.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(1) length-capped counting formula cnt = T(m) - T(m-a-1) - T(m-b-1) + T(m-a-b-2) with m=k-1, a=i-left[i]-1, b=right-i-1, and T(s)=0 for s<0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Sum nums[i]*cnt for the min role; get the max role as min_sum(nums) - min_sum([-x for x in nums]); return the combined total.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Executed the solution: [1,2,3],k=2 -> 20; [1,-3,1],k=2 -> -6; k=1 and k=n edge cases verified; brute-force cross-check over ~200 random small arrays for all k with 0 mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirmed O(n) time / O(n) space, includes `from typing import List`, matches signature minMaxSubarraySum(self, nums, k), no recursion; big-int safety for n=8e4.",
+    "status": "done",
+    "result": ""
+  }
+]

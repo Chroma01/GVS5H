@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python solution using prefix sums and binomial expansion, including parsing, precomputing binomial coefficients and signs, maintaining power_sum initialized with P_0=0, iterating prefixes, updating answer and power_sum, and printing the answer modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run the provided sample tests and fix any failures.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate the mathematical approach and derive the monomial-filtering formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete Python solution with p=1/p=2 special cases, optimized A^p mod p, sparse corrections, and global sign.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation against all sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize modular matrix multiplication for N <= 100 and p up to 1e9 (i-k-j loops, skip zeros, postpone modulo per row).",
+    "status": "done",
+    "result": ""
+  }
+]

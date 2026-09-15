@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python solution using multi-source BFS on pair states with bitset unvisited masks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run the sample tests and verify the output exactly matches the expected results.",
+    "status": "done",
+    "result": ""
+  }
+]

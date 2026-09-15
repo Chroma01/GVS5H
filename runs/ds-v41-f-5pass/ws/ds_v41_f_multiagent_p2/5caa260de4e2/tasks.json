@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement telescoped O(n^2) DP: prefNums/prefCost 1-indexed, dp[0]=0, dp[i]=min_{j<i} dp[j]+P[i]*(C[i]-C[j])+k*(C[n]-C[j]), answer dp[n] within class Solution.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm the telescoping identity: each subarray charged k*(C[n]-C[start]), removing the order dimension from the DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify provided example 1 (expect 110) via hand computation; DP gives dp[3]=110.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm O(n^2) complexity is within limits for n<=1000 and values fit Python big ints.",
+    "status": "done",
+    "result": ""
+  }
+]

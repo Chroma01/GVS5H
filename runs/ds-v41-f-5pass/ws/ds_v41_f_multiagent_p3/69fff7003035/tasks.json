@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce total sum to \u03a3_d C_d\u00b7S_d.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement counts c_l and sums S_d for l=1..6.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build D(t) and R(t) small-degree polynomials.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement O(N) recurrence for p_n with inverses/factorials.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Divide out (1+10^d t) per active length and compute C_d.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Combine answer and verify: passed N=3 (1332), N=390, N=79223.",
+    "status": "done",
+    "result": ""
+  }
+]

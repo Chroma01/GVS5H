@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement right-endpoint sweep: bucket pairs by larger value, activate all pairs with max==r before counting, track frequency map of lower-endpoint values and the top two distinct values (0 default) with owner of the unique max.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "At each r add r - max_active to base count; if the max lower-endpoint value has frequency 1, credit (max - second_distinct) to that owner's removal gain, else credit 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Return base + max gain over all pairs, ensuring O(n + m) time and correct handling of duplicates/ties.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Execute the code on the two provided examples and confirm outputs 9 and 12 (print actual returned values) \u2014 verified PASS.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Brute-force cross-check on many small random n and conflictingPairs (duplicates, reversed pairs, single pair, irrelevant pairs) vs per-deletion recomputation \u2014 all matched.",
+    "status": "done",
+    "result": ""
+  }
+]

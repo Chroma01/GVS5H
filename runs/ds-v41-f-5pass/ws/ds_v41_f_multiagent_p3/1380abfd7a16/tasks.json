@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Reverse-insertion insight: last inserted value N stays at final position P_N; reduce to placing value i at the P_i-th remaining empty slot.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse N and the sequence P from standard input.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement solution: Fenwick tree over N empty slots, process i=N..1 placing i at the P_i-th empty slot via binary-lifting k-th search, then read out slots left-to-right and print space-separated.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Ensure fast I/O (sys.stdin.buffer.read / split) and O(N log N) complexity suitable for N up to 5\u00d710^5.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Sanity-check correctness on Sample 1 (N=4, P=1 1 2 1 -> \"4 2 3 1\") and Sample 2 (N=5, P=1 2 3 4 5 -> \"1 2 3 4 5\").",
+    "status": "done",
+    "result": ""
+  }
+]

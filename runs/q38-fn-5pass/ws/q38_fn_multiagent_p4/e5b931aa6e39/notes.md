@@ -1,0 +1,7 @@
+- **Core factorization:** For a solution, let d = x - y > 0. Then x = y + d and N = d(3y^2 + 3dy + d^2). Therefore d must divide N.
+- **Bound on d:** Because y is positive, N = d(3y^2 + 3dy + d^2) > d^3. Hence d^3 < N. For N <= 10^18, this gives d < 10^6, making enumeration feasible.
+- **Integer bound computation:** The code computes the exact maximum d with d^3 < N using doubling plus binary search, avoiding floating-point cube-root errors.
+- **Quadratic condition:** For each divisor d, set M = N // d. We need 3y^2 + 3dy + d^2 = M. The discriminant is D = 12M - 3d^2. A valid integer y exists iff D is a perfect square s^2, s > 3d, and s - 3d is divisible by 6. Then y = (s - 3d) // 6 and x = y + d.
+- **Implementation details:** Use math.isqrt for exact perfect-square checks. Non-divisors are skipped quickly with modulo. A final cube verification is included to guard against any subtle arithmetic or congruence mistake.
+- **Complexity:** At most about 10^6 modulo checks. isqrt is called only for divisors of N, so the runtime is easily acceptable. Memory usage is O(1).
+- **Edge cases:** N = 1 has no valid d because d^3 < N fails. y = 0 is rejected, so cases like N = 8 do not incorrectly return (2, 0). Positive x and y are enforced.

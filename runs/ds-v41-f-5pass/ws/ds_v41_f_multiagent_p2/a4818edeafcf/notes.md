@@ -1,0 +1,9 @@
+- **Problem:** split into three non-empty subarrays, maximize sum of distinct counts.
+- **Key formula:** answer = max over j of ( max over i<j of pref[i] + distinct(A[i+1..j]) + suff[j+1] ).
+- **Sweep right cut j:** maintain M[i] = pref[i] + distinct(A[i+1..j]) for active i.
+- **Appending A[j]:** previous occurrence p. M[i] increases by 1 exactly for i >= p (within active i <= j-2). Use range add [p, j-1).
+- **Global offset trick:** add +1 to all active elements at each step (G = j), then subtract 1 from prefix [0, p) when p > 0. New left cut i=j-1 gets B[i] = pref[j-1] + 1 - j.
+- **Data structure:** iterative lazy segment tree over B, supports prefix add and point set. Global max is mx[1]. Answer candidate = mx[1] + j + suff[j+1].
+- **No push needed:** new point set is always at the right boundary, never covered by previous range updates, so its path has zero lazy. Point set only needs pull-up.
+- **Complexity:** O(N log N) time, O(N) memory. N=3e5 passes comfortably.
+- **Edge cases:** N=3 works; p=0 or p=-1 correctly skips prefix subtraction; all same elements gives answer 3.

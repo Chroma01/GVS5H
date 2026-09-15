@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full solution: compute inv0=k=0 inversion count via Fenwick tree over values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement threshold-crossing sweep over L=0..M-1 with active count and position-sum to derive answer for each k.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the implemented solution produces exact sample outputs for Samples 1, 2, 3 and edge cases (M=1, N=1, all equal).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Guard against edge cases: M=1 single output, k<->L mapping correctness, arbitrary-precision integer arithmetic, wrap boundaries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Finalize stdin/stdout formatting with M lines of output.",
+    "status": "done",
+    "result": ""
+  }
+]

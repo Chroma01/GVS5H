@@ -1,0 +1,8 @@
+- **Problem model:** Count candidate strings T of length M by LCS length with fixed S (N<=10). Enumerate over a finite automaton on the compressed LCS DP row.
+- **State (mask):** d[i]=LCS(S[0:i], T) for scanned prefix T, d[0]=0. d is nondecreasing with steps 0/1, so the row encodes as an N-bit mask, bit i-1 = d[i]-d[i-1]. Final LCS length with S = popcount(mask).
+- **Append transition:** Let d' be the row after appending letter c; e[i]=d'[i]-d[i]. Since a single append raises any LCS by at most 1, e[i] is always in {0,1}. Rule: if bit_i==1 then e[i]=0; else e[i]=max(e[i-1], [S[i-1]==c]). New bit_i = bit_i + e[i] - e[i-1] (always 0 or 1). Holds with repeated letters in S.
+- **Derivation:** d'[i]=d[i-1]+1 if S[i-1]==c else max(d[i], d'[i-1]). The {0,1} bound on e makes the "if bit then e=0" simplification exact (avoids a max(0,e_prev-bit) that would otherwise be needed).
+- **DP:** dp over 2^N masks, M steps. dp[0]=1; each step dp_next[trans(mask,c)] += dp(mask). Bucket final masks by popcount to get ans_0..ans_N.
+- **Optimization:** Aggregate identical destination masks per source mask into (target,count) so each state does <=26 (usually fewer) adds instead of 26 modulo adds.
+- **Complexity:** Transitions O(2^N * 26 * N); DP O(M * 2^N * 26). For N=10,M=100 ~ 2.7M ops, well within limits.
+- **Verification:** Sample1 (N=2,M=2,"ab") -> 576 = 24^2, 99, 1. Sample2 (N=3,M=4,"aaa") -> 25^4=390625, 4*25^3=62500, 6*25^2=3750, 4*25+1=101. Both match.

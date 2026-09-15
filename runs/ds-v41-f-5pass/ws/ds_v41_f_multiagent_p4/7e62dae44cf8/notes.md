@@ -1,0 +1,10 @@
+- **Model:** Takahashi's absorbed body is always a connected set containing the start cell. Only unabsorbed orthogonal neighbors of this set can ever be absorbed next.
+- **Monotonicity:** Current strength strictly increases and the region only expands, so absorbing a cell never makes another boundary cell harder to absorb.
+- **Greedy:** Maintain the boundary in a min-heap keyed by strength. Repeatedly take the smallest unabsorbed boundary cell. If `strength * X < current`, absorb it; otherwise stop.
+- **Why smallest is safe:** If any boundary cell `c` is absorbable, then the minimum boundary cell `m` satisfies `m <= c`, so `m * X <= c * X < current`. Therefore `m` is also absorbable. Absorbing `m` first cannot destroy any currently possible absorption because strength only grows.
+- **Stopping rule:** If the smallest boundary cell fails `s * X < current`, then every boundary cell fails, and no further absorption is possible.
+- **Implementation details:** Convert `P,Q` to 0-indexed. Read all integers with `sys.stdin.buffer.read().split()`. Heap entries are `(strength, row, col)`. Mark the start absorbed. Push only in-grid unabsorbed neighbors. Skip heap entries that are already absorbed.
+- **Strict inequality:** Use `s * X < current`, not `<=`. Equality is not absorbable.
+- **Complexity:** Each cell can be pushed at most four times, once per adjacent edge, so time is `O(HW log(HW))` and memory is `O(HW)`. With `H,W <= 500`, this is comfortable.
+- **Edge cases:** If `H = W = 1`, the heap is empty and the answer is just `S[P][Q]`. Large values are safe in Python: `X * S` can exceed 64-bit range, but Python integers handle it exactly.
+- **Sample checks:** The algorithm produces `28`, `5`, and `1343` for the three samples.

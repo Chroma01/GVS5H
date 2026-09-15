@@ -1,0 +1,9 @@
+- **Core model:** Each constraint `A_X xor A_Y = Z` is an undirected graph edge with XOR weight `Z`. For a connected component, once one vertex value is fixed, all other values are forced by XORing along paths.
+- **Consistency:** Assign a root potential `0`, then iteratively assign `pot[to] = pot[v] xor w`. If an already visited vertex is reached, the implied XOR must match the stored potentials. Any mismatch means no good sequence exists.
+- **Structure of all solutions:** If `pot` is one consistent assignment in a component, every valid assignment is `A_v = pot[v] xor T` for one component-wide integer offset `T`.
+- **Minimization:** The sum decomposes by bits: `sum_v (pot[v] xor T) = sum_k 2^k * ones_k(T)`. For bit `k`, if `c` base values have bit `k` set, choosing offset bit `0` costs `c`, choosing `1` costs `size - c`. Therefore set the offset bit to `1` exactly when `c * 2 > size`; ties can be broken arbitrarily.
+- **Bit range:** Since all potentials are XORs of input weights, no bit above `max_z.bit_length()` can appear. Using `max(1, max_z.bit_length())` is sufficient and keeps the loop small.
+- **Implementation:** Use iterative DFS/BFS with an explicit stack to avoid recursion depth issues. `pot = [-1] * (N + 1)` doubles as visited marker and potential storage. Self-loops are added once; a nonzero self-loop is detected by the same consistency check.
+- **Complexity:** Graph traversal is `O(N + M)`. Bit counting and offset application are `O(N * B)`, where `B <= 30` under the given constraints. Memory is `O(N + M)`.
+- **Edge cases handled:** `M = 0`, isolated vertices, self-loops with zero or nonzero weight, parallel edges, disconnected components, and tie cases in bitwise minimization.
+- **Superseded approaches:** Per-bit DSU, Gaussian elimination over GF(2), and trie-based minimization are unnecessary; the graph-potential plus bitwise majority approach is simpler and linear up to the small bit factor.

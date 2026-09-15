@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive/verify the edge-variable constraints and prefix-parity formulas for row/column variables, including the exact XOR label for each B-cell equation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete solution with parity DSU and verify on samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If sample verification fails, switch to a BFS/DFS coloring fallback on the row-column XOR graph.",
+    "status": "done",
+    "result": ""
+  }
+]

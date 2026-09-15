@@ -1,0 +1,9 @@
+- **Problem recap:** For each k in 0..M-1, B_i = (A_i + k) mod M; print inversion count of B. N,M up to 2e5, so per-k recomputation is impossible; need incremental update.
+- **Core structure:** Going from k to k+1 adds 1 to every value; only elements currently equal to M-1 wrap to 0. So relative order of a pair changes only when, before the step, one is M-1 and the other is not. Equal values never change order.
+- **Delta per value:** For value v, at its wrap moment each occurrence was M-1 (greater than all non-v) then becomes 0 (less than all non-v). For one occurrence: every non-v element to its right stops being an inversion (-1); every non-v to its left starts being one (+1). Summing over occurrences and cancelling the c(c-1)/2 self-terms gives the closed form delta[v] = 2\*S[v] - c[v]\*(N-1), where c[v]=count of v, S[v]=sum of 0-indexed positions of v.
+- **Wrap order:** delta[v] is applied when k increments so that v is the value that wraps, i.e. v = M-k for k=1..M-1. So apply v = M-1, M-2, ..., 1. delta[0] is never needed (would be k=M, not output).
+- **Initial count:** inv0 = inversion count of A (k=0) via Fenwick tree over values 0..M-1 (size M). Left to right: for value x add (total_seen - count_LE(x)); then insert x. Accumulate c[x] and S[x] in the same pass.
+- **Verified closed form:** Sample3 (0..6): delta[v]=2v-6, applied v=6..1 gives 0→6→10→12→12→10→6. Sample1 delta[2]=-2,delta[1]=0: 3→1→1. Sample2 deltas (5:-4,4:0,3:-2,2:0,1:4): 7→3→3→1→1→5. All three samples match.
+- **Edge cases:** M=1 prints only the k=0 line (range(1,1) empty). All-equal arrays: delta[v]=2\*N(N-1)/2 - N(N-1)=0 for all v, all answers 0. c[v]=0 gives delta 0 automatically.
+- **Integer size:** answers up to N(N-1)/2 ≈ 2e10; Python ints handle this, no overflow concern.
+- **Complexity:** O(N log M + M) time, O(N+M) memory. Fenwick ops ~7e6 for max input, fine in Python.

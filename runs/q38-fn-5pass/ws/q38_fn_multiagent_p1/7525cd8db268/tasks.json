@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the right-endpoint envelope sweep: normalize pairs, bucket by larger endpoint, maintain largest active smaller endpoint with count/owner and second-largest distinct active smaller endpoint, accumulate base and per-pair gains, and return base + max(gains).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify the implementation against sample tests and edge cases (single pair, duplicates, same-y ties, redundant pairs); it passes.",
+    "status": "done",
+    "result": ""
+  }
+]

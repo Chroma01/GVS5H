@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Arrangement model established: answer = min over permutations of (equal-value runs + inversions); equivalently assign each maximal run a level (same level \u21d2 same value), cost = #levels + \u03a3_{i<j, level_i>level_j} len_i*len_j.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Old unweighted solution shown incorrect (ignores run lengths).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Weighted run-length caching greedy implemented and passes all 3 public samples (3, 4, 8).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Exhaustively brute-force validated the greedy vs exact BFS/Dijkstra for all small arrays (N\u22648 alphabet 3, N\u22647 alphabet 4); zero mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Cross-checked against the `R - max good pairs` formula and the w*L==1 tie-break variant; greedy confirmed correct.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Finalized submission: fast I/O, reads T cases, outputs numeric answers only; verified samples plus edge cases (all equal \u2192 1, all distinct \u2192 N).",
+    "status": "done",
+    "result": ""
+  }
+]

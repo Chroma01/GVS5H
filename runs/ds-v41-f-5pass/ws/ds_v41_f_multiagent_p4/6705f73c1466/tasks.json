@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement stdin parser + solution using the median-of-transformed-positions reduction (a_j = p_j - j), with trivial 0/1 case outputting 0, and print sum of absolute deviations from the median.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify the implemented solution on all three provided samples (3, 0, 7) and confirm it stays within O(N log N) for N up to 5e5.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Reduce the problem to matching ordered 1s to consecutive target slots and identify the median-of-(p_j - j) formula as the core reduction.",
+    "status": "done",
+    "result": ""
+  }
+]

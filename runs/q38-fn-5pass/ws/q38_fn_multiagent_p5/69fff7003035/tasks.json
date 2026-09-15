@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Confirm the contribution formula: for each value x with digit length d, its total contribution is x times the sum over subsets of the other N-1 elements of size k of k! (N-1-k)! 10^{sum of digit lengths in the subset}.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Read N and group the integers 1..N by decimal length, storing count c[d] and sum of values sum[d] modulo 998244353 for each length d.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute factorials fact[0..N] and modular inverses inv[1..N] modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each digit length d with c[d] > 0, define adjusted counts c'[e] = c[e] - (e == d), and build the generating function P_d(t)=\u220f_{e}(1+10^e t)^{c'[e]}.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute coefficients p_k of P_d(t) up to k=N-1 using the logarithmic-derivative recurrence, exploiting that there are only O(log N) distinct digit lengths.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "For each d, compute H_d = \u2211_{k=0}^{N-1} fact[k] fact[N-1-k] p_k modulo 998244353, add sum[d] * H_d to the answer, and print the final answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Handle edge cases: N=1, digit-length groups with zero count, excluding one element of the current digit length, and modular inverses in the recurrence.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Run the implementation against the provided sample tests and fix any failures.",
+    "status": "done",
+    "result": ""
+  }
+]

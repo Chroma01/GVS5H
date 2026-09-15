@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select boundary-mask DP over safe intervals.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Attempt boundary-mask DP; abandoned because too complex/token-heavy.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Attempt residue-minimal DP; incomplete due token limit, but approach viable.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement concise interval-residue DP with precomputed residue offsets and offset_to_interval propagation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate on samples and edge cases: M=0, A=B, A=1, adjacent bad intervals, very short safe intervals, skipping intermediate safe intervals, and N in the last safe interval.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If concise interval-residue DP fails sample tests, switch to another compressed approach (e.g., important-position graph or BFS with periodicity) rather than polishing the same code.",
+    "status": "done",
+    "result": ""
+  }
+]

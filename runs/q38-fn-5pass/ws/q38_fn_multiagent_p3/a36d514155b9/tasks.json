@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the reduction to C(N-2, k-2) times the total unordered pairwise Manhattan distance, where N = m*n.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the closed-form row contribution n^2 * m(m^2 - 1)/6 and column contribution m^2 * n(n^2 - 1)/6.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement modular arithmetic helpers for factorial/inverse-factorial precomputation up to N and a modular combination function.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute the total pairwise distance modulo 1e9+7 using modular inverse of 6, then multiply by the combination count.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test the implementation on the provided examples and edge cases such as k = N, m = 1, n = 1, and maximum N = 1e5.",
+    "status": "done",
+    "result": ""
+  }
+]

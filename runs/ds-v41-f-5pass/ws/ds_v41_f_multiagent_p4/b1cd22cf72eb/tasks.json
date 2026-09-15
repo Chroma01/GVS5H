@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Read N, X and pairs (U_i, D_i); compute S_i = U_i + D_i and totalS = sum S_i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement feasibility check for candidate H: interval_i = [L_i, R_i], L_i=max(0,H-D_i), R_i=min(U_i,H); scan i=1..N maintaining reachable [lo,hi], updating by intersecting [lo-X,hi+X] with [L_i,R_i], false if empty.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Binary search the maximum feasible integer H in [0, min_i S_i] (feasibility is downward closed), then output totalS - N*H using Python big integers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate by running all four samples (expected 15, 0, 5999999994, 9460); all passed.",
+    "status": "done",
+    "result": ""
+  }
+]

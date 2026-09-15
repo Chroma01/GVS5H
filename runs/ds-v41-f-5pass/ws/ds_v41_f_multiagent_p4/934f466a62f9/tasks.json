@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive reduction: pairing optimum = best even-count color assignment of M=2K items maximizing sum of assigned coordinates; answer = V \u2212 OPT.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove min-fix is a single {a,b} op or a disjoint {a,c}+{b,c} pair; implement baseline (top-M by m_i) + O(N log N) min-fix solver.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify samples: Sample 1 -> \"12\"; Sample 2 -> \"209\\n333\" passed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run `python3 solution.py stress` (exhaustive binary N<=5, ternary N=3, 4000 random incl. ties/duplicates/zeros/1e9/color-spread) and paste raw stdout; on MISMATCH report the exact counterexample.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run `python3 solution.py perf` (T=1000, sum N=1e5, K=N//2, 1e9 values); confirm runtime is reasonable.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If a mismatch surfaces, patch the offending op/exclusion branch (A2/A3/A4, B2/B3/B4, 2nd-best gaps) and re-run stress until \"all ok\"; if the same case keeps failing, switch reduction.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Finalize: mark done only after stress passes with no mismatch.",
+    "status": "pending",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement and test the simplified Cartesian-tree passable-edge solution as described.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate edge cases: equal values/tie-breaking, strict inequalities, nodes with no adjacent smaller, large sums, and iterative traversal for N=5e5.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If the simplified approach fails sample tests, debug or switch to the linked-list set-propagation fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

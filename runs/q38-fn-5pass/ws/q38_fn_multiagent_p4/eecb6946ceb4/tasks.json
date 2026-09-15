@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete solution with raw stdin parsing, N<3 early exit, and small-N sparse pair enumeration.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Add NumPy FFT primary path for large N: indicator array, power-of-two FFT length, rounded convolution, sum adjusted even coefficients.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Add pure-Python fallback: endpoint-parity base-2^20 big-integer convolution, packed bytearray construction, product byte extraction, self-pair correction.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test samples and edge cases (N<3, small N with large max_val, all even/odd, dense set) and verify no carries/rounding issues.",
+    "status": "done",
+    "result": ""
+  }
+]

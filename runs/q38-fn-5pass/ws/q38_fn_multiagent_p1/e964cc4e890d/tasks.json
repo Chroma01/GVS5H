@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Formalize and brute-force validate the segment-aggregated recurrence D_s, including endpoint checks, first-increase compression, and the final answer formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement a small-N reference solver using the validated recurrence and compare it with direct enumeration of matchings.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Investigate whether the recurrence can be reduced to a single convolution / power-series inversion or another O(N log N) structure, to avoid a heavy CDQ implementation in Python.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If no simpler structure is found, design an efficient online-convolution solver for sum D_p * fact[R_s-p] (CDQ with NTT, relaxed convolution, or a practical sqrt-decomposition fallback).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Implement the optimized solver for N up to 2e5 with fast I/O, factorial precomputation, and careful memory/time handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Final integration, edge-case handling, and validation on samples plus randomized small tests.",
+    "status": "done",
+    "result": ""
+  }
+]

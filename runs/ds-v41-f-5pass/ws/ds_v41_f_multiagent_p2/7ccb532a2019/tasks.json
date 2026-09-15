@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Build the frequency array for letters 'a' through 'z' from the input string.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Fix the model: for each candidate T choose each letter's final count as 0 or T, base cost = sum |freq[i]-target|, saving = sum over adjacent edges of min(surplus_left, deficit_right).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Establish that no character needs to shift more than one letter forward (longer shifts only tie delete+insert), so only adjacent-edge savings matter and no z-to-a edge exists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Prove optimal T is within [0, max_freq] (reducing T by 1 while T>max_freq never increases cost), so scan T from 0..max_freq.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement the 2-state DP over the 26 letters for each T, subtract adjacent savings in transitions, and return the global minimum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify against the three given examples: \"acab\"->1, \"wddw\"->0, \"aaabc\"->2 (traced by hand through the DP).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Confirm complexity O(26 * max_freq) time and O(1) extra space, with correct handling of deletion-only (single distinct letter, answer 0) and the 'z' boundary.",
+    "status": "done",
+    "result": ""
+  }
+]

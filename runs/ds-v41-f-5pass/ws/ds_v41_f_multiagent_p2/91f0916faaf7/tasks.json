@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Factor every A_i and compute a_i=v_p(A_i), S_p=sum_i a_i per relevant prime (skip primes with S_p=0)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement prime-wise zero-hit DP: dp[height][flag], init dp[c][c==0]=p^c for c in 0..S_p, transitions e->e\u00b1a_i staying in [0,S_p], set flag when reaching 0, sum flagged finals",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle degenerate cases: a_i=0 edges as single no-move transition, S_p=0 => contribution 1, and heights provably bounded by S_p",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Multiply per-prime contributions mod 998244353 and implement stdin/stdout",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate on all 3 samples and edge cases (N=2, all A_i=1, repeated prime powers); confirm complexity O((N-1)*sum_p S_p) is acceptable",
+    "status": "done",
+    "result": ""
+  }
+]

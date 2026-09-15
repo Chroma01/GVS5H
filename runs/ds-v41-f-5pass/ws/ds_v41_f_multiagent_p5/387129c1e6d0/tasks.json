@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, M, start point, house coordinates, and movement instructions from stdin.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Simulate the M moves to compute the final position using Python ints (handles overflow beyond 32-bit).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Group horizontal segments by y and merge overlapping/adjacent inclusive x-intervals; do the same for vertical segments by x and y-intervals.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each house, binary-search its row intervals and column intervals; count it once if found in either.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Output final X, Y, and the distinct-house count; verified on both provided samples (including the overflow sample 2).",
+    "status": "done",
+    "result": ""
+  }
+]

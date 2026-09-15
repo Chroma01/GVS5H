@@ -1,0 +1,9 @@
+- **Model:** Each constraint `A_x xor A_y = z` is an undirected edge labeled `z`. In one connected component, fixing one vertex value forces every other vertex value by path XOR.
+- **Consistency:** Use iterative DFS/BFS. Maintain tentative values `val[v]` relative to the component root, with root value `0`. For an edge `(v, to, w)`, the neighbor must have value `val[v] xor w`. If it is unvisited, assign it; if already visited and the value differs, no good sequence exists.
+- **Self-loops:** A self-loop with nonzero XOR is immediately impossible. A self-loop with zero XOR is always satisfied and can be ignored.
+- **Degrees of freedom:** After a component is consistent, all valid assignments are obtained by XORing every tentative value in that component with one common constant `C`. Components are independent.
+- **Minimization:** The total sum is the sum over bits of `2^b * (#ones in bit b)`. For a component of size `s`, if bit `b` is set in `k` tentative values, choosing `C_b = 0` gives `k` ones, while `C_b = 1` gives `s-k` ones. Therefore set `C_b = 1` iff `k * 2 > s`. Ties may choose either; the implementation chooses `0`.
+- **Bit range:** Tentative values are XORs of input `Z` values, so no bit above `max_z.bit_length()` can appear. Bits above this are zero in all tentative values, and setting them in `C` would only increase the sum. Use `bits = max(1, max_z.bit_length())`.
+- **Implementation details:** Read all input tokens at once. Build adjacency lists. For each component, collect vertices in `comp`, count set bits while popping vertices, compute the optimal offset, then apply it in place to `val`. `val` doubles as the final answer array. Isolated vertices are set to `0` directly.
+- **Complexity:** Time is `O(N + M + N * B)` with `B <= 30`, and memory is `O(N + M)`.
+- **Edge cases covered:** `M = 0`, isolated vertices, zero self-loops, nonzero self-loops, multiple edges, disconnected components, all `Z = 0`, and bit-majority ties.

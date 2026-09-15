@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze problem structure: composition of nondecreasing step functions; precompute answer for every initial rating X via range-add on a monotone array A where A[X] is the final rating.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the difference-array + Fenwick tree solution (Fenwick binary-lifting lower_bound on prefix sums of D to find [lo,hi] per contest, range-add +1, final accumulate) reading stdin and writing stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify against all three provided samples plus edge cases (empty interval when A jumps over [L,R], ratings exceeding M, X=1 and X=500000, all contests empty); all 3 public samples PASSED.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm complexity O(N log M + M + Q) time and O(M) memory is within constraints (N=2e5, Q=3e5, values up to 5e5).",
+    "status": "done",
+    "result": ""
+  }
+]

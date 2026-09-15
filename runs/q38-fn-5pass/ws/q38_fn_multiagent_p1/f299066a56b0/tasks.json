@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement binary-search feasibility check using the first K and last K elements with integer comparison 2*A[i] <= A[N-K+i].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Read input efficiently and output only the final answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate edge cases: N=2, all equal sizes, strictly increasing sizes, duplicates, odd/even N, and cases where no pair is possible.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If binary-search feasibility has any issue, implement the split two-pointer greedy as an alternative.",
+    "status": "done",
+    "result": ""
+  }
+]

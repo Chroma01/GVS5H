@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive finite-field walk expansion: sum over B of B^p entry = (-1)^K times sum over length-p walks where every used zero edge has multiplicity divisible by (p-1) (fixed edges contribute their A value).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Show for p>=3 at most one zero edge (used exactly p-1 times) plus one fixed edge can appear; derive W_e for zero self-loops (all p>=3) and zero non-self-loops (only p=3), with diagonal cancellation; handle p=2 separately (zeros->1, all-ones matrix, ans=(N mod 2)*J).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the full program: read input, count K, handle p=2, else build M, compute M^p mod p via fast modular matrix power (numpy int64 with overflow-safe split, pure-Python fallback), accumulate W from zero entries per the formulas, apply sign (-1)^K, print N lines.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test the implementation on all provided samples and on a brute-force checker for random small N, p in {2,3,5,7} (all-zero, diagonal-zero, K=0, and mixed cases).",
+    "status": "done",
+    "result": ""
+  }
+]

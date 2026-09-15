@@ -1,0 +1,9 @@
+- **State model:** Reversing twice cancels, so only two global orientations matter. Model each vertex as two states: layer 0 is the original graph, layer 1 is the reversed graph.
+- **Layer edges:** In layer 0, an original edge u -> v costs 1 to traverse. In layer 1, the same original edge allows movement from v to u at cost 1. A reversal toggles between layers at the same vertex for cost X, in both directions.
+- **Start and goal:** Start from (1, layer 0). The answer is min(dist[N][0], dist[N][1]).
+- **Implementation:** Store original out-adjacency and in-adjacency. Run Dijkstra over 2N states. From (v, 0), relax out_adj[v] into layer 0 and (v, 1) with cost X. From (v, 1), relax in_adj[v] into layer 1 and (v, 0) with cost X.
+- **Why it is correct:** Any valid process alternates moves and reversals. Compress consecutive reversals, so the edge orientation is fully determined by the parity of reversals. Thus the two-layer graph exactly captures all reachable configurations. All weights are positive, so Dijkstra gives the minimum cost.
+- **Complexity:** O((N + M) log N) time and O(N + M) memory.
+- **Large costs:** The answer can exceed 32-bit limits. Use a large INF such as 10**30; Python integers are arbitrary precision.
+- **Pitfalls:** Remember to consider both layers at vertex N. Multiple edges and self-loops are harmless. Using in-adjacency avoids explicitly building the reversed graph.
+- **Sample check:** Sample 3 needs 7 reversals and 7 moves, giving 7 * 613566756 + 7 = 4294967299, confirming the large-answer case.

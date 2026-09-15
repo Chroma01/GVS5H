@@ -1,0 +1,8 @@
+- **Objective:** Maximize the final common sum H. The total cost of reductions is S - N*H where S = sum(U_i + D_i), because every final tooth pair contributes H to the total length.
+- **Final upper values:** For fixed H, the final upper tooth a_i must satisfy max(0, H - D_i) <= a_i <= min(U_i, H). Then the lower tooth is uniquely b_i = H - a_i. The only remaining condition is |a_i - a_{i+1}| <= X.
+- **Search bound:** H must satisfy 0 <= H <= min_i(U_i + D_i). H = 0 is always feasible by reducing every tooth to zero, so binary search is valid.
+- **Monotonicity:** If H is feasible with sequence a_i, then any H' < H is feasible using a_i' = min(a_i, H'). This preserves the lower/upper interval bounds and cannot increase adjacent differences. Therefore feasibility is monotone downward.
+- **Feasibility check:** Maintain the interval [lo, hi] of all possible values for the current a_i after processing a prefix. Start with [max(0,H-D_1), min(U_1,H)]. For the next index, any previous value p in [lo, hi] can move to [p-X, p+X], whose union is [lo-X, hi+X]. Intersect with [max(0,H-D_i), min(U_i,H)] using lo = max(L_i, lo-X), hi = min(R_i, hi+X). Empty intersection means infeasible.
+- **Correctness of interval DP:** The reachable set for each prefix is always a single integer interval, so only its minimum and maximum are needed.
+- **Complexity:** O(N log(min_i(U_i + D_i))) time and O(N) memory. N up to 2e5 and sums up to 2e9 give about 31 binary-search steps.
+- **Implementation details:** Use Python integers for 64-bit safety. Allow final lengths to become zero. Binary search with mid = (low + high + 1) // 2 finds the largest feasible H.

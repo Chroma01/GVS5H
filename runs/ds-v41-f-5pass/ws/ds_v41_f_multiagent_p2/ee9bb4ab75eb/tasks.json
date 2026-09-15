@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: trie formulation (outside path count>=k, on-path count>=k+1) is correct.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement trie build: insert all words, track count and depth per node; handle n == k early return zeros.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute mx[node] = max depth in subtree with count >= k using reverse node order (children before parent).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute best1/best2/bestc top-two child mx per node for O(1) sibling-subtree lookup.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Per word: traverse path, combine sibling subtrees (best_out) and path nodes with count>=k+1 (best_on), include terminal children; answer = max(best_out, best_on).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verified on Example 1 (output [3,4,4,3,4]) and edge cases: k=1, duplicates, words that are prefixes of others, n==k, all-distinct.",
+    "status": "done",
+    "result": ""
+  }
+]

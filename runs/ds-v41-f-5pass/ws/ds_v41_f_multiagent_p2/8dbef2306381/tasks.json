@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches; settle on B-bit sliding-window reach mask with saturation skipping and a separate A==B arithmetic-progression check.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement solve(): parse, merge blocks, A==B branch, A<B branch with saturation, output Yes/No.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the three samples plus edge cases (M=0; A==B; any block length >= B; N=2) and verify outputs 1:Yes, 2:No, 3:Yes.",
+    "status": "done",
+    "result": ""
+  }
+]

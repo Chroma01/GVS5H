@@ -1,0 +1,13 @@
+- **Problem restated:** given N up to 1e18, find positive integers x, y with x^3 - y^3 = N, else print -1. Any valid pair is accepted.
+- **Key identity:** x^3 - y^3 = (x-y)(x^2+xy+y^2). Set d = x-y > 0, x = y+d. Then N = d(3y^2 + 3dy + d^2).
+- **Bounding d:** the bracket 3y^2+3dy+d^2 >= 3+3d+d^2 > d^2 for y >= 1, so N > d^3, i.e. d < cbrt(N) <= 1e6. Only ~1e6 candidate differences, all feasible.
+- **d must divide N:** enumerate d = 1, 2, ... while d*d*d < N; skip d that don't divide N.
+- **Solve for y:** with q = N/d, solve 3y^2 + 3dy + (d^2 - q) = 0. Discriminant D = 9d^2 - 12(d^2 - q) = 12q - 3d^2. Root y = (-3d + sqrt(D)) / 6.
+- **Validity checks:** need D a perfect square (use math.isqrt, check s*s == D), num = s - 3d strictly positive, num % 6 == 0, y = num//6 > 0. Then x = y+d.
+- **D is always positive in range:** since d^3 < N implies q = N/d > d^2, so D = 12q - 3d^2 > 9d^2 > 0. The D>=0 guard is harmless belt-and-suspenders.
+- **Final safety check:** recompute x^3 - y^3 == N before printing to rule out any logic slip.
+- **Exact arithmetic matters:** avoid float cube/square roots; use integer loop bound d*d*d < N and math.isqrt for the square root.
+- **N = 1 edge case:** loop condition 1*1*1 < 1 is false, so nothing is checked and -1 prints. Correct, since x>y>=1 forces x^3-y^3 >= 7.
+- **Verified samples:** N=397 -> d=1, q=397, D=4761=69^2, num=66, y=11, x=12 (12^3-11^3=397). N=1 -> -1. N=39977273855577088 -> 342756 66212.
+- **Complexity:** O(cbrt(N)) iterations with O(1) integer ops each (isqrt is fast C code); well within limits.
+- **Note on prime N:** if N is prime the only divisor d in range is 1, which is fine; the loop naturally handles it.

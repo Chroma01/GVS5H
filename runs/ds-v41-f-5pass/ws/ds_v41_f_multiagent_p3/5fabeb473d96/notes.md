@@ -1,0 +1,14 @@
+- **Model:** Random recursive tree; each P_i uniform on 1..i-1, independent; total trees (N-1)!. Answer = (N-1)! * (expected distance), since #trees where edge i is on the path = (N-1)! * P(edge on path).
+- **Edge criterion:** edge i (2<=i<=N) lies on the u-v path iff exactly one of u,v lies in subtree(i). subtree(i) is a subset of {i,...,N} (parent smaller than child), so edges with i>max(u,v) contribute 0.
+- **Membership probabilities (proved by induction, brute-force checked):** for x>i, P(x in subtree(i)) = 1/i; i itself is always in; vertices <i never are. For i<x<y, P(both x,y in subtree(i)) = 2/(i(i+1)). Hence P(exactly one of two vertices >i) = 2/i - 2*2/(i(i+1)) = 2(i-1)/(i(i+1)).
+- **Per-edge coefficient** c_i in E[dist(u,v)] for u<v:
+  - i<u: 2(i-1)/(i(i+1))
+  - i=u: (u-1)/u  (u always in; v in with prob 1/u, so exactly one iff v not in)
+  - u<i<v: 1/i  (u<i so u never in; v in with prob 1/i)
+  - i=v: 1  (v always in; u<i never in)
+  - i>v: 0
+- **Query formula (O(1)):** with S1[i]=sum_{k=2}^i A_k/k, S2[i]=sum_{k=2}^i A_k*2(k-1)/(k(k+1)), A_1=0:
+  inner = S2[u-1] + A_u*(u-1)/u + (S1[v-1]-S1[u]) + A_v, answer = inner * (N-1)! mod 998244353.
+- **Implementation details:** precompute inv[1..N+1] with the linear recurrence; prefix sums indexed only up to N-1 are needed; u=1 works because (u-1)=0 and S2[0]=S1[1]=0. Everything mod 998244353 (prime > N+1 so all needed inverses exist).
+- **Complexity:** O(N+Q) time, O(N) memory; handles N,Q <= 2e5 easily.
+- **Validation:** sample 1 gives 2,3; sample 2 gives 100; sample 3 query (3,8) hand-computed to 55973424 (matches expected). Brute force for N=4 matched formula exactly, e.g. (2,4) sums to 3A_2+2A_3+6A_4 over all 6 trees, and (3,4) to 2A_2+4A_3+6A_4.

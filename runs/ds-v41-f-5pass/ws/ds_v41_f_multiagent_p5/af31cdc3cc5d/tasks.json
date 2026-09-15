@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Characterize deletions as a non-crossing matching; prove that when N is odd the single remaining element splits the array so every pair lies entirely on one side, forcing survivor positions to be odd (1-indexed).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove for any even multiset that max total |a\u2212b| over non-crossing perfect matchings equals (sum of larger half \u2212 sum of smaller half).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement even-N case: sort and output sum(largest N/2) \u2212 sum(smallest N/2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement two-heap running lower/upper half-sums; compute prefixVal[i] for every even prefix and suffixVal[i] for every even suffix in O(N log N).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement odd-N case: maximize prefixVal[p-1] + suffixVal[p+1] over odd p (handle empty prefix/suffix as 0) and print the max.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate against samples 1-3 (all pass), N=2, all-equal arrays, and random small brute-force comparisons.",
+    "status": "done",
+    "result": ""
+  }
+]

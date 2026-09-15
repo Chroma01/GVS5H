@@ -1,0 +1,9 @@
+- **Reduction:** N must have exactly two distinct prime factors p and q, and all exponents even. So N = p^(2a) q^(2b) = (p^a q^b)^2. Conversely, if m has exactly two distinct prime factors, then m^2 is a 400 number. Therefore the answer for A is the largest m <= floor(sqrt(A)) such that omega(m) == 2, and the output is m^2.
+- **Bounds:** A <= 10^12, so m <= 10^6. Precompute all m in [1, 10^6] with omega(m) == 2.
+- **Computing omega:** Use an Eratosthenes-style sieve. `omega = [0]*(LIMIT+1)`; for i in 2..LIMIT, if omega[i] == 0 then i is prime, and for every multiple j of i, increment omega[j]. Total increments are about LIMIT * log log LIMIT ≈ 2.9e6 for LIMIT = 10^6, very fast in Python.
+- **Collecting valid m:** `valid = [i for i in range(2, LIMIT+1) if omega[i] == 2]`. The smallest is 6 = 2*3, so since A >= 36, a valid m always exists.
+- **Query answering:** For each A, compute M = math.isqrt(A) exactly. Then `pos = bisect.bisect_right(valid, M) - 1` gives the largest valid m <= M. Output `valid_sq[pos]`, where `valid_sq = [m*m for m in valid]`. Using bisect_right handles equality correctly, so if A itself is a 400 number, it returns A.
+- **Sample verification:** 404 -> isqrt = 20, m = 20 = 2^2 * 5 -> 400. 123456789 -> isqrt = 11111, m = 11111 = 41 * 271 -> 123454321. 10^12 -> m = 10^6 = 2^6 * 5^6 -> 10^12.
+- **Pitfalls:** m need not be squarefree (e.g., 20, 72, 10^6); we count distinct prime factors, not total exponents. Use integer sqrt to avoid floating precision errors near 10^12. The condition A >= 36 guarantees an answer exists.
+- **Complexity:** Preprocessing O(LIMIT log log LIMIT) time and O(LIMIT) memory. Each query takes O(log |valid|) time via binary search (~18 comparisons). For Q <= 2e5 this is easily fast enough.
+- **I/O:** Read all integers at once with `sys.stdin.buffer.read().split()`, first is Q, remaining Q are the queries. Join answers with newline for fast output.

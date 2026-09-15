@@ -1,0 +1,9 @@
+- **Problem shape:** edges defined pairwise by `lcm(a,b) <= threshold`; O(n^2) edge enumeration is impossible for n up to 1e5. The small `threshold` (T <= 2e5) is the intended lever.
+- **Key reduction:** `lcm(a,b) <= T` iff both `a` and `b` divide some integer `m <= T` (take `m = lcm(a,b)`). So for each `m <= T`, every present value dividing `m` lies in one connected group. This turns pairwise edges into hyperedges over multiples of `m`.
+- **Large values:** since `lcm(a,b) >= max(a,b)`, any `nums[i] > T` has no edges and is its own component. Count them as `big` and add once at the end. Each such value contributes exactly 1 (all distinct per constraints).
+- **DSU construction:** `small = [v for v in nums if v <= T]`; map value -> index via dict. `last` array of size T+1 stores the most recent present divisor of each multiple, using 0 as "none" (values are positive so 0 is a safe sentinel).
+- **Scan:** for each present `v <= T`, iterate `m = v, 2v, ...  <= T`. If `last[m] != 0`, union `v` with `last[m]`; then set `last[m] = v`. Any two present divisors of `m` get unioned when the second is processed, and chains of >=3 divisors are linked pairwise, so all divisors of `m` cohere.
+- **Complexity:** total inner iterations = sum over present `v <= T` of `T/v` <= `T * H(T)` ~ 2e5 * 12 = ~2.4e6. Effectively O(T log T) with tiny constant; no divisor generation needed. Memory O(T) for `last` plus O(|small|) for DSU.
+- **Answer:** number of distinct DSU roots among small values, plus `big`.
+- **Verified on examples:** `[2,4,8,3,9], 5` -> small `{2,4,3}`, roots `{2,3}` = 2, big 2 -> 4. `[2,4,8,3,9,12], 10` -> small `{2,4,8,3,9}` all one root (3 joins via m=6 with 2), big 1 -> 2.
+- **Pitfalls handled:** values > T excluded from DSU (never treated as nodes); distinct values (input unique) so no dedup logic needed; `threshold = 1` works (last array size 2, only v=1 runs, one root); empty `small` returns `big` correctly.

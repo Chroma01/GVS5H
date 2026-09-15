@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the frontier min-heap greedy expansion in Python with exact integer strict inequality checks and safe handling of duplicate/stale heap entries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Seed the heap from the starting cell's neighbors and push newly exposed neighbors whenever a cell is absorbed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation on sample inputs 1-3 and edge cases such as X=1, no absorbable cells, all cells absorbable, and large integer values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If sample validation fails, switch to an alternative batch/union-find threshold-sweep approach instead of refining the same implementation.",
+    "status": "done",
+    "result": ""
+  }
+]

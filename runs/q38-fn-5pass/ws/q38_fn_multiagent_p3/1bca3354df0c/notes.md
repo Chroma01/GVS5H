@@ -1,0 +1,22 @@
+- **Odd N:** Every terminal complete bipartite graph has an even number of edges because `x(N-x)` is even for odd `N`. Thus all maximal plays have parity `M mod 2`; first wins iff `M` is odd.
+- **Even N component classification:** For each connected bipartite component, let its color-class sizes be `(a,b)`.
+  - `isolated`: size 1.
+  - `active_odd`: odd size and size > 1.
+  - `both_odd_even`: even size and both `a,b` odd.
+- **Even N, no active odd components (`active_odd == 0`):** Define `F = M + both_odd_even + isolated/2 (mod 2)`. Every legal move toggles `F`:
+  - internal/even-even merge toggles `M` only;
+  - isolated-isolated merge toggles `M`, `both_odd_even`, and `isolated/2`.
+  Terminal positions have `F = 0`, so Takahashi wins iff `F` is even.
+- **Even N, exactly 1 or 2 active odd components:** First player always wins.
+  - With 2 active odd components, merge them. The resulting even component can be made of either parity type, allowing the player to move to an `active_odd == 0` position with `F = 0`.
+  - With 1 active odd component, there is at least one isolated vertex (total N even). Merge active odd + isolated; again the orientation choice lets the player move to `active_odd == 0` with `F = 0`.
+- **Even N, at least 3 active odd components:** Takahashi wins iff `M` is even.
+  - From `M` even, every move toggles `M` to odd. It cannot reduce `active_odd` to 0 in one move, so the result is either `active_odd >= 3, M odd` or `active_odd in {1,2}`, both winning for the next player.
+  - From `M` odd, if any missing edge exists, play internally to make `M` even. Otherwise all components are complete, so `M mod 2` equals the parity of `both_odd_even`; hence an even component with both sides odd exists. Depending on counts, merge:
+    - two active odd components if `active_odd >= 5`;
+    - active + isolated if `active_odd == 4` and isolated exists;
+    - active + both-odd-even if `active_odd == 4` and no isolated;
+    - two isolated if `active_odd == 3` and isolated >= 3;
+    - active + both-odd-even if `active_odd == 3` and isolated == 1.
+    This keeps `active_odd >= 3` and makes `M` even.
+- **Implementation:** BFS/DFS colors components, counts color-class sizes and degrees. Edge count per component is `degree_sum / 2`, but only component size and color parity are needed for the final criterion.

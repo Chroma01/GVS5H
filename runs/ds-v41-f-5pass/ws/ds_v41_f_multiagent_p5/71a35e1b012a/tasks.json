@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduction: goal \u27fa I(T2) \u2286 U(T1); min cost \u2208 {1,2,3} for M\u22653; -1 only for small M without cost-1/cost-2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement cost-1, cost-2 (a)/(b)/(c) with containment (Fenwick) FIRST, cost-3, and -1 output; passes all 4 public samples with Sample 1 giving exactly `2\\n2 0 1 0`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Brute-force stress test on small N,M: confirm -1 cases match impossibility, reported K equals true minimum, and the emitted op vector is valid (final all-ones with exactly K nonzero ops).",
+    "status": "done",
+    "result": ""
+  }
+]

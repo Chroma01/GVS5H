@@ -1,0 +1,9 @@
+- **Problem shape:** cost of segment nums[l..r] with order i is `(S_r + k*i) * (C[r]-C[l-1])`, where `S_r = nums[0..r]` (a global prefix) and `C` is the cost prefix sum. Note S_r is NOT the segment's own sum.
+- **Key reduction:** segment index `i = 1 + (# cuts before it)`. So `sum_i i*segC_i = C[n-1] + sum_{cuts at p} (C[n-1]-C[p])`. Thus total cost = `sum_segments S_r*segC + k*C_total + k*sum_cuts suffixCost(after cut)`.
+- **Why it works:** each cut at prefix index p (p elements to its left) is counted once for every segment to its right; their combined cost weight is exactly the suffix cost `B[n]-B[p]`.
+- **DP (1-indexed prefixes):** `A[t]=nums[0..t-1]`, `B[t]=cost[0..t-1]`. `dp[j]` = min transformed cost for first j elements. Last segment covers elements p..j-1: `dp[j] = min_p ( dp[p] + A[j]*(B[j]-B[p]) + (k*(B[n]-B[p]) if p>0 else 0) )`. Base `dp[0]=0`. No cut penalty when the segment starts at index 0.
+- **Final answer:** `dp[n] + k*B[n]` (the base k*C_total is added outside the DP to keep it a constant).
+- **Complexity:** O(n^2) time, O(n) space; n<=1000 so no further optimization needed. Python big ints handle the large products safely.
+- **Verified Example 1:** nums=[3,1,4], cost=[4,6,6], k=1 -> dp=[0,12,40,94], answer = 94 + 1*16 = 110. Correct.
+- **Verified Example 2:** nums=[4,8,5,1,14,2,2,12,1], cost=[7,2,8,4,2,2,1,1,2], k=7 -> 985. Cross-checked directly: sum A*segC=705, k*B[n]=203, cut penalties k*(8+3)=77, total 985. Correct.
+- **Edge case n=1:** answer = `nums[0]*cost[0] + k*cost[0] = (nums[0]+k)*cost[0]`, matching the single-segment direct formula.

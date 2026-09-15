@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete solution with Fenwick initial inversion count, grouped positions, wrap updates, and output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and edge cases such as N=1, M=1, all equal values, many simultaneous wraps, and maximum inversion count.",
+    "status": "done",
+    "result": ""
+  }
+]

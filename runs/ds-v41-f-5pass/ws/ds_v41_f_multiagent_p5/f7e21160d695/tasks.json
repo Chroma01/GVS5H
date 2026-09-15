@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the full solution: sort edges by weight, use DSU where each component carries unmatched A-count and B-count, and on each merge match as many opposite-color pairs as possible at the current edge weight, accumulating min(totalA,totalB)*w into the answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate on Sample 1 (expect 8) and Sample 2 (expect 3), plus brute-force cross-check on small random graphs with duplicate A/B labels and equal edge weights.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm the greedy bottom-up surplus-matching approach is the correct algorithm (f is the minimax bottleneck = Kruskal merge weight; matching inside cheaper clusters is optimal by the exchange/dual argument).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Guard implementation details: iterative DSU (no recursion), 64-bit integer sums, correct handling of edges within already-connected components.",
+    "status": "done",
+    "result": ""
+  }
+]

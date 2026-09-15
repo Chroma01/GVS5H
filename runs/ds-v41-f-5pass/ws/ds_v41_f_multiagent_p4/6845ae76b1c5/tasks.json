@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement block decomposition: parse input, choose block size S, build sorted blocks for A and B, precompute cumE/cumD prefix tables",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Process each query using base (cumE + cumD gathers) plus per-query partial\u00d7partial cross term",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle numpy primary path with pure-Python bisect fallback",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Output answers in query order",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify against sample inputs (both samples passed)",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,10 @@
+- **Marginal-cost view:** Buying k units of product i costs `P_i * k^2`, equal to the sum of marginal costs `P_i, 3P_i, 5P_i, ...`. An optimal purchase is a prefix of the multiset of all marginal costs.
+- **Threshold cost S(t):** For threshold t, product i contributes `c_i = ((t // P_i) + 1) // 2` units and cost `P_i * c_i^2`. `S(t)` is monotone nondecreasing.
+- **Binary search target:** Find the largest integer t with `S(t) <= M`. Then all marginal costs <= t are affordable. Since `S(t+1) > M`, `t+1` is the next marginal cost among usable products.
+- **Extra units:** Let U and C be units/cost at t. Because `S(t+1) > M`, the remaining budget `M-C` is smaller than `(number of marginal costs equal to t+1) * (t+1)`. Therefore `floor((M-C)/(t+1))` extra units can be bought, all at cost `t+1`.
+- **Filtering:** Products with `P_i > M` can never be bought and are removed. If none remain, answer is 0.
+- **Upper bound:** With `p = min usable P`, let `k = isqrt(M // p)`. At `hi = p * (2k + 1) + 1`, the cheapest product alone has `k+1` units and cost `p * (k+1)^2 > M`, so `S(hi) > M`.
+- **Implementation optimization:** Equal P values are compressed. For fixed t, values of P with the same `q = t // P` have the same `c`. Prefix sums of `P*count` and `count`, plus bisect, jump over each quotient block. This avoids scanning all N in many checks and handles duplicates efficiently.
+- **Complexity:** Sorting is `O(N log N)`. Binary search uses `O(log M)` checks. Each check scans quotient blocks; block count is usually far below N, and budget overflow stops early. Memory is `O(U)` for unique values.
+- **Edge cases:** t can be 0 when even all first marginal costs exceed M (e.g., many P=1 and small M); formula uses next cost 1. Gaps in marginal costs are handled because t becomes next marginal cost minus 1. Ties at `t+1` are safe due `S(t+1) > M`. All arithmetic is exact integer arithmetic.
+- **Samples:** The implemented program produces sample outputs 3 and 53; sample tests passed.

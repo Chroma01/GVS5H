@@ -1,0 +1,9 @@
+- **Model:** Only the 26 letter frequencies matter. A final good string has some positive integer T such that every remaining letter occurs exactly T times; every other letter occurs 0 times. T=0 is the empty string, cost n, and is never better, but it is harmless to include.
+- **Base cost:** For chosen final counts c_i, if letters were independent the cost is sum |freq_i - c_i|, since each surplus is deleted and each deficit is inserted.
+- **Adjacent saving:** Changing a surplus character from letter i to letter i+1 replaces delete+insert cost 2 by change cost 1, saving 1. Moving a character distance >= 2 costs at least 2, tying delete+insert, so only adjacent forward shifts matter.
+- **No conflict between shifts:** For fixed c_i, letter i is either surplus (freq_i > c_i), deficit (freq_i < c_i), or neutral. It cannot both send to i+1 and receive from i-1. Therefore edge savings are independent: save min(surplus_i, deficit_{i+1}) on edge i to i+1.
+- **DP over letters:** For each T, scan letters 'a' to 'z'. State is current letter's final count: 0 or T. Transition from previous letter p to current c adds base(c) and subtracts min(surplus(p), deficit(c)). Initialize at 'a' with its base cost for state 0 or T.
+- **T range:** Only T from 1 to max(freq) needs checking. If T > max(freq), every kept letter has a deficit, and decreasing T by 1 strictly lowers the total cost. T=0 is handled as initial answer n.
+- **Examples:** "acab" gives 1 with T=1 by deleting one 'a'. "wddw" gives 0 with T=2. "aaabc" gives 2 with T=2 by changing one 'a' to 'b' and inserting one 'c'.
+- **Complexity:** O(26 * max_freq) time, which is at most about 5.2e5 letter iterations for n <= 2e4, and O(1) extra space.
+- **Edge cases:** 'z' cannot advance, so no wrap-around edges are modeled. Letters with frequency 0 may be either kept by insertion or left absent.

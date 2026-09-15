@@ -1,0 +1,9 @@
+- **Problem model:** Choose a column-flip mask c in {0,1}^W. After it, row m becomes m xor c; the row can then be flipped or not, so its best contribution is g(m xor c) = min(popcount(m xor c), W - popcount(m xor c)). Total = sum over rows of g(m_i xor c); minimize over all c.
+- **Aggregation:** Huge H but W <= 18, so aggregate identical row masks into frequency array F over 2^W masks (each built via int(s,2)).
+- **Core identity:** The objective is exactly the XOR convolution (F *xor* G)[c] where G[t] = g(t) depends only on popcount. Answer = min over all 2^W masks of this convolution.
+- **Algorithm:** Fast Walsh-Hadamard Transform in O(W * 2^W). Transform F and G, multiply pointwise, inverse-transform (apply FWHT again and divide by 2^W). Take the minimum. This avoids the O(H * 2^W) and O(4^W) traps.
+- **FWHT detail:** Unnormalized FWHT satisfies T^2 = N*I, so inverse = same transform / N. Butterfly level h: for each block of size 2h, out[:h] = x+y, out[h:] = x-y.
+- **Integer safety:** Max transformed F <= H = 2e5; max transformed G <= sum G ~ 1.2e6; pointwise product ~ 2.4e11; second transform sums to ~ 6e16, well within int64 (9.2e18). Final values are small (<= H*W).
+- **Implementation:** Primary path uses numpy with the reshape-level butterfly (only log2(n)=18 Python-level steps, fully vectorized). A pure-Python fallback runs if numpy is unavailable.
+- **Verified:** Sample 1 -> 2, Sample 2 -> 0, Sample 3 -> 13. Edge cases W=1, all-zero (0), all-one (0), H=1 all handled naturally.
+- **Why not alternatives:** Gray-code incremental updates still cost O(4^W). Meet-in-the-middle / distance histograms add bookkeeping with no asymptotic gain over one transform. Graph-cut/min-cut fails because pairwise terms flip between sub- and supermodular depending on bits, so no single global min-cut applies.

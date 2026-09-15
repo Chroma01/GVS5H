@@ -1,0 +1,10 @@
+- **Problem restated:** simulate M signed axis-aligned moves from (Sx,Sy); count distinct houses lying on any traversed segment (inclusive endpoints); output final point and count.
+- **Key observation:** a house (X,Y) is passed iff it lies on some horizontal segment with that y and x within, or some vertical segment with that x and y within. Order is irrelevant to the final set of visited houses, so an offline approach works.
+- **Chosen approach (offline interval union):** while simulating, record horizontal segments `rows[y] -> (x_lo,x_hi)` and vertical segments `cols[x] -> (y_lo,y_hi)`. Merge overlapping/touching intervals per key. For each house, membership-test its merged row intervals against X and its merged column intervals against Y.
+- **Why it works / complexity:** merging makes each key's interval list sorted and disjoint, enabling `bisect_right(starts, v) - 1` + endpoint check in O(log). Total O((N+M) log(N+M)); Python big ints avoid 32-bit overflow.
+- **Merging rule:** sort by left endpoint; merge when `l <= cr` (overlap or touch, e.g. [1,2] and [2,3] share point 2). Keep [1,2] and [3,4] separate since the union misses points in between.
+- **Direction mapping:** U/D are vertical at constant x (segments `(cy, cy±c)`), L/R are horizontal at constant y (segments `(cx±c, cx)`). Update the running position after recording each segment.
+- **Endpoint inclusivity:** use non-strict comparisons (`merged[i][1] >= v`) so houses exactly at a segment end count.
+- **Edge cases handled:** overlapping/repeated moves (merge collapses), many houses on one row/column (binary search over merged intervals), large coordinates (Python ints), no house at start (per constraints, so no special start handling).
+- **Alternative (previous plan):** online dynamic 1D range reporting with cross-deletion also works but is more complex; offline union is simpler and equally fast.
+- **Verified on samples:** sample 1 -> `2 3 2`; sample 2 -> `3000000000 0 0`.

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and prove the minimal-operations formula for a subarray and the monotonicity properties needed for sliding-window counting.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the next-greater binary-lifting approach with a cost query and two-pointer counting over right endpoints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle equal values correctly in the next-greater chain and prefix-maximum segment cost calculations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle large sums safely and ensure the algorithm runs in near-linear or O(n log n) time for n = 10^5.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run sample tests and random brute-force validation, including edge cases; fix any failures.",
+    "status": "done",
+    "result": ""
+  }
+]

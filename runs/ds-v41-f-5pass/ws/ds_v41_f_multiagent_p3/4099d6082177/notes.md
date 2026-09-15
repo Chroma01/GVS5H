@@ -1,0 +1,14 @@
+- **Problem:** Partition all NK vertices of a tree into N vertex-disjoint simple paths, each with exactly K vertices (the N×K matrix lists K vertices per path). K=1 -> always Yes.
+- **Core insight (uniqueness):** Root at vertex 1. In ANY valid decomposition, the path containing a non-root v, restricted to subtree T_v, is a single segment with t vertices, 1<=t<=K. All other segments inside T_v are complete (size K). Hence t = size(T_v) mod K, where residue 0 means t=K (v closes and does NOT connect to parent). So edge (v,parent) is selected iff subtree_size(v) % K != 0. The decomposition is forced; there are no alternative choices.
+- **Residue meaning:** For a non-root v, r(v) = subtree_size(v) % K equals the size of the open fragment ending at v (wanting to reach parent), when r(v) != 0; r(v) == 0 means v is a closed endpoint.
+- **Local conditions:** For each vertex, let cnt = number of children c with r(c) != 0 (open fragments). Each open fragment must attach at v (unless closed exactly). Degree <= 2 in the chosen subgraph.
+  - cnt > 2 -> impossible.
+  - cnt == 2 -> v must join both (degree 2, no parent edge); requires r(c1)+r(c2) = K-1 (then r(v) = 0, consistent). If sum != K-1, r(v) != 0 and degree would be 3 -> No.
+  - cnt <= 1 -> always locally fine. If cnt == 1 and r(c1)=K-1, v closes it (r(v)=0); otherwise v extends it upward (r(v)=r(c1)+1). Both consistent with computed r(v); no extra check needed.
+  - cnt == 0 -> non-root: r(v)=1, v connects upward (fragment size 1), fine.
+- **Root special case:** r(root) = NK % K = 0 always, so the root must close a fragment. Require cnt != 0 (K>1). cnt==1 needs residue K-1 (automatic since r(root)=0). cnt==2 handled by the general sum rule. cnt==0 with K>1 -> No.
+- **Why residues can't "wrap":** r(c) in [1,K-1]; r1+r2 in [2,2K-2]. r1+r2 ≡ K-1 (mod K) forces exactly r1+r2 = K-1. Similarly for a cnt==1 child, r(v)=0 forces r(c1)=K-1 (since 1+r(c1) in [2,K]). So no modular edge cases.
+- **Correctness argument:** By induction, every subtree decomposes into complete size-K paths plus at most one open fragment of size r(v). The local conditions are exactly what is needed to merge child fragments at v; if all hold, a valid global decomposition exists. Conversely any valid decomposition induces these forced residues, so the checks are necessary.
+- **Complexity:** O(NK) time and memory; iterative DFS avoids recursion depth issues at 2e5.
+- **Verification:** Sample 1 Yes, Sample 2 No (vertex 2 has two open children with residues 1+1 != K-1=1). Path of K vertices rooted at an end -> Yes; star with 3 leaves K=2 -> No (cnt=3).
+- **Edge cases:** NK=1 (N=K=1) -> K=1 -> Yes. N=1 with K>1 -> whole tree must be a single path; algorithm enforces via the root/stub conditions.

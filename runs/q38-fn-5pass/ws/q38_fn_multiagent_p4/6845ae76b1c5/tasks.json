@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete; selected offline block-sweep approach instead of the previous sqrt-decomposition plan.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution using offline block-sweep (dynamic block size, A/B sweeps, partial-partial handler).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on samples and edge cases (N=1, exact block boundaries, zero remainders, large values), tune block size/thresholds, and ensure final output is written to stdout.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,9 @@
+- **Model:** BFS from vertex 1 gives unique layers `l0=1, l1, ..., ld`. All edges are either inside a layer or between consecutive layers. Every vertex in layer `i>0` must have at least one edge to layer `i-1`. This guarantees connectivity and exact BFS distances.
+- **Parity condition:** Even-index layers (including layer 0) must sum to `N/2`; odd-index layers must sum to `N/2`.
+- **Edge polynomial for a layer:** For a new layer of size `b` attached to previous layer of size `a`, the factor is `((1+x)^a - 1)^b * (1+x)^{C(b,2)}`. The first term counts nonempty attachments, the second counts internal edges.
+- **Label weight:** Vertex 1 is fixed. Remaining `N-1` labels are assigned to layers. The total multinomial factor is `(N-1)! / prod_{i>=1} l_i!`. During DP we multiply by `1/b!` for each new layer, and multiply by `(N-1)!` at the end.
+- **Key transform:** Let `z = 1+x`. The layer factor becomes `(z^a - 1)^b * z^{C(b,2)}`. Expanding yields `sum_{j=0}^b (-1)^{b-j} C(b,j) z^{a j + C(b,2)}`. This turns polynomial multiplication into a sum of shifts in the exponent of `z`.
+- **DP state:** `(even_used, odd_used, last_layer_size)` stores a polynomial in `z` truncated to degree `C(N,2)`. Transitions add a new layer of opposite parity, multiplying by the expanded factor and `1/b!`. Terminal states have `even_used = odd_used = N/2` and are accumulated into a final array `W[K]` (sum of weights for exponent `K`).
+- **Final extraction:** The answer for edge count `M` is `(N-1)! * sum_K W[K] * C(K, M) mod P`. Precompute binomial coefficients up to `C(N,2)` using factorials (safe since `P > 435`).
+- **Complexity:** At most `N` layers. State count is bounded by `O(N^3)` per layer (roughly `(N/2)^3`). Polynomial operations are shifts, and total work is well within limits for `N <= 30`.
+- **Edge cases:** `N=2` works (one layer of size 1). `P` is prime and `> 30`, so factorials and inverses are well-defined. Output range starts at `N-1` edges, as required.

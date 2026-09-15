@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive closed-form correction rules for p=2 and p>2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Produce a complete, concise Python program implementing the closed form for all cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and small brute-force verifications; fix bugs or optimize if needed.",
+    "status": "done",
+    "result": ""
+  }
+]

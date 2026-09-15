@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: use complement reduction r = min(K, N-K) and enumerate at most 10^6 subsets.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement fast input parsing, total_xor computation, and r = min(K, N-K) mode selection.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle edge cases cleanly: r = 0 (answer total_xor), r = 1 (max(A) if K == 1, else max(total_xor ^ a)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement general r-combination enumeration with direct or incremental XOR and update the best answer for chosen/excluded mode.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify correctness and performance on samples and edge cases: K = N, K = 1, K = N-1, duplicates, and maximum allowed number of combinations.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,9 @@
+- **Reduction:** A 400 number is exactly N = M^2 where M has exactly two distinct prime factors. Even positive exponents in N mean N is a perfect square; the distinct primes of N are exactly those of M, and M must contain both. Conversely, any such M yields a 400 number.
+- **Search space:** For A ≤ 10^12, M = sqrt(N) ≤ 10^6. Precompute all valid M up to 10^6.
+- **Computing omega(M):** Number of distinct prime factors. Additive sieve: for i in 2..MAX, if omega[i]==0 then i is prime; add 1 to all multiples j of i. This counts distinct primes because each prime is processed once and never again. Complexity ~ n log log n (≈3e6 increments for 10^6).
+- **Predecessor array:** Build pref[i] = largest M ≤ i with omega[M]==2. Since A≥36, m=isqrt(A)≥6, and smallest valid M=6 (2×3), so pref[m]≥6 always. Query answer = pref[isqrt(A)]^2.
+- **Integer sqrt:** Use math.isqrt for exactness; avoids floating-point off-by-one. For A≤10^12, m≤10^6.
+- **Fast I/O:** Read all input with sys.stdin.buffer.read().split(); parse Q and queries; output joined by '\n' with trailing newline.
+- **Edge cases verified:** 404→m=20, pref=20 → 400; 36→m=6 → 36; 60→m=7, pref=6 → 36; 10^12→m=10^6 (10^6=2^6·5^6, omega=2) → 10^12; 123456789→m=11111=41·271 → 11111^2=123454321.
+- **Sieve correctness:** At i=4, omega[4] already incremented at i=2, so it is skipped; primes are exactly indices with omega[i]==0 when reached.
+- **Complexity:** Precomputation O(MAX log log MAX), queries O(Q). Memory ~ two lists of 10^6+1 small ints (~16 MB), well within limits.

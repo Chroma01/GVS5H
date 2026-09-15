@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the moving anti-diagonal frontier solution with padded arrays, optional transpose, precomputed diagonals, full initial DP, and correct query update order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle zero weights and start/end cells via border-one trick (no division), and verify boundary cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test on provided samples plus edge cases: zero values, updating start/end, thin grids, oscillating walks, and maximum square-ish grid.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize hot loops if needed (local variable bindings, precomputed diagonal lists, minimal modulo operations) and profile worst-case performance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If the frontier approach is too slow in Python, evaluate an alternative block/transfer-matrix method, but only after measuring the frontier implementation.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement `steps(x)` and `prefix_steps(n)` using precomputed powers of 4 and bucket counts.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "For each query `[l, r]`, compute `total_steps = prefix_steps(r) - prefix_steps(l - 1)` and `max_step = steps(r)`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute the query answer as `max(max_step, (total_steps + 1) // 2)` and accumulate it into the final result.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate the formula on the provided examples and edge cases such as ranges crossing powers of 4, odd total steps, and maximum-value ranges.",
+    "status": "done",
+    "result": ""
+  }
+]

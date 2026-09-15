@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse H, W and grid rows; convert each row string to an integer bitmask and build freq array of size 1<<W.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build cost array cost[mask]=min(popcount(mask), W-popcount(mask)) for all masks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement integer Fast Walsh-Hadamard Transform for XOR convolution (forward transform, pointwise multiply, inverse transform divided by 1<<W).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute convolution of freq and cost, take minimum over all column-flip masks, and output answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify edge cases: H=1, W=1, all-zero rows, all-one rows, and compare with brute force on small random cases if needed.",
+    "status": "done",
+    "result": ""
+  }
+]

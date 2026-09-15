@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce problem to finding LCS of two required-operation sequences (red and blue), with answer = len(R)+len(B)-LCS(R,B).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement feasibility check: find P-cycle containing X and Q-cycle containing X; return -1 if any A_i=1 outside P-cycle or any B_i=1 outside Q-cycle.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute M_R = max distance along P to X over all i with A_i=1; compute M_B similarly along Q.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Build sequence R: start at X, repeatedly apply invP to get v_1, v_2, ..., v_{M_R}, then reverse to get farthest-to-nearest order. Build B analogously with invQ.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute LCS length of R and B in O(N log N): map each element of R to its index, filter B to those present, compute LIS of the resulting index list.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Output len(R)+len(B)-LCS (0 if both empty); ensure X itself is never operated and balls at X are ignored.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Test against all four samples and edge cases (no balls, fixed points, disconnected cycles) \u2014 all 4 samples passed.",
+    "status": "done",
+    "result": ""
+  }
+]

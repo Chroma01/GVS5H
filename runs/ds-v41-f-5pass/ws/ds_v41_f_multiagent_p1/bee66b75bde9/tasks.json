@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, M and all known cell constraints, preserving N\u2019s large bound without expanding the grid.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Group constraints by row, computing for each constrained row L = max black y and R = min white y \u2212 1 (defaults L=0, R=N).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Reject immediately if any row has L > R.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Sort constrained rows by row index and scan top-to-bottom, maintaining the minimum R seen so far.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each row, check whether its L \u2264 current minimum R; if not, answer No, otherwise update the minimum and continue.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If all rows pass, output Yes; otherwise output No, and verify against all sample cases.",
+    "status": "done",
+    "result": ""
+  }
+]

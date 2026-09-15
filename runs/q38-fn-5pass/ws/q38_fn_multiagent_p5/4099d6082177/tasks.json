@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the complete Python solution using the root-free incident-component remainder check.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle K==1 immediately as Yes and compute subtree remainders modulo K with iterative DFS.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive directed edge remainders and require every vertex to have one or two nonzero incident remainders summing to K-1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate the implementation on the public samples and relevant edge cases.",
+    "status": "done",
+    "result": ""
+  }
+]

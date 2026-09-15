@@ -1,0 +1,6 @@
+- **Core reduction:** Only the positions of the `1`s matter. If the `1`s are at sorted positions `p[0] < p[1] < ... < p[k-1]`, then after making them contiguous they must occupy some consecutive block `x, x+1, ..., x+k-1`, preserving their relative order.
+- **Cost formula:** For a fixed block start `x`, the minimum adjacent swaps needed is `sum_i |p[i] - (x + i)|`. This is equivalent to `sum_i |(p[i] - i) - x|`.
+- **Median solution:** Define `a[i] = p[i] - i`. The optimal `x` is any median of `a`. Since `p[i]` is strictly increasing by at least 1, `a[i]` is nondecreasing, so `a[k // 2]` is a valid median.
+- **Validity of median:** With 0-based indexing, `a[0] >= 0` and `a[k-1] <= N-k`, so the chosen median automatically gives a block start inside the valid range.
+- **Implementation details:** Iterate over the input bytes, collect `i - len(adjusted)` for each `1`, then sum absolute deviations from the median. Python integers handle the potentially large answer.
+- **Complexity:** Time `O(N)`, memory `O(K)` where `K` is the number of `1`s, at most `N`.

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Establish the reduction from the movement problem to maximum-bottleneck path queries and derive the answer formula from the bottleneck height.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the full Python solution using the Kruskal reconstruction tree approach: map grid cells to ids, generate adjacent edges with weight min(heights), sort edges descending, build the reconstruction tree with DSU, preprocess LCA iteratively with binary lifting, and answer each query using the bottleneck formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate edge cases such as single-cell grids, same-cell queries with different floors, and bottlenecks below or above the smaller query floor, while checking time and memory limits.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm that the Kruskal reconstruction tree implementation passes the public sample tests; alternative approaches are not needed.",
+    "status": "done",
+    "result": ""
+  }
+]

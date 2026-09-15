@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate a viable approach and identify adjacent conversion savings as the key DP state.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete solution in the starter code using a target-frequency DP over the 26 letters: compute frequencies, evaluate every target frequency f from 1 to max(cnt), and for each f use a small DP over letters where each letter is either kept with frequency f or removed, accounting for delete/insert baseline costs and adjacent conversion savings.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation against the provided examples and edge cases such as already-good strings, all-same-letter strings, and strings where only one or a few letters should remain.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm that the DP model is exact and that no fallback min-cost flow / bipartite matching formulation is needed.",
+    "status": "done",
+    "result": ""
+  }
+]

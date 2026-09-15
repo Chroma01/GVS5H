@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement row-wise lazy DP with cursor invariants, transposition, initial full forward/backward DP, per-query partial row recomputation, and delta answer maintenance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle edge cases: start/end cells, zero values, modulo arithmetic, transposed direction remapping, and cursor boundary guarantees.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate against samples and random small brute-force tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize hot paths for Python: flat arrays, local bindings, minimal modulo operations, skip unchanged values, and consider periodic full rebuild if needed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If performance is insufficient, evaluate fallback approaches (time-block decomposition or dirty propagation) rather than polishing the same implementation.",
+    "status": "done",
+    "result": ""
+  }
+]

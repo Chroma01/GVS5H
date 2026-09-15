@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the per-element cost formula c(x) = floor(log_4 x) + 1 and the per-query formula max((S+1)//2, c(r)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement minOperations via base-4 block iteration for S, plus mc=c(r), returning sum of max((S+1)//2, mc) with 64-bit arithmetic.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build a brute-force simulator (greedy/max-heap) to validate the formula max((S+1)//2, c(r)) on all small ranges and both provided examples (3 and 4 confirmed, zero mismatches).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm edge cases: l=1, ranges crossing powers of 4, single-element-dominant ranges, and r near 1e9 (15 blocks cover up to 1e9).",
+    "status": "done",
+    "result": ""
+  }
+]

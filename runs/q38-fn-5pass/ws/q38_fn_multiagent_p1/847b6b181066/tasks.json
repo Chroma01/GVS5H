@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the online prefix-displacement set solution using coordinate tuples and a Python set.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify correctness on the provided samples and edge cases such as negative coordinates, unreachable targets, and long uniform wind strings.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If tuple hashing is too slow, implement an integer-encoded coordinate set with a safe base and bounds checking.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If the online set approach has subtle correctness issues, implement the two-pass first-occurrence dictionary approach as a fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

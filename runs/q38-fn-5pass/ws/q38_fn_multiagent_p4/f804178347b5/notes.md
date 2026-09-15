@@ -1,0 +1,14 @@
+- Problem model: The repeated majority operation forms a complete ternary tree. Leaves are the input bits, internal nodes take the majority of their three children, and the root is the final bit.
+- Key state: For each node, store only two pieces of information: its actual value `v` and `flip`, the minimum number of leaf changes in its subtree needed to make this node output `1 - v`.
+- Leaf initialization: A leaf already has its actual bit, and changing it costs 1. Pack as `(flip << 1) | v`, so bit `0` becomes `2` and bit `1` becomes `3`.
+- Internal node combination: Let child actual values be `v0, v1, v2` and child flip costs be `f0, f1, f2`. The parent actual value is the majority, computed as `(v0 + v1 + v2) >> 1`.
+- To flip the parent, the target value is `1 - parent_value`. A child whose actual value already equals the target costs `0`; a child whose actual value equals the parent value costs its `flip` value.
+- Since the parent needs at least two children to output the target, choose the two smallest of the three child costs. With three nonnegative numbers, the sum of the two smallest is `total - maximum`.
+- This one-cost DP is sufficient because each child only ever needs to be either left unchanged or flipped to its opposite. Flipping a child that is already the target is never useful, and subtrees are independent.
+- The answer is simply the root's stored `flip` cost, because it is exactly the minimum changes needed to make the root output the opposite of its original value.
+- Implementation uses iterative level-by-level processing, avoiding recursion and full tree storage. Each level replaces three packed child values by one packed parent value.
+- Input parsing reads all bytes, parses `N`, then removes whitespace from the remaining bytes. A fallback filters only ASCII `0` and `1` if the translated length is unexpected, making the parser robust to both contiguous strings and space-separated characters.
+- Complexity is linear in the input size: `O(3^N)` time and `O(3^N)` peak memory for the current level. For `N <= 13`, the leaf count is about `1.59` million, which is feasible.
+- Flip costs are at most `2^N <= 8192`, so packed Python integers remain small. The low bit stores the actual value and the remaining bits store the flip cost.
+- Edge cases covered: `N = 1`, all bits equal, mixed bits, contiguous input, whitespace-separated input, and root actual value either `0` or `1`.
+- The earlier two-cost DP is superseded by this one-cost formulation, which is simpler and faster while preserving correctness.

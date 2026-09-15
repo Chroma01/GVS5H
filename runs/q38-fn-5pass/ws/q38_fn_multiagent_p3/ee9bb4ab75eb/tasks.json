@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the trie plus per-depth predicate plus binary search solution in the provided starter code.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build trie with prefix counts and store each word's trie node id at each depth for path membership queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each depth, compute whether any prefix has count > k and exact-k prefix information capped at two (count and unique node id).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Binary search each word's answer using feasibility predicate: count>k at depth, or at least two exact-k prefixes, or one exact-k prefix not on the word's path.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Handle edge cases in code: n-1 < k, k == 1, duplicate words, words shorter than queried depth, and total length constraints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate the current solution on sample tests and edge cases; if any fail, fix the failing case or switch to the trie active DFS fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

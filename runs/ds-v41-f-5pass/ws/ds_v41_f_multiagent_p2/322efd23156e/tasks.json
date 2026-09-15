@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full solution: group by vitamin, per-vitamin at-most 0/1 knapsack over calories 0..X (descending loop, zeros init, prefix-max for monotonicity), binary search M, check sum of minimal per-vitamin calorie costs <= X, output largest feasible M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Test the program on sample 1 (expect 3) and sample 2 (expect 0); both passed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Analyze edge cases (empty vitamin group, answer 0) and complexity: O(N*X) DP plus O(log UB) search with monotone bisect \u2014 correct and within intended bounds.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Micro-optimize the DP inner loop (local variable binding, in-place descending update, cheap `if` form) which is the practical fast path in CPython.",
+    "status": "done",
+    "result": ""
+  }
+]

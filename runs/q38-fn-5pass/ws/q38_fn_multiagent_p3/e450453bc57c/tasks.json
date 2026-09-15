@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select Fenwick tree sliding-window median cost plus interval DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Fenwick tree count/sum structures over compressed `nums` to maintain the sliding window and query median absolute-deviation cost in `O(log n)`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Generate the full `cost` array where `cost[i]` is the minimum operations needed to make `nums[i:i+x]` all equal.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement DP over window starts to select `k` non-overlapping windows using the previous DP layer at `i - x` and prefix-min style transitions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Integrate the cost computation and DP into `Solution.minOperations`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run the provided sample tests and a small random brute-force validator against the current implementation; if any test fails, identify the failing case and fix the median cost or DP indexing.",
+    "status": "done",
+    "result": ""
+  }
+]

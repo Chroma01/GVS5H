@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Coordinate-compress nums and slide left/right frequency arrays over the middle index (O(n\u00b7m)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Accumulate f=5,4,3 cases via binomial products (always valid since x's count strictly beats any other).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement f=2 correction via Sp,Sq,T1,T2,T3 over v!=x, giving Lx*A + Rx*B (verified derivation: excludes coincident non-x values).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify by execution: examples (6,4,0), randomized brute-force cross-check n \u2264 9, and n=1000 all-equal stress producing C(1000,5) mod 1e9+7.",
+    "status": "done",
+    "result": ""
+  }
+]

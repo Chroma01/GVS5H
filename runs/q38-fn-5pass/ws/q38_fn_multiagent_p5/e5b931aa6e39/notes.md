@@ -1,0 +1,6 @@
+- **Core reduction:** Let d = x - y. Then x = y + d and N = d(3y^2 + 3dy + d^2). Since y is positive, the second factor is larger than d^2, so N > d^3. Hence only d with d^3 < N need be tested; for N <= 10^18 this is at most 999999.
+- **Quadratic recovery:** For a candidate d, d must divide N. Put M = N // d. Need 3y^2 + 3dy + d^2 = M. Its discriminant is D = 12M - 3d^2. If D = s^2, s > 3d, and (s - 3d) is divisible by 6, then y = (s - 3d) // 6 and x = y + d. A final exact check of x^3 - y^3 == N guards against any arithmetic slip.
+- **Exact integer arithmetic:** The implementation uses math.isqrt for square-root checks and a binary search for the largest d with d^3 < N. No floating-point cube roots or square roots are used.
+- **Complexity:** The scan is O(cuberoot(N)) modulo operations, at most about 1e6. isqrt is called only for divisors d, so total time is easily within limits and memory is O(1).
+- **Edge cases:** N = 1 gives no candidate d. Perfect cubes with y = 0 are excluded by the strict d^3 < N condition. Positive y is enforced by requiring s > 3d; divisibility by 6 enforces integrality. D is nonnegative for all scanned divisors, but a guard is harmless.
+- **Superseded ideas:** Factoring N, modular filters, Eisenstein-integer methods, and binary searching over y are unnecessary for these constraints.

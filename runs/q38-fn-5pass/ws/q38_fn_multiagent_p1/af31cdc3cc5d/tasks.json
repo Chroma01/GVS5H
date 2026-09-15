@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: prove that an even interval\u2019s optimum equals sum of its largest half minus sum of its smallest half, and that for odd N the unmatched survivor must be at an odd 1-based position.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with two-heap prefix/suffix computation and stdin/stdout handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test the solution on the provided samples and edge cases (N=2, all equal, odd/even extremes) and optionally against brute force for small N.",
+    "status": "done",
+    "result": ""
+  }
+]

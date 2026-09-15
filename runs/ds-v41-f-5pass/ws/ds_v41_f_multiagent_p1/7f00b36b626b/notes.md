@@ -1,0 +1,11 @@
+- **Key observation:** lcm(a, b) >= max(a, b), so any value greater than threshold cannot have an edge to any node. Each such value is an isolated component.
+- **Only small values matter:** Values <= threshold are at most 2e5. Build the graph/component count only on these.
+- **Edge criterion:** For small a, b, lcm(a, b) <= threshold iff a and b share some common multiple k <= threshold. The lcm itself is the smallest such multiple.
+- **Clique per multiple:** For each k <= threshold, all present small values dividing k form a clique. Unioning them correctly reproduces the connected components.
+- **Streaming representative approach:** Avoid storing explicit buckets. Let rep[m] be the first present small value seen that divides m. Iterate each present small value d and its multiples m = d, 2d, ... <= T. If rep[m] is empty, set it to d; otherwise union(rep[m], d). This connects all present divisors of every m without extra bucket memory.
+- **Large values:** Count values > threshold separately; each contributes one component.
+- **Counting:** After all unions, count small values d with find(d) == d, then add large_count.
+- **Duplicates:** Input guarantees unique values. If duplicates appeared, duplicate small values collapse to one DSU node but remain in the same component, so the component count is unchanged; duplicate large values each remain isolated and must be counted individually.
+- **Complexity:** O(T log T + n α(T)) time and O(T) memory, where T = threshold <= 2e5. Worst-case harmonic sum over present values is about T ln T ~ 2.4e6 iterations.
+- **Implementation details:** Use parent array of size T+1, union by size, iterative find with path compression, presence bytearray, and small_vals list. Use rep array initialized to 0.
+- **Edge cases verified:** Example 1 [2,4,8,3,9], T=5 gives small {2,3,4}, large {8,9}; {2,4} connect through multiple 4, {3} separate => 4. Example 2 T=10 gives all small {2,3,4,8,9} connected through shared multiples, plus large 12 => 2. T=1 with value 1 present unions all small values; without 1 all others are large. If no small values share any multiple <= T, each remains its own root.

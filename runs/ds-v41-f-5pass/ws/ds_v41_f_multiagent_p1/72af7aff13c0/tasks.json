@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the high-level algorithm: maintain forward/backward anti-diagonal DP and update the answer in O(min(H,W)) per query.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement anti-diagonal DP maintenance in both numpy and pure-python paths; multilinear delta update ans += (a-old)*pre*suf.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Randomized stress test both paths against a brute-force enumerator (2500 tests, corners, zeros, repeats) -- ALL MATCH.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Extract the clean SOLUTION_SRC solver (drop the harness/brute-force/random-generator wrapper) so it reads stdin and writes stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run the two provided samples on the clean program and confirm exact expected output (456/666/822 and sample 2's six lines).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Ensure the program does not print debug/harness lines; guard the numpy import and keep the pure-python fallback so it runs even without numpy.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Sanity-check performance bound O(HW + Q*min(H,W)) with min(H,W) <= sqrt(200000) < 450; NP_THRESHOLD=0 selects the fast numpy path when available.",
+    "status": "done",
+    "result": ""
+  }
+]

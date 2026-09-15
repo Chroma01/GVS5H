@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze problem: reverse reconstruction converts dynamic insertion into k-th-empty selection.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Write the full solution: parse N and P, build a Fenwick tree initialized with 1 at every position, implement O(log N) k-th-one selection via binary lifting, iterate i = N down to 1 placing result[P_i-th empty] = i and clearing that slot, then print result[1..N].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test the solution on Sample 1 and Sample 2 by actually running it, confirming outputs \"4 2 3 1\" and \"1 2 3 4 5\"; sample tests PASSED.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verified edge cases (N=1, P_i=1 everywhere) and O(N log N) complexity within constraints.",
+    "status": "done",
+    "result": ""
+  }
+]

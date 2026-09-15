@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the simple rooted DP: branch dp with parent edge included, plus top4 evaluation for the topmost vertex.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the concise iterative DP and verify it on the sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If sample tests fail, debug top4/top3 accumulation, parent/order traversal, and the top degree-1 condition requiring a child branch with dp>1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If the DP still fails, switch to directed-edge rerooting/message-passing.",
+    "status": "done",
+    "result": ""
+  }
+]

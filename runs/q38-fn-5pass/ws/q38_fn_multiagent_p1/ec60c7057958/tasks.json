@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement feasibility check for odd/even counts and return [] when impossible or k exceeds the total valid count.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute capped factorials and define a completion-count helper based on remaining odd/even counts and required next parity.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement greedy lexicographic unranking by maintaining sorted available numbers, trying candidates in increasing order, subtracting counts, and updating parity/remaining counts.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify sample tests and edge cases (n=1, n=2, impossible parity counts, k out of range).",
+    "status": "done",
+    "result": ""
+  }
+]

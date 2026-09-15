@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: choose nxt/C RMQ + binary search approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution using nxt/C RMQ + binary search approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate against sample tests and edge cases (K=0, length 2, duplicates, no valid bottom).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If sparse-table RMQ is too slow/memory, implement segment-tree descent O(log N) per query as fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

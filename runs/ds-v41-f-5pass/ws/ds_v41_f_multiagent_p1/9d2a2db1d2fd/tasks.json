@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse the input grid dimensions, all building floor counts, and the list of queries (fast I/O).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build a Kruskal reconstruction tree: edges between cardinally adjacent cells weighted min(F_u,F_v), sorted descending, DSU merges create internal nodes weighted by the edge weight; leaves carry cell ids.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute the maximum-bottleneck level B = weight of LCA(u,v) on the reconstruction tree (iterative offline Tarjan LCA with array-based adjacency); handle same-cell queries as |Y-Z|.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each query output |Y-Z| when B >= min(Y,Z), else Y+Z-2B; verified on sample (10 and 2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Solution passed all public sample tests, matching expected outputs.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Translate S into its ordered rooted forest (stack parse) and model the operation as reversing a consecutive block of sibling subtrees while applying the recursive flip F to each; show F is an involution preserving the unordered structure.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove reachability: single-subtree flips (k=1) give F, and adjacent siblings A,B can be swapped via block-reverse on [A,B] then flips of each resulting subtree, so all child permutations plus flips are achievable; hence reachable set = all ordered rooted forests with the same underlying unordered forest.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the O(N log N) tree DP: canonical ids via sorted child-id tuples, and v = fact[k]\u00b7\u220finvfact[n_t]\u00b7\u220fv_t^{n_t} mod 998244353 bottom-up, applied to a virtual top-level forest; print the answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate with the provided samples (6 / (())(() -> 2; 2 / () -> 1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm edge cases and complexity (O(N log N), N \u2264 5000) consistent with the accepted solution.",
+    "status": "done",
+    "result": ""
+  }
+]

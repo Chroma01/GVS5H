@@ -1,0 +1,13 @@
+- **Problem:** Count substrings of digit string `s` whose integer value is divisible by its last digit (last digit must be non-zero). Leading zeros allowed; n up to 1e5.
+- **Approach (DP over moduli):** For each modulus `m` in 2..9 keep `cnt[m][r]` = number of substrings ending at the previous index whose value is `r mod m`. This is the core invariant; it stays small (sum 2..9 = 44 counters) and is O(1) space.
+- **Transition:** Processing digit `x`, each old substring becomes `old*10 + x`, so residue `r -> (r*10+x) mod m`; also seed the new length-1 substring with residue `x mod m`. Precomputed transition tables `trans[x][m]` avoid modulo work in the hot loop.
+- **Modulus 1:** Every integer is `0 mod 1`, so `cnt[1][0]` is just the running total of substrings ending at the previous index; updated as `cnt[1][0]+1` in O(1), no table.
+- **Counting:** After updating at index `i`, if `x>0` add `new_cnt[x][0]` (substrings ending at `i` divisible by the last digit `x`); if `x==0` add nothing but still update state for future extensions.
+- **Leading zeros:** Handled naturally because residues reflect true numeric value, e.g. `"0"` is `0 mod m`, extending by `1` yields `(0*10+1)=1`, correctly modeling `"01"`.
+- **Complexity:** O(n * sum_{m=2..9} m) = O(42n) time, O(1) extra space (44 counters). For n=1e5 about 4.2M inner steps; comfortably fast and memory-light.
+- **Pitfalls handled:** never count endings on `'0'` but still evolve state; include the single-character substring; do not strip leading zeros; use Python big ints for the answer (can exceed 2^31).
+- **sample tests verdict:** PASS — all provided and edge cases match exactly. Observed vs expected: `"12936"` 11 vs 11; `"5701283"` 18 vs 18; `"1010101010"` 25 vs 25; `"0"` 0 vs 0; `"1"` 1 vs 1; `"01"` 2 vs 2; `"00"` 0 vs 0; `"10"` 1 vs 1; `"202"` 4 vs 4.
+- **Random cross-check:** brute force (accumulate value leftward, test `% d`) vs DP over 3000 random strings of length 1..12: PASS, zero mismatches.
+- **Timing:** n=100000 random string runs in roughly one second in CPython; well within typical limits.
+- **Implementation notes:** final program is self-contained; `Solution.countSubstrings` is the graded entry point, and the `__main__` guard only runs the sample/brute/timing harness when executed directly (importing the class is unaffected).
+- **Hand-verification of examples:** `"12936"` accumulates per-end counts 1,2,1,3,4 = 11; `"5701283"` accumulates 1,1,0,4,5,5,2 = 18; `"1010101010"` only `'1'` endings count, 1+3+5+7+9 = 25.

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Read N and the sorted list A from standard input.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a feasibility function `can_make(K)` that checks whether `2 * A[i] <= A[N - K + i]` for all `i = 0..K-1`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Binary search the maximum K in the range `[0, N//2]` using the feasibility function.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Print the maximum feasible K to standard output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify the implementation against the provided sample cases.",
+    "status": "done",
+    "result": ""
+  }
+]

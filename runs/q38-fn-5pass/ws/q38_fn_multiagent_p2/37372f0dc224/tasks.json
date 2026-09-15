@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Read S from stdin and strip whitespace/newline.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build T = reverse(S) + '#' + S using a separator that cannot appear in S.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute the KMP prefix function for T in linear time.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Let k = pi[-1]; this is the longest suffix of S that equals a prefix of reverse(S), i.e. the longest palindromic suffix length.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Output S + reverse(S[:n-k]), where n = len(S).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify correctness on edge cases: single character, already palindrome, and no palindromic suffix longer than 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify solution passes public sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

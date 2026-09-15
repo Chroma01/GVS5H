@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Simulate all moves to record horizontal segments grouped by y and vertical segments grouped by x, updating Santa's final coordinate.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Group segments by row/column and merge overlapping/touching intervals (inclusive endpoints) into sorted lists per coordinate.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each house, binary-search merged horizontal intervals for its y or vertical intervals for its x to test coverage; count distinct covered houses.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Print final X, Y, and the count.",
+    "status": "done",
+    "result": ""
+  }
+]

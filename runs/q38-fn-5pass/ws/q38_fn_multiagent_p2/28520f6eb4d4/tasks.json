@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: derive visibility monotonicity and answer as maximum nonnegative breakpoint / maximum pair intercept.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement exact monotone upper-envelope CHT algorithm.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Fix output formatting: print `-1` exactly when no non-negative blocking height exists; otherwise print the best fraction as a float with exactly 18 digits after the decimal point.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Re-run all sample tests and edge cases: N=1, all visible at 0 -> -1, equality at 0 -> 0, negative breakpoints ignored, strict inequality, large integer exact comparisons, output format.",
+    "status": "done",
+    "result": ""
+  }
+]

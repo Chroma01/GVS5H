@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and reduction to stable intervals with prefix sums and transformed boundary conditions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement prefix sums P, transformed array C, sentinel handling, and R_i computation by binary search on P.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement iterative segment tree over C supporting leftmost/rightmost index with value >= threshold.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement serviceR computation, DSU descending assignment, and answer queries (initial version).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Fix off-by-one in serviceR computation (`p = find_last(R, th)` instead of `p - 1`) and verify sample 2 K=7.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Re-test samples and edge cases (N=2, all equal, strictly increasing/decreasing, sentinel-only intervals).",
+    "status": "done",
+    "result": ""
+  }
+]

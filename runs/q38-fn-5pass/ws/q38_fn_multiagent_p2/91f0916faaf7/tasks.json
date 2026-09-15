@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and approach selection: prime-wise exponent DP with seen-zero flag.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete solution: factor A_i, build per-prime exponent sequences, precompute powers, run two-state height DP for each prime, multiply results modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate against samples and edge cases (all A_i=1, N=2, repeated zero-difference steps, large exponent sums).",
+    "status": "done",
+    "result": ""
+  }
+]

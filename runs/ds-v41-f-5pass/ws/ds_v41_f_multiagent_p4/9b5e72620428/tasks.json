@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the fixed-S feasibility condition: S >= L = max(max known A, max known B); matched = sum_a min(cntA[a], cntB[S-a]); feasible iff matched >= p - u where p = #known B and u = #A_i=-1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm equivalence of the \"shortage\" and \"matched count\" formulations, and that uncovered known A automatically fit into unknown-B slots under the same condition.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Establish that if u >= p the answer is immediately Yes, otherwise feasible S must equal a+b for some known A value a and known B value b, giving O(N^2) candidate sums.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the O(N^2) distinct-value dict accumulation (min, not product) with S >= L filtering; passes all three public samples (Sample1 Yes, Sample2 No, Sample3 No).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify edge cases: u >= p path, empty known-A or known-B sets (L computation), all -1 sequences, duplicate values, and S = 0.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N and S from stdin, find all positions of '1', and count the number of ones K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the transformed-position formula a_j = pj - j + 1 that turns the grouping cost into a sum of absolute deviations from a block start L.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Identify the optimal block start as the median of the transformed positions and compute the corresponding minimum swap count (K=1 handled naturally).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the complete Python solution reading stdin and writing only the final answer to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify against sample cases (7/0101001 -> 3, 3/100 -> 0, 10/0101001001 -> 7) and edge cases: single one, already contiguous, alternating, and N=5e5 worst case for performance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run the code on the provided samples to confirm the SAMPLE TESTS verdict before marking done.",
+    "status": "done",
+    "result": ""
+  }
+]

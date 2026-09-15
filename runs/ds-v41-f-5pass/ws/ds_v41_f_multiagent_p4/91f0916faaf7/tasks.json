@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Factor each A_i; for every prime p dividing some A_i record e_i = v_p(A_i) and S_p = sum e_i (primes never dividing any A_i contribute F(p)=1 and are skipped).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "For each prime p run the height DP over 0..S_p carrying a hit-zero flag, weight p^height at each position, transition h -> h\u00b1e_i in range, dedupe the \u00b1 when e_i==0; sum flagged end states to get F(p).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Multiply all F(p) mod 998244353; if no prime divides any A_i output 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement and run against all three samples; all pass (Sample 1 = 939634344 with F(2)=194, F(3)=4843476; Sample 2 = 18).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Optimize with run-length handling of zero steps and an optional numpy path; confirm O(N * sum_p S_p) work.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verified sample outputs match exactly, confirming correctness of the walk/touch-zero formulation.",
+    "status": "done",
+    "result": ""
+  }
+]

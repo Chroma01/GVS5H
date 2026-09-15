@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the iterative DFS sliding-window solution with enter/exit state restoration and tie-breaking by minimum node count",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run sample tests and edge cases: all values identical, single-node paths, chains, stars, and equal-length paths with different node counts",
+    "status": "done",
+    "result": ""
+  }
+]

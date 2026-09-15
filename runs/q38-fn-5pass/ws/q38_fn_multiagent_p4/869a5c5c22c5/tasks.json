@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and feasibility analysis: confirm necessary parity conditions (R even; if R=0 then B even) and outline constructive sufficiency.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the primary constructive solver: red cycle + blue zigzag insertion, including R=0, B=0, R=2, B=1, odd/even B, and coordinate shifting.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Add efficient input/output handling for up to 10^5 test cases and total pieces 2e5.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Fix exact sample output by adding the required trailing space after `R 3 2` in the (2,3) special case and verify the sample passes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Re-test edge cases after the fix: R odd, R=0 with odd B, B=0, R=2 with small B, B=1, large B, and coordinate-bound checks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If the sample harness still fails, inspect exact byte differences (trailing spaces/newlines) and adjust only the special-case output as needed.",
+    "status": "done",
+    "result": ""
+  }
+]

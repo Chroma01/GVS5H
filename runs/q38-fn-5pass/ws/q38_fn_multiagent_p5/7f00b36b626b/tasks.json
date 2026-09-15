@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: choose DSU over present values and auxiliary multiple nodes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement DSU with path compression and union by size for n + threshold + 1 nodes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "In countComponents, union each original node whose value x <= threshold with auxiliary nodes n + x, n + 2x, ..., n + threshold.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Count unique DSU roots among all original nodes to get the number of connected components.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify sample tests and edge cases such as threshold = 1, all values > threshold, and presence of 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm performance and memory are acceptable for n <= 1e5 and threshold <= 2e5.",
+    "status": "done",
+    "result": ""
+  }
+]

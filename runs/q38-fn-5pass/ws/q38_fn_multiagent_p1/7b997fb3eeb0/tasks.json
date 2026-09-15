@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full sparse-table solution with fast I/O, two-pointer B computation, sparse-table RMQ, and per-query binary search.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate on the provided samples and edge cases: all equal sizes, length-2 intervals, intervals with no possible pairs, and large random inputs for performance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If the sparse-table implementation hits time or memory limits, switch to the fallback custom segment-tree monoid that answers each query in O(log N) without binary search.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,10 @@
+- **Cost reduction:** For a target common sum H, every tooth pair must satisfy u_i + d_i = H. Final total length is N*H, so total cost is sum(U_i+D_i) - N*H. Thus the problem is to maximize a feasible integer H.
+- **Upper bound:** H <= min_i (U_i + D_i) = minS, because u_i <= U_i and d_i <= D_i.
+- **Per-tooth feasible interval:** For fixed H, u_i must be in I_i = [max(0, H-D_i), min(U_i, H)] so that d_i = H-u_i lies in [0, D_i]. This interval is nonempty for every H <= minS.
+- **Adjacent constraint:** We also need |u_i - u_{i+1}| <= X for all i.
+- **Monotonicity:** If H is feasible via some sequence u, then H-1 is feasible via u'_i = min(u_i, H-1). This map is 1-Lipschitz and respects the per-tooth intervals, so feasibility is downward closed. Also H=2 is always feasible by setting all u_i = 1, since U_i, D_i >= 1. Hence binary search on H is valid.
+- **Feasibility check in O(N):** Maintain the interval [lo, hi] of upper-length values reachable for the current prefix. Start with I_1. For each next i, intersect I_i with [lo-X, hi+X]. If empty, H is infeasible. The reachable set is always a contiguous integer interval.
+- **Binary search:** Search the largest feasible H in [0, minS]. Complexity O(N log minS) time and O(N) memory. minS <= 2e9, so about 31 iterations.
+- **Implementation details:** Read all input at once with sys.stdin.buffer.read().split() for speed. Use Python integers for 64-bit totals. Early exit on empty interval. Answer is total_s - N * ans.
+- **Samples verified:** Sample 1 outputs 15, sample 2 outputs 0, sample 3 outputs 5999999994, sample 4 outputs 9460.
+- **Edge cases:** N >= 2. H=minS gives nonempty per-tooth intervals by definition. X may be very large, making the constraint trivial. Final lengths may be zero under the operation rules; even if positivity were required, H >= 2 remains feasible, so the answer is unchanged.

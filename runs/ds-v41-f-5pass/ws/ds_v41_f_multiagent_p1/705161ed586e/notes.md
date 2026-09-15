@@ -1,0 +1,11 @@
+- **Model:** A good caption partitions the string into contiguous runs of length >= 3, each run set to a single letter. Cost is the sum of alphabet distances |original - target| over all positions. Minimize total cost first, then lexicographically smallest result. For n < 3 no valid caption exists, so return "".
+- **Feasibility:** For n >= 3 a solution always exists (set every character to a single letter), so "" is returned only when n < 3.
+- **DP state:** f[i][c][L] = min cost to fill positions i..n-1, where the run of character c ending at i-1 has length L capped at 3 (L in {1,2,3}; 3 means >=3). Base f[n][c][3] = 0, others INF.
+- **Transitions:** If L < 3, position i is forced to c, new state (c, L+1). If L = 3, either continue c (state (c,3)) or switch to any d != c (new state (d,1) at i+1). First character chosen separately: min over d of |s[0]-d| + f[1][d][1].
+- **End effects are automatic:** Switching near the end is INF because the new run cannot reach length 3; the base case forces the final run to have L=3.
+- **Lexicographic tie-break:** Greedy left-to-right. At L=3 states store the smallest character d achieving the state optimum. L<3 choices are forced. Following these parents from the optimal first choice yields the lexicographically smallest minimum-cost caption.
+- **Switch minimum:** Track (min1, arg1) and second distinct (min2, arg2) of |s[i]-d| + f[i+1][d][1]. If arg1 == c use min2 else min1. Strict "<" updates make arg1 (and arg2) the smallest index achieving its value.
+- **Tie between continue and switch:** if costs equal pick min(c, sw_d); otherwise the strictly cheaper option.
+- **Implementation:** Rolling arrays of size 78 (26 chars x 3 lengths) for f[i+1] and f[i]. Parents bytearray of size n*26. Precompute 26x26 distance table. INF = 1<<30; unreachable entries stay above INF and are never selected since real costs <= n*25 ~ 1.25e6.
+- **Complexity:** O(n*26) time, O(n) memory (parents dominate). n <= 5*10^4 fits comfortably.
+- **Validation:** Exhaustive brute-force validator ran over all strings of lengths 1..7 over alphabet 'a'..'d' (21844 inputs), comparing against enumeration of all good captions over 'a'..'d' (precomputed per length, <=36 targets each). All cases PASS, no mismatches. Provided examples: "cdcd"->"cccc" PASS, "aca"->"aaa" PASS, "bc"->"" PASS.

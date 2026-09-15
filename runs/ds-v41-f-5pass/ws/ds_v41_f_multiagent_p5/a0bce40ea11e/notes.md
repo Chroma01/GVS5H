@@ -1,0 +1,13 @@
+- **Problem reduction:** Need S = sum over all assignments of zeros in A to F_p^* of B^p, mod p. Expand (B^p)_{i,j} as a sum over length-p walks; each edge contributes its value (fixed A entry, or the zero variable).
+- **Key identity:** For x ranging over F_p^*, sum_x x^t = -1 if (p-1) | t, else 0. So a zero edge traversed t times contributes f(t) = -1 when (p-1)|t, else 0. Nonzero edges contribute their fixed value A[u][v].
+- **Structure for p>=3:** total walk length p, so a zero edge with t>0 needs t>=p-1; since 2(p-1) > p, at most one zero edge is used, and it is used exactly p-1 times (t=p is not divisible by p-1 for p>2). The remaining 1 edge is a fixed nonzero entry.
+- **Sign is always (-1)^K:** every zero position contributes f(0)=-1 (unused) or f(p-1)=-1 (used), so the global factor is (-1)^K with K = number of zeros. Correct: verified on samples and brute force.
+- **No-zero walks:** product over fixed edges gives M^p where M = A with zeros kept as 0 (only walks avoiding zero positions survive).
+- **Correction C (one zero edge used p-1 times + one fixed edge A[c][d]):** For zero at (a,b):
+  - self-loop a==b: fixed edge must be at the walk's start or end. Start: i=c, j=a, edge (c,a) -> C[c][a] += A[c][a]; End: i=a, j=d, edge (a,d) -> C[a][d] += A[a][d]. (An interior fixed edge would need A[a][a]!=0, impossible.)
+  - non self-loop a!=b: two zero edges can only be separated by the single fixed edge when p-1=2, i.e. p==3. Walk a->b->a->b gives C[a][b] += A[b][a]. For p>=5 impossible.
+- **Final formula (p>=3):** answer = (-1)^K * (M^p + C) mod p. For p==3 include both correction types; for p>=5 only self-loops.
+- **p == 2:** p-1 = 1 divides all t, f(t)=1 always; zeros -> 1, so B is the all-ones matrix J and the sum is N*J mod 2 = (N mod 2)*J.
+- **Matrix exponentiation:** p up to 1e9 -> ~30 squarings + ~15 multiplies. numpy path splits entries into 15-bit halves (4 int64 matmuls) to avoid overflow (numpy int64 only, values < p < 2^30). Pure-Python fallback uses sum(map(mul,...)) over transposed columns.
+- **Validation:** reproduced sample 1 = [[0,2],[1,2]], sample 2 (p=2) = all ones, sample 3 = exact expected output. Brute-forced N=2,p=5,A=[[0,1],[1,0]] (got [[0,3],[3,0]]) and N=2,p=5,A=[[0,1],[1,1]] (got [[2,4],[4,2]]); both match the formula.
+- **Pitfalls removed:** earlier hand-arithmetic errors in M^13 (fixed) and a missed duplicate contribution C[4][1] in sample 3 (both a=1 start-term and a=4 end-term add A[4][1]); double-counting is correct and necessary.

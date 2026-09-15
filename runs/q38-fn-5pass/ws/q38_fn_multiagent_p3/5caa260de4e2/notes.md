@@ -1,0 +1,10 @@
+- **Transformation:** Let `P` be prefix sums of `nums` and `C` be prefix sums of `cost`. For cuts `p_0 = 0 < p_1 < ... < p_m = n`, the original total cost is `sum_j (P[p_j] + k*j) * (C[p_j] - C[p_{j-1}])`.
+- **Telescoping the order term:** `sum_j j * (C[p_j] - C[p_{j-1}]) = m * C[n] - sum_{j=1}^{m-1} C[p_j]`. This absorbs the dependence on subarray order into additive edge weights.
+- **Edge weight:** For a cut from `a` to `b`, the transformed edge weight is `P[b] * (C[b] - C[a]) + k * (C[n] - C[a])`. Summing these edge weights over any full partition gives exactly the original total cost.
+- **DP formulation:** `dp[0] = 0`, and `dp[b] = min_{a < b} dp[a] + P[b] * (C[b] - C[a]) + k * (C[n] - C[a])`. The answer is `dp[n]`.
+- **Inner-loop form:** For fixed `b`, the transition is `P[b] * C[b] + k * C[n] + dp[a] - (P[b] + k) * C[a]`. The implementation computes `base` and `slope` once per `b`, then scans previous `a`.
+- **Complexity:** The direct DP checks all previous cuts for each position, giving `O(n^2)` time and `O(n)` memory. With `n <= 1000`, this is comfortably fast in Python.
+- **Validation:** Example 1 gives `110` via cuts `0, 2, 3`. Example 2 gives `985` via cuts `0, 4, 7, 9`, with transformed edge weights `581`, `236`, and `168`.
+- **Edge cases:** For `n = 1`, the formula returns `(nums[0] + k) * cost[0]`, matching the single-subarray cost. For `n = 2`, both one-subarray and two-subarray partitions are considered through `a = 0` and `a = 1`. Large `k` and maximum input values remain safely below the chosen infinity bound.
+- **Pitfalls:** The `k` term must use the global final cost prefix `C[n]`, not the current prefix `C[b]`. Intermediate `dp` values are artificial path costs, but `dp[n]` is the exact original minimum. Cuts must be strictly increasing, enforced by `a < b`.
+- **Sample tests verdict:** pass. The current implementation needs no changes for the provided samples or basic edge cases.

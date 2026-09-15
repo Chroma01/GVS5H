@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement dominance-pair check solution as described.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run sample tests and edge cases (same-row conflicts, white column 1, black column N, no whites/blacks, large N).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm all public sample tests passed; no alternative approach needed.",
+    "status": "done",
+    "result": ""
+  }
+]

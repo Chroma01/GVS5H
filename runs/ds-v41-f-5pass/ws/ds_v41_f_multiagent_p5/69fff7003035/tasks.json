@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N; compute digit-length counts c_d and sums S_d = sum of integers 1..N with exactly d digits (d=1..6) mod 998244353; precompute factorials and inverse factorials up to N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build D(z)=prod over present d of (1+10^d z), degree t<=6, and P(z)=sum_d c_d*10^d*D(z)/(1+10^d z) mod 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Use recurrence from D*Q'=P*Q to compute q_0..q_N of Q(z)=prod(1+10^d z)^{c_d} in O(N) with modular inverse of k+1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each present d, synthetic-divide: R_m=q_m-10^d*R_{m-1} (R_0=1) for m=0..N-1, then E_d=sum R_m*m!*(N-1-m)! mod 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Output answer = sum_d S_d*E_d mod 998244353; all 3 samples pass (1332, 727611652, 184895744).",
+    "status": "done",
+    "result": ""
+  }
+]

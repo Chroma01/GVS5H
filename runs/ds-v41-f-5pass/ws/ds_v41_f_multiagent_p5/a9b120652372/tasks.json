@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input, output -1 when len(B) > len(A) or span(B) > span(A).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N) gap-reduction algorithm with parity/chain feasibility; confirm it matches the public sample output (3, -1, 5).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the stress harness (exhaustive N=1..6 + random N<=7, N=8) against the BFS brute force; no counterexample found, samples reproduced.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Final performance pass: O(N) per test with T up to 2e5 and sum N up to 1e6, clean stdin->stdout program.",
+    "status": "done",
+    "result": ""
+  }
+]

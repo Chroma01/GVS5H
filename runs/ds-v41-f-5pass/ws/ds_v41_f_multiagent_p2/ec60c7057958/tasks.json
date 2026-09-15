@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the closed-form factorial block greedy with the unused-number set, required-parity selection, and factorial block skipping.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate against all provided examples (n=4,k=6 -> [3,4,1,2]; n=3,k=2 -> [3,2,1]; n=2,k=3 -> []) and exhaustively against brute-force enumeration for n in 1..8 for every k in 1..(total+2); all cases matched.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm edge cases: n=1 (k=1 -> [1], k=2 -> []), odd-n only-majority-parity start, and return [] when k exceeds the total number of valid alternating permutations.",
+    "status": "done",
+    "result": ""
+  }
+]

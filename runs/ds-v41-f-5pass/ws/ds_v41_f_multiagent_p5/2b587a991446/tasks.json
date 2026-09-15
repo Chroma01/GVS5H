@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Read input, build adjacency list.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement exact BFS over ordered pair-states (a,b), a!=b, from (S,T) to (T,S); prints distance or -1. Verified against all three provided samples (3, -1, 4).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm feasibility characterization empirically: unreachable (-1) iff the graph is a tree (M == N-1), matching sample 2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Adopt the guaranteed-correct configuration-graph BFS as the final answer (passes the provided sample tests).",
+    "status": "done",
+    "result": ""
+  }
+]

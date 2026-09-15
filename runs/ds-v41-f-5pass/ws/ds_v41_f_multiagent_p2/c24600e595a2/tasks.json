@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Identify the set S of indices where A_i != B_i, and separate them by their initial value in A (0 or 1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the cost contribution of flipping a position i depending on the current number of 1s, and express the total cost in terms of the flip order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Use an exchange argument to find the optimal relative ordering between flipping a 0-position and a 1-position.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Prove the optimal global ordering criterion (offs before ons, sorted by C) and reduce the computation to the suffix property over matched 1s sorted by C descending.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement the O(N log N) solution (R/T/M split, prefix sums, two-pointer scan over p) and validate against samples 1,2,3 \u2014 all PASSED (16, 0, 2867).",
+    "status": "done",
+    "result": ""
+  }
+]

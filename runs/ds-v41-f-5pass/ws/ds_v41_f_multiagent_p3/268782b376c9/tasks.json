@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive feasibility reduction: target X>0 needs r_i=ceil(X/points[i]) visits; base walk -1->...->n-1->e costs 2n-1-e; residual deficits d_i on [0,e-1], max(0,d_i-1) on [e,n-2], d_{n-1} on n-1 (d_i=(X-1)//points[i]); min extra round trips = MWIS; M(X)=min_e(2n-1-e+2*MWIS_e).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(n) feasibility check via suffix MWIS DP g0/g1 plus left-to-right prefix sweep over e with boundary non-adjacency; early-return when candidate <= m.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement binary search over X in [0, max(points)*m//n + 1] with lo=0 feasible, hi infeasible; special-case m<n -> 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "FIX class structure: entire implementation is now inside a single `Solution.maxScore(self, points: List[int], m: int)` (no stub, no unused wrapper).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Execute examples + brute-force cross-check + edge cases + timing on the CURRENT code and report an explicit SAMPLE TESTS verdict.",
+    "status": "done",
+    "result": ""
+  }
+]

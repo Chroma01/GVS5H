@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full solution reading N and S, building the parenthesis tree/forest with a virtual root.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Assign canonical unordered-subtree IDs iteratively using sorted child-ID tuples and a dictionary interning.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute factorials and inverse factorials up to N modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each node including the virtual root, group children by canonical ID and multiply the answer by fact[degree] * product(invfact[group_size]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test edge cases: single pair, deep chain, flat forest, repeated identical subtrees, and sample cases.",
+    "status": "done",
+    "result": ""
+  }
+]

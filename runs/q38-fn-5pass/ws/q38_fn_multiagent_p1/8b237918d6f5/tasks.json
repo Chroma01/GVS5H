@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete solution with binary search and layered min-cut feasibility check as specified.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify on samples and edge cases (multi-edges, K=M, answer 0, d=0) and ensure exactly-K monotonicity is handled.",
+    "status": "done",
+    "result": ""
+  }
+]

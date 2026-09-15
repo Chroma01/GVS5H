@@ -1,0 +1,12 @@
+- **Sum identity:** over x in F_p^*, sum x^e = -1 if (p-1)|e else 0; the e=0 case also gives p-1 = -1. Hence each zero entry of A always contributes a factor -1 whenever the walk uses it a multiple of (p-1) times.
+- **Reduction:** answer = (-1)^K * (sum over length-p walks whose zero-entry counts are all divisible by (p-1), of the product of fixed/originally-nonzero entries), K = number of zeros.
+- **p>2 structure:** p-1 >= 2 and 2(p-1) > p, so at most one zero entry is used, exactly p-1 times; the remaining single edge must be a fixed (nonzero in A) edge. Split:
+- **No zero used:** contributes (F^p)_{ij} with F = A but zeros set to 0.
+- **Zero self-loop at u:** fixed edge at position 1 gives walk a->u (add A[a][u] to C[a][u]); at position p gives u->b (add A[u][b] to C[u][b]); p-2 middle positions plus the two endpoint diagonal cases sum to p*A[u][u] ≡ 0, so diagonal is excluded entirely (only a!=u, b!=u).
+- **Zero non-self-loop (u,v), u!=v:** with p-1 >= 2 non-adjacent zero edges and only one fixed edge, walks exist only for p=3 as z,f,z, requiring fixed edge (v,u). Add A[v][u] to C[u][v] when A[v][u] != 0.
+- **p==2:** F_2^* = {1}, sum_{x in {1}} x^e = 1 for every e, so no (-1)^K factor and no restriction. Replace every zero by 1 and compute B^2 mod 2 directly (B becomes all ones, giving N mod 2 everywhere). Handled separately by branch.
+- **Final formula:** ans = sign * (F^p + C) mod p, sign = 1 if K even, else p-1.
+- **Cost:** O(N^3 log p) for F^p. N <= 100, log p <= 30, fine.
+- **Overflow safety:** numpy int64 matmul accumulates one outer product per k then reduces mod p, so max value ~ (p-1)^2 + p < 1e18 < 2^63. Pure-Python fallback uses sum(map(mul,...)) so ints are arbitrary precision. numpy is imported in try/except with fallback.
+- **Verification:** samples 1 and 2 match by hand. Sample 3 checked by hand: F^13 was computed via repeated squaring and equals P with rows [5,12,3,8],[12,12,5,3],[5,7,9,0],[2,4,12,4]; adding C and negating reproduces the expected output exactly. Earlier partial hand errors (arith in F^8 etc.) were resolved; final numbers consistent.
+- **Edge cases:** single zero self-loop with N=1 gives 0 for p>2 (sum of x^p = sum x = 0). p=3 non-self-loop correction requires A[v][u] nonzero (otherwise it is a second zero edge and dies).

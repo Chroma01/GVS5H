@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate candidate approaches (monotonic stack, online deque, union-find, Cartesian tree).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement monotonic-stack contribution solution with O(1) bounded pair count and consistent duplicate tie-breaking.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate against examples and brute-force small random tests, including duplicates, negative values, k=1, and k=n.",
+    "status": "done",
+    "result": ""
+  }
+]

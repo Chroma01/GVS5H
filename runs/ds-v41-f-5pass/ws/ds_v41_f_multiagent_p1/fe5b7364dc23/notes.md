@@ -1,0 +1,8 @@
+- **Chosen reduction:** Use prefix sums P[0]=0, P[j]=A_1+...+A_j. Each subarray [l,r] has sum P[r]-P[l-1], so the answer is sum over 0<=i<j<=N of (P[j]-P[i])^K.
+- **Binomial expansion:** (P[j]-P[i])^K = sum_{t=0}^{K} C(K,t) P[j]^t (-1)^{K-t} P[i]^{K-t}. Summing over i<j for fixed j gives sum_t C(K,t)(-1)^{K-t} P[j]^t S[K-t], where S[p]=sum_{i=0}^{j-1} P[i]^p.
+- **Scan invariant:** Before processing index j, S[p] contains powers of all prefix sums with index < j. Initially S[0]=1 (P[0]=0), S[p>0]=0. After computing the contribution for P[j], update S[p] += P[j]^p for p=0..K.
+- **Powers:** For each new P, compute P^0..P^K iteratively: pws[0]=1, pws[p]=pws[p-1]*P mod MOD. This avoids repeated pow calls and keeps O(NK) time.
+- **Modulo handling:** Everything is taken modulo 998244353. Replace (-1)^{K-t} by 1 or MOD-1 to avoid negative signs. Prefix sums and S updates use one conditional subtraction because both addends are less than MOD.
+- **Complexity:** O(NK) time, O(K) extra memory besides input. With N<=2e5 and K<=10, easily fast enough.
+- **Edge cases:** K>=1 per constraints; code also works for K=0. A_i=0 and all-zero inputs produce 0 correctly. N=1 uses only S from P[0].
+- **Verification:** Sample 1 gives 9 + 17 + 49 = 75. Sample 2 gives 0. Sample 3 matches expected modulo output. Random brute-force checks against O(N^2) enumeration agree for small N,K and random values including zeros.

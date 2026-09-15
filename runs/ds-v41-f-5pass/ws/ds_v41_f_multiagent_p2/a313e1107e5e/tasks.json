@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Confirm reduction: answer(R,X) = max dp[i] for i<=R and A[i]<=X, where dp[i] is LIS length ending exactly at i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse N, Q, array A, and all queries; group query indices by R while preserving original output order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Coordinate-compress A values into sorted unique ranks for the Fenwick tree.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement Fenwick tree with point-max update and prefix-max query.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Sweep R=1..N: compute dp[R] = 1 + prefix-max over ranks strictly less than rank(A[R]); update rank(A[R]) with dp[R]; then answer all queries with that R via prefix-max over compressed values <= X.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Map X to the largest compressed rank with A-value <= X (bisect), handle duplicates and X below all A correctly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Run on Sample 1 and Sample 2, verify outputs 2/1/2 and 4/1/1/2/1/5/3/4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Edge cases: all equal values, strictly decreasing A, X equal to prefix minimum, N=Q=1.",
+    "status": "done",
+    "result": ""
+  }
+]

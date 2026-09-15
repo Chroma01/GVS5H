@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: functional-graph decomposition with cycle equality and tree DP F_u(t)=F_u(t-1)+prod_children F_v(t).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse input, build children lists and indegree counts; run Kahn pruning to mark cycle nodes and get leaf-to-root order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Allocate G (non-cycle accumulators) and P (cycle accumulators) as [1]*(M+1); process non-cycle nodes in order, prefix-sum G to get F, multiply F into parent's P (cycle parent) or G (non-cycle parent), and free G.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each cycle, pointwise-multiply its cycle nodes' P arrays over t, sum over t=1..M, multiply components into the answer mod 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify against samples 6 / 2025 / 10010 and edge cases: N=1 self-loop (M), M=1, multi-node cycle, star, and a chain.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm O(N*M) time/memory fits N,M<=2025 and pass the sample-test verdict.",
+    "status": "done",
+    "result": ""
+  }
+]

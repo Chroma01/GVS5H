@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reformulate as convolution and evaluate FFT/NTT/Kronecker/bitset/hybrid approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete hybrid program (numpy FFT if available; fallback sparse/complement/big-int Kronecker) and run sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify pure-Python big-int Kronecker path separately (base 2^20 packing, little-endian byte extraction, self-pair subtraction) on samples/edge cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify numpy FFT path separately (padding, rounding, memory) if numpy is available.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Final edge-case review: N<3, sparse/dense extremes, max value 1e6, answer size.",
+    "status": "done",
+    "result": ""
+  }
+]

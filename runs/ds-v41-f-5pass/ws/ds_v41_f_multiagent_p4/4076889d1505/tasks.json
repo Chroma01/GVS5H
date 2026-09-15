@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduce condition to ord_M(A) = N and design multi-prime construction (factor N into prime powers, choose distinct primes r_i \u2261 1 mod q_i, CRT-combine order-q_i elements).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement fast factorization of N (precomputed primes up to 31623, deterministic Miller\u2013Rabin).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each prime power q = p^e search a prime r = k\u00b7q + 1 (skipping used primes); find element a with ord_r(a) = q.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle N=1 (M=1) and provide single-prime fallback element-of-order-N path if the multi-prime product would exceed 1e18.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify the general construction path (brute-force order check for small N and random large N) \u2014 passed.",
+    "status": "done",
+    "result": ""
+  }
+]

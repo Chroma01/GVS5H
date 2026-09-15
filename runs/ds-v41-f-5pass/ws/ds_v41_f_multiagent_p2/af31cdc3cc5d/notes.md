@@ -1,0 +1,10 @@
+- **Model:** Each operation pairs two currently adjacent elements; all original positions strictly between a matched pair are matched internally. So the set of pairs forms a non-crossing perfect matching. For even N it must be perfect; for odd N exactly one position stays unmatched.
+- **Unmatched position constraint:** A matched pair can never enclose the surviving element (it is never removed). Hence all pairs lie entirely left or entirely right of it. So the leftover index u (1-based) must be odd, and the two sides are independent contiguous even-length segments. No pair crosses u.
+- **Sign characterization:** For a contiguous segment of even length 2k, the maximum total equals (sum of its k largest) minus (sum of its k smallest) = total - 2*(sum of k smallest). Any choice of k plus-signs and k minus-signs is realizable by a non-crossing matching: repeatedly remove an adjacent opposite-sign pair (always exists while counts are equal); removal preserves non-crossing order. Choosing the k largest as plus guarantees every pair has plus >= minus, so |plus-minus| equals the signed value. Non-crossing therefore does not reduce the line-pairing optimum.
+- **Consequence:** Segment value depends only on the multiset, not the internal order.
+- **Even N:** answer = value of whole array = pref[N].
+- **Odd N:** answer = max over odd u of pref[u-1] + suff[u+1] (empty side contributes 0).
+- **Computing prefix/suffix:** Maintain the k smallest of each even prefix with a dual-heap median structure: max-heap `low` = smaller half, min-heap `high` = larger half, keeping len(low)==len(high) at even counts (and len(low)=len(high)+1 at odd). Track running sums; at even length value = (sum_low+sum_high) - 2*sum_low. Same sweep right-to-left for suffixes.
+- **Complexity:** O(N log N) time, O(N) memory; Python big ints handle sums up to ~3e14.
+- **Edge cases:** N=2 (just |A1-A2|), all-equal (answer 0), empty left/right segments at u=1 and u=N. Parity of index matters: only even segment lengths get recorded.
+- **Verification:** Sample1 [1,2,5,3] -> pref[4]=5. Sample2 -> u=1 gives suff[2]=14. Sample3 all ones -> 0.

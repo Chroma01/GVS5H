@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N and compute for each digit length d (1..6) the count c_d, value sum V_d modulo MOD, and weight w_d=10^d modulo MOD.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute modular inverses and factorial weights W_k = k!(N-1-k)! modulo MOD.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build R(t)=prod_active(1+w_d t) and B(t)=sum_active c_d*w_d*prod_{e!=d}(1+w_e t) as small polynomials.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute coefficients p[0..N] of P(t)=prod_active(1+w_d t)^{c_d} using the logarithmic-derivative recurrence.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each active d, synthetically divide P by (1+w_d t) to get q_k and add V_d * sum_{k=0}^{N-1} q_k W_k to the answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Print answer modulo MOD and verify against samples 3, 390, and 79223.",
+    "status": "done",
+    "result": ""
+  }
+]

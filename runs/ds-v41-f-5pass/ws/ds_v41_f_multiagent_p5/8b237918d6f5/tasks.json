@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Validate the min-cost-flow / LP-duality theory on all three samples (min ones(D) = sum_{c_i<D}(D-c_i)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement solution: BFS for L; convex-cost min-cost flow (per-edge forward cost 0 if unused else 1; backward cost -1 if h>=2 else 0); successive shortest augmenting paths (Bellman-Ford) recording marginals; stop after K+1 recordings or next cost >= L.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For D from L down to 0 compute cost(D)=sum_{c_i<D}(D-c_i) and output the largest D with cost(D)<=K (D=0 always feasible).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run on Sample 1 (1), Sample 2 (2), Sample 3 (0) -- all passed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Cross-check against brute-force over all K-subsets on small graphs (N<=6, M<=8), including multi-edge/duplicate cases -- no counterexample found.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Stress-test truncation logic (stop after K+1 marginals / marginal >= L) -- verified it never drops a marginal that changes the answer for D <= L.",
+    "status": "done",
+    "result": ""
+  }
+]

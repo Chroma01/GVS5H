@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement single-pass simultaneous residue DP (cnt arrays for d=1..9, shift residue (10r+c)%d, add one-char substring, count when c==d) in Solution.countSubstrings",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate the implementation against the three provided examples (expect 11, 18, 25)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate against a brute-force O(n^2) reference on many random small strings, including leading zeros and single non-zero digits",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm complexity ~O(45n)/O(45) space for n up to 10^5 and optimize Python constant factors if needed",
+    "status": "done",
+    "result": ""
+  }
+]

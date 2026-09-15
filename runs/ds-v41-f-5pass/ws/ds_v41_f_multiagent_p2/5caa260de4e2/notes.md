@@ -1,0 +1,7 @@
+- **Reformulation:** The cost of subarray t (elements l..r, 0-indexed) is `(P[r+1] + k*t) * (C[r+1]-C[l])` where P, C are global prefix sums of nums/cost. The nums part uses the global prefix to the subarray end, but the multiplier is the local cost sum — handle both.
+- **Telescoping the k*t term:** With a_t = C[r_t+1] and a_0 = 0, we have C[r_t+1]-C[l_t] = a_t - a_{t-1}. Then sum_t t*(a_t - a_{t-1}) = sum_t (C[n] - a_{t-1}) = sum_t (C[n] - C[l_t]). So each subarray is charged `k*(C[n] - C[start])`, depending only on its start, not its order. This removes the order dimension from the DP.
+- **DP:** dp[i] = min cost to partition first i elements; dp[0]=0; dp[i] = min_{j<i} dp[j] + P[i]*(C[i]-C[j]) + k*(C[n]-C[j]); answer dp[n]. O(n^2), fine for n<=1000.
+- **Verified example 1:** P=[0,3,4,8], C=[0,4,10,16], C[n]=16. dp[2]=4*10+1*16=56; dp[3]=56+8*6+1*6=110. Matches.
+- **Pitfalls:** Use 1-indexed prefix arrays; intermediate dp values already include the k*(C[n]-C[start]) terms for all prior subarrays, so no extra bookkeeping; Python big ints needed (values can reach ~1e15), no overflow concerns.
+- **Sanity check idea:** brute-force partition enumerator (2^(n-1)) over random small n<=8 comparing literal per-subarray cost to the DP — confirmed the identity maps subarray order correctly.
+- **Avoid:** the naive O(n^2 * #subarrays) DP that tracks the subarray index; it's unnecessary given the telescoping.

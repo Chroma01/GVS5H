@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the marginal-cost threshold binary search solution in Python, reading stdin and printing the answer, then verify it on the provided sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Ensure the implementation caps accumulated cost during binary search to avoid overflow and unnecessary work.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify edge cases: no affordable unit, `N = 1`, very large `M`, and maximum `P_i` values.",
+    "status": "done",
+    "result": ""
+  }
+]

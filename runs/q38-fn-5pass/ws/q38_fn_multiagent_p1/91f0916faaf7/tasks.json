@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce to independent primes and first-zero path DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution using prime-wise first-zero decomposition DP (factorization, suffix nonnegative DP, positive-prefix DP, product over primes).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on samples and edge cases (all A_i=1, N=2, zero steps, primes with E=0) and ensure modulo/time.",
+    "status": "done",
+    "result": ""
+  }
+]

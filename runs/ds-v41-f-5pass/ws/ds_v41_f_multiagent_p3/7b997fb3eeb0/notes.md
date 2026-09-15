@@ -1,0 +1,12 @@
+- **Problem restated:** sorted array A, each query [L,R], maximize K disjoint pairs (top a on bottom b) with a <= b/2.
+- **Structural characterization (verified):** for K <= floor(M/2), K pairs are feasible iff pairing the K smallest with the K largest works: 2*A[L+i-1] <= A[R-K+i] for i=1..K. Exchange argument: smaller tops / larger bottoms only help, and 2K <= M keeps the two sets disjoint.
+- **Reduction with D = M - K:** condition becomes 2*A[j] <= A[j+D] for all j in [L, R-D]. Define nxt[j] = first k with A[k] >= 2*A[j] (sentinel n), h[j] = nxt[j] - j. Then it is exactly max(h[L..R-D]) <= D.
+- **Answer:** smallest feasible D in [ceil(M/2), M] is D*; answer = M - D*. Feasibility is monotone in D (larger D shrinks the range and loosens the bound), so binary search works. D = M (empty range) is always feasible.
+- **Equivalent per-index form (derived, useful sanity check):** D* = max(ceil(M/2), max_{j in [L,R]} min(h[j], R+1-j)). Each index contributes min(h[j], R+1-j); saturated j give h[j], unsaturated j give R+1-j. Confirms the binary-search formulation and explains why unsaturated (witness bottom beyond R) indices matter.
+- **Precomputation:** two-pointer scan for nxt since thresholds 2*A[j] are non-decreasing (k monotone, never below i+1). h[j] numbers are small (<= N).
+- **RMQ:** sparse table on h, O(1) max query with `lg[]` lookup. Levels hold pointers to already-existing ints (max returns an argument), so memory is only ~N pointers per level, ~3.3M total for N=2e5.
+- **Complexity:** O(N log N) build, O(Q log N) queries. Two-pointer O(N).
+- **Edge cases handled:** N=2; duplicates (e.g. [1,1] gives 0); no valid bottom (h[j]=N-j forces large D); M odd/even ceil via (M+1)>>1; 2*A[j] up to 2e9 (Python big ints fine).
+- **Sample 1 verified by hand:** queries 2-5,3-8,7-11,1-2,1-11 give 2,3,1,0,5. Note 1-11 has D=5 satisfying inequalities but is excluded because K=6 > floor(11/2)=5 (this is the key trap the ceil(M/2) lower bound fixes).
+- **Sample 2 spot-checked:** 1-17 gives D*=11 -> 6; 9-23 gives D*=13 -> 2; 1-5 gives D*=4 -> 1; several 0s confirmed.
+- **Pitfalls:** forgetting the ceil(M/2) lower bound (overcounts when 2K>M); off-by-one in right endpoint R-D; sentinel index n must be handled as h=n-j.

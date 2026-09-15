@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement `count_upto(n)` as a digit DP memoized on (pos, started, sumd, prod, tight) with prefix-count reduction `count_upto(r) - count_upto(l-1)`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Skip leading zeros so they contribute nothing; accept iff `started` and `sumd>0` and `prod % sumd == 0`; an actual zero digit yields prod 0 \u2192 beautiful.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the code on sample cases (10,20)->2 and (1,15)->10 plus edges (single digits, 10, 100, r=999999999) \u2014 validated correct.",
+    "status": "done",
+    "result": ""
+  }
+]

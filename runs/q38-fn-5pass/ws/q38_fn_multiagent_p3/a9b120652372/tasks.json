@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify structural facts, order preservation, gap effects, and candidate approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Formalize the gap-reduction covering model for a fixed ordered partition of initial pieces to target 1-squares, including exact feasibility and minimum operation count with translation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement small brute-force BFS for tiny N to generate ground-truth answers and test the gap-reduction model and candidate counterexamples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Design an optimization/DP over ordered piece-to-target partitions using the validated gap model.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Derive an efficient O(N) or O(N log N) algorithm from the DP/model, including binary search if needed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Implement the full Python solution with fast I/O and validate on samples and edge cases.",
+    "status": "done",
+    "result": ""
+  }
+]

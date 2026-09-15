@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the edge-on-path probabilities for a random recursive tree, including the urn-style argument for two endpoints both being in the subtree of `i` when `i < min(u, v)`, and handle endpoint/root special cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete Python solution with robust input parsing, modular precomputations, prefix arrays, and O(1) query evaluation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation on the provided samples and brute-force enumeration for small `N`, including edge cases such as `u = 1`, `v = 2`, and adjacent vertices, then fix any coefficient or modulo issues.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If validation reveals a mismatch, re-derive the coefficients via counting/inclusion-exclusion or expected-depth/LCA decomposition and update the formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If the closed-form derivation remains uncertain, implement an offline Fenwick/sweep fallback based on edge contributions to cross-check or replace the formula.",
+    "status": "done",
+    "result": ""
+  }
+]

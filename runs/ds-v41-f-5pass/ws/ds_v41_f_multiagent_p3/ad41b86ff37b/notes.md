@@ -1,0 +1,8 @@
+- **Problem model:** The deleted-vertex result must be a single snowflake subtree: center c, x>=1 branch neighbors, y>=1 leaves per branch. Kept size = 1 + x*(y+1).
+- **Branch feasibility:** For center c, a neighbor v can be a branch with y leaves iff deg(v)-1 >= y (its non-center neighbors; tree structure makes leaf sets across branches disjoint and adds no extra edges). Define a_v = deg(v)-1.
+- **Per-center optimum:** For fixed c and y, keep every qualifying neighbor, so kept = 1 + (y+1)*K_c(y) with K_c(y)=#{v~c: a_v>=y}. Sorting a_v descending, using k branches the max y is a_(k) (k-th largest), giving kept(k)=1 + k*(a_(k)+1). Larger k dominates any y where more branches qualify (k'=K_c(y) has a_(k')>=y, so kept(k')>=actual), so max over k of kept(k) equals the center's optimum.
+- **Answer:** N minus the global max of kept(k) over all centers c and k>=1 with a_(k)>=1.
+- **Complexity:** Sum of deg(c) = 2(N-1); sorting each neighbor list gives O(N log N), fine for N<=3e5. No recursion used.
+- **Edge cases:** A path of 3 has answer 0 by choosing an endpoint as center (a_middle=1). Any tree with N>=3 has a length-2 path, so best>=3 always and a valid snowflake exists.
+- **Verification:** Sample 1: center 4, branches 3,5 each y=2 -> kept 7 -> answer 1. Sample 2: kept 3 -> answer 0. Sample 3: center 2, branches 1,8,7 with y=1 -> kept 1+3*2=7 -> answer 3. All match.
+- **Implementation:** Build adjacency, deg[]. For each c, list a_v of neighbors, sort reverse, iterate i (break when a<1), candidate 1+(i+1)*(a+1). Output N-best.

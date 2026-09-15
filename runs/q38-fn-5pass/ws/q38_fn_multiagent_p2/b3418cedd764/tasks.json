@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python solution using functional graph cycle peeling and O(NM) bottom-up DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate on sample inputs and edge cases such as self-loops, pure cycles, chains, and cycles with attached trees.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If sample tests fail, debug cycle handling and the distinction between prefix DP for non-cycle nodes and fixed-value DP for cycle nodes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize memory/time if needed by freeing child DP arrays after use and avoiding recursion.",
+    "status": "done",
+    "result": ""
+  }
+]

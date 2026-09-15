@@ -1,0 +1,6 @@
+- **Problem model:** count length-n words over alphabet size m with exactly k adjacent equal pairs (arr[i-1]==arr[i]). Answer = C(n-1, k) * m * (m-1)^(n-1-k) mod 1e9+7.
+- **Reasoning:** choose the k equal gaps among n-1; set arr[0] freely (m ways); each of the remaining n-1-k "different" gaps must avoid the previous value (m-1 choices each); the equal gaps are forced. Steps are independent, so multiply.
+- **Edge cases handled by the formula:** m=1 -> m-1=0; nonzero exponent yields 0, exponent 0 (k=n-1) yields 1 (all elements equal), correct. Exponent 0 in general yields 1. Boundary k=0 and k=n-1 work. If k>n-1 (outside constraints) comb returns 0.
+- **Complexity:** O(n) precompute factorials/inv factorials, O(1) per query. n,m up to 1e5 fine. Python pow is fast modular exponentiation.
+- **Verification:** examples n=3,m=2,k=1 -> C(2,1)*2*1^1 = 4; n=4,m=2,k=2 -> C(3,2)*2 = 6; n=5,m=2,k=0 -> 1*2*1^4 = 2. All match. Brute-force reasoning over small cases (n<=7,m<=4) agrees; m=1 only nonzero when k=n-1.
+- **Pitfalls rejected:** O(n*k) DP is too slow; recursion/brute force infeasible. Direct formula avoids run-coloring inclusion-exclusion complexity.

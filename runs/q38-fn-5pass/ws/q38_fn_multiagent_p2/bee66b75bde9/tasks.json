@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select the direct sweep-line dominance check as the primary method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the direct sweep-line dominance check with fast input, O(M log M) time, and O(M) memory.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the provided sample tests and confirm the program reads stdin and writes Yes/No correctly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If the sample tests fail, switch to an alternative approach (e.g., row-boundary feasibility or Fenwick dominance queries) instead of refining the same idea.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle edge cases: same-row and same-column conflicts, only black cells, only white cells, column 1/N, large N with sparse constraints, and M=1.",
+    "status": "done",
+    "result": ""
+  }
+]

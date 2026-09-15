@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement Approach A: perimeter mapping (corners consistent), sort unique t, binary search d in [0, 4*side//k], circular greedy feasibility with two-pointer next table over doubled array, trying all n starts and checking the wrap gap.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Clamp binary-search upper bound to 4*side//k (<= side) so the Manhattan<->perimeter reduction is valid throughout the search; use lo=0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the implementation on the three provided examples and report the sample-test verdict (returned 2, 1, 1 \u2014 matching expected outputs).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "(Fallback, unused) Alternative feasibility via binary lifting / canonical windowed start if needed for performance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "(Fallback, unused) Alternate verification via circular-arc/DP max independent set if reduction proved incorrect.",
+    "status": "done",
+    "result": ""
+  }
+]

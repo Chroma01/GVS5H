@@ -1,0 +1,11 @@
+- **Problem model:** The global reversal means only two graph orientations ever exist (original, fully reversed). Model the state as (vertex, orientation) -> an expanded graph with 2N nodes. Both orientations are cheap to represent simultaneously; no need to actually flip edges.
+- **Expanded graph construction:** Layer 0 (nodes `0..N-1`) = original orientation: original edge u->v becomes cost-1 transition u0->v0. Layer 1 (nodes `N..2N-1`) = reversed orientation: the same original edge u->v becomes cost-1 transition v1->u1 (direction flipped).
+- **Reversal operation:** At every vertex v, add cost-X toggle edges v0->v1 and v1->v0. This is global but modelled per-vertex because the state is per-vertex.
+- **Source/goal:** Start at (vertex 1, original) = node 0. Goal is (N, original) or (N, reversed) = nodes `N-1` or `2N-1`; answer is the min of the two distances.
+- **Algorithm:** Dijkstra with a binary heap, O((N+M) log N). All weights (1 and X) are nonnegative. N, M <= 2e5, fully feasible.
+- **Large values:** Answer can far exceed 32-bit (sample 3 = 4294967299). Python ints are arbitrary precision, so no overflow handling needed; just don't truncate.
+- **Multiple reversals matter:** Sample 3 needs 7 reversals + 7 moves (X=613566756 each), giving 7*613566756+7 = 4294967299. Do NOT assume at most one reversal.
+- **Sample 4 (X=5, answer 21):** path 1->3->5, reverse, 5->8, 8->14, reverse, 14->18, reverse, 18->20: 6 moves + 3 reversals = 6+15 = 21. Confirms interleaved reversals.
+- **Verified:** sample outputs 4, 3, 4294967299, 21 all reproduced by this two-layer Dijkstra.
+- **Pitfalls avoided:** correct source layer (original at vertex 1); toggle edges present for all vertices; reversed-layer edge inserted as v1->u1 (not u1->v1); take min over both goal layers.
+- **Implementation detail:** use flat node ids (layer1 id = N+v) and adjacency lists of `(neighbor, weight)` tuples; read all input with `sys.stdin.buffer.read().split()` for speed.

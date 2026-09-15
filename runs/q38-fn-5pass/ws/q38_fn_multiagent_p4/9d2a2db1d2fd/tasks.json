@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: reduce each query to maximum bottleneck connectivity M(u,v) and answer formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement fast integer input and flatten the grid; generate right/down adjacency edges packed as (weight, u, v).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Sort edges by decreasing weight and build a Kruskal reconstruction tree with DSU.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute depths and binary lifting tables for LCA on the reconstruction tree.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Answer queries by computing M via LCA value, applying abs(Y-Z) or Y+Z-2M, and printing results.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate edge cases: 1x1 grid, same block queries, equal floors, low bottlenecks, and maximum input sizes.",
+    "status": "done",
+    "result": ""
+  }
+]

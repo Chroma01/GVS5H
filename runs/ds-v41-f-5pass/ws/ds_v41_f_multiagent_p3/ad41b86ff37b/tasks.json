@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Confirm structural characterization: for a fixed center, a spoke v can supply y leaves exactly when deg(v)-1 >= y, and branches never conflict in a tree.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive formula: for center c maximize 1 + (y+1)*#{v neighbor of c : deg(v)-1 >= y} over y>=1 with count>=1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement per-center sorting: sort neighbor weights a_v=deg(v)-1 descending, evaluate kept=1+k*(a_(k)+1) for each k with a_(k)>=1, track global max kept; output N - max_kept. Complexity O(N log N).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle edge cases: a_v=0 ignored, require x>=1 and y>=1, single-neighbor centers, ties in sorted weights, N as small as 3.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify against the three samples and brute-force random small trees (enumerate all centers/y and naively count eligible neighbors) before finalizing.",
+    "status": "done",
+    "result": ""
+  }
+]

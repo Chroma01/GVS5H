@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement smaller-side combination enumeration: if K <= N-K, iterate all K-combinations of indices computing XOR and track max; if K > N-K, precompute total XOR T, iterate all (N-K)-combinations of excluded indices and take max of T XOR excluded-XOR. Treat duplicate values as distinct indices. Handle S==0 (K==N) by printing T. Keep memory bounded by streaming the max.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify against sample inputs: Sample 1 (4 2 / 3 2 6 4) -> 7, Sample 2 (10 4 / ...) -> 2024. Also edge cases K=1, K=N, and S up to 11.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm complement identity: max over K-subsets of XOR = max over excluded (N-K)-subsets of (T XOR excluded-XOR), with T = total XOR.",
+    "status": "done",
+    "result": ""
+  }
+]

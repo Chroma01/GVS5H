@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Split p into A, B, C around the two '*' characters and derive the ordered non-overlapping occurrence interval model.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement compact Z-function + bisect solution handling empty A, empty B, empty C, and p == \"**\".",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the four sample tests with a minimal harness and report only PASS/FAIL; if all pass, mark done.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If any sample fails, switch to a simpler prefix/suffix-array or DP/state-machine approach.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the characterization: 400 numbers are perfect squares of integers having exactly two distinct prime factors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the full solution (sieve primes/omegas up to 10^6, collect square bases with omega==2, answer queries via bisect) and verify against sample input/output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm edge cases (m=1/prime excluded, smallest 400 number 36, integer isqrt avoids float error) and worst-case performance (Q=2*10^5, A=10^12).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate algorithm and identify the modular forced-edge characterization.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement full Python solution using iterative DFS, modulo subtree sizes, forced-edge graph construction, and explicit component verification (including K=1 and N=1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and edge cases (K=1, N=1, pure path, star with K=2, branching invalid) to confirm correctness.",
+    "status": "done",
+    "result": ""
+  }
+]

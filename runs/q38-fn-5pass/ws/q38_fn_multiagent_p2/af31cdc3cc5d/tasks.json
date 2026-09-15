@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: valid operations are non-crossing matchings; even block optimum is sum largest half minus sum smallest half; odd N leaves one unmatched at even 0-based index and splits into independent even prefix/suffix.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement full solution with two heaps for dynamic half-sums, compute prefix/suffix arrays, handle edge cases, and run sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate sample tests; all public samples passed.",
+    "status": "done",
+    "result": ""
+  }
+]

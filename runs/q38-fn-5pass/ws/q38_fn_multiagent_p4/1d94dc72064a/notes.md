@@ -1,0 +1,11 @@
+- **State compression:** Let `k` be the number of unopened indices, `e` the number of unopened indices with odd `A_i`, and `P` the number of remaining tokens in already opened indices. A pass decreases `P` by 1. Opening an odd `A_i` adds an even number of pass tokens, so it changes `(e, P mod 2)` to `(e-1, p)`. Opening an even `A_i` adds an odd number of pass tokens, so it changes it to `(e, p^1)`.
+- **Small `k` cases:** For `k=1`, the player to move opens the last index and wins. For `k=2`, opening leaves `k=1`, which is winning for the opponent, so only passes matter; the state is winning iff `P` is odd. For `k=3`, using the `k=2` result: if `e=0` (all remaining gains are odd), winning iff `P` is odd; if `e=3` (all remaining gains are even), winning iff `P` is even; if `e=1` or `e=2` (mixed), the player can choose a gain whose parity matches `P`, leaving `k=2` with even `P`, so the state is always winning.
+- **Base `k=4`:** From the `k=3` losing sets, checking `e=0,1,2,3,4` gives a uniform rule: the state is winning iff `P mod 2 != e mod 2`.
+- **Induction for `k >= 4`:** Assume the rule holds for `k-1` (where `k-1 >= 4`): a state is losing iff `P mod 2 == e mod 2`. In a `k`-state, opening an odd `A_i` leads to `(e-1, p)`, which is losing iff `p == (e-1) mod 2`, i.e. `p != e mod 2`. Opening an even `A_i` leads to `(e, p^1)`, which is losing iff `p^1 == e mod 2`, again `p != e mod 2`. Thus an opening move is winning exactly when `p != e mod 2`. If `p != e mod 2`, some opening wins. If `p == e mod 2`, no opening wins; the pass recurrence `W(P) = not W(P-1)` when no opening wins, together with the parity base, keeps all states with `P mod 2 == e mod 2` losing. Hence for all `k >= 4`, winning iff `P mod 2 != e mod 2`.
+- **Initial position:** Initially `P=0`. Therefore:
+  - `N=1`: Fennec always wins.
+  - `N=2`: Snuke always wins.
+  - `N=3`: Snuke wins only when `e=0`, i.e. all `A_i` are even; otherwise Fennec wins.
+  - `N>=4`: Fennec wins iff `e` is odd.
+- **Implementation:** Count the number of odd `A_i` in `O(N)` time and apply the above case distinction.
+- **Samples:** Sample 1 has `N=3`, `e=2`, so Fennec. Sample 2 has `N=2`, so Snuke. Sample 3 has `N=6`, `e=4` even, so Snuke. All match.

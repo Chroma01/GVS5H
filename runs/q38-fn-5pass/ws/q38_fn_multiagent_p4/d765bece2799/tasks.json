@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the monotonic-stack solution end-to-end in the starter code.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(1) helper that counts valid left/right extension pairs with length at most k.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute previous and next boundary arrays for subarray minimums with leftmost-minimum tie-breaking.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute previous and next boundary arrays for subarray maximums with leftmost-maximum tie-breaking.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Sum each element's minimum and maximum contributions using boundary distances and the length-limited count helper.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run the current solution on the provided sample tests and edge cases (k = 1, duplicates, negative values, all-equal arrays) and report a SAMPLE TESTS verdict.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "If the sample tests fail, debug the count_valid formula or tie-breaking; if needed, switch to a divide-and-conquer approach for crossing subarrays under the length cap.",
+    "status": "done",
+    "result": ""
+  }
+]

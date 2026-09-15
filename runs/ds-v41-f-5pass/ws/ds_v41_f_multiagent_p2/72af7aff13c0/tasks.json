@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input; transpose the grid according to move counts so the scanned dimension K is minimized.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement zero-safe incremental row-prefix/suffix DP with stacks (no modular inverses), maintaining answer via exact delta updates `ans += delta*pes[c]*vs[c]`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Support O(1) L/R moves and batched O(K) U/D row-state changes (`run3`) with initial `pre0`/`S0` fallbacks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Sample 1 passes end-to-end (456 \u2192 666 \u2192 822); Sample-2 numpy slice crash fixed, both samples PASS.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Randomized brute-force stress test of numpy path vs naive DP and vs solve_pure passed (all starts, oscillations, zeros, extreme a_i, both orientations).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Benchmark solve_np worst case (447x447, Q=200000, ~1e5 vertical moves); if >3s, reduce numpy-call overhead in the scan (preallocate/fuse/in-place), re-tune `_NUMPY_MIN`, re-verify samples + stress test.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "If benchmark still TLEs after micro-opt, switch to a different reduction: zero-aware batch-inversion cumulative scan (cumprod + one `pow` + backward pass, segmenting at zero a_j) to get O(K) with ~5 numpy ops per scan, guarding against many-zero inputs.",
+    "status": "pending",
+    "result": ""
+  }
+]

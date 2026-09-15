@@ -1,0 +1,11 @@
+- **Problem restated:** answer = max over the no-op and over each allowed value x (occ_x < n) of the max subarray sum of nums after removing every occurrence of x.
+- **Approach (new; replaces the segment tree):** For a value x the removed-array max subarray either avoids x (bounded by the no-op baseline) or spans at least one x. Only spanning candidates can beat the baseline, so they are computed directly; the baseline is tracked by Kadane.
+- **Prefix formulation:** P = prefix sums; occurrences p_1<...<p_k; cnt_x(i)=#occ <= i; Q_x(i)=P[i]-x*cnt_x(i) = sum of non-x in first i. A spanning subarray (a, r] has value Q_x(r)-Q_x(a). Require r to sit on a non-x position, otherwise the range can be entirely x's and yields a spurious 0.
+- **Blocks:** block t (t>=1) = prefix indices [p_t, p_{t+1}-1] with cnt=t; block 0 = [0, p_1-1], cnt=0. For r in block j the best start a lies in blocks < j. Maintain g_{j-1} = min over a in blocks < j of Q_x(a) = min over t<j of (minP over block t) - x*t.
+- **Candidate:** for each block j>=1, candidate = (max P over non-x r in [p_j+1, p_{j+1}-1]) - x*j - g_{j-1}; then update g with (min P over whole block j) - x*j. Empty non-x ranges give no candidate but still update g using P[p_j].
+- **Why r must be non-x:** without the restriction, [-5,-3,-8] returns 0 from the all-x range, beating the true answer -3; the guard is to only accept genuine non-empty deletions.
+- **RMQ:** sparse tables for range min and range max of P (idempotent, so valid). The max-subarray monoid is not idempotent and cannot use a sparse table.
+- **Complexity:** O(n log n) precompute, O(n + distinct) main loop with O(1) queries, O(n log n) memory. Much lighter constant than 2n point updates.
+- **Edge cases:** all elements equal (k==n) -> skip, return baseline; n==1 -> baseline; all-negative -> baseline dominates.
+- **Verified by tracing (PASS):** Ex1 [-3,2,-2,-1,3,-2,3] -> 7; Ex2 [1,2,3,4] -> 10; [-5,-3,-8] -> -3; [7,7,7] -> 21; [0] -> 0; [2,-1,2] -> 4; [3,-2,3,-2,3] -> 9; [-1,-2] -> -1; [5,-1,5] -> 10; [-1,5,-1,5,-1] -> 10; [5,-1,-1,5] -> 10; [2,1,-3,4,-1,2,1,-5,4] -> 10. No mismatches found.
+- **Discarded:** segment-tree zeroing of occurrences (correct but ~2n point updates, heavy in Python); NEG-sentinel deletion (breaks contiguity); per-value full Kadane scans (O(n*distinct)).

@@ -1,0 +1,8 @@
+- **Problem:** Given N (up to 1e18), find positive integers x,y with x^3-y^3=N, or print -1.
+- **Key identity:** x^3-y^3 = (x-y)(x^2+xy+y^2). Let d = x-y > 0. Then d | N and N = d*(x^2+xy+y^2).
+- **Bound on d:** With y>=1, the second factor equals d^2+3dy+3y^2 >= d^2+3d+3 > d^2, so d < cbrt(N) ~= 1e6. Loop d=1..cbrt(N) is fine.
+- **Quadratic in y:** Fixing d, x=y+d gives 3y^2+3dy+d^2 = N/d = M. Discriminant D = 9d^2 - 12(d^2-M) = 12M - 3d^2. Need D>=0, D a perfect square s^2, (-3d+s) divisible by 6, and y=(-3d+s)/6 > 0. Then x=y+d.
+- **Exactness:** Must avoid floating point for the final check. Use math.isqrt for sqrt. Compute cube-root bound c = int(round(N**(1/3))) then correct with integer comparisons ((c+1)^3<=N, c^3>N) to be safe near perfect cubes.
+- **Verification:** After computing y, re-check d*(3y^2+3dy+d^2)==N as a final guard. Also require d|N (skip non-divisors).
+- **Edge cases:** N=1 -> no solution (d=1 gives M=1, D=9, s=3, y=0 not >0) -> -1. y must be strictly positive. Small N in general rarely solvable.
+- **Sample 3:** N=39977273855577088 gives 342756 66212; d = 342756-66212 = 276544, which divides N and is < cbrt(N).

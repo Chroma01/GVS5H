@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Produce runnable Python code for the Cartesian-tree + path-compressed reach algorithm; confirm it matches Samples 1 and 2 exactly (VERIFIED: samples passed).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Characterize the maximal-interval closure process (strictly smaller adjacent absorption, order-independent unique maximal reachable interval).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run embedded BFS brute-force stress harness and confirm correctness (worker reported ALL TESTS PASSED / samples passed).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Produce the final clean single-mode submission (stdin -> stdout, no stress/brute/isatty/cycle-guard paths); samples reproduced.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Benchmark N=5\u00d710^5 worst cases (increasing, decreasing, all-equal, random): O(N) time/memory, no recursion limits, correct output format (worker reported solved).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Contingency check: no failure/slowness observed in benchmark or stress, so distinct fallback methods (monotonic-stack expansion, DSU) not required.",
+    "status": "done",
+    "result": ""
+  }
+]

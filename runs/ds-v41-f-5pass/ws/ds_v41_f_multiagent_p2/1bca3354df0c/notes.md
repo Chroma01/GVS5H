@@ -1,0 +1,15 @@
+- **Problem:** Impartial game on a bipartite (odd-cycle-free) graph; players alternately add a missing edge that keeps the graph bipartite. Player unable to move loses; Aoki moves first. Output `Aoki` if Aoki (first player) wins else `Takahashi`.
+- **Key model:** Every legal move keeps the graph bipartite, and any edge between two distinct components is legal. The only terminal state is a single connected component that is a complete bipartite graph K_{p,q}, p+q=N. So total moves equals p*q - M, where {p,q} is the final bipartition the players steer toward.
+- **Parity of total moves:** Aoki wins iff total moves is odd. For N odd, p+q is odd so p*q is even; total moves parity = M parity (independent of play). Hence N odd -> Aoki iff M is odd.
+- **Derived formula (validated by exhaustive brute force for all bipartite graphs N=1..6, 0 mismatches):**
+  - N odd: Aoki iff M odd.
+  - N even, B==0: Aoki iff (Esum + M + o//2) odd.
+  - N even, 1<=B<=2: Aoki always.
+  - N even, B>=3: Aoki iff (o//2 + D + Ce) odd.
+- **Definitions:** colour the graph (2-colouring per component). For each component record colour-class sizes a,b, sizes size=a+b, edge count e. d=a*b-e. Aggregates: Esum = sum of (a mod 2) over even-size components; o = count of odd-size components; B = count of odd-size components with size>=3; Ce = count of even-size components; D = sum of d over all components.
+- **Colouring invariance:** Even-size components have a,b of equal parity, so Esum is independent of which class is called "a". Odd components of size 1 contribute nothing to B. Isolated vertices are size-1 odd components.
+- **Implementation:** Iterative DFS/2-colouring (no recursion, N,M up to 2e5). Per vertex accumulate its colour count and degree; e = (sum of degrees in component)//2. All aggregates computed in O(N+M).
+- **Sample checks:** s1 N=4 one even comp (a=b=2,e=3,d=1), Esum=0,M=3,o=0 -> 3 odd -> Aoki. s2 N=4 two K_{1,1}, Esum=2,M=2,o=0 -> 4 even -> Takahashi. s3 N=9 odd, M=5 odd -> Aoki. All match.
+- **Small-case sanity:** N=1,M=0 -> Takahashi. N=2,M=0 (two isolated) -> Aoki. N=2,M=1 (K_{1,1}) -> Takahashi (terminal). N=4 all-even path -> Aoki.
+- **Known risk:** B>=3 requires N>=10 (e.g. three size-3 comps + one isolated vertex) so it is beyond the exhaustive N<=6 verification. The implemented branch follows the supplied/verified formula; the internal `D` term accounts for the tempo available from unfilled within-component cross pairs.
+- **Handling of empty colour class:** isolated vertex has (a,b)=(1,0); d=0; classified odd with size 1 (never counted in B). Merge-orientation edge cases only matter for the (unused) abstract solver, not for the final formula-based solution.

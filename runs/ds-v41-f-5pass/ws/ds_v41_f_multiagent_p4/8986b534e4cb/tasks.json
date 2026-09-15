@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Feasibility model: P_l=P_r equalities; bad pair iff same l, same r, or same-sign crossing; set feasible iff no bad pair; query [L,R] Yes iff G[R]<L with G prefix-max of g[j]=max earlier bad index.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Ground-truth brute oracle (union endpoints, strict edges, acyclicity) and exhaustive/random confirmation that minimal infeasible sets have size 2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Same-l and same-r bad pairs via lastL/lastR arrays.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm both provided samples' expected outputs (sample1 Yes/No, sample2 No/Yes/Yes).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement solution.py: CDQ same-sign crossing (Case A sweep by l asc + query r in (l_j,r_j); Case B sweep by r desc + query l in (l_j,r_j)) with timestamped range-max segment tree; combine with lastL/lastR; build prefix-max G; answer queries; verify samples and basic edge cases (M=1, touching intervals, nested opposite signs).",
+    "status": "pending",
+    "result": ""
+  }
+]

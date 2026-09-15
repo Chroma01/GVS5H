@@ -1,0 +1,9 @@
+- **Model:** answer = sum over monotone paths of products. Single-cell change at (r,c) updates `ans += (a-old)*pre_excl*post_excl mod 998244353`, where `pre_excl`/`post_excl` are exclusive prefix/suffix DPs through that cell. Division-free, safe with zeros.
+- **Orientation:** Swap axes so the smaller dimension becomes K (columns). K ≤ 447 since HW ≤ 200000. Choose orientation minimizing total vertical moves: if `cu*W > cl*H`, transpose (swap U↔L, D↔R, and start coordinates).
+- **State during walk:** Maintain `P = pre0[r-1]` (inclusive prefix from above), `Q = S0[r+1]` (inclusive suffix from below), and for the current row the exclusive prefix (`pref`/`pes`) and exclusive suffix (`suff_rev`/`vs`), valid only around current column c.
+- **Horizontal moves:** O(1). `R`: `pes[c+1] = A[r][c]*pes[c] + P[c+1]`. `L`: `vs[c-1] = Q[c-1] + A[r][c]*vs[c]`.
+- **Vertical moves:** O(K) to recompute the new row's exclusive prefix/suffix. Use stacks `pstack`/`sstack` to cache `P`/`Q` when leaving a row; restore on return. Since the token never modifies a row while away, cached values stay valid (guaranteed by continuity).
+- **DP init:** Compute `pre0[i]` (inclusive prefix from (1,1)) and `S0[i]` (inclusive suffix to (H,W)) for all rows in O(HW) total.
+- **Correctness:** The exclusive prefix `pes[j]` satisfies `pes[j] = P[j] + A[r][j-1]*pes[j-1]` (and `pes[0]=P[0]`). The exclusive suffix satisfies `vs[j] = Q[j] + A[r][j+1]*vs[j+1]` (and `vs[K-1]=Q[K-1]`). These are maintained incrementally for horizontal moves and recomputed block-wise for vertical moves.
+- **Complexity:** O(Q * min(H,W)) time, O(HW + Q) memory. Worst case ~2e5 * 447 ≈ 9e7 inner operations; optimized pure Python passes under PyPy, and CPython is usually acceptable for the given limits (often 4s+).
+- **Edge cases:** Handles zeros, MOD-1 values, transposition, and starting at any cell. All arithmetic is modulo 998244353.

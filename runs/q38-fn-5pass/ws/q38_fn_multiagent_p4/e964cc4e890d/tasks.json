@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and verify the strong-connectivity characterization, endpoint conditions, q_i values, and first-occurrence segment list.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute factorials/inverse factorials and derive the first-bad-prefix recurrence and final answer formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the CDQ divide-and-conquer with NTT convolution, hybrid naive/shifted/absolute contributions, and endpoint/no-segment edge cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify the current solution on all public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Harden add_contrib: group right-half contributions by distinct D/runs when cheaper, avoid large D offsets, and ensure fallbacks do not double-count partial segment additions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run randomized brute-force validation for small N and edge cases (N=1, endpoints, M=0, alternating, large constant D, nonmonotone D).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Benchmark worst-case N=2e5 performance and tune thresholds or optimize NTT (radix-4 butterfly) if needed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "If optimized CDQ-NTT remains too slow in Python, design and implement an alternative faster approach or fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

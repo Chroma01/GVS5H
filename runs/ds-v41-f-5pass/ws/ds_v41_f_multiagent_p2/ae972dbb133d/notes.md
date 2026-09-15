@@ -1,0 +1,8 @@
+- **Model:** Each tile is a set of ports on its four sides. The torus no-dead-end condition means every shared edge must have equal port presence on both sides.
+- **Type A constraints:** Exactly two adjacent ports ⇔ `t xor b = 1` and `l xor r = 1`.
+- **Type B constraints:** Exactly two opposite ports ⇔ `t xor b = 0`, `l xor r = 0`, and `t xor l = 1`.
+- **Global structure:** Let `a_ij = 1` for A, `0` for B. The first two constraints give `H(i-1,j) xor H(i,j) = a_ij` and `V(i,j-1) xor V(i,j) = a_ij`. These form 1D cycles per column and row. Consistency requires every row and every column to contain an even number of A tiles.
+- **Parameterization:** If row/col parities are even, horizontal edges are `H(i-1,j) = x_j xor colPrefix(i,j)`, vertical edges are `V(i,j-1) = y_i xor rowPrefix(i,j)`, where `x_j` (one per column) and `y_i` (one per row) are free bits.
+- **Type B equations:** Each B cell imposes `x_j xor y_i = 1 xor colPrefix(i,j) xor rowPrefix(i,j)`.
+- **Counting:** Solve these GF(2) equations with a parity DSU over `H+W` nodes. If any row/col parity is odd or DSU finds inconsistency, answer is `0`. Otherwise, each connected component (including isolated nodes) contributes one free bit, so answer is `2^{components} mod 998244353`.
+- **Implementation details:** Scan cells row by row, maintaining `colParity[j]` (XOR of A above current row) and `rowParity` (XOR of A to the left in current row). For each B cell, union row `i` with column node `H+j` using parity `c = 1 ^ colParity[j] ^ rowParity`. Check row parity after each row and column parity after all rows.

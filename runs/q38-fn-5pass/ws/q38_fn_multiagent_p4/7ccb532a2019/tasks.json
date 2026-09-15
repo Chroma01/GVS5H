@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify that the final string must have all present letters at one common positive frequency, and that only adjacent forward changes can create savings over delete+insert.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the fixed-`f` cost model: baseline `sum |c_i - x_i|` where each `x_i` is either `0` or `f`, minus adjacent savings from moving excess at letter `i` to deficit at letter `i+1`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Count the 26 letter frequencies and define the target-frequency search range, using `1` through `len(s)` as a safe bound.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the two-state DP for each `f` over the alphabet, with states \u201cpresent with count `f`\u201d and \u201cabsent with count `0`\u201d, subtracting the transition saving `min(max(c_{i-1}-target_prev, 0), max(target_cur-c_i, 0))`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Loop over all candidate `f` values, update the global minimum, and handle edge cases such as already-good strings, all characters identical, and the `z` boundary where no wrap-around is allowed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run the provided sample tests and a small exhaustive brute-force verifier for all short strings/count vectors to validate the current DP; if any test fails, report the failing input and expected/actual output.",
+    "status": "done",
+    "result": ""
+  }
+]

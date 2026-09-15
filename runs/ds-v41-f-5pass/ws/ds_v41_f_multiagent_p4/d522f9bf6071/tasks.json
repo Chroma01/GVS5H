@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation of candidate approaches (prefix DP, coordinate compression, Fenwick, prefix/suffix split, greedy lex reconstruction, divide-and-conquer).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Approach 1: sort by right endpoint with original indices, binary-search strict predecessor (r < l), dp over first-i sorted positions with exact cardinality k=0..4 storing (max weight, lex-smallest sorted index tuple).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the tie-break comparator (maximize weight, then minimize index tuple) and verify tuple order-preservation when inserting the same new index into candidate tuples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Select final answer: take global max weight over k, then lexicographically smallest tuple among those states; return as list.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test on Examples 1 and 2 and edge cases (single interval, all-overlapping, fewer-than-4 optimum, tie broken by shorter list); report actual vs expected.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Fallback (only if Approach 1 fails): Fenwick/segment-tree prefix-max DP over compressed right endpoints for the same state/comparator.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Fallback (only if both DPs fail): divide-and-conquer over a median coordinate, handling at most one crossing interval per split and merging cardinality tables with lex tuples.",
+    "status": "done",
+    "result": ""
+  }
+]

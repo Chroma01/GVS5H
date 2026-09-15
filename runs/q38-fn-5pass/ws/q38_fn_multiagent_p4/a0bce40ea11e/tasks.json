@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "desc": "Read input, store A modulo p, count zeros K; if p == 1 print N lines of zeros and exit.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "For p == 2, replace every zero by 1, compute B^2 modulo 2 with matrix multiplication, print, and exit.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement optimized modular matrix multiplication and binary exponentiation to compute A^p modulo p for odd p.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For odd p, initialize result with A^p; for every zero position (r,c), add column c of A to result[:,c] and add row r of A to result[r,:], reducing modulo p.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If p == 3, for every zero off-diagonal position (r,c), additionally add A[c][r] to result[r][c] modulo p.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Multiply every entry by p-1 if K is odd, otherwise by 1, then print the matrix.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Run the three sample tests; if any fail, debug formula/sign/orientation or switch to a different derivation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Validate against brute-force enumeration for tiny N,p,K to catch sign and p=3 orientation errors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 9,
+    "desc": "If matrix exponentiation is too slow, optimize multiplication (transpose, sparse skip, or alternative polynomial method) and retest.",
+    "status": "done",
+    "result": ""
+  }
+]

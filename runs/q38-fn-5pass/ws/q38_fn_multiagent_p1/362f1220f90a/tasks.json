@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Produce a compact, self-contained Python implementation of generateString using the KMP automaton backward feasibility DP (or a simpler equivalent) that fits within token limits.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run the current implementation against the three sample tests and report an explicit PASS/FAIL verdict.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run additional small random brute-force validation against a naive checker for small n and m, including edge cases (m=1, all T, all F, overlapping T conflicts, F windows forced equal by T constraints, repeated-character str2, multiple F windows sharing one free position), and report an explicit PASS/FAIL verdict with failing input if any.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If any test fails, either fix the failing case or switch to a different approach.",
+    "status": "done",
+    "result": ""
+  }
+]

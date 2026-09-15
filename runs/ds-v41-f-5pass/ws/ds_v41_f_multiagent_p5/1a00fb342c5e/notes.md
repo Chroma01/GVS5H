@@ -1,0 +1,9 @@
+- **Problem model:** each constraint is an undirected edge (X_i, Y_i) with XOR weight Z_i; find A with A_u XOR A_v = Z_i minimizing sum A_i.
+- **Bit independence:** A_u XOR A_v = Z holds bitwise. Fix a spanning forest; assign root potential 0 and propagate p[v] = p[u] XOR z. Then for any component-wide constant c, A[v] = p[v] XOR c satisfies every internal edge automatically. Feasibility: no cycle/self-loop/duplicate-edge contradiction; detect by checking every already-visited edge (p[u] XOR p[v] == z). A self-loop (x==y) needs z==0, else -1.
+- **Minimization:** total sum = sum over bits 2^b * (#vertices with bit b set). Each bit is independent. For a component of size S with cnt[b] vertices whose potential has bit b, choosing c's bit b = 0 gives cnt[b] ones, choosing 1 gives S-cnt[b]. Pick c bit b = 1 iff cnt[b]*2 > S (majority). This is per-component, per-bit optimal.
+- **Isolated vertices:** form size-1 components, potential 0, offset 0, answer 0 (optimal).
+- **Bit range:** Z <= 1e9 < 2^30, and potentials are XORs of Z's, so all relevant bits are 0..29; use MAXB=31 for safety. Higher bits forced to 0 (cost-free, optimal).
+- **Traversal:** iterative stack DFS (no recursion limits). Collect members while assigning potentials; process each component fully before moving on.
+- **Complexity:** O(N + M) for traversal plus O(N * MAXB) (~6.2M) for bit counting; well within limits for N<=2e5, M<=1e5.
+- **Verification:** samples 1,2,3 reproduced exactly (1: [0,3,4]; 2: -1 from p2^p3=7 != 5; 3: potentials [0,2,9,6,0], c=0).
+- **Pitfalls handled:** self-loops with nonzero z; conflicting duplicate edges (checked during DFS); not confusing component offset choice with existing labels (chosen per bit by majority, not from the value set).

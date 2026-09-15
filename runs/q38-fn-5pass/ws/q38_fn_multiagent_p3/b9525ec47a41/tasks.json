@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the exact transition table for one position: for s_i = 0, allowed d_i are 0,1,2; for s_i = 1, allowed d_i are 0,1,2,3; list all possible edge-state transitions a_{i-1} -> a_i for each case.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Encode each label transition as a 4-bit Boolean 2x2 matrix, and precompute for every relation mask and every s_i bit the aggregated next masks with multiplicities, using Boolean matrix multiplication.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the main DP over relation masks: initialize the identity relation, process the string left to right, update counts modulo 998244353, and ensure the loop is optimized for N = 10^6.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute the final answer by summing DP counts of relation masks whose diagonal contains at least one reachable state, since this exactly enforces the circular consistency of the cycle orientations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Reduce the DP state space using the swap symmetry of cycle states, with correct orbit averaging and final acceptance weights.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Optimize processing with precomputed 10-bit block transitions to handle N up to 10^6 efficiently in Python.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate the implementation with the provided samples and the cycle-only sanity check; sample tests passed.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: reduce boundary points to perimeter coordinates and use binary search over answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement helper mapping each boundary point to a unique perimeter coordinate in [0, 4 * side) and sort coordinates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement can(d) using duplicated sorted coordinates, two-pointer next-pointer table, and greedy jumps of at least d; ensure selection stays within one circumference and last point leaves at least d circular distance to first.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement maxDistance with binary search over [0, side], special-case d=0, and return maximum feasible distance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate against examples and corner cases, especially corner coordinate assignment, wrap-around, and d=0.",
+    "status": "done",
+    "result": ""
+  }
+]

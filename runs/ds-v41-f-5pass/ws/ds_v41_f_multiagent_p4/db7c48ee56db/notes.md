@@ -1,0 +1,10 @@
+- **Core difficulty:** Maximizing XOR over exactly K chosen elements. Arbitrary-subset XOR maximization via linear basis does not work with an exact cardinality constraint.
+- **Key guarantee:** \(\binom{N}{K} \le 10^6\) means brute-force enumeration of all valid selections is feasible. N and K themselves may still be large.
+- **Complement trick:** If K is large, enumerate the excluded set of size N-K instead. Chosen XOR = total XOR ^ excluded XOR. This keeps the enumerated size at m = min(K, N-K).
+- **Combination count:** \(\binom{N}{m} = \binom{N}{K} \le 10^6\), so at most about one million tuples are processed.
+- **m = 0 case:** Occurs when K = N. The else branch uses combinations(A, 0), which yields one empty tuple; the answer becomes total XOR. Handled correctly.
+- **Maximum depth:** Under the constraints m is at most 11, e.g. \(\binom{22}{11}=705432 \le 10^6\) but \(\binom{24}{12} > 10^6\). Thus inner XOR loops over tuples are cheap.
+- **Duplicates:** Elements are treated by index, not by unique value. itertools.combinations over the list preserves index-based selections; repeated value tuples may appear but the maximum is unaffected.
+- **Complexity:** O(C(N,K) * m) time, roughly at most a few million inner XOR steps, and O(N) memory.
+- **Input/output:** Read all input from stdin efficiently with sys.stdin.buffer. Initialize best to -1 since all XOR values are non-negative.
+- **Verification:** Sample 1 gives 7. Sample 2 gives 2024.

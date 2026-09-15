@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduce strong connectivity to the prefix-cut coverage condition and the first-return recurrence.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement first-return recurrence h_i = (W_i! \u2212 \u03a3_{j<i} h_j (W_i\u2212B_j)!)\u00b7inv(T_i!) with CDQ.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Integrate range-restricted numpy-NTT convolutions into CDQ.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm 3 public samples produce 1 / 0 / 240792 (direct-DP path only, M\u2264800).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Force CDQ path (direct-DP threshold=0) and stress-test vs O(N^2) reference: all balanced N\u22648, random N=50/200/1000, (BW)^N, B W^{N-1} B^{N-1} W; report first mismatch.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If CDQ mismatch found, instrument the merge to dump accum[] at base cases and compare term-by-term with the recurrence to localize the bug.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Benchmark N=2e5 worst cases (random, B^N W^N, (BW)^N, B W^{N-1} B^{N-1} W) and record wall time; ensure it fits the time limit.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Fallback if CDQ remains buggy or too slow: adopt a simpler/safer approach (different reduction or fixless tier) rather than polishing a stuck implementation.",
+    "status": "pending",
+    "result": ""
+  }
+]

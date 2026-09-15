@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate candidate approaches and select the largest-first greedy with Fenwick tree and triangular-number cost.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Read N and the permutation P, and build a 1-based position array pos[value] = index.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement a Fenwick tree supporting point add and prefix sum, initialized with 1 at every position.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Define triangular number T(n) = n(n+1)//2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Iterate x from N down to 1: let p = prefix_sum(pos[x]), add T(x-1) - T(p-1) to the answer, then remove pos[x] from the Fenwick tree.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Use Python integers for the answer and print it to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Check the logic against the samples: reverse permutation of 3 gives 4, sample 2 gives 6, and sorted input gives 0.",
+    "status": "done",
+    "result": ""
+  }
+]

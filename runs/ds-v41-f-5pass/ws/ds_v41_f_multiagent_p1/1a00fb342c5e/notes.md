@@ -1,0 +1,9 @@
+- **Problem model:** Each equation A_{X_i} XOR A_{Y_i} = Z_i is a weighted edge. A good sequence exists iff every cycle has XOR of labels 0. Each connected component has exactly one free integer (its root value); all other vertices are root XOR a path-XOR.
+- **Component parameterisation:** Fix root D=0; set D[v] = XOR of labels along any BFS/DFS tree path from root. Because the graph is cycle-consistent, this is well defined. Then A[v] = R_root XOR D[v], where R_root = A[root] is the single free choice per component.
+- **Edge validation during BFS:** When relaxing edge (u,v,z) from visited u with known D[u], require D[v] == D[u] ^ z. If v already visited and mismatch, print -1. Every edge is examined from both endpoints, so all cycle constraints are captured. This subsumes duplicate edges with conflicting labels.
+- **Self-loops:** x==y with z!=0 is immediately impossible (A_x XOR A_x = 0); z==0 is vacuous and can be dropped. Handled before building adjacency.
+- **Bitwise independence (optimization):** Sum = Σ_v (R XOR D[v]). Each bit of R is an independent binary choice. For bit b, let c = number of component vertices with bit b set in D. Choosing R's bit = 0 contributes c·2^b; choosing 1 contributes (size-c)·2^b. Pick 1 iff size-c < c, i.e. c > size/2. This greedily minimizes each bit simultaneously.
+- **Bits needed:** Z ≤ 1e9 < 2^30, and XOR of such values stays < 2^30, so bits 0..30 (31 bits) safely cover everything; for bits above all D values, c=0 so R bit stays 0.
+- **Isolated vertices:** No edges → component of size 1, D=0, c=0 → R=0 → A=0, which minimizes (non-negative constraint satisfied).
+- **Complexity:** O(N·31 + M) time, O(N + M) memory; iterative BFS avoids recursion-depth issues for N up to 2e5.
+- **Sample verification (mental):** Sample 1 → D=[0,3,4], all bit counts ≤ size/2 so R=0 → 0 3 4. Sample 2 → edge (2,3,5) contradicts D2^5=D3 (6≠4) → -1. Sample 3 → D=[0,2,9,6,0] for roots, R=0 → 0 2 9 6 0. All match.

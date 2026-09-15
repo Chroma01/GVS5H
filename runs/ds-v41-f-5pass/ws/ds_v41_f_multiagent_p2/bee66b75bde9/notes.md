@@ -1,0 +1,12 @@
+- **Problem structure:** A valid coloring is exactly a down-closed subset of the N×N grid under the product order. Cell (x,y) being black forces every (x',y') with x'≤x and y'≤y to be black.
+- **Proof of structure:** Row condition gives left prefixes; column condition gives top prefixes. If (x,y) is black, then (x,y') is black for y'≤y, and then (x',y') is black for x'≤x by the column condition. The converse is immediate.
+- **Forced closure:** Given required black cells B, every valid completion must contain closure(B), the set of all cells dominated by at least one cell of B. The minimal valid black set is exactly closure(B).
+- **Feasibility criterion:** A completion exists iff closure(B) contains no required white cell. If a white cell lies in closure(B), every valid completion is impossible. Otherwise closure(B) itself is a valid coloring avoiding all whites, so color everything else white.
+- **Pointwise test:** White (wx,wy) lies in closure(B) iff there is black (bx,by) with wx≤bx and wy≤by. So answer No iff some white is dominated in both coordinates by some black.
+- **Efficient check:** Sort black points by x ascending. Build suffix maximum of y. For each white (wx,wy), binary-search the first black with bx≥wx; if the suffix maximum y from there is at least wy, print No.
+- **Boundary equality:** The closure includes boundary cells, so inequalities are non-strict: wx≤bx and wy≤by. Using bisect_left with bx≥wx and suffix_max≥wy correctly handles equality.
+- **No black cells:** If all given cells are white, the all-white coloring works, so the answer is Yes.
+- **Sample validation:** Sample 1 gives Yes; sample 2 has black (2,2) dominating white (1,2), so No; sample 3 is Yes; sample 4 has white (1789,211) dominated by black (1814,712), so No.
+- **Tie validation:** For N=2 with B=(2,2), W=(1,2), the criterion gives No because wx≤bx and wy≤by hold with equality in the column coordinate. This matches the true impossibility.
+- **Complexity:** Sorting and binary searches give O(M log M) time and O(M) memory, independent of N.
+- **Implementation details:** Input is read as bytes; the color token is compared with b'B'. N itself is not needed after parsing because only the M explicit constraints matter.

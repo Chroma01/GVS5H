@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation/proof: reduce to selecting 2K cakes with even color counts and show an optimal repair from the top-2K basis needs at most two recolor/swap operations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement parser, unconstrained basis, total, base colors, and parity mask.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build TOP=5 selected/unselected candidate lists and generate directed recolor/swap operations with losses.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Enumerate single and compatible pair operations to find minimum parity-repair loss and output answers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate on samples and edge cases (N=2, N=2K, many ties, K=1, no unselected cakes).",
+    "status": "done",
+    "result": ""
+  }
+]

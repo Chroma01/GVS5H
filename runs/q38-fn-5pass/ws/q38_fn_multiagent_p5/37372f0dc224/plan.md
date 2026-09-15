@@ -1,0 +1,1 @@
+Find the longest suffix of S that is already a palindrome. The shortest palindrome with prefix S is formed by appending the reverse of the remaining prefix before that palindromic suffix. Compute the longest palindromic suffix efficiently using KMP prefix-function or Z-function on a transformed string. Then construct and output the answer.

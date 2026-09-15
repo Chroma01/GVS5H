@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Build sieve up to 10^6, compute omega (distinct prime factor count) for each m, collect those with omega(m)==2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Square collected m values to form the valid list of 400 numbers (all <= 10^12).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Answer each query using math.isqrt(A) + bisect_right for the largest valid m <= isqrt(A), output m*m.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize I/O for Q <= 2e5 and verify against sample (404->400, 36->36, 123456789->123454321, 10^12->10^12) and boundary A=36.",
+    "status": "done",
+    "result": ""
+  }
+]

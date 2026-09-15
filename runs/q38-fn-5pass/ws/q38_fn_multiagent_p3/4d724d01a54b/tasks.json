@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: choose the descending-value Fenwick greedy approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete Python solution with Fenwick tree and descending-value loop.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Review edge cases and performance: sorted permutation, reverse permutation, cur == x, N up to 2e5, and Python integer arithmetic.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Select monotonic-stack contribution counting as the primary approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement deterministic tie-breaking and boundary arrays for minima and maxima.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement O(1) bounded-length pair-count helper for left/right extensions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement minimum-contribution pass using previous strictly smaller and next smaller-or-equal boundaries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement maximum-contribution pass using previous strictly larger and next larger-or-equal boundaries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Combine contributions and handle negative values and large totals.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate against examples and edge cases: k=1, k=n, duplicates, all negative, all equal.",
+    "status": "done",
+    "result": ""
+  }
+]

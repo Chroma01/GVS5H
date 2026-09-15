@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "...",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse input, simulate moves, compute final position, and build normalized horizontal segments `(y, x1, x2)` and vertical segments `(x, y1, y2)`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Group horizontal segments by `y` and vertical segments by `x`, then merge overlapping or touching inclusive intervals.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each house, determine horizontal coverage from merged `y` intervals and vertical coverage from merged `x` intervals, maintaining per-house flags.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute distinct visited houses as `horizontal_count + vertical_count - both_count`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Print final `X`, `Y`, and distinct house count, handling large coordinates and endpoint inclusivity.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify public sample tests pass.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: establish monotonicity over the answer and identify that an exact feasibility check is required because naive greedy can fail due to boundary merging.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement `can(L)` with a finite-automaton DP: for each prefix, track minimum flips ending with character 0 or 1 and current run length 1..L; disallow runs longer than L and cap costs at `numOps + 1` for early stopping.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement `minLength` with binary search over `low = 1` and `high = n`, using `can(mid)` to find the smallest feasible maximum run length.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run brute-force comparison for small n to confirm DP correctness.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run the three sample tests and report explicit SAMPLE TESTS PASS/FAIL verdict.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,8 @@
+- **Core observation:** For positive integers x,y with x^3-y^3=N, we have x>y. Let d=x-y. Then d is a positive divisor of N because x^3-y^3=(x-y)(x^2+xy+y^2).
+- **Reduction to one variable:** Substitute x=y+d. Then N=(y+d)^3-y^3=3dy^2+3d^2y+d^3=d(3y^2+3dy+d^2). For a fixed divisor d, this is a quadratic equation in y.
+- **Bound on d:** Since y>=1, 3y^2+3dy+d^2 > d^2, so N>d^3. Therefore d is at most the integer cube root of N. With N<=10^18, this bound is at most 10^6, making enumeration feasible.
+- **Quadratic test:** For each d dividing N, let m=N//d. Need 3y^2+3dy+d^2=m. The discriminant is D=12m-3d^2. A positive integer y exists iff D is a perfect square, s=sqrt(D) satisfies s>3d, and (s-3d) is divisible by 6. Then y=(s-3d)//6 and x=y+d.
+- **Integer cube root:** Floating point cube roots are unsafe near 10^18. The implementation uses binary search with integer multiplication to compute floor(cuberoot(N)) exactly.
+- **Edge cases:** N=1 gives only the invalid y=0 candidate for d=1 and outputs -1. Perfect cubes may produce y=0 candidates, which are rejected because y must be positive. The final verification also prevents accepting any algebraic false positive.
+- **Complexity:** The loop runs up to floor(cuberoot(N))<=10^6. Each iteration does a modulo check; only divisors trigger integer square root. This is easily fast enough in Python.
+- **Implementation details:** Use sys.stdin.buffer for input, math.isqrt for exact integer square roots, and Python's arbitrary precision integers to safely handle discriminants up to about 1.2e19.

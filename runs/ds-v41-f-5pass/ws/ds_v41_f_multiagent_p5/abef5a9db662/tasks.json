@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Read N, the N intervals (L_i,R_i), Q, and the Q queries X from stdin.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Key reduction: track only distinct query values (sorted) since the per-contest map x -> x+[L<=x<=R] is monotonic, so qualifying queries form a contiguous range [p, qq).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Lazy segment tree (no push-down) over sorted distinct queries with subtree max, range add +1, and find_first(v) for the first index with value >= v.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Process each contest: p=find_first(L_i); qq=find_first(R_i+1) (or m); range-add +1 on [p, qq-1].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Push lazies and map each distinct query value to its final rating, then output in original query order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verified against all 3 provided samples (PASSED) plus hand-checked edge cases (size=1, padding -inf, empty range).",
+    "status": "done",
+    "result": ""
+  }
+]

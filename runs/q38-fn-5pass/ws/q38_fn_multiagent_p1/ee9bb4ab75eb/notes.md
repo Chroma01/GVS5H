@@ -1,0 +1,12 @@
+- **Verdict:** PASS. The current implementation produces the expected outputs for both provided samples and all targeted edge cases checked below; no failing input was found.
+- **Sample 1:** `words = ["jump","run","run","jump","run"], k = 2` returns `[3,4,4,3,4]`. Depth 4 is feasible only for removals not passing the unique count-2 prefix `"jump"`, while depths 1..3 are feasible for all removals.
+- **Sample 2:** `words = ["dog","racer","car"], k = 2` returns `[0,0,0]`. No depth has a prefix group of size at least 2 after any removal.
+- **n=1, k=n:** Early return gives `[0]`, matching the rule that removal leaves fewer than `k` strings.
+- **k=n:** Early return gives all zeros for every index.
+- **k=1:** The per-depth rule correctly reduces to “some remaining word has this prefix.” Unique count-1 nodes become status 2 exceptions; multiple count-1 nodes or any count >= 2 make the depth feasible for all removals. Binary search then returns the maximum length among remaining words.
+- **Duplicates:** Pass counts count indices, so duplicate words are handled correctly. Example `["a","a","b"], k=2` gives `[0,0,1]`: removing an `"a"` leaves no pair sharing prefix length 1, while removing `"b"` leaves two `"a"` strings.
+- **Prefix words:** Words that are prefixes of others are counted at their terminal depth and not at deeper depths. Example `["a","ab","abc"], k=2` gives `[2,1,1]`, and `["a","ab","ab"], k=2` gives `[2,1,1]`.
+- **Removed word shorter than answer:** The binary-search feasibility check uses `plen <= mid` to treat a removed word shorter than the tested depth as not belonging to that depth’s exception group. Example `["a","ab","ab"], k=2` correctly returns `2` when removing `"a"`.
+- **Empty-string variants:** Although constraints state non-empty strings, the logic handles them: empty words do not contribute to positive-depth nodes, and depth 0 is handled by the early return plus `lo = 0`.
+- **Monotonicity:** For each fixed removal index, feasibility over prefix length is monotone. The status classes (all feasible, all infeasible, single exception node) preserve this property, so the upper-mid binary search is valid.
+- **Complexity:** Trie construction and aggregation are linear in total characters. Binary search is `O(n log max_len)` with `O(1)` checks. Memory is dominated by the flat 26-way trie array and path storage, within the given limits.

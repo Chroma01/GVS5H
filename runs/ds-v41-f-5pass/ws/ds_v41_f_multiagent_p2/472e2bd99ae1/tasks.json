@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze structure: sort A,B,C descending so f(i,j,k) is monotone non-increasing in each index; set of triples with f>=T is a down-set.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove truncation to first M=min(N,K) elements is value-preserving.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement best-first heap expansion (unique predecessor, packed int keys, encode code = i*2^36+j*2^18+k).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify Samples 1-3 pass (31, 30000, 689589940713840351).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Reason about complexity: O(N log N) + O(K log K), bounded heap size, edge cases (N=1, K=1, ties, K near N^3).",
+    "status": "done",
+    "result": ""
+  }
+]

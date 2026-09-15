@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove equivalence to minimizing inversions + runs over the deletion order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run-length encode the sequence, cap run lengths at 1/2, and characterize useful local swaps: profitable a,b,a,b and neutral a,b,a.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive and implement the single-anchor DP that maximizes the number of profitable swaps.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the final solver with fast I/O and run compression under total N <= 2e5.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate on the public samples and basic edge cases; sample tests passed.",
+    "status": "done",
+    "result": ""
+  }
+]

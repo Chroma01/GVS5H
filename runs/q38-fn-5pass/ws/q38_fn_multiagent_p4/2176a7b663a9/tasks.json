@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Validate the bounded-hop (<=3 edges) optimal-path hypothesis using brute-force shortest paths on random small interval sets.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove the structural lemma and derive the exact candidate-path formula for overlapping endpoints: direct edge, one common neighbor, and two-intermediate paths with compatibility constraints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute the necessary range/dominance minima for the chosen formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the query logic with strict disjointness conditions and endpoint weights counted exactly once.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify the implementation against the public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

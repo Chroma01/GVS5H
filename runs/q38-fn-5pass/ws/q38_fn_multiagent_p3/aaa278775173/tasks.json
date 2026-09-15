@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: identify phase constraints, four diagonal directions, clockwise mapping, and candidate DP approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement straight-run DP for all four diagonal directions and two phases using compact flat arrays or memory-safe structures.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement directional prefix DP from starting 1s, scanning each direction in topological order, and combine each prefix with the clockwise straight-run suffix to update the answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle edge cases: no 1, single 1, straight-only segments, turn at boundaries, phase preservation after turn, and verify examples.",
+    "status": "done",
+    "result": ""
+  }
+]

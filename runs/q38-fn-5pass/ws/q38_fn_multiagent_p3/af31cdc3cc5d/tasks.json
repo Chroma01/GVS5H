@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement and run Python solution using the even-segment order-statistic formula (sort for even N; two heaps for prefix/suffix for odd N) and report sample test verdict.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate edge cases N=2, N=3, all equal values, and large values; sample tests passed and the proof covers these cases.",
+    "status": "done",
+    "result": ""
+  }
+]

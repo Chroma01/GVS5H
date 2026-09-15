@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and approach selection.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement final Python solution with NumPy FFT primary and exact big-integer fallback.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle input parsing, N<3, and memory cleanup.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate against sample tests and edge cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Check performance/memory for N and values up to 10^6.",
+    "status": "done",
+    "result": ""
+  }
+]

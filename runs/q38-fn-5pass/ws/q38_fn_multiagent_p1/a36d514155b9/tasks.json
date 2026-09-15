@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: considered pair-contribution, separable row/column, boundary-crossing, and expected-value approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm the combinatorial reduction: each unordered cell pair contributes its Manhattan distance multiplied by C(N - 2, k - 2), where N = m*n.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement a modular combination helper for values up to N <= 10^5 using precomputed factorials and inverse factorials.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the 1D distance-sum formula L*(L^2 - 1)/6 modulo 10^9 + 7 using the modular inverse of 6.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Combine row and column contributions as n^2 * rowDistanceSum + m^2 * colDistanceSum modulo 10^9 + 7.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Multiply the combined distance sum by the binomial coefficient and return the result modulo 10^9 + 7.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Test the solution on the provided examples and edge cases such as k = 2, k = m*n, and one-dimensional grids.",
+    "status": "done",
+    "result": ""
+  }
+]

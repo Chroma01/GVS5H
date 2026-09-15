@@ -1,0 +1,8 @@
+- **Problem Model:** Each shared cell boundary has a bit (1 if a line endpoint exists there). A tile orientation is valid iff for cell (i,j) with sides L,R,U,D: Type A gives L⊕R=1 and U⊕D=1; Type B gives L⊕R=0, U⊕D=0, and L⊕U=1.
+- **Row/Column Variables:** Define r_i for each row and c_j for each column. From L⊕R=indicator(A) we get x_{i,j}=r_i⊕P_row(i,j), where P_row(i,j) is parity of A in row i up to column j. Similarly y_{i,j}=c_j⊕P_col(i,j).
+- **Parity Requirement:** Consistency around torus requires every row and every column to have an even number of A tiles. If not, answer is 0.
+- **B-Tile Equation:** For a B cell (i,j), L⊕U=1 becomes r_i⊕c_j = 1 ⊕ P_row(i,j-1) ⊕ P_col(i-1,j). In the scan, row_pref = P_row(i,j-1) and col_par[j] = P_col(i-1,j), so w = 1 ^ col_par[j] ^ row_pref.
+- **Counting:** The equations form a linear system over GF(2) between row and column variables. A DSU with parity (xor to parent) tracks consistency and connected components. Number of solutions = 2^{#components}. If a contradiction occurs during union, answer is 0.
+- **Algorithm:** For each test case, initialize DSU over H+W nodes. Scan rows i=0..H-1, maintaining col_par[j] (parity of A above row i) and row_pref. For 'B', add equation r_i⊕c_j = w via union; for 'A', toggle row_pref and col_par[j]. After each row, check row_pref==0. After all rows, check all col_par[j]==0. If consistent, output pow(2, components, 998244353).
+- **Complexity:** O(HW α(H+W)) per test case, total O(ΣHW α) ≤ 1e6 α. Memory O(H+W) per test.
+- **Edge Cases:** All A: no equations, answer 2^{H+W}. All B: answer 2 if graph connected else 2^{components}. Odd A count in any row/col → 0. Contradiction in B equations → 0.

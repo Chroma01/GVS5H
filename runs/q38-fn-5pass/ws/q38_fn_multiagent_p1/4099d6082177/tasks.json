@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and algorithm selection: corrected one-state bottom-up DP with modulo-forced open path lengths.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the full corrected bottom-up greedy DP solution as described, including iterative traversal and O(NK) time/memory.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify implementation on sample tests and edge cases: K=1, K=2 perfect matching, single path of K vertices, star with K vertices, deep chain, root with zero positive children, more than two positive children, and impossible modulo cases.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Define cycle orientation x_i and derive d_i = 1 + x_{i-1} - x_i + w_i for i<N, with d_N forced by the prefix sum (answer = # achievable prefixes).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Model achievable prefixes as the 2-state NFA and build the relation-determinization automaton (12 reachable relations A..M), collapsing to 7 symmetric variables.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the O(N) 7-state unrolled DP with modulo every 64 steps; it passes both public samples (N=3 \"010\" -> 14 and N=20 -> 261339902).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verified correctness and performance (O(N) time, O(1) memory, fits constraints up to N=10^6).",
+    "status": "done",
+    "result": ""
+  }
+]

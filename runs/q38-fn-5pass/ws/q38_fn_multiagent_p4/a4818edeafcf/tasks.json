@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Compute prefix distinct counts L[1..N] and suffix distinct counts R[1..N+1].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a segment tree supporting point activation and range-add effects via a difference-array representation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Sweep j from 2 to N-1: activate i = j-1, apply the update based on the previous occurrence of A[j], query the best value for i < j, and combine it with R[j+1].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle boundary cases such as N = 3, previous occurrence equal to 0, inactive positions, all elements equal, and all elements distinct.",
+    "status": "done",
+    "result": ""
+  }
+]

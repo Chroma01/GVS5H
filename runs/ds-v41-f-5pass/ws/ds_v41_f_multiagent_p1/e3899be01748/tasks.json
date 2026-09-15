@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive recurrence for updating modulo-d values of substrings ending at i when appending digit x.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Specify counting using updated cnt[x][0] for x>0 and skipping x=0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm leading zeros are handled naturally because substrings are tracked by numeric value/residue.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the solution on the three samples and brute-force random cross-check; report explicit PASS/FAIL with observed numbers (all PASS: 11, 18, 25; 2000 random + all strings up to length 6 matched brute force).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Benchmark on n=1e5 worst case (all 9s, and repeating \"1234567890\") \u2014 under 0.5s in CPython, within limits.",
+    "status": "done",
+    "result": ""
+  }
+]

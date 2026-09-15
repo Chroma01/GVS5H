@@ -1,0 +1,6 @@
+- **Reduction:** Let row \(r\) have black prefix length \(l_r\). The column-prefix condition is equivalent to \(l_1 \ge l_2 \ge \dots \ge l_N\), so the black cells form a top-left Young diagram: if \((R,C)\) is black, every cell \((r,c)\) with \(r \le R\) and \(c \le C\) is black.
+- **Obstruction:** A coloring is impossible iff there exists a white cell \((r,c)\) weakly above-left of a black cell \((R,C)\), i.e. \(r \le R\) and \(c \le C\). Conversely, if no such pair exists, choose \(l_r = \min_{s \le r} U_s\), where \(U_s\) is the tightest white upper bound in row \(s\).
+- **Sweep:** Process cells in increasing row order. In the same row, process white cells before black cells because equality \(r = R\) still counts as above-left. Maintain the minimum column among all processed white cells. For a black cell \((R,C)\), a violation exists exactly when this minimum white column is \(\le C\).
+- **Implementation:** Use fast byte-token input. Encode white as type 0 and black as type 1; tuple sort \((row, type, col)\) automatically puts whites before blacks in the same row. \(N\) is not otherwise needed.
+- **Complexity:** \(O(M \log M)\) time and \(O(M)\) memory, with \(M \le 2 \times 10^5\).
+- **Samples:** The expected outputs are Yes, No, Yes, No.

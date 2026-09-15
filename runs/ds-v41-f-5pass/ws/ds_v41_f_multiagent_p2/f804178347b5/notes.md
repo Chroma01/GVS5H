@@ -1,0 +1,10 @@
+- **Problem model:** The N-fold majority operation is a full ternary tree of height N; leaves are the characters of A, every internal node outputs the majority of its 3 children, and the root equals A'_1.
+- **Monotonicity key fact:** majority is monotone. To make any node output 1, an optimal solution never flips 1->0 (reverting such a flip only raises leaf values, preserving output 1 and reducing cost). Symmetrically, to force output 0, never flip 0->1. So the two goals decouple into one-direction flips.
+- **DP states:** For each node store cost1 = min number of 0->1 flips so its subtree makes the node 1, and cost0 = min number of 1->0 flips so it makes the node 0. Both are non-negative.
+- **Leaf costs:** cost1 = 1 if leaf is '0' else 0; cost0 = 1 if leaf is '1' else 0.
+- **Recurrence:** node = 1 requires at least two of three children = 1, so cost1[parent] = sum of the two smallest cost1 among children (the third child costs nothing; making a third one 1 never helps since costs >= 0). Similarly cost0[parent] = sum of the two smallest cost0 among children. Computed as a+b+c - max(a,b,c).
+- **Original value:** simulate majority bottom-up on the untouched bits (a+b+c >= 2) to learn the root's real value.
+- **Answer:** if original root is 1 (must flip to 0) output cost0[root]; if original root is 0 output cost1[root]. One of the root costs is 0 (its true value), so the answer also equals max(cost0[root], cost1[root]).
+- **Complexity:** O(3^N) time and memory; total work is sum_{k=0}^{N-1} 3^k ≈ 1.5 * 3^(N-1), about 800K inner steps for N=13. Well within limits.
+- **Implementation trick:** `it = iter(arr); [f(a,b,c) for a,b,c in zip(it,it,it)]` collapses each consecutive triple in one fast pass. `data = sys.stdin.read().split(); A=''.join(data[1:])` handles both contiguous and space-separated strings.
+- **Samples verified:** N=2 "010011101" -> 1; N=1 "000" -> 2.

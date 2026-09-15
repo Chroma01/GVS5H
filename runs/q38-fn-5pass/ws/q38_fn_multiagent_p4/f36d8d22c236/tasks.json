@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: derive feasibility conditions and the minimum-operation formula E + C.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Fix the runtime error in the concise implementation and validate all four samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test edge cases: inconsistent mapping, all 26 letters present with a permutation cycle, duplicate targets creating a temporary letter, self-mappings, and letters appearing only in T.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm the closed-cycle/temporary-letter logic is correct; alternative Kahn/SCC formulation is unnecessary.",
+    "status": "done",
+    "result": ""
+  }
+]

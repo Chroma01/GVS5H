@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement monotonic-stack boundary passes (prev_le/next_lt for min, prev_ge/next_gt for max) with consistent tie-breaking so each subarray counts exactly one min and one max.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(1) capped pair-count for a fixed index given L, R and cap k; handle L or R exceeding k and guarantee a nonzero arithmetic-series result.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Combine contributions as sum over i of nums[i]*(min_count+max_count) with Python big ints; keep total O(n) time.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run sample tests and brute-force validation (k=1, k=n, all-equal, strictly monotonic, duplicates/negatives); verdict reported as pass with no counterexample.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze the pairing condition and prove the reduction: K pairs feasible iff 2*A[i] <= A[N-K+i] for all i in [0,K) (K smallest as tops, K largest as bottoms), with disjoint index ranges for K <= N//2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement binary search over K in [0, N//2] with feasibility check 2*A[i] <= A[N-K+i]; read stdin and write stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify correctness of the first-K/last-K predicate, monotonicity in K, K=0 handling, and duplicate handling via integer `<=`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the implementation on Samples 1,2,3 \u2014 outputs 3, 0, 6 all PASSED; confirmed no floating point and no hardcoded sample input.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm complexity is acceptable (O(N log N) ~ 5e6 ops at N=5e5); no need to switch to O(N) two-pointer.",
+    "status": "done",
+    "result": ""
+  }
+]

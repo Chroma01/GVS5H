@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Define the F(x) prefix-count reduction for the range (F(0)=0, answer = F(r) - F(l-1)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify the reduction with the two provided examples (10,20)->2 and (1,15)->10.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute the by-length suffix table suffix[j][(sum,product)] over digits 0-9 (leading zeros allowed, product 0 absorbing).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement `count_upto(n)` combining the by-length tables with a tight prefix walk and an explicit test of n itself; answer = count_upto(r) - count_upto(l-1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle edge cases: n<=0 -> 0, first digit 1..9, beauty test p==0 or p%s==0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run provided examples and brute-force cross-check; worst case r=999999999 runs fast; sample tests pass.",
+    "status": "done",
+    "result": ""
+  }
+]

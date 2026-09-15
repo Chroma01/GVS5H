@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N and X, and group the N foods into three lists according to vitamin type V_i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "For each vitamin type, run a 0/1 knapsack DP over calories 0..X to compute best_v[c] = maximum vitamin amount obtainable with total calories at most c (arrays nondecreasing).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement feasibility check for threshold t: for each vitamin find smallest c with best_v[c] >= t (bisect over monotone array); feasible iff sum of the three costs <= X.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Binary search the maximum feasible t in [0, min(best_1[X], best_2[X], best_3[X])], treating t = 0 as always feasible.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Ideation: choose algorithm (independent per-vitamin knapsacks + binary search on the answer).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Output the resulting maximum t; verified against both public samples (both PASSED) and edge cases (empty vitamin group, large A_i).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verified the cheap-vitamin DP truncation + extension logic keeps best_v monotone and correct through capacity X.",
+    "status": "done",
+    "result": ""
+  }
+]

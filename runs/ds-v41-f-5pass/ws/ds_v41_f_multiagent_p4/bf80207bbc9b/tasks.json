@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Confirm reduction: answer = min_c sum_i min(popcount(A_i XOR c), W-popcount(A_i XOR c)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement full Python solution using FWHT XOR convolution: parse H,W and row strings into masks, build freq, precompute g=min(popcount,W-popcount), transform/multiply/inverse, print min.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Ensure FWHT uses correct inverse scaling by 2^W and integer arithmetic.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify sample inputs 1-3 produce expected outputs 2,0,13 and check edge cases W=1 and all-zero/all-one rows.",
+    "status": "done",
+    "result": ""
+  }
+]

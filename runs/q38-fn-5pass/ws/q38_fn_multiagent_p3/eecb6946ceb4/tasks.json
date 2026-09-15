@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement pure-Python parity-split big-integer convolution solution as described in the next task",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify correctness on all samples and edge cases: N < 3, all values same parity, sparse sets, dense sets up to 10^6, and max_val = 10^6",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize runtime/memory if needed: localize struct.unpack_from, delete intermediates, pad byte buffers for safe 4-byte reads, and avoid unnecessary copies",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If the big-integer approach times out or fails, implement a numpy FFT fallback using self-convolution of the binary indicator and rounding coefficients",
+    "status": "done",
+    "result": ""
+  }
+]

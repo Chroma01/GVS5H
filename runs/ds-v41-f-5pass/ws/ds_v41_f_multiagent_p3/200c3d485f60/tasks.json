@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement countGoodArrays with formula C(n-1,k) * m * (m-1)^(n-1-k) mod 1e9+7 using precomputed factorials/inverse factorials and modular exponentiation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle edge cases: k > n-1 returns 0, n = 1 (only k = 0 valid, answer m), exponent 0, m = 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the three sample tests (n=3,m=2,k=1 -> 4; n=4,m=2,k=2 -> 6; n=5,m=2,k=0 -> 2) and confirm they pass.",
+    "status": "done",
+    "result": ""
+  }
+]

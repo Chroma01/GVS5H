@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement D&C solve(lo,hi) with brute-force base case (size <= TH) and recursion sum(left)+right+crossings.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Per-node left cost via right-to-left monotonic block stack (sum of running maxima) plus right R[t]/prefix-sum arrays and two-pointer crossing count.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Stress-test D&C vs O(n^2) brute force on random small arrays (TH forced to 1) to exercise crossing logic.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Execute provided examples (17 and 12), n=1 edge case, and n=1e5 timing test; worker reported solved (examples PASS, random stress matched, ~1.1s at n=1e5).",
+    "status": "done",
+    "result": ""
+  }
+]

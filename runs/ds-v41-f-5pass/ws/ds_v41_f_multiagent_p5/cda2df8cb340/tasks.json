@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and mathematical characterization of f and v2-sum decomposition.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(25*N) exact-valuation residue-bucketing solution (single pass per k with count+sum buckets, diagonal correction) and verify it produces 5, 384, 20241214 on the three samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Write an independent brute force O(N^2) checker and run randomized small tests (N<=30, small and large values, duplicates, all-even/all-odd, N=1) against the implementation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm all 3 public samples PASS via the sample-test verdict.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Edge cases (N=1, all equal, all-even/all-odd, near 1e7) covered by random + hand checks; integer division/lossless-shift reasoning validated.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Constant-factor/performance review for N=2e5 (list buckets for small moduli, dict otherwise) deemed acceptable.",
+    "status": "done",
+    "result": ""
+  }
+]

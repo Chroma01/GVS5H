@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse the parenthesis sequence into a rooted ordered forest and formalize that reversing a valid substring reverses a contiguous run of siblings while applying reverse-complement to each child subtree.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive invariant: reachable strings are exactly the ordered forests isomorphic to the given unordered forest; count = product over nodes of multinomial coefficients by child shape.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the tree canonicalization + multinomial-product solution in Python (iterative parsing, exact tuple-based shape IDs, modular factorials), reading stdin and writing stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify against samples (Sample 1 -> 2, Sample 2 -> 1); passed both public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

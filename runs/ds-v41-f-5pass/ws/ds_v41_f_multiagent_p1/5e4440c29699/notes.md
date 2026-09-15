@@ -1,0 +1,12 @@
+- **Problem model:** Allowed cells are full rectangle [0,W]x[0,H] minus the inclusive rectangular hole F=[L,R]x[D,U]. A path is any sequence of allowed lattice points where each step moves +1 in x or +1 in y; length-0 paths count. Answer = (number of monotone sequences in full grid) minus (sequences that contain at least one F point).
+- **Full-grid total (verified by hand on small cases):** f(W,H) = C(W+H+4, W+2) - (W+H+4) - (W+1)(H+1). Derived from Σ_{a=0}^{W}Σ_{b=0}^{H}(W-a+1)(H-b+1)C(a+b,a). Checks: f(0,0)=1, f(1,1)=10, f(2,1)=22, f(4,3)=431.
+- **Counting invalid paths via first-F-point:** Every sequence containing F has a unique first F point e. Prefix before e avoids F automatically. Cases: (1) prefix empty (start at e, e in F): weight 1 per e in F; (2) entered from the left at e=(L,y), predecessor (L-1,y); (3) entered from the bottom at e=(x,D), predecessor (x,D-1). Interior F points and right/top entries are impossible for monotone paths.
+- **Reach / continuation counts:** For any point p, total paths from any start s<=p to p is Σ_{i<=px}Σ_{j<=py}C(i+j,i) = C(px+py+2, px+1) - 1 (call it P(p)). By symmetry the number of continuations from e to any end t>=e in the grid is S(e) = C((W-ex)+(H-ey)+2, (W-ex)+1) - 1.
+- **Invalid totals:**
+  - start-in-F: Σ_{e in F} S(e). Using u=W-ex+1, v=H-ey+1 the sum is ΣΣ C(u+v,u) over u in [W-R+1, W-L+1], v in [H-U+1, H-D+1], computed in O(1) via F(X,Y)=C(X+Y+2,X+1)-1 with 2D inclusion-exclusion, then subtract |F|.
+  - left entries: Σ_{y=D}^{U} (C(L+y+1,L)-1)(C(W-L+H-y+2, W-L+1)-1), only if L>=1.
+  - bottom entries: Σ_{x=L}^{R} (C(x+D+1,x+1)-1)(C(W-x+H-D+2, W-x+1)-1), only if D>=1.
+- **Answer:** (f - start_in_F - left - bottom) mod 998244353.
+- **Validated by hand:** Sample1 gives 431-30-58-151=192. Extra checks: hole {(0,1)} in 3x3 -> 35; single center hole in 3x3 -> 28; bottom-strip hole in 4x4 -> 144. All matched direct DP.
+- **Identities used:** Σ_{u=0}^{X}Σ_{v=0}^{Y}C(u+v,u)=C(X+Y+2,X+1)-1; Σ_i C(i+a,a)C(b-i,c)=C(a+b+1,a+c+1) (full Vandermonde, not needed fully).
+- **Implementation:** Precompute factorials/invfactorials up to W+H+4 (n<MOD so all binomials nonzero). Use array slices + zip to iterate the O(W+H) sums fast; accumulate raw Python ints then one mod at the end. Handle L=0 / D=0 by skipping the corresponding entry sum.

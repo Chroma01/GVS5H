@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, M, K and store all directed edges, preserving multi-edges as separate arcs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a max-flow/min-cut routine (e.g., Dinic) with a sufficiently large INF capacity (verified M+1 > K suffices since finite min cut <= M).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement feasibility check for target d: build layered network with nodes (v,k), chain INF arcs (v,k+1)->(v,k), force L(1)=0 and L(N)=d via source/sink INF arcs, add capacity-1 arc (v,k)->(u,k) and INF arcs (v,k)->(u,k-1) for k>=2 per edge; feasible iff maxflow <= K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Scan d from 0 to N-1 and return the largest feasible d.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate against all three public samples (passed: 1, 2, 0), including the parallel-edge case confirming both duplicpes must be marked.",
+    "status": "done",
+    "result": ""
+  }
+]

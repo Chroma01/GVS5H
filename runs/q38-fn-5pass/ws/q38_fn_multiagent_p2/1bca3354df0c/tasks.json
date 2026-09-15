@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: identify terminal complete bipartite graph and parity-based cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement input parsing and iterative component traversal with bipartite coloring, computing (a_i, b_i, m_i) for each component.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the winner decision logic using the candidate formula for N odd/even and k odd-component cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate on sample tests and small bipartite graphs; no mismatch found.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Finalize an efficient O(N+M) Python solution that reads stdin and writes Aoki or Takahashi to stdout.",
+    "status": "done",
+    "result": ""
+  }
+]

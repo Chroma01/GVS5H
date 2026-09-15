@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduction: answer for index i = largest divisor d of A_i with at least K array elements divisible by d.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement push-over-primes DP with harmonic slice-sums, d>M//2 shortcut, K=1/K=N shortcuts; PASSED all 3 public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Live brute-force cross-check on random small cases (N<=8, values<=40, all K) plus edge cases (K=1, K=N, M=1, all-duplicates); no mismatches found.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify chunked-output correctness and confirm complexity is within limits (O(M log M) counting + O(M ln ln M) DP + O(N) I/O, M<=1e6).",
+    "status": "done",
+    "result": ""
+  }
+]

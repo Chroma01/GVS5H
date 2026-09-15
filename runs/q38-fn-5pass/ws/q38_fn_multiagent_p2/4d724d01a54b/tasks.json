@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: identify Fenwick-tree greedy/closed-form approaches and pitfalls.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Read the input and store the original 1-based position of each value in the permutation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement a Fenwick tree supporting point updates and prefix-sum queries to count already removed larger values to the left of a given original position.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Iterate values v from N down to 1: query removed larger values before original_pos[v], compute current_pos = original_pos[v] - removed_left, and add the sum current_pos + ... + (v-1) if current_pos < v.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Update the Fenwick tree at original_pos[v] after processing v.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Use Python int for the answer, print the result, and check edge cases such as already sorted and reverse-sorted permutations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate the implementation against the provided sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

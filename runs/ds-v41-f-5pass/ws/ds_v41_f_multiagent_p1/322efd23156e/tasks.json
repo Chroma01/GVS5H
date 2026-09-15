@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input from stdin and group foods by vitamin type, storing each as (calorie_cost, amount).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "For each vitamin build a 0/1 knapsack DP over calories 0..X where dp[c] = maximum units of that vitamin achievable with at most c calories.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement feasible(K): for each vitamin find the smallest c with dp_v[c] >= K via bisect_left and check the three costs sum to <= X (empty group forces answer 0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Binary search the maximum feasible K over [0, hi], with hi = min over vitamins of dp_v[X]; output it.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify edge cases and run both provided samples (passed).",
+    "status": "done",
+    "result": ""
+  }
+]

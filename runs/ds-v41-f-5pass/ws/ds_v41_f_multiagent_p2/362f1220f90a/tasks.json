@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify the greedy forced-position construction as the correct approach; O(n*m) window check fine for n<=10^4, m<=500.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement greedy: build `ans` of length n+m-1 and `fixed` array; apply all 'T' constraints (return \"\" on conflict) marking positions fixed; fill remaining positions with 'a'.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Second pass over 'F' indices left-to-right: if `ans[i:i+m]==str2`, set the rightmost non-fixed position in the window to 'b' and mark it fixed; return \"\" if none exists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Execute on Examples 1-3 plus edge cases (F/\"a\" \u2192 'b', TF/\"ab\" \u2192 'aba', TT/\"ab\" \u2192 '', FF/\"aa\" \u2192 'aba'); all outputs correct.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Brute-force cross-check (n<=4, m<=3, str2 over {a,b,c}) against exhaustive search: 0 mismatches, confirming lexicographic optimality and impossibility detection.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm rightmost-free greedy is the accepted correct approach (each change targets a position currently holding 'a' so it always breaks the window; overlapping windows can't be re-matched because the same T constraints that supply 'b's in the matching window force mismatches in any overlapping earlier window).",
+    "status": "done",
+    "result": ""
+  }
+]

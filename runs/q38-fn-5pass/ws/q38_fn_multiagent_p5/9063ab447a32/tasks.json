@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select the marginal-cost threshold method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete Python program with exact integer arithmetic, capped cost accumulation, threshold binary search, and final remaining-budget fill.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on sample tests and edge cases such as M < min(P), N = 1, large M, and ties among marginal costs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If performance is insufficient, optimize by compressing duplicate P values or grouping threshold evaluations; if correctness fails, switch to an alternative selection method.",
+    "status": "done",
+    "result": ""
+  }
+]

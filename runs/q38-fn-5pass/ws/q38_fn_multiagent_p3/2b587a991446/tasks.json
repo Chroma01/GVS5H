@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement BFS distances from S and T and the degree-based vertex-gadget candidate computation with local costs 2/4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement biconnected component decomposition (Tarjan) and identify non-bridge components.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the simple-cycle block candidate using best distinct distS/distT pair.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the vertex-split min-cost 2-flow candidate for non-simple non-bridge blocks, with potentials and two augmentations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Integrate all candidates, add pruning/lower-bound skips if needed, and handle large recursion/iterative DFS safely.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate against the samples and small random brute-force configuration BFS cases.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: consider greedy two-pointer, binary search, split halves, and queue-based approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement greedy two-pointer matching with explicit disjointness constraints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify correctness on samples and edge cases: no pairs, duplicates, odd `N`, all pairs possible, and maximum constraints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Write the final Python program that reads stdin, computes the answer, and prints it to stdout.",
+    "status": "done",
+    "result": ""
+  }
+]

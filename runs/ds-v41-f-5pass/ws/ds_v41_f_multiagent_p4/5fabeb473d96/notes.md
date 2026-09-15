@@ -1,0 +1,14 @@
+- **Problem model:** Parent choices P_i are independent, uniform over 1..i-1. Sum over all (N-1)! sequences equals (N-1)! times expected distance (linearity of expectation). Edge i (2..N, weight A_i) contributes to dist(u,v) iff exactly one of u,v lies in subtree(i) (subtree of rooted tree at i).
+- **Ancestor probability (key lemma):** For i < x, P(i is an ancestor of x) = 1/i, independent of x. (Proof by induction on x; base x=i+1 is 1/i, step uses harmonic sum collapsing.) For i = x probability is 1. For i > x it is 0. Verified by brute force N=4.
+- **Joint probability:** For i < u < v, P(i ancestor of both u and v) = 2/(i(i+1)), independent of u,v. Checked for i=2 (u,v)=(3,4),(3,5),(3,6),(4,5) and i=3 (u,v)=(4,5),(4,6). Hence conditional P(A_v | A_u) = 2/(i+1).
+- **Coefficients for edge i on path u<v** (valid for u=1 too, since i=1 case never occurs):
+  - i < u: 2/i − 4/(i(i+1)) = 2(i−1)/(i(i+1))
+  - i = u: 1 − 1/u = (u−1)/u
+  - u < i < v: 1/i
+  - i = v: 1
+  - else 0
+- **Per-query O(1) sum:** S = pre1[u−1] + [u≥2] A_u·(u−1)/u + (pre2[v−1] − pre2[u]) + A_v, answer = S·(N−1)! mod 998244353. pre1 uses coefficient 2(i−1)/(i(i+1)); pre2 uses 1/i.
+- **Precompute:** modular inverses of 1..N+1 (needed because 2(i−1)/(i(i+1)) touches inv[k+1] at k=N), prefix arrays pre1/pre2, and fact=(N−1)! via product 2..N-1.
+- **Edge cases:** u=1 handled naturally (no i=u term, pre1[u-1]=pre1[0]=0). N=2: fact=1!=1, answer = A_2. Array index u−1 may be 0 or 1, both 0-valued. v−1 ≥ 1 so pre2[v−1] safe.
+- **Verification:** Sample 1 → 2, 3; Sample 2 → 100; hand brute force N=4 (A=1) query (3,4) gives 12 = (1/3+2/3+1)·6, matching coefficient formula (an earlier manual count of 14 was an arithmetic slip).
+- **Complexity:** O(N+Q) time, O(N) memory — fine for N,Q ≤ 2·10^5.

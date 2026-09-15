@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement final Python solution: parse input, p==2 special case (zeros->1, B^2 mod 2), p>2 path with F^p via exponentiation, correction matrix C (self-loop in/out terms; p==3 non-self-loop A[v][u] term), combine with sign (-1)^K, print row by row.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Ensure matrix exponentiation handles N=100, p up to 1e9 efficiently and without int64 overflow (k-loop outer-product accumulation with mod, plus pure-Python fallback).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify outputs equal the three provided samples (all PASSED).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm mathematical reduction: sum over x in F_p^* of x^e = -1 iff (p-1)|e, at most one zero edge used exactly p-1 times, self-loop diagonal cancels mod p, non-self-loop only possible for p=3.",
+    "status": "done",
+    "result": ""
+  }
+]

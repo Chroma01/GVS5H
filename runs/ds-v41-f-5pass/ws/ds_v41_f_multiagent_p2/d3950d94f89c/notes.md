@@ -1,0 +1,11 @@
+- **Problem:** Find longest downward path (ancestor to descendant) with all node values unique; tie-break min node count.
+- **Key observation:** For a fixed endpoint v at depth dep, the best start depth ns is the maximum over all values of (second-most-recent occurrence depth + 1). Values appearing once impose no constraint.
+- **Incremental constraint:** While DFS-ing, maintain `last[value]` = most recent depth on current root-to-node path. On entering node with value x, `ns = max(parent_ns, last[x] + 1)` if x seen, else `parent_ns`. This running max correctly tracks the required start depth.
+- **Why running max works:** For each value, the second-most-recent occurrence depth only increases as the path extends, so the max over all such constraints is monotonic. New duplicate updates the constraint using the previous `last[x]`.
+- **Length and node count:** Keep `path_dist[depth]` = distance from root to the node at that depth on the current path. Length = `d - path_dist[ns]`, count = `dep - ns + 1`. `path_dist` needs no rollback because DFS overwrites the depth entry on entry, and no other node at the same depth is visited while inside the current node's subtree.
+- **Rollback:** Maintain `last` and restore it on exit: save `prev = last[x]` before setting `last[x] = dep`, then on exit `last[x] = prev`. Use exit markers in the iterative stack to handle this.
+- **Iterative DFS:** Use an explicit stack because n <= 5e4 (avoids recursion limit). Frame stores (node, parent, depth, distance, parent_ns, entered, prev). On entry, compute ns, update best, push exit frame, push children with parent_ns=ns. On exit, restore `last`.
+- **Tie-breaking:** Initialize best_len=0, best_cnt=1 (single-node path). Update if length > best_len, or length == best_len and count < best_cnt.
+- **Complexity:** O(n) time and O(n) memory.
+- **Edge cases:** Single node paths (length 0, count 1); duplicate values at root and child (ns becomes child depth, length 0); long chains (stack depth O(n) but fine); max value array size bound 50001.
+- **Verification:** Example 1 gives [6,2]; Example 2 gives [0,1].

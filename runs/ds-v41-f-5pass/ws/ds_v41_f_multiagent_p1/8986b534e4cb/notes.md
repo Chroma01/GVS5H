@@ -1,0 +1,8 @@
+- **Reduction:** Use prefix potential P_t = sum_{j< t} w_j. For a person with interval [a,b] (a=min(S,T), b=max(S,T)), the stamina at town t is P_t - P_a if S<T (right-mover, sign +1), or P_a - P_t if S>T (left-mover, sign -1). Requirements: P_a = P_b; for right-mover interior P_t > P_a; for left-mover interior P_t < P_a.
+- **Conflict characterization:** Two persons conflict iff (1) a_i = a_j, (2) b_i = b_j, or (3) same sign and intervals cross: a_i < a_j < b_i < b_j (pattern A) or a_j < a_i < b_j < b_i (pattern B). Opposite signs never conflict except via shared endpoint. Nested and touching intervals are fine.
+- **Query reduction:** For each j compute prev[j] = max i < j conflicting with j. pref[R] = max_{j<=R} prev[j]. Query [L,R] is No iff pref[R] >= L, else Yes.
+- **Same endpoints:** Last-occurrence array for a and b gives prev from shared endpoints in O(M+N).
+- **Crossing (pattern A):** CDQ on index (bottom-up merge). For left block L and right block R (same sign, sorted by a), insert i in L with a_i < a_j at coordinate b_i with value i, query max in b-range (a_j, b_j). Uses a segment tree over b (1..N) with version stamps to avoid clearing.
+- **Pattern B:** Mirror coordinates a'=N+1-b, b'=N+1-a. Then pattern B becomes pattern A with same index order. Run the same CDQ once more on mirrored coordinates.
+- **Complexity:** O(M log M log N) time, O(M + N) space. M,Q up to 2e5, N up to 4e5.
+- **Edge cases:** |S-T|>1 ⇒ b-a≥2 so query ranges non-empty. M=1 gives all Yes. Opposite signs with same interval (e.g., (x,y) and (y,x)) conflict via shared a and b.

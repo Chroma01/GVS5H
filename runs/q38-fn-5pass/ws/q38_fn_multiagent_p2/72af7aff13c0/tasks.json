@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select lazy anti-diagonal DP as primary.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build diagonal metadata and flat grid access.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Initialize forward/backward DP and answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement recompute_F and recompute_G for one diagonal.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Process queries: move, recompute invariant diagonal, compute coefficient, update answer and cell F/G.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Handle boundaries, zero values, modulo, and performance optimizations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Run sample tests and fix failures; if too slow, switch to column-wise lazy DP fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

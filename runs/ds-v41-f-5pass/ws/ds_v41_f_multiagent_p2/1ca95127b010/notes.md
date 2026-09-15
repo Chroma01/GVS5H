@@ -1,0 +1,8 @@
+- **Problem:** given S,T of length N over {0,1}; A: 0^X1^Y -> 1^Y0^X, B: 1^Y0^X -> 0^X1^Y. Decide S~T.
+- **Move anatomy:** Operation A swaps an adjacent block of X zeros followed by Y ones; B is its inverse. Relative order within zeros and within ones is preserved.
+- **Invariant:** equivalence is determined by (1) sequence of positions of 1s mod X, read left to right; (2) sequence of positions of 0s mod Y, read left to right. Both are preserved because a moved block of ones shifts by a multiple of X, and a moved block of zeros shifts by a multiple of Y.
+- **Sufficiency:** an exhaustive verification for every N up to 12 and every X,Y in [1,N] builds the full reachability graph on all 2^N strings, computes connected components, and checks that for every component all strings share the same signature, and for every signature all strings with that signature belong to one component. No counterexample was found. This strongly confirms the invariant is complete.
+- **Edge cases:** X+Y > N => no operations possible; the only allowed component is a singleton. The signature check still works because for X+Y > N the signature map is injective (confirmed by the exhaustive search up to N=12). N=1 is included in the search and passes.
+- **Why O mod XY is not an independent invariant:** the sum of one positions mod XY is forced by the signature, so it adds no extra constraint. This was observed during the exhaustive component check.
+- **Complexity:** O(N) time, O(N) memory. Implementation uses 1-based positions, `p % X` for ones, `p % Y` for zeros, compares two tuples of lists. Use bytes and `ch == 49` to avoid decoding.
+- **Disproved:** the A-normal-form stack algorithm is O(N^2) on inputs like (0^2 1^3)^k and is not used.

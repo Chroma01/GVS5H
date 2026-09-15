@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the fixed-k reduction: each letter ends with 0 or k copies; only adjacent one-step changes i->i+1 give a saving of min(surplus_i, deficit_{i+1}); multi-step changes never beat delete+insert.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the two-state DP over letters a..z for k from 1 to n, returning min cost.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate: asserted the three provided examples give 1, 0, 2; brute-force BFS over count vectors for lengths 3..7 across {a,b,c}, {a,b,c,d}, {a,b,c,z}, {a,b,d} reported 0 mismatches (~50k strings); extra=2 vs extra=3 alphabet check confirmed alphabet sufficiency.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Time the DP on worst cases (s='a'*20000 and a mixed 20000-length string); both complete well under a second.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "No mismatches appeared, so the adjacent-only reduction is confirmed and no fallback (min-cost-flow / transportation DP) is needed.",
+    "status": "done",
+    "result": ""
+  }
+]

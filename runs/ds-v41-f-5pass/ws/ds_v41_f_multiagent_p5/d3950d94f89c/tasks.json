@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Build adjacency list `(neighbor, length)`, root the undirected tree at node 0, and maintain `distAtDepth` plus `last[value] -> depth` on the current path.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement iterative DFS (enter/exit frames) computing `L_v = max(L_parent, last[nums[v]] + 1)`, candidate length `dist[v] - distAtDepth[L_v]`, count `depth[v] - L_v + 1`, and restore `last` on backtrack.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Track global best maximizing length then minimizing node count, covering single-node paths `(0,1)`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify Example 1 => [6,2] and Example 2 => [0,1]; confirm O(n) time/space and no recursion overflow for n up to 5e4.",
+    "status": "done",
+    "result": ""
+  }
+]

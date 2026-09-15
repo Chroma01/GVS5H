@@ -1,0 +1,15 @@
+- **Model:** Each index is a pile of A_i tokens. A move on an unvisited index activates it (adds to S) and leaves A_i-1 tokens as shared "pass" moves; a move on a visited index just consumes one pass token. Game ends the moment S = {1..N}, and the mover wins.
+- **Compressed state:** Only two things matter: the number of unvisited indices m, and the parity of (pool P) plus (number of unvisited odd-valued A_i, call it o). Pass tokens are interchangeable, so only their total P matters; the pool parity can capture everything because subtracting A_i-1 from a just-activated index flips pool parity iff A_i is even.
+- **Position values derived by induction (m = unvisited count):**
+  - m=1: always W for mover (activate it, S full, win).
+  - m=2: W iff P is odd. Activating either item hands the opponent an immediate win, so both players only pass; parity of P decides.
+  - m=3: if P even, W iff o>=1; if P odd, W iff o<=2. (Special base, differs from larger m.)
+  - m>=4: W iff (P+o) is odd. Verified directly for m=4 (P=0,1,2,3) and proved by strong induction on (m+P): every move (pass, activate odd, activate even) flips the relevant parity, so the recursion is self-consistent.
+- **Initial position:** m=N, P=0, o = O = count of odd A_i.
+  - N=1: Fennec.
+  - N=2: always Snuke.
+  - N=3: Fennec iff O>0 (pick an odd A_i so the opponent faces an even pool in the 2-item game). Sample 1 (A=1,9,2, O=2) confirms O=2 -> Fennec, so it is O>0, NOT O odd.
+  - N>=4: Fennec iff O is odd.
+- **Samples verified:** (3;1 9 2) O=2 -> Fennec; (2;25 29) -> Snuke; (6;1 9 2 25 2 9) O=4 -> Snuke. All match the code.
+- **Pitfalls avoided:** parity of A_i (not A_i-1) drives the answer; the last index's leftover tokens are useless; the last-index rule makes N=1,2,3 special so N>=4 parity rule cannot be applied blindly to small N; distribution of pass tokens across indices is irrelevant, only total P parity matters.
+- **Complexity:** O(N) time, O(1) extra space.

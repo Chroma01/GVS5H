@@ -1,0 +1,10 @@
+- **Bijection to prefixes:** The graph has exactly `N + popcount(s)` edges, so the sum of all in-degrees is fixed. Therefore `d_N` is uniquely determined by `(d_0, ..., d_{N-1})`, and it is enough to count distinct feasible prefixes.
+- **Cycle orientation model:** Let `a_i = 1` mean the cycle edge `i -> i+1 mod N`. The cycle contribution to vertex `i` is `1 + a_{i-1} - a_i`. If `s_i = 1`, the spoke contributes an optional `x_i in {0,1}` to vertex `i`; otherwise `x_i = 0`. Thus `d_i = 1 + a_{i-1} - a_i + x_i`.
+- **Relation DP:** For a prefix, keep the binary relation on `{0,1}` mapping the initial cycle state `a_{-1}` to the current state `a_{i-1}`. There are only `2^4 = 16` relations. The initial relation is identity, mask `9`. After all positions, the prefix is feasible iff the composed relation contains a diagonal pair, i.e. mask has bit `0` or bit `3`.
+- **Label relations:** With bit encoding `0:(0,0), 1:(0,1), 2:(1,0), 3:(1,1)`:
+  - For `s_i = 0`, labels `0,1,2` correspond to masks `2, 9, 4`.
+  - For `s_i = 1`, labels `0,1,2,3` correspond to masks `2, 11, 13, 4`.
+- **Counting distinct degree strings:** For each current relation and each possible degree label, compose the current relation with the label's relation. Different labels that lead to the same next relation are counted with multiplicity, but multiple internal paths for the same label are not counted separately because the relation is a set.
+- **Empty relation:** If composition becomes the empty relation, it can never become non-empty later, so those transitions are omitted safely.
+- **Implementation optimizations:** Precompute the 16x16 composition table and sparse per-character edge lists. Use a byte-indexed edge table to avoid branching on `'0'`/`'1'`. Reuse two length-16 lists and zero by slice assignment. Apply modulo every 16 characters to reduce modulo operations while keeping Python integers small.
+- **Complexity:** Precomputation is constant. The main loop is `O(N * E)` where `E <= 64` sparse transitions per character, with `O(1)` memory.

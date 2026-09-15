@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and derive that minimizing cost is equivalent to maximizing the common sum H.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the direct feasibility characterization H <= min_{i,j}(U_j + D_i + X*abs(i-j)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the O(N) prefix/suffix-minimum computation of H and output total - N*H.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the provided sample tests and verify the solution passes all public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the finite-field cancellation formula and special cases (p=1, p=2, odd p corrections).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement input parsing, zero count K, and p==1/p==2 special outputs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement optimized modular matrix multiplication and binary exponentiation for A^p mod p.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Apply corrections for zero diagonal cells and p==3 off-diagonal cells, multiply by (-1)^K, and print result.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate against samples and small brute-force cases (p=2, p=3, p=5; diagonal/off-diagonal/mixed zeros).",
+    "status": "done",
+    "result": ""
+  }
+]

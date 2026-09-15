@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select product-indexed sum-bitset DP with separate zero feasibility.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Abandon verbose full product-indexed DP attempt; switch to concise bitset implementation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement positive-product bitset DP (dp0/dp1 arrays, previous-snapshot transitions, singleton after loop, skip x>limit, x=1 safe).",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement zero-product feasibility bitset DP (no_zero/has_zero parity bitsets, zero toggles parity, positives append).",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Combine results with early abs(k)>sum check, scan products descending, fallback to zero, and validate examples/edge cases.",
+    "status": "pending",
+    "result": ""
+  }
+]

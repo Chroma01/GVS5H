@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, M, start, houses, and commands; assign each house a unique id.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Simulate moves to get final (X,Y) and build `h_intervals[y]` / `v_intervals[x]` as inclusive intervals.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build `by_y[y]` (house x, id) and `by_x[x]` (house y, id) groupings.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Merge intervals per row/column and mark covered houses via bisect on merged starts.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Print final X, Y, and count of covered houses; sample tests passed on both provided samples.",
+    "status": "done",
+    "result": ""
+  }
+]

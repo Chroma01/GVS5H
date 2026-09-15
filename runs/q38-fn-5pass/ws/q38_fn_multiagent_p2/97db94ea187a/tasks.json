@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select BFS-layer DP with evaluation/interpolation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete solution with modified BFS-layer DP, max_extra degree, scalar evaluations, Newton interpolation, and output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate against samples and edge cases (N=2, small N), and optimize/fix if performance or correctness fails.",
+    "status": "done",
+    "result": ""
+  }
+]

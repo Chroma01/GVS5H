@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: derive parity patterns, combinatorial counting approach, and edge cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete Solution.permute method using saturated factorial counts and greedy lexicographic construction, including total-count validation and edge cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation against the provided examples and edge cases such as n=1, n=2, odd/even n, k out of range, and large n/k near 10^15.",
+    "status": "done",
+    "result": ""
+  }
+]

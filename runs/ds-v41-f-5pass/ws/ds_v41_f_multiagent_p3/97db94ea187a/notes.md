@@ -1,0 +1,8 @@
+- **BFS levels:** Root is level 0. Every other vertex gets a unique level = shortest distance from 1. Edges only within a level or between consecutive levels. Each vertex in level i>0 must have at least one neighbor in level i-1. This uniquely partitions vertices and guarantees connectivity.
+- **Condition:** Even levels (including root) total N/2 vertices; odd levels total N/2.
+- **State DP:** Process levels left to right. State: (last level size, even-level vertices placed so far, parity of last level index). `placed` is implicit via DP array index.
+- **Transition to new level of size t:** multiply by label choice C(remaining, t), internal edges factor (1+x)^{C(t,2)}, and cross-edge factor F(s,t) = sum_{j=0}^t (-1)^j C(t,j) (1+x)^{s(t-j)} ensuring every new vertex has a neighbor in the previous level. Combined polynomial G[s][t] is precomputed.
+- **Correctness:** Every graph has a unique BFS level partition, and the DP counts each exactly once. The coverage condition enforces exact distances; the parity constraint is enforced by tracking even-level sum.
+- **Complexity:** N≤30, maxE≤435. States are small; ~90k transitions. Polynomial multiplications are done via big-integer packing with base 2^72 (safe: max convolution coefficient < 435·(10^9)^2 < 2^72). This avoids Python-level quadratic loops.
+- **Modulo handling:** Coefficients are reduced mod P at the start of processing each `placed`. During accumulation of a target state, values stay below ~30·2^72, well within Python int range. Final answers are taken mod P.
+- **Edge cases:** N=2 gives one graph with M=1. Works. Output covers M from N-1 to N(N-1)/2 inclusive.

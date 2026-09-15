@@ -1,0 +1,14 @@
+- **Core idea:** Decide whether Levenshtein distance is at most K (K <= 20) for strings up to 500000. Reject immediately if length difference exceeds K, trim common prefix/suffix, then run banded Ukkonen DP only on cells that can lie on a <=K edit path.
+- **Trimming:** Common prefix and suffix can be removed safely because equal boundary characters can be matched with zero cost. After trimming, if one side is empty, distance is the remaining length. If max(trimmed lengths) <= K, answer is Yes because substituting the shorter length and inserting/deleting the difference costs max(n,m).
+- **Narrowed band:** After swapping so n <= m, final offset is d = m - n. For any prefix cell with offset o = j - i, reaching o from 0 and later reaching d requires at least |o| + |d-o| insert/delete operations. Therefore any path of total cost <= K must satisfy |o| + |d-o| <= K. This gives a contiguous offset interval [-extra, d+extra], where extra = (K-d)//2, with width at most K+1, tighter than the usual |o| <= K band.
+- **DP recurrence:** For row i and offset o, j = i+o. dp[i][j] is min of:
+  - delete: dp[i-1][j] + 1, previous offset o+1;
+  - insert: dp[i][j-1] + 1, current offset o-1;
+  - substitute/match: dp[i-1][j-1] + (S[i-1] != T[j-1]), previous offset o.
+  Cells outside the narrowed band or outside 0 <= j <= m are treated as INF.
+- **Rolling arrays:** Use two lists of length 2K+3. Offset o maps to idx = o + SHIFT, SHIFT = K+1. Sentinels remain INF. For each row, only the valid offset interval is recomputed. Setting just the immediate outside indices to INF is sufficient because the valid interval shifts by at most one at each boundary; stale values farther away are never accessed.
+- **Early termination:** If the minimum value in the current row's band exceeds K, no future row can recover to <=K, so print No. This is safe because any <=K path must cross every row inside the narrowed band.
+- **Initialization:** Row 0 has dp[0][j] = j. Only offsets 0..min(m, base_hi) are initialized; all other entries remain INF.
+- **Implementation details:** Use sys.stdin.buffer.read().split() to obtain bytes. Bytes indexing returns integers and is faster than string indexing. T2 = b' ' + T provides a sentinel at j=0, avoiding negative indexing and special-casing empty T prefix in the inner loop. Enumerate S to get row index and current byte directly. Avoid function-call max/min inside the hot row setup.
+- **Complexity:** After trimming, time is O(L * W), where L is the shorter trimmed length and W <= K+1 <= 21. Worst-case around 10.5 million inner iterations for N=500000, K=20. Memory is O(K) for DP arrays plus input strings.
+- **Correctness safeguards:** The narrowed band is a necessary condition for any <=K script, so excluding outside cells cannot remove a valid solution. Common prefix/suffix trimming preserves edit distance. Final answer is the DP value at offset d on row n.

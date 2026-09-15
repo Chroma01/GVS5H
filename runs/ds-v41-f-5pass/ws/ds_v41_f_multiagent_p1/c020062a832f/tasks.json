@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement value-aggregation difference-array algorithm: per-value cnt/sumIdx/sumAfter, startVal/endVal, E, Fenwick-based invStrict of pos=(M-A_i)%M, W=C(N,2)-E-invStrict, build D via D[(M-v)%M]+=startVal[v]-endVal[v], D[0]+=W, prefix sum to answers; write to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run all three provided samples and confirm exact expected output (all passed).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test edge cases (N=1, M=1, all-equal values, strictly increasing/decreasing A, max N=M=2e5) and verify 64-bit-safe counts / performance.",
+    "status": "done",
+    "result": ""
+  }
+]

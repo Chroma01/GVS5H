@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement primary value-bucket sqrt solution: read input, assign value buckets by sorting all 2N occurrences, build per-bucket A/B element lists sorted by index.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build global flat 64-bit same-bucket prefix matrices for all value buckets that contain both A and B elements and are not constant-valued; store offsets and widths for O(1) lookup by bucket counts.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build B prefix bucket count/sum tables at index-block boundaries (block size about 250) and prefix sums of B for total B sum queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Process queries sorted by X: maintain A bucket counts/sums incrementally, construct B bucket counts/sums from base table plus remainder, compute cross-bucket answer plus same-bucket matrix lookup, store answers in original order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run sample tests; debug cross-bucket formula, bucket ordering, and matrix indexing if needed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If performance or memory is insufficient, tune VAL_BUCKET/IDX_BLOCK constants and optimize inner loops; if the approach still fails, switch to the fallback A-block sqrt + Fenwick plan.",
+    "status": "done",
+    "result": ""
+  }
+]

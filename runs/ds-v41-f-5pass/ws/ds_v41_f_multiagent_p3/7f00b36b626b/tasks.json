@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full solution: present-vs-isolated split, DSU over present values, multi-bucket union via anchor, count roots + isolated; verified both examples (outputs 4 and 2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify complexity/perf: bucket build cost sum over present d of threshold/d ~ O(threshold log threshold), fine for threshold<=2e5; no O(n^2) or trial-division loops.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm correctness reasoning: values > threshold always isolated (lcm >= max), anchor-union yields exactly the lcm<=threshold cliques, and repeated divisors in a bucket are harmless.",
+    "status": "done",
+    "result": ""
+  }
+]

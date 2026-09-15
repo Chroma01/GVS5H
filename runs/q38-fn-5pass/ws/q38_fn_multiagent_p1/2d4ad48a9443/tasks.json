@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive minimal-cost formula (sum of prefix maxima minus subarray sum) and monotonicity in both endpoints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the binary-lifting two-pointer solution with next-greater record chains, prefix sums, and O(n log n) cost queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and edge cases and report an explicit PASS/FAIL verdict.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm no failures; no debugging or approach switch needed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify expected performance/memory for n=10^5 via O(n log n) time and bounded memory.",
+    "status": "done",
+    "result": ""
+  }
+]

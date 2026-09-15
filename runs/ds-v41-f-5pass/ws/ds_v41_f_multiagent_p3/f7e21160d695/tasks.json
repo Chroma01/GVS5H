@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove and formalize the equivalence f(A_i, B_j) = weight at which A_i and B_j first join the same DSU component in Kruskal order (and = weight(LCA) in the reconstruction tree).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the DSU-sweep solution: diff[v] = countA[v] - countB[v]; sort edges ascending by w; on each successful union of components with opposite-sign diffs add w * min(|diff1|, |diff2|); new diff = diff1 + diff2; print accumulated answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify against Sample 1 (expect 8) and Sample 2 (expect 3) -- both PASSED.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Correctness of greedy cross-pairing at each merge (diffs with opposite signs) confirmed by exchange argument: costs are non-decreasing up the merge tree, so pairing surplus as low as possible is optimal; equal-weight merges yield an order-invariant count of pairs resolved at that weight.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Complexity/limits confirmed: O(M log M + N + K) time, O(N + M) memory; Python big ints cover the maximum answer (~2\u00d710^14).",
+    "status": "done",
+    "result": ""
+  }
+]

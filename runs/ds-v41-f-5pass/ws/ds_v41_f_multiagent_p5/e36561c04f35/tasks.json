@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Model the process (delete equal prefix + adjacent swap) and reverse it; establish the exact memoized recurrence f(A)=1+min_k[S(k)+f(A minus first k occurrences of A[0])], S(k)=sum_{j<=k}(p_j-j).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm recurrence on all three samples (3,4,8) and small hand cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Recognize state-space blowup: tuple-of-remaining-runs memoization is exact but exponential (TLE risk at sum N=2e5).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Identify that the current greedy (create new group iff extend cost > 1) passes samples but fails on [1,2,1,1] (returns 4, correct is 3).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Build a fast exact reference: BFS over the two operations for N<=8 and the memoized recurrence for N<=12; use it as ground truth for all stress tests.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Find and derive the correct polynomial-time algorithm (target O(N log N)) for AGC 065 B, allowing arbitrary group ordering; consult editorial if available.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Implement the correct algorithm and validate it against the brute-force reference on all small sequences over alphabets {1,2},{1,2,3}, especially [1,2,1,1], [1,2,1,2,1], and other alternating patterns.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Add fast I/O and batch all T test cases; benchmark on worst-case sum N=2e5 (including long alternating sequences) to ensure it runs within limits.",
+    "status": "pending",
+    "result": ""
+  }
+]

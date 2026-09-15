@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reachable strings = all ordered DFS encodings of the same unordered rooted forest; count = product over nodes (incl. artificial root) of multinomial over child-isomorphism-type frequencies.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the program: read input, build forest + artificial root via stack, precompute factorials up to N mod 998244353, compute canonical child-ID-sorted IDs bottom-up with an interning dict, multiply multinomials, print result.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run against sample 1 (\"(())()\" -> 2) and sample 2 (\"()\" -> 1); confirmed exact expected outputs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify the formula by hand on additional small cases (\"()()\" -> 1, \"(()())\" -> 1, \"(()(()))\" -> 2, \"(()())()\" -> 2), all consistent with the multinomial product.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Check performance for worst-case N=5000 (deep nesting and flat): algorithm is O(N log N) time, O(N) memory, no blowup.",
+    "status": "done",
+    "result": ""
+  }
+]

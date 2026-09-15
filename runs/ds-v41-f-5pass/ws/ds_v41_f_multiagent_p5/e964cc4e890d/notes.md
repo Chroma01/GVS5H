@@ -1,0 +1,15 @@
+- **Problem model:** 2N path vertices (edges i→i+1), W/B coloured; pair each W to a B adding edge W→B; count W-B perfect matchings whose digraph is strongly connected, mod 998244353.
+- **Criterion:** Only leftward arcs (w>b) can move left. Graph is strongly connected iff every cut k (between k,k+1) is crossed by some pair with b ≤ k < w. Necessary cuts force vertex 1 black and vertex 2N white; otherwise answer 0.
+- **Positivity:** Given S[0]='B' and S[-1]='W', at least one valid matching always exists (pair b_1=1 with white 2N, covering every cut), so no further zero cases; early exit is complete.
+- **Permutation cross-check:** Let u_i = rank (by position) of the white matched to the i-th black. Pairs are permutations of [N]. Coverage ⟺ max(u_1..u_i) ≥ d_i := w[i+1]+1 for i=1..N-1, with d non-decreasing. Used to sanity-check the recurrence; not the algorithm.
+- **Recurrence (verified):** w[i]=#W before the (i+1)-th B. dp[0]=1; for i≥1, dp[i]=0 if w[i]<i else dp[i] = −inv_fact(w[i]−i)·Σ_{j<i} dp[j]·fact(w[i]−j). Answer = Σ_{i=0}^{N−1} dp[i]·fact(N−i).
+- **Verification:** N=2 → BBWW 2, BWBW 1; N=3 strings starting B ending W give 6,6,4,4,3,2; sample1=1, sample2 early-exit=0, sample3=240792.
+- **Operator cross-check:** scanning positions with o=#open leftward pairs, s=B−W, r=o−s; white: f→f+f′, black: f→x f′+(x−s)f; x^0 coefficient at end = N! when the o≥1 constraint is dropped. Explains the −inv_fact structure but not used (state space O(N^2)).
+- **Algorithm:** CDQ divide and conquer + NTT (numpy int64). At node [l,r] after solving [l,mid], add Σ_{j∈[l,mid]} dp[j]·fact(w[i]−j) into acc[i] for i∈[mid+1,r]; each pair (j,i) added once at its LCA.
+- **Leaf handling:** blocks ≤32 solved by a pure-Python double loop that also folds acc[i] (contributions from j<l); sets dp[0]=1 and zeros dp[i] whenever w[i]<i.
+- **Direct path:** when LA·out ≤ DIRECT_TH (16384), use a fully vectorised (LA×out) matrix dp[j]·fact[w_i−j] via fancy indexing; avoids huge NTTs when a small block abuts a long W-run.
+- **NTT path:** kernel slice C=fact[m0..hi], m0=max(w[mid+1]−mid,0), hi=w[r]−l, t_lo=max(w[mid+1]−l,0); read conv[ts−m0] with ts=w_i−l, guarded by ts≥t_lo. For nonzero dp[i], w[i]≥i>j so w[i]−j>0; negative-index junk only lands where dp[i]=0.
+- **NTT details:** DIF forward paired with DIT inverse (no explicit bit-reversal); twiddles cached per stage per direction (iterative generation; powers of two up to 2^19); inverse scaled by inv(n).
+- **Overflow safety:** dp,fact<MOD<2^30; dp·fact <2^60 in int64; column/row sums bounded by LA·MOD≤2e5·1e9. Inside ntt, (u±v) reduced mod each stage, twiddle products <MOD^2<2^60.
+- **Complexity:** O(N log^2 N). Per level Σ(LA+lenC)=O(N) by monotonicity of w; total NTT element-ops a few×10^8; memory tens of MB (largest arrays 2^19 int64).
+- **Pitfalls handled:** skip a merge entirely when dp[l..mid] all zero (big win for B^N W^N); fact/inv_fact sized N+2 so indices w[i]−j, w[i]−i, N−i ≤ N are valid; guard t_lo≤hi.

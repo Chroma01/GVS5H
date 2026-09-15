@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Establish that G (comparability graph of an interval order) is P5-free, so a minimum-weight simple path is chordless with at most 3 edges (4 vertices); with positive weights the optimum is among lengths 1\u20133.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse N, W, intervals, Q queries with 1-indexed arrays and fast I/O.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build minL[x] = min W_i with L_i = x and minR[x] = min W_i with R_i = x over coordinates 1..2N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Build prefR[x] = min_{R_i < x} W_i and suffL[x] = min_{L_i > x} W_i for O(1) length-2 common-neighbor queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Build iterative range-min segment trees over minL and minR for the length-3 crossing queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Per query: disjoint (R_s < L_t or R_t < L_s) -> W_s+W_t; else length-2 via min(prefR[min(L_s,L_t)], suffL[max(R_s,R_t)]); else for strict crossing (L_s<L_t<=R_s<R_t or symmetric) length-3 via RMQ over L in [R_s+1,R_t] and R in [L_s,L_t-1]; take min else -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Output answers line by line (verified against both provided samples).",
+    "status": "done",
+    "result": ""
+  }
+]

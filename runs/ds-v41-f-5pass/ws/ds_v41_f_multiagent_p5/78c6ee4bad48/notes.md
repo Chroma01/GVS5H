@@ -1,0 +1,8 @@
+- **Operation on sorted positions:** Let four consecutive sorted positions be x<y<z<w with gaps p=y-x, q=z-y, r=w-z. Reflecting y,z about M=(x+w)/2 gives y'=x+w-y, z'=x+w-z. Since y<z we get z'<y', so new sorted order is x<z'<y'<w and gaps become (r, q, p).
+- **Gap model confirmed:** The operation at 1-indexed position i (1<=i<=N-3) exactly swaps gap g_i and g_{i+2} and leaves g_{i+1} unchanged. Verified against sample 1 (gaps 4,2,3 -> choose i=1 -> 3,2,4 -> sum 21).
+- **Parity decoupling:** Swapping g_i with g_{i+2} means odd-indexed gaps (k=1,3,5,...) freely permute among themselves, and even-indexed gaps (k=2,4,...) among themselves. Adjacent transpositions within each class generate the full symmetric group, so all such permutations are reachable. Classes never mix.
+- **Left endpoint invariant:** a_1 (leftmost coordinate) is never moved (i>=1 => i+1>=2), so it is fixed.
+- **Objective:** Total sum = N*a_1 + sum_{k=1}^{N-1} (n-k)*g_k, since gap g_k is counted by the N-k pieces to its right.
+- **Optimal assignment:** Weights (n-k) strictly decrease in k, so by the rearrangement inequality, minimize by sorting each parity class ascending and placing the largest gaps at the largest k (smallest weight).
+- **Algorithm:** O(N log N): split gaps by index parity, sort each, reassign ascending values to ascending k, then evaluate the linear sum. Python big ints handle up to ~2e5 * 1e12 safely.
+- **Samples:** Sample 1 -> 21, Sample 2 (gaps 1,5,4,4,2 -> 1,4,2,5,4) -> 41. Both match.

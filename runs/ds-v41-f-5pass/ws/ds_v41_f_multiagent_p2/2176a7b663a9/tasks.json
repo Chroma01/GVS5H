@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse the problem, prove chordless paths have at most 3 edges (G is P5-free since its complement is interval/chordal; positive weights let any chord be shortcut).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Ideation: bounded-path characterization (2/3/4 vertex paths), pref/suff RMQ over coordinate range, sweep-line, and sparse auxiliary-graph fallback.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement parsing: N, W (1-indexed), intervals L/R (1-indexed), Q queries, coordinate bound 2N with +2 padding.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Build pref[x]=min W_i with R_i<=x (prefix min) and suff[x]=min W_i with L_i>=x (suffix min), initialized to INF.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement per-query O(1): direct edge (R_s<L_t or R_t<L_s) -> W_s+W_t; else 3-vertex via min(pref[minL-1], suff[maxR+1]); else crossing 4-vertex via pref[L_later-1]+suff[R_earlier+1]; INF -> -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Write the final stdin->stdout program and run it against Sample 1 (11,6,-1) and Sample 2 (157,124,-1,114,114) \u2014 both PASSED.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verified walk validity of the 4-vertex candidate: b's R_b<=L_t-1<=R_s-1<R_s+1<=L_a guarantees a-b disjoint, and endpoints/internal vertices are all distinct, so no invalid \"chords\" are produced.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Confirmed all cases (disjoint, containment, equal intervals, crossing) are covered and disconnected pairs correctly yield -1.",
+    "status": "done",
+    "result": ""
+  }
+]

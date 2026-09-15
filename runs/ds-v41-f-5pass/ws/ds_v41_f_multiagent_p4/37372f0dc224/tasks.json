@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: select an O(n) method (KMP prefix-function on reverse(S) + sentinel + S) to find the longest palindromic suffix.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Read S from stdin and compute n = len(S).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build t = reverse(S) + sentinel + S and compute the prefix-function array pi.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Set k = pi[-1] as the longest palindromic suffix length.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Construct and print the answer S + reverse(S[:n-k]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test on samples (ABC, Z, TREE), edge cases (n=1, already palindrome, all same char, random), and verify linear time for n=500000.",
+    "status": "done",
+    "result": ""
+  }
+]

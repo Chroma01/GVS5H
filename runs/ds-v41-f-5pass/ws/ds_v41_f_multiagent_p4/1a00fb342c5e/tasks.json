@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement BFS/graph traversal computing offset[v] (XOR distance to component root) and validating all edges offset[u]^offset[v]==Z, printing -1 on contradiction.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "For each component count per-bit the number of vertices with offset bit set, and choose the root bit that minimizes the component's total contribution for that bit.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Construct final A[v] = root_value XOR offset[v], ensuring bits above max Z remain zero.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle edge cases: M=0, self-loops (u==v with Z!=0 is a contradiction, Z==0 is fine), repeated edges, and isolated vertices.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Output the sequence A_1..A_N separated by spaces; verified correct against samples 1, 2, 3.",
+    "status": "done",
+    "result": ""
+  }
+]

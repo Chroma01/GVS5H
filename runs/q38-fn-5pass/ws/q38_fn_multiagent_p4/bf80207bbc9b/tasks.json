@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce the problem to choosing a column-flip mask minimizing the sum over rows of `min(popcount(row_mask xor col_mask), W - popcount(row_mask xor col_mask))`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Recognize that the objective is an XOR convolution of the row-mask frequency array with the kernel `K[d] = min(popcount(d), W - popcount(d))`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the full Python program: read `H`, `W`, convert each row to an integer mask, build a frequency array of size `1 << W`, compute the kernel transform analytically, perform iterative integer FWHT for XOR convolution, inverse-transform with division by `1 << W`, and output the minimum resulting cost.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify the implementation on the provided samples and edge cases such as `W = 1`, `H = 1`, and all-zero/all-one grids.",
+    "status": "done",
+    "result": ""
+  }
+]

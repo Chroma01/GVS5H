@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and approach selection complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement bitmask LCS-row transfer DP with correct transition derivation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate transition rule on small brute-force cases, especially repeated characters in S.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test final program against samples and edge cases N=1, M=1, repeated characters.",
+    "status": "done",
+    "result": ""
+  }
+]

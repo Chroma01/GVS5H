@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python solution using line-wise grouping, interval merging, and binary search per house, then run sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify edge cases: overlapping/repeated segments, inclusive endpoints, adjacent interval merging, double counting at intersections, large coordinates/final position overflow.",
+    "status": "done",
+    "result": ""
+  }
+]

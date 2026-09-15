@@ -1,0 +1,15 @@
+- **Problem reduction:** Answer equals `f(r) - f(l - 1)`, where `f(n)` counts beautiful positive integers `<= n`. `count_upto(n) = 0` for `n <= 0` (handles `l = 1`).
+- **Digit DP state:** `dp(pos, started, sumd, prod, tight)`. `pos` = decimal position, `started` excludes leading zeros / the number 0, `sumd` and `prod` are digit sum and product of actual digits, `tight` = prefix matches `n`'s prefix.
+- **Leading zeros:** While `not started and d == 0`, force `sumd = 0`, `prod = 1` (zeros must not affect divisibility). `started` flips to True on the first nonzero digit, so `sumd >= 1` whenever `started`.
+- **Real zero digit:** Once started, any `d == 0` gives `prod = 0`; `0 % sumd == 0` for positive `sumd`, so every number containing a zero is beautiful.
+- **Base case:** At `pos == L`, count iff `started and sumd > 0 and prod % sumd == 0`. This also excludes the all-leading-zero number 0.
+- **Tight transition:** `ntight = tight and (d == limit)`, where `limit = digits[pos]` if tight else 9. When tight is False, `ntight` stays False regardless of `limit`.
+- **Bounds / feasibility:** `r < 10^9` ⇒ at most 9 digits. Exact products fit easily in Python ints; reachable `(sumd, prod)` pairs collapse heavily, so memoized states are modest and no precomputation is needed.
+- **Verification (sample tests):**
+  - `(10, 20)` → `2` (beautiful: `10, 20`). `count_upto(20)=11`, `count_upto(9)=9`.
+  - `(1, 15)` → `10` (beautiful: `1..10`; `11..15` fail since `d % (1+d) != 0`).
+  - Single digits `1..9`: all beautiful (prod = sum = d, `d % d = 0`); e.g. `(1,9) = 9`.
+  - `10` and `100`: digit sum positive, product `0` ⇒ beautiful.
+  - `100` range `(1,100)` counts 1..9 (9) plus numbers containing a zero and other beautiful ones; `10`, `20`, ..., `90` and `100` all qualify.
+  - Upper bound `999999999`: prod `9^9 = 387420489`, sum `81`, `387420489 % 81 == 0` ⇒ beautiful; DP handles it with no overflow and fast runtime.
+- **Implementation note:** `lru_cache` is created fresh per `count_upto` call, so the two bounds do not interfere. Recursion depth ≤ 10.

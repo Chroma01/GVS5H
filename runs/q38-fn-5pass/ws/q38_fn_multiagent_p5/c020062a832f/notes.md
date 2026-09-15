@@ -1,0 +1,8 @@
+- **Core observation:** For a fixed pair i<j with values a,b, after adding k modulo M the comparison changes only when one value crosses the modulo boundary. With threshold t_x = M-x (t_0=M), the pair contributes 1 exactly when [a>b] + 1_{k>=t_b} - 1_{k>=t_a} is 1. This also gives 0 for a=b.
+- **Interval interpretation:** If a>b, contribution is 1 on [0,t_a-1] and [t_b,M-1]; if a<b, contribution is 1 on [t_b,t_a-1]. The formula above is the difference-array form of these intervals.
+- **Aggregation without pair enumeration:** Summing the base term over all pairs gives the initial inversion count inv0. The event term for position p (1-based) is +(p-1) at t=M-A_p because it is the second element of all earlier pairs, and -(N-p) at the same t because it is the first element of all later pairs. Thus event[t] = sum_{p: M-A_p=t} ((p-1)-(N-p)).
+- **Answer reconstruction:** ans[0]=inv0. For k=1..M-1, ans[k]=ans[k-1]+event[k]. Threshold t=M for A_p=0 is ignored because k only ranges to M-1.
+- **Initial inversion count:** Use a Fenwick tree over values 0..M-1. Scanning left to right, previous greater count is seen - count_leq(A_i). This is O(N log M).
+- **Edge cases:** M=1 outputs one zero; A_i=0 has threshold M and contributes no event; equal values cancel automatically in the event sum; Python ints handle totals up to about 2e10.
+- **Complexity:** O(N log M + M) time and O(N+M) memory, within limits for 2e5.
+- **Validation:** The formula reproduces all three samples, including wrap-around intervals and duplicate values.

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze operation rules and reformulate the answer as min over orderings of (runs + inversions).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the rightmost-first greedy stack algorithm and implement the O(N) solve_case.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement brute-force BFS solver and confirm the 3 public samples pass (3,4,8).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the definitive exhaustive BFS verification ({1,2} length <= 12, {1,2,3} length <= 9) with 0 mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm the formula answer = R \u2212 (#\u03b4=\u22122 merges) = (R + len(stack))//2 against samples and brute force.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Finalize fast-I/O Python solution (byte tokens, newline-separated answers for T up to 1e5).",
+    "status": "done",
+    "result": ""
+  }
+]

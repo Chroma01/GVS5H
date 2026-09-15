@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input; note intervals are disjoint and strictly ordered.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive that any bad interval of length >= B is an impassable wall -> immediate No.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Establish good-run transition behaviour: A==B is a cyclic rotation; A<B converges to all-ones (or stays all-zero) within O(A^2+B) steps.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the B-bit mask sweep with fast-forwarding for good runs and shifts for bad runs; output based on bit0 of mask at square N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test against samples 1-3 (all PASSED) and reason through edge cases: M=0, A==B, N close to B, adjacent bad intervals with combined length >= B, blocked start/end.",
+    "status": "done",
+    "result": ""
+  }
+]

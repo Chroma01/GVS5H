@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement closed-form solution m * C(n-1,k) * (m-1)^(n-1-k) mod 1e9+7 with factorial/inverse-factorial precomputation and pow, returning 0 when k > n-1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify against the three provided examples (4, 6, 2) and boundary handling (n=1, m=1, k=n-1, k=0).",
+    "status": "done",
+    "result": ""
+  }
+]

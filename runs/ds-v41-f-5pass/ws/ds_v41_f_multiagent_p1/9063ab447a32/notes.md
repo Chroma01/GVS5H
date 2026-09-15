@@ -1,0 +1,12 @@
+- **Problem model:** Buying $k_i$ units of product $i$ costs $P_i k_i^2$. Going from $k_i-1$ to $k_i$ adds marginal cost $P_i(2k_i-1)$. So each product gives an increasing arithmetic progression of marginals $P_i\cdot1, P_i\cdot3, P_i\cdot5,\dots$.
+- **Optimal for fixed total $K$:** Pick the $K$ smallest marginals overall. Prefix property holds automatically (marginals within a product increase), so this is realizable. Answer = largest $K$ whose $K$ smallest marginals sum to $\le M$.
+- **Key function:** For threshold $X$, $k_i(X)=\lfloor(\lfloor X/P_i\rfloor+1)/2\rfloor$ is the number of units with marginal $\le X$; cost of those units is $P_i k_i(X)^2$. So $C(X)=\sum_i P_i k_i(X)^2$, non-decreasing in $X$.
+- **Main binary search (direct, water-level):** Find the smallest $X$ with $C(X)>M$. Then all units with marginal $<X$ (equivalently $\le X-1$) have total cost $C(X-1)\le M$, so buy them all; spend leftover $R=M-C(X-1)$ on $\lfloor R/X\rfloor$ more units at marginal $X$. Answer $= \text{cnt}(X-1)+\lfloor R/X\rfloor$.
+- **Cap is redundant but safe:** Since $C(X)=C(X-1)+\text{cnt\_at}\cdot X>M$, we get $\text{cnt\_at}\cdot X>R$, hence $R//X<\text{cnt\_at}$. So the availability cap never binds; including it guards against off-by-one reasoning errors.
+- **Upper bound (proven):** Let $q_0=M//p_{min}$, $k=\lfloor\sqrt{q_0}\rfloor+1$. At $X=(2k-1)p_{min}$ the cheapest product already has $p_{min}k^2\ge p_{min}(q_0+1)>M$, so $C(X)>M$. Choose $p_{min}=$ min $P_i$.
+- **Lower bound:** $C(0)=0\le M$ since $M\ge1$; the found $X\ge1$ always (no divide-by-zero in practice; guarded anyway).
+- **Early break:** In the check, accumulate and `break` as soon as the running sum exceeds $M$; correctness of the comparison is preserved and large-mid iterations are cheap. Terms stay $\le M+\text{term}\approx10^{18}$, so arithmetic stays on small ints.
+- **Complexity:** $O(N\log X_{max})$ time with $\log X_{max}\le47$, $O(N)$ memory. Inner loop runs $\le 47\times2\cdot10^5\approx 10^7$ times.
+- **Edge cases verified:** $M<p_{min}$ (answer 0 handled since $X=p_{min}$, $cb=0$, extra 0); $N=1$; equal products (ties share the same marginal value, counted correctly via $\text{cnt}(X)-\text{cnt}(X-1)$).
+- **Samples:** Sample 1 (N=3,M=9,[4,1,9]) -> X=5, $C(4)=8$, cnt 3, extra 0, answer 3. Sample 2 -> 53.
+- **No overflow:** Python ints are arbitrary precision; caps keep values modest.

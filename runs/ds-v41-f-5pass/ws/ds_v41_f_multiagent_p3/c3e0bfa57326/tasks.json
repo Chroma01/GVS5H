@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse S with a stack into a forest of matched-pair nodes, recording each node's ordered child list (iteratively).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Canonicalize nodes bottom-up: sort children's canonical class IDs, map the sorted tuple to a unique class ID, store per-class DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute class DP = fact[k] * \u220f inv_fact[m_c] * \u220f dp[child_class]^m_c mod 998244353 over child-class multiplicities m_c.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Precompute factorials and inverse factorials up to N (\u2264 5000) mod 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute the final answer for the top-level forest with the same multinomial formula and print it.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify the implementation against both provided samples; both public samples PASSED.",
+    "status": "done",
+    "result": ""
+  }
+]

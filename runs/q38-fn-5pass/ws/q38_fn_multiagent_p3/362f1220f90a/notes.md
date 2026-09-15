@@ -1,0 +1,15 @@
+- **Core model:** Generate the answer as a walk through a KMP DFA for `str2`. State `q` in `0..m` is the longest prefix of `str2` that is a suffix of the current prefix. State `m` means the last `m` characters equal `str2`.
+- **Automaton:** Build prefix function, then DFA rows. For state `< m`, copy fallback row `trans[pi[state-1]]` and override the matching character to `state+1`. State `m` copies `trans[pi[m-1]]`, so future transitions correctly handle overlapping matches.
+- **Local constraints:** At answer position `p`, after appending a character, if `p >= m-1`, the window start is `i = p-m+1`. `str1[i]=='T'` requires new state `m`; `'F'` requires new state `!= m`. Positions before `m-1` have no constraint.
+- **Backward DP:** `masks[p]` is a bitmask of states before position `p` from which the suffix can be completed. `masks[L]` is all states. A state is feasible if some character transition reaches an allowed feasible next state. For `T`, feasible iff `masks[p+1]` contains `m` and the state can reach `m`. For `F`, use transitions excluding `m`. For no constraint, use all transitions.
+- **Bitmask optimization:** Precompute for each state a bitmask of all next states and of non-`m` next states. DP steps loop over at most `m+1` states with integer bit tests. Cache results for repeated `next_mask` values; full-mask cases are O(1). Early return when a mask becomes zero.
+- **Greedy construction:** If state `0` is not feasible initially, return empty. Otherwise scan left to right, try `'a'..'z'`, and pick the first character whose next state satisfies the current local constraint and is present in `masks[p+1]`. This yields the lexicographically smallest feasible string.
+- **Edge cases:** `m=1` works naturally. State `m` and its fallback have identical future transition behavior, so keeping `m` as a separate state is safe. T conflicts and impossible F/T overlaps are detected by zero masks. All-F cases often keep masks full and run fast.
+- **Complexity:** Automaton build `O(m*26)`. DP worst-case `O(L*m)` state checks with `L=n+m-1 <= 10499`, `m<=500`, using ~500-bit integer bit operations; caching and full-mask shortcuts often reduce this substantially. Greedy `O(L*26)`. Memory `O(L*m/word)` for masks plus small automaton/cache overhead.
+- **Sample verdicts:** Sample 1 `TFTF/ab -> ababa` PASS. Sample 2 `TFTF/abc -> ""` PASS. Sample 3 `F/d -> a` PASS.
+- **m=1 verdicts:** `T/a -> a` PASS. `F/a -> b` PASS. `TFTF/a -> abab` PASS.
+- **All T verdicts:** `TT/aa -> aaa` PASS. `TT/ab -> ""` PASS. `T/abc -> abc` PASS.
+- **All F verdicts:** `FFF/aaa -> aabaa` PASS. `FF/aa -> aba` PASS. `F/a -> b` PASS.
+- **Overlapping T verdicts:** `TFT/aba -> ababa` PASS. `TFT/abab -> ababab` PASS. `TFF/aaa -> aaaba` PASS. `FT/aaa -> baaa` PASS. `TFT/abc -> ""` PASS.
+- **All-a str2 verdicts:** `TT/aa -> aaa` PASS. `FFF/aaa -> aabaa` PASS. `TFT/aaa -> ""` PASS. `TFF/aaa -> aaaba` PASS. `FT/aaa -> baaa` PASS.
+- **Testing status:** Manual execution of the current solution on all requested categories found no failing case. The backward DP computes exact feasible-state sets, and greedy DFA traversal is sufficient for lexicographic minimality.

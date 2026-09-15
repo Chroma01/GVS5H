@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove/confirm the reverse-insertion invariant: i occupies the P_i-th empty slot among final positions when processing i from N down to 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement reverse assignment with a Fenwick tree: O(N) init, BIT binary-lifting k-th-one query in O(log N), point update -1, assign ans[slot]=i for i=N..1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Read input and write output using fast I/O (sys.stdin.buffer / sys.stdout.write) with space-separated formatting.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test on the provided samples plus edge cases N=1, all P_i=1 (reverse order), and P_i=i (sorted); all 2 public samples passed.",
+    "status": "done",
+    "result": ""
+  }
+]

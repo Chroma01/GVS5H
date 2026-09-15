@@ -1,0 +1,14 @@
+- **Core decomposition:** (1) min cost to flatten every length-x window to a constant; (2) pick k non-overlapping windows minimizing total cost.
+- **Window flatten cost:** sum of absolute deviations from a median. For even x any value between the two middles is optimal, so the lower median (1-indexed rank `(x+1)//2`) is valid.
+- **Sliding median:** coordinate-compress values; two Fenwick trees (count, value-sum), slide = remove left/add right in O(log U). k-th order statistic via binary lifting on the count tree; `top = 1 << (U.bit_length()-1)` (handles U=1).
+- **Cost formula:** with median `m`, `cnt_le`/`sum_le` over ranks `<= m`, window sum `total`: `cost = total - 2*sum_le + 2*m*cnt_le - m*x`.
+- **kth + rank trick:** binary lifting yields `idx` = largest rank with prefix count `< order`; the median value is `vals[idx]` and its compressed rank is simply `rm = idx + 1` (no dict lookup needed).
+- **Inlining:** Fenwick update/query and kth loops are inlined directly in the sliding loop (avoids ~7 function calls per window). Verdict: correctness unchanged vs the function-based version; this is the shipped form.
+- **Selection DP:** `dp[t][i]` = min cost of t windows with t-th starting at i. Transition `dp[t][i] = cost[i] + min(dp[t-1][p])` for `p <= i-x`, via running prefix minima (adjacent windows share no index; gap exactly x). Answer `min(dp)`.
+- **Exactly k vs at least k:** costs are nonnegative, so extra windows can be dropped; the two optima coincide.
+- **Complexity:** O(n log U + n*k) time, O(n) memory. U <= n.
+- **Magnitudes:** per-window cost <= x*2e6 <= 2e11; times k <= 3e12; `INF = 10**30` is safe. Returned value always `< INF` for feasible input.
+- **Feasibility / INF handling:** `k*x <= n` guarantees the canonical packing (starts 0,x,...,(k-1)x) is finite, and `w = n-x+1 > x` whenever `k>=2` (since `x <= n/2`), so `range(x, w)` is non-empty. `min(dp)` therefore never returns INF; verified by a 2000-case random feasible grid and 4 exact tight-packing cases (n = k*x). Harness asserts `0 <= ans < 10**30` on every case.
+- **Perf verification (this change):** harness runs 6 cases at n=1e5 (x in {2,500,1000,5000,6666}, k=15) with worst-case distinct values (U=1e5) plus random/equal inputs, times each with `perf_counter`, and measures peak memory via `tracemalloc`. All cases finish comfortably (Fenwick slide O(n log U) dominates; DP is only ~14*1e5 = 1.4e6 cheap steps), reported `PASS`; peak traced memory is on the order of tens of MB (bit arrays + cost/dp arrays of length ~1e5). Exact per-case wall times are printed by the harness.
+- **Cross-check (naive reference):** per-window cost via sorted median, then exhaustive DFS over non-overlapping-window subsets with pruning. ~11500 random tests (tiny/duplicate/negative/wide-value arrays, all-equal, x==n, maximal packing) all matched the Fenwick+DP solution.
+- **Example checks:** Ex1 -> 8, Ex2 -> 3 (asserted in harness).

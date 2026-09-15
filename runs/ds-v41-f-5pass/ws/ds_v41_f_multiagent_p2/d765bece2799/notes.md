@@ -1,0 +1,12 @@
+- **Problem:** Sum over all contiguous subarrays of length at most k of (minimum + maximum).
+- **Decomposition:** Compute minimum contribution sum and maximum contribution sum independently, then add them. Since max of a subarray equals -min of the negated subarray, max sum = -min_sum(-nums, k).
+- **Tie-breaking for minimum:** For each index i, define L[i] as the nearest index to the left with value strictly less than nums[i], and R[i] as the nearest index to the right with value less than or equal to nums[i]. Then i is the rightmost occurrence of the minimum for exactly the subarrays with left endpoint in [L[i]+1, i] and right endpoint in [i, R[i]-1]. Every subarray is counted exactly once.
+- **Monotonic stacks:** L is computed left-to-right by popping while arr[stack[-1]] >= arr[i], so the remaining top is strictly smaller. R is computed right-to-left by popping while arr[stack[-1]] > arr[i], so the remaining top is smaller-or-equal.
+- **Length cap:** Let A = i - L[i] - 1 and B = R[i] - i - 1 be the maximum left and right extensions. A subarray containing i has length p + q + 1 where 0 <= p <= A, 0 <= q <= B. The cap length <= k becomes p + q <= m with m = k - 1.
+- **O(1) pair count:** count_pairs(A, B, m):
+  - If m >= A + B: all pairs = (A+1)(B+1).
+  - Else let hi = min(A, m). If m >= B, for p <= m-B the q range is fully saturated at B+1 pairs; the remaining p values form an arithmetic series of (m-p+1). Otherwise m < B, and the whole sum is just the arithmetic series for p = 0..hi.
+  - Arithmetic sum uses count * (first + last) // 2.
+- **Complexity:** O(n) time and O(n) extra memory per min_sum call; two calls total. n <= 80000, so this is well within limits.
+- **Correctness checks:** Verified against provided examples (20 and -6), brute force on small arrays, k=1 (only singletons, count 1 per index), k=n (all subarrays), all-equal arrays, negatives, and mixed duplicates like [1,2,1] and [2,1,2].
+- **Edge cases:** m can be 0 for k=1; count_pairs correctly returns 1. Duplicates are handled by using strict inequality on the left and non-strict on the right, assigning each subarray to its rightmost minimum. Python integers avoid overflow.

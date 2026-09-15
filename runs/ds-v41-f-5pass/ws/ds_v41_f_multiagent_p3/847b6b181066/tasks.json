@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, R, C and the string S from standard input.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Define coordinate deltas for N, W, S, E according to the movement rules.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive reduction: target D=(R,C) occupied at t+0.5 iff P_t - D equals some P_k with k <= t (treat smoke as generated every step, since duplicate generation doesn't change occupied set).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement online hash-set prefix scan: seen={P_0=(0,0)}; for t=1..N update P_t, append '1' if (P_t.r-R, P_t.c-C) in seen else '0', then insert P_t; print result.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify the implementation against all three provided sample inputs and confirm exact output strings.",
+    "status": "done",
+    "result": ""
+  }
+]

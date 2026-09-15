@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Build a rooted adjacency list from edges with edge lengths; traverse via an explicit stack (no recursion) to handle n up to 5e4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Maintain depth-indexed prefix-distance array, a dict last_prev_depth for each value, and the inherited lower bound during iterative DFS.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "On entry: save old last_prev_depth[nums[v]], compute bound = max(inherited, prev+1), set last[nums[v]]=depth, write dist_at_depth.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Evaluate candidate length = dist - dist_at_depth[bound] and nodes = depth - bound + 1; update best pair (max length, then min nodes), initialized to [0,1].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "On exit: restore last_prev_depth[nums[v]] to saved earlier value (via LIFO exit marker) for sibling consistency.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify examples and run a brute-force stress test on random small trees to confirm correctness; report results.",
+    "status": "done",
+    "result": ""
+  }
+]

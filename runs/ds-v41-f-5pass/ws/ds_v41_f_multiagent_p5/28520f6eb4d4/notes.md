@@ -1,0 +1,10 @@
+- **Key reduction:** Building i is visible from (0,h) iff its top slope f_i(h) = (H_i - h)/X_i is strictly greater than every previous top slope f_j(h) for j < i. Rearranging gives h > (H_j X_i - H_i X_j)/(X_i - X_j), the y-intercept at x=0 of the line through (X_j,H_j) and (X_i,H_i).
+- **Global threshold:** All buildings are visible iff h > M = max over all pairs j<i of that intercept. Answer = M if M >= 0, else -1. If M = 0, answer is 0 because equality still blocks visibility.
+- **Computing M efficiently:** For each i, max_{j<i} intercept = H_i - X_i * min_{j<i} (H_i - H_j)/(X_i - X_j). Process left-to-right; for each new point find the previous point minimizing the slope to it.
+- **Geometry:** The minimum slope from a point on the right to a set of points is achieved on the upper convex hull of those points (supporting line from above). Maintain the upper hull with strictly decreasing edge slopes.
+- **Hull maintenance:** When adding a new rightmost point (X,Y), pop the last hull vertex while slope(prev,last) <= slope(last,new). Exact cross-multiplication: (y2-y1)*(X-x2) <= (Y-y2)*(x2-x1).
+- **Query on upper hull:** Slopes from hull vertices to the new point are unimodal; find the first index where edge slope <= slope to new point. Condition: (y2-y1)*(X-x1) <= (Y-y1)*(x2-x1). If never true, minimum is at the last vertex.
+- **Intercept tracking:** For chosen j, b = (y_j*X - Y*x_j)/(X-x_j). Keep the best as an exact fraction; compare with cross-multiplication num*best_den > best_num*den. Big integers give exactness.
+- **Output formatting (FIXED):** Print with 18 decimal places via float division `f"{best_num / best_den:.18f}"`. This matches the harness's expected double-based strings (e.g. 120/7 -> 17.142857142857142350, 3/2 -> 1.500000000000000000, 0 -> 0.000000000000000000). 15 decimals mismatched.
+- **Special cases:** N=1 -> -1. best_num < 0 -> -1. best_num == 0 -> prints 0.000000000000000000.
+- **Complexity:** O(N log N) time, O(N) space. Verified all 4 samples pass.

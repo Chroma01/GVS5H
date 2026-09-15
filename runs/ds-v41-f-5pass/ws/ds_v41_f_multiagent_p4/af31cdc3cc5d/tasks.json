@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove even-interval formula (sum of largest half minus sum of smallest half) and odd-index survivor constraint.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(N log N) prefix/suffix computation using two heaps (max-heap of k//2 smallest + min-heap of rest) tracking totalSum and lowerSum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Scan left-to-right to compute pref[k] for every even prefix length k (score = total - 2*lowerSum).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Scan right-to-left to compute suf[j] for every even suffix length j.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Combine: if N even output pref[N]; if N odd output max over even s of pref[s] + suf[N-1-s].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate against all 3 samples (5, 14, 0) \u2014 PASSED; plus hand cases N=2, all-equal, monotone, duplicates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Drop superseded Fenwick approach in favor of the faster two-heap method.",
+    "status": "done",
+    "result": ""
+  }
+]

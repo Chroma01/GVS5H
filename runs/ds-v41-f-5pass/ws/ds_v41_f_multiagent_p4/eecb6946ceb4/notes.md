@@ -1,0 +1,8 @@
+- **Reformulation:** A fine triplet needs A + C = 2B. Let ind be the 0/1 indicator of S. Then conv = ind * ind (self-convolution), and conv[k] = number of ordered pairs (a,c) in S with a + c = k.
+- **Counting identity:** sum over B in S of conv[2B] counts every ordered pair (a,c) whose midpoint B is in S. This includes the N self-pairs (a,c)=(B,B). Valid triplets correspond to ordered pairs with a != c, and each unordered triplet appears twice ((A,C) and (C,A)). So answer = (sum_{B in S} conv[2B] - N) // 2.
+- **Domain / transform size:** max value <= 1e6, so need L (power of two) with L > 2*max(S), i.e. L ~ 2^21. Compute with `while L <= 2*mx: L <<= 1`.
+- **Exactness:** All coefficients are <= N <= 1e6, far below modulus 998244353, so a single NTT is exact (no CRT needed). Self-convolution needs only one forward NTT, pointwise square, one inverse NTT (2 transforms, not 3).
+- **NumPy path (primary):** Use `np.fft.rfft`/`irfft` with rounding. Error analysis: relative FFT error ~ eps*log2(L) ~ 1e-14; coefficients <= 1e6, so absolute error ~1e-6, far below 0.5. `rint` is safe. Totals <= ~5e11 < 2^53, exact in float64. Faster than NTT and simpler.
+- **Fallback:** Pure-Python iterative NTT (root 3) with per-stage precomputed twiddle tables. Correct but slow for L=2^21 (likely TLE at max size); only used if numpy is absent.
+- **Edge cases:** N < 3 -> print 0 (no A<B<C possible). The formula also yields 0 for N=1,2 but early-exit avoids building large arrays for sparse inputs with big values.
+- **Verified:** Sample 1 by hand: sum conv[2B] = 3+3+3+1+1 = 11, (11-5)//2 = 3. Matches all provided sample logic.

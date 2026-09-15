@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: model as binary search on D + max clique / MIS, use interval-based forbidden masks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement binary search over D from 0 to side with a `feasible(D)` helper.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Replace clique search with the cycle mapping (L = 4*side) + greedy earliest-successor + binary lifting feasibility test (polynomial reduction).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle edge cases: corner assignment (y==0, y==side, x==0, else right), strict inequality, D<=0, sentinel index, wrap-around deadline check.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Hand-verify samples 1-3 and side=1/k=4 against the reduction (matches 2,1,1,1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Execute the validator: RAW sample PASS (2/1/1), OVERALL PASS, stress mismatches=0, n=15000 timing within limits.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Prove binary-search range [0, side] is complete: for k>=4 any 4 boundary points contain a pair with Manhattan distance <= side, and for D <= side cyclic distance equals Manhattan distance, so the cycle-proxy feasibility is exact.",
+    "status": "done",
+    "result": ""
+  }
+]

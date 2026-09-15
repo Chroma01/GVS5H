@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Confirm equivalence: N is a 400 number iff N=M^2 and M has exactly two distinct prime factors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement omega sieve up to 10^6 and predecessor array pref for largest M\u2264i with omega(M)==2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Answer each query with m=isqrt(A) and output pref[m]^2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle fast I/O for Q up to 2\u00d710^5.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test edge cases (A=36, 60, 404, 10^12, 123456789); all sample outputs match.",
+    "status": "done",
+    "result": ""
+  }
+]

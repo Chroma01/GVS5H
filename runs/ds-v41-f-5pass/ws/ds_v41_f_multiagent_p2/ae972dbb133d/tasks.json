@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Model each tile as a 4-port configuration (A: two adjacent ports, B: two opposite ports) and reduce the torus no-dead-end condition to equality of the shared edge bit between neighbors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Reduce to a GF(2) system: V(i-1,j) xor V(i,j)=a_ij and H(i,j-1) xor H(i,j)=a_ij (row/col even-A consistency) plus V(i-1,j) xor H(i,j-1)=1 for B cells; solution count = 2^(#components) via parity DSU over H+W row/column free bits.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the O(HW) per-test algorithm (row/column parity checks, parity DSU with path compression, pow(2,components,MOD)) with buffered stdin/stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate against all provided sample cases (outputs 2, 0, 2 match).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm complexity handles T up to 1e5 and sum HW up to 1e6 (sum(H+W) <= sum HW for H,W>=2).",
+    "status": "done",
+    "result": ""
+  }
+]

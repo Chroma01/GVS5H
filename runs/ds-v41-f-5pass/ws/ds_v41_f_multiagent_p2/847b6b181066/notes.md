@@ -1,0 +1,8 @@
+- **Problem model:** At every half-integer time s+0.5 the origin (0,0) holds smoke (either it survived the wind, or new smoke is generated because it is empty). So smoke originates at (0,0) at all times s = 0,1,...,t.
+- **Reduction:** A particle at origin at time s+0.5, after winds s+1..t, lands at P_t - P_s where P_k is the cumulative wind displacement up to step k. So (R,C) is occupied at t+0.5 iff P_t - P_s = (R,C) for some s < t, i.e. P_s = P_t - (R,C).
+- **Algorithm:** Single pass. Maintain set `seen` of prefix positions P_s. For each step t: update P_t, check if `P_t - (R,C)` in `seen`, emit 1/0, then insert P_t. Seed `seen` with P_0=(0,0). O(N) time, O(N) memory.
+- **Insert order:** Query before inserting P_t. Since (R,C) != (0,0), s = t never matches anyway, but the order is the clean way to express s < t.
+- **Direction mapping:** N -> (-1,0), W -> (0,-1), S -> (1,0), E -> (0,1). Must match statement signs; getting this wrong flips the answer.
+- **Answer format:** N-character string of '0'/'1' with trailing newline. Build in a list for speed.
+- **Performance:** N up to 200000, tuple keys in a set are fine; reading via sys.stdin.buffer and join is sufficient.
+- **Verified:** Matches all three samples (001010, 0001101011, 00100111111000101111).

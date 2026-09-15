@@ -1,0 +1,7 @@
+- **Approach:** Treat the `1` characters as indistinguishable tokens whose relative order can be assumed preserved. If their original 0-based positions are `p[0], p[1], ..., p[k-1]`, and the final contiguous block starts at `x`, then the `i`-th `1` should end at position `x + i`.
+- **Cost formula:** For a fixed start `x`, the minimum adjacent swaps needed is `sum |p[i] - (x + i)|`. This is equivalent to `sum |(p[i] - i) - x|`.
+- **Median reduction:** Define `a[i] = p[i] - i`. The problem becomes choosing `x` to minimize the sum of absolute deviations from `x`, which is solved by any median of the `a[i]` values.
+- **Validity of median:** The sequence `a[i]` is nondecreasing because `p[i+1] >= p[i] + 1`. Also `a[0] >= 0` and `a[k-1] <= N-k`, so the median is always a valid block start.
+- **Implementation:** Scan the string once. Maintain the number of seen `1`s. For each `1` at index `i`, append `i - ones_seen` to an adjusted list. Choose `adjusted[k // 2]` as the median and sum absolute differences.
+- **Edge cases:** If there is only one `1`, the answer is `0`. If the `1`s are already contiguous, all adjusted values are equal and the answer is also `0`. For even `k`, either middle value is an optimal median; picking the upper median is fine.
+- **Complexity:** `O(N)` time and `O(k)` memory, where `k` is the number of `1`s. This fits easily within `N <= 5 * 10^5`.

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and initial gap-matching notes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build brute-force BFS oracle on binary supports for N <= 6 (or 7 if feasible) to compute exact minimum operations for all valid A, B.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement refined formula: extract positions P,Q; reject if len(Q)>len(P) or span(Q)>span(P); build gaps C,D; E=max(abs(P[0]-Q[0]), abs(P[-1]-Q[-1])).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement greedy matchers: strict matcher requires C[i] > D[t]; parity matcher for p=0,1 requires C[i] > D[t] or (C[i] == D[t] and ((P[i] ^ Q[t]) & 1) == p). Handle empty D as strict success.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Candidate answer: if strict matcher succeeds, E; else for each p with parity matcher success, candidate = E if E % 2 == p else E + 1; answer min candidate, or -1 if none.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Compare formula against BFS oracle on all small cases and random medium cases; if counterexamples appear, record them and switch to a different approach (DP over ordered matching with parity/component states, fixed-K feasibility, or potential/max-over-intervals).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "If validated, produce final O(sum N) Python solution with fast I/O.",
+    "status": "done",
+    "result": ""
+  }
+]

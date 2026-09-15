@@ -1,0 +1,9 @@
+- **Tree model:** The N majority reductions form a complete ternary tree with 3^N leaves in input order and root equal to A'_1. Each internal node is the majority of its three children.
+- **DP invariant:** For every node store current value val and flip cost f, the minimum leaf changes in its subtree needed to make the node value 1-val. Leaf: val is the input bit, f=1.
+- **Transition:** Let parent current value be pv. To flip it, target t=1-pv. For child i, cost to make child t is 0 if val_i==t else f_i. Parent becomes t iff at least two children are t, so f_parent is the sum of the two smallest of these three child target costs.
+- **Correctness:** Subtrees are disjoint, so choices are independent. If two children are forced to target, the third can be left arbitrary; choosing the two smallest target costs is optimal. Induction from leaves to root proves the DP.
+- **Implementation:** Process levels bottom-up. Keep vals as bytearray of 0/1 and costs as list. For each triple compute pv by (v0+v1+v2)>>1, target by pv^1, compute three target costs, and store the sum of the two smallest with manual comparisons. Replace the current level each round; answer is costs[0].
+- **Input parsing:** Read all stdin, split once to get N and the rest. Use bytes.translate with a table mapping ASCII '0','1' to byte values 0,1 and a delete set containing every byte except ASCII '0','1'. This handles contiguous or whitespace-separated bits without creating millions of tokens.
+- **Complexity:** O(3^N) time and O(3^N) memory for the current level. For N=13, about 1.59M leaves and 0.80M internal nodes; flip costs are at most 2^N=8192, so Python ints/lists are safe.
+- **Samples:** Sample 1 computes root flip cost 1; sample 2 unanimous 000 gives 2.
+- **Pitfalls:** Avoid recursion over millions of nodes; avoid split() on all bits; do not choose two smallest raw flip costs, but two smallest costs to make children the parent's opposite value.

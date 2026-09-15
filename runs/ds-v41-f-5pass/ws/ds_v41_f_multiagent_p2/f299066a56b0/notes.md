@@ -1,0 +1,8 @@
+- **Problem model:** Sorted mochi sizes. Need maximum number of disjoint pairs (top, bottom) with 2*top <= bottom.
+- **Feasibility criterion:** K pairs are possible iff for every i in 0..K-1, 2*A[i] <= A[N-K+i]. Use the K smallest mochi as tops and the K largest as bottoms.
+- **Why criterion is valid:** In any valid matching of K pairs, let sorted chosen tops be t_i and sorted chosen bottoms be b_i. Then A[i] <= t_i, 2*t_i <= b_i, and b_i <= A[N-K+i]. Thus necessity holds. Sufficiency is direct pairing A[i] with A[N-K+i]; for K <= N//2 the top-index range and bottom-index range are disjoint.
+- **Monotonicity:** Feasibility is monotone in K, so binary search works. Equivalently, if K is feasible then K-1 is feasible.
+- **Algorithm:** Binary search K in [0, N//2]. Each check scans up to K indices. Total O(N log N), memory O(N). For N <= 5e5 this is safe.
+- **Implementation details:** Read integers from stdin in one buffer. No extra sort is needed because the constraints guarantee A is already nondecreasing. Use integer comparison 2*a <= b, never floating point. Duplicates are handled naturally by `<=`. K=0 is trivially feasible via the empty loop.
+- **Pitfalls avoided:** Do not use a naive ascending greedy without role separation. Do not reuse one mochi: for K <= N//2, indices [0,K-1] and [N-K,N-1] cannot overlap.
+- **Sample verification:** sample1 -> 3, expected 3; sample2 -> 0, expected 0; sample3 -> 6, expected 6.

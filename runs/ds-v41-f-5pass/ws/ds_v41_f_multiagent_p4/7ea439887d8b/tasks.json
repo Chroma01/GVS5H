@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement implicit two-layer Dijkstra in Python: build adjacency with normal edges u->v cost 1 and reversed edges (v+N)->(u+N) cost 1, plus switch edges v<->v+N cost X for every vertex; run heapq Dijkstra from state 0 and print min(dist[N-1], dist[2N-1]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify the implementation against all four sample inputs (expect 4, 3, 4294967299, 21) and confirm output formatting, 0-based indexing, and big-int safety.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Fallback only if the primary approach fails: switch to the explicit two-layer graph with materialized switch edges, or a different reduction, rather than polishing a stuck solution.",
+    "status": "done",
+    "result": ""
+  }
+]

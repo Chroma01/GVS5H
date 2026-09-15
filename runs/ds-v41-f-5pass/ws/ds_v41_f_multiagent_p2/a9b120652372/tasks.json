@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze the operation's effect on pieces: merges only, order preserved.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive reachability model: partition into groups + gap condition a_{S_j} >= req_j, with tight-boundary parity q.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Exhaustive BFS validation of solve_case vs brute force for all non-empty A,B with N<=8: 86368 checks, 0 mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Fix __main__ to read T test cases from stdin and print exactly one answer per line; ship only the solver.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run the finalized program with Sample Input 1 piped to stdin and confirm stdout is exactly \"3\\n-1\\n5\" (real sample-test verdict: PASSED).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the primary next-greater binary lifting solution end-to-end in the starter code, including next strictly greater indices, prefix sums, binary lifting tables, cost(l, r), two-pointer counting, and sample-test validation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate edge cases: all equal, strictly decreasing, strictly increasing, large values, single element, and maximum answer size.",
+    "status": "done",
+    "result": ""
+  }
+]

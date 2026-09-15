@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: values greater than threshold are isolated, and two values <= threshold are connected iff they share some multiple <= threshold.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement concise DSU-over-all-multiples solution in starter code (no prose, minimal code).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and targeted edge cases; report SAMPLE TESTS verdict.",
+    "status": "done",
+    "result": ""
+  }
+]

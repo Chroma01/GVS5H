@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive that the operation reverses three consecutive gaps, equivalently swaps gaps two positions apart, so gaps preserve 1-based index parity and all permutations within each parity class are reachable.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive objective formula: sum = N*X_1 + sum_{j=1}^{N-1} (N-j)*gap_j, with X_1 invariant.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement full Python solution with integer arithmetic and correct 0-based parity/weight mapping.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate on sample inputs and edge cases (N=4, equal gaps, large coordinates); if any fail, adjust parity/weight mapping or approach.",
+    "status": "done",
+    "result": ""
+  }
+]

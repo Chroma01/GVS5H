@@ -1,0 +1,16 @@
+- **Core model:** Each chosen operation adds either interval `I_i` (type 1) or its complement (type 2). Since values only change from 0 to 1, the problem is to cover `[1, N]` with the minimum number of such sets.
+- **Answer range:** Minimum cost is 1 if some interval is `[1, N]`. Otherwise cost 2 if a suitable pair exists. If no cost-2 pair exists and `M >= 3`, cost 3 is always achievable; if `M < 3`, impossible.
+- **Cost-2 pair patterns:** Exhaustive cases for two operations are:
+  - type 1 + type 1: intervals union to `[1, N]`;
+  - type 2 + type 2: intervals have empty intersection;
+  - type 1 + type 2: the type-2 interval is contained in the type-1 interval.
+- **Containment scan:** Sort indices by `(L, R)` ascending. Process equal-`L` groups. For each group, first check cross-L containment using the maximum `R` from earlier groups. If `max_r >= R[i]`, the earlier interval with `max_r` contains `i`; emit type 1 on it and type 2 on `i`.
+- **Same-L group check:** With ascending `R`, a same-L containment can be missed because the container appears later. If a same-L group has size at least 2 and no cross-L containment was found, emit type 1 on the largest-`R` interval in the group and type 2 on the smallest-`R` interval. This also handles duplicate intervals.
+- **Tie-breaking for sample 1:** Checking containment before union, and checking cross-L containment before same-L fallback, makes `[1,4]` contain `[2,4]` first, reproducing `2 0 1 0` instead of a union or same-L answer.
+- **Union detection:** Need one interval with `L=1` and one with `R=N`. If no full interval exists, they are distinct. Choose maximum `R` among `L=1` intervals and minimum `L` among `R=N` intervals. They cover all iff `max_R + 1 >= min_L`, using integer adjacency.
+- **Disjoint detection:** In the same sorted order, scan maintaining minimum previous `R`. If `min_R < current_L`, the previous interval ends before the current one starts. Strict inequality is required; touching intervals are not disjoint.
+- **Fallback construction:** If no cost-2 pair exists, intervals are pairwise intersecting and inclusion-free, so sorted by `L` they also have strictly increasing `R`. Let `A` be min-`L` and `C` max-`L`. Type 2 on `A` and `C` leaves exactly `I_A ∩ I_C` uncovered. Any third interval has `L_B <= L_C` and `R_B >= R_A`, so it covers that intersection.
+- **Fallback safety:** The code explicitly finds a third interval covering the intersection. If the intersection is empty, it outputs the valid cost-2 pair with type 2 on both.
+- **Edge cases:** Full interval gives cost 1 before pair checks. Duplicate intervals are containment cost 2. Adjacent intervals can be solved by either type-1 union or type-2 disjoint; either is accepted. All pair witnesses are enforced to be distinct indices. `M=1` or `M=2` with no cost-2 pair is impossible.
+- **Complexity:** `O(M log M)` time due to sorting, `O(M)` memory.
+- **Sample rerun:** Mentally checked all samples. Sample 1 outputs `2` and `2 0 1 0`; sample 2 outputs `1` and `0 1 0 0`; sample 3 outputs `2` and `1 1`; sample 4 outputs `-1`.

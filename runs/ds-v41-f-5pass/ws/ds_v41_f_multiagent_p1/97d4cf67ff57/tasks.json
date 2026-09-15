@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze structure: any alkane can be rooted at a degree-4 vertex, so every non-root internal vertex has exactly 3 children and every leaf has 0; branch values are well defined and guarantee connectivity.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement two-pass rerooting: compute branch value B(u,v) for every directed edge (leaf option 1, internal option 1 + top-3 of neighbors excluding the parent side), using post-order down values and pre-order up values with iterative traversal.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each vertex u with >=4 incident branch values, compute 1 + sum of top-4 branch values; take the global maximum, and output -1 if no vertex qualifies.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test the implementation against all three provided samples and edge cases (N=1, path graphs, star graphs, vertices with degree < 4), confirming sample outputs 8, -1, 11 and correct -1 handling.",
+    "status": "done",
+    "result": ""
+  }
+]

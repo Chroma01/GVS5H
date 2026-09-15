@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse K, S, T and strip longest common prefix/suffix with non-overlap guard; early-exit on |len diff| > K and exact matches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement furthest-reaching (Landau-Vishkin) Levenshtein with 2^61-1 rolling-hash LCP jumps, band [-K,K], correct insert/delete/replace transitions, carry, final test V[K+d_star] >= n. Passes samples 1\u20133.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Brute-force fuzzer (alphabet 1\u20133, lengths 1\u20139, K 1\u20134, ~30k cases) vs O(nm) edit-distance DP: 0 mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Benchmark on 5e5/5e5 adversarial inputs (random lowercase; 'a'+X+'a' vs 'b'+X+'b') with K=20: ~0.55\u20130.6s, comfortably under limits.",
+    "status": "done",
+    "result": ""
+  }
+]

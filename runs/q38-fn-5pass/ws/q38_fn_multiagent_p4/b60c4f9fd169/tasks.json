@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Read K, S, and T from standard input as bytes and immediately reject if abs(len(S)-len(T)) > K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Trim common prefix and common suffix safely to reduce the effective problem size.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build double 64-bit rolling-hash prefix arrays and power arrays for the trimmed strings.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement an O(log N) LCP query using double-hash equality with binary search.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement the Landau-Vishkin furthest-reaching DP over edit counts 0..K and diagonals -e..e, with correct insert/delete/substitute transitions and boundary checks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Add early termination: output Yes as soon as a state reaches the end of both strings, and output No if no state succeeds within K edits.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Handle edge cases: one string empty after trimming, K larger than remaining length, identical strings, and length difference exactly K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Run the provided sample tests and additional edge-case tests to confirm correctness and performance.",
+    "status": "done",
+    "result": ""
+  }
+]

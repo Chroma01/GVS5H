@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement small-N brute-force BFS to obtain ground-truth minimum operations for all reachable/unreachable support pairs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Use BFS data to identify the gap-operation model (boundary/internal gap reductions and endpoint shifts).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive and implement an O(N) DP/greedy over gap embeddings using component parity and boundary-cost optimization.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the final full solver with fast I/O and validate on samples.",
+    "status": "done",
+    "result": ""
+  }
+]

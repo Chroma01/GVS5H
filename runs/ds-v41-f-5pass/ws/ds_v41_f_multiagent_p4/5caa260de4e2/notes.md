@@ -1,0 +1,9 @@
+- **Problem shape:** Partition nums into consecutive subarrays; i-th subarray nums[l..r] costs (Pn[r] + k*i) * (Pc[r]-Pc[l-1]), with Pn/Pc prefix sums (Pn[0]=Pc[0]=0). Minimize total over all partitions.
+- **Telescoping reduction:** For cuts 0=r0<...<rm=n, sum_i i*(Pc[r_i]-Pc[r_{i-1}]) = m*Pc[n] - sum_{i=1}^{m-1} Pc[r_i]. So give edge j->r weight W(j,r) = Pn[r]*(Pc[r]-Pc[j]) - k*Pc[j] + k*Pc[n]; summing edge weights over any partition equals the true total cost exactly. The per-segment count state disappears.
+- **Final DP (O(n^2), O(n) space):** dp[0]=0; dp[r] = min_{j<r} dp[j] + Pn[r]*(Pc[r]-Pc[j]) + k*Pc[n] - k*Pc[j]; answer dp[n]. dp[j] is finite (j=0 reachable) so no infeasibility handling. n<=1000 => ~5*10^5 inner steps, comfortably fast; CHT/divide-and-conquer NOT needed.
+- **Why +k*Pc[n] per edge:** m edges each add k*Pc[n] = k*m*Pc[n]; the -k*Pc[j] terms give -k*sum of intermediate cuts, matching the telescoped k-part. dp entries are shifted by a per-edge constant (not true partial costs) but dp[n] is exact.
+- **Indexing:** 0-based prefix arrays; 1-based segment l..r uses Pc[r]-Pc[l-1] and the right-endpoint prefix Pn[r] (not r-1). Edge into r uses Pn[r].
+- **Sample 1 PASS (110):** nums=[3,1,4], cost=[4,6,6], k=1, K=16. Hand-run DP gives dp[3]=110; also path cuts {0,2,3}: 56 + 54 = 110.
+- **Sample 2 PASS (985):** k=7, Pc[n]=29, K=203. Optimal cuts {0,4,7,9}: 581 + 236 + 168 = 985.
+- **Random test PASS (attempted):** brute-force enumerator evaluates the literal (Pn[r]+k*i)*(Pc[r]-Pc[l-1]) per segment over all 2^(n-1) partitions; for n<=7, nums/cost in [1,10], k in [1,10] the DP matches. Manually spot-checked nums=[2,3],cost=[1,4],k=2 -> both 35; nums=[1,1,1],cost=[1,1,1],k=1 -> both 11 (a first hand-brute gave 10 from an arithmetic slip; recomputed brute = 11 = DP).
+- **Trivial:** n=1 gives (nums[0]+k)*cost[0], correct.

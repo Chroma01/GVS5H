@@ -1,0 +1,7 @@
+- **Model:** Normalize each pair to (a,b) with a<b. Subarray [L,R] contains both iff L<=a and R>=b. So for a fixed R, valid L must exceed the max active a (active = pairs with b<=R). Base = sum over R of (R - maxActiveA), with maxActiveA=0 when none active.
+- **Removal effect:** Removing pair p only changes the count at right endpoints R where p is the *unique* active pair attaining maxActiveA. There the bound drops to the second-largest active a, giving gain = top - second. Credit that gain to p's id.
+- **Data structures:** Bucket pairs by b. Sweep R=1..n. Maintain cnt[a] = number of active pairs per a-value, owner[a] = unique pair id (id+1) if cnt[a]==1 else -1 (counts only grow, so invalidation is permanent). Fenwick tree over a in [1,n] supports prefix-count; kth(total) yields the largest a with cnt>0 (top), kth(total-cnt[top]) yields the largest a strictly below top (second). top_bit = highest power of two <= n.
+- **Result:** answer = base + max(gain). Gains are always >=0, so an unhelpful removal contributes 0; exactly-one-removal is handled naturally. Python ints needed (base ~ n^2/2).
+- **Edge cases verified:** duplicate pairs (cnt>=2 blocks any gain, correct); no active conflicts (top=0, base += R, no gain); unique top with no other active (second=0, gain=top).
+- **Example checks:** n=4, [[2,3],[1,4]] -> base 6 + gain 3 = 9. n=5, [[1,2],[2,5],[3,5]] -> base 9 + gain 3 = 12.
+- **Complexity:** O((n + m) log n) time, O(n + m) space.

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: model as functional graph, contract cycles, DP over attached trees; selected Approach 2 (Kahn peel + rolling cumulative DP).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Approach 2 in Python and produce code reading stdin/writing stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify sample inputs 1, 2, 3 and edge cases: self-loop, M=1, multiple disjoint cycle components (all 3 public samples PASSED).",
+    "status": "done",
+    "result": ""
+  }
+]

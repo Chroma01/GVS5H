@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the main d-enumeration method with exact integer cube-root bounds and integer discriminant checking.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute a safe integer upper bound for d = x-y, approximately the cube root of N, with correction for floating-point errors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Iterate over all positive integers d up to that bound and check whether d divides N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each valid divisor d, compute M = N/d and the discriminant D = 12*M - 3*d*d.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Check whether D is a perfect square and whether y = (-3*d + sqrt(D)) / 6 is a positive integer; if so, output x = y+d and y.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If no valid pair is found after the loop, output -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Test edge cases carefully: N = 1, N being a perfect cube, solutions where the quadratic gives y = 0, and very large N near 10^18.",
+    "status": "done",
+    "result": ""
+  }
+]

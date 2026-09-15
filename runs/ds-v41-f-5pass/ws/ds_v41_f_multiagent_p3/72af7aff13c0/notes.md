@@ -1,0 +1,12 @@
+- **Problem core:** Maintain weighted monotone-path sum from (1,1) to (H,W) under point updates along a walk; output after each change.
+- **Delta identity:** Changing A(r,c) from old to new changes total by (new-old)*p*g where p = sum over prefixes to predecessors of (r,c) excluding (r,c) = F(r-1,c)+F(r,c-1), and g = suffix excluding (r,c) = G(r,c). Verified on sample 1.
+- **DP definitions (0-indexed):** F(h,w)=A(h,w)*(F(h-1,w)+F(h,w-1)), F(0,0)=A(0,0). G(h,w)=A(h+1,w)*G(h+1,w)+A(h,w+1)*G(h,w+1), G(H-1,W-1)=1; out-of-range A treated as 0. Answer = F(H-1,W-1).
+- **Orientation:** Transpose when H>W so rows H ≤ W and H ≤ sqrt(HW) ≤ 447, giving O(H) per work unit. After transpose new cell (h1,w1)=old(w1,h1); start (sh,sw)->(sw,sh); directions U->L, L->U, R->D, D->R (ASCII: U85->L76, L76->U85, R82->D68, D82->R68? actual mapping D68->R82).
+- **Maintained vectors:** pr[w] = full F column w, sf[w] = full G column w. pr depends only on columns ≤ w, sf only on columns ≥ w.
+- **Operations (all O(H)):** On move right recompute pr[c] from pr[c-1]; on move left recompute sf[c] from sf[c+1]. On value change: fix pr[c] rows ≥ r, fix sf[c] rows < r. g=sf[c][r] is unaffected by A(r,c) (excludes it), so compute delta before overwriting.
+- **Correspondence of orientations:** pr[0][0]=A[0][0] special case; for c>0 row h uses pr[c-1][h]+pr[c][h-1]. sf rightmost column: sf[W-1][H-1]=1, sf[W-1][h]=A(h+1,W-1)*sf[W-1][h+1].
+- **Direction mapping confirmed:** transposed mapping in code uses d0==85 -> 76, 76 -> 85, 82 -> 68, else -> 82.
+- **Complexity:** O(HW) init, O(Q*H) updates; worst ~2QH ≈ 1.8e8 inner-loop steps for H≈447, Q=2e5. Correct but potentially slow in pure CPython; candidate bottleneck is the scan loops.
+- **Possible speedup (not implemented):** fuse the post-update pr fix with the move-right recompute, and similarly for sf, to cut a factor; or lazily fix only rows needed by the current token row. Caveat: invalidation propagates to the right for pr and to the left for sf, so naive lazy markers need care (an update at c dirties sf[c-1..], and pr[c+1..]).
+- **Already disproven:** lazy scheme keeping only current column partial with per-column dirty prefix fails for sf because updating column c dirties sf[c-1], sf[c-2], ... which were not marked.
+- **Verification:** sample 1 traced fully (456,666,822). A value-unchanged update leaves vectors and answer untouched.

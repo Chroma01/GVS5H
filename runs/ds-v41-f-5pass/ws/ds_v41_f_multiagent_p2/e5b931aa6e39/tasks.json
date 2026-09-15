@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement exact integer isqrt (math.isqrt) and d-enumeration with divisor check + quadratic-discriminant solver for y; verify x^3 - y^3 == N; print first pair or -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run the three provided samples (397, 1, 39977273855577088) and confirm expected outputs; boundary reasoning for N=1 and perfect cubes valid.",
+    "status": "done",
+    "result": ""
+  }
+]

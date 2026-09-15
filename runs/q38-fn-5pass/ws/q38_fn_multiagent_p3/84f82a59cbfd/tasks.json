@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove and document the equivalence: N is a 400 number iff N = m^2 where m has exactly two distinct prime factors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a sieve up to 10^6 that counts distinct prime factors for every integer and build a prefix array (or sorted list) of the largest integer not exceeding each position that has exactly two distinct prime factors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement query processing using math.isqrt(A) and the precomputed prefix/list to find the largest valid m, then output m^2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test edge cases such as A = 36, A = 400, A = 10^12, and values just below or above valid squares.",
+    "status": "done",
+    "result": ""
+  }
+]

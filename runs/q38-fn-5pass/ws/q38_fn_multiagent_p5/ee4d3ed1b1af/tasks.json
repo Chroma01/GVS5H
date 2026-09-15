@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete solution using occurrence lists and next/prev arrays, handling empty pieces and non-overlap.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate against sample tests and edge cases such as p=\"**\", empty pieces, and no match.",
+    "status": "done",
+    "result": ""
+  }
+]

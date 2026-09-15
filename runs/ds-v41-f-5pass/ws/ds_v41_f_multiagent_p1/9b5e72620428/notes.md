@@ -1,0 +1,11 @@
+- **Problem model:** Final condition means a common nonnegative sum S with A_i+B_i=S for all i. Only A may be permuted; -1 entries in both A and B are free nonnegative fillers.
+- **Reduction:** Let wA,wB = counts of -1; nA=N-wA, nB=N-wB = fixed counts. A feasible matching needs some number x of fixed-A/fixed-B pairs. Let C(S) = max such pairs = sum over distinct fixed A value v of min(cntA[v], cntB[S-v]) (since a -> S-a is injective, components are independent).
+- **Matching feasibility:** Unmatched fixed A use B wildcards (nA-x<=wB), unmatched fixed B use A wildcards (nB-x<=wA). Both inequalities collapse to x>=nA+nB-N because nA-wB = nB-wA = nA+nB-N. Leftover wildcards pair freely and their counts are automatically equal (wA-nB+x = wB-nA+x). So for fixed S, feasible iff C(S) >= needed := nA+nB-N and S >= lower := max(maxA,maxB,0).
+- **Trivial case:** needed <= 0 => always "Yes". Construct x=0: all fixed A to B wildcards, all fixed B to A wildcards, leftover wildcards to (0,S); needs wB>=nA and wA>=nB which hold. Pick S=max(maxA,maxB).
+- **Candidate S:** When needed > 0 (so both sides have fixed values), we need x>=needed>0, hence S must equal some fixed a + fixed b. So only pair sums matter.
+- **Accumulation trick:** Instead of recomputing C(S) per candidate (O(distinctA) each), accumulate over all distinct value pairs: for each (v,u) add min(cntA[v],cntB[u]) to C[v+u]. Then C[S] equals the formula exactly (terms with missing B value contribute 0 and are skipped). Complexity O(distinctA*distinctB) <= 4e6.
+- **Answer:** Yes iff some S with C(S)>=needed and S>=lower; else No.
+- **Optimizations:** sort B values, bisect to start where v+u>=lower (skip useless pairs); keep C in a dict keyed by sum; early-exit as soon as an accumulated C[s] reaches needed (C only grows, so the check after each increment is safe).
+- **Samples:** (1) S=4 gives C=2=needed => Yes. (2) each S gives C<=2<3 => No. (3) needed=2 but only S=3 reaches C=2 while lower=4, so No.
+- **Pitfalls handled:** duplicate values via cnt maps (not raw pair frequency); lower bound S>=max(maxA,maxB); needed formula verified as both-matching constraint; S=0 wildcard-wildcard case.
+- **Complexity:** O(N + D_A*D_B) time, O(D_A*D_B) memory (D<=2000), safe within limits.

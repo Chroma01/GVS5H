@@ -1,0 +1,14 @@
+- **Approach:** Implemented a Landau-Vishkin furthest-reaching solver for Levenshtein distance threshold K <= 20. It stores, for each edit count layer and diagonal d = i - j, the furthest index i in S reachable after exactly that many edits and a maximal snake of matching characters.
+- **Early decisions:** If abs(len(S)-len(T)) > K, answer is No. If K == 0, compare directly. If K >= max(len(S), len(T)), answer is Yes because substituting mismatches plus inserting/deleting the length difference costs at most max length. Strings are swapped so len(S) <= len(T); edit distance is symmetric and this reduces hash length.
+- **DP recurrence:** For layer e and diagonal d, candidates come from:
+  - deletion from d-1: prev[d-1] + 1, if prev index is not at end of S;
+  - insertion from d+1: prev[d+1], if the corresponding T index is not at end of T;
+  - substitution from d: prev[d] + 1, if both indices are not at ends.
+  The maximum candidate on the same diagonal is extended by LCP. Exact edit-count layers are used; a solution with r edits is found at layer r, so carrying previous rows without an edit is unnecessary.
+- **Correctness of furthest states:** Previous rows are already extended by matches, so substitution is attempted only at a mismatch or invalid end. On a fixed diagonal, a larger furthest coordinate dominates smaller coordinates for future snakes and edits, which is the standard Landau-Vishkin invariant.
+- **LCP method:** Uses 64-bit polynomial rolling hash modulo 2^64 with an odd base. Prefix hashes and powers are precomputed in O(max(n,m)). LCP is found by binary searching the largest hash-equal prefix.
+- **Exact verification:** After hash binary search, the candidate prefix is verified with memoryview slice equality. Equal strings always have equal hashes, so a collision can only make the candidate too large. If verification fails, a linear exact scan computes the true LCP. Thus hash collisions do not affect correctness, only worst-case performance.
+- **Caching:** LCP results are cached by (i,j). There are at most about K^2 <= 441 LCP queries, so cache size is tiny.
+- **Bounds handling:** Every operation checks source bounds and target diagonal validity. After choosing a candidate i on diagonal d, j = i - d is validated before LCP extension. Success is when diagonal end_d = n - m reaches i = n, which implies j = m.
+- **Complexity:** Preprocessing O(max(n,m)). DP states O(K^2), each LCP binary search O(log max(n,m)), plus exact verification bytes. With K <= 20 this is easily small; memory is O(max(n,m)) for hashes and powers.
+- **Pitfalls addressed:** Avoided full O(NM) DP; avoided parity-only LCS recurrence because substitution is allowed; avoided unsafe unchecked hashing by exact verification and fallback; handled insertions/deletions at string ends; swapped strings without changing the answer.

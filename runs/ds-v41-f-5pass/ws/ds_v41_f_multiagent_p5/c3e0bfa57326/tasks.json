@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse S with a stack into nodes (virtual root + one node per '('), recording each node's children; process iteratively to avoid recursion depth issues.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute canonical subtree IDs bottom-up in reverse creation order: sort child IDs, map sorted tuple -> fresh integer ID via a dictionary.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute factorials and inverse factorials up to N modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each node including the virtual root, multiply answer by factorial[degree] and by inverse-factorial[frequency] for each distinct child canonical ID.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Output final answer modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate the counting formula and implementation against a brute-force reachability/orbit search (generate reachable strings via the block reversal operation, dedupe) on small valid sequences up to N=10; confirm the tree/plane-embedding characterization and fix any discrepancy.",
+    "status": "done",
+    "result": ""
+  }
+]

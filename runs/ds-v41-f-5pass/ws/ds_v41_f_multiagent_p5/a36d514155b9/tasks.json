@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement modular combinatorics: factorials and inverse factorials up to N = m*n, plus a C(a,b) helper returning 0 when b<0 or b>a.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement S(L) = L*(L-1)*(L+1)/6 mod MOD safely using the modular inverse of 6.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Write the final `distanceSum` method: return C(N-2,k-2) * (n^2*S(m) + m^2*S(n)) mod 1e9+7.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle edge cases: k>=2 by constraints, m=1 or n=1, and k=N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test against provided examples (2,2,2)->8 and (1,4,3)->20 and additional small brute-force cases.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify Kruskal-reconstruction-tree / bottleneck-LCA structure and bottom-up greedy matching invariant",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement DSU-sweep solution and confirm it passes both public samples (outputs 8 and 3)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Brute-force verify on small random graphs (5000 cases, N in [2,7], ties, duplicates, K in [1,N]) against bottleneck Floyd-Warshall + permutation enumeration -- PASS",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm edge cases: K=1, duplicate A or B occurrences, equal edge weights, same-weight merges (all covered by random tests and hand-traces)",
+    "status": "done",
+    "result": ""
+  }
+]

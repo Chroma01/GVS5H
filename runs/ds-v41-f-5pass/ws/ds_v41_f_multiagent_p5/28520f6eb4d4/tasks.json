@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the geometric visibility condition: building i is blocked from (0,h) iff h <= intercept of line through some (X_j,H_j) and (X_i,H_i) with j < i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Reduce the problem to computing M = max_{j<i} (X_i*H_j - X_j*H_i)/(X_i-X_j); answer is M if M >= 0, else -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the incremental upper convex hull with tangent binary search using exact integer cross-multiplication for comparisons.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Fix the output formatting: print f\"{best_num / best_den:.18f}\" (float division, 18 decimals); all 4 samples PASS.",
+    "status": "done",
+    "result": ""
+  }
+]

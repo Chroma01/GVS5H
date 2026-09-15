@@ -1,0 +1,12 @@
+- **Problem:** \(f(x)\) is the odd part of \(x\) (strip all factors of 2). Need \(\sum_{i\le j} f(A_i+A_j)\). Constraints \(N\le 2\cdot10^5\), \(A_i\le 10^7\).
+- **Core split by valuation:** With \(k=v_2(A_i+A_j)\), \(f(A_i+A_j)=(A_i+A_j)/2^k\). Answer \(=\sum_k Q_k/2^k\), where \(Q_k\) sums \((A_i+A_j)\) over all pairs (including diagonals) with exact valuation \(k\).
+- **Exact valuation test:** \(v_2(x)=k \iff x\equiv 2^k \pmod{2^{k+1}}\). Use \(mask=2^{k+1}-1\), \(target=2^k\).
+- **Counting for fixed k:** One pass over A. Map residue \(r=a\&mask\) to packed \((count,sum)\). Earlier \(b\) matches current \(a\) iff \(b\)'s residue \(=comp=(target-r)\&mask\); add \(a\cdot cnt_b+sum_b\) to `pair_sum` (each unordered \(i<j\) once).
+- **Diagonal \(i=j\):** \(2a\equiv target\pmod{mask}\iff r==comp\); then add \(2a\) to `diag_c`. \(k=0\) never has a diagonal since \(2a\) is even.
+- **Accumulation:** \(total \mathrel{+}= (pair\_sum+diag\_c)\gg k\). The shift is lossless because every included term has exact valuation \(k\).
+- **k range:** Max sum \(=2\max A<2^{25}\), so loop \(k=0..\text{bit\_length}(2\max A)-1\) (\(\le 25\) values); shrinks automatically for small inputs.
+- **Packing:** store \(cnt\cdot 2^{42}+sum\); per-residue sum \(\le N\cdot10^7=2\cdot10^{12}<2^{42}\), so fields never collide. Decode via \(w\!\gg\!42\) and \(w\&((1\!<\!<\!42)\!-\!1)\).
+- **Speed:** \(k\le18\) (\(mask<2^{20}\)) use a plain list indexed by residue; larger \(k\) use a dict. ~\(4\cdot10^6\) list ops + ~\(1.2\cdot10^6\) dict ops.
+- **Negative-safe mod:** use `(target-r)&mask`; Python's bitwise & already yields the nonnegative residue.
+- **Verification via brute force:** An independent \(O(N^2)\) checker (sum \(f(A_i+A_j)=\) odd part, computed directly) was compared against this implementation on randomized cases (\(N\le30\); all-small, mixed, duplicates, all-even, all-odd, \(N=1\)) with no mismatches. Hand checks: \([4,8]\to5\), \([51,44,63]\to384\), \([1,1,1]\to6\), \([1,3]\to5\). Sample 3 target \(20241214\).
+- **Complexity:** \(O(N\log\max A)\) time, \(O(\min(N,2^{k+1}))\) auxiliary space.

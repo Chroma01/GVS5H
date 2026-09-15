@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, M, Sx, Sy, house coordinates, and moves.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Simulate moves with Python ints to compute final (X,Y) and collect horizontal segments (y, x1, x2) and vertical segments (x, y1, y2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Merge horizontal intervals per y and vertical intervals per x (sort by start, merge if next_start <= current_end + 1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each house, binary search merged intervals for its row and column to test coverage; compute H, V, B.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Output X Y and H + V - B.",
+    "status": "done",
+    "result": ""
+  }
+]

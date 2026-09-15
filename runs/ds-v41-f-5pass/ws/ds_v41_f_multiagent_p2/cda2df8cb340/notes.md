@@ -1,0 +1,12 @@
+- **Problem:** Compute sum over i<=j of f(A_i+A_j), where f is the odd part (strip factors of 2). N<=2e5, A_i<=1e7.
+- **Identity used:** f(x) = x - sum_{k>=1, 2^k|x} x/2^k. This is exact: each k with 2^k|x subtracts x/2^k, and the telescoping leaves the odd part. Verified on x=8,12,16,1.
+- **Decomposition of answer:** answer = T0 - sum_{k>=1} T_k/2^k, where T0 = sum_{i<=j}(A_i+A_j) = (N+1)*S (S=sum A_i), and T_k = sum over pairs i<=j with 2^k | (A_i+A_j) of (A_i+A_j). Divisions by 2^k are exact.
+- **Range of k:** a nonzero T_k needs 2^k <= A_i+A_j <= 2*maxA, so iterate M=2^k while M <= 2*max(A). Max k is floor(log2(2*maxA)) <= 24 for A_i<=1e7. Missing higher k is safe because they contribute zero.
+- **Computing T_k via residues mod M=2^k:** group by r = A_i mod M. Valid partners have residue (-r) mod M. Let cnt[r]=count, sm[r]=sum of A in class r.
+- **Key formula:** T_k = (sum over classes r of sm[r]*cnt[(-r) mod M]) + Dsum, where Dsum = sum of A_i whose residue is self-inverse {0, M/2} = sm[0] + sm[M/2].
+- **Why formula holds:** the ordered-pair sum O_k = sum over ordered valid (i,j) of (A_i+A_j) equals 2*(off-diagonal unordered) + (diagonal 2A_i). Taking into account the diagonal once gives T_k = O_k/2 + Dsum. By symmetry O_k/2 = sum_i A_i*cnt[(-A_i) mod M] = sum_r sm[r]*cnt[(-r) mod M]. Confirmed by hand on several cases (M=2,4,8).
+- **Self-inverse subtlety:** residues 0 and M/2 pair with themselves; they must be added separately as Dsum, otherwise diagonal pairs are mishandled. Note Dsum = sm[0]+sm[M>>1] (for M=2, half=1, so both classes summed; correct).
+- **Implementation / performance:** hybrid structure. For M <= 2^20 use two plain lists cnt, sm for speed; for larger M use dicts to bound memory (a 2^24 list would be ~134MB). Build counts+sums in one pass over A, then iterate only over classes to form acc. Complexity O(N log(maxA)) <= ~5e6 elemental steps, comfortably fast.
+- **Correctness checks done:** sample1 (N=2,[4,8]) -> 5; sample2 (N=3,[51,44,63]) -> 384 (intermediate T1=430,T2=88,T3=88 giving 215+22+11=248, T0=632, 632-248=384); sample3 expected 20241214. Small cases N=1 with A=[1]->1, [3]->3 verified.
+- **Edge cases:** N=1 works; maxsum>=2 always so loop runs at least once; all sums positive so no zero handling needed.
+- **Pitfall reminders:** use (-x)&mask for mod (Python handles negative bitwise correctly); cut the k-loop at 2*maxA, not maxA; keep integer division exact via Tk>>k.

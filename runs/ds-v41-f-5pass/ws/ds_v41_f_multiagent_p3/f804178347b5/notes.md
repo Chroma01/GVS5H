@@ -1,0 +1,7 @@
+- **Problem model:** Iterated ternary majority over a full ternary tree of height N with 3^N leaves. Each internal node takes the majority of its three children. Goal: minimum leaf flips to change the final root value.
+- **Two-state DP:** For each subtree store dp0 = min flips to force its value to 0, dp1 = min flips to force it to 1. A node evaluates to t iff at least two children evaluate to t, so dp_t(node) = sum of the two smallest child dp_t values = (sum of all three) - (max of the three). Leaves: dp0 = original bit, dp1 = 1 - bit.
+- **Answer:** Compute the original root value by pure majority reduction; output the DP cost for the opposite value (dp1 if root is 0, dp0 if root is 1). No need to special-case which direction flips help: the DP naturally yields the minimum.
+- **Efficiency:** Level-by-level iterative reduction, O(3^N) time (~2.4M nodes for N=13), no recursion. Use `zip(it,it,it)` over three iterators per array to consume triples without index arithmetic; precompute two-smallest via total minus max. Keeping only one level in memory is enough.
+- **Leaf init shortcut:** Since a leaf's cost-to-0 equals its bit value, dp0 doubles as the initial `vals` array; dp1 = 1 - dp0.
+- **Parsing:** Read all whitespace tokens; token 0 is N, the rest concatenate into the string. Use `sys.stdin.buffer` and compare bytes to 48 to avoid an extra decode.
+- **Bounds:** Max answer ~2^N = 8192, fits easily.

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Confirm the reduction: answer = max dp[i] over i<=R and A_i<=X, where dp[i] is LIS ending at i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Design dp[i] via coordinate-compressed values and a max-Fenwick querying strictly-smaller values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Design offline query handling: sort queries by X, positions by A_i, insert into Fenwick over indices, prefix-max up to R.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the full solution with fast I/O.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate on both provided samples; outputs match expected.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Review complexity (O((N+Q) log N)), integer bounds (values up to 1e9 handled by compression), and output format.",
+    "status": "done",
+    "result": ""
+  }
+]

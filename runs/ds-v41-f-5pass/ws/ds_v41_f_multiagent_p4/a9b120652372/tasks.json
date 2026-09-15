@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze operation structure (order preserved; gaps non-increasing; merges permanent; each op = prefix +1 / 0-block / suffix -1; span shrinks by 2 on interior ops).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Establish empirically (N<=8) that answer \u2208 {D, D+1} for reachable cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build exact ground-truth harness (BFS multiset graph, N<=8) computing min ops per (A,B), D=max(b1-x1,xM-bK), reachability.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the gap-reduction/parity model solver and produce a final stdin/stdout Python solution (fast I/O, sum N<=1e6); confirmed output 3 / -1 / 5 on the sample.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Brute-force validate the solver against BFS for ALL supports with N<=8 (reachability + min ops); no mismatches found.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm the partition-selection/parity greedy is consistent; solution passes all provided samples.",
+    "status": "done",
+    "result": ""
+  }
+]

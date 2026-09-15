@@ -1,0 +1,9 @@
+- **Problem reduction:** Smoke generation at every occupied time can be replaced by generating a smoke particle at (0,0) at every time k=0..N. Reason: if (0,0) is already occupied at step t, the new particle is redundant and does not change the occupied set. So occupied set at time t+0.5 = { P_t - P_k : 0 <= k <= t }, where P_t is the cumulative wind displacement.
+- **Occupancy test:** Target D=(R,C) is occupied at time t+0.5 iff there exists k in [0, t] with P_k = P_t - D. This is a prefix-membership query.
+- **Algorithm:** Scan t=1..N. Update P_t by the t-th delta, check if (P_t.r - R, P_t.c - C) is in `seen`, emit '1'/'0', then insert P_t into `seen`. Initialize `seen={(0,0)}` (to include P_0). O(N) time, O(N) memory.
+- **Delta conventions (verified):** N -> r-1, S -> r+1, W -> c-1, E -> c+1. Note r is the first coordinate, c the second.
+- **Time indexing:** At step t we test against P_0..P_{t-1} (query before inserting P_t). Self-insertion would wrongly allow a particle to be created and immediately detected at the same instant.
+- **Edge/constraints:** (R,C) != (0,0) guaranteed, but the algorithm is correct even without that. N up to 2e5, so use sys.stdin.buffer and O(1) tuple hashing.
+- **Verification:** Sample 1 -> 001010 (traced by hand, matches). Sample 2 -> 0001101011 (traced by hand through all 10 steps, matches). Sample 3 assumed correct by same logic.
+- **Sample 2 trace highlights:** P4=(0,2) finds P1=(-1,0) via D=(1,2) -> '1'; P5=(0,3) finds P2=(-1,1) -> '1'; P7=(1,2) finds P0 -> '1'; P9=(1,4) finds P4=(0,2) -> '1'; P10=(2,4) finds P7=(1,2) -> '1'. Producing 0001101011.
+- **Pitfall avoided:** Do not translate an explicit particle set; the prefix-difference formulation collapses all particles into a single moving reference frame.

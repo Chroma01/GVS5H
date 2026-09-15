@@ -1,0 +1,9 @@
+- **Core idea:** Process values from `N` down to `1`. When value `x` is the largest remaining value, all smaller values must finally be to its left, so `x` only needs to move right to position `x`.
+- **Current position:** After larger values have been fixed and conceptually removed, the remaining values `1..x` keep their original relative order and occupy positions `1..x`. Therefore the current position of `x` is its rank among values `<= x` in the original permutation.
+- **Fenwick tree:** Store `1` at each original position. Prefix sum up to `pos[x]` gives the rank of `x` among currently active values. After processing `x`, remove its original position by adding `-1`.
+- **Cost formula:** If `x` is currently at position `cur`, it must be swapped at positions `cur, cur+1, ..., x-1`. The cost is the arithmetic series `(x - cur) * (cur + x - 1) // 2`.
+- **Greedy validity:** Moving the current largest value directly right cannot increase future costs because it shifts smaller values left, making later swaps no more expensive. Any detour moving `x` left would require extra crossings and positive additional cost.
+- **Complexity:** Fenwick prefix sums and updates take `O(log N)`, so total time is `O(N log N)` and memory is `O(N)`.
+- **Integer size:** The answer can be around `N^3 / 6`, about `1.3e15` for `N = 2e5`, so Python integers are safe.
+- **Implementation details:** Use 1-indexed positions. Build the Fenwick tree in `O(N)` from all ones. The loop runs `x = N, N-1, ..., 1`.
+- **Verified samples:** Sample 1 gives `4`, sample 2 gives `6`, sample 3 gives `0`.

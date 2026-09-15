@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement input parsing and store N, M, and the sequence A.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute the initial inversion count for k=0 using a Fenwick tree over values 0..M-1 or a merge-sort-based inversion counter.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive the pair-interval endpoint aggregation formula for each pair (x,y), including cases x<y, x>y, and x=y, and the special endpoint M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Aggregate endpoint events over all pairs efficiently using value counts and position information, avoiding O(N^2) enumeration.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Build the difference array over k, prefix-sum it, add the initial inversion count, and output all M answers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test the implementation against the provided samples and edge cases such as M=1, all equal values, and maximum-size inputs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "If the endpoint aggregation approach fails or is too fragile, switch to the threshold cut sweep approach as a fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

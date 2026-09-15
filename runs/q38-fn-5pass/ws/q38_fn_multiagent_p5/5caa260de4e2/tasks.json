@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the transformed cost identity that eliminates the subarray index i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(n^2) transformed cut-penalty DP with prefix sums and correct handling of internal cuts, the final endpoint, and the constant k * total_cost.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test on the provided examples and small random cases against a brute-force partition checker.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify complexity is O(n^2) time and O(n) memory, and check edge cases such as n = 1.",
+    "status": "done",
+    "result": ""
+  }
+]

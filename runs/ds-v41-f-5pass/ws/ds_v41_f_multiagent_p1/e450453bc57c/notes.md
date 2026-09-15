@@ -1,0 +1,8 @@
+- **Core reduction:** Each chosen length-x interval can be equalized independently; optimal cost is sum of absolute deviations from a median (lower median is safe for even x). Non-overlapping intervals may be adjacent, so a transition must allow previous interval to end where the next begins.
+- **At least k == exactly k:** Costs are nonnegative, so extra intervals never help; any solution with more than k intervals contains a cheaper-or-equal k-subset. Also k*x <= n guarantees a valid selection exists.
+- **Window cost preprocessing:** Coordinate-compress nums to ranks. Maintain a fixed sliding window of length x in two Fenwick trees (counts and value-sums). For each start s, find the median rank r via Fenwick binary lifting on kk=(x+1)//2, then cost = (m*c_le - s_le) + ((total - s_le) - m*(x - c_le)). Slide by removing nums[s] and adding nums[s+x]. O(n log n) total instead of O(n x log x).
+- **Fenwick kth detail:** Start from the highest power of two <= size, descend; returns smallest rank with prefix count >= target. Duplicates are handled naturally because pref counts all elements <= m, and the right term counts strictly greater elements.
+- **DP selection:** prev is per count t; prev[i] = min cost picking t windows among first i elements. Init prev[i]=0 for t=0. Transition per t: cur[i] = min(cur[i-1], prev[i-x] + costs[i-x]). Answer prev[n]. O(n k) with k <= 15.
+- **Overflow/shape:** Use a large integer INF (10**30) so all arithmetic stays in int. Max real cost ~ k * x * 2e6 ~ 3e12, comfortably safe.
+- **Verified examples:** [5,-2,1,3,7,3,6,4,-1], x=3, k=2 -> 8; [9,-2,-2,-2,1,5], x=2, k=2 -> 3.
+- **Edge cases:** x == n forces k == 1; all-equal arrays give zero window cost; n-x+1 >= 1 always since x <= n.

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce the problem to two required operation chains and a shortest common supersequence, then reduce LCS to LIS.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete Python solution using cycle feasibility, chain construction, and LIS-based LCS.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate against samples and edge cases such as empty chains, balls only at X, conflicting chain orders, and off-by-one/direction errors.",
+    "status": "done",
+    "result": ""
+  }
+]

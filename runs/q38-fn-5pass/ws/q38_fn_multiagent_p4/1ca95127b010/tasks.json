@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and candidate approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Write brute-force checker for all N<=8 and all X,Y<=N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the brute-force checker and determine whether the ordered residue-sequence invariant is complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Finalize and validate the O(N) residue-invariant solution on samples and edge cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate the final solution on edge cases: X=Y, X+Y>N, all zeros/ones, N=1, X=1 or Y=1, and performance for N=5e5.",
+    "status": "done",
+    "result": ""
+  }
+]

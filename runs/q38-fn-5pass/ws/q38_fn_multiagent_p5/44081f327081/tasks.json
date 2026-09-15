@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement full Approach 1 solution as described (fast input, special cases, in-place count, descending assignment, chunked output).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and edge cases (K=1, K=N, duplicates, all ones, max constraints).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If Approach 1 TLE/MLE, implement alternative divisor-accumulation/SPF or compact-array variant.",
+    "status": "done",
+    "result": ""
+  }
+]

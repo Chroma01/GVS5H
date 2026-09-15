@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify move types (internal bipartite edges vs component merges) and candidate approaches/invariants.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build brute-force game solver for small N and enumerate all bipartite graphs to compute winners and collect structural features.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate current code against the three public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run brute-force report for N=1..6/7 and produce feature tables for exact winners, especially even N and speculative mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Analyze tables to determine whether the even-N outcome depends on y, internal-pass parity, and component completeness; derive a candidate O(N+M) rule.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate candidate rule against all exact brute-force states for N<=7 and the samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Implement final O(N+M) solution replacing the speculative large-N fallback, with fast I/O and edge cases.",
+    "status": "done",
+    "result": ""
+  }
+]

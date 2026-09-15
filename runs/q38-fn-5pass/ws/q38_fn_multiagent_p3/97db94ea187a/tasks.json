@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Formalize BFS-layer characterization and transition weights (root fixed, nonempty layers, parent-edge inclusion-exclusion, parity count).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Select evaluation/interpolation approach instead of polynomial DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement complete solver: precompute combinatorics, maxD, state transitions, scalar DP for each evaluation point, interpolation, and I/O.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate against samples and edge cases (especially N=2), and fix any modular/interpolation issues.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Optimize hot loops/state pruning if needed.",
+    "status": "done",
+    "result": ""
+  }
+]

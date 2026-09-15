@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the min-heap boundary expansion solution: initialize heap with start's neighbors, repeatedly absorb the smallest boundary cell while `X*S < current_strength`, push newly exposed neighbors, using Python ints and the strict inequality.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify against all three provided samples (expect 28, 5, 1343); worker confirmed all pass.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Check edge cases: no absorbable neighbors, X = 1, single-cell grid, duplicate heap entries skipped via occupied check, and large sums (Python big ints handle 10^21).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm greedy correctness: `current_strength` only increases and the boundary only grows, so absorbing any legal boundary cell can never hurt the final result; the min-keyed break is valid because if the smallest boundary cell fails, all larger ones fail too.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Complexity is O(HW log(HW)) time and O(HW) memory, within limits for H,W \u2264 500.",
+    "status": "done",
+    "result": ""
+  }
+]

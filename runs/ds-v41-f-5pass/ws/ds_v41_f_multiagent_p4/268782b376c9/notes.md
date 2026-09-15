@@ -1,0 +1,10 @@
+- **Model:** Moving from index j to i adds points[i] to gameScore[i]; so gameScore[i] = points[i] * (number of times i is entered). Start at -1, first move must enter 0. For target T each index needs c_i = ceil(T / points[i]) entries.
+- **Edge-crossing variables:** Let d_i = number of leftward crossings of edge (i, i+1) for i=0..n-2. Rightward crossings R_i = d_i + s_i where s_i = 1 if i < E else 0 (E = final index). Net flow R_i - L_i = [i<E].
+- **Entry constraints:** v_0 = 1 + d_0 >= c_0; v_i = d_{i-1} + s_{i-1} + d_i >= c_i (1<=i<=n-2); v_{n-1} = d_{n-2} + s_{n-2} >= c_{n-1}. All reduce to d >= 0 covering consecutive pairs and ends.
+- **Cost:** total moves = 1 + E + 2 * sum(d_i). Minimising sum d_i subject to those covering constraints is an interval-matrix LP, so primal optimum = dual optimum = MWIS on a path.
+- **Weights:** For a fixed E, position i has weight max(0, c_i - 1) if i <= E, else max(0, c_i). This matches the constraint RHS: i=0 always c_0-1; 1<=i<=n-2: c_i - [i<=E]; i=n-1: c_{n-1} - [E=n-1].
+- **check(T) in O(n):** Build suffix MWIS DP (G0,G1) over weights b=max(0,c). Sweep prefix (F0,F1) over weights a=max(0,c-1). At each end E combine: mw = max(F0 + max(G0[E+1],G1[E+1]), F1 + G0[E+1]); feasible if min over E of (2*mw + E + 1) <= m. Early-return when a feasible E is found.
+- **Binary search:** check is monotone in T (larger T => larger c => weakly harder). lo=0 always feasible. hi = min(points)*((m+1)//2) since any single index is entered at most (m+1)//2 times, and the minimum score is bounded by the score of the smallest-points index. ~50 iterations worst case.
+- **Verification:** Sample 1 (points=[2,4], m=3) returns 4 (pass). Sample 2 (points=[1,2,3], m=5) returns 2 (pass). Brute-force cross-check on 200+ random small cases (n=2..6, m=1..12, points=1..6) using exhaustive DFS walk simulator found 0 mismatches. The code includes a `__main__` test harness that runs these checks.
+- **Complexity:** O(n log(maxT)) time, O(n) extra space.
+- **Pitfalls handled:** clamp weights at 0; boundary E=n-1 uses empty suffix (G=0); E ranges 0..n-1; big integers (up to ~1e20) are fine in Python.

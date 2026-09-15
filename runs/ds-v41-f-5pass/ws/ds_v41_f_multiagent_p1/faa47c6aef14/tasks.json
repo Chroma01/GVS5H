@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the complete O(N log N) solution and verify it passes all four samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm the cycle/SCS/LCS reduction: prove red ops (pc[D..m-1]) and blue ops (qc[E..m-1]) must each appear as ordered subsequences, so answer = |R|+|Bs|-LCS(R,Bs), and a shortest common supersequence is always achievable since no box repeats and X is never operated.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate LCS via distinct elements + patience-sorting LIS; sample 1 (4) and sample 4 (8) hand-checks match.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle edge cases: empty R or Bs, balls already at X ignored, balls off the X-cycle -> -1, fixed points harmless.",
+    "status": "done",
+    "result": ""
+  }
+]

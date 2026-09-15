@@ -1,0 +1,8 @@
+- **Problem restatement:** Given binary string S with at least one '1', allow adjacent swaps; find min swaps to make all '1's contiguous.
+- **Core reduction:** Adjacent swaps between two binary strings with equal counts of 1s cost exactly the sum of |position differences| when matching the j-th 1 to the j-th 1. So we only need to choose a target contiguous block; matching is forced in order.
+- **Median transform (chosen approach):** Let p_j (0-indexed) be positions of the 1s and j start at 0. Placing them into a block starting at l puts the j-th 1 at l+j, giving cost sum_j |p_j - (l+j)| = sum_j |(p_j - j) - l|. Define b_j = p_j - j. This b is nondecreasing (since p_{j+1} > p_j, b_{j+1} = p_{j+1}-(j+1) >= p_j+1-j-1 = b_j). Minimizing sum |b_j - l| over integer l is attained at a median; use b[m//2]. Answer = sum_j |b_j - median|.
+- **Verified samples:** "0101001" -> p=[1,3,6], b=[1,2,4], median 2, cost 1+0+2=3. "100" -> p=[0], b=[0], cost 0. "0101001001" -> p=[1,3,6,9], b=[1,2,4,6], median 4 (upper), cost 3+2+0+2=7.
+- **Indexing convention:** Using p_j - j (j from 0) means l is a 0-indexed start of the target block; any median value within the two-middle range gives the same optimal cost, so picking b[m//2] is safe.
+- **Edge cases:** single 1 -> m=1 -> b=[p_0], median equals it, cost 0, correctly handles already-contiguous and boundary cases with no special casing. External zeros are irrelevant since the block can be placed freely.
+- **Complexity:** O(N) time, O(m) space. N up to 5e5 so linear is required; values fit in 64-bit (Python ints unbounded).
+- **Alternatives considered (not needed):** sliding-window cost update, internal-gap formula g*min(i,m-i), ternary search on convex cost -- all correct but the median transform is simplest and O(N).

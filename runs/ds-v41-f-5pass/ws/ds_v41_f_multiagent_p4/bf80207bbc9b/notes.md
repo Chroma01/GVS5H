@@ -1,0 +1,9 @@
+- **Model:** Operations commute, so final cell is `A[i][j] XOR r_i XOR c_j`, where `r_i` and `c_j` indicate row and column flips.
+- **Per-column-mask cost:** For fixed column mask `c`, each row independently chooses `r_i`, contributing `min(popcount(A_i XOR c), W - popcount(A_i XOR c))`.
+- **Reduction:** Let `freq[p]` be the number of rows equal to bitmask `p`, and `g[v] = min(popcount(v), W - popcount(v))`. Then `cost[c] = sum_p freq[p] * g[p XOR c]`.
+- **Convolution identity:** `cost[c] = (freq XOR-convolved with g)[c]`, because `sum_p freq[p]g[p XOR c] = sum_{p XOR q = c} freq[p]g[q]`.
+- **FWHT:** Compute XOR convolution via Fast Walsh-Hadamard transform: forward transform both arrays, multiply pointwise, inverse transform, divide by `2^W`.
+- **Implementation details:** Store row patterns as integers via `int(row, 2)`. Use size `n = 1 << W`. Precompute `g` in-place: first store popcounts, then replace each with `min(popcount, W - popcount)`.
+- **Correctness check:** For `n = 2`, the transform gives indexes `[f0g0 + f1g1, f0g1 + f1g0]`, matching `cost[0]` and `cost[1]`.
+- **Complexity:** `O(H + W 2^W)` time and `O(2^W)` memory. With `W <= 18`, `2^W <= 262144`, so this is fast.
+- **Edge cases:** `W = 1` gives all `g[v] = 0`, answer `0`. Identical rows are counted by frequency. Python integers avoid overflow/modulo issues.

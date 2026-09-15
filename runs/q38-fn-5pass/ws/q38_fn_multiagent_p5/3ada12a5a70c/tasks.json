@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate perimeter-coordinate reduction and greedy circular packing approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Solution.maxDistance with perimeter mapping, binary search, and next-pointer greedy feasibility.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify corner mapping assigns each corner exactly once and preserves circular distances for thresholds up to side.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify feasibility uses spacing >= d, handles d == 0, duplicated array bounds, and final wraparound span <= circumference - d.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run sample tests; if they fail, debug or switch to DP/circular-arc independent-set fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

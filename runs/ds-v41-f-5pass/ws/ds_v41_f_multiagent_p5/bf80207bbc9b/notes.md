@@ -1,0 +1,9 @@
+- **Problem reduction:** Fix the set of flipped columns as a W-bit mask c; then each row is independent. A row with pattern r contributes min(popcount(r XOR c), W - popcount(r XOR c)) because the row flip (operation X) can be chosen per row. Answer = min over all c of the summed contribution.
+- **Grouping rows:** H up to 2e5 but W ≤ 18, so build frequency array f of size 2^W over row patterns (identical rows collapse). Direct evaluation is O(H·2^W) ~ 5e10, infeasible.
+- **XOR convolution:** Define g[d] = min(popcount(d), W - popcount(d)). Cost for column mask c equals (f XOR-convolve g)[c] = Σ_r f[r]·g[r XOR c]. This is exactly XOR convolution of f and g.
+- **FWHT:** Compute FWHT(f) and FWHT(g) (iterative butterfly, unnormalized), pointwise multiply, apply FWHT again, divide by 2^W. O(W·2^W) ≈ 4.7M butterflies per transform, three transforms total.
+- **Bit ordering irrelevant:** Using int(s,2) gives any consistent bijection between patterns and masks; since g depends only on popcount and XOR is invariant under relabeling, the min over all c is unaffected.
+- **Normalization:** Forward and inverse XOR transform are identical (up to division by N=2^W); final integer division by N is exact. Python big ints avoid overflow.
+- **Edge cases:** W=1 ⇒ g≡0 ⇒ answer 0 (each row is a single cell, flip that row to clear it). All-identical rows are handled naturally by f. H=1 fine.
+- **Speed:** Slice + zip list comprehensions in the butterfly keep the loop body at C level; this is the main performance trick. Avoid recursion.
+- **Verified reasoning on samples:** sample1 min over c equals 2 (c=1 → rows 1,2,3 give g[0]+g[3]+g[2]=0+1+1); sample2 gives 0 via c=15 making r^c=0; sample3 = 13.

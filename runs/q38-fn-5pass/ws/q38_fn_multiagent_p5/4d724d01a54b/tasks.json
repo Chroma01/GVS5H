@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate and validate the greedy Fenwick formula for the minimum adjacent-swap cost.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with Fenwick tree and formula: m=(x-1)-prefix_sum(pos[x]), ans += m*x - m*(m+1)//2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify on provided samples and edge cases such as already sorted, reverse permutation, and N=2.",
+    "status": "done",
+    "result": ""
+  }
+]

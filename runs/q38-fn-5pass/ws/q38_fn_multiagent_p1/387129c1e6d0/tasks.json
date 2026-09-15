@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the complete solution with input parsing, final-position simulation, inclusive segment collection, per-line interval merging, and per-house binary-search coverage counting.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate edge cases: houses exactly at segment endpoints, overlapping or adjacent intervals on the same line, houses at horizontal/vertical intersections, large coordinates, and many segments with no houses.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If the per-line approach has performance or memory issues, switch to a sweep-line or inclusion-exclusion fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate candidate approaches and identify correctness/performance pitfalls.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement forward two-state diagonal DP in Solution.lenOfVDiagonal.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate implementation against provided examples and edge cases.",
+    "status": "done",
+    "result": ""
+  }
+]

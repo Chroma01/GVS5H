@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the core reduction: for fixed center c and y>=1, kept size is 1+(y+1)*#{neighbors v of c with deg(v)-1>=y}; answer is N minus the global maximum kept size over all centers and y.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N) global y-sweep: compute deg(v) and cap(v)=deg(v)-1, group vertices by cap, sweep y downward, activate vertices with cap==y, increment counters of all their neighbors, track maxCounter, evaluate 1+(y+1)*maxCounter when maxCounter>0, and output N - bestKept.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation on the three provided samples (all PASSED) and reason through edge cases (path of length 3 -> 0, star -> 0, snowflake with y=1 and y>1).",
+    "status": "done",
+    "result": ""
+  }
+]

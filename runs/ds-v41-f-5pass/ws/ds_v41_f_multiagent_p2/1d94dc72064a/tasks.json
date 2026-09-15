@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Write and run a brute-force minimax solver for small N and small A_i to tabulate winners and infer a parity/count-based characterization.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Formalize the pass-pool reduction and show the outcome depends only on pool parity P and the count o of odd A_i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive outcome rules for N=1 (always Fennec), N=2 (always Snuke), and N=3 (Fennec iff o\u22651) separately.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Prove the general rule for N\u22654: current player wins iff (P+o) is odd, via induction (base m=4 checked for all o-parity cases, induction for m\u22655).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement a Python solution reading N and A from stdin applying: N=1\u2192Fennec, N=2\u2192Snuke, N=3\u2192Fennec iff o\u22651, N\u22654\u2192Fennec iff o odd.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify implementation on samples (1,9,2)\u2192Fennec, (25,29)\u2192Snuke, (1,9,2,25,2,9)\u2192Snuke, plus edge cases all-odd/all-even/mixed.",
+    "status": "done",
+    "result": ""
+  }
+]

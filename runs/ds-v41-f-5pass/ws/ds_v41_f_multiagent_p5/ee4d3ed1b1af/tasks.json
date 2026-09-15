@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce p = A*B*C, require ordered disjoint occurrences end(A)<=start(B)<=end(B)<=start(C), minimize span.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Solution with KMP occurrence lists (overlap-aware) for A, B, C and two-pointer minimization over B occ (and over C occ when B empty).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle empty A/B/C, single-nonempty-literal cases, p=\"**\" -> 0, and no-match -> -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Execute the four provided examples plus edge cases and a 1e5 performance check; sample verdict PASS (8, -1, 0, 6), edges PASS, stress vs brute force PASS, timing OK.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce to two mandatory cycle suffixes and shortest common supersequence via LCS/LIS.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete solution with cycle traversal, outside-cycle impossibility checks, suffix construction, LCS/LIS, and final output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify on samples and edge cases: no balls, balls only at X, cycle length 1, balls outside cycle, conflicting orders requiring duplicate operations.",
+    "status": "done",
+    "result": ""
+  }
+]

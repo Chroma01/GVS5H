@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement two-layer Dijkstra (2N states, original edges in layer 0, reversed edges in layer 1, cost-X toggles between layers) reading from stdin and printing min(dist[N][0], dist[N][1]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Test the implementation against Sample 1 (5 6 5): expect 4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test the implementation against Sample 2 (5 6 1): expect 3.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test the implementation against Sample 3 (8 7 613566756): expect 4294967299 (verify 64-bit/Python big-int handling).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test the implementation against Sample 4 (20 13 5): expect 21.",
+    "status": "done",
+    "result": ""
+  }
+]

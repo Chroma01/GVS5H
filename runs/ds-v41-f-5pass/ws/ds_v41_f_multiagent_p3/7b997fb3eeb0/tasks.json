@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the Hall-condition reduction: for range length M and D = M-K, feasibility of K pairs is equivalent to max_{j in [L, R-D]} (nxt[j]-j) <= D, valid only when D >= ceil(M/2); answer = M - D.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse input: read N, array A (ascending), Q, and all (L,R) queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute h[j] = nxt[j]-j via two pointers with sentinel n for \"no valid bottom\".",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Build a sparse table over h for O(1) range-max queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Per query: M=R-L+1, binary search smallest D in [ceil(M/2), M] with rangeMax(h, L, R-D) <= D, output M-D.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verified against Sample Input 1 (2 3 1 0 5) and Sample Input 2 (0 0 0 0 2 6 0 1 1 0 0 0 3 5 0) \u2014 all public samples passed and the reduced condition re-derived by hand checks out.",
+    "status": "done",
+    "result": ""
+  }
+]

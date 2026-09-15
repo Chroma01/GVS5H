@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation/algorithm selection completed (functional-graph formula chosen and validated).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement functional-graph solution: conflict check -> -1; base = count of present letters with f[c]!=c; cycle detection (length>1 only); spare condition (len(present)<26 OR |image(f)|<26 when all 26 present); output base (no isolated cycles) / base+iso (spare exists) / -1 (isolated cycles with no spare).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run and confirm outputs on all four samples (4, 0, -1, 4) -- SAMPLE TESTS PASSED.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify adversarial edge cases by hand and against code logic: all-26 single 26-cycle -> -1; all-26 2-cycle + fixed point with incoming (case b) -> 4 (explicit 4-op sequence d->c, a->d, b->a, d->b confirmed); all-26 2-cycle + fixed point with no incoming -> -1; N=1 a->a -> 0 and a->b -> 1; conflict -> -1; S==T -> 0; 3-rotary abac->bcba -> 4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm spare condition uses image-size (f not injective) which is equivalent to existence of a freeable non-cycle label; validated against case where a non-fixed node has in-degree 2.",
+    "status": "done",
+    "result": ""
+  }
+]

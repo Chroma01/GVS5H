@@ -1,0 +1,11 @@
+- **Goal:** For each queried initial rating X, compute the final rating after N sequential "if rating in [L_i,R_i] then +1" steps. Naive per-query simulation is O(NQ).
+- **Key invariant:** Let A[X] = current rating when starting at X. A is nondecreasing in X and A[X] >= X always. Therefore, for a contest [L,R], the set of starts whose current rating lies in [L,R] is a contiguous index interval [lo, hi]. Each contest is a range-add +1 on A[lo..hi].
+- **Boundaries via difference array:** D[i] = A[i]-A[i-1] >= 0, initially all 1 (so A[X]=X). Prefix sums of D give A and are monotone, so a Fenwick binary-lifting lower_bound finds boundaries. lo = first index with prefix >= L. For hi, let j = first index with prefix >= R+1; then hi = j-1. If total sum < R+1, j does not exist and hi = M.
+- **Zero-cost hi:** lower_bound returns ii+1 where ii = largest index with prefix < target. Searching with target R+1 yields hi = ii directly.
+- **Domain capping:** Set M = max queried X. Sound because only indices <= M are ever answered, and A[i] for i <= M is unaffected by updates confined above M. If A[M] < L, ii1 reaches M so lo = M+1 > hi and the update is skipped (correct).
+- **Dual search:** Both boundaries use the same descending power-of-two bit sequence, so run both states in one while loop (ii1/t1 and ii2/t2). Halves loop overhead.
+- **Final answers in O(M+Q):** Keep a plain D array beside the Fenwick tree (D[lo]+=1, and D[hi+1]-=1 only when hi<M). After all contests, A = list(accumulate(D)) gives every A[X]; each query is direct indexing. Avoids Q log M point queries.
+- **Complexity:** O(N log M + M + Q) time, O(M) memory. Fenwick built in O(M) via tr[i]=lowbit(i).
+- **Edge cases:** hi==M means no D[M+1] subtraction; lo>hi (empty interval) is skipped; M=1 works with topbit=1; all tokens parsed at once with map(int, ...) for speed.
+- **Disproven shortcut:** B[X] = A[X]-X is NOT monotone (sample 1 gives B[2]=4 > B[3]=3), so the "monotone increment count" idea does not apply; the range-add array method is used instead.
+- **Rejected alternatives:** lazy segment tree with monotone search (same complexity, heavier constant); interval map / implicit treap (complex updates); segment tree over composed step functions (breakpoint explosion). Fenwick is simplest and fastest in Python.

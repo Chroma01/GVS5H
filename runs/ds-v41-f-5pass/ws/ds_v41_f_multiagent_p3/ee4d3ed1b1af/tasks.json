@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation/design decision: decompose p into A*B*C and use occurrence lists with nearest-neighbor (binary search) minimization.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse p into segments A, B, C split by the two '*' characters (allow empty segments).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement KMP that returns all (including overlapping) occurrence start indices of a nonempty segment in s; call it for each nonempty segment.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Core combination for nonempty B: for each B occurrence use bisect to find latest A with a+lenA <= bs and earliest C with c >= be; handle empty segments by dropping them from the segment list (reduces k).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle k==2 (two nonempty literals, e.g. A*C / A*B / B*C) via bisect on ordered pairs, k==1 (single literal -> len or -1), and k==0 (\"**\" -> 0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate against all four examples (ex1 -> 8, ex2 -> -1, ex3 -> 0, ex4 -> 6) via manual trace; logic confirmed correct.",
+    "status": "done",
+    "result": ""
+  }
+]

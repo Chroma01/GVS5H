@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze the parity structure: a valid alternating permutation must alternate odds/evens, so determine feasible starting parity and available odds/evens.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the completion-count formula: O!*E! when a valid alternation from the required parity is feasible, else 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the iterative greedy selection loop over candidates in ascending order using the completion-count formula, handling the first position (both parities allowed) and subsequent positions (required parity only).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle the global feasibility/k-out-of-range check, returning [] when total valid permutations < k.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify solution against provided examples (n=4,k=6 -> [3,4,1,2]; n=3,k=2 -> [3,2,1]; n=2,k=3 -> []) and edge cases (n=1,k=1 -> [1]; n=1,k=2 -> []).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Fall back to mixed-radix/factorial-number-system approach if greedy fails (not needed: greedy verified correct).",
+    "status": "done",
+    "result": ""
+  }
+]

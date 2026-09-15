@@ -1,0 +1,19 @@
+- **Problem:** For each k=0..M-1 output inversions of B_i = (A_i + k) mod M. N,M <= 2e5, so each answer must be derived incrementally, not recomputed.
+- **Key decomposition:** Fix threshold L = M-1-k. Elements with A_i <= L do NOT wrap (only increment); elements with A_i >= L+1 DO wrap. For a pair i<j:
+  - Same group (both wrap or both non-wrap): shifted comparison equals original A comparison, so contribution is unchanged from inv0.
+  - i active (A_i<=L), j non-active (A_j>=L+1): always A_i < A_j, and non-wrap value beats wrap value, so this pair becomes an inversion (original contributed 0).
+  - i non-active, j active: A_i > A_j, but wrap value loses to non-wrap value, so contribution drops from 1 to 0.
+- **Constants tied to active set:** Since A_i <= L < L+1 <= A_j, cross pairs have determined original order. Hence with active = count(A_i <= L):
+  - X = #(i active, j non-active, i<j) = active*(N-active) - neg
+  - neg = #(i non-active, j active, i<j)
+  - ans(k=M-1-L) = inv0 + X*1 + neg*(-1) = inv0 + active*(N-active) - 2*neg.
+- **neg update trick:** neg = sum over active positions of (p_i - rank_i), equivalently # pairs (non-active before active). Adding a position p to active changes neg by exactly (p - active_before). Process values L=0..M-1, inserting all positions with A_i = L; order within equal values is irrelevant because the total telescopes to S - C(active,2).
+- **inv0:** standard Fenwick over values 0..M-1: for each j, add j - query(A_j) (count of earlier values > A_j). Complexity O(N log M).
+- **Mapping:** L runs 0..M-1, k = M-1-L, so answers indexed by k fill exactly once.
+- **M=1 edge:** All A_i=0, all positions active, neg = sum p - C(N,2) = 0, inv0=0, ans=0. Formula handles it naturally.
+- **Overflow:** Answers up to N(N-1)/2 ~ 2e10; Python ints are arbitrary precision, no issue. Do NOT use C-style 32-bit assumptions if ported.
+- **Verified sample outputs:**
+  - Sample 1 `3 3 / 2 1 0`: 3, 1, 1
+  - Sample 2 `5 6 / 5 3 5 0 1`: 7, 3, 3, 1, 1, 5
+  - Sample 3 `7 7 / 0 1 2 3 4 5 6`: 0, 6, 10, 12, 12, 10, 6
+- **Complexity:** O(N log M + N + M) time, O(N + M) memory.

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the binary-state model: \\(d_i=1+a_i-a_{i-1}+x_i\\), allowed \\(x_i\\), and the proof that \\(d_N\\) is determined by \\(\\sum d_i\\).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the concise 16-relation deterministic DP with precomputed transition tables and multiplicities.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Optimize the implementation for \\(N=10^6\\) using fixed-size arrays, local variables, and efficient input handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate against the provided samples and confirm the solution passes the public sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

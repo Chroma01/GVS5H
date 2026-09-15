@@ -1,0 +1,11 @@
+- **Model:** Positions split into R (A=1,B=0, must flip 1→0), T (A=0,B=1, must flip 0→1), M (A=B=1, optional 1→0→1). A=B=0 positions are never worth touching (only raise sums). Each relevant position flips at most twice.
+- **Ordering theorem:** All 1→0 flips must precede all 0→1 flips (adjacent-swap exchange: doing the 1→0 first saves `C_y>0`). Within the off phase, do larger C first; within the on phase, smaller C first (both by exchange). So phase1 = sorted descending, phase2 = sorted ascending.
+- **Which M to turn off:** Optimal set P is a prefix of M sorted by C descending (largest C's). Reason: for c_x>c_y the off-interval of x (earlier in phase1, later in phase2) strictly contains y's, so swapping y∈P,x∉P for x∈P,y∉P never increases cost. Empirically verified on samples and hand cases; ties give equal value so prefix is fine.
+- **Cost decomposition:** Total = m*K + P1Int + P2Int, where K = C_M − prefix_M[p] (M's still on = sum over all ops), m = r+q+2p, P1Int = Σ_{phase1 e} C_e·(rank1−1), P2Int = Σ_{phase2 e} C_e·(b−rank2+1). This equals Σ over ops of current on-sum exactly.
+- **Per-prefix formulas (p = number of M turned off, M desc µ_1..µ_s, R desc ρ, T asc t):**
+  - phase1 = SA + Σ_i ρ_i·min(p, #{µ≥ρ_i}) + prefixC[p] + (PjM[p]−PM[p]), where SA=Σ i·ρ_i, prefixC[p]=Σ_{j≤p} µ_j·#{ρ>µ_j}.
+  - phase2 = ((b+1)SumT − SD − E(p)) + (b·PM[p] − prefixD[p] − p·PM[p] + PjM[p]), b=q+p, SD=Σ i·t_i, prefixD[p]=Σ_{j≤p} µ_j·#{t<µ_j}, E(p)=Σ_i t_i·max(0, p−#{µ>t_i}).
+- **Tie rules:** phase1 puts R before M on equal C; phase2 puts M before T. Total is invariant to tie order (verified on equal-C test cases). The derived weights are consistent with these rules.
+- **Data structures:** prefix sums PM,PjM,prefixC,prefixD,prefixH,suffixR,suffixT,suffixTD, plus two-pointers: g is non-decreasing in i so boundary `bi` moves right as p grows; delta is non-increasing in i so `i0` moves left as p grows. Everything is O(N log N) for sorting, O(N) scan.
+- **Edge cases:** no mismatch (R=T=∅) → p=0 gives 0. No M (s=0) → single evaluation. No R or no T → empty loops give zeros. 64-bit range covered (max ≈ 8·10^16), Python ints fine.
+- **Verification:** sample1 → 16 (p=0:16, p=1:18), sample2 → 0, sample3 → min(3300,3208,3017,2867)=2867. Hand-checked several small brute-forceable cases.

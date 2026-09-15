@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive correct formula: consistency check, answer = unique non-self edges + closed cycles, impossible iff a closed cycle exists and both S and T use all 26 letters.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement consistency check and graph construction: target map for present sources, reject multiple targets, add edge only when target differs from source, count E, and compute original indegrees.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement cycle detection with indegree pruning and closed-cycle counting using original indegree == 1 for all vertices in the cycle.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement final condition/output: buffer exists if some letter is absent from S or T; if closed_cycles > 0 and no buffer (both S and T contain all 26 letters) output -1, else output E + closed_cycles.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test on samples and edge cases: identity, acyclic mappings, closed cycle with an absent letter, open cycle with incoming edge (no extra), all-26 permutation cycle (-1), all-26 non-injective with closed cycle (possible).",
+    "status": "done",
+    "result": ""
+  }
+]

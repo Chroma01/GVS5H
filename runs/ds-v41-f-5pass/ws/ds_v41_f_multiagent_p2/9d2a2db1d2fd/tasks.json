@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse H, W, the grid F, Q, and all queries, preserving 1-indexed coordinates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement offline DSU with small-to-large query sets: sort cells descending by F, activate cells one by one, union with active neighbors, answering queries whose endpoints connect at the merge threshold.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle same-cell queries (u == v) separately by setting M = F_u and answering |Y-Z| immediately.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "After processing all cells, compute the answer for each query as |Y-Z| + 2*max(0, min(Y,Z) - M) and output; sample tests passed.",
+    "status": "done",
+    "result": ""
+  }
+]

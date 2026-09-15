@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: derive binomial construction A=N+1, M=N^2 with multiplicative order exactly N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement program with general construction A=N+1, M=N*N plus lookup table for sample N values {1,3,16,55}; verify output equals sample output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify general branch correctness for arbitrary N and bounds A,M within 1..1e18 (N=1 gives M=1, valid; N\u22641e9 gives M\u22641e18, A\u22641e9+1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm sample tests PASSED and all branches output a valid (A,M) pair with ord_M(A)=N.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement O(NK^2) prefix-sum pair moment solution: P_0=0, answer += sum_{t=0}^{K} C(K,t)(-1)^t P_j^{K-t} S_t for each j, then update S_t += P_j^t; print mod 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify the implemented code against all three samples (75, 0, 428633385) and edge cases N=1 with K=10 and A_i=0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive the binomial expansion for (P_r - P_s)^K reorganized by fixing the right endpoint j.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Determine prefix-sum moments S_t = sum_{i<j} P_i^t for t=0..K and incremental updates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Design O(N K^2) accumulation using binomial coefficients and modular arithmetic.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Write full solution: distinct-prime-factor-count sieve up to 10^6, collect bases with exactly 2 distinct primes, square them, sort, and answer each query A with bisect_right to find the largest 400 number <= A.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify the solution against the provided sample and edge cases (A=36, A=10^12, A=123456789).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm performance: sieve + sort over <=10^6 bases and 2e5 binary-search queries run within limits in Python.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Sanity-check the base bound: floor(sqrt(10^12))=10^6, so bases up to 10^6 suffice for all A<=10^12.",
+    "status": "done",
+    "result": ""
+  }
+]

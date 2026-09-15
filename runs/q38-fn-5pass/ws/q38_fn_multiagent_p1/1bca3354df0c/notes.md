@@ -1,0 +1,7 @@
+- **Final approach:** The solution is now a direct O(N + M) graph traversal. The previous exact/reduced minimax code and research mode are removed.
+- **Component statistics:** For each connected component, BFS/DFS gives the two bipartition side sizes. `odd_components` counts components with odd total size. `g` is the XOR of components with even total size and both side sizes odd.
+- **Decision rule:** If `N` is odd, Aoki wins iff `M` is odd. If `N` is even: when `odd_components == 0`, Aoki wins iff `(M % 2) ^ g == 1`; when `odd_components == 2`, Aoki wins; otherwise Aoki wins iff `M` is odd.
+- **Rule intuition:** The game ends at a complete bipartite graph. For odd `N`, every complete bipartite graph has an even number of edges, so only the parity of already present edges matters. For even `N` with no odd-sized components, the parity of the final complete bipartite edge count is invariant and equals `g`, giving the `(M % 2) ^ g` condition. The remaining even-`N` cases are handled by the stated component-count rule.
+- **Implementation details:** Iterative DFS avoids recursion depth issues. Only side-size parities and component-size parity are needed, so no missing-edge counts are computed. `M` parity is taken directly from input.
+- **Edge cases covered:** `N = 1`, `N = 2`, empty graphs, already complete bipartite graphs, isolated vertices, and disconnected bipartite graphs.
+- **Removed material:** All abstract game search, capped missing-edge experiments, candidate closed forms, and empty-stdin research mode are deleted.

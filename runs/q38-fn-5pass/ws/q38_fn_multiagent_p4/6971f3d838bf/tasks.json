@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: only negative values can improve the answer, and the best array after deleting a value can be obtained by concatenating the non-x blocks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the segment-tree monoid (sum, pref, suff, best), identity, combine, and range query.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute prefix and suffix block summaries to answer first/last blocks in O(1) and reduce segment-tree queries to middle blocks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Group indices by value, skip non-negative values and values whose removal empties the array, and combine non-empty blocks for each remaining value.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle edge cases: all elements equal, adjacent occurrences/empty blocks, all-negative arrays, single element, and the option of no deletion.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate with the provided examples and a small random brute-force checker; sample, random, and exhaustive checks pass.",
+    "status": "done",
+    "result": ""
+  }
+]

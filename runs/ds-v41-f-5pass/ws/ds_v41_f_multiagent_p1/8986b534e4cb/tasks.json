@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input; set a=min(S,T), b=max(S,T), sign=+1 if S<T else -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Same-a / same-b conflicts via last-occurrence scan to fill prev[j].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Same-sign crossing via bottom-up CDQ merge (pattern A sweep: insert left i with a_i<a_j at coord b_i, range-max over b in (a_j,b_j)) with a version-stamped segment tree.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Pattern B handled by mirror run a'=N+1-b, b'=N+1-a.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Build pref[R]=max_{j<=R} prev[j]; print \"Yes\" if pref[R]<L else \"No\".",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Independently verify the \"feasible iff no pairwise conflict\" reduction and the CDQ/mirror/segment-tree implementation with a brute-force feasibility checker over exhaustive small cases; no mismatches found and both public samples pass.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N and A from stdin safely as a concatenated binary string of length 3^N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the iterative bottom-up two-state DP level by level: each node stores dp0 = min flips to force value 0 and dp1 = min flips to force value 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each parent, compute dp_t = sum of the two smallest child dp_t values over its three children, for t in {0,1}.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute the original root value and print dp[1 - original_root].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate against samples, including sample 1 (answer 1) and sample 2 (answer 2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm O(3^N) time and acceptable memory for N up to 13.",
+    "status": "done",
+    "result": ""
+  }
+]

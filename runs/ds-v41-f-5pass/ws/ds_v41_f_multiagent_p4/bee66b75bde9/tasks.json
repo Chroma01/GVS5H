@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduction analysis: valid colorings \u21d4 nonincreasing row prefix lengths a_r; column condition is automatic; constraints become per-row interval [L,U].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(M log M) solution: group by row, compute L=max black Y (default 0), U=min white Y minus 1 (default N), fail on L>U; sort constrained rows ascending, maintain running prefix-min of U and fail if prefix_min < L; else Yes. Read stdin, write stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test against all four provided samples (expect Yes, No, Yes, No) and verify stdin/stdout format \u2014 all passed.",
+    "status": "done",
+    "result": ""
+  }
+]

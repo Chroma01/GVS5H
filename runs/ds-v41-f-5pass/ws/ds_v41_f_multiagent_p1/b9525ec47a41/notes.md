@@ -1,0 +1,11 @@
+- **Problem reduction:** total in-degree sum = #edges = N+M (M=#ones), so d_N is determined by d_0..d_{N-1}; count distinct prefixes.
+- **Cycle vector characterization:** c_i = 1 + x_{i-1} - x_i ∈ {0,1,2}. Non-1 entries alternate 0,2 around the cycle; #0 = #2. All-ones c arises from two orientations, so |C| = 2^N - 1.
+- **Type sets per position:** marked d=0 -> c=0 (F0), d=1 -> c∈{0,1} (optional label0), d=2 -> c∈{1,2} (optional label2), d=3 -> c=2 (F2). Unmarked: d=0 -> F0, d=1 -> c=1 (normal), d=2 -> F2.
+- **Feasibility criterion:** a type vector is realizable iff for every cyclic pair of consecutive forced positions with the same label a, the open gap between them contains at least one marked non-forced position whose type allows the opposite label (d=2 for a=0, d=1 for a=2). No-forced case always realizable with c=1, giving 2^M assignments.
+- **Gap weight:** gap with m marked non-forced positions has weight 2^m if endpoint labels differ, 2^m - 1 if equal (exclude the single all-same assignment).
+- **Correct DP:** break the cycle at the smallest forced position p with label L. Prefix factor Pre(p)=2^{#marked before p}. The suffix is processed by a 4-state transfer matrix tracking (last forced label ∈ {0,2}, boolean has opposite optional in the current open gap).
+- **State transitions:** unmarked: normal keeps state; F0/F2 close gap with weight 1 if label differs or has_opp, else 0. Marked: d=1 and d=2 are non-forced (one may set has_opp depending on last label); F0/F2 close as above.
+- **Contribution formula:** for anchor p,L: Pre(p) * Total(L) - Bad(L), where Total(L) = sum over all final states starting from (L,false), Bad(L) = weight ending in (L,false). No-forced term 2^M added at the end.
+- **Incorrect previous recurrence:** the old X/Y recurrence only allowed alternating forced labels and missed valid configurations where a same-label forced gap is bridged by an optional opposite; it failed on N=5 s=01001 (gave 102 vs correct 114).
+- **Implementation:** 4x4 matrix updated right-to-left in O(N) time, O(1) memory. Pre(i) maintained by multiplying inv2 when passing a marked position.
+- **Verification:** matches sample 1 (14), sample 3 for N=3 s=111 (38), s=011 (24), s=000 (7). The corrected DP gives 114 for N=5 s=01001, matching independent gap-formula enumeration.

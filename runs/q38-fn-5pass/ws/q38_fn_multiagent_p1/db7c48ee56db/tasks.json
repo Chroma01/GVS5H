@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select direct enumeration with symmetry reduction as the primary solution.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement and test a direct enumeration solution: compute total_xor, set M = min(K, N-K), handle M = 0 and M = 1 directly, enumerate all M-element subsets of A, and maximize subset_xor if K <= N/2 else total_xor ^ subset_xor.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the implementation against the provided sample tests and edge cases such as K = N, K = 1, K = N-1, and large N with M = 1.",
+    "status": "done",
+    "result": ""
+  }
+]

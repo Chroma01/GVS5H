@@ -1,0 +1,6 @@
+- **Core formula:** The answer is `C(n - 1, k) * m * (m - 1)^(n - k - 1) mod 1e9+7`.
+- **Why it works:** Choose exactly `k` of the `n - 1` adjacent positions to be equal. These equalities merge the array into `n - k` runs. The first run can take any of `m` values, and every later run must differ from the previous run, giving `m - 1` choices each.
+- **Edge case `m = 1`:** Only the all-ones array exists. It has exactly `n - 1` equal adjacent pairs, so return `1` if `k == n - 1`, otherwise `0`.
+- **Edge case `n = 1`:** There are no adjacent pairs, so `k` must be `0`. The formula gives `m`, which is correct.
+- **Modular binomial:** Since `n <= 1e5 < MOD`, factorial and inverse factorial precomputation up to `n - 1` is safe and efficient.
+- **Complexity:** Time `O(n)` due to factorial precomputation, space `O(n)`.

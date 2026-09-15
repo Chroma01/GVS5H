@@ -1,0 +1,7 @@
+- **Model:** Smoke cells at time t equal {P(t) - P(g) : g is a generation time, 0<=g<=t}, where P(k) is the cumulative wind displacement after k steps and P(0)=(0,0). Generation g adds smoke at the origin at time g.
+- **Generation times:** A generation happens at step g iff origin is empty after that wind, i.e. P(g) equals some earlier prefix value P(g'). So generation times are exactly the first occurrences of prefix values (plus time 0).
+- **Key reduction:** To test occupancy of D=(R,C) != (0,0) at time t, we need some g<=t with P(g)=P(t)-D. Restricting g to *first occurrences* is harmless: if P(g)=P(t)-D and g isn't a first occurrence, its first occurrence g'<g has the same value and is also <=t and is a real generation. Hence simply keeping ALL prefixes seen so far (a plain set of positions) is correct — no need to distinguish first occurrences.
+- **Why g!=t is automatic:** P(g)=P(t) iff D=0, but D != (0,0), so a time never "uses itself". No off-by-one guard needed beyond using P(0)=0 in the set initially.
+- **Algorithm:** Sweep t=1..N, update pos=P(t); if (pos.r-R, pos.c-C) in seen emit '1' else '0'; then insert pos into seen. O(N) expected.
+- **Verification:** Sample 1 (NNEEWS, D=(-2,1)) -> 001010; Sample 2 -> 0001101011; Sample 3 -> 00100111111000101111. All match.
+- **Indexing:** Queries are at time t+0.5, i.e. after the wind step t; the check after updating pos at iteration t is exactly correct.

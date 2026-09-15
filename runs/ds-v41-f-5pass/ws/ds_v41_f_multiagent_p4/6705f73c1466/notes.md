@@ -1,0 +1,8 @@
+- **Problem reduction:** Adjacent swaps never change the relative order of the 1s. If the 1s are originally at 1-based positions p_1 < p_2 < ... < p_k, and the final contiguous block starts at l, the minimum swaps to place them there equals sum_j |p_j - (l + j - 1)|.
+- **Key transform:** Let a_j = p_j - j. Then the cost becomes sum_j |a_j - (l - 1)|. So the problem is a 1D median problem: choose t = l - 1 minimizing sum |a_j - t|.
+- **Optimal value:** Any median of the multiset {a_j} minimizes the sum of absolute deviations. For even k, both middle values are optimal; picking sorted[k // 2] is correct because the cost is flat between the two middle values.
+- **Validity of target block:** Since p_1 >= 1, a_1 >= 0. Since p_k <= N, a_k <= N - k. The chosen middle element lies in [a_1, a_k], so the implied target block [t+1, t+k] stays inside the string.
+- **Complexity:** O(N log N) time due to sorting the k <= N transformed positions, O(N) memory. N <= 5e5 is fine.
+- **Edge cases:** k = 1 gives answer 0. k = 0 is impossible by constraints but handled safely. Python integers avoid overflow for large sums.
+- **Sample verification:** Ran all three samples mentally/by reasoning through the implemented logic: N=7, S=0101001 -> positions [2,4,7], a=[1,2,4], median 2, answer 3. N=3, S=100 -> answer 0. N=10, S=0101001001 -> positions [2,4,7,10], a=[1,2,4,6], median 4, answer 7. All pass.
+- **Implementation note:** Use sys.stdin.read().split() for robust input parsing across whitespace/newlines.

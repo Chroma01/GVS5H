@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and derivation of feasibility condition and constructive templates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete solver with feasibility check and all construction templates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Fix sample exact-output failure by emitting trailing space after `R 3 2` in the special case (2,3) and rerun sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Fix mixed-case odd-B blue path for B >= 5 (currently invalid final diagonal step) using a valid simple diagonal path from A=(1,0) to T=(0,1), preserving the special (2,3) output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run edge cases and a local validity checker (R=0,B=2; R=2,B=1; R=2,B=5; R=4,B=5; R=4,B=2; B=0; large totals) to ensure no coordinate/order bugs.",
+    "status": "done",
+    "result": ""
+  }
+]

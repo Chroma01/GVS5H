@@ -1,0 +1,13 @@
+- **Core idea:** Maintain forward DP `F` and backward DP `G` lazily by anti-diagonals. Every monotone path visits exactly one cell per diagonal `s=h+w`.
+- **Invariant:** At current diagonal `s`, `F` is correct for all diagonals `<= s`, and `G` is correct for all diagonals `>= s`. Moving forward recomputes `F` for the new diagonal; moving backward recomputes `G` for the new diagonal.
+- **Point update coefficient:** For cell `x`, paths through `x` contribute `A_x * pred * succ`, where `pred` is the sum of predecessor `F` values (or 1 at start) and `succ` is the sum of successor `G` values (or 1 at end). Update answer by `(new-old)*pred*succ`.
+- **Transpose:** If original `H > W`, transpose the grid so stored `H <= W`. Then `H <= sqrt(HW) <= 447`. Path sum is invariant. Start and directions are transformed: `L->U`, `R->D`, `U->L`, `D->R`.
+- **Flat diagonal storage:** Use stride `S=H+2`. Cell `(s,h)` is stored at `idx=s*S+h+1`. Sentinels at `h=-1` and `h=H` remain zero. This makes recurrences boundary-free:
+  - `F[idx] = A[idx] * (F[idx-S-1] + F[idx-S])`
+  - `G[idx] = A[idx] * (G[idx+S] + G[idx+S+1])`
+- **Valid positions:** Precompute `pos_lists[s]` as a tuple of global indices of valid cells on diagonal `s`. Recomputing a diagonal loops only over valid cells, not all `H` rows.
+- **Index movement:** Maintain current diagonal `s` and flat index `idx`. Each direction has a precomputed index delta `didx`. Positive delta means forward (`recompute_F`), negative means backward (`recompute_G`).
+- **Modulo optimization:** Store DP values modulo `MOD`, but during multiplication allow predecessor/successor sums to be up to `2*MOD-2`; `(a * unreduced_sum) % MOD` is correct. This removes many conditional subtractions in the hot loops.
+- **Complexity:** Initialization `O(HW)`. Each query recomputes one diagonal of length at most `min(H,W)`, so `O(HW + Q*min(H,W))`. With `HW<=200000`, worst inner iterations are about `9e7`, but constants are small due to flat arrays and precomputed position tuples.
+- **Memory:** Flat arrays `A,F,G` have size `(H+W-1)*(H+2)`, at most about `4e5`; `pos_lists` stores `HW` indices. Input tokens and output list also fit comfortably.
+- **Edge cases:** Start and end use empty predecessor/successor sum equal to 1. Sentinels handle all grid boundaries uniformly. If assigned value equals old value, DP recomputation for the move is still performed, but answer and cell DP updates are skipped.

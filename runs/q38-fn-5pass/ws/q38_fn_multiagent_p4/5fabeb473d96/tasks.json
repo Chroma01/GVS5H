@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and verify edge coefficients: `2(x-1)/(x(x+1))` for `x<u`, `1-1/u` for `x=u`, `1/x` for `u<x<v`, and `1` for `x=v`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Brute-force validate the formula for small N against all `(N-1)!` parent sequences.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute modular inverses `inv[1..N]` and `fact = (N-1)! mod 998244353`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Build prefix arrays for `A_x * 2(x-1)/(x(x+1))` and `A_x * inv[x]` over `x=2..N`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each query `u<v`, compute the expected distance using the prefix arrays, handling `u=1` naturally by setting `A_1=0`, then multiply by `fact`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Check edge cases such as `N=2`, `u=1`, and `v=u+1`, and ensure all subtractions are normalized modulo `998244353`.",
+    "status": "done",
+    "result": ""
+  }
+]

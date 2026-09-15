@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: identify f(x) as x divided by its largest power of two and reduce the problem to counting pair sums by exact 2-adic valuation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a Python solution using the exact-valuation residue method: read N and A, compress duplicate values, for each k with 2^k <= 2*max(A) group compressed values by residue modulo 2^(k+1), count unordered pairs whose residues sum to 2^k modulo 2^(k+1) while handling self-complementary residue classes once, add the total pair sum divided by 2^k, and print the final answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implemented solution on the provided sample inputs and edge cases such as N=1, all equal values, all odd values, and maximum values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize residue grouping using dense arrays for small/moderate moduli and dictionaries for large moduli, while preserving exact unordered-pair counting.",
+    "status": "done",
+    "result": ""
+  }
+]

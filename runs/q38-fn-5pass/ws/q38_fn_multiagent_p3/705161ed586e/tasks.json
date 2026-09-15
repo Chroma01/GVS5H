@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement suffix DP with 78 states and top-two switch optimization.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement lexicographic greedy reconstruction from suffix DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle base cases and final first-character selection.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate on sample tests and edge cases.",
+    "status": "done",
+    "result": ""
+  }
+]

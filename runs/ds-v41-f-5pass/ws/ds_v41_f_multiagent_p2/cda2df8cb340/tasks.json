@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate the reduction: ans = T0 - sum_{k>=1} T_k/2^k where T0=(N+1)S and T_k = sum of (A_i+A_j) over i<=j with 2^k | (A_i+A_j); only k up to (2*maxA).bit_length()-1 matter.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the per-level closed form T_k = sum_i A_i*cnt[(-A_i) mod 2^k] + (sum of A_i whose residue mod 2^k is self-inverse), handling i=j and unordered pairs correctly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the algorithm and I/O; subtract each T_k >> k from T0 and print (hybrid list/dict for memory).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate on samples 1-3 (expected 5, 384, 20241214) and edge cases N=1, all-equal values, A_i near 1e7 -- all passed.",
+    "status": "done",
+    "result": ""
+  }
+]

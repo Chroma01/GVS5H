@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the bottleneck-path / MST reduction and the A-B matching characterization.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement DSU sweep over edges sorted by weight: component balance = (#A occurrences) - (#B occurrences); on union of opposite-sign balances add w * min(abs(bal_u), abs(bal_v)); merge balances.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle equal edge weights correctly, multiplicities, 1-indexing, 64-bit sums, and an efficient iterative DSU with path compression and union by size.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate against both provided samples and reason about equal-weight invariance and edge cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Add fast input parsing and print the final accumulated answer to stdout.",
+    "status": "done",
+    "result": ""
+  }
+]

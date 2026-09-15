@@ -1,0 +1,13 @@
+- **Problem restated:** answer[i] = deepest prefix length p such that at least k of the words other than i share that prefix.
+- **Trie model:** build trie over all words; cnt(v) = words passing through node v; depth(v) = prefix length.
+- **Usability rule:** for removal i, depth d is achievable iff some node v at depth d satisfies cnt(v) - [word i in subtree(v)] >= k.
+- **Good-for-all depth:** depth d is usable for every i iff (nodes at depth d with cnt>=k+1) >= 1 OR (nodes at depth d with cnt>=k) >= 2. Proof: one word hits at most one node per depth, so with two cnt>=k nodes one survives; a cnt>=k+1 node always survives.
+- **D_all:** deepest good-for-all depth, found by scanning depths 0..maxd.
+- **D2:** deepest depth having exactly one node with cnt==k. If D2 > D_all then no depth > D2 has any node with cnt>=k (a deeper cnt>=k node would either make D_all >= that depth or force eqk==1 there, contradicting D2 maximality). So the unique node p at depth D2 is the deepest achievable prefix for removals outside p's subtree.
+- **Case split:** D2 <= D_all -> every answer is D_all. D2 > D_all -> answer is D2 for words not prefixed by p, and D_all for words prefixed by p (removing such a word kills p and all deeper usable ancestors).
+- **Reconstruction:** walk parents from the D2 node to recover its prefix, then test each word when len(w) >= L via w[:L]==prefix. Total test work is O(sum lengths) since words passing the length test each contribute >= L characters.
+- **Shortcuts / edges:** k==n -> all zeros (n-1 < k). k==1 is covered by the same framework (single-word LCP = word length). Duplicates, prefix-of-another, and multiple eqk nodes handled naturally by counts. n>=1 guaranteed by constraints.
+- **Complexity:** O(total length) time, O(#trie nodes) memory; #nodes <= sum lengths + 1 <= 1e5+1.
+- **Verification (harness logic run against the solution):** example1 (["jump","run","run","jump","run"], k=2) -> [3,4,4,3,4] PASS; example2 (["dog","racer","car"], k=2) -> [0,0,0] PASS. Brute force: for each i form remaining words, enumerate every size-k subset, take the max k-wise LCP (k==1 uses the single word's length); random tests with n<=8, alphabet {a,b,c,d} to force many duplicates/prefixes, word lengths 1..5, and all k in 1..n, plus explicit duplicate-heavy and prefix-of-another families.
+- **Reasoned extra cases:** ["aa","ab","bb","bb"]/2 -> [2,2,1,1]; ["abc","abc","ab","xy","xy"]/2 -> [2,2,3,3,3]; ["aa","aa","bc","bd"]/2 -> [1,1,2,2]; ["ab","abc","xy"]/1 -> [3,2,3]; ["ab","abc","abd"]/1 -> [3,3,3]. All match brute-force expectations.
+- **Verdict:** PASS, no counterexample found across the two examples and the randomized/edge brute-force suite.

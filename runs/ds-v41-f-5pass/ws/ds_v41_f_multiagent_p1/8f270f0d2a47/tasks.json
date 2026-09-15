@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Choose approach: prefix-count F(n) via memoized digit DP over (started, sum, product); zero-product numbers automatically beautiful; exact product feasible without capping.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement F(n) counting beautiful integers in [1, n]; return 0 when n \u2264 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle leading zeros via started flag; base case counts only when started, sum > 0, product % sum == 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Memoize shared `free(rem, started, s, p)` states reused across F(r) and F(l-1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Return F(r) - F(l-1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify solution: provided examples (10,20)\u21922 and (1,15)\u219210 pass; brute-force cross-check for ranges up to 5000 and random ranges to 10^6 pass; edge cases (l=r, l=1, r=10^9-1, zeros like 100/101/2000) pass; worst-case timing ~0.3s, sub-second.",
+    "status": "done",
+    "result": ""
+  }
+]

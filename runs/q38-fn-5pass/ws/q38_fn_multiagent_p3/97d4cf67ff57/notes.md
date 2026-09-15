@@ -1,0 +1,14 @@
+- **Core observation:** In a rooted tree, any connected selected subgraph has a unique highest vertex. At that vertex the parent edge is absent; for every other selected vertex the parent edge must be present.
+- **Degree constraints:** With parent edge absent, a selected vertex may use either 1 or 4 child edges. With parent edge present, it may use either 0 or 3 child edges.
+- **Flag requirement:** At least one selected vertex must have degree 4. A vertex becomes degree 4 exactly when it uses 4 child edges with parent absent, or 3 child edges with parent present.
+- **State simplification:** A parent-present branch with no degree-4 vertex can only be the single vertex itself, size 1. Using any child edge would make its degree 2 or 4, and degree 4 would create the flag.
+- **Branch value:** When a parent selects an edge to a child, the best contribution from that child is `max(1, present1[child])`: either make the child a leaf, or make it degree 4 and take its best flag-true branch.
+- **present1[v]:** If the parent edge is present and the branch must contain a degree-4 vertex, v itself must be degree 4. Therefore choose exactly 3 child branches. Since v already supplies the flag, take the three largest branch values: `1 + sum(top3)` if at least 3 children exist.
+- **absent1[v]:** If v is highest and the whole subgraph must contain a degree-4 vertex, there are two cases:
+  - v is degree 4: choose 4 child branches, value `1 + sum(top4)`.
+  - v is degree 1: choose one child branch that already contains a degree-4 vertex, value `1 + max(present1[child])`.
+- **Answer:** The maximum `absent1[v]` over all vertices. If no such state exists, print -1.
+- **Minimum size:** Any alkane has size `3*x + 2` where `x >= 1` is the number of degree-4 vertices, so size at least 5. The implementation returns -1 immediately for `N < 5`.
+- **Implementation details:** Build adjacency, iteratively root the tree, process vertices in reverse parent-before-child order. For each vertex, maintain the four largest child branch values and the maximum child `present1` in one pass. Use a large negative sentinel for impossible states.
+- **Complexity:** O(N) time and O(N) memory.
+- **Pitfalls:** Do not use `present1[root]` as an answer because it assumes a selected parent edge. A parent-present degree-1 vertex cannot reach deeper degree-4 vertices. Invalid child branches still contribute size 1 when selected as leaves.

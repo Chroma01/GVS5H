@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate candidate approaches and identify the closed-form combinatorial formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement closed-form solution with modular binomial coefficients and modular exponentiation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle edge cases: n=1, k=0, k=n-1, m=1, and exponent-zero semantics.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test against provided examples and small brute-force cases.",
+    "status": "done",
+    "result": ""
+  }
+]

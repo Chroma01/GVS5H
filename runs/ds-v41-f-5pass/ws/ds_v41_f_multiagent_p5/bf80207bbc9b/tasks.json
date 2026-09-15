@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full solution: parse rows into W-bit integer masks and build frequency array f of size 2^W.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute g[x] = min(popcount(x), W - popcount(x)) for all x in [0, 2^W).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement iterative in-place Fast Walsh-Hadamard Transform for XOR convolution; apply to f and g, multiply pointwise, inverse transform (divide by 2^W), yielding h = f (*) g.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Output min(h[mask]) over all 2^W column masks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify edge cases (W=1, H=1, all rows identical, max H=2e5) and confirm sample outputs 2, 0, 13.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm FWHT-based XOR convolution is the intended efficient approach (O(W\u00b72^W)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "All 3 public samples passed; solution accepted.",
+    "status": "done",
+    "result": ""
+  }
+]

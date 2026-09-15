@@ -1,0 +1,9 @@
+- **Core idea:** Each food contributes to exactly one vitamin. For a fixed target amount T, the requirements for vitamins 1, 2, and 3 are independent except for the shared calorie budget. Therefore T is feasible iff the sum of the minimum calories needed to obtain at least T from each vitamin group is at most X.
+- **Per-vitamin DP:** Vitamin totals can be very large, but X is only up to 5000. For each vitamin group, run a 0/1 knapsack over calories: dp[c] is the maximum vitamin amount achievable with calorie capacity c. This avoids any DP over vitamin totals.
+- **Feasibility check:** After making each group's dp nondecreasing, the minimum calories needed for target T in that group is the first index c with dp[c] >= T. This is obtained with bisect_left. Sum the three indices and compare with X.
+- **Binary search:** Feasibility is monotone in T. The upper bound is min(dp1[X], dp2[X], dp3[X]). Binary search the largest feasible T.
+- **DP optimization:** Items are sorted by calorie cost. Maintain s = min(X, total cost processed so far). Only update capacities up to the new s. Before updating, fill newly reachable capacities s+1 through new_s with dp[s], because all previously processed items fit there. This preserves the old "do not take current item" values while keeping the active range small. The total fill work is O(X) per group.
+- **Monotonicity:** A final prefix maximum pass ensures dp[c] is nondecreasing and correctly represents "at most c calories". This is important for bisect_left.
+- **Early exits:** If any vitamin group is empty, answer is 0. If the sum of the cheapest food costs from the three groups exceeds X, even T=1 is impossible, so answer is 0.
+- **Complexity:** Worst-case DP updates are O(NX), about 25 million. Binary search adds only O(log(sum A) * log X). Memory is O(X).
+- **Edge cases:** Empty groups, answer 0, target 0, large vitamin amounts, and budgets too small to take one food from each group are handled.

@@ -1,0 +1,1 @@
+Use the factorization x^3 - y^3 = (x-y)(x^2+xy+y^2). Let d = x-y > 0; since y >= 1, we get d <= floor(cuberoot(N)), so d can be enumerated up to about 10^6 for N <= 10^18. For each divisor d of N, solve the quadratic 3y^2 + 3dy + d^2 = N/d for positive integer y. Use exact integer square root and divisibility checks to avoid floating-point errors, then output x = y+d.

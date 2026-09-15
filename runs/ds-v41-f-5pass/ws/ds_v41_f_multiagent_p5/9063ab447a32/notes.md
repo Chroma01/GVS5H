@@ -1,0 +1,9 @@
+- **Core reduction:** Buying the x-th unit (x=0,1,...) of product i has marginal cost P_i(2x+1). For a fixed total K, the minimum cost is the sum of the K globally smallest marginals.
+- **Threshold helper:** For integer V, c_i = (V//P_i + 1)//2 is the number of marginals ≤ V for product i; their sum is P_i·c_i². Hence C(V) = Σ c_i and S(V) = Σ P_i·c_i² in O(N).
+- **Main algorithm:** Binary search the largest V in [0, U] with S(V) ≤ M. Let R = M − S(V), w = min_i P_i(2c_i+1), and cnt_w be the number of products attaining w. Answer = C(V) + min(cnt_w, R//w).
+- **Correct upper bound:** Need U ≥ V*. From S(V) ≥ p_min·c² and c = (V//p_min + 1)//2, we get V < 2·sqrt(M·p_min) + 2·p_min + 2. Use U = min(M, 2·isqrt(M·p_min) + 2·p_min + 2). The simpler bound 2·isqrt(M·p_min)+2 is insufficient; counterexample: N=1, M=10000, P=[100] gives V*=2099 but 2·isqrt(10⁶)+2 = 2002.
+- **Why min is safe:** For the true maximal V, R < cnt_w·w, so min(cnt_w, R//w) = R//w. If V=M, then w>M and R≤M, so R//w=0.
+- **Stress-test:** Brute force (try all small allocations / sort marginals for small K) matched the optimized program on many random small cases (N≤4, M≤200, P_i≤12), including ties in w, V=0, and S(M)≤M cases.
+- **Timing:** Worst-case N=200000, M=10¹⁸, all P_i=1 or random in [1,2·10⁹] runs well under 2 seconds (≈5–9 million inner-loop iterations, thanks to early exit and sorted-P break). Sorting P and breaking when p>V in `total_cost` keeps the inner loop short.
+- **Complexity:** O(N log U) time, O(N) memory. Python ints handle all values safely.
+- **Implementation details:** Use sys.stdin.buffer.read().split() for fast IO. In `total_cost`, return early when s>M. Final pass computes total, count, w, cnt_w in one loop. Integer division // is exact for non-negative values.

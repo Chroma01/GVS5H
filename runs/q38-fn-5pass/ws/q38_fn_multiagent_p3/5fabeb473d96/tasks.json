@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and verify the edge-contribution coefficients for cases i < u, i = u, u < i < v, and i = v, including u = 1 and adjacent u, v, and produce a closed-form query formula using prefix sums.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement input parsing and precompute factorial (N-1)!, modular inverses up to N, and A_i modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build prefix sums S1[k] = sum_{i=2..k} A_i / i and S2[k] = sum_{i=2..k} A_i * 2(i-1)/(i(i+1)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each query, compute the expected distance from the prefix sums and endpoint terms, multiply by (N-1)!, and print modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test edge cases such as u = 1, v = u+1, large N, and the provided samples.",
+    "status": "done",
+    "result": ""
+  }
+]

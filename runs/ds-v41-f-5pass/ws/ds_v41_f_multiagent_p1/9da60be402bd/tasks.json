@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Formalize the pair-state recurrence and base cases, including paths of length 0 and length 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Design the reverse BFS propagation from inner pairs to outer pairs using matching edge labels.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute incoming and outgoing adjacency grouped by label to enumerate valid outer transitions efficiently.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the center-outward BFS over all N^2 pair states, fill the N x N answer matrix with shortest lengths or -1, and run on both samples (both public samples PASSED).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Apply the bitset \"unvisited targets\" optimization for in/out label masks, keeping inner work to ~N*E big-int operations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify output format and edge cases such as N=1, self-loops, and disconnected vertices.",
+    "status": "done",
+    "result": ""
+  }
+]

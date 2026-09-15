@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Formalize feasibility for a fixed target sum T, separating fixed-fixed, fixed-wildcard, and wildcard-wildcard pairings.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive constraints and candidate ranges for T using counts of fixed B values and availability of fixed A entries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Account for A_i=-1 as arbitrarily assignable values and B_i=-1 as unconstrained, including cases where both sides are wildcards.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Design an O(N^2) feasibility check suitable for N<=2000 and values up to 1e9.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement the final stdin/stdout solution and verify samples, boundary cases, and brute-force small cases.",
+    "status": "done",
+    "result": ""
+  }
+]

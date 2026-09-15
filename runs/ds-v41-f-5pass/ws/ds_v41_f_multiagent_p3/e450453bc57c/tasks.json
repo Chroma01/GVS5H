@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: two-layer structure (window median costs + non-overlap DP) and key pitfalls.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement full solution using coordinate-compressed Fenwick trees for window costs and O(nk) DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Execute sample tests: Example 1 gives 8, Example 2 gives 3 (both PASS).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify edge cases: k=1, x=n, adjacent non-overlapping windows, all-duplicate values, all-negative values, even-length median convention.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm performance for n=1e5, k=15 (O(n log n) build + O(nk) DP) and Python integer safety; verify cost[i-x] indexing.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Median-of-deviations cost formula (2*(med*cl - sl) + total - med*x) verified analytically and against sampled windows.",
+    "status": "done",
+    "result": ""
+  }
+]

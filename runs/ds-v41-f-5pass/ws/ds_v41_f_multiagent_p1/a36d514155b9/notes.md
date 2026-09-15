@@ -1,0 +1,8 @@
+- **Reduction by linearity:** total = sum over unordered cell pairs {a,b} of (number of arrangements containing both) * dist(a,b). Every unordered cell pair is symmetric, so the count is the constant C(N-2, k-2) with N = m*n.
+- **Answer formula:** ans = C(N-2, k-2) * D mod 1e9+7, where D = n^2 * S(m) + m^2 * S(n).
+- **1D pair-distance sum:** S(L) = sum_{1<=i<j<=L} (j-i) = sum_{d=1}^{L-1} d*(L-d) = L(L-1)(L+1)/6. Always an exact integer since L-1,L,L+1 are three consecutive integers (divisible by 6), so plain integer division is safe and avoids modular-inverse pitfalls for S.
+- **Why n^2 and m^2 factors:** for the row part, two distinct rows r1,r2 each pair with any of the n columns, giving n^2 cell-pairs per row-pair; equal rows contribute 0. Symmetric for columns with m^2.
+- **Verification done:** m=2,n=2,k=2 -> C(2,0)=1, S(2)=1, D=4+4=8, ans 8 (matches). m=1,n=4,k=3 -> C(2,1)=2, S(4)=10, D=10, ans 20 (matches). m=2,n=2,k=3 -> C(2,1)=2, D=8, ans 16 (brute: four 3-piece boards each total 4 -> 16, matches). 1x2 k=2 -> 1; 1x3 k=2 -> 4; 1x3 k=3 -> 4 (all match brute enumeration).
+- **Edge cases:** k=2 gives C(N-2,0)=1 (answer is just D). k=N gives C(N-2,N-2)=1. N=2 (1x2 or 2x1) gives top=0 and only k=2 valid -> C(0,0)=1. Guard r<0 or r>top returns 0, though constraints (2<=k<=N) keep r in range.
+- **Complexity:** O(N) time and memory for factorials, N<=1e5, trivial. Only top=N-2 factorials needed.
+- **Implementation detail:** precompute factorials and inverse factorials up to N-2 with a single Fermat inverse at the top, then combine. Multiply the modular binomial with D mod p.

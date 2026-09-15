@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: model shortest palindromic paths as BFS over endpoint-pair states with centers at empty paths and single edges.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse the input and build, for each lowercase letter, bitsets `in[label][v]` of vertices `u` with edge `u -> v`, and `out[label][u]` of vertices `w` with edge `u -> w`; also keep the list of all edges for length-1 initialization.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Initialize a distance matrix `dist[N][N]` with `-1`, set `dist[i][i] = 0` for all `i`, and enqueue all diagonal states; then for every edge `u -> v`, set `dist[u][v] = 1` if unset and enqueue it.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement BFS over states `(u, v)`: for each label `c`, iterate over incoming vertices `p` in `in[c][u]`, and let candidate endpoints be the bitset `out[c][v]`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each candidate row `p`, compute newly discovered columns by masking `out[c][v]` against the already visited bits in row `p`, set their distances to `dist[u][v] + 2`, and enqueue the corresponding states.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "After BFS finishes, print the distance matrix row by row, using `-1` for unreachable pairs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Test the implementation on the provided samples and simple edge cases such as `N = 1`, no edges, and all edges with the same label.",
+    "status": "done",
+    "result": ""
+  }
+]

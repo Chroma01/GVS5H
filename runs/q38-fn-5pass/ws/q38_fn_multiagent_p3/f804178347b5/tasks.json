@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: model the process as a complete ternary majority tree and choose a bottom-up DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement robust input parsing for N and the binary string, filtering only '0'/'1' characters and handling either contiguous or space-separated bits.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the compact one-state DP: leaves have original value from A and change cost 1; for each internal node, compute its original majority value and the minimum flips needed to change it.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each triple, compute each child's cost to output the parent's opposite value: 0 if the child already has that value, otherwise the child's change cost; the parent's change cost is the sum of the two smallest such costs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Use iterative level-by-level array compression with no recursion or string slicing, keeping memory and runtime suitable for N = 13.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Print the root's change cost, which is the minimum number of flips needed to change the final value.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Test on the provided samples and edge cases such as N=1, all zeros, all ones, and maximum N performance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "If the compact DP fails any sample or edge case, fall back to the explicit two-state DP storing cost-to-make-0 and cost-to-make-1 for each node.",
+    "status": "done",
+    "result": ""
+  }
+]

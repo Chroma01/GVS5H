@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse input, store grid, Q, start position, and the sequence of moves and new values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the DP transformation for a single column/row (leaf) and a function to apply it to a vector.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Build a segment tree over the larger dimension, with each node storing a d\u00d7d matrix (use 1D arrays for speed).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement point update: update leaf matrix, then update ancestors using the rank-1 update propagation in O(d\u00b2) per level.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Maintain the global answer: after each update, compute the new total sum (from root matrix) and output modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify that the solution passes all provided sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "(Optional) Optimize for Python/PyPy with flat arrays and reduced overhead for potential large inputs.",
+    "status": "pending",
+    "result": ""
+  }
+]

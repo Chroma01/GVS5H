@@ -1,0 +1,10 @@
+- **Problem model:** Operation at box i moves all red balls to P_i and all blue balls to Q_i. Goal: all balls end in box X. Min operations.
+- **Feasibility:** Any red ball at i must lie in X's P-cycle, else impossible. Similarly blue must lie in X's Q-cycle. Check A_i=1 ⇒ distP[i]≠-1; B_i=1 ⇒ distQ[i]≠-1.
+- **Single color:** For one color, let M be the max distance to X among its balls. Every box at distances 1..M must be operated exactly once, in decreasing distance order. Required sequence R = [box at dist M, dist M−1, …, dist 1]. Each box appears at most once (distance is a bijection on the cycle).
+- **Coupling:** One operation at box i serves both colors if i is in both R and B and is scheduled after all prerequisites for both. Minimum total operations = length of shortest common supersequence (SCS) of R and B.
+- **SCS = LCS:** Since R and B have distinct elements, SCS length = |R| + |B| − LCS(R,B).
+- **LCS to LIS:** Map each box in R to its index. Iterate B in order, collect indices of boxes present in R. LCS length = LIS length of this index sequence. Use patience sorting with bisect_left for O(N log N).
+- **Algorithm:** Build inverse permutations, traverse from X to compute distances and atDist arrays. Find M_R, M_B. Build R and Bseq. Compute LIS. Answer = len(R)+len(Bseq)−LIS. If any red/blue ball outside X's cycle, print -1.
+- **Edge cases:** M_R=0 or M_B=0 gives empty sequence. X has distance 0 and is never operated. Fixed points and other cycles are handled by the feasibility check. Balls already at X impose no requirement.
+- **Optimality:** Any operation affecting a color must be on that color's path to X. The farthest ball forces all boxes up to M to be operated at least once in order. Other color's operations may push tokens forward earlier but cannot reduce the required set or order, so SCS is optimal.
+- **Complexity:** O(N log N) time, O(N) memory.

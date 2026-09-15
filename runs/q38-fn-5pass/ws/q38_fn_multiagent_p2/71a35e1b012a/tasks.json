@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: derive case analysis for costs 1, 2, and 3 using full intervals, disjoint pairs, containment pairs, endpoint-cover pairs, and a fallback cost-3 construction.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the initial O(M log M) Python case-analysis solution with original-index output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Fix sample 1 exact-output mismatch by changing containment-pair tie-breaking to prefer the smallest original index as the type-1 container, using a Fenwick/segment tree over R, while preserving correctness.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify all sample tests and edge cases; sample tests passed.",
+    "status": "done",
+    "result": ""
+  }
+]

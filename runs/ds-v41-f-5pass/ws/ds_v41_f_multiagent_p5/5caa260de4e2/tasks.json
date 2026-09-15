@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation/derivation: the i-dependence telescopes to k*m*C[n] - k*sum(C internal boundaries), giving a DAG shortest-path DP with edge weight B(t,j)=P[j](C[j]-C[t]) - k*C[t] + k*C[n].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement dp[j]=min over t<j of dp[t]+P[j]*(C[j]-C[t])-k*C[t], then add k*C[n] per transition; prefix sums P,C with C[0]=0; return dp[n]; O(n^2) time, O(n) memory.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate: sample 1 gives dp[3]=110 (via t=2, dp[2]=56), and sample 2's partition boundaries [0,4,7,9] yield B(0,4)+B(4,7)+B(7,9)=581+236+168=985, both matching expected outputs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm method signature class Solution.minimumCost(self, nums, cost, k) with O(n^2)\u2248500k transitions fitting n<=1000; Python big integers avoid overflow.",
+    "status": "done",
+    "result": ""
+  }
+]

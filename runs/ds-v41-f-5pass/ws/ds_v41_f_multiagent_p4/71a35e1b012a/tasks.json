@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Characterize as minimum cover by type-1 intervals and type-2 co-intervals; establish min cost \u2264 3 for M \u2265 3.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Design O(M log M) case analysis for cost 1, cost 2 (union-all, disjoint, containment), and cost 3 construction.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement solver: read input, handle M=1,2, detect cost1/cost2, else cost3, output operation types.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Fix mixed-containment detection: sort by (L asc, R asc) + same-L/duplicate rule so Sample 1 emits exactly `2 0 1 0`; confirmed S1,S2,S3,S4 match exactly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Brute-force differential testing on small inputs with a semantic comparator (min cost K correct AND chosen ops valid/achieve all-ones), covering duplicates, same-L nesting, single-element intervals, N=1, M=1, M=2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Performance test on maximum-size input (N=1e6, M=2e5): O(M log M) sort + O(M) scan fits limits.",
+    "status": "done",
+    "result": ""
+  }
+]

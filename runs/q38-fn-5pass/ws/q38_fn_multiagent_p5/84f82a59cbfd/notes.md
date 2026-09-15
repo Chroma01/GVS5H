@@ -1,0 +1,9 @@
+- **Core reduction:** A 400 number has exactly two distinct prime factors and all exponents even, so it is exactly `m^2` where `m` has exactly two distinct prime factors. Conversely, any such `m` gives a valid 400 number.
+- **Search bound:** Since `A <= 10^12`, the base `m` is at most `isqrt(10^12) = 10^6`. Precomputing valid bases up to `1_000_000` is sufficient.
+- **Distinct prime factor sieve:** Use a `bytearray` `cnt` storing the number of distinct prime factors. Set all even numbers to count 1 for prime factor 2. Then iterate odd `i`; if `cnt[i] == 0`, `i` is prime, and increment `cnt[j]` for all multiples `j` of `i`. This counts distinct primes, not multiplicity.
+- **Prime bound optimization:** Odd primes greater than `MAX//2` cannot appear in any valid base `<= MAX` with another prime factor, because multiplying by at least 2 would exceed `MAX`. Therefore the odd prime loop can stop at `MAX//2`.
+- **Prefix predecessor array:** Build `pref[x]` as the largest integer `<= x` with `cnt[x] == 2`. Then each query answer is `pref[isqrt(A)] ** 2`.
+- **Integer square root:** Use `math.isqrt` to avoid floating-point precision issues near `10^12`.
+- **Input parsing:** The program parses all input bytes manually to handle arbitrary whitespace without creating a large token list. It reads `Q`, precomputes, then parses each query and outputs answers collected in a list.
+- **Complexity:** Sieve is roughly `O(MAX log log MAX)` with `MAX = 10^6`; prefix construction is `O(MAX)`; each query is `O(log A)` for `isqrt` plus `O(1)` lookup. This is easily fast enough for `Q = 2 * 10^5`.
+- **Edge cases:** The smallest valid base is `6`, giving `36`. The guarantee in the statement ensures `pref[isqrt(A)]` is nonzero for all valid queries. The printed value is the square of the selected base, not the base itself.

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete solution using two-pointer counting with next-greater binary lifting: compute prefix sums and next strictly greater indices, build lifting tables with cumulative costs, implement cost(l, r), and count valid subarrays.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate sample tests and edge cases, including equal values, strictly increasing/decreasing arrays, n = 1, and very large k.",
+    "status": "done",
+    "result": ""
+  }
+]

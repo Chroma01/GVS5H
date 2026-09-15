@@ -1,0 +1,6 @@
+sha=d158e27d4eff97bf85c75e8ad36f96cd8f6dec64
+dirty:  M codebase/v2-current/escalation/run_bench_script/run_ds_v41_f_5pass.sh
+dirty:  M codebase/v2-current/escalation/run_bench_script/run_q38_fn_5pass.sh
+dirty: ?? codebase/v2-current/escalation/runs
+model=groq:deepseek-flash (DeepSeek V4.1 Flash, first-party https://api.deepseek.com) cap=128000 parallel=100 release=release_v6 ids=escalation/lcb100_hardest_v6.json
+engines=[multiagent] passes=[2 3 4 5] reasoning=on(api default, effort=high) max_iters=10 max_tasks=12 strict_format=1 checkpoint=per-problem

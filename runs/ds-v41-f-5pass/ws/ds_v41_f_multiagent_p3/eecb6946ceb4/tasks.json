@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement numpy FFT self-convolution solution: build presence array of length L=next power of two > 2*max(S), compute irfft(rfft(a)*rfft(a)), round to int64, sum (conv[2B]-1)//2 over B in S, output answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verified reduction correctness (fix middle B, subtract self-pair, halve ordered pairs) and precision bound (error ~1e-8 << 0.5 for L<=2^21).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirmed all 3 public samples pass (3, 5, 10) and edge case N<3 returns 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verified L > 2*M guarantees linear (non-circular) convolution and 2B index validity.",
+    "status": "done",
+    "result": ""
+  }
+]

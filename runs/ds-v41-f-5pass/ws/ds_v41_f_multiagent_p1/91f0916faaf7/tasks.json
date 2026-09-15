@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove per-prime reduction: constraints become |s_i-s_{i+1}|=v_p(A_i), gcd=1 is equivalent to min_i v_p(S_i)=0 for each prime, and the answer factors over primes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse N and A; factor every A_i and build, for each prime p, the sequence a_i=v_p(A_i) of length N-1 and R_p=sum_i a_i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement per-prime DP with state (height h in 0..R_p, zero_seen): init dp1[0]=1, dp0[h]=p^h; d=0 keeps h (weight p^h, reaching 0 sets flag); d>0 uses h->h\u00b1d with weight p^{new_h} and flag update when new_h=0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Sum zero-seen states after position N mod 998244353; multiply per-prime contributions; skip absent primes (contribute 1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate against all three samples (PASSED) and argue height bound R_p is safe (any min-0 path stays within [0,R_p], so truncation loses no valid path).",
+    "status": "done",
+    "result": ""
+  }
+]

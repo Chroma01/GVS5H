@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: identify sorted-array matching structure and candidate approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the binary-search feasibility solution with the K-smallest vs K-largest check.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the binary-search solution on the provided samples and edge cases such as N=2, all equal sizes, odd N, and very large sizes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If the binary-search approach fails any test, switch to or compare with the two-pointer greedy approach.",
+    "status": "done",
+    "result": ""
+  }
+]

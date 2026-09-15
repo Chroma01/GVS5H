@@ -1,0 +1,11 @@
+- **Model:** A decomposition is a subset of tree edges; selecting them makes each vertex have selected-degree <= 2 and every connected component a simple path of exactly K vertices (a subforest of a tree is acyclic, so degree<=2 + connectivity => path). Path length K means K vertices (matrix is N x K).
+- **Forced-cut rule (key insight):** Root at vertex 1. For any valid decomposition, edge (parent[v], v) is CUT iff subtree_size[v] % K == 0.
+  - If the edge is cut, the subtree is a disjoint union of whole K-paths, so its size is divisible by K.
+  - If the edge is selected, one path crosses the boundary; it uses the parent, so it contributes 1..K-1 vertices inside, hence size % K != 0.
+  - So the cut set is *unique*; if the forced set fails the checks, answer is No.
+- **Algorithm:** iterative DFS for subtree sizes (avoid recursion depth issues at 2e5); select edge iff size%K!=0; verify (a) selected-degree <= 2 for all vertices, (b) each selected component has exactly K vertices. Yes iff both hold.
+- **K=1:** mod 1 is always 0 so all edges cut; components are singletons of size 1 == K, so it is automatically Yes (handled by early return for clarity/speed).
+- **Correctness intuition:** necessity proved above; sufficiency follows because the selected forest (acyclic, max deg 2, all components size K) is exactly the required decomposition.
+- **Verified samples:** Sample 1 selects edges 1-2, 3-4, 5-6 -> three components of size 2 -> Yes. Sample 2 selects every edge, giving vertex 2 selected-degree 3 -> No.
+- **Complexity:** O(NK) time and memory, fits NK <= 2e5.
+- **Implementation notes:** read all tokens at once; reverse of preorder gives correct bottom-up order; component sizes computed by iterative stack BFS over the selected forest.

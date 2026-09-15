@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the full-ternary reduction with two-pass (bottom-up down[] + top-down up[] rerooting) DP using top-3/top-4-with-source exclusion to compute branch values h(v,p) in O(N).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify equivalence of the reduction (attaching a leaf to the root of a full ternary tree yields exactly an alkane) and the candidate formula 2 + (top-3 neighbour branch values) for each vertex with degree \u2265 4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement iterative BFS traversal (no recursion) and guard n < 5 / max-degree < 4 cases returning -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test against all three samples (8, -1, 11) and edge cases; all public samples passed.",
+    "status": "done",
+    "result": ""
+  }
+]

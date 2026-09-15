@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the full solution using the characterization that a 400 number is `m^2` where `m` has exactly two distinct prime factors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Use an integer sieve up to `isqrt(max(A))` to compute the number of distinct prime factors for each integer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build a sorted list of all valid 400 numbers as squares of bases with exactly two distinct prime factors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Answer each query by binary searching the largest valid 400 number not exceeding `A`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify sample tests and edge cases such as `A = 36` and `A = 10^12`.",
+    "status": "done",
+    "result": ""
+  }
+]

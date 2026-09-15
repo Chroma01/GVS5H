@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and verify edge-contribution coefficients for k=v, u<k<v, k=u, 2<=k<u, and u=1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement direct edge-contribution O(1) query solution with modular inverses, factorial, prefix sums, and efficient IO.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and small brute-force random validation; if coefficients fail, switch to expected-depth/LCA or offline recurrence approach.",
+    "status": "done",
+    "result": ""
+  }
+]

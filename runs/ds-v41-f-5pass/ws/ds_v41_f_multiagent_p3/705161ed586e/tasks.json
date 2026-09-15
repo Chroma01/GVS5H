@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Formalize good captions as partitions into maximal monochromatic runs of length at least 3.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive cost model (absolute alphabet distance per position) and suffix DP over (position, last char, capped run length 1/2/3).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Optimize the k==3 min-over-c != last transition to O(1) per (i,last) using best/second-best over |s[i]-c| + A[i+1][c].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Store A (k=1) and C (k=3) as flat arrays for memory, keeping B (k=2) only for the next backward step.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement greedy lexicographic reconstruction choosing the smallest char achieving the optimal cost at each step, ensuring every run length >= 3.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Handle edge cases: n < 3 returns \"\", tie-breaking by smallest first character, and forced continuations for k < 3.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate against provided examples (\"cdcd\"->\"cccc\", \"aca\"->\"aaa\", \"bc\"->\"\") via reasoning/brute force; solution appears correct and complete.",
+    "status": "done",
+    "result": ""
+  }
+]

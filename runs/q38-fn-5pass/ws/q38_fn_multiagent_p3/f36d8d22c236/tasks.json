@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: model as a functional graph and identify that only pure cycles require an extra temporary-letter operation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement target-map consistency check and compute used_count, non-self edge count, and indegree per target (including self-edges).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Count pure cycles: nontrivial directed cycles where every node has original indegree 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Apply buffer condition (unused source letter or any indegree >= 2) and output -1 if pure cycles exist without buffer, otherwise edges + pure_cycles.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate with samples and edge cases: identical strings, full 26-letter permutation cycle, cycle with incoming edge, all 26 letters used with indegree >= 2, and self-loop components that create a buffer.",
+    "status": "done",
+    "result": ""
+  }
+]

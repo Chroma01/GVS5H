@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Establish structural lemmas: all 1\u21920 flips precede all 0\u21921 flips, off flips sorted descending by C, on flips sorted ascending by C, only matched 1s may receive an optional off/on pair, and the optimal optional set of size k is the k largest matched-1 costs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the offline pairwise top-k evaluation described above, including input parsing, edge cases (empty O/I/M, already equal, ties in C), and 64-bit/Python integer handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the provided sample tests and small brute-force checks (N <= 8) to validate the formula and tie handling.",
+    "status": "done",
+    "result": ""
+  }
+]

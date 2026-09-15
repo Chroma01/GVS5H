@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the primary index-block sqrt decomposition end-to-end in Python, including block construction, block-pair sum computation, 2D prefix over block pairs, row sweep for partial-A/full-B contributions, and column sweep for full-A/partial-B contributions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement adaptive partial-partial handling: group queries by (A-block, B-block), build a full prefix table for heavy groups, and use sorted-prefix merge with per-group caching for light groups.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on the provided samples and edge cases such as N=1, K=1, prefixes exactly at block boundaries, last short blocks, and equal values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If the primary implementation fails samples or has unacceptable performance/memory, switch to a different approach (e.g., persistent/wavelet prefix queries with heavy-prefix caching, or Mo/Hilbert ordering) instead of continuing to polish the same code.",
+    "status": "done",
+    "result": ""
+  }
+]

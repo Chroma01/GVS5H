@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the exact DP recurrence and indexing, including prefix sums, base cases, and the term `k * subarray_index`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the telescoping O(n^2) DP (edge weight Pn[r]*(Pc[r]-Pc[j]) + k*Pc[n] - k*Pc[j]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests (examples 1 and 2) and brute-force random tests on small n against the literal cost formula; report actual PASS/FAIL and fix any mismatch.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm n=1000 performance (~5*10^5 ops, of O(n^2), well within limits) and check edge cases n=1, single whole subarray, and large k/nums/cost values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Drop the CHT/monotone-deque and D&C/SMAWK optimization tasks since the O(n^2) telescoping approach is correct and fast enough.",
+    "status": "done",
+    "result": ""
+  }
+]

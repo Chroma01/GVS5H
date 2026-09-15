@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select direct scan over d = x - y with exact integer arithmetic.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement direct scan over d from 1 while d^3 < N, skipping non-divisors of N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each divisor d, compute m=N//d, D=12*m-3*d*d, and use math.isqrt to test perfect square.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Recover y from sqrt(D) when sqrt(D) > 3*d and (sqrt(D)-3*d) % 6 == 0, then set x=y+d and verify x^3-y^3==N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Print first valid pair or -1, and test edge cases including samples, N=1, N=7, N=26, and large sample.",
+    "status": "done",
+    "result": ""
+  }
+]

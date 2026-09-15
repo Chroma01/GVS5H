@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: use descending scan on d and min-cut on the layered potential graph to check feasibility.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Dinic max-flow and feasible(d) using the layered potential min-cut construction, including multi-edge handling and d=0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Scan d from N-1 down to 0 and output the largest feasible d.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test on provided samples and edge cases (multi-edges, K=M, d=0).",
+    "status": "done",
+    "result": ""
+  }
+]

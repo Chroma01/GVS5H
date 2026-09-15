@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement direct case-analysis solver with cost-1/2/3 witnesses and exact operation-array output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Fix sample 1 by selecting the minimum-cost solution with the earliest operation indices (prefer containment before union-cover or globally minimal pair) and re-run sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate edge cases (N=1, M=1/2/3, adjacent/equal intervals, ties, distinct indices) with a local checker that accepts any valid minimum-cost output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Finalize stdin/stdout handling, exact formatting, and O(M log M) performance.",
+    "status": "done",
+    "result": ""
+  }
+]

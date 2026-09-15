@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: model the operation as a complete ternary majority tree and derive the local DP rule.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse N and the binary string A robustly, handling both contiguous and whitespace-separated input forms.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement bottom-up level-by-level DP using compact arrays for cost-to-output-0 and cost-to-output-1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Define leaf base costs: cost 0 to output the current bit and cost 1 to output the opposite bit.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Define the internal-node combination rule: cost to output value v is the sum of the two smallest child costs for v.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Track or infer the root\u2019s current value and output the cost to force the root to the opposite value.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify correctness on the samples and edge cases such as N=1, all zeros, all ones, and maximum N=13.",
+    "status": "done",
+    "result": ""
+  }
+]

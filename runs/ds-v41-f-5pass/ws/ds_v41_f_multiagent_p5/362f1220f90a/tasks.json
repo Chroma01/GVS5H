@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Rewrite `generateString` with the greedy (T-force all windows; leftover cells \u2192 'a' and marked free; scan 'F' windows left to right; break each still-matching window via its rightmost free cell).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run the differential tester: EXACT verdict \"NO MISMATCHES across 6198 cases\"; statement examples verified (`TFTF/ab\u2192'ababa'`, `TFTF/abc\u2192''`, `F/d\u2192'a'`).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Edge cases (m=1, all-T consistent/conflicting, all-F, str2='a'/'b') verified consistent with exhaustive search.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Correctness argument confirmed: a flip to 'b' at a free cell turns a matching window's 'a' into 'b' (\u2260 str2's 'a'), and since broken cells become permanently fixed, already-broken windows stay broken; overlapping matching windows share 'a' at free cells so one flip breaks both; a fully-forced matching F window \u21d2 genuinely impossible.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Alphabet assumption validated: brute over set(str2)|{a,b} equals brute with an extra letter on all small cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Complexity check: O(n\u00b7m) time (\u2264 ~10^7) and O(n+m) space, within limits for n\u226410^4, m\u2264500.",
+    "status": "done",
+    "result": ""
+  }
+]

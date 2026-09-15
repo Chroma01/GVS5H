@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Read and parse N, Q, A, and queries; coordinate-compress A values for Fenwick indices.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement one-pass offline sweep by R: dp[i] = 1 + Fenwick max over values strictly < A_i; update Fenwick at rank(A_i) with dp[i]; after processing i, answer queries with R_i==i via Fenwick max over values \u2264 X_i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle X mapping to largest compressed A value \u2264 X (using bisect_right), and output answers in original query order with fast I/O; verified samples 1 and 2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Sanity-check strictness: dp uses strict `<` (prefix rank(A_i)-1), query uses non-strict `\u2264` (bisect_right count).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: separate the problem into per-window median cost computation and selection of k non-overlapping windows.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a sliding-window median cost routine using coordinate compression and two Fenwick trees (counts and sums) to compute the minimum operations for every length-x subarray.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the DP for selecting exactly k non-overlapping length-x windows from the precomputed window costs, allowing adjacent windows but forbidding overlap.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle indexing carefully so that window start/end positions and DP transitions are correct.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run the provided sample tests and edge-case tests against the current implementation and report any failures.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Handle edge-case tests for small n, large x, negative values, duplicate values, and k*x == n.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify time and space complexity: O(n log n + k n) time and O(n) or O(k n) space depending on DP optimization.",
+    "status": "done",
+    "result": ""
+  }
+]

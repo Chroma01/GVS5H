@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Read input, encode strings as bytes, swap so len(S) <= len(T), and reject if abs(len(S)-len(T)) > K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute 64-bit rolling-hash prefix arrays and powers for both strings for LCP queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement exact LCP function using hash binary search, memoryview/bytes verification, and linear fallback on verification failure.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement Landau-Vishkin DP over edit count e and diagonal d=j-i, storing furthest S index, with carry, insertion, deletion, substitution transitions and snake extension.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Accept immediately when a state reaches (len(S), len(T)); otherwise print No after K iterations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Test samples and edge cases: equal strings, length difference exactly K, K=1, long common prefix/suffix, all same characters, maximum length.",
+    "status": "done",
+    "result": ""
+  }
+]

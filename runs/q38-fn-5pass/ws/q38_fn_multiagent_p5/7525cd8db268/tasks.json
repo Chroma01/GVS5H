@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate and select the right-endpoint sweep approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Normalize every conflicting pair to (x,y) with x < y and bucket pairs by y.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Sweep r=1..n, processing all pairs with the same y as one batch before evaluating that endpoint.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Maintain the largest active x (top1), its active count, its unique owner pair id, and the second-largest distinct active x (top2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Accumulate the baseline valid-subarray count and per-pair gains incrementally: baseline += r - top1; if top1 is unique, gain[owner] += top1 - top2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Return baseline + max gain, treating missing gains as 0 so exactly one pair is always removed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate with examples and edge cases: single pair, duplicate pairs, same smaller endpoint, dominated pairs, and all pairs redundant.",
+    "status": "done",
+    "result": ""
+  }
+]

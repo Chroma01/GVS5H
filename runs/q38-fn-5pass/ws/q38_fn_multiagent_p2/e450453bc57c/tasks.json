@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document that the optimal target value for a window is a median, and define the window cost as the sum of absolute differences to that median.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement efficient sliding-window median/cost computation for all length-x windows using coordinate-compressed Fenwick trees (counts and sums), handling negative values and duplicates, and return the minimum operations cost for each window.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Design the DP state for choosing t non-overlapping windows within the first i array positions, with transitions for skipping position i or taking the window ending at i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the DP with optimized memory, ensuring it runs in O(nk) after window costs are computed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test edge cases such as k = 1, adjacent chosen windows, all equal elements, negative numbers, and windows covering the full array.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate the final implementation against the provided sample tests and constraints.",
+    "status": "done",
+    "result": ""
+  }
+]

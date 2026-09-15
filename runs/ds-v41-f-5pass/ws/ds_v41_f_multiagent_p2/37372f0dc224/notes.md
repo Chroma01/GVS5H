@@ -1,0 +1,8 @@
+- **Reduction:** A shortest palindrome with prefix S is formed by keeping S and appending the reverse of the part not covered by the longest palindromic suffix of S. If that suffix has length k, the answer is S + reverse(S[:n-k]) and has length 2n-k.
+- **Palindrome-suffix to prefix match:** A suffix S[n-k:] is a palindrome exactly when it equals reverse(S)[:k]. Thus k is the longest border of T = reverse(S) + '#' + S. Because '#' is not an uppercase letter, no border can cross the separator, so pi[-1] <= n and equals k.
+- **KMP prefix function:** Build pi over T in O(|T|). For i from 1 to m-1, take c=T[i]; fallback j=pi[j-1] while j>0 and T[j]!=c; if T[j]==c increment j; set pi[i]=j. Then k=pi[-1].
+- **Construction:** ans = S + S[:n-k][::-1]. If S is already a palindrome, k=n and nothing is appended.
+- **Complexity:** O(n) amortized time and O(n) memory. n <= 500000, so T has length about 1e6; the Python loop over bytes is fast enough.
+- **Edge cases:** n=1 gives k=1 and answer S. Any single last character is a palindrome, so for n>=1 we always have k>=1. Empty input is handled defensively.
+- **I/O:** Use sys.stdin.buffer.read().strip() and sys.stdout.buffer.write(ans + b'\n').
+- **Memory note:** pi is the main memory cost. Deleting pi, T, and R before building ans lowers peak memory.

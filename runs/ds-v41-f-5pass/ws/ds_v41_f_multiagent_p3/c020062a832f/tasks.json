@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive per-pair contribution as a function of k and reduce total change to per-element delta (N-2i-1) at transition k=M-1-A_i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Express answer(k) = inv0 + diff[M-k] via prefix sums over bucket[A_i+1].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement O(N log M + M) solution in Python.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verified against all 3 public samples (PASSED).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Edge cases covered: M=1, N=1, duplicates, diff[M]=0 invariance.",
+    "status": "done",
+    "result": ""
+  }
+]

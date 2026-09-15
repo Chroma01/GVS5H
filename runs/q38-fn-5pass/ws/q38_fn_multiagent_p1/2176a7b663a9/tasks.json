@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and structural validation: shortest paths are induced, the graph has no induced P5, so only paths of at most 3 edges need to be considered.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement prefix/suffix range minima and the direct/two-edge/three-edge query formula with strict inequalities.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test samples and edge cases: touching endpoints, containment, identical intervals, empty side sets, isolated vertices, and large weights.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If tests fail, debug strict range boundaries or switch to an auxiliary segment-tree graph / per-source Dijkstra fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

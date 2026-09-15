@@ -1,0 +1,9 @@
+- **Problem reduction:** By linearity, each number i contributes i * 10^(total digit length after i), summed over all permutations. For a fixed i, if the after-set S has size k, there are k!(N-1-k)! ways to order after/before i.
+- **Generating polynomial:** Let a_l = 10^l mod MOD. P(x)=∏(1+a_l x)^{c_l}, where c_l is count of numbers 1..N with l digits. Coefficient p_k = sum over subsets of size k of 10^(total digit length). For distinguished numbers of length l, remove one factor: Q(x)=P(x)/(1+a_l x).
+- **Answer formula:** ans = Σ_l s_l * Σ_{k=0}^{N-1} k!(N-1-k)! * [x^k] Q_l(x), where s_l is the value-sum of numbers of length l.
+- **Fast P computation:** Use logarithmic derivative. With D(x)=∏(1+a_l x) and C(x)=Σ_l c_l a_l ∏_{m≠l}(1+a_m x), we have P'D = PC. Recurrence: (s+1)p_{s+1} = Σ_j C[j]p_{s-j} - Σ_{i≥1} D[i](s-i+1)p_{s-i+1}. Only active lengths matter, and there are at most 6 for N ≤ 2e5, so this is O(6N).
+- **Division by linear factor:** q_0=p_0, q_k=p_k - a_l q_{k-1}. Accumulate the weighted dot product directly to avoid storing q.
+- **Complexity:** O(N * active) ≈ O(N) time since active ≤ 6; O(N) memory for p, fact, inv, w. All arithmetic modulo 998244353.
+- **Edge cases:** N=1 gives answer 1. c_l and s_l are computed from decimal intervals [10^(l-1), min(N,10^l-1)]. Inverses up to N are valid because MOD is prime and MOD > N.
+- **Pitfalls handled:** Weight depends on subset size k, so the polynomial variable tracks count, not digit length. Only one factor is removed per distinguished length class, not the whole power. D and C use distinct active classes only. The recurrence includes a harmless extra zero term when i=s+1.
+- **Sanity checks:** N=2 gives 12+21=33. N=3 gives 1332 with all numbers length 1. The recurrence was also checked against direct expansion for N=10.

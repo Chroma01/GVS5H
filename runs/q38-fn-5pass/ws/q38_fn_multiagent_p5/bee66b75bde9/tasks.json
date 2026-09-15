@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce the problem to nonincreasing row prefix lengths and derive the black/white dominance condition.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the row-prefix lower/upper bound method: for each constrained row, compute L_x as the maximum black column and U_x as the minimum white column minus one, then scan constrained rows in descending order while maintaining the maximum L seen so far and check that it never exceeds U_x.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation on the provided sample tests and edge cases such as rows with only black constraints, only white constraints, and same-row conflicts.",
+    "status": "done",
+    "result": ""
+  }
+]

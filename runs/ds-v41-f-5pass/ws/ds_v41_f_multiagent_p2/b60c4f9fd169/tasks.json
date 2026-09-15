@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement Landau-Vishkin/Myers furthest-reaching diagonal greedy (insert/delete/substitute) with rolling-hash binary-search snake for LCP",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Add early reject when |n-m| > K and handle \"0 operations\" (initial lcp) case",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Produce final production solver reading K, S, T from stdin and printing Yes/No; remove out-of-bounds stress harness",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify all 3 provided samples via stdin (3/abc/awtf\u2192Yes, 2/abc/awtf\u2192No, 17/twothousandtwentyfour/happynewyear\u2192Yes)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Stress test the recurrence against an O(nm) edit-distance oracle on small/random inputs",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Edge coverage: equal strings, |len diff| = K, single substitution/deletion/insertion, reverse swap, length-1 strings",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Performance validated: O(|S|+|T|+K^2 log L) fits within limits for lengths up to 5*10^5 and K\u226420",
+    "status": "done",
+    "result": ""
+  }
+]

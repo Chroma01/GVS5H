@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: characterize problem, complexity target, and candidate approaches (monotonic-stack contribution, Cartesian tree, right-endpoint deque sweep, divide & conquer, offline union-find).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement `sum_of_mins(nums, k)` via monotonic-stack canonical-min boundaries with the capped two-sided pair-count formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the capped pair-count helper via inclusion-exclusion with G(t)=(t+1)(t+2)//2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Obtain max-subarray sum by reusing `sum_of_mins` on negated values; combine into `Solution.minMaxSubarraySum`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify against Examples 1 and 2 and brute-force random small arrays (varying k, negatives, duplicates) plus edge cases (k=1, all-equal, all-negative, n=1, k=n); report the SAMPLE TESTS verdict.",
+    "status": "done",
+    "result": ""
+  }
+]

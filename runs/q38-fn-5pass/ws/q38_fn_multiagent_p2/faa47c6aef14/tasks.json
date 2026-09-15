@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce the problem to reachability in the P/Q cycles containing X plus a shortest common supersequence of two directed paths.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement input parsing and inverse permutations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Mark the P-cycle and Q-cycle containing X and reject if any A_i=1 is outside the P-cycle or any B_i=1 is outside the Q-cycle.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute distances from X along inverse P/Q, find farthest initial red/blue boxes, and construct forward paths R and B from farthest to X excluding X; handle empty paths.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute LCS length of R and B by mapping R positions and running strict LIS over B's mapped positions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Output len(R)+len(B)-LCS, and check edge cases: no balls, balls only at X, one empty path, and conflicting orders requiring repeated boxes.",
+    "status": "done",
+    "result": ""
+  }
+]

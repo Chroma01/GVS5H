@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: derive capped counting and greedy unranking approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement capped factorial/counting helper for remaining odd/even counts and required next parity, capped above 10^15.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement greedy lexicographical constructor in `Solution.permute` that tries unused numbers in increasing order, validates parity alternation, and uses completion counts to select the k-th permutation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle edge cases: n=1, impossible parity counts, k exceeding total valid permutations, and empty-list return.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Add tests for examples and additional cases to verify lexicographical ordering and out-of-range behavior.",
+    "status": "done",
+    "result": ""
+  }
+]

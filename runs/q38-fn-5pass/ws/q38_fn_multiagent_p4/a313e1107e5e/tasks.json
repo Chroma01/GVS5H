@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python solution using offline sweep by R with two Fenwick trees over compressed values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle coordinate compression of A values and upper_bound for query X thresholds.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Ensure strict increasing LIS dp uses rank-1 and equal values do not extend each other.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run sample tests and verify outputs; if failures, fix or switch approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Backup approach if needed: offline sweep by X with Fenwick over positions, batching equal values.",
+    "status": "done",
+    "result": ""
+  }
+]

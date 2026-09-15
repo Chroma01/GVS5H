@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive reduced model: legal moves = missing opposite-color internal edges + any between-component edge; terminal = single complete bipartite component K_{x,N-x}; total moves = x(N-x)-M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "N odd: outcome parity fixed = M mod 2 (Aoki iff M odd), structure irrelevant (confirmed by sample 3).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "N even: derive closed-form rule in terms of o, Esum, B, Ce, D.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Brute-force verify formula over ALL bipartite graphs N=1..6 vs memoized edge-bitmask minimax reference: 0 mismatches (N=1..6).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Write final stdin/stdout program implementing the verified formula (handle N,M up to 2e5, iterative to avoid recursion limits) and confirm SAMPLE TESTS PASS on all 3 samples.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Precompute cost[pos][c]=|caption[pos]-c| via 26x26 distance table.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement right-to-left DP storing only C with A/B recomputed on the fly, using min1/min2 exclusion and INF handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement greedy left-to-right lexicographic reconstruction using A/B/C suffix states.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle n<3 -> \"\" and infeasible total -> \"\".",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify the 3 provided examples (\"cccc\", \"aaa\", \"\").",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Execute brute-force checker (exhaustive length 1..4 over 'abc' + random length 5..6 over 'abcd'): PASS 4120/4120, reconstruction length always n.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Performance/memory test for n=5*10^4 (all-'a', all-'z', random): completes within a few seconds, ~5MB, no boundary index errors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Final submission contains only class Solution (no leftover scaffolding).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select fixed-frequency DP with adjacent forward-change savings.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement frequency counting and enumerate target frequencies f from 1 to len(s).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each f, run a 2-state DP over letters with states keep=0/1, using node costs and adjacent savings as specified.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Ensure the final answer corresponds to a non-empty good string (or note that deleting all cannot improve the minimum for the given constraints).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run sample tests, edge cases, and small brute-force random checks; fix failures or switch approach if needed.",
+    "status": "done",
+    "result": ""
+  }
+]

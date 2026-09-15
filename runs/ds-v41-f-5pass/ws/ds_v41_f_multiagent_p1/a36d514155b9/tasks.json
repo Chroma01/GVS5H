@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive combinatorial reduction: total = C(N-2, k-2) * D, N = m*n, D = sum over unordered cell pairs of Manhattan distance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute 1D sum S(L) = L(L-1)(L+1)/6 and combine: D = n^2*S(m) + m^2*S(n).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the solution: modular binomial C(N-2,k-2) via factorials/inverse factorials, plus the closed form, mod 1e9+7.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify on provided examples and brute-force small cases (k=2, k=N, m=1 or n=1); sample tests passed (m=2,n=2,k=2 -> 8; m=1,n=4,k=3 -> 20).",
+    "status": "done",
+    "result": ""
+  }
+]

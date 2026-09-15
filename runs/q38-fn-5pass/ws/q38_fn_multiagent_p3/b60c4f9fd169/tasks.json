@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse K, S, and T from stdin, and immediately output No if abs(len(S) - len(T)) > K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Trim common prefix and suffix before running the edit-distance DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement a narrowed banded Ukkonen edit-distance DP with rolling arrays.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Add early termination when the minimum value in the current band exceeds K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Print Yes if the final edit distance is <= K, otherwise print No.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify the solution on the public sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

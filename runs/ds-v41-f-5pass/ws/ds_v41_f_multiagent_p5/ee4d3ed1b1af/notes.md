@@ -1,0 +1,15 @@
+- **Verified verdicts (run in this file):** Example1 `abaacbaecebce`/`ba*c*ce` -> 8 PASS; Example2 `baccbaadbc`/`cc*baa*adb` -> -1 PASS; Example3 `a`/`**` -> 0 PASS; Example4 `madlogic`/`*adlogi*` -> 6 PASS. Overall sample verdict: PASS.
+- **Edge verdict:** PASS on all 12 hand cases including only-A/B/C (2/1/1), `"**"`->0, overlap `"aaa"/"a*a*a"`->3, `"aa"/"a*a*a"`->-1.
+- **Timing:** the four n=1e5 runs (all-'a' adversarial, random abc, ~10-char embedded literals, guaranteed no-match) each complete well under a second.
+- **Reduction:** p has exactly two '*', so p = A + '*' + B + '*' + C with literals A, B, C (possibly empty). A substring matches iff there are ordered non-overlapping occurrences A@a, B@b, C@c with a+lenA <= b and b+lenB <= c. Minimal enclosing substring for a triple has length c+lenC-a; an empty literal's adjacent '*' absorbs the gap on that side.
+- **Branch by nonempty count:** 0 -> p=="**" -> answer 0. 1 -> that literal's length if it occurs, else -1. 2 or 3 -> below.
+- **All nonempty (A,B,C):** fix b in occB; best a = rightmost occA <= b-lenA, best c = leftmost occC >= b+lenB (independent, so optimal for that b); cand = occC[ic]+lenC - occA[ia]; minimize over b.
+- **A empty (B,C):** leading '*' absorbs prefix, l=b; per b pick leftmost occC >= b+lenB; cand = c+lenC-b.
+- **C empty (A,B):** trailing '*' absorbs suffix, r=b+lenB; per b pick rightmost occA <= b-lenA; cand = b+lenB-a.
+- **B empty (A,C):** fix c, pick rightmost occA <= c-lenA; cand = c+lenC-a.
+- **Correctness:** every candidate is a genuine matching substring (>= optimum); for the optimal triple its own b (or c) yields a candidate <= that span (<= optimum). Hence equality. The `else` branch is only reachable with B empty and A,C nonempty (all 2-nonempty subsets are covered by the explicit branches).
+- **Occurrence enumeration:** KMP with overlap continuation `j = fail[j-1]` after each full match lists all start indices in O(n+m). Overlap matters, e.g. A="aa" in s="aaa" -> [0,1].
+- **Two-pointer minimization:** occA/occB/occC are increasing, targets b-lenA and b+lenB (or c-lenA) are monotone, so pointers ia/ic only advance. O(n+m) overall, no bisect/segment tree.
+- **Break rule:** in A,B,C and B,C cases, once ic==len(occC) every later b has a larger target, so no C can qualify -> break is safe. ia exhaustion only skips the current b.
+- **Disjointness:** encoded end-aware as a <= b-lenA and c >= b+lenB (never overlap-unsafe).
+- **No solution:** if a needed occurrence list is empty or no valid triple/pair exists, ans stays INF and -1 is returned.

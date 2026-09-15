@@ -1,0 +1,9 @@
+- **Core formula:** For a fixed number x, choose the subset B of other numbers placed after it. If |B|=k, the number of permutations is k!(N-1-k)!, and x is shifted by 10^{sum of digit lengths in B}. Thus the total answer is a sum over digit classes of (sum of values in the class) times a weighted subset sum.
+- **Digit classes:** For N<=2e5 there are at most six lengths. For length d, q_d=10^d mod 998244353, c_d is the count, and val_d is the sum of all numbers in that length range.
+- **Full generating polynomial:** F(z)=prod_d (1+q_d z)^{c_d}. Its coefficient a_k is the sum of 10^{total digits} over all k-element subsets of all numbers.
+- **Small-degree recurrence:** Let D(z)=prod_d(1+q_d z) and Num(z)=sum_d c_d q_d D(z)/(1+q_d z). Since F'D=F Num, comparing coefficients gives a recurrence for a_{n+1} using only the last O(m) coefficients, where m<=6. D and Num are built by small polynomial multiplication and synthetic division.
+- **Excluding one number:** For a number of length d, the needed polynomial is G_d(z)=F(z)/(1+q_d z). Because the divisor has constant term 1, coefficients are obtained by g_0=1 and g_k=a_k-q_d g_{k-1}.
+- **Combination without inverse binomials:** The permutation count factor is k!(N-1-k)!, so precompute weight[k]=fact[k]*fact[N-1-k] mod M. For each class, W_d=sum_k g_k weight[k], and answer=sum_d val_d W_d mod M.
+- **Implementation details:** Compute factorials and modular inverses up to N. Compute a only up to N-1, which is sufficient for all needed g_k. Use modulo in the recurrence and in g updates; accumulate W without modulo until the end of each class to reduce modulo operations. Handle N=1 separately by the general code path.
+- **Complexity:** O(N * number_of_digit_lengths) time and O(N) memory.
+- **Checks:** Small cases match: N=1 gives 1, N=2 gives 33, N=3 gives 1332.

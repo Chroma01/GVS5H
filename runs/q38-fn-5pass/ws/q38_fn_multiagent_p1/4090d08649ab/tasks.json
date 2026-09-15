@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove/record the component characterization and the identity components = |S| - adjacent_present_pairs for any subarray.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(N) sweep-line maintaining last[v], sum_last, and adjacent_min_sum; update only adjacent pairs involving the current value and accumulate answer = sum_last - adjacent_min_sum for each right endpoint.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle edge cases: N=1, values 1 and N, absent values, duplicate occurrences, and large 64-bit/Python-int answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run sample tests and random brute-force checks for small N to verify f computation and summation; ensure O(N) time/memory.",
+    "status": "done",
+    "result": ""
+  }
+]

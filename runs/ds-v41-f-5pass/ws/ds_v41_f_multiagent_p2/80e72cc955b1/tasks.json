@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove per-element cost c(x)=number of base-4 digits, and derive per-query formula answer = max(c(r), ceil(total_cost(l..r)/2)); verified on [[1,2],[2,4]]->3 and [[2,6]]->4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement `minOperations` with prefix-cost P(n) over powers of 4, looping queries computing max(c(r), ceil((P(r)-P(l-1))/2)) and summing.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm closed-form prefix P(n)=pref[L-1]+L*(n-4^(L-1)+1) handles exact powers of 4 (bisect_right), l=1 (P(0)=0), and r up to 1e9 (max cost 15, arrays sized to 16).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Complexity sanity-check: O(log_4 r)~16 per query via bisect, O(Q*16) total, no per-range iteration; Python big ints handle sums up to ~7.5e14.",
+    "status": "done",
+    "result": ""
+  }
+]

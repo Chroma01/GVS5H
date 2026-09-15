@@ -1,0 +1,10 @@
+- **Problem summary:** Simulate M axis-aligned moves from (Sx,Sy), compute final position, and count distinct houses lying anywhere on the union of traversed segments.
+- **Final position:** Update current x,y sequentially. Coordinates can reach about 2e14, so Python integers are used and overflow is not a concern.
+- **Segment representation:** Horizontal moves (L/R) are stored as inclusive integer intervals on their fixed y. Vertical moves (U/D) are stored as inclusive intervals on their fixed x. Both endpoints are included because movement passes through and arrives at segment ends.
+- **Grouping:** Horizontal intervals are grouped by y in a defaultdict(list); vertical intervals by x.
+- **Merging:** For each group, sort intervals and merge when next_l <= current_r + 1. Since house coordinates are integers, adjacent intervals [1,2] and [3,4] have no integer gap, so merging them is safe and simplifies point queries.
+- **House query:** A house (hx,hy) lies on a horizontal segment iff, in row hy, the rightmost merged interval start <= hx has end >= hx. Use bisect_right on the starts list. If not covered horizontally, perform the symmetric check on column hx with vertical intervals. Count the house once if either check succeeds.
+- **Complexity:** Sorting all intervals per row/column totals O(M log M). Each of N houses needs O(log M) for row and, if necessary, O(log M) for column. Total time O((M+N) log M); memory O(M+N).
+- **Edge cases:** Overlapping or repeated visits are deduplicated by interval merging and single counting per house. Perpendicular crossings are handled because either check can mark coverage. The start point has no house by constraints. Moves have positive length C_i >= 1, so intervals are non-degenerate.
+- **Verification:** Sample 1 produces final (2,3) and count 2: houses (2,2) and (2,1) are hit, while (3,3) is not. Sample 2 produces final (3000000000,0) and count 0.
+- **Implementation notes:** Use sys.stdin.buffer.read().split() for fast input. Direction tokens are bytes, compared directly with b'L', b'R', b'U', b'D'. bisect_right is imported from bisect.

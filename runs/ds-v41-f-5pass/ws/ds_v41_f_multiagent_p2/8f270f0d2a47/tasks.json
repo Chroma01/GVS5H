@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "answer = count_up_to(r) - count_up_to(l-1); x <= 0 early-returns 0 (handles l = 1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Base case: return 0 if not started; return 1 if p == 0 (zero-digit present); else 1 iff p % s == 0 (s >= 1 guaranteed when started).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement `count_up_to(X)` exact-product digit DP with state (pos, tight, started, s, p); leading zeros don't affect product/sum and don't count as zero digit; memoize only non-tight states via `memo.get(key) is not None`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Hand-verified count_up_to(10) = 10 and sample re-derivations match: [10,20] -> 2, [1,15] -> 10; no interpreter is available so further execution attempts are futile.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "State space bounded (~9 positions x s<=81 x digit-multiset products <= C(18,9) ~ 48620), well within limits for r < 10^9; recursion depth <= 9.",
+    "status": "done",
+    "result": ""
+  }
+]

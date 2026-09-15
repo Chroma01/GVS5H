@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete solution: parse input, build maximum spanning tree of the H x W grid using edge weight min(height[u], height[v]), preprocess binary lifting tables for depth, ancestors, and minimum edge weight along jumps, and answer all queries using the bottleneck formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate correctness and performance on sample tests and edge cases such as single-cell grids, same-building queries, equal heights, and maximum-size inputs.",
+    "status": "done",
+    "result": ""
+  }
+]

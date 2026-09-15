@@ -1,0 +1,8 @@
+- **Approach:** Binary search the answer K. For a fixed K, test feasibility by pairing the K smallest mochi as tops with the K largest mochi as bottoms, in sorted order: for every i from 0 to K-1, require 2*A[i] <= A[N-K+i].
+- **Correctness:** If K pairs are possible, let the chosen tops and bottoms be sorted as T and B. A valid matching implies 2*T[i] <= B[i] for all i; otherwise the K-i largest tops would be too large for the first i+1 bottoms and there would be too few larger bottoms. Since T[i] >= A[i] and B[i] <= A[N-K+i], feasibility implies 2*A[i] <= A[N-K+i]. Conversely, if this condition holds, pairing A[i] with A[N-K+i] directly constructs K valid pairs.
+- **Monotonicity:** If K is feasible, then K-1 is feasible because the bottom indices shift right, making the inequalities no harder. Therefore the feasible K values form a prefix, and binary search finds the maximum.
+- **Implementation details:** Read all integers at once, use high = N//2 + 1 as an exclusive upper bound, and let feasible(0) return True. The feasibility check exits early on the first failure.
+- **Complexity:** Binary search performs O(log N) checks. Each check is O(K), and the total number of loop iterations over the search is small enough for N = 5e5. Overall time is O(N log N) in the worst case, memory is O(N).
+- **Edge cases:** Handles duplicates, odd N, no possible pairs, and K = 0. Since K <= N//2, the K smallest and K largest indices are disjoint.
+- **Samples:** Sample 1 satisfies the check for K = 3. Sample 2 fails K = 1. Sample 3 yields K = 6.
+- **Superseded ideas:** Reverse greedy, multiset/deque matching, and direct two-pointer greedy are not needed for this implementation.

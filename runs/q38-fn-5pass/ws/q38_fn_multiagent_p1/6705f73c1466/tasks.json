@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the shifted-position median method in Python.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify the implementation on the provided sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Check edge cases: single `1`, all `1`s, already contiguous `1`s, and large input performance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If sample tests fail, debug indexing or switch to the weighted-gap method as an alternative.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement `minLength` using binary search over L with the L == 1 alternating-mismatch check and the L >= 2 run-length floor(run_len / (L + 1)) sum check.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verified correctness: official examples pass and brute-force comparison over all binary strings length 1..9 across all numOps yields zero mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirmed feasibility branches are correct (L==1 alternating cost min(m1, n-m1); L>=2 run-sum floor(len/(L+1))); no mismatch found.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Dropped the priority-queue longest-run-splitting heuristic; binary-search + run arithmetic is the intended approach.",
+    "status": "done",
+    "result": ""
+  }
+]

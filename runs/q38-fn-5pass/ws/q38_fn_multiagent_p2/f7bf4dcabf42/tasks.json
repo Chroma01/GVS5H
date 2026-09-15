@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python solution using bitmask LCS-row automaton and verify sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Check edge cases: N=1, repeated characters in S, M=1, and all transitions modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If sample tests fail, debug transition/off-by-one issues or switch to the earliest-end-position tuple automaton.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Formalize A/B as 0^X1^Y <-> 1^Y0^X; derive invariants (ordered 1-positions mod X, ordered 0-positions mod Y, preserved counts/order) and prove they are necessary conditions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement candidate O(N) criterion (X+Y>N \u21d2 S==T; else both ordered residue lists must match); samples pass and exhaustive N\u22648 agreement confirmed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Exhaustively validate criterion via union-find for all N\u226412, all valid (X,Y), plus N=13..15 spot checks (including balanced X=Y pairs targeting the gcd(X,Y)>1 risk); no MISMATCH found, criterion confirmed as component\u21d4signature bijection.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Finalize O(N) solution with fast stdin/stdout I/O; verified Sample 1 (Yes) and Sample 2 (No) and edge cases (X+Y>N, count_ones<Y, count_zeros<X, all-0/all-1); algorithm runs in O(N) time/space well within limits for N=5\u00d710^5.",
+    "status": "done",
+    "result": ""
+  }
+]

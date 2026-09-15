@@ -1,0 +1,13 @@
+- **Core reduction:** The answer can be computed by linearity over unordered pairs of cells. Instead of iterating over arrangements, count how many arrangements contain each fixed pair of distinct cells.
+- **Pair count:** For a grid with `N = m * n` cells, any fixed unordered pair of cells is included in exactly `C(N - 2, k - 2)` valid arrangements, because the remaining `k - 2` pieces are chosen from the remaining `N - 2` cells.
+- **Distance decomposition:** Manhattan distance separates into row distance plus column distance. The total pairwise Manhattan distance over all unordered cell pairs is the sum of independent row and column contributions.
+- **Row contribution:** For row distance `d`, there are `m - d` row pairs and `n^2` ways to choose one cell in each row. Thus row contribution is `n^2 * sum_{d=1}^{m-1} d * (m - d)`.
+- **Column contribution:** Similarly, column contribution is `m^2 * sum_{d=1}^{n-1} d * (n - d)`.
+- **Closed form:** For a dimension length `L`, `sum_{d=1}^{L-1} d * (L - d) = L * (L - 1) * (L + 1) / 6`. This avoids any loop over distances.
+- **Final formula:** `answer = C(m*n - 2, k - 2) * (n^2 * m*(m-1)*(m+1)/6 + m^2 * n*(n-1)*(n+1)/6) mod 1e9+7`.
+- **Modular arithmetic:** The modulus `1e9+7` is prime. Division by 6 is handled using `INV6 = pow(6, MOD - 2, MOD)`.
+- **Combination implementation:** Since `N <= 1e5`, factorials and inverse factorials modulo `MOD` are sufficient. The implementation caches `_fact` and `_invfact` at class level to avoid recomputing them across multiple calls.
+- **Cache extension detail:** `_ensure_fact(n)` extends factorials from the previous maximum to `n`, then recomputes inverse factorials downward from `n` to the old boundary. Existing lower inverse factorials remain valid.
+- **Edge cases:** `k = 2` gives `C(N - 2, 0) = 1`, so the answer is just the total pairwise cell distance. `k = N` gives `C(N - 2, N - 2) = 1`. `N = 2` is handled correctly. Invalid `k` values are guarded even though constraints exclude them.
+- **Complexity:** First call with maximum `N` costs `O(N)` time and `O(N)` space for factorial tables. Distance computation is `O(1)`. Subsequent calls with no larger `N` are `O(1)` apart from modular arithmetic.
+- **Validation:** For `m = 2, n = 2, k = 2`, total pairwise distance is `8` and combination factor is `1`. For `m = 1, n = 4, k = 3`, total pairwise distance is `10` and combination factor is `2`, giving `20`.

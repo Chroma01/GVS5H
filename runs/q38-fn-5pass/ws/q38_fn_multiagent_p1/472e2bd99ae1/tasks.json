@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate candidate approaches and pitfalls.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement weighted canonical-tree heap over compressed unique values as the primary solution.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Sort and compress each sequence into descending unique values with multiplicities capped at K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Reorder the three dimensions by compressed length to improve heap behavior.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Encode heap states compactly and generate canonical children with bounds checks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Accumulate multiplicities in non-increasing value order and output the value when the count reaches K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate against public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Enumerate the four diagonal directions and define the fixed clockwise 90-degree turn mapping (DR\u2192DL\u2192UL\u2192UR\u2192DR, i.e. d\u2192(d+1)%4).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute straight alternating suffix lengths R[d][cell] (starting at each cell in each direction) in the correct reverse iteration order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute straight alternating prefix lengths f[d][cell] (ending at each cell in direction d, starting at value 1) in the correct forward iteration order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Combine first arm f[d] with second arm R[(d+1)%4] at each turn vertex, subtracting 1 for the shared vertex; R>=1 also covers zero-turn straight segments.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Initialize answer to 1 if any cell holds value 1 (handles length-1 and no-turn cases), 0 otherwise.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate against all four provided examples (5, 4, 5, 1) and edge cases (1x1 grid, no valid segment).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Confirm O(n*m) time and memory with small constant, suitable for n,m <= 500.",
+    "status": "done",
+    "result": ""
+  }
+]

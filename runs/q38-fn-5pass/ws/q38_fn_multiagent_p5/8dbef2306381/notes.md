@@ -1,0 +1,12 @@
+- **Core reduction:** Merge adjacent bad intervals, then take complementary maximal safe intervals. Since jumps only move forward, intervals can be processed left to right.
+- **Boundary locality:** With max jump `B <= 20`, any jump entering a safe interval lands in its first `B` squares, and any jump leaving starts from its last `B` squares.
+- **State per interval:** For each safe interval, store only the minimum reachable square for each residue modulo `A`.
+- **Why minima suffice:** Inside a contiguous safe interval, if the minimum reachable square of residue `r` is `m_r`, then every square `x` in the interval with `x >= m_r` and `x ≡ r (mod A)` is reachable by adding steps of length `A`.
+- **Closing an interval:** Precompute shortest total jump length between residues modulo `A` using steps `A..B` via Dijkstra on at most 20 residue states. For entry minima `entry[s]`, compute `dist[r] = min_s entry[s] + offset[s][r]` when it does not exceed the interval end.
+- **Leaving an interval:** Any leaving jump lands at `q = end + off` for some `1 <= off <= B`. Precompute the safe interval containing each such `q` by binary search over safe interval starts.
+- **Propagation:** For each safe landing offset, try all valid step lengths `step` such that `p = q - step` lies in the current interval. If `p >= dist[p % A]`, update the target interval's entry for residue `q % A` with `q`.
+- **Entry improvement skip:** If the target already has a smaller or equal entry with the same residue, the new landing is unnecessary because the smaller entry can reach it by repeated `A` steps inside the same safe interval.
+- **Special cases:** `A = B` is handled naturally because Dijkstra offsets only connect same residues. `A = 1` also works, reducing to one residue and step-1 closure.
+- **Edge cases:** Adjacent bad intervals are merged; empty safe intervals are skipped. Direct jumps over unreachable or skipped safe intervals are handled by target lookup. First and last squares are safe by constraints.
+- **Answer:** Recompute closure for the last safe interval. `N` is reachable iff `N >= dist[N % A]`.
+- **Complexity:** With `K <= M+1`, `A,B <= 20`, time is roughly `O(K(A^2 + B^2) + KB log K)`, and memory is `O(KA + KB)`.

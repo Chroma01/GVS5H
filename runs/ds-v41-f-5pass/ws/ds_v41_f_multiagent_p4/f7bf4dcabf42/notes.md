@@ -1,0 +1,8 @@
+- **Problem:** For every k, count length-M strings T over 26 lowercase letters with LCS(S,T)=k, modulo 998244353. N<=10, M<=100.
+- **State:** For a fixed processed prefix of T, the LCS DP row D[0..N] is nondecreasing, starts at 0, and increases by 0 or 1. Encode it as an N-bit mask, where bit i-1 is D[i]-D[i-1]. There are at most 2^N=1024 states.
+- **Transition:** Decode mask to row. For appended letter c, set nrow[0]=0. For i=1..N, nrow[i] = max(row[i], nrow[i-1], row[i-1]+1 if S[i-1]==c). Re-encode nrow differences as a mask. This is exactly the standard LCS column-update recurrence.
+- **Automaton DP:** cnt[mask] is the number of T prefixes that lead to this LCS-row state. Start with cnt[0]=1 using the all-zero row. Repeat M times: for each state and each of 26 letters, add cnt[mask] to the next state. Take modulo.
+- **Aggregation:** After M letters, D[N] equals the number of 1-bits in the mask, i.e. popcount(mask). Therefore ans[k] = sum cnt[mask] over masks with popcount k.
+- **Complexity:** Precompute O(2^N * 26 * N). Main DP O(M * 2^N * 26). Memory O(2^N). Easily fast for N<=10, M<=100.
+- **Checks:** For S=aaa, M=4, k=3 counts strings containing aaa as a subsequence, i.e. at least three 'a's, giving 101, matching the sample. For S=ab, M=2, counts are 576, 99, 1.
+- **Implementation notes:** Use bin(mask).count("1") instead of bit_count() for broader Python compatibility. Mod after every addition. Handle k=0 and k=N naturally; no special cases needed.

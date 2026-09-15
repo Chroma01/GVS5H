@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N,S,T; build f[c] from each S[i]->T[i]; print -1 if any letter of S maps to two different T letters.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Print 0 when S == T.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Print -1 when |distinct(S)|==26 and |distinct(T)|==26 and S != T (non-identity permutation on full alphabet, no spare label).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implemented cost = E + (number of length>=2 cycles whose every node has in-degree exactly 1), with E = #{present c : f(c)!=c}; passed all 4 public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Brute-force verified the cost model and -1 rule against BFS on small alphabets (k=2,3,4); no mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Final self-contained stdin->stdout program is complete and emits the verified answer.",
+    "status": "done",
+    "result": ""
+  }
+]

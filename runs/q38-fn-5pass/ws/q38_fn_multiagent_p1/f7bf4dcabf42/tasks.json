@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python solution using bitmask LCS-row automaton (mask transition, M-step DP, popcount aggregation, I/O).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run sample tests and verify outputs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If bitmask transition is incorrect, implement explicit LCS-row enumeration automaton as fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

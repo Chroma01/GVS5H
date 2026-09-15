@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement input parsing, length-difference rejection, and common prefix/suffix trimming.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement a fast deterministic LCP helper using bytes/memoryview chunked comparison.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement exact Landau-Vishkin furthest-reaching DP over diagonals with insert/delete/substitute transitions, boundary handling, and early success checks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Add quick small-string checks (empty after trim, max length <= K) and output Yes/No.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test on provided samples and edge cases (equal strings, prefix/suffix, length difference exactly K, one-character strings, long periodic strings, K=20).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "If the Landau-Vishkin approach fails or is too slow, implement a banded DP fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

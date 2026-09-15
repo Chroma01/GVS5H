@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and selection of the primary inclusion-exclusion + CDQ/NTT approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement endpoint checks and constraint compression: scan S, compute whites before each black, keep constraints (j, a_j) with a_j >= j, remove redundant constraints with equal a_j by keeping the largest j, and ensure p and q are strictly increasing.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute factorials and inverse factorials up to N, and implement an optimized iterative NTT convolution for modulus 998244353 with a naive fallback for small arrays.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the CDQ divide-and-conquer DP for the signed inclusion-exclusion recurrence with the factorial-kernel convolution, including dummy/base handling and the final answer formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Integrate everything into a single stdin/stdout Python program and run the provided samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Drop unnecessary brute-force validation and alternative-approach tasks after public sample validation passed.",
+    "status": "done",
+    "result": ""
+  }
+]

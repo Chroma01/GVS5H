@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Public samples 1 and 2 produce correct output (Yes/No).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Differential validator (exhaustive BFS-vs-key for small N, random BFS for N=13..16, no-op regime) reported PASS with no counterexample.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Manual spot-checks for small N show residue-key classes coincide with reachable classes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Guard logic (X+Y>N, frozen S/T, no-move regime) verified exact, so guards only remove false positives.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Complexity check: O(N) time / O(N) memory is within limits for N=5\u00d710^5.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Edge cases covered: X+Y>N, X==Y, all-0/all-1, S==T, differing counts, z<X or o<Y.",
+    "status": "done",
+    "result": ""
+  }
+]

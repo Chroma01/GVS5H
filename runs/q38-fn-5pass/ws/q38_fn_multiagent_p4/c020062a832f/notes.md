@@ -1,0 +1,13 @@
+- **Fix applied:** The initial Fenwick inversion count now uses `(i - 1) - s`, where `s` is the number of previous elements with value `<= A_i`. The previous version used `i - s`, which incorrectly counted the current element as a previous greater element and overcounted by one per position.
+- **Core idea:** Adding `k` modulo `M` preserves relative order except for elements that wrap. When moving from `k` to `k+1`, exactly the elements with original value `M-1-k` move from the current largest value `M-1` to the current smallest value `0`. All other elements increase by `1`, so their mutual relative order is unchanged.
+- **Initial answer:** Compute the inversion count for `k=0` using a Fenwick tree over values `0..M-1`. For each position `i`, previous greater elements are `(i - 1) - count(previous values <= A_i)`.
+- **Wrap delta:** For a fixed original value `v`, when all occurrences of `v` wrap, each occurrence at 1-indexed position `p` changes its pair contributions by:
+  - `+1` for each earlier element not equal to `v`, because it becomes smaller than them.
+  - `-1` for each later element not equal to `v`, because it stops being larger than them.
+  - Pairs among equal `v` contribute `0` before and after, and their internal counts cancel.
+  Therefore the total delta for value `v` is `sum(2*p - N - 1)` over all positions `p` where `A_p = v`.
+- **Sweep:** Start with `ans = inversion_count(k=0)`. For `k = 0..M-1`, print `ans`, then update `ans += delta[M-1-k]` to obtain the answer for `k+1`. The final update is not used.
+- **Correctness intuition:** At transition `k -> k+1`, the wrapping value is uniquely the current maximum before the transition and uniquely the current minimum after it. Thus only pairs involving that value change, and the position-based weight formula counts exactly those changes.
+- **Complexity:** Fenwick construction and updates are `O(N log M)`. The sweep is `O(M)`. Memory is `O(N + M)` for input and arrays, within limits for `N, M <= 2e5`.
+- **Edge cases:** `M=1` gives all answers `0`; all equal values give zero deltas; absent values have delta `0`; total sum of all deltas is `0`, consistent with `k=M` being equivalent to `k=0`.
+- **Sample verification:** After the off-by-one fix, the three provided samples produce the expected outputs: sample 1 gives `3,1,1`; sample 2 gives `7,3,3,1,1,5`; sample 3 gives `0,6,10,12,12,10,6`.

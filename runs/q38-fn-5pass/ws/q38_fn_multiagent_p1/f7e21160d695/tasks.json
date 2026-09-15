@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python solution with fast input, DSU parent/size/balance, sorted edges, and 64-bit answer accumulation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Ensure duplicate vertices in A/B are aggregated into balances and all vertices are initialized.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm equal-weight edges are handled correctly (sequential unions at the same weight are acceptable; optionally group by weight for clarity).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run sample tests and edge cases (K=1, repeated vertices, equal weights, large weights) to verify output.",
+    "status": "done",
+    "result": ""
+  }
+]

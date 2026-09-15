@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Enumerate all non-empty subsets of the target array and precompute their LCM values (divide out gcd before multiplying).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "For each nums value and each subset, compute cost = next multiple of LCM at or above nums[i] minus nums[i].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement bitmask DP over target coverage with per-element snapshot to prevent reuse.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Apply candidate reduction (keep m+1 cheapest elements per subset) to bound DP work.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle edge cases: cost 0 when already a multiple, duplicate target values, and full-mask return.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify against examples: [1,2,3]/[4]\u21921, [8,4]/[10,5]\u21922, [7,9,10]/[7]\u21920.",
+    "status": "done",
+    "result": ""
+  }
+]

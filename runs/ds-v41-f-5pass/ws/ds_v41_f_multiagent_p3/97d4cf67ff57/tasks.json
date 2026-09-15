@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze problem: any alkane can be rooted at a degree-4 vertex, giving exactly 4 independent branches; define directed message msg[u->v] = max size of valid branch rooted at u attached to v.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement iterative rooting (parent array + BFS order) and bottom-up pass computing down[u] = msg[u->parent[u]] = max(1, 1 + top3 of children downs).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement top-down rerooting pass: up[v] = msg[parent->v] using top-3 incoming messages to parent excluding v (top-4 truncation trick).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For every vertex with >= 4 incoming messages, candidate = 1 + sum of top four messages; output global max, else -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify O(N log N) time, no recursion-depth issues, and handle edge cases (N < 5, no vertex of degree >= 4).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm all 3 provided samples pass (worker SAMPLE TESTS: PASSED).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,9 @@
+- **Core reduction:** f(L,R) equals the number of connected components of the set of distinct values in A[L..R], where values are adjacent iff they differ by 1. An operation erases a full consecutive value interval present at that moment; it cannot cross an absent value. One operation per component is necessary and sufficient.
+- **Component starts:** Each component is identified by its minimum value x. Thus f(L,R) = number of x such that x appears in A[L..R] and x-1 does not appear. For x=1, x-1=0 never appears.
+- **Sum over x:** Answer = sum over x of the number of subarrays containing at least one x and no x-1. Equivalently, for each x with occurrences, add avoid(x-1) - avoid(x-1 and x), where avoid(S) is the number of subarrays containing no position from S.
+- **Gap formula:** If forbidden positions are p1 < p2 < ... < pm, then avoid(S) = sum g(g+1)/2 over gaps: p1-1, p2-p1-1, ..., N-pm. Empty S gives N(N+1)/2.
+- **Precomputation:** W[v] = avoid(positions of v). W[0] = total = N(N+1)/2. For v with no occurrences, W[v] = total. Computing all W costs O(N) total because the position lists have total length N.
+- **Per-value contribution:** For each x with pos[x] nonempty, merge sorted lists pos[x-1] and pos[x] linearly and compute the avoid value of their union. Contribution is W[x-1] minus that union-avoid value. Total merge cost is O(N) because sum |pos[x-1]| + |pos[x]| over present x is at most 2N.
+- **Implementation details:** Use prev=0 and final gap N-prev, avoiding explicit sentinels. Values are bounded by N, so pos size N+1 is enough. Python integers safely hold the answer, which can exceed 32 bits.
+- **Complexity:** O(N) time and O(N) memory.
+- **Verification:** The implemented formula produced 16 for sample 1, 23 for sample 2, and 129 for sample 3.

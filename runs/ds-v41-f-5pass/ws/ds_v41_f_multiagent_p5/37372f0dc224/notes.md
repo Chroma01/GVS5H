@@ -1,0 +1,9 @@
+- **Problem mapping:** shortest palindrome with prefix S is P = S + reverse(S[:n-L]), where L is the length of the longest palindromic suffix of S. Result length = 2n - L.
+- **KMP derivation:** let T = reverse(S) + '#' + S. For any l, prefix_l(T) == suffix_l(T) iff reverse(suffix_l(S)) == suffix_l(S), i.e. suffix_l(S) is a palindrome. The separator '#' blocks matches with l > n, so pi[-1] of T equals exactly L.
+- **Construction:** k = n - L; ans = S + S[:k][::-1]. If L = n then k = 0 and ans = S. If L = 1 then ans = S + reverse(S[:-1]).
+- **Complexity:** O(n) time and O(n) memory. T has length 2n+1 <= 1,000,001 for n <= 500000. The amortized prefix-function loop is fast enough in Python.
+- **Implementation choices:** read bytes for speed; keep pi as a plain list of ints; single reverse slice at the end; write answer as bytes. '#' is a safe separator because S contains only uppercase letters.
+- **Sample checks:** ABC -> L=1, k=2 -> ABCBA. Z -> L=1, k=0 -> Z. TREE -> L=2 (suffix "EE"), k=2 -> TREERT.
+- **Extra checks:** ABAB -> L=3 (suffix "BAB"), k=1 -> ABABA. AABB -> L=2 (suffix "BB"), k=2 -> AABBAA. AAAA -> L=4, k=0 -> AAAA. ABCD -> L=1 -> ABCDCBA.
+- **Edge cases:** n=1 works; fully palindromic S yields L=n and k=0; all-distinct letters yields L=1; even and odd palindromes are both handled naturally by the prefix function.
+- **Pitfalls avoided:** do not confuse with longest palindromic prefix (that solves the dual problem); avoid O(n^2) suffix checking; ensure indices are correct when L=n or L=1.

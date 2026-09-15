@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse the input N, M and the M edges; build adjacency lists for the graph.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Find all connected components with BFS/DFS; compute component sizes, bipartition side parity, and K (number of odd components), P (parity of one side over even components).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Brute-force minimax solver for small N over bipartite graphs, cross-checked against the candidate formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Derive the winning condition: N odd -> Aoki iff M odd; N even, K=0 -> Aoki iff (P+M) odd; N even, K=2 -> Aoki; N even, K>=4 -> Aoki iff M odd.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement the final O(N+M) algorithm (iterative BFS) and print `Aoki` or `Takahashi`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify on all three samples (all PASSED) plus edge cases (N=1, N=2, M=0, multi-component, complete bipartite).",
+    "status": "done",
+    "result": ""
+  }
+]

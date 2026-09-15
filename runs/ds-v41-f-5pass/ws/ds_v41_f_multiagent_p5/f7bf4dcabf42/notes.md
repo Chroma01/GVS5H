@@ -1,0 +1,10 @@
+- **Approach:** Represent the LCS DP row of S against the currently built prefix of T as a state tuple D[0..N], D[i] = LCS(S[:i], T_prefix), D[0]=0. This row strictly characterizes all future updates, so appending a character is a deterministic state transition. Count length-M strings via a dict-based DP over reachable states; group final states by D[N].
+- **Transition formula:** For appended char c, new[i] = max(new[i-1], D[i], D[i-1] + (S[i-1]==c)), computed left to right for i=1..N. This is the standard LCS recurrence; only the previous row plus the new char are needed.
+- **Why finite states:** D is non-decreasing with steps 0/1, so D is determined by its difference pattern; number of reachable states is tiny (<= ~2^N), and only 26 transitions each. N<=10 keeps both states and transitions trivial.
+- **Letters not in S:** For c absent from S, new[i]=D[i] for all i (state unchanged). This is automatically handled by the formula since eq=0 and D is non-decreasing.
+- **Memoization:** Cache transition(state, c) results in a dict keyed by (state, char) to avoid recomputation across DP layers.
+- **Modulo:** Accumulate counts mod 998244353; only add (no subtraction risk beyond one conditional subtract, safe here since both operands < MOD).
+- **Answer extraction:** After M steps, ans[k] = sum of counts of states with D[N]==k, for k=0..N. Print ans[0..N] space-separated.
+- **Verification (analytic):** S="aaa": LCS = min(#a in T, 3); counts C(4,j)*25^(4-j) give 390625, 62500, 3750, (4*25+1)=101, matching sample 2. Sample 1 "ab", M=2 gives 576 (=25^4? no, =2-letter strings with no a,b =24^2=576), consistent.
+- **Complexity:** O(M * #states * 26 * N) time, O(#states * 26) cache space. Fully safe for given limits.
+- **Determinism note:** The correctness hinges on the row being a sufficient statistic; confirmed by standard LCS DP semantics (no memory of earlier T beyond the row needed).

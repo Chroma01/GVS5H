@@ -1,0 +1,8 @@
+- **Samples:** The four provided examples pass: outputs 8, -1, 0, 6.
+- **Model:** Split p into A, B, C around the two stars. A match is an occurrence of A, then an occurrence of B starting at or after A's end, then an occurrence of C starting at or after B's end. Empty literals are treated as matching at every position 0..n.
+- **Anchor scan:** For each possible B start b (all positions if B is empty), the best A is the latest occurrence with start <= b - len(A), or a = b if A is empty. The best C is the earliest occurrence with start >= b + len(B), or c = b + len(B) if C is empty. The candidate length is c + len(C) - a.
+- **Occurrences:** Non-empty literal occurrences are found with a Z-function on literal + '#' + s. The separator is safe because inputs are lowercase. Empty parts return None and are handled by the special cases above.
+- **Data structures:** Occurrence lists are sorted. bisect_right finds latest compatible A, bisect_left finds earliest compatible C. If B is empty, iterate range(n + 1); otherwise iterate occB.
+- **Early exits:** If any non-empty literal has no occurrence, return -1. If all literals are empty, return 0. If len(A)+len(B)+len(C) > n, return -1 because literals cannot overlap. If a candidate reaches this lower bound, break.
+- **Complexity:** Z-function runs in O(n + |p|) total across the three literals. The scan is O(k log n) with k <= n + 1, so O(n log n) worst case. Memory is O(n + |p|) for occurrence lists and transient Z arrays.
+- **Edge cases:** Consecutive stars produce empty B; leading/trailing stars produce empty A/C. Overlapping literal occurrences are allowed in the occurrence lists but are rejected by the end/start inequalities. Empty substring is only possible for p == '**'.

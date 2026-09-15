@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Formalize the complement reduction: M = min(K, N-K) <= 11 because C(N,M)=C(N,K)<=10^6; enumerate chosen subsets when K<=N-K, else enumerate excluded subsets of size N-K and maximize total_xor XOR excluded_xor.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the enumeration using itertools.combinations(A, M) with functools.reduce(operator.xor, ...) per subset, computing max directly for the chosen case and max of (T XOR subset_xor) for the excluded case.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle edge cases: M == 0 (K == N) prints T directly; N == 1, K == 1; K == 1; duplicates in A treated as distinct positions (no deduplication / no set(A)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Integrate fast stdin parsing (sys.stdin.buffer.read().split()) and direct integer output via print.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate against brute force on small random cases and the two provided samples, exercising both the chosen-enumeration and complement-enumeration code paths.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze small cases (N=1..6) via reduced game state (unactivated set + total pass pool), confirming f(P) forms and initial outcomes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove for N>=4 by induction that mover wins at pool P iff (E+P) is odd, giving Fennec wins iff count of odd A_i is odd; establish bases N=1,2,3.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the O(N) Python solution: N==1 -> Fennec; N==2 -> Snuke; N==3 -> Fennec iff some A_i odd else Snuke; N>=4 -> Fennec iff number of odd A_i is odd.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test against samples 1,2,3 (Fennec, Snuke, Snuke) and against a brute-force minimax on small N<=4, A_i<=3.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm code handles N up to 2\u00d710^5 and A_i up to 10^9 with O(N) time and stdin/stdout.",
+    "status": "done",
+    "result": ""
+  }
+]

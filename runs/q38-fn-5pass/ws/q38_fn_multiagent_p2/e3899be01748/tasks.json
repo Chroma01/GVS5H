@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the per-last-digit remainder DP solution in `Solution.countSubstrings`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Ensure substrings ending in `'0'` are never counted.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test against the provided examples and edge cases such as all zeros, single digits, leading zeros, and long repeated patterns.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify the final implementation fits the required `Solution.countSubstrings` signature and runs within time limits.",
+    "status": "done",
+    "result": ""
+  }
+]

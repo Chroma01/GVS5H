@@ -1,0 +1,8 @@
+- **Core idea:** Process insertions in reverse. After removing elements `N, N-1, ..., i+1`, the remaining slots correspond exactly to the array after operation `i`. Element `i` must therefore be placed into the `P_i`-th currently available slot.
+- **Data structure:** Fenwick tree over `size` positions, where `size` is the smallest power of two at least `N`. Initially the first `N` positions are available and the padded positions are unavailable.
+- **Fenwick initialization:** For a padded array `[1]*N + [0]*(size-N)`, `tree[i] = lowbit(i)` for `i <= N`. For `i > N`, the range covered by `tree[i]` may partially overlap the first `N` positions, so `tree[i] = max(0, lowbit(i) - (i - N))`. This gives an O(N) build.
+- **k-th available search:** Binary lifting on Fenwick tree. Since `size` is a power of two and the query `k` is always at most the current total available count, starting with `bit = size // 2` and omitting bounds checks is safe. The returned position is `idx + 1`.
+- **Update:** After assigning an element to position `pos`, decrement all Fenwick nodes covering `pos` while `pos <= size`.
+- **Complexity:** O(N log N) time and O(N) memory. For `N = 5e5`, `log2(size) <= 19`, which is acceptable in Python with optimized loops.
+- **Pitfalls:** Use 1-based Fenwick indexing; convert to 0-based only when writing `ans`. The update loop must go up to `size`, not `N`, because padded Fenwick nodes also store counts. Reverse iteration must use `P[i-1]` for element `i`.
+- **Rejected approaches:** Direct list insertion is O(N^2). Segment tree, treap, and sqrt decomposition are possible but have larger constants or more complex implementation in Python.

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Model: graph stays bipartite; terminal = one complete bipartite component; total moves parity reduces to parameters o, iso, b, base.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Brute-force verifier for N=2,4,6,7 (all labeled bipartite graphs) and abstract (x,y,e) states for N=8 confirms formula candidate with 0 mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Formula verified: N odd \u2192 Aoki iff M odd; N even \u2192 b==0: Aoki iff base odd; else Aoki iff (o%4==2) or (b<=2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Write the real submission solution (stdin\u2192stdout) implementing the verified formula with O(N+M) component analysis; ensure NO debug/verification output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test the final program against samples 1-3 (expect Aoki/Takahashi/Aoki) and a couple of edge cases (N=1 M=0, single component, all isolated vertices).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm code runs within limits for N,M up to 2e5 (iterative DFS/BFS, avoid recursion limits).",
+    "status": "done",
+    "result": ""
+  }
+]

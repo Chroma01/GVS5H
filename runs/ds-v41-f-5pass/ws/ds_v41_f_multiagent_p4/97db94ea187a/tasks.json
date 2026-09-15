@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze structure: BFS layer decomposition from vertex 1; edges only within a layer or between adjacent layers; each layer>0 vertex needs a neighbor in the previous layer; parity condition is total odd-indexed layer size = N/2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement DP over (used u, odd count o, last layer size p, last-layer parity), each state an edge-count polynomial; transition with next layer size s using C(N-u,s) * ((1+x)^p-1)^s * (1+x)^{C(s,2)}.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Enforce terminal conditions (u=N, o=N/2); extract coefficients for M=N-1..C(N,2) via evaluation at t=0..L-1 and Lagrange interpolation, print space-separated mod P.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate against samples N=4,6,10 -- all three public samples PASSED.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Benchmark at N=30, P=998244353 confirmed: ~0.5s wall-clock, ~50MB, exactly 407 outputs in [0,P), no overflow; all 3 samples PASS and N=2 prints `1`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "No performance/memory reduction needed since N=30 benchmark is well within limits; algorithm unchanged.",
+    "status": "done",
+    "result": ""
+  }
+]

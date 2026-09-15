@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: select the first-entry subtraction approach as the primary algorithm.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete Python solution using the first-entry subtraction approach, including factorial precomputation, binomial helpers, closed-form rectangle sums, inclusion-exclusion for outside start/end paths, first-entry invalid-path sums over bottom/left edges, and all boundary cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation against the provided samples and edge cases such as L=0, D=0, holes touching the grid boundary, and one-dimensional grids; fix any failures.",
+    "status": "done",
+    "result": ""
+  }
+]

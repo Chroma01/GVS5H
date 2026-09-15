@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove the reduction: any valid kept subgraph corresponds to choosing a center c, a common D=y+1>=2, and c-neighbors v with deg(v)>=D; conversely such choices always form a Snowflake Tree since subtrees hanging off distinct c-neighbors are disjoint in a tree.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N) vertex-activation sweep: bucket vertices by degree, process degree d from maxDeg down to 2, for each v in bucket increment cnt[c] for every neighbor c and take max of 1+d*cnt[c]; answer N - max.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm tie handling: evaluate after every increment so the full count D*cnt(c,D) is captured when the last same-degree neighbor is processed; deg(v)>=2 excludes leaves as intermediates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test against all three provided samples (results 1, 0, 3) \u2014 SAMPLE TESTS: PASSED all 3.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify input parsing handles N up to 3e5, code is non-recursive, and output is exactly the integer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm the optimal D for a fixed center equals some neighbor's degree (breakpoint argument), so the descending-degree sweep is exact.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify leaf-as-center cases (e.g. star K1,t gives best=n, answer 0) are covered by the sweep considering every neighbor c of a high-degree vertex v.",
+    "status": "done",
+    "result": ""
+  }
+]

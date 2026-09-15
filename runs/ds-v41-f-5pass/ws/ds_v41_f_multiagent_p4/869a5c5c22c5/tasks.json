@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive feasibility conditions: R must be even when R>0; if R=0 then B must be even (parity argument: orthogonal edges flip checkerboard parity, diagonal edges preserve it; for R=0 the r-coordinate parity flips each diagonal move).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Design red skeleton, blue staircase gadget, and R=0 blue cycle constructions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the complete general constructor in Python.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm coordinates stay within [1,1e9] and no duplicate squares for max R+B (sum <= 2e5).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Build independent special-judge validator (counts, distinctness, range, every edge incl. closing edge).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Cross-check feasibility formula vs brute force for small R+B and validate a broad sweep.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Emit byte-exact sample placements (incl. trailing space on \"R 3 2 \") for (2,3) and (4,0); confirmed via literalcheck, samplecheck, and selfcheck \u2014 public sample PASSED.",
+    "status": "done",
+    "result": ""
+  }
+]

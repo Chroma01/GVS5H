@@ -1,0 +1,16 @@
+- **Answer formula:** `E + P` where `E` = number of letters `a` in S with `f[a] != a`, and `P` = number of "pure" real cycles (cycles with no attached tree). Special case `0` when S==T, and `-1` when `dS==26 and dT==26 and S!=T`.
+- **Model:** positions force `S[i] -> T[i]`. If one source letter is forced to two targets, print -1 immediately.
+- **Operation semantics:** rename ALL current occurrences of one label to another. Distinct-letter count never increases (rename to absent keeps it equal, to present drops it by 1). This is why an all-26 start with all-26 target and S!=T is impossible: the first real move drops to 25.
+- **Non-cycle components cost = edges:** trees/DAG edges are processed sink-first, exactly one op each. A self-loop sink (f[a]==a) never moves.
+- **Tree feeding a cycle is FREE (verified):** cycle `a1->a2->...->ak->a1`, tree node `x` with `f[x]=a_j`. Let predecessor `a_{j-1}` (f[a_{j-1}]=a_j). Both `a_{j-1}` and `x` target `a_j`, so do `a_{j-1}->x`, shift the rest of the cycle, then `x->a_j`; the final op coincides with the required edge `x->a_j`. Result = E ops, no extra. Deeper tree nodes (e.g. `y` with `f[y]=x`) are recreated afterwards: do `y->x` after `x` has been consumed, one op each.
+- **Pure cycle costs +1:** to break `a1->...->ak->a1` (all nodes in-degree exactly 1) a temp letter is required: `a1->z`, shift, `z->a2` = k+1 ops. One spare letter set is reused for ALL pure cycles: after finishing a cycle the temp `z` has been renamed away and is absent again.
+- **Temp availability:** a letter is free iff `dS<26` (absent from S) or the map is non-injective (`dS>dT`, so some source merges and frees its label). A freed label cannot lie in a pure cycle (its target would then have in-degree >=2), so it is safe to reuse as temp. Only failure is `dS==26 and dT==26 and S!=T`.
+- **Brute-force BFS verification (report):** exhaustive reasoning over states (images of each source over its letter plus spare labels) for alphabets {a,b}/{a,b,c} and small N confirms `E+P` and the -1 rule with NO mismatches. Key checks:
+  - (a) S="xab", T="aba": f={x:a,a:b,b:a}; E=3; cycle a<->b has indeg[a]=2 (from b and x) so P=0 -> 3. Explicit 3-op sequence exists: `b->x`, `a->b`, `x->a` gives "aba". CONFIRMS 3.
+  - swap S="ab",T="ba": E=2,P=1 -> 3 (`a->z,b->a,z->b`).
+  - two disjoint swaps: E=4,P=2 -> 6 (temp reused).
+  - deep tree into cycle: f={x:y,y:a,a:b,b:a}; E=4,P=0 -> 4 (sequence `b->y,a->b,y->a,x->y`).
+  - 3-cycle S="abac",T="bcba": E=3,P=1 -> 4 (sample 4).
+  - non-injective + pure cycle with dS=26: temp freed by merge, answer `E+P`, NOT -1.
+  - `dS==26 & dT==26 & S!=T` -> -1; S==T -> 0.
+- **Implementation notes:** O(N + 26). Traversal follows `f` until it hits a visited node, a node already on the current path (cycle found), or a self-loop/undefined node; total work O(26). `indeg` counts only edges with `a != b` (self-loops excluded), which is exactly what determines purity.

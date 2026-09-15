@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: selected dirty-interval lazy column DP exploiting cursor locality and the small dimension.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement input parsing, beneficial transposition, column-major storage, cursor mapping, and L/R/U/D direction mapping.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute all full prefix column vectors L and suffix column vectors R, including boundary vectors, and initialize the answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Maintain current-column dirty intervals f_valid and rv_valid, and implement ensure_L/ensure_R plus the point-update delta formula without division.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement combined one-pass horizontal move_right and move_left scans that finalize the needed current vector and compute the adjacent vector, then reset intervals for the new current column.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Optimize inner loops for PyPy: local variables, split loops to avoid branches, fast modular addition, and skip work when the assigned value is unchanged.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate the final solution against the public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

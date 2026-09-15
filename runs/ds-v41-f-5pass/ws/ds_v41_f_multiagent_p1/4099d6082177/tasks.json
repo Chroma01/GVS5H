@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement solution: read N,K and edges; root at a vertex; compute parent + subtree sizes via iterative BFS/reverse-postorder; compute forced_deg per vertex (#children with sz%K!=0, plus 1 if non-root and sz[v]%K!=0); print No if any forced_deg>2 else Yes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify against samples 1 (Yes) and 2 (No), and edge cases: N=1 with a path (Yes), star graphs (No), K=1 (always Yes), and max NK=2e5 for recursion/performance safety.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm the forced-edge degree criterion (max forced degree <= 2 iff decomposable) via the subtree-residue argument showing component sizes are exactly K.",
+    "status": "done",
+    "result": ""
+  }
+]

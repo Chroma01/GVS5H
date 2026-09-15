@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement comb-rule best-first heap enumeration (sort A,B,C descending; heapq with negated values; push (i+1,j,k) always, (i,j+1,k) iff i==0, (i,j,k+1) iff i==0 and j==0; all pushes bounds-checked).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Fix the k-increment incremental-value bug: use `dc[k]*(a0+b0)` (not `dc[0]`) for the (i,j,k+1) child in the i==0 && j==0 branch.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Re-validate against the three provided samples (expect 31, 30000, 689589940713840351) \u2014 all PASSED.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verified each cell has a unique predecessor and full reachability; monotonicity (f nonincreasing in each index) guarantees best-first yields correct order statistics; incremental value updates confirmed correct in all branches; index packing fits N<2^18.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Edge cases reasoned: N=1 (only root), K=1, ties handled (equal values sort arbitrarily but K-th largest value is well-defined).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Complexity O(K log K) with ~3 pushes/pop, within N=2e5, K=5e5 limits.",
+    "status": "done",
+    "result": ""
+  }
+]

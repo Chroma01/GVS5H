@@ -1,0 +1,9 @@
+- **Model:** Let P[t] be the cumulative wind displacement after t winds, with P[0]=(0,0). Smoke born at time b is at P[t]-P[b] at time t+0.5, where time b means after the generation step at time b.
+- **Birth times:** b=0 is the initial smoke. For b>0, new smoke is generated exactly when P[b] has not appeared among P[0..b-1]. Therefore every first occurrence of a prefix value is a valid birth time.
+- **Target condition:** A particle born at b is at (R,C) at time t+0.5 iff P[b] = P[t] - (R,C). So it suffices to know whether X = P[t] - (R,C) has appeared among P[0..t-1]. The earliest occurrence is a valid birth time, even if later duplicates are not births.
+- **Algorithm:** Scan t=1..N. Maintain a set of seen prefix positions P[0..t-1]. For current P[t], if P[t]-(R,C) is in the set, append '1', otherwise '0'. Then insert P[t]. This is O(N) time and O(N) memory.
+- **Order:** Check before inserting P[t]. Since (R,C) != (0,0), a particle born at time t cannot already be at the target at time t+0.5. Inserting first would incorrectly handle X=P[t].
+- **Encoding:** Use integer key (x+offset)*M + (y+offset) with offset=2N+5 and M=4N+10. Coordinates of P[t] are in [-N,N], and query coordinates P[t]-(R,C) are in [-2N,2N], so this encoding is collision-free.
+- **Initialization:** seen initially contains P[0]=(0,0), representing the smoke present at time 0.
+- **Verification:** All three samples produce 001010, 0001101011, and 00100111111000101111 respectively. The t=1 target-hit edge case also works, e.g. N=1, R=-1, C=0, S=N gives 1.
+- **Complexity:** N up to 200000; Python set with integer keys is easily fast enough and avoids tuple overhead.

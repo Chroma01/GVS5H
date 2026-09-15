@@ -1,0 +1,8 @@
+- **Problem model:** For each k count length-M strings T with LCS(S,T)=k, mod 998244353. N≤10, M≤100.
+- **Key idea:** Treat the standard LCS DP row against fixed S as automaton state. Row dp[0..N] is nondecreasing with dp[0]=0 and unit steps, so encode as N-bit increment mask (bit i-1 = dp[i]-dp[i-1]). State count ≤ 2^N.
+- **Transition:** Appending char c: new[0]=0; new[i]=max(old[i], new[i-1], old[i-1]+1 if S[i-1]==c). Derive new mask from new row.
+- **Letter grouping:** All letters absent from S give the same transition (S[i-1]==c never holds), so use one representative with multiplicity 26-len(distinct(S)). Letters in S handled individually.
+- **Final aggregation:** dp[N] of the final row = LCS(S,T) = popcount(mask). Sum counts per popcount.
+- **Verification (sample 1):** N=2,M=2,S=ab. State counts after M=2: mask00→576, 01→50, 10→49, 11→1. Popcounts give ans=576 99 1. Confirmed by hand.
+- **Complexity:** O(M * 2^N * (|distinct|+1) * N) — tiny for given limits.
+- **Gotchas:** Keep whole row (not just LCS length). Rebuild old row from mask each transition (or memoize). Mod after every accumulation. Multiplicity multiply for absent letters must be modded.

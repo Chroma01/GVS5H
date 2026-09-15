@@ -1,0 +1,8 @@
+- **Problem summary:** Maximize the minimum intake among vitamins 1, 2, 3 under a total calorie limit X. Each food provides exactly one vitamin.
+- **Key observation:** Foods are partitioned by vitamin, so for a target t the minimum total calories needed to obtain at least t of every vitamin is the sum of the independent minimum costs for each vitamin.
+- **Per-vitamin DP:** For each vitamin, run a 0/1 knapsack over calories 0..X to compute dp[c] = maximum amount obtainable with cost <= c. Initialize dp to 0 and loop j downward. The resulting dp is automatically nondecreasing (it represents the best value with capacity at most j).
+- **Optimization:** If the total cost of all foods in a vitamin group is <= X, only compute the DP up to that total cost, then extend the array with the final value (taking all items) for larger capacities. This saves iterations when a vitamin is cheap overall.
+- **Feasibility check:** For a candidate t, use bisect_left on each vitamin's monotone dp array to find the smallest cost achieving >= t. Sum these costs; feasible iff the sum is <= X.
+- **Binary search:** Feasibility is monotone. The upper bound is min(best_v[X] for v=1,2,3). Search the largest feasible t in [0, hi].
+- **Edge cases:** An empty vitamin group yields an all-zero dp, so hi=0 and the answer is 0. t=0 is always feasible.
+- **Complexity:** O(N*X) time for the DPs (at most 25 million inner iterations), O(log(maxA*N) * 3 * log X) for binary search. Memory O(X).

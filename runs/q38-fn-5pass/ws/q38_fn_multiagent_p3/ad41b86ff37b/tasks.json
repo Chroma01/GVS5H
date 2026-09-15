@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: derive that for a fixed center c, each neighbor m can serve as a middle vertex with capacity deg(m)-1 leaves, and the best snowflake centered at c is obtained by choosing x largest positive capacities and setting y to the x-th largest capacity.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement direct center-enumeration solution in Python with adjacency lists, degree array, per-center positive capacity sorting, prefix scan, best initialized to 3, and output N-best.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify edge cases: N=3 path, star trees, centers with degree 1, centers with no positive-capacity neighbors, y>=1, x>=1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm complexity is O(N log N) total and memory is O(N), avoiding recursion and excessive temporary allocations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run public sample tests; all passed.",
+    "status": "done",
+    "result": ""
+  }
+]

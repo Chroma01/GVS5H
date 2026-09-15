@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: choose Cartesian-tree DP over DSU/priority-queue approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Cartesian-tree DP solution in Python with O(N) time, iterative traversal, and Python ints for sums.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify logic on samples and edge cases: all equal, monotone, equal blocks with smaller on one side, N=2, skewed trees, and cases where child subtree sum equals parent value.",
+    "status": "done",
+    "result": ""
+  }
+]

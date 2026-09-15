@@ -1,0 +1,8 @@
+- **Characterization:** A 400 number has exactly two distinct prime factors and all exponents even, so it is exactly `m^2` where `m` has exactly two distinct prime factors. Conversely, any such `m` produces a valid 400 number.
+- **Query reduction:** For a query `A`, valid answers are squares `m^2 <= A`, so `m <= floor(sqrt(A))`. The answer is `best[isqrt(A)]^2`, where `best[r]` is the largest `m <= r` with exactly two distinct prime factors.
+- **Precomputation range:** Since `A <= 10^12`, the needed root is at most `10^6`. The implementation reads all queries first and sieves only up to `isqrt(max(A))`, clamped to at least 6.
+- **Distinct prime factor sieve:** A `bytearray` stores the number of distinct prime factors. For each `p`, if `omega[p] == 0`, `p` is prime; then every multiple of `p` is incremented once. This counts distinct prime factors, not multiplicity.
+- **Prefix array:** After the sieve, scan from 2 to `max_r`, updating `last` whenever `omega[i] == 2`, and store `best[i] = last`. This gives O(1) lookup per query.
+- **Complexity:** Let `R <= 10^6`. Sieve cost is about `R * sum_{p <= R} 1/p = O(R log log R)`, roughly 3 million increments. Prefix scan is `O(R)`, queries are `O(Q)` with `isqrt`. Memory is `O(R + Q)`.
+- **Edge cases:** The smallest valid root is `6`, giving `36`, matching the constraint `A >= 36`. Integer `isqrt` avoids floating-point errors. The dynamic root bound is clamped to 6 for safety.
+- **Implementation choices:** Input is read all at once, sliced by `Q`, and outputs are joined. `bytearray` is safe because the maximum number of distinct prime factors below `10^6` is 7.

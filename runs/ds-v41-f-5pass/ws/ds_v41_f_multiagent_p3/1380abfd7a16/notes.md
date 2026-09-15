@@ -1,0 +1,9 @@
+- **Problem restated:** Insert i at position P_i sequentially for i=1..N. Need final array, N up to 5e5. Forward simulation is O(N^2), infeasible.
+- **Key insight (reverse processing):** The last inserted value N is never shifted, so it stays at final position P_N. Removing it, N-1 sits at the P_{N-1}-th remaining position, and so on. So process i=N..1 and place value i into the P_i-th currently empty slot.
+- **Data structure:** Fenwick tree (BIT) over N slots, 1 = empty, 0 = occupied. For all-ones initial array, tree[i] = i & (-i), giving O(N) init with no point updates needed.
+- **Order-statistic query:** Binary-lifting search for smallest index with prefix sum >= k. Highest bit = 1 << (n.bit_length()-1). Loop bits downward; if nxt<=n and tree[nxt] < k, advance pos and subtract tree[nxt]. Answer slot = pos+1. O(log N) per query.
+- **Updates:** After placing value i at slot, decrement 1 at slot via standard BIT update (j += j&-j). This marks it occupied so later (smaller) values skip it.
+- **Output:** ans[slot] built then printed left-to-right; join with spaces.
+- **Complexity:** O(N log N) time, O(N) memory. ~10M inner ops for query plus ~10M for updates at N=5e5; fine.
+- **Edge cases verified:** N=1 prints "1". All P_i=1 yields descending N..1. Sample 1 (P=1 1 2 1) gives 4 2 3 1; Sample 2 (P=1 2 3 4 5) gives 1 2 3 4 5.
+- **Common pitfalls:** 1-indexing between k and slots; indexing P_rev correctly (P_rev[idx] must be P for value n-idx); using >= vs < in the lifting condition.

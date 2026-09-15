@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full program: parse H,W,X,P,Q and grid, convert P,Q to 0-indexed, set current = S[P][Q], mark start absorbed, seed min-heap with in-grid unabsorbed orthogonal neighbors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run the greedy loop: pop minimum-strength boundary cell (skip already absorbed via visited flag); if strength * X < current, absorb (add to current, mark absorbed, push unabsorbed in-grid neighbors); otherwise break.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Print the final current strength.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate against samples (expect 28, 5, 1343), including edge cases H=W=1 (empty heap) and the strict inequality current > X*strength (break when equal).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm termination/correctness: absorbing only increases strength and expands reachability, so min-heap closure gives the maximum; ensure X*strength uses Python big ints to avoid overflow.",
+    "status": "done",
+    "result": ""
+  }
+]

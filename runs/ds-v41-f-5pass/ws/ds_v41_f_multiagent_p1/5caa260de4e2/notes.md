@@ -1,0 +1,9 @@
+- **Reformulation:** Group ending at r has first factor `preN[r] + k*i`, where `i` is the group's 1-based order. So cost = `(preN[r] + k*i) * (preC[r] - preC[l-1])`.
+- **Absorbing the k*i term:** `sum_i i*C_i = sum over group starts l_j (j>=2) of (cost from l_j to end)`. Hence the i-dependent part becomes a fixed charge `k*(totalCost - preC[l-1])` for every group start `l>0`, plus one `k*totalCost` for the first group. This removes the need to track group count.
+- **DP:** `dp[r]` (stored as `dp[r+1]`) = min over `l` in `[0..r]` of `dp[l] + preN[r]*(preC[r]-preC[l-1]) + (k*(totalCost-preC[l-1]) if l>0 else 0)`, with empty prefix = 0. Answer = `dp[n] + k*totalCost`.
+- **Correctness of the k-charge:** it depends only on the start position `l`, not on how many groups precede it, because `sum_{i>=j} C_i` is exactly the array's cost-suffix from group j's start.
+- **Verified example 1:** nums=[3,1,4], cost=[4,6,6], k=1 -> 110 (partition [3,1],[4]).
+- **Verified example 2:** nums=[4,8,5,1,14,2,2,12,1], cost=[7,2,8,4,2,2,1,1,2], k=7 -> 985.
+- **Edge cases:** n=1 yields `(nums[0]+k)*cost[0]`. Single group handled by `l=0`. All singletons is a valid but not necessarily optimal partition.
+- **Complexity:** O(n^2) time, O(n) memory; n<=1000 => ~10^6 inner steps, fine.
+- **Arithmetic:** Python big ints; no overflow concerns. No `float('inf')` used (avoided mixing types).

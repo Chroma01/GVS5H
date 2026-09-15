@@ -1,0 +1,10 @@
+- **Model:** The majority reduction is a complete ternary tree of height N. Leaves are the characters of A; each internal node stores the majority of its three children.
+- **DP state:** For each node maintain a pair (cost0, cost1), the minimum leaf flips inside its subtree needed to force that node to output 0 or 1.
+- **Leaf values:** If the leaf’s original bit is b, then cost_b = 0 and cost_{1-b} = 1.
+- **Internal recurrence:** To force output v, at least two of the three children must be v. Starting from all three children forced to v costs sum_i c_i(v). We may relax at most one child to its other value, saving s_i = max(0, c_i(v) - c_i(1-v)). Therefore cost_v = sum_i c_i(v) - max_i s_i.
+- **Equivalent diff form:** For a child with costs (x, y), let dx = max(0, x-y) and dy = max(0, y-x). Then for a triple, new_cost0 = (x0+x1+x2) - max(dx0,dx1,dx2) and new_cost1 = (y0+y1+y2) - max(dy0,dy1,dy2). This form is used in the implementation.
+- **Answer extraction:** The original root value is achievable with 0 flips, so after the bottom-up DP exactly one of the root costs is 0. The answer is the other value, i.e. max(root_cost0, root_cost1).
+- **Implementation:** Iterative level-by-level combining avoids recursion depth and object overhead. Start with the leaf cost arrays, then repeatedly replace each consecutive triple by its computed pair. Complexity is O(3^N) time and O(3^N) memory. For N = 13 there are 1,594,323 leaves and 797,161 internal nodes, which is fast enough.
+- **Input handling:** Read all tokens from stdin and join everything after N, so both contiguous strings like 010011101 and space-separated digits are handled.
+- **Pitfalls:** Do not use local greedy choices; one leaf flip can affect many ancestors. Avoid per-level string slicing or recursive tree objects. The "sum of bases plus two smallest extras" rule and the simplified "sum of target costs minus max saving" rule are equivalent, but the latter is faster.
+- **Verification:** Sample 1 (N=2, A=010011101) gives 1. Sample 2 (N=1, A=000) gives 2. The all-zero input of length 3^N gives answer 2^N, matching the recurrence.

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse H, W and each length-W binary string into an integer bitmask, counting how many rows share each mask.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove row flips commute with column flips and that, for a fixed column mask, each row's optimal contribution depends only on popcount(row_mask xor column_mask).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Formulate the total cost as a minimum over all W-bit column masks using the row-mask frequency table.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Derive an efficient algorithm using the W <= 18 bound via Fast Walsh-Hadamard Transform (XOR convolution).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement the Walsh-Hadamard transform (XOR convolution) approach, using the Krawtchouk polynomial to obtain FWHT(g) without a third transform.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify the implementation against the three samples (all passed), plus edge case W=1 and the numpy int64 overflow bound.",
+    "status": "done",
+    "result": ""
+  }
+]

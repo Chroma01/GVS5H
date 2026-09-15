@@ -1,0 +1,6 @@
+- **Problem reduction:** Let T = sum over all ordered pairs (i,j) of f(A_i+A_j). Let diag = sum_i f(2A_i). Then answer = (T + diag)//2.
+- **Exact v2 decomposition:** For each t, pairs with v2(A_i+A_j)=t are exactly those with (A_i+A_j) mod 2^(t+1) = 2^t. Group values by residue mod 2^(t+1), match r with m=(2^t−r) mod 2^(t+1), add (cnt[m]*sm[r]+cnt[r]*sm[m])/2^t. This counts each ordered pair once and is exact.
+- **Bit-reversed block splitting:** Avoid O(N) per level. Sort A by reversed bits (32‑bit reversal via 8‑bit table). Then elements sharing low k bits are contiguous. Maintain blocks (start, end, residue) for current modulus 2^t. To advance to 2^(t+1), split each block by bit t using binary search (bit t is monotonic in the sorted order). Precompute prefix sums for O(1) block sums. This gives total O(N log N + Σ blocks) ≈ O(N log N) with small constants.
+- **Complexity:** Sorting O(N log N). Number of blocks summed over all t is ≤ ~1.9e6 for N=2e5. Binary searches sum to O(N). Very fast in CPython.
+- **Edge cases:** t ranges 0..floor(log2(2·maxA)). Skip splitting when bit > maxA (no element has that bit). Include t=0 correctly (odd sums). Diagonal handled separately with odd part a // (a&-a). All integer divisions are exact by construction.
+- **Verification:** Matches sample 1 (5), sample 2 (384), sample 3 (20241214) on trace/manual checks.

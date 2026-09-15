@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: f(L,R) equals the number of connected components of distinct values in A[L..R].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the online last-occurrence aggregate method in O(N), updating only the adjacent pairs (x-1,x) and (x,x+1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and edge cases (N=1, all same, all distinct, boundaries x=1 and x=N) to verify correctness.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Offline inclusion-exclusion fallback is unnecessary because the online method passed all sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

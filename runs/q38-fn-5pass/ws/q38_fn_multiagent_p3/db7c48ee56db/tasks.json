@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python solution using direct enumeration of the smaller side (K or N-K) with itertools.combinations and total XOR for complements.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Add fast special cases: K == N (answer total_xor), K == 1 (answer max(A)), and N-K == 1 (answer max(total_xor ^ x for x in A)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Ensure duplicates are handled correctly by enumerating positions/values via itertools.combinations rather than unique values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the provided sample tests and verify outputs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If direct enumeration fails or is too slow, switch to an optimized incremental enumeration or meet-in-the-middle approach.",
+    "status": "done",
+    "result": ""
+  }
+]

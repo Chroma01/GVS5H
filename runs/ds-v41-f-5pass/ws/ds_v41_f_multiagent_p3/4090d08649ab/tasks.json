@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove f(L,R) equals the count of values x present with x-1 absent (maximal runs of the distinct-value set).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive and verify the O(N) first-occurrence per-index formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the O(N) first-occurrence algorithm in Python with fast input/output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle sentinels/edge cases: x=1 has no x-1, absent occurrences, N=1, big-int answers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate on samples (16, 23, 129) and confirm against hand computation for sample 2.",
+    "status": "done",
+    "result": ""
+  }
+]

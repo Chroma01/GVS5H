@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement backward suffix DP f[i][c][L] with L in {1,2,3}; base f[n][c][3]=0 else INF; recurrences L=1 -> forced c, L=2 -> forced c, L=3 -> continue c or switch to d != c; cost |caption[i]-target|.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle i=0 (first char free) and n<3 => return \"\".",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Greedily reconstruct the lexicographically smallest minimum-cost caption via parent pointers; store smallest argmin, compare continue-vs-switch with min(c, sw_d) on tie.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Use two rolling lists of size 78 plus bytearray(n*26) for parents; compute best switch via smallest/second-smallest tracking.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate against the three provided examples and an exhaustive brute-force solver for small n over 'a'..'d' (cost + lexicographic tie-break) \u2014 all PASS, no mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm O(n*26) time and O(n) memory fit n = 5*10^4 comfortably.",
+    "status": "done",
+    "result": ""
+  }
+]

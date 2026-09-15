@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove reversal preserves feasibility/cost: each nums subarray maps bijectively to a b subarray, and cost to make non-decreasing equals cost to make the reversed one non-increasing.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the window cost formula in b: cost = sum over positions of (suffix max within window - b[pos]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement reverse + two-pointer with a monotonic deque of strictly-decreasing suffix-max (value,count) groups, tracking total_sufmax and total_sum; add-right pops groups with value <= x, remove-left decrements/pops the leftmost group and relies on the fact that deleting the leftmost position leaves all other suffix maxima unchanged.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test on examples 1 and 2 and edge cases (n=1, increasing, decreasing, all equal, k=1, huge k); confirm the O(n) deque solution passes and fix any off-by-one or comparison errors (use <= when merging on add).",
+    "status": "done",
+    "result": ""
+  }
+]

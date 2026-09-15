@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: decompose the answer into C(N-2, k-2) times the total pairwise Manhattan distance over all unordered cell pairs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm the combinatorial factor C(N-2, k-2) for choosing the remaining k-2 cells after fixing an unordered pair of occupied cells.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement complete Solution.distanceSum with modular nCr and closed-form row/column distance sums.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate implementation against examples and edge cases such as k = 2, k = N, one-dimensional grids, and N = 2.",
+    "status": "done",
+    "result": ""
+  }
+]

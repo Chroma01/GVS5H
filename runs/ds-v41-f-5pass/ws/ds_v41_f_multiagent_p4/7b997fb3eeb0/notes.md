@@ -1,0 +1,8 @@
+- **Problem reduction:** For a query range [L, R] on sorted A, find max K such that K disjoint pairs (top, bottom) satisfy 2*top <= bottom.
+- **Key condition:** K pairs exist iff 2*A[L+i] <= A[R-K+1+i] for all i=0..K-1. This matches pairing the K smallest elements as tops with the K largest as bottoms. If any 2K elements admit a matching, their sorted condition 2*s_i <= s_{K+i} holds; replacing by the range's K smallest and K largest only loosens inequalities, so the range condition is necessary and sufficient.
+- **D[p] definition:** Let q_p be the first index with A[q] >= 2*A[p] (or N if none). Set D[p] = q_p - p; if q_p = N, D[p] = N - p. Then the K-pair condition becomes max_{p in [L, L+K-1]} D[p] + K <= S, where S = R - L + 1.
+- **Binary search:** For each query, binary search the largest K in [0, S//2] satisfying maxD(L, L+K-1) <= S - K. Monotonic because increasing K adds a constraint and makes the RHS smaller.
+- **RMQ:** Sparse table over D gives O(1) range maximum. D is built in O(N) with a two-pointer sweep (targets 2*A[p] are nondecreasing). Sparse table costs O(N log N) time and memory.
+- **Complexity:** O(N log N + Q log N) time, O(N log N) memory. Handles N, Q <= 2e5 comfortably.
+- **Edge cases:** Duplicates handled naturally; D[p] >= 1. When no feasible bottom exists, D[p] = N-p and the inequality fails for any K >= 1 (algebraically impossible to satisfy for p inside the prefix). K = 0 is always valid.
+- **Implementation:** 0-indexed arrays; fast I/O via read().split(). Sparse table built while 2^j <= N. Logarithm table precomputed. Binary search inlined for speed.

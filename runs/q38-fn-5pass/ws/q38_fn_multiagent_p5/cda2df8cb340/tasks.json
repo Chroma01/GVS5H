@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement Approach A: for each k with 2^k <= 2*max(A), group A_i by residue modulo 2^(k+1), store count and sum, and add unordered pair contributions for complementary residues (r + c \u2261 2^k mod 2^(k+1)), dividing by 2^k.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate the implementation on all sample inputs and edge cases such as N=1, all equal values, and values that are powers of two.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If the implementation is too slow or incorrect, optimize with hybrid small-modulus arrays/large-modulus dictionaries or switch to the recursive parity/binary-trie approach.",
+    "status": "done",
+    "result": ""
+  }
+]

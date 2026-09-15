@@ -1,0 +1,10 @@
+- **Core idea:** the alternating condition depends only on parity. Fixing the first element's parity forces the whole parity pattern of positions, and the number of completions is (remaining odds)! * (remaining evens)!.
+- **Feasible first parities:** n odd -> must start odd (odd count = ceil(n/2) is the larger group); n even -> either parity works (both counts equal). A pattern is feasible iff its odd-slot count equals num_odd = (n+1)//2.
+- **Block-size invariance:** for a fixed pattern, at any position all unused candidates of the required parity leave the same remaining odd/even counts, hence the same block size. This makes lexicographic unranking a simple subtract-until-it-fits loop.
+- **Algorithm (greedy unranking):** position 0 iterates all values ascending whose parity is feasible, block = fact[ro-1]*fact[re] (odd candidate) or fact[ro]*fact[re-1] (even candidate). Later positions have required parity = first_parity when pos even, else 1-first_parity, and iterate unused values of that parity ascending with the same subtraction. If a position has no candidate that k fits into, return [].
+- **Totals (sanity):** n even -> 2*((n/2)!)^2; n odd -> ceil!*floor!. e.g. n=4 -> 8, n=3 -> 2, n=5 -> 12.
+- **Python integers:** no overflow, so exact factorials are fine; capping at 1e18 (> max k = 1e15) keeps comparisons correct and numbers small. A capped block is still >= 1e18 > k, so it is treated as "first block", never subtracted.
+- **k indexing:** 1-indexed throughout. Test `k <= block` to select, else subtract. No premature 0-index conversion.
+- **Edge cases:** n=1 -> [1] when k=1 else []. k exceeding total -> []. Verified examples: n=4,k=6 -> [3,4,1,2]; n=3,k=2 -> [3,2,1]; n=2,k=3 -> [].
+- **Pitfalls avoided:** do not confuse position parity with value parity; first-position candidates interleave parities in global value order (for n even both parities are feasible but block sizes coincide); first-parity feasibility matters only for n odd; factorials without capping are unnecessary in Python but capping keeps it portable.
+- **Complexity:** O(n^2) time (<= 100*100), O(n) space.

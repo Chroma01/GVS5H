@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approach: per-vitamin calorie knapsack DPs plus binary search feasibility.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution: parse input, group foods by vitamin, compute three capacity DPs, binary search maximum feasible target, handle empty groups, print answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify DP arrays are nondecreasing and feasibility uses minimum calorie budget for each target.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test edge cases: missing vitamin types, answer 0, large vitamin values, all foods too expensive to combine.",
+    "status": "done",
+    "result": ""
+  }
+]

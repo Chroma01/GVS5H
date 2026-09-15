@@ -1,0 +1,9 @@
+- **Model:** Final lengths U'_i, D'_i must satisfy U'_i + D'_i = H, 0 <= U'_i <= U_i, 0 <= D'_i <= D_i. Total cost is sum(U) + sum(D) - N*H, so maximize feasible H.
+- **Feasibility for fixed H:** U'_i must lie in [max(0, H - D_i), min(U_i, H)]. An integer X-Lipschitz sequence can be chosen from these intervals iff L_i <= R_j + X*|i-j| for all i, j.
+- **Key reduction:** This interval condition is equivalent to H <= U_j + D_i + X*|i-j| for all i, j. Therefore H_max = min_{i,j} (U_i + D_j + X*|i-j|).
+- **O(N) evaluation:** Split on absolute value. For i <= j, take min over j of D_j + X*j plus the running minimum of U_i - X*i for i <= j. For i >= j, take min over i of U_i + X*i plus the running minimum of D_j - X*j for j <= i. Include i = j in both running minima.
+- **Implementation details:** 0-indexed loops. Use Python arbitrary-precision integers. Values fit comfortably: intermediate terms are around 2e14, total is up to 4e14.
+- **Answer:** print sum(U) + sum(D) - N * H_max.
+- **Complexity:** O(N) time and O(N) memory; two linear scans after input.
+- **Checked samples:** Sample 1 gives H = 4, cost 15. Sample 2 gives H = 6, cost 0. Sample 3 gives H = 2, cost 5999999994. Sample 4 matches 9460.
+- **Edge notes:** N >= 2 and all U_i, D_i >= 1, so i = j gives H <= U_i + D_i and H >= 2. No overflow concerns in Python.

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement fast input parsing and special cases K=1 (output A_i) and K=N (output gcd of all elements).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build freq array over 1..M (M=max(A)) and compute cnt[d] = number of A_j divisible by d using multiple sieve via list slicing.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute best[x] = largest divisor d of x with cnt[d]>=K by iterating d from 1 to M ascending and slice-assigning best[d::d]=d.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Output best[A_i] for each i in original order using chunked writes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test on sample inputs 1,2,3: all PASSED.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement Dinic max-flow/min-cut with INF larger than any possible finite cut (e.g., M*D+1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement check(D) using nodes (v,i), forcing (1,i) false and (N,i) true, adding INF implication edges for monotonicity and d_v <= d_u+1, and unit cost edges for crossings.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Search D from 0 to min(K,N-1) (binary search or descending scan) and print the largest feasible D.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate edge cases: D=0, multi-edges, cycles, and exactly-K vs at-most-K.",
+    "status": "done",
+    "result": ""
+  }
+]

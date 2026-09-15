@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduce the problem to checking whether some target sum S >= maxKnown has at least L = max(0, nA+nB-N) disjoint known-known pairs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with frequency counters, L=0/L=1 shortcuts, and O(UA*UB) candidate-sum accumulation using min counts.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Choose/verify a memory-safe accumulation strategy (dictionary with early exit or sorted encoded pair weights) for up to ~4 million distinct value pairs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test samples and edge cases: all -1, L=1, heavy duplicates, maxKnown filtering, and no valid sum.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Build adjacency list from edges with edge lengths and use iterative DFS for n up to 5e4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "During DFS maintain depth-indexed prefix length sums, last[value] = last occurrence depth on current path, and running max previous-occurrence depth m.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "At node u at depth d, compute prev = last[nums[u]] or -1, m = max(parentMax, prev), start = m + 1; candidate length = pref[d] - pref[start], nodes = d - start + 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Update best answer using length first and fewer nodes on ties; handle single-node paths (best initialized to (0,1)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Backtrack by restoring previous last[nums[u]] via an explicit exit frame.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate against provided examples ([6,2] and [0,1]) \u2014 both match.",
+    "status": "done",
+    "result": ""
+  }
+]

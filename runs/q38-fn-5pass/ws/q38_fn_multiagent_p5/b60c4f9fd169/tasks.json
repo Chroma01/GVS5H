@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement input parsing and early checks for equality, K >= max length, and length difference > K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement banded edit-distance DP over diagonals with rolling arrays, tight band bounds, boundary handling, and early row cutoff.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the solution on the public samples and key edge cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm the complexity is O(min(len(S), len(T)) * K) time and O(K) memory, suitable for K <= 20 and length <= 500000.",
+    "status": "done",
+    "result": ""
+  }
+]

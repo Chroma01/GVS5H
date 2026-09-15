@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Graph/mapping formulation over the 26 letters: required map f from each S letter to its T letter; same source with different targets \u2192 -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Feasibility: conflict case \u2192 -1; and the dS==26 & dT==26 & S!=T case \u2192 -1 (permutation, first op drops distinct count from 26).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Min-op rule: E (#distinct moved source letters) + P (#cycles whose every node has in-degree exactly 1, i.e. \"pure\" cycles); tree-into-cycle is free; one spare/freed label is reused for all pure cycles.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the Python solution reading stdin and writing the answer to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test on all 4 public samples (all PASSED), including sample 3 conflict \u2192 -1 and sample 4 (E=3, P=1 \u2192 4).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Brute-force BFS verification on small alphabets (tree-into-cycle, disjoint swaps, deep tree, non-injective 26-letter cases) \u2014 no mismatches vs E+P and the -1 rule.",
+    "status": "done",
+    "result": ""
+  }
+]

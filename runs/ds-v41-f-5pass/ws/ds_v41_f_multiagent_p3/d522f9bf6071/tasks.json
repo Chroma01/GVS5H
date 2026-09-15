@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Sort intervals by right endpoint while retaining each interval's original index; build the parallel array of right endpoints for binary search.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute predecessor p(i) for each sorted interval as the count of intervals with right endpoint strictly less than l_i (strict r < l, so touching endpoints are rejected).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Define DP with exact counts k=0..4; each cell stores (best_weight, lexicographically-smallest sorted index tuple); impossible states marked with weight -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement transitions per sorted interval i: skip (carry DP[i-1][k]) and take (DP[p(i)][k-1] + weight_i, inserting original index in sorted order); compare by weight then lexicographic tuple.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "At the end compute global max weight over exact k=0..4 and pick the lexicographically smallest tuple (Python tuple ordering gives shorter-prefix-is-smaller), returning it as a list.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify provided examples return exactly [2,3] (weight 8) and [1,3,5,6] (weight 21).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Cross-check the DP against exhaustive subset enumeration (sizes 0..4) on 20000 random small inputs with touching endpoints present: zero mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Timing check at n = 5*10^4: runs well under a second with modest memory.",
+    "status": "done",
+    "result": ""
+  }
+]

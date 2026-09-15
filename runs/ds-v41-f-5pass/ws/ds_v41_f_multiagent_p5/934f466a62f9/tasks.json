@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input and for each test case compute each cake's maximum value M_i and its base color (argmax coordinate, ties broken deterministically).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Sort cakes by M_i descending, select the top 2K as the base set S, compute the sum of M_i (sumM) and the parity of color counts.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If all color counts are even, output sumM directly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Otherwise identify the two odd colors p,q and third color r, and build candidate ops (recolor / swap) per color pair, keeping a few cheapest per subtype.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute the minimum correction via a single op on edge {p,q}, or two disjoint ops on edges {p,r} and {q,r}, enforcing item disjointness.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Output sumM minus the minimum correction for each test case.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify on provided samples (both passed) and reasoning confirmed: reduction to even coloring, \u22642-op reduction via GF(2) edge argument, non-negative costs, and C\u22652 candidate sufficiency.",
+    "status": "done",
+    "result": ""
+  }
+]

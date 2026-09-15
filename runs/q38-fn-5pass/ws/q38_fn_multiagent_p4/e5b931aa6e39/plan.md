@@ -1,0 +1,1 @@
+Use the factorization x^3 - y^3 = (x-y)(x^2 + xy + y^2). Let d = x - y, so d is a positive integer and d^3 < N, which bounds d by about 10^6 for N <= 10^18. For each possible d, solve the resulting quadratic equation in y and check whether the discriminant is a perfect square and yields a positive integer y. If such a pair is found, output it; otherwise output -1.

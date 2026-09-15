@@ -1,0 +1,8 @@
+- **Reduction:** answer(R,X) = max{ dp[j] : j <= R, A_j <= X }, where dp[j] is the LIS length ending exactly at position j. Upper bound: any valid subsequence ends at some such j and has length <= dp[j]. Achievability: the subsequence realizing dp[j] uses only indices <= j <= R and values < A_j <= X. This is exact, so no per-query subsequence reasoning is needed.
+- **Computing dp:** 1-based rank via sorted(set(A)) and bisect_left. A max-Fenwick over values gives prefix max over strictly smaller values using query(rank-1); update at rank with dp[j]. Strictness is enforced by rank-1, so equal values never chain.
+- **Answering queries:** offline 2D dominance max. Sort queries by X ascending and positions by A_j ascending; sweep X, activating each position j with A_j <= X by a point update of dp[j] into a max-Fenwick over indices; answer is prefix max over [1, R]. Both dimensions handled correctly.
+- **Fenwick max validity:** only monotone (non-decreasing) point updates are used (each position activated once, values only rise), so a plain max-Fenwick is correct; never apply a decreasing update to it.
+- **Complexity:** O((N+Q) log N) time, O(N) extra memory. No persistent tree needed, so memory stays low for N,Q up to 2e5.
+- **Guarantee:** X >= min A over first R implies every answer is >= 1, so no special-casing empty prefixes.
+- **IO/perf:** read everything with sys.stdin.buffer.read().split(); inline Fenwick loops avoid function-call overhead. Output joined with newlines.
+- **Verification:** ran both samples mentally/against expected. Sample 1 -> 2,1,2. Sample 2 -> dp=[1,2,3,2,1,1,4,5,4,1] and answers 4,1,1,2,1,5,3,4, matching expected.

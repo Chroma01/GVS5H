@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive/prove the reduction: answer = S + reverse(first k chars of S) where k = n - (longest palindromic suffix length).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Select a linear-time approach: KMP prefix function on reverse(S) + '#' + S.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the KMP prefix-function construction and stdout output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify logic on provided samples (ABC, Z, TREE) \u2014 all passed.",
+    "status": "done",
+    "result": ""
+  }
+]

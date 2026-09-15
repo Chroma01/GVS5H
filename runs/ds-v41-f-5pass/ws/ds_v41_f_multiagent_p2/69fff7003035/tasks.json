@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive combinational contribution via linearity: fixed value v in length class l contributes v\u00b7\u03a3_{S\u2286others} |S|!(N-1-|S|)!\u00b710^{total length of S}, captured by (1+a_l x)^{c_l-1}\u00b7\u220f_{m\u2260l}(1+a_m x)^{c_m}.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm formula on small cases (N=3 \u2192 1332; N=2 \u2192 33) and validate the recurrence coefficients.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Group integers 1..N by digit length; compute c_l (count) and s_l (sum of values mod MOD) for each class, with a_l=10^l mod MOD.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Build P(x)=\u220f_l (1+a_l x)^{c_l} via the logarithmic-derivative recurrence (P'D=PC) in O(len(classes)\u00b7N) using precomputed modular inverses; build D and C.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each active length class compute q=P/(1+a_l x) via q_k=p_k-a_l q_{k-1} and accumulate s_l\u00b7\u03a3_k k!(N-1-k)!\u00b7q_k.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Implement the final Python program (stdin N \u2192 stdout answer, mod 998244353) and verify all three provided samples (PASSED).",
+    "status": "done",
+    "result": ""
+  }
+]

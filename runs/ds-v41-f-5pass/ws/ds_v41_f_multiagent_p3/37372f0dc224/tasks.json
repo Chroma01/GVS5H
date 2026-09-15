@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement single-file solution: read S, compute n and revS=S[::-1].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build T = revS + '#' + S using a separator outside A-Z, compute KMP prefix function pi iteratively for T.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Let L = pi[-1], k = n - L, answer = S + revS[n - k:], print to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify against samples ABC->ABCBA, Z->Z, TREE->TREERT, and edge cases (all-same letters, already-palindrome S).",
+    "status": "done",
+    "result": ""
+  }
+]

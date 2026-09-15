@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Read N,K,A and build frequency array",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Analyze approaches and select harmonic sieve + descending d-assignment for largest feasible divisor per value",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement full solution with special-case K=1 and K=N, fast buffered I/O",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run all three samples and verify exact match (passed)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm correctness of cnt[d] >= K feasibility reduction and per-position lookup via ans[A_i]",
+    "status": "done",
+    "result": ""
+  }
+]

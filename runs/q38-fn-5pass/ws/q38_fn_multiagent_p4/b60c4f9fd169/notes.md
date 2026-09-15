@@ -1,0 +1,14 @@
+- **Algorithm:** Trim common prefix/suffix, prune by length difference, use the safe upper bound `K >= max(n, m)`, then run Landau-Vishkin bounded edit distance with LCP queries.
+- **Landau-Vishkin state:** For diagonal `d = i - j`, `V[d]` stores the furthest `i` reachable after the current number of edits. `j = i - d`.
+- **Recurrence:** For each edit count `e` and diagonal `d`, take max of deletion from `d-1` (`V[d-1]+1`), insertion from `d+1` (`V[d+1]`), and substitution from `d` (`V[d]+1`). Then extend by LCP.
+- **Success condition:** After extension, if `x >= n` and `x - d >= m`, the end is reached within `e` edits.
+- **All diagonals:** Because substitution keeps the same diagonal, iterate all `d` from `-e` to `e`, not only same-parity diagonals.
+- **LCP queries:** Double 64-bit polynomial rolling hashes modulo `2^64` with two odd bases. Binary search the longest common prefix of suffixes `S[i:]` and `T[j:]`.
+- **Hash details:** Prefix arrays and power arrays are stored in `array('Q')` to keep memory low. Substring hash is `(h[r] - h[l] * pow[len]) mod 2^64`.
+- **LCP optimization:** Direct first-character check avoids binary search when the first characters differ; LCP results are cached by `(i, j)` encoded as `i * (m + 1) + j`.
+- **Trimming correctness:** Common prefix and suffix can be preserved in some optimal edit script, so removing them does not change the edit distance.
+- **Pruning:** `abs(n - m) > K` is impossible. `K >= max(n, m)` is always possible by substituting aligned mismatches and inserting/deleting the length difference.
+- **Complexity:** Trimming and hashing are `O(|S| + |T|)`. Landau-Vishkin does `O(K^2)` states and each LCP is `O(log N)`, so about `O(K^2 log N)` after preprocessing. Memory is `O(|S| + |T|)`.
+- **Pitfalls handled:** Boundary diagonals use sentinel `-1`; array indices have margin; overshooting past string ends is safe for the decision problem; substitution parity is included; empty cases are covered by length/upper-bound checks.
+- **Probabilistic note:** Double 64-bit hashing makes collisions negligible for contest constraints, though not mathematically deterministic.
+- **Samples:** Sample 1 returns Yes via upper bound after trimming; sample 2 is rejected by Landau-Vishkin; sample 3 is within budget and is accepted by the bounded algorithm.

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement exact DP feasibility check for fixed `L`: `dp[last_char][run_len]` = minimum flips, with transitions capped at `run_len <= L`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Integrate binary search over possible answers from `1` to `n` using the exact feasibility check.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run sample tests and edge cases to confirm correctness, including boundary/off-by-one cases and constraint performance.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,14 @@
+- **Problem model:** Count length-n sequences over alphabet size m with exactly k adjacent-equal pairs (indices i in 1..n-1 with arr[i-1]==arr[i]), mod 1e9+7.
+- **Key insight (run decomposition):** Exactly k equal gaps splits the array into n-k maximal runs of equal values. The k equal-gap positions are chosen freely from the n-1 gaps; each later run must differ from its predecessor.
+- **Closed form (verified against all 3 examples):** answer = m * C(n-1, k) * (m-1)^(n-1-k) mod 1e9+7.
+  - First/leftmost run: m choices. Each subsequent run: m-1 choices (must differ from previous).
+  - Example 1 (n=3,m=2,k=1): 2*C(2,1)*1 = 4. Example 2 (n=4,m=2,k=2): 2*C(3,2)*1 = 6. Example 3 (n=5,m=2,k=0): 2*C(4,0)*1 = 2. All match.
+- **Binomials:** Precompute fact[0..n] and inv_fact via one Fermat inverse pow(fact[n], MOD-2, MOD) then a downward sweep. C(a,b)=fact[a]*inv_fact[b]*inv_fact[a-b]. O(n) time, O(n) space.
+- **Edge cases:**
+  - k > n-1: return 0 (gaps only exist between adjacent elements). Also guard k<0.
+  - n=1: only k=0 valid; formula gives m*C(0,0)*pow(m-1,0)=m. Correct (all single-element arrays are good).
+  - m=1: (m-1)=0. If exponent n-1-k > 0, pow gives 0 (no good array can have a "different" next run). Only when k=n-1 does exponent=0, pow(0,0,MOD)=1, giving 1 array (all equal). Correct.
+  - exponent 0: pow(m-1, 0, MOD)=1 even for m=1. Correct.
+- **Complexity:** O(n) time and space; fine for n,m,k up to 1e5.
+- **Brute-force cross-check (reasoning):** For small n,m enumerate all m^n arrays, count equal gaps, tally per k; formula matches (e.g. m=1 gives 1 only at k=n-1; m=2 gives symmetric binomial pattern).
+- **Superseded:** any O(nk) DP over last-value is unnecessary given the symmetry; do not implement it.

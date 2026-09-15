@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Identify that N is small while M is the only large dimension, so a small finite automaton over LCS DP rows is required.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm the row is nondecreasing with increments 0/1, giving at most 2^N states, and that letters absent from S can be grouped with multiplicity 26 minus distinct letters in S.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the full LCS-DP-row automaton solution (parse, state encoding, per-letter transitions with grouping of non-S letters, length-M DP modulo 998244353, aggregate by popcount, print).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate correctness against samples 1-3 (all passed) via the worker's SAMPLE TESTS verdict.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Ensure performance is adequate for N=10 (1024 states) and M=100 \u2014 memoized transitions keep it well within limits.",
+    "status": "done",
+    "result": ""
+  }
+]

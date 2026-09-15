@@ -1,0 +1,6 @@
+- **Core reduction:** Sum over all valid arrangements by swapping summation order. Each unordered pair of distinct cells appears together in exactly `C(m*n - 2, k - 2)` arrangements, so the answer is that multiplier times the total Manhattan distance over all unordered cell pairs.
+- **Pairwise Manhattan sum:** Manhattan distance separates into row and column contributions. For rows, a row difference `d` occurs for `(m - d) * n^2` unordered cell pairs, giving `n^2 * sum_{d=1}^{m-1} d*(m-d) = n^2 * m*(m^2 - 1)/6`. Columns are symmetric: `m^2 * n*(n^2 - 1)/6`.
+- **Modular arithmetic:** Work modulo `10^9 + 7`. Division by `6` is done with modular inverse `pow(6, MOD - 2, MOD)`. Since `m, n <= 10^5 < MOD`, reducing them modulo `MOD` is safe.
+- **Binomial computation:** `m*n <= 10^5`, so factorial and inverse factorial arrays up to `m*n - 2` are feasible. This handles `k = 2` and `k = m*n` naturally.
+- **Complexity:** `O(m*n)` time and memory for factorial precomputation, `O(1)` for the distance formula.
+- **Edge cases:** Single-row or single-column grids make one contribution zero. `k = 2` gives multiplier `1`. `k = m*n` also gives multiplier `1`. Invalid or impossible inputs are guarded defensively.

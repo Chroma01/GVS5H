@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Identify forbidden rectangle [L,R]x[D,U]; valid blocks = full grid minus hole; answer = (all full-grid monotone paths) - (paths whose first hole cell exists), using first-hit decomposition into start-in-hole, from-below (y=D), from-left (x=L).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement T(W,H) = C(W+H+4,H+2) - (H+3) - (W+1)*(H+2) mod 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement StartTerm = sum_{e in hole} out(e) in O(1) via 2D prefix F(I,J)=C(I+J+4,J+2)-(J+3)-(I+1), subtracting the cell count.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement TermA (drop if D=0) and TermB (drop if L=0) as O(R-L+1)/O(U-D+1) loops using g(x,y)=C(x+y+2,x+1)-1 and out(x,y)=C(W-x+H-y+2,W-x+1)-1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Precompute factorials/inv-factorials up to W+H+6; validated on all three provided samples and against brute-force on small grids.",
+    "status": "done",
+    "result": ""
+  }
+]

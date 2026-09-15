@@ -1,0 +1,10 @@
+- **Approach:** Count beautiful numbers up to `n` with digit DP, then answer the range as `count_up_to(r) - count_up_to(l - 1)`. Leading zeros are allowed in the fixed-length representation.
+- **DP state:** `(pos, tight, started, digit_sum, e2, e3, e5, e7, zero_product)`. `started` prevents counting the all-zero number and distinguishes leading zeros from real zero digits.
+- **Zero handling:** Once a real zero digit appears, the digit product is zero and every completion is beautiful because the digit sum is positive. The DP switches to `zero_product` and uses a shortcut: if tight, return `suffix[pos] + 1`; otherwise return `10 ** remaining_positions`.
+- **Prime-exponent state:** For zero-free numbers, the digit product has only prime factors 2, 3, 5, and 7. Divisibility by the digit sum is checked by comparing the product's exponents with the sum's exponents. Sums containing any other prime factor are impossible.
+- **Capping:** Exponents are capped at the maximum exponent required by any digit sum up to `9 * length`. This is safe because only coverage of those requirements matters, and it keeps the state space small.
+- **Transitions:** Leading zero keeps `started` false. Starting with a nonzero digit initializes sum and exponents. A real zero sets `zero_product`. Nonzero digits add their digit value to the sum and their prime exponents to the product state.
+- **Base case:** At the end, count the number only if it started, has positive sum, has a valid requirement tuple, and the capped product exponents cover that requirement.
+- **Validation:** The current implementation passes the two provided examples and the tiny edge cases `(1,1)`, `(10,10)`, and `(1,100)`, where the expected count for `1..100` is 25.
+- **Complexity:** With `r < 10^9`, length is at most 9, or 10 for a defensive `10^9` bound. The reachable state count is small because digit sum is at most 81 or 90 and exponents are capped; each state tries at most ten digits.
+- **Edge cases:** `n <= 0` returns 0, single-digit numbers are all beautiful, numbers containing a real zero are all beautiful, and leading zeros are not treated as zero-product digits.

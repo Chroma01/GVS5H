@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive per-element cost c(x) = floor(log_4 x) + 1, with c(0)=0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Establish per-query formula min_ops = max(c(r), ceil(sum_{x=l}^{r} c(x) / 2)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement prefix-sum F(n) over intervals [4^{k-1}, 4^k - 1] with integer-safe power handling (no floating point log).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement main loop over queries: D = F(r)-F(l-1); accumulate max(c(r), (D+1)//2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Execute the solution on samples [[1,2],[2,4]] -> 3 and [[2,6]] -> 4; both pass, plus edge cases (l=1, r=4^k, r=10^9, 1e5 queries) verified.",
+    "status": "done",
+    "result": ""
+  }
+]

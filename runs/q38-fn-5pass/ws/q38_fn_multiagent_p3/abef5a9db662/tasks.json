@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select the Fenwick difference-array method over the forward lazy segment tree.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a Fenwick tree over indices 1..500000 initialized to the difference array of the identity sequence (all ones).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement point_add and prefix_sum operations for the Fenwick tree.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement lower_bound(target) returning the smallest index whose prefix sum is at least target, or 500001 if none exists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each contest [L, R], compute l = lower_bound(L) and r = lower_bound(R + 1) - 1; if l <= r, apply point_add(l, 1) and, if r < 500000, point_add(r + 1, -1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Answer each query X by printing prefix_sum(X).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Handle edge cases: empty contest ranges, r at the maximum index, targets larger than the total sum, and final ratings exceeding 500000.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Run the provided sample tests to verify correctness.",
+    "status": "done",
+    "result": ""
+  }
+]

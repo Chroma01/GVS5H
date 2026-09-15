@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse and formalize: for fixed common sum H, final upper lengths lie in [max(0,H-D_i), min(U_i,H)], cost is sum(U_i+D_i) - N*H, so maximize feasible H.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive feasibility condition as H <= U_i + D_j + X|i-j| for all i,j, hence Hmax = min_{i,j}(U_i + D_j + X|i-j|).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Identify O(N) algorithm via prefix minima of D_j - X*j for j<=i and suffix minima of D_j + X*j for j>=i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the Python program reading stdin and writing stdout, computing Hmax in O(N) with 64-bit arithmetic, then outputting S - N*Hmax.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate against all four samples (15, 0, 5999999994, 9460); all public samples passed.",
+    "status": "done",
+    "result": ""
+  }
+]

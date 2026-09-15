@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select the frequency plus fast Walsh-Hadamard transform XOR convolution method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete solution: parse H, W, and grid rows into bitmasks; build freq of size 2^W; build cost[m] = min(popcount(m), W - popcount(m)); perform FWHT XOR convolution; take the minimum convolution value as the answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Optimize the Python implementation for W up to 18, including efficient popcount, in-place FWHT loops, and avoiding unnecessary allocations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test the implementation on the provided samples and edge cases such as H=1, W=1, all-zero grid, all-one grid, and maximum W.",
+    "status": "done",
+    "result": ""
+  }
+]

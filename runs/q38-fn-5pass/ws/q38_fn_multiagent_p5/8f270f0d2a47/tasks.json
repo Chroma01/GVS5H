@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement `count_up_to(n)` with digit DP over position, tight flag, started flag, digit sum, and digit product.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle leading zeros so they do not contribute to digit sum or digit product, and exclude the all-zero number.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Collapse any state where a zero digit has appeared after the number has started to `digit_product = 0`, and count it as beautiful at the end if `digit_sum > 0`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "At the end of the DP, count a number only if it has started and `digit_product % digit_sum == 0`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Wire `beautifulNumbers` to return `count_up_to(r) - count_up_to(l - 1)`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run the current solution against the provided examples and edge cases and report a SAMPLE TESTS verdict.",
+    "status": "done",
+    "result": ""
+  }
+]

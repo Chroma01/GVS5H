@@ -1,0 +1,15 @@
+- **Validation result:** The bounded-hop hypothesis is correct; no counterexample exists. Small-N exhaustive/random checks comparing Floyd-Warshall on the explicit disjointness graph with the 3-edge formula agree, and a structural proof explains why.
+- **Why at most 3 edges:** With positive vertex weights, a minimum-weight path can be assumed simple and induced: any chord allows shortcutting a subpath and strictly decreases total weight. The interval disjointness graph has no induced path on 5 vertices. For a putative induced path v0-v1-v2-v3-v4, v0 and v2 overlap, so v1 must be entirely left of both or right of both; similarly v3 is entirely left or right of v2 and v4. If v1 and v3 are on opposite sides of v2, they are disjoint, contradicting non-adjacency. If they are on the same side, say left, then v1 is left of v0, v3 overlaps v0, v3 is left of v4, and v1 overlaps v4, giving R3 < L4 <= R1 < L0 <= R3, impossible. The right-side case is symmetric. Hence every induced path has at most 3 edges.
+- **Query structure:** If s and t are disjoint, the direct edge is always optimal because all weights are positive. Otherwise s and t overlap.
+- **Two-edge paths:** An intermediate vertex disjoint from both overlapping intervals must be strictly left of both (R < min(Ls, Lt)) or strictly right of both (L > max(Rs, Rt)).
+- **Three-edge paths:** For s-a-b-t, if a and b are both on the left side or both on the right side, one of them is already disjoint from both endpoints, so the corresponding two-edge path is cheaper. Thus only opposite-side pairs matter: a left of s and b right of t, or a right of s and b left of t. These pairs are automatically disjoint because s and t overlap.
+- **Final formula for overlapping s,t:** extra cost is the minimum of:
+  - `pref[min(Ls, Lt)-1]` (common left),
+  - `suff[max(Rs, Rt)+1]` (common right),
+  - `left_min[s] + right_min[t]`,
+  - `right_min[s] + left_min[t]`.
+  If all are infinite, answer is -1.
+- **Precomputation:** Coordinates are bounded by 2N. `pref[x]` stores the minimum weight among intervals with right endpoint <= x; `suff[x]` stores the minimum weight among intervals with left endpoint >= x. Strict disjointness is handled by querying `L_i-1` and `R_i+1`.
+- **Complexity:** O(N + Q + max coordinate) time and O(N + max coordinate) memory, with max coordinate = 2N.
+- **Implementation details:** Use 0-based vertex indices, INF = 10^30, and direct disjointness check `R[s] < L[t] or R[t] < L[s]`. Input is parsed as an integer list for speed; temporary endpoint arrays are deleted after prefix/suffix construction.
+- **Superseded approaches:** No auxiliary graph, component decomposition, or Dijkstra-like processing is needed once the induced-path bound is established.

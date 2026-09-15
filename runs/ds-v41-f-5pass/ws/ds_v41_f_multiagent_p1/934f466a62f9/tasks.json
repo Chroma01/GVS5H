@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input: read T, then per test read N K and the N triples (X,Y,Z).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Per test: compute m_i=max(X,Y,Z) and base color = argmax coordinate (deterministic tie-break); sort items by m desc; T=first 2K; G=sum m_i; compute base parity over T.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If parity empty output G; else set {p,q}=odd colors, r=third, and build candidate recolor ops (item in T, base b->target d, cost m_i-w_{i,d}).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Build candidate swap ops (remove i in T base b, add j not in T target d, cost m_i-w_{j,d}) using few smallest m_i per base and few largest w_{j,d} outside per target.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute min loss = min(single op boundary {p,q}, or two ops boundaries {p,r}+{r,q} with all ids distinct); output G - min_loss.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run brute-force reference vs main solution on random small cases (N\u22648, values 0..6 with ties) plus edge cases (M=N, all-identical items); no mismatch found and both public samples pass.",
+    "status": "done",
+    "result": ""
+  }
+]

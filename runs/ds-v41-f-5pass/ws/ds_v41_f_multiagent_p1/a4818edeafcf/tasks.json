@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive prefix/suffix distinct counts and valid index ranges (i in [1,j-1], j in [2,N-1]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Establish sweep transition: adding A[j] raises overlap only for i >= prev occurrence p, i.e. range-add +1 over [p, j-1] (no update when p does not exist).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Identity pref[i]+mid(i+1,j)=D_j+overlap(i,j); answer candidate = D_j + suf[j+1] + max overlap.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement no-pushdown lazy segment tree (d=max(children)+lz) with the full sweep; verified sample outputs 5 and 9.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Micro-optimize for N=3e5 (length-1 point-update fast path; no function calls in hot loop); sanity-checked extra cases.",
+    "status": "done",
+    "result": ""
+  }
+]

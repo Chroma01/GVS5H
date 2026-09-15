@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python solution with sieve, square list, and binary search queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run sample tests and fix any failures.",
+    "status": "done",
+    "result": ""
+  }
+]

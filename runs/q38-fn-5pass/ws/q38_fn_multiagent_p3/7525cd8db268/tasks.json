@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the sweep-line solution in the starter code: normalize each conflicting pair to `(lo, hi)`, bucket pairs by `hi`, sweep right endpoints `r = 1..n`, maintain the largest active `lo`, its multiplicity, its unique pair id when multiplicity is one, and the second-largest distinct active `lo`; compute `base_valid = sum(r - max_lo)` and accumulate per-pair gain `max_lo - second_max_distinct` only when that pair is the unique maximum; return `base_valid + max(gain)`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation against the provided examples and edge cases: a single conflicting pair, duplicate conflicting pairs, multiple active pairs sharing the same maximum `lo`, pairs that never become the unique dominant constraint, and large `n` performance; report a SAMPLE TESTS verdict.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If validation fails, debug tie handling, duplicate-pair handling, and range attribution; if the sweep approach remains incorrect, switch to an offline second-strongest-active-pair assignment approach.",
+    "status": "done",
+    "result": ""
+  }
+]

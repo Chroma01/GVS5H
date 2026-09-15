@@ -1,0 +1,10 @@
+- **Problem shape:** alternating permutation = adjacent parities always differ; return k-th in lexicographic order or [] if k exceeds total.
+- **Parity-only structure:** alternation forces parities to strictly alternate, so a permutation is a parity pattern plus a bijection of odd values onto odd slots and even values onto even slots.
+- **Feasibility by n parity:** n odd (odds=(n+1)/2, evens=n/2) only allows a start with odd; n even allows both starts. Wrong start parity yields completion count 0 and is skipped automatically, so no special-casing needed.
+- **count_after(o,e,next_par):** with r=o+e remaining slots, the next slot parity fixes required slot counts: next odd -> (Orem,Erem)=((r+1)//2, r//2); next even -> (r//2,(r+1)//2). Completion count = fact[o]*fact[e] iff o==Orem and e==Erem, else 0. r==0 -> 1.
+- **Greedy unranking:** walk positions left to right; try unused values of the allowed parity in ascending order, compute cnt for placing that value; if k<=cnt pick it, else k-=cnt. If no candidate fits, return [].
+- **Complexity:** O(n^2) time (inner scan of up to n values per position), O(n) space.
+- **No overflow capping needed:** Python big ints handle fact up to 50! and products ~1e128 exactly; only comparisons/subtractions against k<=1e15 occur. A cap is still a safe optimization if ported to fixed-width languages.
+- **Verified cases:** n=4,k=6 -> [3,4,1,2]; n=3,k=2 -> [3,2,1]; n=2,k=3 -> []; n=1,k=1 -> [1]; n=1,k=2 -> []. Totals match: n=4 gives 2*(2!)^2=8, n=3 gives 2!*1!=2.
+- **Test harness:** `all_alternating(n)` brute-forces sorted valid perms via itertools.permutations filtering on `(p[i]-p[i+1])&1`. Exhaustively compares Solution against brute for n in 1..8 and k in 1..(total+2) (covers out-of-range), plus the three given examples. Prints PASS/FAIL and lists any (n,k,expected,got) mismatches.
+- **Harness result:** all checks pass; solution reproduces the brute-force table and returns [] exactly for k>total.

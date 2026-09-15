@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate and select the depth-wise feasibility plus binary search approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement trie insertion with pass counts, depths, and per-word path node lists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Aggregate per-depth max count, number of count-k groups, and unique count-k node.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement per-index feasibility check and binary search for the longest valid prefix length.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle early return when removing one word leaves fewer than k strings, k=1, duplicates, and short words.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run sample tests and edge cases; if failures occur, fix the current approach or switch to Euler-tour DSU/trie DP fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

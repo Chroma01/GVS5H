@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce each person to a directed interval on prefix potentials and outline the pairwise conflict rules.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate the pairwise-conflict characterization with a small DSU/cycle oracle.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the full sliding-window solution: transform intervals, maintain per-direction endpoint occupancy and same-direction segment trees, compute first_bad[L], and answer all queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimize the Python implementation for the constraints: fast I/O, iterative segment tree, low-overhead updates/queries, and careful edge-case handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run the public sample tests and confirm the solution passes.",
+    "status": "done",
+    "result": ""
+  }
+]

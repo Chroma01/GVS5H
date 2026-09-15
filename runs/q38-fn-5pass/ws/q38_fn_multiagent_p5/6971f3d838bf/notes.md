@@ -1,0 +1,18 @@
+- **Validation:** The implementation was checked against the provided samples and a broad set of hand brute-forced edge cases: `n = 1`, all equal negative/positive, all negative, zeros, positive-only, single deletion, repeated negatives, consecutive occurrences, empty gaps, and cases where the best subarray crosses several gaps. No failing case was found, so the current segment-tree approach is retained.
+- **Reduction:** Deleting a positive or zero value cannot improve the answer. Any subarray after deleting such a value corresponds to an original contiguous interval whose sum is at least as large, because the removed contribution is non-negative. Therefore only negative values present in `nums` need to be considered, while the original Kadane answer always covers doing nothing.
+- **Gap structure:** For a candidate value `x`, removing all occurrences concatenates the gaps before the first occurrence, between consecutive occurrences, and after the last occurrence. The best subarray after deleting `x` is the best subarray of this concatenation.
+- **Segment statistics:** Each interval is represented by four non-empty statistics: total sum, best non-empty prefix sum, best non-empty suffix sum, and best non-empty subarray sum. Merge of `A` followed by `B` is:
+  - `total = A.total + B.total`
+  - `pref = max(A.pref, A.total + B.pref)`
+  - `suff = max(B.suff, B.total + A.suff)`
+  - `best = max(A.best, B.best, A.suff + B.pref)`
+- **Identity handling:** Empty intervals use `(0, NEG, NEG, NEG)`. Using zero as an identity for prefix/suffix/best would be wrong for all-negative cases. `NEG = -1e18` is safely below any real sum (`|sum| <= 1e11`) and fits in signed 64-bit arrays.
+- **Implementation details:** Occurrence lists are built only for negative values. Prefix and suffix statistics arrays are precomputed in O(n), allowing the first and last gap for every candidate to be handled in O(1). An iterative segment tree over the original array answers only middle gaps between consecutive occurrences. The total number of middle gaps over all candidates is at most `n`, so the total query count is O(n).
+- **Memory/performance balance:** The implementation stores prefix/suffix statistics in `array('q')` arrays to reduce Python object overhead, while the segment tree uses ordinary lists because it is queried much more frequently. This keeps memory reasonable and improves query speed.
+- **Edge cases covered:**
+  - `n = 1`: no valid deletion can leave a non-empty array if the only value is deleted; original answer is returned.
+  - All elements equal to a negative value: deletion invalid, original answer returned.
+  - Empty gaps are skipped.
+  - All valid resulting subarrays may be negative; the answer is not clamped to zero.
+  - Positive-only or zero-containing arrays return the original maximum.
+- **Complexity:** O(n log n) time due to segment-tree queries for middle gaps, and O(n) memory.

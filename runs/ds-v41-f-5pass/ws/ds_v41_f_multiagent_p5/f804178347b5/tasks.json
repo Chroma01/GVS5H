@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement single-cost bottom-up DP (v=current majority, f=min flips to flip); leaves (v=bit, f=1), internal node takes sum of two smallest child costs to reach target t=1-v_new; output f[root].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Process level-by-level reducing size by factor 3; numpy vectorized primary path plus pure-Python fallback; handle both \"010011101\" and space-separated digit input.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run on Sample 1 (N=2, \"010011101\" -> 1) and Sample 2 (N=1, \"000\" -> 2); both passed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Brute-force verify correctness of the combine rule on many small random inputs (N=1,2, and sample N=3 cases); no mismatches found.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,11 @@
+- **Problem:** find positive integers (x, y) with x^3 - y^3 = N, N up to 1e18; output any pair or -1.
+- **Key identity:** x^3 - y^3 = (x-y)(x^2 + xy + y^2). With d = x - y and x = y + d, the second factor equals 3y^2 + 3dy + d^2.
+- **Equation:** N = d * (3y^2 + 3dy + d^2). Set M = N // d, requiring d | N.
+- **Bound on d:** since y >= 1, second factor >= d^2 + 3d + 3 = ((d+1)^3 - d^3)/d ... more simply N >= d^3 + 3d^2 + 3d = (d+1)^3 - 1, so d^3 < N and d <= floor(cuberoot(N)) <= 1e6. Iterating d is feasible.
+- **Solving for y:** 3y^2 + 3dy + (d^2 - M) = 0. Discriminant Delta = 9d^2 - 12(d^2 - M) = 12M - 3d^2. Then y = (isqrt(Delta) - 3d) / 6.
+- **Integer checks:** require Delta >= 0, s = isqrt(Delta) with s*s == Delta, num = s - 3*d with num > 0 and num % 6 == 0. Then y = num//6, x = y + d.
+- **Integer cube root:** compute approx via float (N**(1/3)) then correct with exact `while D**3 > N: D -= 1` and `while (D+1)**3 <= N: D += 1`; float error at 1e18 is tiny but correction guarantees correctness. Iterating up to and including icbrt(N) is safe: for N = k^3 the d = k case gives num = 0 and is filtered.
+- **Edge cases:** N = 1 -> d = 1 gives num = 0 -> -1. Loop naturally covers d = 1 (difference must be at least 1 for positive distinct cubes; consecutive cubes 12^3 - 11^3 = 397).
+- **Verified samples:** 397 -> d=1, M=397, Delta=4761, s=69, num=66, y=11, x=12 -> "12 11". N=1 -> "-1". Sample 3 matches "342756 66212".
+- **Complexity:** O(cuberoot(N)) ~ 1e6 iterations, each a cheap modulo plus occasional isqrt; fast enough in Python. All arithmetic is exact Python int.
+- **Rejected alternatives:** binary search per d (slower, unnecessary), full divisor enumeration/Pollard Rho (extra complexity, no gain at 1e6), Eisenstein norms (error-prone), modular prefilters (no asymptotic gain).

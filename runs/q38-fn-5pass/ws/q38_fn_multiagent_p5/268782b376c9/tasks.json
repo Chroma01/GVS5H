@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: binary search on answer; feasibility as minimum walk covering visit demands; independent-set/MWIS reduction candidate.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Solution.maxScore with binary search and O(n) feasibility check using prefix/suffix MWIS over a_i=c_i-1 and b_i residual weights.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build a brute-force BFS validator for tiny arrays and move budgets.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run sample tests and random small-case brute-force validation using `_brute_feasible`; no mismatches found.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Finalize edge-case handling (x=0, m<n, n=2, large bounds) after validation.",
+    "status": "done",
+    "result": ""
+  }
+]

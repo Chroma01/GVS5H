@@ -1,0 +1,8 @@
+- **Problem:** Max XOR over all K-subsets of A. N up to 2e5, A_i < 2^60, C(N,K) <= 1e6.
+- **Key observation:** C(N,K) <= 1e6 forces min(K, N-K) to be at most about 11. So we can enumerate either all chosen K-subsets or all excluded (N-K)-subsets.
+- **Algorithm:** Compute T = XOR of all A. Let M = min(K, N-K). If M == 0 (K == N), answer T. If K <= N-K, enumerate combinations(A, K) and take max XOR. Otherwise enumerate combinations(A, N-K) and answer max(T ^ xor_excluded).
+- **Correctness:** For any K-subset S, its complement E has size N-K and XOR(S) = T ^ XOR(E). Maximizing XOR(S) over S is equivalent to maximizing T ^ XOR(E) over E. Enumerating all E covers all S exactly once.
+- **Implementation details:** Use itertools.combinations over the original list so duplicates are treated as distinct by index. Use functools.reduce(operator.xor, comb) to compute tuple XOR. M == 1 is special-cased to avoid tuple creation for N up to 2e5.
+- **Complexity:** O(C(N,M) * M) time, O(N) memory. With C(N,K) <= 1e6 and M <= 11, at most about 1.1e7 XOR operations.
+- **Edge cases:** K = N gives total XOR. N = 1, K = 1. Duplicate values handled correctly. M = 0 only when K = N since K >= 1.
+- **Pitfalls avoided:** Do not deduplicate A. In the complement case, maximize T ^ y rather than y. Use M = min(K, N-K) to keep enumeration within the guaranteed bound.

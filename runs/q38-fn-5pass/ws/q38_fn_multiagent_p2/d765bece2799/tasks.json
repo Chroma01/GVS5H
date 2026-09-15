@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate candidate approaches and select the monotonic-stack contribution method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement an O(1) helper to count positive left/right choices whose combined subarray length is at most k.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement sum of minima using monotonic stacks with tie-breaking that assigns each subarray minimum to exactly one equal-valued index.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement sum of maxima using mirrored monotonic stacks with consistent tie-breaking.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Combine minima and maxima totals and handle edge cases such as k=1, k=n, duplicates, and negative values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate against sample tests and additional edge cases.",
+    "status": "done",
+    "result": ""
+  }
+]

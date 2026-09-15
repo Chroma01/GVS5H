@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the combinatorial factor C(m*n - 2, k - 2) modulo MOD, including handling k=2 and precomputing factorials/inverses up to m*n.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive a formula for T(L) = sum of |i-j| over all unordered pairs in {0,...,L-1} = (L^3-L)/6, and verify small cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Express the total Manhattan distance over all cell pairs as n^2 * T(m) + m^2 * T(n).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the full solution: precompute factorials/inverses, compute C(N-2,k-2) and (n^2*T(m)+m^2*T(n)) mod MOD, return product.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify the sample tests (2,2,2)->8 and (1,4,3)->20, plus boundaries k=2 and k=m*n.",
+    "status": "done",
+    "result": ""
+  }
+]

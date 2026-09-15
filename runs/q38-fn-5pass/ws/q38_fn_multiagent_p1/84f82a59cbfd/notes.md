@@ -1,0 +1,8 @@
+- **Characterization:** If N has exactly two distinct prime factors and every prime exponent is even, then N = p^(2a) * q^(2b) = (p^a * q^b)^2. Conversely, if m has exactly two distinct prime factors, then m^2 is a 400 number. Thus the problem reduces to finding the largest m^2 <= A where m has exactly two distinct prime factors.
+- **Bound:** Since A <= 10^12, m <= floor(sqrt(A)) <= 10^6. This makes full precomputation up to 10^6 feasible.
+- **Sieve design:** Use a bytearray `omega` of length limit+1. For each detected prime i, increment `omega[j]` for every multiple j of i. This counts distinct prime factors, not multiplicity. Detection of primes works because a composite i has already been incremented by at least one smaller prime factor.
+- **Precomputed values:** After the sieve, collect `i*i` for all i with `omega[i] == 2`. These are all possible 400 numbers up to max(A).
+- **Query handling:** For each query A, compute r = isqrt(A). The answer is the largest precomputed square <= r*r. Use `bisect_right(valid_squares, r*r) - 1` to find it in logarithmic time.
+- **Complexity:** Let L = floor(sqrt(max(A))) <= 10^6. Sieve time is O(L log log L), precomputation is O(L), and each query is O(log V), where V is the number of valid bases. Memory is O(L + V + Q), easily within limits.
+- **Edge cases:** A = 36 gives base 6 and answer 36. A = 10^12 gives base 10^6, which has exactly two distinct prime factors (2 and 5), so the answer is 10^12. The code also guards against an unexpected missing answer by printing 0, though constraints guarantee existence.
+- **Verification:** Sample behavior matches: 404 -> 400, 36 -> 36, 60 -> 36, 10^12 -> 10^12, and 123456789 -> 123454321 because 11111 = 41 * 271 has exactly two distinct prime factors.

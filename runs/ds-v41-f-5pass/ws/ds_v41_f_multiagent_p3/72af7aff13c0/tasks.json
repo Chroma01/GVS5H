@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Read input, transpose the grid when H > W (so the maintained dimension is \u2264 min(H,W) \u2264 ~447), and remap directions U\u2194L, D\u2194R accordingly; store the grid column-major.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute prefix DP vectors pr[w][h] (path products from (1,1) to (h,w)) and suffix DP vectors sf[w][h] (path products from (h,w) to (H,W)) in O(HW).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each query, advance the token, then (if the value actually changes) update the running answer by (new\u2212old)\u00b7p\u00b7g mod 998244353, where p = prefix-sum excluding the cell (pr[c][r-1] + pr[c-1][r]) and g = suffix-sum excluding the cell (sf[c][r]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "On a horizontal move, recompute the full destination column vector in the direction of travel (pr on right move, sf on left move); on a value change, repair only the affected rows of that column (pr rows \u2265 r, sf rows < r). Vertical moves require no vector recomputation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Emit the maintained answer after each change; verified on both public samples (456/666/822 and 299123226/548055393/810247224/876210800/773990840/506814544).",
+    "status": "done",
+    "result": ""
+  }
+]

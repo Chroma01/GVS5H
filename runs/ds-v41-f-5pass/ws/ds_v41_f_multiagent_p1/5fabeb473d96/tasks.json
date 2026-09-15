@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive piecewise edge-contribution probabilities for u<v: i<u -> 2(i-1)/(i(i+1)); i=u -> (u-1)/u; u<i<v -> 1/i; i=v -> 1; i>v -> 0; edge i=1 nonexistent.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Cross-check formula against samples 1 and 2 (2, 3 and 100) and confirm joint ancestor probability 2/(i(i+1)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement O(N+Q) algorithm: inverses, factorial (N-1)!, prefix sums S1, S2, O(1) per query, print answers; test on samples 1-3 and edge cases (N=2, u=1, v=N).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Report the sample-test verdict (PASS/FAIL) with outputs for all three samples.",
+    "status": "done",
+    "result": ""
+  }
+]

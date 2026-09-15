@@ -1,0 +1,9 @@
+- **Problem reduction:** In a sorted interval [L, R], an optimal solution of K pairs can always use the K smallest elements as tops and the K largest as bottoms. This follows from a majorization argument: replacing tops by smaller elements and bottoms by larger elements preserves feasibility.
+- **Feasibility condition:** Let t = L + K - 1 (0-indexed). Set d = R - t. Pair the i-th top with the i-th bottom in sorted order, i.e., top x pairs with bottom x + d. K is feasible iff for every x in [L, t], A[x] <= A[x + d] / 2.
+- **Gap array:** Define nxt[x] as the first index with A[nxt[x]] >= 2*A[x], and gap[x] = nxt[x] - x. The condition becomes nxt[x] <= x + d, i.e., gap[x] <= d. Thus K is feasible iff max_{x in [L, t]} gap[x] <= R - t, equivalently t + max_gap(L, t) <= R.
+- **Two-pointer for nxt:** Since A is sorted, 2*A[x] is non-decreasing, so nxt can be computed in O(N) with a single moving pointer.
+- **Range max:** Build a sparse table over gap. Row lengths shrink as powers of two; using `map(max, prev, prev[half:])` builds each level efficiently. Query is O(1) using two overlapping blocks.
+- **Binary search:** For each query, t is valid for all values up to some maximum and invalid beyond it (F(t) = t + max_gap(L, t) is strictly increasing). The upper bound is t <= floor((L+R-1)/2). If t = L is invalid, answer is 0. Otherwise binary search the largest valid t and output t - L + 1.
+- **Complexity:** O(N log N) preprocessing, O(log N) per query (binary search) with O(1) range max. Memory O(N log N).
+- **Edge cases:** Duplicates are handled by sorted order and index-based disjointness. When no bottom exists, nxt = N and gap is N - x, which always makes the condition fail. The answer is never negative; minimum is 0.
+- **Implementation details:** 0-indexed internally. All input is read and parsed at once for speed. Variables are kept local inside `main` to reduce overhead.

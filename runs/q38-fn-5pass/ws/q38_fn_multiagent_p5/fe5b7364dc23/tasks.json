@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and select prefix-sum binomial moment method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement prefix-sum moment solution with modulo handling, binomial coefficients, and correct update order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on sample tests and edge cases (K=1, all zeros, N=1, zero prefix sums).",
+    "status": "done",
+    "result": ""
+  }
+]

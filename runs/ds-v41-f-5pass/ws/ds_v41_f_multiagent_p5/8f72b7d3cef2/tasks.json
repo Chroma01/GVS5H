@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: enumerate candidate approaches (sublevel/Kruskal merge tree, D&C on the maximum, parallel binary search, jump expansion, reverse deletion).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove the greedy closure: the final interval is the unique minimal interval [l,r] containing K with sum(l,r) >= A_{l-1} and sum(l,r) >= A_{r+1}; the answer is that fixed point.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the sublevel-component merge tree with DSU over values sorted ascending via edges weighted max(A_i,A_{i+1}); internal nodes store subtree sum and merge value.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute per-node terminal sums f(u) by iterative DFS with a non-increasing ancestor value stack and bisect for the highest ancestor with value < sum(u); honor strict inequality.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each K compute initial absorbable sum T0 from nearest >=A_K boundaries (monotonic stack) + prefix sums; answer = A_K if T0==A_K else f(highest ancestor of leaf K with value < T0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate on both provided samples (both PASSED) and against brute force on random small arrays.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Ensure Python performance/memory for N=5e5: iterative DSU/DFS only, array-based node storage, fast buffered I/O.",
+    "status": "done",
+    "result": ""
+  }
+]

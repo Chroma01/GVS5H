@@ -1,0 +1,7 @@
+- **Problem:** Count length-n arrays over alphabet [1,m] with exactly k adjacent equal pairs, modulo 1e9+7.
+- **Key reduction:** Choose which k of the n-1 adjacent pairs are equal. Collapsing forced-equal adjacencies produces n-k blocks. The first block has m choices; each next block must differ from the previous, giving m-1 choices. Answer = C(n-1,k) * m * (m-1)^(n-k-1).
+- **Equivalent view:** Run-length composition has n-k positive parts, then color a path of n-k blocks properly with m colors: m*(m-1)^(n-k-1).
+- **Edge cases:** k<0 or k>n-1 gives 0. n=1,k=0 gives m. m=1 gives 1 iff k=n-1, else 0; Python pow(0,0,mod)=1 makes the formula handle this. k=n-1 gives m. k=0 gives m*(m-1)^(n-1).
+- **Implementation:** Precompute factorials and inverse factorials up to n-1. Binomial via fact[N]*inv_fact[k]*inv_fact[N-k]. Modular exponent for (m-1)^(N-k). Time O(n + log mod), memory O(n).
+- **Verification:** Examples (3,2,1)->4, (4,2,2)->6, (5,2,0)->2. Brute-force small cases match, including n=1, m=1, k=0, and k=n-1.
+- **Avoided:** O(nk) DP and m-state transfer matrices are too slow/large. Inclusion-exclusion is valid but more complex than the direct block-coloring argument.

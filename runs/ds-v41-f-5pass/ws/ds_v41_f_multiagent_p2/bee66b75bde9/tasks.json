@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify black set as a downset / Ferrers shape with monotone row and column cutoffs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm criterion: feasible iff no white cell (wx,wy) is dominated by a black cell (bx,by) with wx \u2264 bx and wy \u2264 by (closure(B) \u2229 W = \u2205).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement O(M log M): sort blacks by x, suffix-max of y, binary-search per white point to test domination.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate against Sample 1-4 and an exhaustive brute-force staircase check on small N, including equality/tie edge cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Finalize Python stdin/stdout program (Yes/No), O(M log M) time, O(M) memory.",
+    "status": "done",
+    "result": ""
+  }
+]

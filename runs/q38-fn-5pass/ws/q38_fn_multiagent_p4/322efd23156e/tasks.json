@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input and split foods into three lists according to `V_i`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "For each vitamin list, compute a DP array `dp[c]` = maximum vitamin amount achievable with at most `c` calories, using descending calorie loops for 0/1 knapsack.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Make each DP array nondecreasing by prefix-maximum over calorie budgets, so `dp[c]` is the best amount for capacity `c`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement `can(T)` that finds the smallest calorie budget for each vitamin where `dp[c] >= T`, and returns true iff the sum of these three budgets is at most `X`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Binary search the answer over `[0, min(dp1[X], dp2[X], dp3[X])]` using `can(T)`, then print the maximum feasible value.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Handle edge cases explicitly: empty vitamin groups, target values larger than any group can achieve, and at-most calorie usage rather than exact calorie usage.",
+    "status": "done",
+    "result": ""
+  }
+]

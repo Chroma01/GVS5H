@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the prefix-sum plus binomial expansion solution in Python, reading stdin and writing stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute binomial coefficients C(K,t) and signs (-1)^(K-t) modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Initialize power_sums[0] = 1 for the empty prefix S_0 = 0 and all other power_sums[p] = 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "For each prefix sum S_j modulo 998244353, compute powers S_j^t for 0 <= t <= K and add the binomial contribution using previously seen prefix sums only.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Update power_sums[p] += S_j^p after adding the contribution, with S_j^0 = 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify edge cases: all A_i = 0, K = 1, large N, modulo wraparound, and no self-pairing of prefix sums.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Run the provided sample tests and ensure the solution passes.",
+    "status": "done",
+    "result": ""
+  }
+]

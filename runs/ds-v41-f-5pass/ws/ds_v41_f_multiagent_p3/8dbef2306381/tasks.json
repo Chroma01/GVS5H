@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input and check if any bad interval has length >= B; if so, output \"No\" and terminate.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement B-bit state vector where bit i indicates reachability of current square minus i, and build base transition out-masks for a good square: out[i] includes bit i+1 and bit 0 if A-1 <= i <= B-1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute powers of the transition matrix under Boolean composition (OR of out-masks) up to about 40 levels.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement apply_power(state, L) using binary exponentiation and matrix-vector multiplication via out-masks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Process the line from square 1 to N: initialize state=1 at position 1; for each bad interval, apply the preceding good run with apply_power, then left-shift the state by the interval length; after all intervals, apply the final good run to N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Output \"Yes\" if the lowest bit of the final state is 1, otherwise \"No\".",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Test against the three provided samples and edge cases (M=0, A=B, blocking interval, N up to 1e12).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,8 @@
+- **Model:** Let final upper lengths be A_i and final lower lengths be B_i. We need 0 <= A_i <= U_i, 0 <= B_i <= D_i, A_i + B_i = H for all i, and |A_i - A_{i+1}| <= X. Total cost is sum(U_i+D_i) - N*H, so maximizing H minimizes cost.
+- **Upper bound on H:** For any i,j, B_i <= D_i and B_i = H - A_i, while A_i <= A_j + X|i-j| <= U_j + X|i-j|. Hence H <= D_i + U_j + X|i-j|. Therefore H <= min_{i,j}(D_i + U_j + X|i-j|).
+- **Achievability:** Let H be that minimum. Define A_i = min(H, min_j(U_j + X|i-j|)). Then A_i <= U_i, A_i <= H, A_i >= H - D_i, and A is X-Lipschitz. Setting B_i = H - A_i works, so the bound is exact.
+- **O(N) evaluation:** Split the absolute value. For j <= i, the term is (D_i + X*i) + (U_j - X*j), so keep a prefix minimum of U_j - X*j. For j >= i, the term is (D_i - X*i) + (U_j + X*j), so keep a suffix minimum of U_j + X*j. Take the minimum over all i.
+- **Indexing:** Use 0-indexed positions; then |i-j| is unchanged and the terms X*i are consistent in both passes.
+- **Integer size:** Python integers handle the answer safely; values can reach about 4e14, so avoid 32-bit fixed-width arithmetic in other languages.
+- **Pitfalls:** Include i = j in both passes. Do not forget the nonnegativity of final lengths; the construction handles it because H >= 2 for valid inputs. Binary search over H is valid but unnecessary.
+- **Verification:** Matches sample 1 (H = 4, answer 15), sample 2 (H = 6, answer 0), sample 3 (H = 2, answer 5999999994), and sample 4 (answer 9460). Small randomized brute force over H with interval feasibility also agrees.

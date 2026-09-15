@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input sequences A, B, queries X/Y, and store prefix arrays.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement sqrt decomposition with block precomputation and cumulative Uc/Vc arrays plus vectorized corner computation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate with sample inputs and edge cases (all samples passed).",
+    "status": "done",
+    "result": ""
+  }
+]

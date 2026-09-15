@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement modular combination utilities and rectangle path-sum helpers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute total paths with allowed start/end ignoring the forbidden rectangle via inclusion-exclusion.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute invalid paths entering the forbidden rectangle using first-entry sums on the bottom and left sides.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Combine counts modulo 998244353 and handle boundary touches, empty ranges, and negative intermediate values correctly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run the sample tests and optimize the Python implementation if needed.",
+    "status": "done",
+    "result": ""
+  }
+]

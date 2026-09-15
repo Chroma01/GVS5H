@@ -1,0 +1,9 @@
+- **Model:** A triplet (A,B,C) with B-A=C-B iff A+C=2B. So for each B in S, count unordered pairs {A,C} in S with A+C=2B. Summing over B gives the answer.
+- **Answer formula:** Let conv[s] = ordered pairs (x,y) in S^2 with x+y=s. For each B in S the valid distinct pairs are (conv[2B]-1)/2 (the -1 removes (B,B); the /2 removes the (A,C)/(C,A) double count). Total = (sum_{B in S} conv[2B] - N) / 2. Result is always a nonnegative integer.
+- **Primary path (numpy):** f = indicator array of length L = next power of two strictly > 2*maxS; F = rfft(f); conv = rint(irfft(F*F, L)). Index conv[2*S] and sum. L <= 2^21 for maxS=1e6, memory ~ tens of MB, runtime well under limits.
+- **FFT precision:** Coefficients of conv are <= floor(N/2) <= 5e5. Error bound ~ eps*log2(L)*||f||_1^2 = 2.2e-16*21*1e12 ~ 5e-3, far below 0.5, so rounding is exact. `np.rint` then cast to int64 is safe.
+- **Wraparound:** Must have L > 2*maxS (L >= 2*maxS+1). The loop `while L <= 2*maxS: L <<= 1` guarantees this.
+- **Fallback (no numpy):** Big-integer packing, 3 bytes (24 bits) per value. Build bytearray of size 3*(maxS+1), set byte 3*v = 1, X = int.from_bytes(...,'little'). Coefficient of X*X at sum s sits at byte 3*s; since each coefficient < 2^24 (positive distinct values, pairs <= N/2 < 2^19) there is no carry into neighbouring slots. Read conv[2B] by taking 3 bytes at offset 6B, combine little-endian. Answer = (sum - N)//2. Correct but the ~3MB integer multiply relies on CPython Karatsuba, so it is the slower path; it exists only when numpy is unavailable.
+- **Edge cases:** N=1 -> sum=1, ans=(1-1)//2=0. Repeated values impossible per constraints. Small maxS (e.g. 1) gives tiny L. Non-numpy path requires exactly 3*(2*maxS+1) bytes for to_bytes.
+- **Input parsing:** sys.stdin.buffer.read().split(), take token[0]=N, next N tokens as S (values distinct).
+- **Verified:** Samples produce 3, 5, 10.

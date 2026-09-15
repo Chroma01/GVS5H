@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the element-by-element bitmask DP solution in the provided starter code.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute the LCM for every target subset mask, handling duplicate targets and using a large infinity cap if needed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each element in `nums`, compute the minimum increment cost for every non-empty target mask using `(-num) % lcm[mask]`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Update the DP for each `nums` element by trying all subsets it can cover, including the option of skipping the element, while preventing the same element from being used more than once.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run the implemented solution against the provided examples and edge cases, and report a SAMPLE TESTS verdict.",
+    "status": "done",
+    "result": ""
+  }
+]

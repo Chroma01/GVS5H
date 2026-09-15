@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Characterize valid region (grid [0,W]x[0,H] minus forbidden box F) and reduce answer to sum over valid ends of paths that never touch F.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive closed form f_full(x,y)=C(x+y+2,x+1)-1 and the first-F-cell decomposition H(c), W(c)=S(c)-R(c).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement O(W+H) solution: factorial/invfact/inverse precompute, Pprefix(X,Y)=C(X+Y+4,X+2)-X-Y-4 with inclusion-exclusion for whole grid / F / sumF_W, plus incremental-binomial boundary loops for Term2 and Term3.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify against all three sample inputs \u2014 worker reports SAMPLE TESTS: PASSED all 3 public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

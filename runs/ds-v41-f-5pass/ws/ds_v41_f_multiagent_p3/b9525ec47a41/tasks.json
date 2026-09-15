@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduction: d_i = 1 + x_{i-1} - x_i + z_i and d_N = N+k-sum(d_0..d_{N-1}); answer = number of distinct d-words realizable by the per-position 2-state NFA.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Determined reachable relation states {0,1,2,3,4,5,8,9,10,11,12,13,15}; accept iff relation contains (0,0) or (1,1); verified independently.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derived and hand-verified determinized transitions: s=0 -> u'=x+2u+q, v'=v+w+z, w'=y+v+w+z+q; s=1 -> x'=2x+2u+2q, u'=x+2u+q, v'=v+w+z, w'=y+v+w+z+q, z'=v+w+2z, q'=y+q, y'=0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Answer formula sum over accepting groups: x+y+2u+2v+2z+2q; confirmed rejecting group is w={2,4}.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate on both samples: sample 1 gives 14 (independently reproduced via full 13-state DP), sample 2 passed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm O(N) single-pass implementation over bytes with O(1) memory is sufficient for N=10^6.",
+    "status": "done",
+    "result": ""
+  }
+]

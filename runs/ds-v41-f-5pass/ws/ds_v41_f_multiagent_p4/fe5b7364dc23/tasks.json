@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive math: sum over subarrays of (subarray sum)^K equals sum over prefix-index pairs i<j of (P[j]-P[i])^K, with P[0..N] and P[0]=0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(N*K) prefix-sum binomial aggregation in Python maintaining running power sums S_t = sum_{i<r} P[i]^t mod 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute binomial coefficients C(K,t) mod p and handle negative signs via modular reduction.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Write final program that reads from stdin and writes only the answer to stdout within code delimiters.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify against samples 1 (75), 2 (0), 3 (428633385).",
+    "status": "done",
+    "result": ""
+  }
+]

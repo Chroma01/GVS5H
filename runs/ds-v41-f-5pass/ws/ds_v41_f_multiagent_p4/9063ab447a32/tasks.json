@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement direct marginal-threshold binary search with k_i = (x+P_i)//(2P_i), early break when F(x) > M, and answer = C(x) + (M - F(x))//(x+1); use exact integer arithmetic.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive O(N) count/sum formulas C(x) = sum floor((x+P_i)/(2P_i)) and F(x) = sum P_i*floor((x+P_i)/(2P_i))^2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle edge cases: x = M (extra units = 0), T=0 when M < min P_i, duplicate P_i, N=1, huge P_i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate against samples (output 3 and 53) and a brute-force check on small random cases; write only the answer to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verified upper bound H = max_p p*(2s+1), s=isqrt(M//p), guarantees F(H) > M, giving ~47 binary search steps.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirmed correctness of the extra term via congruence argument: x maximal with F(x)<=M implies x+1 is the smallest affordable marginal, so each extra unit costs exactly x+1.",
+    "status": "done",
+    "result": ""
+  }
+]

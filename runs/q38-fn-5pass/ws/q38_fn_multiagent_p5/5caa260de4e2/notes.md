@@ -1,0 +1,10 @@
+- **Transformation:** Let `P` and `C` be prefix sums of `nums` and `cost`. For cuts `0 = c0 < c1 < ... < cm = n`, the original total is `sum_t (P[c_t] + k*t) * (C[c_t] - C[c_{t-1}])`.
+- **Removing segment index:** The ordinal term `k*t` can be rewritten as a constant `k*C[n]` plus one penalty for every internal cut `c_s`: `k * (C[n] - C[c_s])`. This is because each internal cut increases the ordinal index of all later elements by one.
+- **DP state:** `dp[i]` stores the minimum transformed cost for the prefix ending at cut position `i`, including the cut penalty after `i` when `i < n`.
+- **Transition:** For each endpoint `i`, choose previous cut `p < i`: `dp[i] = min(dp[p] + P[i] * (C[i] - C[p]) + cut_penalty(i))`, where `cut_penalty(i) = k * (total_cost - C[i])` if `i < n`, otherwise `0`.
+- **Final answer:** Add the constant base term `k * total_cost`, so answer is `dp[n] + k * total_cost`.
+- **Correctness intuition:** Each transition adds exactly one segment's non-index contribution `P[i] * segment_cost_sum`, and each internal cut is charged exactly once when it is created. The final endpoint `n` is not charged as an internal cut.
+- **Testing:** Verified against the provided examples: example 1 returns `110`, example 2 returns `985`. Also checked against a brute-force partition checker enumerating all `2^(n-1)` cut masks for small random cases (`n <= 8`), including edge cases such as `n = 1`, one segment, and all singletons; no mismatches were found.
+- **Complexity:** `O(n^2)` time and `O(n)` memory. With `n <= 1000`, this is easily fast enough.
+- **Edge cases:** For `n = 1`, the formula gives `(P[1] + k) * C[1]`, matching the single-segment cost. Empty segments are prevented by requiring `p < i`.
+- **Implementation detail:** The current implementation is retained unchanged after testing; it uses integer arithmetic and a large `INF` value to avoid overflow concerns in Python.

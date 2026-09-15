@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N and the binary string A, handling whitespace.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Initialize leaf cost arrays: cost1[i] = 1 if A[i]=='0' else 0; cost0[i] = 1 if A[i]=='1' else 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute the original root value by iteratively applying majority to the original bits level by level.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Perform bottom-up DP: group the cost arrays in triples and compute parent cost1 = sum of two smallest child cost1, parent cost0 = sum of two smallest child cost0, until one node remains.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Output root cost0 if original root is 1, else root cost1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Select the one-state monotonicity DP as the correct approach (O(3^N) time, simple and efficient).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify solution passes all public samples (N=2 \"010011101\" -> 1; N=1 \"000\" -> 2).",
+    "status": "done",
+    "result": ""
+  }
+]

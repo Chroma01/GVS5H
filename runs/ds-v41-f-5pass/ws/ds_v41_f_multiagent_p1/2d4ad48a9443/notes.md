@@ -1,0 +1,13 @@
+- **Problem:** count subarrays [L,R] with minimal increments <= k. Minimum increments = cost(L,R) = sum_{i=L}^{R} (prefix_max(L,i) - nums[i]).
+- **Reduction proof:** the least non-decreasing array b with b_i >= a_i is b_i = max(b_{i-1}, a_i) = running prefix max. Raising each element exactly to its prefix max is necessary and sufficient.
+- **Monotonicity:** cost is non-decreasing in R and non-increasing in L. Hence f(L) = max R with cost(L,R) <= k is non-decreasing in L. Iterating L from n-1 downto 0 keeps R non-increasing -> valid two-pointer, O(n) moves of R.
+- **Left extension is cheap:** when L decreases, the new element is the left end. Prefix maxima become max(a[L], old). Represent the window's prefix maxima as a deque of plateaus (value, count) with values non-decreasing left->right. Merge every leftmost plateau with value <= a[L] into a block of value a[L]: cost += sum (a[L]-v)*c ; new block count = 1 + merged counts.
+- **Right shrink is cheap:** removing the rightmost position R only deletes its own term, since earlier prefix maxima do not depend on positions to their right. cost -= (topValue - nums[R]), then decrement the rightmost (top) plateau count.
+- **Data structure:** collections.deque of (value, count). Merge pops/pushes the LEFT end (popleft / appendleft); shrink pops/pushes the RIGHT end (pop / append). Peek front value via blocks[0][0]. Every position is inserted once and deleted once -> O(1) amortized per operation.
+- **Full loop:** R=n-1; for L=n-1..0: merge a[L] into left of deque; while cost > k shrink right (R-=1); answer += R-L+1.
+- **Safety invariants:** cost >= 0; single-element window has cost 0 <= k (k>=1), so R never drops below L and the deque is never emptied during shrink; counts always total R-L+1.
+- **Examples (traced):** nums=[6,3,1,2,4,4], k=7 -> 17. nums=[6,3,1,3,6], k=4 -> 12.
+- **Brute-force agreement:** O(n^2) brute cost sum_{i=L}^{R}(prefixmax - nums[i]) matches the sliding window on hand cases and small random arrays, e.g. [3,2,1] k=0 -> 3; [5,4,3,2,1] k=1 -> 9; [2,1,2] k=1 -> 6; [3,1,2,1] k=2 -> 8; [6,3,1,2,4,4] k=7 -> 17.
+- **Complexity:** O(n) time, O(n) space. Fine for n=1e5 and k up to 1e9 (Python big ints; cost up to ~1e14).
+- **Superseded:** the prior O(n log n) next-greater-chain + binary-lifting cost evaluator also gives correct results on the examples, but the deque plateau method is simpler, uses no tables, and is strictly faster. Do not reintroduce the binary lifting up-table.
+- **Pitfalls avoided:** strict vs non-strict merging (use <= so equal neighboring values merge, cost unchanged); shrinking must subtract only nums[R]'s term, not recompute; do not reset L to 0 each R.

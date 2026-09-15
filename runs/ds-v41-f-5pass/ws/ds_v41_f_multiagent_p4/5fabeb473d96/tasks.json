@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Verify edge-inclusion formulas: exactly-one probability is 2(i-1)/(i(i+1)) for i<u, (u-1)/u for i=u, 1/i for u<i<v, 1 for i=v, 0 for i>v; handle u=1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the full Python solution with precomputation and O(1) queries as described.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test on provided samples and edge cases (N=2, u=1, v=u+1, large A_i) \u2014 all 3 public samples pass, plus brute-force checks in notes.",
+    "status": "done",
+    "result": ""
+  }
+]

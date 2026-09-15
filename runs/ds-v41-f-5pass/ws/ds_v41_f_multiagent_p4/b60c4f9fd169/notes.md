@@ -1,0 +1,9 @@
+- **Problem:** Decide if edit distance (insert/delete/substitute, each cost 1) between S and T is ≤ K, with K ≤ 20 and |S|,|T| up to 500000.
+- **Key idea:** Ukkonen/Landau–Vishkin wavefront. State e[d][k] = furthest row i reachable on diagonal k=i-j with at most d edits. Only diagonals in [-K,K] are ever needed; immediately reject if |m-n|>K.
+- **Recurrence (with substitution):** e[d][k] = max of no-op (e[d-1][k]), substitution from k (+1), deletion from k-1 (+1), insertion from k+1 (+0), each followed by greedy match extension. Answer Yes iff e[d][m-n]==m for some d≤K.
+- **Critical correctness fix (clamping):** Using only the *furthest* source is WRONG. Example S="a",T="aa": e[0][0]=1 (snake consumed both), so deletion from i=1 is out of bounds and the naive recurrence yields e[1][1]=-1 although the true value is 1 (delete S[0] from the earlier reachable point (0,0)). Reason: on each diagonal the set of reachable rows with cost ≤d is a contiguous prefix (follows from edit-distance monotonicity d(i-1,j-1) ≤ d(i,j)). So clamp the source: deletion src=min(r,m-1); substitution src=min(r,m-1,n+k-1); insertion src=min(r,n+k). Guard src ≥ (diagonal start = max(0,k')). This makes e[1][1]=1 correctly.
+- **Base case:** e[0][0] = lcp(S,T) (longest common prefix). Check target at d=0 too.
+- **Complexity:** O(K^2) state updates × O(log n) LCP via rolling hash = tiny. Hash precomp is O(|S|+|T|) with one 61-bit modulus (collision prob negligible). Random base defeats anti-hash tests.
+- **LCP:** binary search on match length using prefix hashes `(H[r]-H[l]*P[r-l]) % MOD`.
+- **Edge cases handled:** |m-n|>K, S==T (d=0), out-of-range diagonal sources (guarded by `k±1` bounds and `src>=start`), non-positive LCP lengths, rows beyond m / columns beyond n (clamped so i2≤m, j2≤n).
+- **Verified:** sample 1 (Yes at d=3), sample 2 (No, stops at K=2), sample 3 structure, plus hand traces for S="ab"/T="ba", S="ba"/T="a", S="abc"/T="xyz", S="a"/T="aa".

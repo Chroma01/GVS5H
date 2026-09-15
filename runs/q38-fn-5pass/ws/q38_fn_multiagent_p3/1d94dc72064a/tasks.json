@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: model the game as claim moves plus a common pass pile and identify parity as the likely invariant.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove the parity reduction: show p=0 and positive even pass piles are equivalent and reduce states to (unclaimed count, even-A count, pass parity).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Solve the reduced recurrence to justify the closed form with exceptions N=1,2,3 and odd_count parity for N>=4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the O(N) Python solution using the closed form and run sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Brute-force verify the closed form for small N and small A_i to catch edge cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm O(N) time, O(1) extra memory, and stdout output.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: stable-interval characterization, laminarity, and selection of the Cartesian-tree stable-subtree approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N) Cartesian-tree stable-subtree solution in Python: build a max Cartesian tree with an iterative monotonic stack (tie by later index), compute subtree intervals and sums iteratively, preassign singleton-stable answers, mark non-singleton stable subtrees using actual outside boundaries (missing boundaries as infinity), propagate the deepest stable ancestor with an iterative DFS, and print the answers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate edge cases (N=2, all equal, equal barriers, monotone arrays, nested stable intervals) and the samples, ensuring O(N) time/memory and correct stdout format.",
+    "status": "done",
+    "result": ""
+  }
+]

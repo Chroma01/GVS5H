@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the exact active-constraint recurrence and final answer formula, including definitions of the active cuts, `C_i`, `S_i`, `P(a,b)`, base cases, and how to handle zero/no-active-constraint cases, then provide pseudocode ready for implementation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement extraction of active constraints from the black positions: for each `b=1..N-1`, compute `w = (# whites before the (b+1)-th black)`, keep it only if `w >= b` and `w` is not equal to the previous kept `w`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute factorials and inverse factorials modulo `998244353`, and implement the DP formula for `C_i` and the final answer using `P(a,b)=a!/(a-b)!`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement a fast modular NTT convolution utility for `998244353`, with a naive convolution fallback for small lengths.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement the CDQ solver: when applying contributions from a left half to a right half, build shifted arrays `U[x]=C_j` indexed by `b_j` and `F[k]=(offset+k)!`, convolve them, and add the correct convolution entries to the `S_i` accumulators.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Implement a small brute-force validator for `N <= 8` or `N <= 10` to test active-constraint construction, zero cases, recurrence coefficients, and final counts.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify the algorithm on the samples and edge cases: `N=1`, first/last color failures, no active constraints, repeated `w` values, and large random cases for modulo and performance.",
+    "status": "done",
+    "result": ""
+  }
+]

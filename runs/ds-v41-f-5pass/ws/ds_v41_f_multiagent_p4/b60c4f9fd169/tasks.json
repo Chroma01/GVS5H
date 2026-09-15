@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse K, S, and T from stdin; if abs(len(S)-len(T)) > K print No immediately.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the Ukkonen/Landau\u2013Vishkin wavefront with substitution cost 1 and cutoff K, tracking furthest reachable row per diagonal i-j and checking the target diagonal m-n reaches m.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Add the clamping fix (src = min(furthest, m-1 / n+k bounds)) justified by the diagonal-prefix reachability lemma so undercounts (e.g. S=\"a\", T=\"aa\") are handled.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle diagonal indexing (size 2K+1, offset K), bounds/guards for k\u00b11, unreachable (-1) states, and early success detection (including d=0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Keep per-diagonal arrays O(K) wide and use O(log n) rolling-hash LCP so total work is O(K^2 log n + |S| + |T|), suitable for n up to 500000.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify against all 3 samples (Yes/No/Yes) and hand-traced edge cases (identical strings, S=\"a\"/T=\"aa\", length diff = K, repeated chars, substitution-vs-indel cases).",
+    "status": "done",
+    "result": ""
+  }
+]

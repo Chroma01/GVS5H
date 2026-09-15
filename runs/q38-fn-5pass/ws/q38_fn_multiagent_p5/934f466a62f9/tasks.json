@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: parity/color selection equivalence and correction approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with parity-correction solver and stdin/stdout handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Public sample tests passed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate implementation on random small cases by brute force; fix any failures.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Stress-test performance on maximum-size inputs; use faster parity-correction solver.",
+    "status": "done",
+    "result": ""
+  }
+]

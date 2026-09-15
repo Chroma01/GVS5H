@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Establish that visibility of each building is determined by the line from the observer to its top, and that all buildings are visible iff observer height is strictly greater than the maximum y-intercept over all pairs of building tops.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove that the maximum pair intercept is attained by an adjacent pair in x-order using the triple-point inequality.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the adjacent-pair intercept scan with exact integer arithmetic and exact sign handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Fix output formatting: print `-1` exactly when no non-negative intercept exists, and otherwise print the answer with exactly 18 decimal places using float formatting so sample tests match.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test samples and edge cases: `N=1`, all negative intercepts, zero intercept, large coordinates/heights, and equal intercepts.",
+    "status": "done",
+    "result": ""
+  }
+]

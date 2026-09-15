@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, K, and A from stdin.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute total_xor = XOR of all elements in A.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle K == N (empty excluded set yields total_xor) and K == 1 via the general complement logic.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Let r = N - K. If K <= r, enumerate all combinations of A of size K, compute XOR of each tuple, track the maximum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If K > r, enumerate all combinations of A of size r as excluded elements, compute candidate = total_xor XOR XOR(excluded), track the maximum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Print the maximum candidate.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Test on sample 1 and sample 2, plus edge cases K=1, K=N, K=N-1, and duplicate values -- all public samples passed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Verify performance: at most C(N,K) <= 10^6 combinations, each XOR over min(K, N-K) <= 11 elements.",
+    "status": "done",
+    "result": ""
+  }
+]

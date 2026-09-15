@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement forward lazy segment tree over sorted unique query X with max/lazy, range_add, first_ge.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Process contests on compressed query array and answer original queries; verify sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle edge cases: duplicate queries, empty affected ranges, all/no updates, final ratings above 500000, boundary L/R.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "No fallback needed; sample tests passed.",
+    "status": "done",
+    "result": ""
+  }
+]

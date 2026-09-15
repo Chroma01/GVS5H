@@ -1,0 +1,13 @@
+- **Split:** p has exactly two '*', so p = A*B*C with A=p[:i1], B=p[i1+1:i2], C=p[i2+1:]. Literals may be empty.
+- **Anchor on B (when B non-empty):** For each B occurrence [b0,b1) the span is end-start, and end (from C) is independent of start (from A). So take the rightmost A ending <= b0 and the leftmost C starting >= b1, then end-start.
+- **Arbitrary overlap matters:** occurrences of a literal can overlap (e.g. B="aa" in "aaa"), so use KMP `find_all` returning every start index. Do NOT use repeated str.find stepping by len; it can be O(matches*len) worst case.
+- **Boundary rules are strict:** A must end at/before B starts (a0+lenA <= b0); C must start at/after B ends (c0 >= b1). Zero-gap (adjacency) is allowed.
+- **Empty-middle rule:** If A empty, optimal start = b0 (star before B absorbs zero). If C empty, optimal end = b1. This keeps spans minimal.
+- **Precomputed arrays:** latestA[x] = max A-start with A-end <= x (prefix max, built so latestA[b0] is the best start). nextC[x] = min C-start >= x (suffix min, built so nextC[b1] is the best C). Both O(n+occurrences).
+- **B-empty case:** pattern collapses to A*C.
+  - Both empty -> 0 (empty substring valid).
+  - Only C -> shortest is lenC if C occurs, else -1 (same for A* -> lenA).
+  - Both non-empty -> for each C occurrence c0 use a0=latestA[c0]; span=c0+lenC-a0; take min.
+- **Examples verified:** ex1 -> 8 (B="c"@8, A="ba"@5, C="ce"@11 gives 13-5); ex2 -> -1 (B found @4 but no C@>=7, though "adb"@6 exists); ex3 -> 0; ex4 -> 6.
+- **Complexity:** O(n + |p|) time, O(n) extra memory. Three KMP searches + two prefix/suffix passes + one scan over B occurrences.
+- **Return:** -1 whenever best remains INF (no valid combination).

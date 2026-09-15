@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Formalize orientation variables and express each d_i in terms of cycle-edge and spoke-edge directions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Use total edge count to show d_N is determined by d_0..d_{N-1}, so count distinct achievable prefixes d_0..d_{N-1}.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the 16-relation determinized NFA DP over x_{N-1} start to count distinct prefixes d_0..d_{N-1}; accept relation containing (0,0)/(1,1); return sum mod 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify the implementation on sample 1 (output 14) and sample 2 (output 261339902).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Optimize the Python implementation for N up to 10^6.",
+    "status": "done",
+    "result": ""
+  }
+]

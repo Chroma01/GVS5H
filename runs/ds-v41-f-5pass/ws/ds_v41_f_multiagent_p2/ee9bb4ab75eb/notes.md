@@ -1,0 +1,9 @@
+- **Reduction:** For a prefix p, let c(p) be the original number of words having that prefix. After deleting word i, p is usable iff c(p) >= k when p is not a prefix of words[i], and iff c(p) >= k+1 when p is a prefix of words[i]. Answer[i] is the maximum depth of a usable prefix. The empty prefix gives 0 whenever n > k.
+- **Early exit:** If n == k, removing any word leaves fewer than k strings, so return all zeros.
+- **Trie structure:** Each node stores a dict of children, cnt = number of words having that prefix, and depth. Increment cnt at the root and at every node along each word path. Total nodes are at most total word length + 1.
+- **Good nodes:** A node is good if cnt[u] >= k. Let mx[u] be the maximum depth of a good node in u's subtree. Compute it by processing nodes in reverse creation order; every child is created after its parent.
+- **Outside the deleted word's path:** For query i, best_out is the best good node that is not a prefix of words[i]. During path traversal, at each node use the top two child mx values to get the best sibling subtree in O(1). At the terminal node, include all child subtrees, since those words extend words[i] and are not prefixes of it.
+- **On the deleted word's path:** best_on is the maximum depth among path nodes with cnt[u] >= k+1. This covers both intermediate prefixes and the full word, handling duplicates and words longer than words[i].
+- **Answer:** answer[i] = max(best_out, best_on).
+- **Edge cases:** k=1 works naturally; words that are prefixes of other words are handled through terminal child subtrees; duplicate strings are handled by cnt >= k+1; n == k gives all zeros; the empty prefix guarantees an answer of at least 0.
+- **Complexity:** O(total length + n) time, O(total length) nodes, no recursion.

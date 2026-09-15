@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Read K, S, T from stdin; output No if abs(len(S)-len(T)) > K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Trim common prefix then common suffix (non-overlapping); short-circuit when a trimmed string is empty.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement farthest-reaching wavefront DP over diagonals d in [-K,K] with substitution/deletion/insertion transitions plus LCP extension; test reach of (n,m) on diagonal ds=n-m.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Print exactly \"Yes\" or \"No\".",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Replace char-by-char LCP with 64-bit rolling-hash + binary-search LCP; samples pass (all 3 public samples PASSED).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Differential-test vs brute-force Levenshtein DP on many random small inputs and constructed boundary cases; verdicts agree, no counterexample found.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify worst-case path is acceptable (O(n+m+K\u00b2 log n) time, O(n+m+K) memory) and submission confirmed by passing all public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

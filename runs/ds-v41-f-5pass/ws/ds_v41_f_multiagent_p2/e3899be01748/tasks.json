@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement per-digit residue DP (d=1..9), updating counts via (10r+c) mod d, adding the length-1 substring, and adding nc[0] to the answer when the current char equals d.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify against the three provided examples by hand-reasoning: \"12936\"\u219211 (d1:1, d2:2, d9:1, d3:3, d6:4), \"5701283\"\u219218, \"1010101010\"\u219225.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm substrings ending in digit 0 never contribute (d ranges 1..9) and leading zeros are absorbed by the x\u219210x+c recurrence.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm runtime O(45n) \u2248 4.5e6 ops for n=1e5 and O(1) extra space per d.",
+    "status": "done",
+    "result": ""
+  }
+]

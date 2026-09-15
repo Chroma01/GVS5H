@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete solution using the direct right-split sweep with a lazy segment tree over left splits: precompute prefix/suffix distinct counts, activate candidate left splits, apply range increments based on previous occurrences, query max, and output answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on samples and edge cases (N=3, all same, all distinct, duplicates at boundaries).",
+    "status": "done",
+    "result": ""
+  }
+]

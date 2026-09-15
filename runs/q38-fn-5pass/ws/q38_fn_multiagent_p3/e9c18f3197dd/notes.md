@@ -1,0 +1,10 @@
+- **Sample tests verdict:** pass. Example 1 returns 1, example 2 returns 2, example 3 returns 0.
+- **Approach:** Use direct bitmask DP over distinct target values. Since target length is at most 4, the number of masks is at most 16.
+- **State:** `dp[mask]` is the minimum operations after processing some prefix of `nums` to satisfy the targets represented by `mask`.
+- **Element cost:** For a value `x` and a subset mask, the cost is the increment needed to make `x` a multiple of `lcm(mask)`. This lets one incremented element cover every target in that subset.
+- **Transition:** For each `x`, choose a nonempty subset of currently unsatisfied targets to assign to `x`. The update is done in descending mask order, so the current element is used at most once.
+- **Duplicates and divisors:** Duplicates are removed by `set`. Divisor targets are handled automatically because the lcm of a subset containing a divisor and its multiple is the larger lcm, so satisfying the larger target can cover the smaller one at no extra cost.
+- **Upper bound:** `10**18` is safely above the maximum possible answer under the constraints; lcm of four values up to `10^4` is below `10^16`, and any optimal solution can be bounded well below that.
+- **LCM cap:** LCMs are capped at `max(nums) + INF + 1`. If a true lcm exceeds this cap, its cost is more than `INF` for every input value, so it cannot improve the answer.
+- **Complexity:** For `m <= 4`, each element costs `O(2^m + 3^m)` time, about 80 operations per element, so `O(n * 3^m)` total. Memory is `O(2^m)`.
+- **Edge cases checked:** target containing 1, duplicate targets, divisor chains, already satisfied targets, one element covering multiple targets, large lcm values, and zero-cost full coverage.

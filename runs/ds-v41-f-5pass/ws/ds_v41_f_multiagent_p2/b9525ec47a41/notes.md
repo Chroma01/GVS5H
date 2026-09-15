@@ -1,0 +1,10 @@
+- **Model:** For each cycle edge i0 use label b_i∈{0,1} (b_i = 1 if directed i→i+1), and for each spoke at i with s_i=1 use g_i∈{0,1} (g_i = 1 if directed N→i). Then d_i = 1 + b_{i-1} - b_i + s_i(1-g_i) for i=0..N-1, and d_N = sum of g_i over i with s_i=1. Since total edges = N+k (k=#ones), d_N is forced by sum d = N+k; so distinct valid sequences correspond exactly to distinct label strings (d_0..d_{N-1}).
+- **Closed-walk criterion:** A label string is valid iff some start state u∈{0,1} can follow all N labels and return to u (walk b_{N-1}→b_0→...→b_{N-1}). The transition at position i depends only on s_i and label d_i.
+- **Per-position transition relations:** s=0: d=0→{(0,1)}, d=1→{(0,0),(1,1)}, d=2→{(1,0)}, d=3→{}. s=1: d=0→{(0,1)}, d=1→{(0,0),(0,1),(1,1)}, d=2→{(0,0),(1,0),(1,1)}, d=3→{(1,0)}.
+- **DP state:** pair (S0,S1) of reachable sets from start 0 and start 1, subsets of {0,1} coded 0=∅,1={0},2={1},3={0,1}. Reachable indices: 0:(0,0) 1:(1,2) 2:(2,0) 3:(0,1) 4:(3,2) 5:(1,3) 6:(1,0) 7:(3,0) 8:(0,2) 9:(0,3) 10:(1,1) 11:(3,3) 12:(2,2). State 0 is dead (all transitions into it dropped).
+- **Flat transitions:** flat0 and flat1 as coded. Multiplicities appear as repeated pairs, e.g. flat1 contains (7,7) twice and (9,9) twice and (11,11) twice. Verified by hand against transition relations (flat0 30 entries, flat1 42 entries).
+- **Init/accept:** init index 1 (S0={0},S1={1}). Accepting iff 0∈S0 or 1∈S1 → indices {1,4,5,6,7,8,9,10,11,12}. Answer = sum of dp over these states mod 998244353.
+- **Complexity:** O(N) time, O(1) memory; ≤42 transition applications per character. dp entries are reduced mod after each step; sums before reduction ≤42·MOD fit easily.
+- **Verification:** sample 1 (N=3,"010") gives 14, matching. Logic (model + transitions) checked by hand; automaton DP counts each distinct label string once.
+- **Abandoned approach:** the earlier generating-function/Prefix recurrence attempt based on P(x)=(1+x+x^2)^{N-k}(1+x+2x^2)^k was not fully trusted; do not use. Automaton DP is the proven approach.
+- **Implementation detail:** read with sys.stdin.buffer, s is bytes; iterate gives ints, compare to 49 ('1'). Guard empty input.

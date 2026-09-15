@@ -1,0 +1,15 @@
+- **Problem model:** A good caption is a concatenation of runs, each length >= 3, all characters in a run equal. Changing a character costs its absolute alphabet distance. Total cost is sum of independent per-position costs.
+- **Impossibility:** Only n < 3 is impossible. For n >= 3, all-same-character is always a valid good caption, so answer always exists.
+- **DP state:** f(i, last, k) = minimum additional cost from index i to n-1, given the previous run character is `last` and its current run length is `k` capped at 3. Base: f(n, last, 3) = 0, f(n, last, 1/2) = INF.
+- **Transitions:**
+  - k < 3: must continue with `last`. f(i, last, k) = |s[i]-last| + f(i+1, last, k+1).
+  - k == 3: either continue with `last` or start a new run with any c != last. f(i, last, 3) = min(|s[i]-last| + f(i+1, last, 3), min_{c != last} |s[i]-c| + f(i+1, c, 1)).
+- **Optimization:** For each i, precompute the best and second-best value of |s[i]-c| + f(i+1, c, 1) over c. This gives min over c != last in O(1) per `last`, so total DP is O(26 * n).
+- **Memory:** Store only A_i (k=1) and C_i (k=3) as flat arrays of size 26*(n+1). B_i (k=2) is kept only for the next backward step. Using `array('i')` keeps memory around 10 MB for n = 5e4.
+- **Reconstruction:** Greedy left-to-right. First character is chosen to minimise |s[0]-c| + A_1[c], breaking ties by smaller c. Then for each i:
+  - k < 3: forced to pick `last`.
+  - k == 3: pick the smallest c such that its cost equals C_i[last]. If c == last, run length stays 3; otherwise new run length is 1.
+  This yields the lexicographically smallest optimal caption.
+- **INF handling:** INF = 1e9. Max real cost is 5e4 * 25 = 1.25e6, so INF is safely larger and fits in 32-bit signed integers.
+- **Edge cases:** n < 3 returns "". n = 3, 4, 5 naturally force a single run of length >= 3. The DP correctly handles runs longer than 3 by capping at 3 and allowing continuation.
+- **Validation:** Verified on examples "cdcd" -> "cccc", "aca" -> "aaa", "bc" -> "".

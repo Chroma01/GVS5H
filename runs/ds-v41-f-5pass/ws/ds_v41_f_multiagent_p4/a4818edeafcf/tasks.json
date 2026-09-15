@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: prefix + middle + suffix decomposition with C(i) coverage reformulation",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute pref (prefix distinct), suf (suffix distinct), and prev occurrence of each A[j]",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement lazy segment tree (range add, global max) with tag without push, invariant mx[k]=tag[k]+max(children)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Sweep j=2..N-1: on prev[j]=p>0 apply +1 on leaves [p-1, j-1); candidate = pref[j] + mx[1] + suf[j+1]",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate boundaries (i>=1, i<=j-1, j<=N-1, prev=0 case, non-empty parts) and 0-count leaves equal active range",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test samples (5, 9) and edge cases; sample tests PASSED",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Code complete and correct; output answer to stdout",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: minimum-weight paths need at most 3 edges (co-interval graph + positive weights).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse N, W, intervals, Q, queries; precompute bestR[c]/bestL[c] prefix/suffix minima over 0..2N+1 with INF.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Per-query: disjoint case \u2192 W_s+W_t; intersecting case \u2192 W_s+W_t+min(bestR[min(Ls,Lt)], bestL[max(Rs,Rt)], bestR[Ls]+bestL[Rt], bestL[Rs]+bestR[Lt]) or -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Reproduce both provided samples exactly (11,6,-1 and 157,124,-1,114,114).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Brute-force stress test vs. Dijkstra/BFS on random small inputs confirmed correctness (paths, disconnected cases, no optimal path beyond 3 edges).",
+    "status": "done",
+    "result": ""
+  }
+]

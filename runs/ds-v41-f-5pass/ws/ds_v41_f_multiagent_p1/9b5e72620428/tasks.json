@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Formalize the feasibility condition for a fixed common sum S, including how A's permutation interacts with B's fixed and -1 entries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive candidate values for S: only pair sums a+b of fixed entries matter when a fixed-fixed match is required (needed > 0); else always feasible.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the solution: needed = nA+nB-N, if needed<=0 print Yes, else accumulate C[v+u] += min(cntA[v],cntB[u]) for sums >= max(maxA,maxB) and print Yes as soon as some C[s] >= needed, else No.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify edge cases (all -1, needed<=0 trivial Yes, zero values, single distinct value, large values/no overflow in Python).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm complexity: O(N + D_A*D_B) <= 4e6 pair operations, safe for N=2000.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm the three provided samples all produce the expected outputs.",
+    "status": "done",
+    "result": ""
+  }
+]

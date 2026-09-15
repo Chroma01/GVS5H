@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Build prefix function and deterministic KMP automaton for states 0..m with fallback from state m.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Precompute per-state reachability masks and first character to state m for fast backward DP.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement backward feasibility DP over L = n + m - 1 positions with T/F constraints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement greedy left-to-right reconstruction using feasibility masks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run the existing solution against sample tests and key edge cases; if it fails, switch to a simpler bitset DP or alternative approach.",
+    "status": "done",
+    "result": ""
+  }
+]

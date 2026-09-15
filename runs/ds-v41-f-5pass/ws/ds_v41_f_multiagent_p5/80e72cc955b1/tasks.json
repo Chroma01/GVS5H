@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Confirm c(x) = floor(log_4 x) + 1, i.e. c(x)=k for x in [4^(k-1), 4^k - 1].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Confirm answer per query = ceil(S/2) with S = sum of c(x) over [l,r].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement prefix F(n) by iterating power-of-4 blocks with exact inclusive bounds, answer (F(r)-F(l-1)+1)//2, summed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate against both examples ([[1,2],[2,4]] -> 3; [[2,6]] -> 4) and boundary cases ([3,4]->2, [1,4]->3).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm complexity O(queries.length * log_4(max_r)) and Python big-int safety.",
+    "status": "done",
+    "result": ""
+  }
+]

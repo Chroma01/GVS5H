@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the closed-form formula: C(n-1, k) * m * (m-1)^(n-1-k) modulo 1e9+7.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement countGoodArrays using the closed-form formula with efficient modular binomial computation and edge-case handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement a modular binomial coefficient helper for n up to 1e5, either with precomputed factorials and inverse factorials or an O(k) multiplicative method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify edge cases, especially m=1, k=0, k=n-1, and n=1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test against the provided examples and add a few random small brute-force checks if needed.",
+    "status": "done",
+    "result": ""
+  }
+]

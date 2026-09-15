@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and verify the formula for `f(x)`, the number of divide-by-4 steps needed to reduce `x` to zero, including boundary cases such as powers of 4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a helper `prefix_sum(n)` that returns `sum(f(x) for x in 1..n)` efficiently using powers of 4 threshold counting.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "In `minOperations`, compute each query\u2019s total required selections as `prefix_sum(r) - prefix_sum(l - 1)` and add `(total + 1) // 2` to the answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Check edge cases involving odd total selections, small ranges, and ranges containing values that become zero early.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run sample tests and brute-force small ranges to confirm the current implementation passes.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If any mismatch is found, adjust the formula (for example, include a `max f(x)` lower bound if needed) and retest.",
+    "status": "done",
+    "result": ""
+  }
+]

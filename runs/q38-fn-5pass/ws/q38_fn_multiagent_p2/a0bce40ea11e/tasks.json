@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive/ideate the finite-field cancellation closed form and p=2 special case.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement input parsing, zero counting, and p==2 handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement optimized modular matrix multiplication and binary exponentiation for A^p (N<=100, p<=1e9).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement odd-p closed-form corrections: diagonal row/column additions, p==3 off-diagonal additions, global sign (-1)^K.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate on all samples and small brute-force cases (N=1, all-zero, p=2, p=3 off-diagonal, odd p with mixed zeros).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Ensure output formatting and performance within limits.",
+    "status": "done",
+    "result": ""
+  }
+]

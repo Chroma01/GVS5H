@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse the single integer N from standard input.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the full solution via difference-parameter enumeration with closed-form quadratic (d while d^3 <= N, N%d==0, Delta=12Q-3d^2, isqrt perfect-square test, s>3d, (s-3d)%6==0, y=(s-3d)//6, x=y+d).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify y >= 1 and x^3 - y^3 == N before printing; output \"x y\" on first valid pair else -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Use exact integer arithmetic only (no float cube/sqrt roots) and re-check the d upper bound condition d^3 <= N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate against the three samples (397 -> 12 11; 1 -> -1; 39977273855577088 -> 342756 66212) -- all passed.",
+    "status": "done",
+    "result": ""
+  }
+]

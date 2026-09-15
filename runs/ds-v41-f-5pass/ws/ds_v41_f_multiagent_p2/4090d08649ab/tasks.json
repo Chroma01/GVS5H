@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduce f(L,R) to (# distinct values in A[L..R]) minus (# adjacent value pairs v,v+1 both present), and confirm via brute force on small cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Design the summation method: right-end sweep maintaining f(L,R) for all L as R grows, with delta = 1 - [x-1 present] - [x+1 present] applied via O(1) length-weighted contributions keyed on last-occurrence positions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the right-end sweep in Python with fast stdin/stdout I/O, handling p=0 sentinels and large answer values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify the three sample inputs produce 16, 23, 129 (all passed) and finalize the submission code.",
+    "status": "done",
+    "result": ""
+  }
+]

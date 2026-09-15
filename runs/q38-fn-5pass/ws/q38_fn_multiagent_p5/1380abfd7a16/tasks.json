@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: choose reverse construction with Fenwick tree over empty slots.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Read `N` and the array `P` from standard input.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Initialize a Fenwick tree over `N` positions with all positions marked empty (`1`).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement Fenwick `find_kth(k)` using binary lifting to locate the `k`-th empty position in `O(log N)`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Iterate `i` from `N` down to `1`, find the `P_i`-th empty position, place `i` there, and mark that position as filled.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Output the resulting final array as space-separated integers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate the implementation on the sample inputs and edge cases such as `N = 1`, all `P_i = 1`, and all `P_i = i`.",
+    "status": "done",
+    "result": ""
+  }
+]

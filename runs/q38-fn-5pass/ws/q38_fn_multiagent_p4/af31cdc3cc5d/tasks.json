@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and structural characterization complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a helper that computes optimal scores for all even-length prefixes of a sequence using a two-heap median-split structure (lower half as max-heap, upper half as min-heap, with running sums).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute prefix scores `pref[i]` for all even `i`, with `pref[0] = 0`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute suffix scores `suff[i]` for all suffixes starting at index `i` with even length, with `suff[N] = 0`, by scanning right-to-left or reusing the prefix helper on the reversed array.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If `N` is even, output `pref[N]`; if `N` is odd, output the maximum of `pref[k] + suff[k + 1]` over all even `k` (0-based count of elements before the survivor).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Ensure the program reads from stdin and writes to stdout, uses 64-bit integer arithmetic, and handles duplicates, all-equal arrays, `N = 2`, and maximum input size efficiently.",
+    "status": "done",
+    "result": ""
+  }
+]

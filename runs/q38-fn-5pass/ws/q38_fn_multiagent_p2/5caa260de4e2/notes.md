@@ -1,0 +1,7 @@
+- **Verification:** Manual execution of the current DP gives sample 1 = 110 and sample 2 = 985. Edge checks also pass: `n = 1` returns `(nums[0] + k) * cost[0]`; the one-segment option is always considered via `best = x * cr`; the all-cuts option is reachable by chaining `p = r - 1` transitions. Verdict: pass.
+- **DP state:** `dp[r]` is the minimum transformed cost for prefix `nums[0:r]`. The final endpoint is not charged as a cut because no later segment follows it.
+- **Transition:** If the last segment is `nums[p:r]`, add `(prefix_num[r] + k) * (prefix_cost[r] - prefix_cost[p])`. If `p > 0`, also add the cut penalty `k * (total_cost - prefix_cost[p])`. The case `p = 0` is the first segment and has no cut penalty.
+- **Why the penalty works:** The original ordinal term is `k * sum_i i * (C[e_i] - C[e_{i-1}])`, which telescopes to `k * (m * C[n] - sum_{i=1}^{m-1} C[e_i])`. The recurrence charges `k * C[e_1]` through the first segment's `+k`, `k * (C[e_i] - C[e_{i-1}])` through each segment's `+k`, and `k * (C[n] - C[e_{i-1}])` as the cut penalty, producing exactly the telescoped expression.
+- **Complexity:** `O(n^2)` time and `O(n)` memory. With `n <= 1000`, this is comfortably fast in Python.
+- **Edge cases:** The code guards `n == 0` even though constraints require `n >= 1`. It handles one element, one segment, and all cuts. Python integers avoid overflow.
+- **Superseded:** The earlier two-dimensional `dp[j][r]` plan with convex hull optimization is unnecessary for these constraints; the one-dimensional cut-penalty DP is simpler and sufficient.

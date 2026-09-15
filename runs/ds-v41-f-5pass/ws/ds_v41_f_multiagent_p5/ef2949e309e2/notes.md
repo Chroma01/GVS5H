@@ -1,0 +1,13 @@
+- **Problem:** count index-subsets of size 5 where seq[2] is the strict unique mode (strictly greater frequency than every other value). Distinct index sets giving the same multiset count separately.
+- **Fix middle index m**, value x=nums[m]; pick 2 left, 2 right. Let t = number of the 4 side picks equal to x.
+- **t=0** always invalid: x count=1, 4 non-x picks force some other value >=1 to tie. **t>=2** always valid (x count=1+t>=3, others <=2). **Only t=1 needs filtering:** x count=2, so the 3 non-x picks must be pairwise distinct.
+- **Master formula:** ans = sum_m (total - C0 - C1 + A + B) mod p. total=C(L,2)C(R,2); C0=C(Ln,2)C(Rn,2); C1=lx·Ln·C(Rn,2)+rx·Rn·C(Ln,2).
+- **Symbols:** lx=a[x], rx=b[x], Ln=L-lx, Rn=R-rx. A = lx·(PR·Ln - Rn·Sab + Q1) (x on left). B = rx·(PL·Rn - Ln·Sab + Q2) (x on right). PL,PR = distinct-value pair sums over left/right non-x; Sab=sum a_u b_u; Q1=sum a_u b_u^2; Q2=sum a_u^2 b_u, all over non-x u.
+- **Non-x recovery:** PL=P_L_full-lx·Ln; PR=P_R_full-rx·Rn; Sab=S_ab_full-lx·rx; Q1=Q1_full-lx·rx^2; Q2=Q2_full-rx·lx^2.
+- **Derivation (case A):** for each left non-x value u, valid right pairs with distinct values !=u = PR - b_u(Rn-b_u); summing gives PR·Ln - Rn·Sab + Q1; multiply by lx. Case B symmetric.
+- **Incremental updates (re-verified incl. v==w):** add v to left: P_L+=Lsize-a_v; S_ab+=b_v(old); Q1+=b_v^2; Q2+=b_v(2a_v+1). Remove w from right: P_R-=(Rsize-b_w); S_ab-=a_w(post-add); Q1-=a_w(2b_w-1); Q2-=a_w^2. Order = add-left then remove-right; using pre-decrement b and post-increment a makes v==w cross-terms cancel correctly.
+- **State:** m=0: a empty, b=counts 1..n-1, P_R_full=C(R,2)-sum C(b_v,2). Each m: contribution, then arr[m]->left, arr[m+1]->right.
+- **Complexity:** O(n+V) time, O(V) memory (V distinct values). Python big ints handle intermediate products before mod.
+- **Edge handling:** C2(k)=0 for k<2; skip contribution when L<2 or R<2 but still advance state; coordinate-compress values.
+- **Verification status:** PASS. Brute force enumerates all C(n,5) index tuples, counts where Counter[x]==max and exactly one value hits max. Compared vs Solution on the 3 provided examples (6, 4, 0), 3000 random n in [5,10], 500 random n in [11,13], 40 random n in [14,17] across alphabets 1..n, plus 15 targeted duplicate/two-/three-valued cases -- all match.
+- **Superseded:** any earlier doubt about t=1 filtering or the incremental cross-terms is resolved; the formula is confirmed correct by exhaustive testing.

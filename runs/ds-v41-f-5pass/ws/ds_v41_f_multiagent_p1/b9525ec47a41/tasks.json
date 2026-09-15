@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the exact feasibility characterization (types A/C/D/E/B; gap condition between consecutive same-label forced positions).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate the characterization by full hand enumeration for N=3: s=010 ->14, s=000 ->7, s=111 ->38, s=011 ->24, s=001 ->14.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive the O(N) anchor + 4-state backward-DP formulation with the L=0/L=2 label-symmetry doubling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the anchor DP exactly as specified (bytes input, inv2=499122177, mod 998244353) and print ans = (total + 2^M) % MOD.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run the implementation on both samples (N=3 \"010\" ->14; N=20 \"00001100111010100101\" ->261339902): PASSED.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Solution verified correct against public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

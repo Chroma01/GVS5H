@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Choose algorithm: sweep right cut j with segment tree maintaining pref[i] + distinct(A[i+1..j]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the primary sweep solution with prefix/suffix distinct counts, previous occurrences, and a pushdown-free global-max segment tree in Python.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample 1 and sample 2 to confirm outputs 5 and 9.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Stress-test against an O(N^2) brute force on many small random arrays; no mismatches found.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Final validation: samples pass and stress test passes.",
+    "status": "done",
+    "result": ""
+  }
+]

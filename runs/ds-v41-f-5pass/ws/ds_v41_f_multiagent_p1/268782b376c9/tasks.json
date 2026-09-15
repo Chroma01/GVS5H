@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce to binary search on X and minimum walk satisfying required visit counts r_i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement binary-search + O(n) feasibility (edge-traversal/parity DP over end e).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Brute-force validate the solution on small n,m; confirm no off-by-one, parity, end-position, or MWIS-combination bugs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify the two provided examples produce 4 and 2, and test edge cases (n=2, m=1, m<n \u2192 0, very large m, large points values, X=0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Performance test n=5e4, m=1e9, points=1e6 across binary search iterations to confirm it runs within time limits.",
+    "status": "done",
+    "result": ""
+  }
+]

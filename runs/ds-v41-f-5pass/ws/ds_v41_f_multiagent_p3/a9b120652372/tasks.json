@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "BFS brute force implemented and hypothesis verified against BFS for small N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Efficient solver implemented (parity-consistent partition feasibility via greedy check + Lb shortcut).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Sample tests passed (outputs 3, -1, 5).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Exhaustive N<=9 all-pairs + random N=10..14 independent BFS diff to confirm exact minimum counts and the Lb / Lb+1 / -1 trichotomy.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Adversarial stress for the greedy boundary scan: near-degenerate inputs (m=k, huge spans, many equal gaps, mixed-parity frozen boundaries) vs brute force/alternative DP.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Benchmark worst-case runtime (single N=1e6 dense feasible; T=2e5 tiny summing to 1e6) and confirm within time limit.",
+    "status": "pending",
+    "result": ""
+  }
+]

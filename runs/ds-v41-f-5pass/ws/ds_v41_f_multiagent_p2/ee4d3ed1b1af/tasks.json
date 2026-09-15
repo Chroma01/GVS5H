@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Split p on its two '*' into segments A, B, C (each may be empty).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement KMP to enumerate all overlapping occurrence start indices of each nonempty segment in s in O(n + |seg|).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build suffix-min next-occurrence arrays nxtB and nxtC of size n+2 (INF sentinel), giving smallest start >= i; treat an empty segment as occurring at every position (handled inline with b=p1 / c=p2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If A nonempty iterate occ_A starts, else iterate all i in 0..n; chain p1=i+len(A) \u2192 b=nxtB[p1] \u2192 p2=b+len(B) \u2192 c=nxtC[p2]; when b,c finite update answer=min(answer, c+len(C)-i).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle edge cases: all segments empty (answer 0), adjacent/non-overlapping segments, positions near boundaries, and return -1 when no valid candidate exists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate against examples (8, -1, 0, 6) and confirm O(n + m) time and correctness of the earliest-B/earliest-C greedy.",
+    "status": "done",
+    "result": ""
+  }
+]

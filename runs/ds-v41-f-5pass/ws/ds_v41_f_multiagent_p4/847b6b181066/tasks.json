@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Write the single-file Python solution implementing the prefix-relative-seen-set algorithm with integer coordinate encoding (M=4N+10, offset=2N+5), reading from stdin and writing the N-char answer to stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Test on all three provided samples, verifying outputs 001010, 0001101011, 00100111111000101111 (all passed).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test edge cases: t=1 immediate hit, all-same-direction wind, duplicate prefix values, and large N=200000 for performance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm reduction: smoke at time t+0.5 is at (R,C) iff P[t]-(R,C) has appeared among P[0..t-1] (i.e., in seen before inserting P[t]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Establish birth times = first occurrences of prefix values, so checking the seen set (including P[0]=(0,0)) at each step is sufficient.",
+    "status": "done",
+    "result": ""
+  }
+]

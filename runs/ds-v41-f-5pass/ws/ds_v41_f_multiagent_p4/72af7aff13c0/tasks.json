@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the solver: flat-array `A`/`dp`, initial O(HW) DP with `dp[h][w]=A[h][w]*(dp[h-1][w]+dp[h][w-1])`, per-query move + point update, recompute affected down-right rectangle `[sh..H-1]x[sw..W-1]` in increasing h then w order, special-case `(0,0)`, output `dp[H*W-1]` each query.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify outputs match Sample 1 (456, 666, 822) and Sample 2 exactly; code handles zero values, H or W = 2, and corner updates.",
+    "status": "done",
+    "result": ""
+  }
+]

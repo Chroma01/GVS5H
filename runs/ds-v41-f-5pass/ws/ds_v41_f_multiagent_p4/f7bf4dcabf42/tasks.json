@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, M, and S, and set MOD = 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement difference-bitmask LCS-row automaton: decode mask to dp row, apply standard LCS recurrence for each letter, encode next row to mask.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute transitions for all reachable masks and all 26 letters.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run DP over M appended characters from the zero mask, maintaining counts per mask modulo MOD.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Aggregate final counts by LCS length = popcount(mask), and print ans_0..ans_N separated by spaces.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test on provided samples and edge cases such as N=1, M=1, and repeated characters in S.",
+    "status": "done",
+    "result": ""
+  }
+]

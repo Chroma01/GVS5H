@@ -1,0 +1,11 @@
+- **Core observation:** Increasing k by 1 only changes comparisons involving elements whose current value is M-1. All other elements increase by 1 without wrapping, so their relative order and pairwise comparisons remain unchanged.
+- **Wrapping value:** When moving from k to k+1, the original value that wraps is v = (M-1-k) mod M.
+- **Pairwise delta:** For a fixed original value v, let W be the positions with A_i = v, and let c = |W|. Before wrapping, W has value M-1 and non-W has values 0..M-2. A W before a non-W loses one inversion; a non-W before a W gains one inversion. W-W and non-W-non-W comparisons do not change.
+- **Position formula:** If the 1-indexed positions of value v are p_1 < ... < p_c, the number of non-W-before-W pairs is S = sum(p_t - t) = sum_pos[v] - c(c+1)/2. The total number of cross pairs is c(N-c). Therefore delta[v] = S - (c(N-c)-S) = 2S - c(N-c).
+- **No full position lists needed:** The rank sum 1+...+c is independent of the actual positions, so only cnt[v] and sum_pos[v] are required. These can be maintained while reading A.
+- **Initial inversion count:** Use a Fenwick tree over values 0..M-1. For each A_i, previous greater elements = i - previous elements <= A_i. Query prefix A_i+1, then add A_i.
+- **Sweep order:** Start with ans = inversion count for k=0. For v from M-1 down to 0, print ans, then ans += delta[v]. This produces answers for k=0..M-1.
+- **Complexity:** Initial Fenwick counting is O(N log M). Delta computation and sweep are O(M). Memory is O(M) besides input storage, easily fitting N,M <= 2e5.
+- **Edge cases:** M=1 has only one answer, always 0. All equal values give delta 0. Duplicates are handled correctly because Fenwick counts previous <= current, and inversions require strict >.
+- **Integer size:** Inversion counts can be about 2e10, so Python's arbitrary-precision integers are sufficient.
+- **Implementation notes:** Read all input with sys.stdin.buffer.read().split(), build Fenwick and aggregate counts/position sums in one pass, then sweep and join output strings.

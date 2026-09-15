@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate greedy exchange argument: removals before additions, optional common 1s form a prefix sorted by decreasing C.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement full Python solution with the base-cost simulation and incremental prefix formula above.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and edge cases (N=1, no X/Y, all Z, equal costs, large values); if failures occur, debug or switch to a Fenwick total-order implementation of the same delta.",
+    "status": "done",
+    "result": ""
+  }
+]

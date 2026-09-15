@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Characterize passing structures and collision model.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Discard old block-cut-tree/block_swap gadget as wrong.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement BFS distances dS,dT, buffer candidates, iterative Tarjan BCT, and per-block min-cost-flow cycle gadget; public samples 3/-1/4 pass.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run built-in selftest (empty stdin) and report real `SELFTEST bad=N`; if N>0 dump the full first FAIL line.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Re-run selftest with denser graphs (extra edges up to 8); report bad count.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If a failure appears, identify the minimal counterexample and revise the exact model term (block gadget cost 2*(dS[x]+dT[y])+cyc_B(x,y) or buffer pen=2/4) that is wrong.",
+    "status": "pending",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduce game to bipartite components; terminal positions are single complete bipartite graphs with S(N-S) edges, so total moves = S(N-S) - M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive N-odd rule (Aoki iff M odd) and even-N closed form (k, c, S, I, M).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement O(N+M) iterative BFS/DFS 2-coloring closed form; submission now reads stdin and prints only Aoki/Takahashi (harness removed).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Pass all 3 public samples (N=4 path\u2192Aoki, N=4 two disjoint edges\u2192Takahashi, N=9\u2192Aoki).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Exhaustive bipartite-state minimax DP for N\u22646 (state counts 1,2,7,41,376,5177) plus targeted N=8 branch checks matched the formula with no violations.",
+    "status": "done",
+    "result": ""
+  }
+]

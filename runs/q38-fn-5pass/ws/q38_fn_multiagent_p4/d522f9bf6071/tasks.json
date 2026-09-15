@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: select endpoint-sorted exact-count DP with lexicographic tuple tie-breaking.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Solution.maximumWeight using endpoint-sorted exact-count DP (counts 0..4), strict p via bisect_left, tuple insertion, tie-breaking, and final best across counts.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and edge cases: touching boundaries, all overlapping, equal weights, ties across counts, large coordinates; ensure 0-based sorted output.",
+    "status": "done",
+    "result": ""
+  }
+]

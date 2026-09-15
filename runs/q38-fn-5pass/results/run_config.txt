@@ -1,0 +1,5 @@
+sha=e46c574763e881e5343d3cca6fe1bbaab755f44e
+dirty: ?? codebase/v2-current/escalation/run_bench_script/run_q38_fn_5pass.sh
+dirty: ?? codebase/v2-current/escalation/runs
+model=groq:large-model (Qwen3.8 Flash Next via litellm 192.168.2.200:8216) cap=128000 parallel=48 release=release_v6 ids=escalation/lcb100_hardest_v6.json
+engines=[single multiagent] passes=[1 2 3 4 5] reasoning=on max_iters=10 max_tasks=12 strict_format=1 checkpoint=per-problem

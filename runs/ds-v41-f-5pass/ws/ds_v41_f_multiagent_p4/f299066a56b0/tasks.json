@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Analyze problem as threshold bipartite matching (top a fits bottom b iff 2a<=b) and note roles are not preassigned",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement feasible(K): for i in range(K) require 2*A[i] <= A[N-K+i]; return True for K=0; prove the smallest-K-tops vs largest-K-bottoms characterization",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Binary search the maximum K over [0, N//2] using feasible(K) (feasibility is monotone in K)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Write full program: read N and sorted A from stdin, compute answer, print only the integer to stdout; use 2*a<=b integer arithmetic",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test on all three samples (expect 3, 0, 6) plus edge cases (N=2 no pair, all equal, duplicates, N=5e5)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Provide a fallback distinct approach if binary-search check fails: scan descending with predecessor matching (Fenwick/segment tree) to verify max matching",
+    "status": "done",
+    "result": ""
+  }
+]

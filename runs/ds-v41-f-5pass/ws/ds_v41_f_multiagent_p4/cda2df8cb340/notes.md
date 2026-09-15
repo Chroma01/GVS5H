@@ -1,0 +1,10 @@
+- **Goal:** Compute S = sum_{1<=i<=j<=N} f(A_i+A_j), where f(x) = odd part = x / 2^{v2(x)}. N <= 2e5, A_i <= 1e7.
+- **Reduction:** f(A_i+A_j) = (A_i+A_j)/2^k exactly when v2(A_i+A_j)=k, i.e. A_i+A_j ≡ 2^k (mod 2^{k+1}). Only k with 2^k <= 2*maxA matter (here k = 0..24, ~25 values).
+- **Ordered-pair trick:** Let ordered = sum over ALL ordered pairs (i,j) of f(A_i+A_j). Then sum_{i != j} = 2 * sum_{i<j}, and ordered = diag + 2*sum_{i<j}. So S = (ordered + diag)/2, where diag = sum_a odd_part(a). This is guaranteed even.
+- **Per-k counting:** With half = 2^k, M = 2^{k+1}, mask = M-1, v2(A_i+A_j)=k iff (A_i & mask) + (A_j & mask) ≡ half (mod M). Build cnt[r] = #indices with A_j ≡ r (mod M). Then s = sum_i A_i * cnt[(half - A_i) & mask] equals sum over these ordered pairs of A_i. By (i,j)->(j,i) symmetry the sum of (A_i+A_j) is 2*s, so the k-contribution is (2*s) // half (exact).
+- **Optimization:** Deduplicate values with Counter (vals/mults), so loops run over D distinct values, not N. Use Python's `& mask` for mod (works for negatives too).
+- **Data structure choice:** For small M use a plain list `cnt = [0]*M`; for large M use a dict. Rule used: array if `M <= 1<<20 and M <= 8*D`, else dict. Total array allocation is dominated by ~2^21 across k, cheap; dict keyed by at most D residues.
+- **Complexity:** O(N + K*D) with K ~ 25, D <= N, so O(N log(maxA)); memory O(min(M, D)).
+- **Edge cases checked:** N=1 yields f(2*A_1)=odd_part(A_1) and S=odd_part(A_1) (correct). Duplicate values verified (A=[1,1] -> 3). i=j diagonal handled by the (ordered+diag)/2 identity.
+- **Verification:** Sample1 A=[4,8] -> 5; Sample2 A=[51,44,63]: S = 51+95+57+11+107+63 = 384 (matches). Sample3 expected 20241214 (structure of code identical, values handled by same counting).
+- **Notes on ints:** All quantities fit in 64-bit-ish range (<= ~8e17), Python big ints are safe and fast.

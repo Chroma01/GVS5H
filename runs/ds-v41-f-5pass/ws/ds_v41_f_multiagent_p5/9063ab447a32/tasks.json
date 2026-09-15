@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Read N, M, P from stdin; implement count(V)=sum((V//P_i+1)//2) and S(V)=sum(P_i*c_i^2) in O(N) with early exit when S>M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Binary search the largest V in [0, U] with S(V) <= M using a provably valid upper bound U = min(M, 2*isqrt(M*p_min)+2*p_min+2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute R = M - S(V), next marginal w = min_i P_i*(2*c_i+1), cnt_w = count of products attaining w; answer = C(V) + min(cnt_w, R//w).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Assemble final stdin->stdout program with integer-only arithmetic and fast IO.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Pass both provided samples (Sample 1 -> 3, Sample 2 -> 53).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Stress-test against naive brute force on many small random inputs (N<=4, M<=200, P_i<=12) confirming tie handling and boundary cases (V=0, S(M)<=M).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Confirm worst-case performance (N=200000, M=1e18) runs well within limits via sorted-P early break and early exit.",
+    "status": "done",
+    "result": ""
+  }
+]

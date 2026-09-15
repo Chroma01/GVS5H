@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse `N`, `M`, `X`, and build original outgoing adjacency lists and reversed adjacency lists.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Dijkstra over states `(vertex, parity)` using 64-bit integer distances.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Add move transitions with cost 1 using the adjacency list corresponding to the current parity.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Add reversal transitions with cost X from `(v, 0)` to `(v, 1)` and from `(v, 1)` to `(v, 0)`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Stop when either target state `(N, 0)` or `(N, 1)` is finalized and print the minimum distance.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify the implementation on the provided sample tests and ensure it handles large answers beyond 32-bit range.",
+    "status": "done",
+    "result": ""
+  }
+]

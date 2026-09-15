@@ -1,0 +1,9 @@
+- **Problem model:** Takahashi is an expanding connected region. Absorbing a frontier slime of strength s is allowed iff X*s < cur (strict). Absorbing only increases cur, so eligibility grows monotonically; final region and strength are order-independent.
+- **Greedy / Prim-like:** Maintain frontier in a min-heap keyed by slime strength. Always pop the weakest frontier cell. If X*v < cur, absorb it (cur += v) and push its unvisited orthogonal neighbors. Otherwise break immediately, since every remaining frontier value is >= v and thus also unabsorbable.
+- **Order-independence proof sketch:** Any absorbable cell stays absorbable later (cur only grows); a cell not currently absorbable may become so only after absorbing something. Processing smallest-first ensures we never absorb a larger cell while a smaller reachable one exists, matching the closure.
+- **Dedup:** Mark neighbors visited at push time so each cell enters the heap at most once. No duplicate/stale pop handling needed.
+- **Arithmetic:** X up to 1e9 and S up to 1e12, so X*v up to 1e21 — Python big ints handle this; do NOT use floats or 64-bit truncation. Comparison is strict `<`.
+- **Complexity:** O(HW log(HW)) time, O(HW) space. Fine for 500x500 = 250k cells.
+- **Input parsing:** Read all tokens via `sys.stdin.buffer.read().split()`; P,Q are 1-based in input, convert to 0-based. Grid rows are W integers each.
+- **Verified samples:** (2,2) of sample 1 -> 28; sample 2 -> 5; sample 3 -> 1343.
+- **Edge cases:** X=1 means require s < cur (strict) — sample 2 stops immediately since start 5 and neighbors 10,1: X*1=1 < 5 is true actually... check: sample 2 grid [[5,10,1,1],[10,1,1,1],[1,1,1,1]], start (1,1)=5, X=1. Neighbor (1,2)=10: 1*10<5? no. Neighbor (2,1)=10: no. Wait (1,1) neighbors are (1,2)=10 and (2,1)=10. Both fail => break, answer 5. Correct.

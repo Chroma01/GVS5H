@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove query characterization: every connected pair has an optimal path with <=2 intermediate vertices, reducing to {common, X, Y}.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement preprocessing: fR via sort-by-R prefix minima, fL via sort-by-L suffix minima, bisect helpers, INF sentinel, two-smallest-R / two-largest-L isolated test.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement per-query logic: isolated -> -1; disjoint -> W_s+W_t; else W_s+W_t+min(common, X, Y) with finiteness guard.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate against sample inputs 1 and 2 (expected 11,6,-1 and 157,124,-1,114,114) -- PASSED all 2 public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Final self-contained stdin/stdout submission with validator guarded behind empty-stdin (never runs under judging).",
+    "status": "done",
+    "result": ""
+  }
+]

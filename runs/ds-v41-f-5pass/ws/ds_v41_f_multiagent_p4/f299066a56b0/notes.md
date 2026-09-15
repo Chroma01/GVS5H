@@ -1,0 +1,9 @@
+- **Core model:** Each mochi may be used once, either as a top or as a bottom. A top of size `a` fits a bottom of size `b` iff `2*a <= b`. Since sizes are sorted, this is a threshold bipartite matching problem where roles are not preassigned.
+- **Canonical form proof:** Suppose some feasible solution uses top sizes `t_0 <= ... <= t_{k-1}` and bottom sizes `b_0 <= ... <= b_{k-1}`, with `2*t_i <= b_i`. The k smallest overall elements `S_i` satisfy `S_i <= t_i`, and the k largest overall elements `L_i` satisfy `L_i >= b_i`. Hence `2*S_i <= 2*t_i <= b_i <= L_i`. Therefore if any k pairs exist, using the k smallest as tops and the k largest as bottoms also works.
+- **Feasibility check:** For candidate `k`, check `2*A[i] <= A[N-k+i]` for all `i = 0..k-1`. This is necessary and sufficient by the canonical form. Pairing in this exact order is valid.
+- **Binary search:** Feasibility is monotone: if k pairs are possible, fewer pairs are possible by dropping pairs. Search the largest `k` in `[0, N//2]`. Complexity is `O(N log N)` time and `O(N)` space.
+- **Integer condition:** Use `2*a <= b`, never floating point division; avoids precision issues.
+- **Duplicates:** Handled naturally because we compare by index in the sorted array, not by unique values. Multiple equal sizes can be tops and bottoms.
+- **Edge cases:** `k = 0` is always feasible, so the answer is never negative. If no pair satisfies the condition, binary search returns `0`.
+- **Naive greedy warning:** Pairing smallest tops with earliest valid bottoms can be suboptimal. For `[1,2,3,4,5,6]`, naive pairing gives only 2 pairs, while `(1,4),(2,5),(3,6)` gives 3.
+- **Superseded:** Explicit construction of all pairs is unnecessary; only the count is requested. Floating point comparisons and arbitrary role assignment should not be used.

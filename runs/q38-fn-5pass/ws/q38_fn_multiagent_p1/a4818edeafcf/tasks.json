@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate candidate approaches and select the sweep + lazy segment tree as primary.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Read input and compute prefix distinct counts pref[1..N].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute suffix distinct counts suff[1..N+1].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement lazy segment tree over left split positions supporting range add and range max query.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Sweep right split j, activate i=j-1 with pref[i], update ranges where A[j] newly contributes to middle distinct count using previous occurrence.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "For each valid j (2..N-1), query max active i plus suff[j+1] and update answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Test edge cases N=3, all equal, all distinct, and sample cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "If segment tree is too slow/complex, implement sqrt-decomposition fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

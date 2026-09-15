@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement KMP prefix function and transition table for states 0..m, including fallback from state m.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build backward feasibility DP over answer positions and KMP states, applying T/F constraints when each length-m window ends.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Greedily construct answer from state 0 using feasibility DP, trying 'a'..'z', returning \"\" if infeasible.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the current solution against the provided sample tests and key edge cases (m=1, all T, all F, overlapping T conflicts, str2 all 'a') and report an explicit PASS/FAIL verdict for each.",
+    "status": "done",
+    "result": ""
+  }
+]

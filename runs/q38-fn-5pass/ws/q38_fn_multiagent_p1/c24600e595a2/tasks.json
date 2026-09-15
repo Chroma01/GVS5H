@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full solution using canonical off-before-on order and optional R-pair enumeration.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Validate on sample inputs and small brute-force random cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If validation fails, switch to an alternative approach (convexity/DP/flow) and implement it.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Establish reverse reconstruction insight: process i from N down to 1, place i in the P_i-th still-empty slot.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement full solution: Fenwick tree over N empty slots + reverse reconstruction (i=N..1, binary-lifting k-th empty query, place i, decrement), read stdin, write stdout.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify correctness on both provided samples and edge cases (N=1, all P_i=1, all P_i=i) using a brute-force checker on small random inputs \u2014 both samples PASS.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the equivalence: N is a 400 number iff N = x^2 where x has exactly two distinct prime factors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a complete Python solution using a distinct-prime-factor sieve up to isqrt(max(A)), collect valid squares, and answer queries by binary search.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Test edge cases such as A = 36, A = 10^12, non-square query values, and the provided sample.",
+    "status": "done",
+    "result": ""
+  }
+]

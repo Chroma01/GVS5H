@@ -1,0 +1,7 @@
+- **Reduction:** A 400 number must have every prime exponent even, so it is a perfect square. Writing N = s^2, the distinct prime factors of N are exactly those of s. Thus N is a 400 number iff s has exactly two distinct prime factors. N <= A iff s <= floor(sqrt(A)).
+- **Precompute:** With A <= 10^12, we only need s <= 10^6. Build `cnt[x]` = number of distinct prime factors of x using a sieve: for each prime p, add 1 to all multiples of p once. p is prime exactly when `cnt[p] == 0` before processing.
+- **Candidate list:** Collect all s in `[2, 10^6]` with `cnt[s] == 2` into ascending `vals`. For each query A, compute `t = isqrt(A)`, binary-search the largest `vals` element <= t, then output its square.
+- **Complexity:** Sieve costs about `sum_{p <= 10^6} 10^6/p`, roughly 3e6 operations. Each query is answered by one `bisect_right` over a few hundred thousand values, fine for Q <= 2e5.
+- **Pitfalls avoided:** Do not count prime factors with multiplicity; use distinct-prime sieve. Use integer `math.isqrt`, not floating-point square root. Do not enumerate N directly; enumerating s and squaring is simpler and avoids duplicate or missing exponent combinations.
+- **Edge cases:** A >= 36 always has at least s = 6, so `vals` is non-empty and `idx` is valid. For A = 36 or 60, `isqrt` gives 6 or 7, both map to s = 6 and answer 36. For A = 10^12, s = 10^6 = 2^6 * 5^6 has exactly two distinct primes, so answer is 10^12.
+- **I/O:** Read all tokens with `sys.stdin.buffer`, collect output strings, and write once with `sys.stdout.write`.

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python program using constrained 0-1-2 BFS for cycle_extra and branch_extra formula.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run the three public samples and fix runtime/output errors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Add exact ordered-pair BFS verifier for small graphs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate compressed formula against exact BFS on random small graphs by forcing formula (BRUTE_LIMIT=0) and fix discrepancies.",
+    "status": "done",
+    "result": ""
+  }
+]

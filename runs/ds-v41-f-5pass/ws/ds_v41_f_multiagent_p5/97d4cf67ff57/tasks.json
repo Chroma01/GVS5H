@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse the tree input, build adjacency lists, and root the tree at vertex 1 with an iterative traversal order.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N) rooted-tree DP computing B[v] (best upward-attached branch size) and B1[v] (branch size with a degree-4 witness), bottom-up.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Evaluate all vertices as topmost for the degree-4 (four largest child B) and degree-1 (best child with valid B1) configurations, output the max or -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify against all three sample cases (8, -1, 11) \u2014 passed.",
+    "status": "done",
+    "result": ""
+  }
+]

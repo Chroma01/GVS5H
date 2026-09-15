@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Build exact ordered-pair BFS oracle and collect evidence for paths, trees, cycles, theta graphs, and endpoint gadgets.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O((N+M) log N) solver using BFS distances, spare-vertex local gadgets, and fundamental-cycle enumeration from BFS trees rooted at S and T.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the structural solver against the exact oracle on exhaustive connected graphs up to N=9, random graphs up to N=12, and all-cycle checks; no mismatches found.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate final implementation on the public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -2,7 +2,7 @@
 
 ## Results
 
-![Manager vs single call, four models — LCB-100, 5 passes, 128k max tokens, reasoning ON](assets/manager_vs_single_call_four_models.png)
+![Manager vs single call, four models — LCB-100, 5 passes, 128k max tokens, reasoning ON](assets/manager_vs_single_call.png)
 
 ![What one pass costs — LCB-100, 5 passes, single call vs manager, against Fable 5](assets/what_one_pass_costs.png)
 

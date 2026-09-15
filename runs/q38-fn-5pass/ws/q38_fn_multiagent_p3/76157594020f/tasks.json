@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement `Solution.minLength` with binary search over `L` from `1` to the current maximum run length.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement `can(L)` using DP over position, last character, and current run length `1..L`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Ensure DP transitions correctly handle keeping the same character when run length is below `L` and switching characters with run length reset to `1`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Add flip cost by comparing the chosen final character with the original character at each position.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run sample tests and edge cases such as `numOps = 0`, all identical characters, already alternating strings, and small lengths, and report a SAMPLE TESTS verdict.",
+    "status": "done",
+    "result": ""
+  }
+]

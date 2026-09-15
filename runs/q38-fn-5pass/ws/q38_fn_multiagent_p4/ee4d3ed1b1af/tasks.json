@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement concise KMP-based solution with occurrence lists, bisect queries, and empty prefix/middle/suffix handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate current solution on the four sample tests only, with concise output.",
+    "status": "done",
+    "result": ""
+  }
+]

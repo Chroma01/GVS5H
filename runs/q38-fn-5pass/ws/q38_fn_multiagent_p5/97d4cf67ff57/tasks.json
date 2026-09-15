@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive core reduction: valid alkanes correspond to connected core sets of original-degree>=4 vertices with core degree <=4, size 3F+2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement concise iterative core DP (top-4 child aggregation, O(N), no recursion) and output code only.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify on samples and edge cases (N<5, no good vertices, single good vertex, high-degree good center, good vertices separated by bad vertices).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If samples fail, debug core DP; if approach is wrong, switch to exact rooted degree-count DP.",
+    "status": "done",
+    "result": ""
+  }
+]

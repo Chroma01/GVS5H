@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: choose LTE construction A=N+1, M=N^2 over CRT/direct methods.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement LTE construction: read T and each N, output A=N+1 and M=N*N using Python arbitrary-precision integers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify construction proof for all prime powers, including N=1, powers of two, and large N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Drop sample-compatibility shim; special judge accepts any valid pair.",
+    "status": "done",
+    "result": ""
+  }
+]

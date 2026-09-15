@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove the operation swaps gaps d_i and d_{i+2} while leaving d_{i+1} unchanged (reverse (d_i,d_{i+1},d_{i+2}) -> (d_{i+2},d_{i+1},d_i)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the parity invariant: odd-index gaps permute arbitrarily among odd positions, even-index gaps among even positions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Express the coordinate sum as X_1*N + \u03a3_{j=1}^{N-1} (N-j)*d_j.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Optimality via rearrangement: weights (N-j) are decreasing, so assign sorted ascending gaps to increasing index within each parity class.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement O(N log N) solution with integer arithmetic; PASSED both public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Edge-case sanity: N=4, N up to 2e5, large coordinate magnitudes all handled by the same formula and Python big ints.",
+    "status": "done",
+    "result": ""
+  }
+]

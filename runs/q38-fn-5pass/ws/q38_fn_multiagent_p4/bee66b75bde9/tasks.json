@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement full solver using bottom-to-top row sweep with running maximum black column, processing black cells before white cells in the same row.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run the implemented solver on all sample inputs and report pass/fail.",
+    "status": "done",
+    "result": ""
+  }
+]

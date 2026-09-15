@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python solution using capped pair-sum frequency algorithm with early cases T <= 0, T > min(FA, FB), and T == 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Generate candidate sums from fixed A/B values with capped multiplicity min(countA[a], countB[b], T), filter sums below maxS, and check whether any sum appears at least T times using encoded list sort.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify edge cases and public sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

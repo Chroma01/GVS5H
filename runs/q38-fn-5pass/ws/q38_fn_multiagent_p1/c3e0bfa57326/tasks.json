@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: select canonical unordered tree type plus multinomial DP as primary approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement parser and canonical type IDs with stack and sorted child tuples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute factorials and inverse factorials modulo 998244353 up to N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Compute DP counts f for each unordered type using grouped child multiplicities.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Handle artificial root/top-level forest and print answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test edge cases: single leaf, chain, repeated identical subtrees, and sample inputs.",
+    "status": "done",
+    "result": ""
+  }
+]

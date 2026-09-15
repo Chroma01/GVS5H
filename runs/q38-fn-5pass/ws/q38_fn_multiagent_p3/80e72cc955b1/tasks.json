@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approach: each integer x needs floor(log_4(x)) + 1 division steps, and each operation can process two steps, so query answer is ceil(total_steps / 2).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement prefix_sum(n) by grouping integers into ranges [4^(k-1), 4^k - 1] where the step count is constant.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement minOperations using total_steps = prefix_sum(r) - prefix_sum(l - 1) and adding (total_steps + 1) // 2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Ensure all calculations use integer arithmetic and avoid floating-point logarithms.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate with the provided examples and edge cases such as small n, l = 1, and r near 10^9.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirm complexity is O(Q log R), effectively O(Q * 15) for the constraints.",
+    "status": "done",
+    "result": ""
+  }
+]

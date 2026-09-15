@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Read N and A from standard input.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a brute-force game solver for small N and small A_i using state (remaining counts, opened mask) to compute exact winners.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Generate small cases and test the proposed parity-count rule; record any counterexamples and observed patterns.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Derive or verify a closed-form winner rule from brute-force results, paying attention to N=1,2,3, parity classes, pass moves, and the final-move truncation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement an efficient O(N) solution based on the verified rule.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Test on samples and edge cases, including N=1, N=2, N=3, all odd, all even, and large A_i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Print the winner to standard output.",
+    "status": "done",
+    "result": ""
+  }
+]

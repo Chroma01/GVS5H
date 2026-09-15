@@ -1,0 +1,8 @@
+- **Model:** Final cell = A_{i,j} xor r_i xor c_j, where r_i toggles row i and c_j toggles column j. Operations commute and are involutions; any combination is a binary vector of row/column flips.
+- **Per-column-mask reduction:** For a fixed column mask c, rows are independent. Row pattern p contributes min(popcount(p xor c), W - popcount(p xor c)). Answer = min over c of sum_p freq[p] * g(p xor c), where g(m) = min(popcount(m), W - popcount(m)).
+- **XOR convolution:** freq[p] = number of rows equal to mask p. The sum for mask c is (freq ⊛ g)[c]. Compute via Walsh-Hadamard transform: WHT(freq) * WHT(g), then inverse WHT, divide by 2^W.
+- **WHT(g) closed form:** g depends only on popcount. For any mask with j = popcount(c), WHT(g)[c] = G(j) = Σ_{a=0..j} Σ_{b=0..W-j} (-1)^a C(j,a) C(W-j,b) min(a+b, W-a-b). Precompute G[0..W] in O(W^3).
+- **Implementation:** Parse rows as W-bit integers. If numpy available, use vectorized FWHT (reshape to (-1, 2*length), add/subtract). Else use in-place pure-Python FWHT with while loops. Multiply pointwise WHT(freq) by G[popcount(c)], inverse transform, divide by n, take min.
+- **Complexity:** O(H + W^3 + n log n) where n = 2^W ≤ 262144. Memory O(n). int64 safe: max intermediate ~1.2e17.
+- **Edge cases:** All zeros/all ones give 0. W=1 gives 0. H=1 works. Duplicate rows handled by freq counts.
+- **Verification:** Samples: 3x3 -> 2, 3x4 all ones -> 0, 10x5 -> 13.

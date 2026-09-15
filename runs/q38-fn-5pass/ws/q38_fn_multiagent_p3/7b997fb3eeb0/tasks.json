@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete solution: read input, compute nxt/D, build fast range-max structure, binary search answers, print outputs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify on sample inputs and edge cases (all equal, no pairs, full range, K=0, impossible nxt sentinel).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If sparse table is too slow or memory-heavy, switch to segment-tree first-violation traversal or block RMQ.",
+    "status": "done",
+    "result": ""
+  }
+]

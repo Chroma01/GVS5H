@@ -1,0 +1,12 @@
+- **Mathematical reduction:** Work over F_p. For odd p, expand B^p as noncommutative words in A and matrix units E_e for zero positions. Summing each replacement variable over F_p^* keeps only words where every variable exponent is a multiple of p-1. Since total word length is p, only the all-A word and words with exactly one variable appearing p-1 times and A appearing once survive. Each surviving class has coefficient (-1)^K, where K is the number of zeros.
+- **Closed form:** Answer = (-1)^K * (A^p + sum_e W_e), where W_e = sum_{t=0}^{p-1} E_e^t A E_e^{p-1-t}.
+- **Diagonal zero correction:** For zero (r,r), E is idempotent and A_rr=0. W = A E_rr + E_rr A, so add column r and row r of the original A to the answer bracket.
+- **Off-diagonal zero correction:** For zero (r,c), r != c, E^2=0. W is nonzero only for p=3, where W = A_{c,r} E_{r,c}. Thus add A[c][r] to position (r,c) only when p=3.
+- **p=2 special case:** Since values are only 0 or 1 and zeros are replaced by 1, B is the all-ones matrix. B^2 has every entry N mod 2. Output that constant matrix.
+- **p=1 special case:** Modulo 1 everything is 0. Output zeros.
+- **N=1 odd p:** Direct answer is A_00 modulo p. If A_00=0, the sum over nonzero replacements is zero; otherwise there is only one matrix and A_00^p = A_00.
+- **Matrix exponentiation:** Compute A^p modulo p by binary exponentiation. Start with res=A and exponent p>>1, with base=A^2, to avoid an identity multiplication. This uses about floor(log2 p) squarings plus popcount(p)-1 result multiplications.
+- **Pure Python matmul:** For CPython, transpose the second matrix and use sum(map(operator.mul, row, col)) per entry, moving the inner multiplication loop into C. For PyPy, use i-k-j accumulation, skip zero multipliers, and postpone modulo until the end of each row. Accumulated entries are at most about N*p^2, safe for Python integers.
+- **Optional NumPy path:** If NumPy is available and the instance is large enough, use int64 block matrix multiplication. Choose block size so block*(p-1)^2 <= 8e18, preventing int64 overflow in dot products, and reduce modulo p after each block. If import fails, fall back to pure Python.
+- **Sign and final modulo:** Add all corrections to A^p first, then multiply every entry by -1 if K is odd, otherwise just reduce modulo p.
+- **Complexity:** Dominated by matrix exponentiation, O(N^3 log p) in the worst case, with N <= 100. Corrections are O(KN) for diagonal zeros and O(K) for p=3 off-diagonal zeros. Memory is O(N^2).

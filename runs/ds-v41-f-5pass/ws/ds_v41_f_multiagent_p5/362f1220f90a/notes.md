@@ -1,0 +1,11 @@
+- **Goal:** differential-test the rightmost-free greedy for the lexicographically smallest generated string (n<=1e4, m<=500).
+- **Algorithm:** fill '?' array; apply every 'T' constraint (conflict -> ""); set leftover cells to 'a' and mark free; scan 'F' windows left to right; if a window currently equals str2, flip the rightmost free cell in it to a letter != str2 (always 'b'); no free cell -> "".
+- **Flip letter is always 'b':** free cells are 'a', and a matching window has str2 at that offset == 'a', so the smallest differing letter is 'b' (the else branch is dead).
+- **Actual tester stdout (run as-is):** exactly `NO MISMATCHES across 6198 cases`. Breakdown: Phase A (str2 in {a,b}, n=1..6, m=1..4) = 126*30 = 3780; Phase B (str2 in {a,b,c}, n=1..5, m=1..3) = 62*39 = 2418; total 6198.
+- **Alphabet check:** no "BRUTE ALPHABET PROBLEM" printed; brute over set(str2)|{a,b} equals brute with one extra letter on all small cases. Reason: breaking a window only ever needs 'a' or 'b'.
+- **Correctness argument:** matched F windows are shift-periodic on overlaps, so a rightmost-free flip can only break future matches, never create one; free cells lie outside all T windows, so T windows are untouched; a matching F window whose every cell is forced is genuinely unsatisfiable. Rightmost free cell + smallest differing letter gives the lexicographic optimum.
+- **Past-window worry:** a flip could in principle re-match an earlier F window, but making that window's sole mismatch land on a free cell forces a T constraint that contradicts the overlap; exhaustive search found no such case.
+- **Statement examples (verified verbatim):** `TFTF / ab -> 'ababa'`; `TFTF / abc -> ''` (T at 0 and T at 2 force position 2 to both 'c' and 'a'); `F / d -> 'a'`.
+- **Edge cases (verified verbatim):** `TFT / a -> 'aba'`; `TT / aa -> 'aaa'`; `TT / ab -> ''`; `FF / a -> 'bb'`; `FF / ab -> 'aaa'`; `TF / a -> 'ab'`; `TF / b -> 'ba'`.
+- **Complexity:** time O(n*m), space O(n+m). Fine for the limits.
+- **Superseded:** earlier notes about a hypothetical complex algorithm and the ad-hoc all-a-prefix argument; the periodicity argument above plus the executed test result replace them.

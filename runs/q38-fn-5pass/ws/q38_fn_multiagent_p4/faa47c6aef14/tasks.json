@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce each color to a required chain and the overall minimum to the shortest common supersequence of the two chains.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with cycle validation, chain construction, and LIS-based LCS.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify edge cases: no balls, balls only at X, empty chains, no common vertices, and conflicting chain orders.",
+    "status": "done",
+    "result": ""
+  }
+]

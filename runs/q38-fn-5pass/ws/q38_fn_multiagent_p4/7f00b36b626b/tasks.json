@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Select DSU-over-multiples approach as primary.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement DSU solution in starter code with first_divisor array, filtering > threshold, counting components.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on sample tests and edge cases such as threshold=1, all values > threshold, and lcm exactly threshold.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If validation fails, try divisor-enumeration/BFS fallback or debug union logic.",
+    "status": "done",
+    "result": ""
+  }
+]

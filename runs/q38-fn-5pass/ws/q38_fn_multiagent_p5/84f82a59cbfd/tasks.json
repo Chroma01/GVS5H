@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approach: reduce 400 numbers to squares of bases <= 1e6 with exactly two distinct prime factors.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution with exact integer square root and distinct-prime-factor sieve/prefix array.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and check edge cases such as A=36, A=10^12, and non-square A.",
+    "status": "done",
+    "result": ""
+  }
+]

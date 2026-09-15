@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Formalize the minimum-cost formula (sum of running prefix maxima minus sum) and prove setting each final value to the prefix maximum is optimal.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Establish the sliding-window monotonicity: cost nondecreasing in R and nonincreasing in L.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Two-pointer invariant and accumulation: for each right, count valid lefts as right-left+1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement Approach 1: binary lifting over next strictly greater chains with partial final block and O(log n) cost queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run Examples 1 and 2 (17, 12) and brute-force compare on random small cases; worker reported solved.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Performance/memory check at n=1e5 with array('q') tables (~27 MB, O(n log n)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Finalize solution.",
+    "status": "done",
+    "result": ""
+  }
+]

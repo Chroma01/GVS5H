@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Design the digit DP state with capped prime-exponent vector and zero-product handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement count_up_to(n) using digit DP over digits of n with tight, started, digit_sum, capped exponents, and zero_product flag.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Define transitions for choosing each next digit, updating sum and exponents correctly, treating leading zeros as not started and real zero digits as making product zero.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "At DP end, count a number as beautiful if started and either zero_product is true or the digit sum divides the digit product, using the capped exponents to test divisibility.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement beautifulNumbers(l, r) as count_up_to(r) - count_up_to(l - 1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Run minimal sample/edge validation and report SAMPLE TESTS verdict only.",
+    "status": "done",
+    "result": ""
+  }
+]

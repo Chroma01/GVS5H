@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove or disprove the forbidden-pair characterization and derive exact conflict conditions",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement fast input parsing and normalize people to (l,r,type), initialize nxt",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement online sweep with endpoint buckets and two segment trees supporting point update and conflict detection to compute earliest conflicts",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute range minima and answer queries; validate on samples and edge cases",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Backup: offline 2D range-min/CDQ alternative not needed",
+    "status": "done",
+    "result": ""
+  }
+]

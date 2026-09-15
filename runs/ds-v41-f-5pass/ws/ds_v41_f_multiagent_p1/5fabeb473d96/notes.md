@@ -1,0 +1,11 @@
+- **Problem reduction:** Sum of distances over all (N-1)! parent arrays = (N-1)! times the expected distance in a uniformly random recursive tree (each P_i independent uniform on {1..i-1}). Multiply the modular expected value by fact=(N-1)! at the end.
+- **Linearity over edges:** Distance(u,v) = sum of A_i over edges i on the u-v path. Edge i (to its parent) lies on the path iff exactly one of u,v is in subtree(i). subtree membership of x == i is ancestor of x.
+- **Ancestor probabilities:** For i<j, P(i anc j)=1/i; P(i anc i)=1. All ancestors of a vertex x are <= x. Proven by conditioning on P_j.
+- **Joint probability (key):** For i<u<v, P(i ancestor of both u and v)=2/(i(i+1)), independent of u,v (verified by induction on v; beware it is NOT 1/i^2).
+- **Exactly-one probabilities for u<v, edge i:** i<u: 2(i-1)/(i(i+1)); i=u: (u-1)/u; u<i<v: 1/i; i=v: 1; else 0. Edge i=1 does not exist (start sums at i=2, or let A_1=0).
+- **Final formula (all mod p, p=998244353):** with S1[i]=sum_{j=2..i} A_j/j and S2[i]=sum_{j=2..i} 2(j-1)A_j/(j(j+1)), expected dist = S2[u-1] + A_u(u-1)/u + (S1[v-1]-S1[u]) + A_v. Answer = E * (N-1)! mod p.
+- **u=1 works with the general formula:** S2[0]=0, A_1*(0)=0, S1[1]=0, so E = S1[v-1] + A_v. No special branch required if A[1]=0.
+- **Complexity:** O(N+Q) time, O(N) memory. Precompute inverses (1..N+1; p>N so all exist), prefix sums, and (N-1)!.
+- **Implementation details:** inv[i]=(p-(p//i)*inv[p%i])%p; S2 uses inv[i+1] up to inv[N+1]; use sys.stdin.buffer for speed; take % p against negative (S1[v-1]-S1[u]).
+- **Verification (manual brute force, N=4, all 6 parent arrays):** (1,4)->6A4+3A2+2A3; (2,4)->6A4+3A2+2A3; (3,4)->6A4+4A3+2A2. All match the formula exactly. Samples 1 and 2 match by hand (outputs 2,3 and 100).
+- **Pitfalls avoided:** joint event dependence, i=u vs i=v cases, excluding edge 1, modular inverses only (no rationals), final multiplication by (N-1)!.

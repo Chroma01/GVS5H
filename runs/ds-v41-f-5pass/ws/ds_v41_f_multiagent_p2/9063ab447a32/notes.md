@@ -1,0 +1,8 @@
+- **Marginal formulation:** The k-th unit of product i has marginal cost P_i(2k-1). Buying units is just selecting marginals from N increasing arithmetic progressions. We need the maximum number of marginals with sum at most M.
+- **Threshold counting:** For a cutoff X, product i contributes k_i = (floor(X/P_i)+1)//2 units and cost P_i * k_i^2. Both total units and total cost are nondecreasing in X.
+- **Binary search:** Find the largest X with total cost <= M. The predicate is computed in O(N), with early break once cost exceeds M. Binary search range [0, upper].
+- **Safe upper bound:** Let r_i = isqrt(M // P_i). The next unselected marginal cost of product i is at most P_i(2r_i+1). Therefore the answer cutoff is below max_i P_i(2r_i+1). Using this upper bound keeps the search tight and safe even when M is small and P_i is large.
+- **Leftover budget:** After taking all marginals with cost <= X, every remaining affordable marginal costs exactly X+1. So add (M - total_cost) // (X+1) to the unit count.
+- **Edge cases:** X may be 0 (e.g. several P_i = 1 and small M), and X may exceed M. The formula still works. Use Python ints; values can reach around 1e18 or slightly more during intermediate checks.
+- **Complexity:** O(N log upper) time, O(N) memory. False predicate calls usually break early, so runtime is comfortable for N = 2e5.
+- **Validation:** Both samples pass, and random small cases match brute-force enumeration of all purchase vectors.

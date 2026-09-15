@@ -1,0 +1,17 @@
+- **Game model:** A move is either the first touch of an index (an "add", exactly N of these happen over the whole game) or spending one remaining unit on an already-touched index (a "pass"). Index i becomes available for passes only after its first touch, providing A_i-1 pass tokens. Game ends on the N-th add; that mover wins.
+- **Reduced state:** (P, o), where P = current pool of available pass tokens and o = number of odd-valued untouched indices. m = number of untouched indices. Values beyond parity never matter (a parity flip adds/subtracts exactly (A_i-1) mod 2).
+- **Small-m outcomes (current player wins?):**
+  - m=1: always win (touch the last index).
+  - m=2: win iff P is odd. Proof: no add helps (gives opponent m=1), so only passes matter; W(P)=(P>0 and not W(P-1)), W(0)=False => W(P)=(P odd). Independent of values.
+  - m=3: if remaining parities are mixed, always win; if all odd, win iff P even; if all even, win iff P odd. (Matches (P+o odd) only for homogeneous lists.)
+  - m >= 4: win iff (P + o) is odd. Uniform.
+- **Key derivation for m>=5:** adding an index leads opponent to m-1 with pool P+(A_i-1) and o' = o-[A_i odd]. Using the opponent's m-1 rule (P'+o' odd means opponent wins) gives current wins iff P+o odd for both A_i parities. Pass goes to (P-1,o). Solving W(P)=[(P+o odd)] or [P>0 and not W(P-1)] yields W(P)=(P+o odd). Base m=4 checked case-by-case: o=0,4 -> P odd; o=1,3 -> P even; o=2 -> P odd; all equal (P+o odd).
+- **Initial positions (P=0):**
+  - N=1: Fennec (touch the single index; always).
+  - N=2: Snuke (Fennec touches one, Snuke touches the other and wins). Never depends on parity.
+  - N=3: Fennec iff o>=1. If any A_i odd, touching it leaves pool A_i-1 even, so opponent at m=2 (pool even) loses. If all even, any touch leaves pool odd and opponent wins.
+  - N>=4: Fennec iff o is odd (P=0 gives P+o odd).
+- **Note the three special cases:** for N=3 the mixed case (o=2) is a win although 2 is even; for N=1 o=0 (even A_1) is still a win; for N=2 o=1 is still a loss. These are exactly the small-m mixed/forced-move anomalies; for N>=4 the rule o odd is clean.
+- **Multiple independent hand-checks confirmed:** (2,2,2) N=3 Snuke; (1,1,2) N=3 Fennec; (1,1,2,2) N=4 Snuke; (1,1,1,2) and (1,2,2,2) N=4 Fennec; (2,2,2,2) N=4 Snuke; N=5 (1,1,1,2,2) Fennec vs (1,1,2,2,2) Snuke; N=6 o=4 -> Snuke, o=5 -> Fennec.
+- **Samples:** (1,9,2) N=3 o=2 -> Fennec; (25,29) N=2 -> Snuke; (1,9,2,25,2,9) N=6 o=4 -> Snuke. All match.
+- **Complexity:** O(N) time, O(1) extra space. Read N then N integers.

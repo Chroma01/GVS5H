@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Prove and formalize the reduction: f(L,R) equals the number of maximal contiguous value components among distinct values in A[L..R], equivalently the sum over x of subarrays containing x and not x-1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement and validate the O(N) direct per-value component-start counting algorithm using occurrences of x and x-1 as barriers; include sentinels, x=1 handling, absent values, 64-bit arithmetic, and sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Finalize the clean Python solution: read from stdin, write only the answer to stdout, ensure O(N) time, and validate on all provided samples (all 3 passed).",
+    "status": "done",
+    "result": ""
+  }
+]

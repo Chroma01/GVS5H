@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive and document the basic path-count formulas: paths ending at (x,y) from any start, paths starting at (x,y) to any end, and the closed form for total paths in the full W by H grid.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Formalize the first-entry decomposition: total full-rectangle paths minus start-inside paths minus first-entry-from-left paths minus first-entry-from-bottom paths, with explicit corner handling for (L,D).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement modular factorial/inv-factorial precomputation up to W+H+4 and a safe comb(n,k) function for modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute the invalid paths that start inside the forbidden rectangle using hockey-stick identities to reduce the double sum to O(1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Compute the invalid paths that start outside and first enter the forbidden rectangle: sum over left-side entries if L>0 and bottom-side entries if D>0, using efficient binomial updates or inline comb calls.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Combine the counts as total - start_inside - left_entry - bottom_entry modulo 998244353, handling L=0, D=0, R=W, U=H, zero-width/height rectangles, and negative modulo correctly.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Test against the samples and small brute-force grids to verify no double counting and correct edge-case behavior.",
+    "status": "done",
+    "result": ""
+  }
+]

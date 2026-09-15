@@ -1,0 +1,11 @@
+- **Model:** Only the 26 frequency counts matter. Operations: delete (1), insert (1), change c to c+1 (1, no wrap at z).
+- **Key reduction:** Moving a unit two or more steps right costs >= 2, same as delete+insert, so an optimal solution never needs multi-step shifts. An exchange argument shows we can assume no letter both receives and sends. Thus only adjacent single-step shifts from a surplus letter to the next letter when that next letter has a deficit are needed.
+- **Target frequency bound:** Optimal f lies in 1..max(cnt). For f > max(cnt), no kept letter has surplus, and cost is nondecreasing in f (each extra required unit costs at least as much as it can save). f=0 (delete all) costs n and is the initial upper bound.
+- **DP formulation:** For fixed f, scan letters a..z with two states: previous letter Deleted or Kept(at f). For current count c:
+  - If Deleted: cost c (delete all, or shift some out at same cost).
+  - If Kept: base = |c - f|. A kept letter may receive up to min(prev surplus, current deficit) from the immediately preceding letter. prev surplus = cnt[prev] if prev Deleted, else max(0, cnt[prev]-f). Received units reduce inserts one-for-one.
+- **Correctness of subtract:** Source already pays 1 per surplus unit (inside its cost) whether deleted or shifted; destination avoids one insertion per received unit, so subtracting recv is correct.
+- **Greedy shift amount:** Send min(source surplus, destination deficit). A destination with a deficit cannot relay onward; shifting cannot reach non-adjacent letters except at a cost tie with delete+insert.
+- **Zero-count letters:** Keeping one costs f (minus received) and never strictly beats deleting it; DP handles automatically.
+- **Complexity:** O(maxfreq * 26) time, O(1) extra. maxfreq <= 2e4, ~5e5 operations.
+- **Verification:** Matches samples: "acab" -> 1, "wddw" -> 0, "aaabc" -> 2. Compared against an independent brute-force flow DP (allowing arbitrary right shifts and chaining) on 10000+ random strings of length 3..12 over {a,b,c,d}. No mismatches found.

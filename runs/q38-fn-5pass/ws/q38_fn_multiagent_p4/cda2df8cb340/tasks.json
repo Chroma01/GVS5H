@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the primary per-power-of-two residue aggregation solution and validate on all samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Optimize hot loops with hybrid dense-array/dictionary aggregation and encoded count/sum storage.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm edge-case handling and complexity for N <= 2e5 and Ai <= 1e7.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and implement the monotonic-stack boundaries for the minimum contribution (L = nearest strictly smaller, R = nearest smaller-or-equal) so equal values are counted once.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(1) counting of subarrays of length at most k containing i via count_pairs(A, B, k-1) handling saturation (m>=A+B) and the diagonal cut.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Reuse min_sum on negated nums to obtain the maximum contribution as -min_sum(-nums).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Assemble the final Solution.minMaxSubarraySum(nums, k).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify against provided examples (20 and -6), plus brute force on small arrays, k=1, k=n, all-equal, negatives, and duplicates.",
+    "status": "done",
+    "result": ""
+  }
+]

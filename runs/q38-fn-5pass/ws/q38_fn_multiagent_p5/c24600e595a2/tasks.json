@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate structural approaches and identify the canonical order/prefix hypothesis.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the final solution: prove/derive the canonical order and prefix property, classify indices, sort optional equal-1 weights decreasing, compute the initial canonical cost, scan all prefixes with efficient incremental cost updates, and output the minimum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation on sample tests and edge cases; all public samples passed.",
+    "status": "done",
+    "result": ""
+  }
+]

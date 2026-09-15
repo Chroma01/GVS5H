@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: signed-graph / per-bit decomposition approach with pitfalls (self-loops, parallel edges, recursion depth, isolated vertices, bits above max Z).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement full solution: build adjacency, iterative BFS/DFS assigning relative XOR p[v], validate every edge, print -1 on contradiction.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Per component per bit, count ones in p values and choose root bit minimizing count; assemble A_i = p[i] XOR root.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify against all three sample inputs (0 3 4 / -1 / 0 2 9 6 0) and confirm iterative O(N+M+31N) performance within limits.",
+    "status": "done",
+    "result": ""
+  }
+]

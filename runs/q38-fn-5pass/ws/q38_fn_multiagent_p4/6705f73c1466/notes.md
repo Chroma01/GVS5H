@@ -1,0 +1,8 @@
+- **Core idea:** If the `1`s are at sorted positions `p_0 < p_1 < ... < p_{k-1}`, then after making them contiguous they occupy some block `x, x+1, ..., x+k-1`. The minimum adjacent swaps equals the minimum of `sum |p_i - (x+i)|` over integer `x`.
+- **Transformation:** Define `a_i = p_i - i`. Then the cost becomes `sum |a_i - x|`, which is minimized when `x` is a median of the `a_i` values.
+- **Indexing:** Use 0-based positions and 0-based rank `i`. This gives `a_i = p_i - i`. Using 1-based indexing shifts all values by a constant, but the implementation must stay consistent.
+- **Median choice:** The transformed array `a_i` is nondecreasing because `p_{i+1} - p_i >= 1`. For even `k`, either middle value is optimal; choosing `a[k//2]` is fine.
+- **Feasibility of median:** Each `a_i` lies in `[0, N-k]`, so the chosen median is always a valid block start.
+- **Complexity:** Collecting positions and summing absolute deviations is `O(N)` time and `O(k)` memory, where `k` is the number of `1`s.
+- **Edge cases:** If there is only one `1`, the answer is `0`. If all `1`s are already contiguous, the transformed values are all equal and the answer is also `0`.
+- **Implementation detail:** Reading input as bytes and comparing to `49` avoids decoding the string and is fast enough for `N = 5 * 10^5`.

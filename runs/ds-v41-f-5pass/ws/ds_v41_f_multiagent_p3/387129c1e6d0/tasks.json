@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: offline interval-union per coordinate line; move order irrelevant for coverage existence.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse N M Sx Sy, the N houses, and M moves from stdin using Python ints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Simulate moves to compute final (X,Y), recording horizontal moves as inclusive intervals on their y-line and vertical moves as inclusive intervals on their x-line.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Merge intervals per fixed coordinate line, handling inclusive endpoints and overlapping/touching intervals.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "For each house, count it if binary search finds its varying coordinate inside a merged interval on either orientation; check each house once.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Output X Y C separated by spaces.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verify samples and edge cases (large coordinates/overflow, endpoint houses, revisits, dual-orientation coverage); both public samples pass.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Group indices by value and design the max-subarray monoid (total, best prefix, best suffix, best subarray) with empty-allowed clamping and the all-negative early return.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the padded power-of-two point-update segment tree (build + point update + root query at index 1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Process each distinct value: toggle its positions to 0, read root, update answer, revert; skip values with frequency n; include the no-op baseline.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Handle edge cases: n == 1, all-negative arrays, single distinct value, values occurring exactly n times.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate: run Examples 1-2 and a brute-force Kadane oracle over random small arrays (all-negative, single element, all-equal, with zeros); report PASS/FAIL and any counterexample.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Considered alternative approaches (static monoid + block splitting, heavy/light by frequency, prefix-sum pair per value, divide-and-conquer) as fallbacks.",
+    "status": "done",
+    "result": ""
+  }
+]

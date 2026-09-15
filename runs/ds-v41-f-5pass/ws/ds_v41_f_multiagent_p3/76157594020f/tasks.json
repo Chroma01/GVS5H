@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement feasibility check: L == 1 via min Hamming distance to the two alternating patterns; L >= 2 via summing run_len // (L + 1) over maximal runs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Binary search minimal feasible L in [1, n] and return it from minLength.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Differential-test vs brute force on all binary strings n=1..9 and numOps 0..n; report exact mismatches and re-check the provided examples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Confirm L == 1 uses the alternating special case (not the per-run formula) everywhere it applies, and that interior-flip placement keeps created runs <= L for L >= 2.",
+    "status": "done",
+    "result": ""
+  }
+]

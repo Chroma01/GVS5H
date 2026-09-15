@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and confirm the equivalence: two active values a,b connect iff there exists some L <= threshold with a|L and b|L, i.e. lcm(a,b) <= threshold.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement DSU over only distinct active values (nums[i] <= threshold) with value->index mapping and find/union helpers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement multiple enumeration with `first_divisor[L]` compression: for each active a, iterate L=a,2a,...<=threshold, set first if unset else union(a, first_divisor[L]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Count components as distinct DSU roots among active values plus the count of input values strictly greater than threshold.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate both provided examples and edge cases (threshold=1, all nums>threshold, duplicated multiples, O(threshold log threshold) max-size performance).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Produce final `Solution.countComponents` with correct `List` import and clean DSU structure.",
+    "status": "done",
+    "result": ""
+  }
+]

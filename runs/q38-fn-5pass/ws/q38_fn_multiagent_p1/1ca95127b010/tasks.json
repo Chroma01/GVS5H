@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify ordered-residue invariant and candidate approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(N) ordered-residue comparison with consistent indexing.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle edge cases: X+Y>N, insufficient counts for any operation, X=1/Y=1, count mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Add tiny BFS cross-check for N<=10 and verify public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Finalize solution after sample tests passed.",
+    "status": "done",
+    "result": ""
+  }
+]

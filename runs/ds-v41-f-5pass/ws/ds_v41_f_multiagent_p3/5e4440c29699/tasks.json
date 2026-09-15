@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the O(W+H) first-entry correction algorithm with factorial precomputation, full-board prefix P, hole-start subtraction, and bottom/left first-entry subtraction; test samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify degenerate holes and boundary cases (L=0, R=W, D=0, U=H, single-cell hole, hole touching board edges).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Check modulo arithmetic and binomial nonnegative parameters; optimize Python loops/factorial precomputation if needed.",
+    "status": "done",
+    "result": ""
+  }
+]

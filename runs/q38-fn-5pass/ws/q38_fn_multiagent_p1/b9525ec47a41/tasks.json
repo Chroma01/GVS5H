@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: select subset-construction DFA over the 16 binary relations as the primary approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the transition relation on states {0,1} for every allowed d_i (0..2 if s_i=0, 0..3 if s_i=1), and document why d_N is uniquely determined by the cycle digits.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute for s=0 and s=1 the next state and multiplicity for each of the 16 relation states, merging different d_i values that lead to the same next state and handling the empty/dead relation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the O(N) DP with a length-16 array initialized to the identity relation, process the input string character by character using the precomputed transitions, and take modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Sum the DP values of states containing (0,0) or (1,1) and print the result as the number of distinct full in-degree sequences.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Optimize for N=10^6 using fast input, sparse transition lists, and batched modulo operations; verify on the provided samples and simple edge cases such as all zeros and all ones.",
+    "status": "done",
+    "result": ""
+  }
+]

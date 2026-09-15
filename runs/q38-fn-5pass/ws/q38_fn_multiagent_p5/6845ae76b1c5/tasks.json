@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and selection of approach (switch from value-block lazy sweep to index-block decomposition).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Choose and tune block size dynamically (roughly sqrt(2*N*N/K), clamped to keep memory/time reasonable).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute sorted values and prefix sums for every block of A and B.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Build `prefA`: for each A block, rows are local prefixes in original order, columns are prefixes of full B blocks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Build `prefB` symmetrically for B local prefixes against full A blocks.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Build `block_sum` from final rows of `prefA`, then build its 2D prefix table for full-block/full-block queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Implement query answering: full-full via 2D prefix, partial-full via `prefA`/`prefB`, partial-partial via sorting the smaller prefix and binary-searching prefix sums.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Test on samples and edge cases (N=1, block boundaries, all equal values, X/Y at multiples of block size).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 9,
+    "desc": "If time/memory is still problematic, tune block size or consider the value-block lazy sweep as a fallback.",
+    "status": "done",
+    "result": ""
+  }
+]

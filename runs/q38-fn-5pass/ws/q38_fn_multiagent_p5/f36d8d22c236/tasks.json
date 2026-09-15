@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the functional-graph solution with conflict detection, non-self edge count, indegree computation, closed-cycle detection, and the all-26 permutation impossibility check.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the provided sample tests and verify the outputs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "If any sample test fails, debug the cycle classification or impossibility condition.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Review edge cases: already equal strings, conflicting mappings, cycles with incoming edges, and all-26-letter permutation cycles.",
+    "status": "done",
+    "result": ""
+  }
+]

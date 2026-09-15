@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive prefix-sum reduction: smoke at V at time t iff P_t - P_e = V for some e <= t, i.e. P_t - V already visited.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Remove conditional regeneration by arguing that unconditionally occupying the origin does not change the occupied set.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the online prefix-set solution: seed set with (0,0), update P per wind char, check (P-(R,C)) membership, emit bit, then insert P; print N bits.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run all three provided samples and confirm exact outputs 001010, 0001101011, 00100111111000101111.",
+    "status": "done",
+    "result": ""
+  }
+]

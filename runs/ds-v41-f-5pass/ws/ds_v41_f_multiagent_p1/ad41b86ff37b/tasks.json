@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the structural condition for a valid Snowflake Tree centered at c: choose x neighbors of c, each chosen branch must have at least y other neighbors (capacity a=deg(v)-1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement per-center solution: compute deg[], collect a=deg(v)-1 over neighbors, sort descending, and evaluate candidate 1 + x*(a[x-1]+1) for each valid x; track global max size.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Ensure O(N log N) complexity via degree-sum sorting bound, efficient stdin parsing, output N - max_size.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Cross-check against all three provided samples (all PASSED).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify edge cases: paths, stars, leaf centers, x>=1/y>=1 enforcement, branches with a<1 skipped.",
+    "status": "done",
+    "result": ""
+  }
+]

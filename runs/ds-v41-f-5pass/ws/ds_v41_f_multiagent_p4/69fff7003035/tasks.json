@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive combinatorial reduction: total = sum_x x * sum_{k=0}^{N-1} e_k(weights of other numbers) k!(N-1-k)!.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Establish generating function G(t)=\u220f_l (1+10^l t)^{c_l}; for x of length L the multiplier comes from G/(1+10^L t).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute counts c_l and value sums sum_x_by_len for l=1..6 using ranges [10^{l-1}, min(N,10^l-1)].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Precompute factorials up to N and modular inverses 1..N modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Build A(t)=\u220f(1+w_l t) and B(t)=\u2211 c_l w_l \u220f_{m\u2260l}(1+w_m t) as small-degree polynomials (degree \u22646).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Compute g_0..g_N using recurrence (m+1)g_{m+1} = \u2211 B_i g_{m-i} - \u2211_{i\u22651} A_i (m+1-i) g_{m+1-i} mod MOD, with g_0=1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "For each length L with c_L>0, divide G by (1+10^L t) via h_k = g_k - 10^L h_{k-1}, and compute M_L = \u2211_{k=0}^{N-1} h_k k!(N-1-k)!.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Sum sum_x_by_len[L]*M_L mod MOD, handle N=1, read N from stdin, print answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 9,
+    "desc": "Run sample tests N=3 -> 1332, N=390 -> 727611652, N=79223 -> 184895744; all PASSED.",
+    "status": "done",
+    "result": ""
+  }
+]

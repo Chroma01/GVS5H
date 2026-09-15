@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: identify relation DP over 16 binary relations as the primary approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive the exact possible labels d_i in {0,1,2,3} for each transition (a_{i-1}, a_i) when s_i=0 and when s_i=1, and prove that d_N is uniquely determined by the first N degrees.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Encode every binary relation on states {0,1} as a 4-bit mask, and precompute the edge mask for each pair (s,d).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Precompute the deterministic transition of a relation mask under each (s,d) using boolean matrix composition.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement the DP over the string: initialize with the identity relation, update counts for all allowed labels d at each position, and reduce modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Sum the DP values of masks having at least one diagonal bit set, since those correspond to closed walks, and output the result.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Validate the implementation against the samples and small brute-force cases to ensure distinct degree sequences are counted exactly once.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Alternative approach not needed because the relation DP passed sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

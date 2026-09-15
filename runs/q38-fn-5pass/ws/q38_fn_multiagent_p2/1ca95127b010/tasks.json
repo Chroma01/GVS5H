@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement invariant-based solution: compare ordered residues of 1s modulo X and ordered residues of 0s modulo Y, with special handling when X+Y>N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Add normal-form computation and verification as a primary path, with invariant comparison as a safe fallback.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run public sample tests; both passed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify degenerate cases: X=1, Y=1, X+Y>N, empty one/zero sequences, and S==T.",
+    "status": "done",
+    "result": ""
+  }
+]

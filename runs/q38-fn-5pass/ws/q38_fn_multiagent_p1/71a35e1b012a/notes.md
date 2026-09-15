@@ -1,0 +1,19 @@
+- **Core model:** Each chosen operation covers either `[L_i, R_i]` (type 1) or its complement (type 2). Operations only turn zeros into ones, so order is irrelevant. The task is to cover all positions `1..N` with the minimum number of chosen sets.
+- **Cost 1:** Exactly one operation can succeed only by choosing type 1 on an interval `[1, N]`. Type 2 alone cannot cover all positions because every interval is nonempty.
+- **Cost 2 patterns:** With two nonzero operations, the only successful type pairs are:
+  - `(1,1)`: two intervals jointly cover `[1, N]`.
+  - `(2,2)`: two intervals are disjoint, so their complements cover everything.
+  - `(1,2)` or `(2,1)`: the type-1 interval contains the type-2 interval. Equal intervals are allowed.
+- **Earliest disjoint pair:** For a fixed first index `i`, a later disjoint interval exists iff suffix `max L > R_i` or suffix `min R < L_i`. Scan `i` from left to right, then scan `j > i` to get the earliest second index.
+- **Earliest union-cover pair:** For two type-1 intervals to cover `[1, N]`, one must have `L=1` and the other `R=N`, and they must touch or overlap. Maintain suffix `max R` among `L=1` intervals and suffix `min L` among `R=N` intervals. Scan `i` from left to right, then scan `j > i` for the earliest valid partner.
+- **Earliest containment pair:** Process indices from right to left. Fenwick trees over compressed `L` store active intervals `j > i`:
+  - prefix maximum `R` over `L <= L_i` detects a later interval containing `i`;
+  - suffix minimum `R` over `L >= L_i` detects a later interval contained by `i` (implemented as a prefix minimum on reversed `L`).
+  The first `i` with existence is the smallest possible first index; scanning forward finds its earliest second index.
+- **Containment assignment:** Assign type 1 to the container and type 2 to the contained interval. If intervals are equal, either assignment works; the code puts type 2 on the smaller index and type 1 on the larger index.
+- **Global cost-2 choice:** Compute the earliest pair for each of the three patterns, then take the lexicographically smallest sorted pair `(i, j)`. If a pair qualifies both disjoint and union-cover (adjacent partition), the code keeps the disjoint assignment `(2,2)`, which is also valid.
+- **Cost 3 construction:** If no cost-1 or cost-2 solution exists and `M >= 3`, all intervals pairwise intersect, so `[max L, min R]` is a common intersection. Choose type 2 on an interval with maximum `L` and type 2 on an interval with minimum `R`; their complements cover everything outside `[max L, min R]`. Any third interval contains `[max L, min R]`, so choose type 1 on it.
+- **Distinctness in cost 3:** If the maximum-`L` and minimum-`R` intervals were the same, every other interval would contain it, giving a cost-2 containment pair. Thus when no cost-2 pair exists, distinct extreme intervals can be chosen. The code includes a fallback for ties.
+- **Impossibility:** If `M < 3` and neither cost 1 nor cost 2 exists, no solution exists because all one- and two-operation patterns have been checked.
+- **Complexity:** O(M) scans for cost 1, disjoint, and union-cover; O(M log M) for containment detection and coordinate compression. Memory is O(M).
+- **Sample checks:** Sample 1 now selects containment pair `(0,2)` over union pair `(1,2)`, producing `2` and `2 0 1 0`. Samples 2, 3, and 4 remain correct: cost 1, cost 2 `(1,1)`, and `-1`, respectively.

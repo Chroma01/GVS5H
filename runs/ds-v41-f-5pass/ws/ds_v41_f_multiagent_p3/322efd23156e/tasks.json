@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse N, X and group foods by V_i into three lists of (A_i, C_i).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "If any of vitamins 1,2,3 has no foods, answer is 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For each vitamin compute best_v[c] = max amount with at most c calories via 0/1 knapsack over calories (vectorized numpy with pure-Python fallback), with prefix max to enforce monotonicity.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Binary search largest feasible T in [0, hi], hi = min over nonempty vitamins of sum of A_i; feasibility(T) sums lower-bound search of best_v for T per vitamin, returning infeasible if best_v[X] < T.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Print the maximum feasible T.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation/reduction: prove deletion == zeroing, add no-op candidate M, handle non-empty semantics (return M when M<=0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(n) prefix-split solution (Kadane for M; E[i]/S[i] best-ending/starting; per-negative-value linear sweep using prefix sums).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run the two provided examples and confirm outputs 7 and 10 exactly (notes report 7 and 10).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Brute-force per-value Kadane oracle cross-check on random small arrays and exhaustive tiny cases (notes report PASS).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Edge-case checks: single element, all-equal, all-negative, repeated values (notes report matching exact outputs).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Complexity confirmed O(n) time / O(n) space suitable for n=1e5.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Drop stale segment-tree implementation tasks (superseded by prefix-split approach).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the prefix-sum formulation and the exact DP recurrence, including base cases and valid ranges for `i` and `r`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the telescoping shortest-path reduction as a one-dimensional O(n^2) DP using prefix sums.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implemented solution against the provided examples and small brute-force partitions; report a SAMPLE TESTS verdict.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Add edge-case handling for `n = 1`, large values, and invalid states using a sufficiently large infinity value.",
+    "status": "done",
+    "result": ""
+  }
+]

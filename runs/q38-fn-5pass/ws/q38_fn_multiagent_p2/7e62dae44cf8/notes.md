@@ -1,0 +1,10 @@
+- **Core model:** Takahashi's absorbed cells form a connected region. Any unabsorbed cell adjacent to this region is a frontier candidate. Absorbing a frontier cell only increases current strength and can only add more frontier cells, never removes existing frontier options.
+- **Greedy choice:** If any frontier cell is absorbable, the weakest frontier cell is also absorbable. Absorbing the weakest is always safe because all strengths are positive and future eligibility depends only on the current total strength.
+- **Stopping condition:** Maintain frontier in a min-heap keyed by slime strength. If the weakest frontier cell fails `current > X * s`, then every frontier cell has strength at least `s`, so none can satisfy the strict inequality. The process is complete.
+- **Strict inequality:** Use integer comparison `current > X * s`. Do not use floating-point division or floor division. Python integers safely handle products up to about `10^21`.
+- **State handling:** Use a flat grid of size `H * W`. A `bytearray` stores three states: `0` unseen, `1` already queued in the heap, `2` absorbed. Marking a cell as queued prevents duplicate heap entries and keeps heap size at most `O(HW)`.
+- **Initialization:** Mark the starting cell as absorbed, set current strength to its value, and push its valid grid neighbors into the heap.
+- **Expansion:** When absorbing a heap cell, mark it absorbed, add its strength, and push all valid neighbors whose state is still `0`.
+- **Complexity:** Each cell is pushed at most once and popped at most once. Heap operations dominate, giving `O(HW log(HW))` time and `O(HW)` memory, acceptable for `H, W <= 500`.
+- **Edge cases:** Single-cell grid outputs the starting strength. One-row or one-column grids are handled by boundary checks. `X = 1` still requires strict `current > s`. Large values are safe with Python integers.
+- **Superseded alternatives:** DSU threshold sweeps, sorted eligible BFS, binary search on final strength, and reverse elimination are unnecessary for this problem; the min-heap frontier expansion is simpler and efficient enough.

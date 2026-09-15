@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify ordered-residue invariants and candidate approaches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement and validate the ordered-residue invariant solution with edge cases and brute-force oracle.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Finalize the O(N) solution with streaming comparison and explicit handling of X=1, Y=1, X+Y>N, all-zero/all-one, and count mismatches.",
+    "status": "done",
+    "result": ""
+  }
+]

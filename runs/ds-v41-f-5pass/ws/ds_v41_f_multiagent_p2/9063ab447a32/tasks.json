@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the marginal-cost formula: the k-th unit of product i costs P_i*(2k-1), so for threshold X, k_i = (floor(X/P_i)+1)//2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(N) predicate affordable(X) with k_i = (X//P_i + 1)//2 and early break when total_cost > M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Binary search the largest X in [0, upper] with cost(X) <= M (cost monotone non-decreasing; X=0 valid), using a safe upper bound max_i P_i*(2*isqrt(M//P_i)+1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Add leftover handling: answer = units(X) + (M - cost(X))//(X+1).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Write final Python program with sys.stdin fast input; verified against samples 1 and 2 and brute-force on small random inputs.",
+    "status": "done",
+    "result": ""
+  }
+]

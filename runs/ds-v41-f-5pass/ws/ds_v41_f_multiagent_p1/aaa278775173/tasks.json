@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: compare approaches (memoized DFS, split-at-turn precompute, two-phase diagonal DP) and pitfalls.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Define the 4 diagonal direction vectors and confirm the clockwise 90-degree turn mapping down-right\u2192down-left\u2192up-left\u2192up-right\u2192down-right against examples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Precompute forward alternating run lengths f[d][cell] = max valid sequence length starting at cell going d.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement backward DP g[d][cell] = max alternating run ending at cell arriving via d that starts at a value-1 cell.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Combine: max over no-turn runs (start value 1) and over apexes using g[d][apex] + f[(d+1)%4][apex] - 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Cover single-cell (1x1 \u2192 1) and no-1 grids (\u2192 0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Verified next-value lookup (1\u21922, 2\u21920, 0\u21922); all four samples produce 5, 4, 5, 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Confirmed O(nm) memory/time fits n,m \u2264 500; edge cases (no-1 \u2192 0, immediate-turn V shapes) handled.",
+    "status": "done",
+    "result": ""
+  }
+]

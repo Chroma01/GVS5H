@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the per-number cost c(x) and prove the query answer is max(ceil(total / 2), mx).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement prefix-sum helper F(n) using precomputed powers of 4 to compute sum of c(x) for x in [1, n].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement minOperations to compute total = F(r)-F(l-1), mx = c(r), result = max((total+1)//2, mx), and sum all results using Python integers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test the implementation on the provided examples and edge cases such as ranges crossing powers of 4, n = 0, and very large ranges.",
+    "status": "done",
+    "result": ""
+  }
+]

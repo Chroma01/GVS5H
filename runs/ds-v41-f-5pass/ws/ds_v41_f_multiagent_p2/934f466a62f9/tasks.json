@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduce pairing to an even-count (parity) coloring of exactly M=2K cakes and prove equality in both directions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(N log N) parity-repair solution (top-M base U, parity p\u2208{0,3,5,6}, answer = U \u2212 min(g_p, min_compat_qr)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify passes both public samples (12, 209, 333) and hand-checked edge cases (M=N, K=1, all-zero values, tie-heavy).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Prove the top-4 per-bucket truncation is exact for both g_p (rank-1 suffices) and min_compat (r-move touches \u22642 cakes, so \u22652 of the top-4 stay free).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm complexity O(N log N) per test with O(1) candidate work (\u226440 per vector, \u22641600 pairs), safe for sum N \u2264 1e5 and T \u2264 1000.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "External exhaustive random brute-force sweep and CPython timing benchmark: not runnable in this sandbox; replaced by full proof plus hand-evaluated cases, all matching direct enumeration.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Discarded superseded approaches (Lagrangian/Aliens penalty formulation, naive top-2K-plus-one-recolor, S==0 special case).",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Handle p=2 separately: replace zeros with 1, compute B^2 mod 2, output N mod 2 everywhere.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "For p>2: count zeros K, build M = A with zeros set to 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement fast matrix exponentiation modulo p to compute M^p (binary exponentiation, ikj pure-Python fallback and int64 15-bit-split numpy path).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Initialize correction matrix C: for each zero (i,i) add row i and column i of M to C; for p==3 and zero (i,j), i!=j, add M[j][i] to C[i][j].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute final answer as (-1)^K * (M^p + C) mod p and output rows.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify against samples 1-3 and brute-force p=3/p=5 cases.",
+    "status": "done",
+    "result": ""
+  }
+]

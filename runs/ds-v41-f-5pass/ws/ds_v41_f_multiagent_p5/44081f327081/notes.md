@@ -1,0 +1,10 @@
+- **Reduction:** For a divisor d, a valid K-subset containing A_i with all entries divisible by d exists iff d | A_i and cnt[d] >= K, where cnt[d] = number of input entries divisible by d. The required answer is exactly max{ d : d | A_i and cnt[d] >= K }. Proof both directions: any feasible d is a lower bound on some achievable gcd, and the optimal gcd itself is a feasible d.
+- **cnt[d] sieve:** cnt[d] = sum of f[k*d] for k >= 1. Computing it for all d via slices `sum(f[d::d])` costs M*H_M = O(M log M) ≈ 1.4e7 element ops for M = 1e6, which is acceptable.
+- **Answer assignment:** Iterate d ascending, and whenever cnt[d] >= K do `ans[d::d] = [d]*len`. Extended slice assignment is C-level. Ascending order guarantees the largest feasible divisor overwrites earlier ones, so ans[v] ends as the largest good divisor of v (extended slice assignment needs LHS/RHS lengths equal: floor((M-d)/d)+1). No branch inside inner loop.
+- **Value vs position:** The answer depends only on the value, so compute once per value via ans[] and look up per position; duplicates are handled automatically.
+- **Monotonicity caution:** feasibility is not monotone in numeric order, so binary search over values is invalid; the max-feasible-divisor formulation is the correct route.
+- **Special cases:** K == 1 => answer for each i is A_i (choose only it). K == n => the sole subset is everything, answer = gcd(all) for every position. Both avoid the general machinery.
+- **d = 1 always feasible** because K <= N, so every ans[v] >= 1; no zero remains for present values.
+- **I/O:** read all tokens with sys.stdin.buffer.read().split(); emit one joined string. For N up to 1.2e6 use map(str, ...) over a single join to keep output fast. Delete the token list after parsing to save memory.
+- **Complexity:** O(M log M + N) time, O(M + N) memory, M = max(A) <= 1e6.
+- **Verification:** Sample 1 gives 3,4,6,1,6; Sample 2 (K=N) gives 1,1,1; Sample 3 matches, e.g. 879 | {52740,833292,885153}, 590 | {854320,485570,625990,435420}, 59 | {414003,221663,854320} (needs the third to reach K=3, confirming value-based counting).

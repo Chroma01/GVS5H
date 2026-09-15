@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: derive that shortest paths need at most 4 vertices and identify candidate intermediate regions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the corrected constant-path formula in Python with prefix/suffix minima and query processing.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the formula with the provided public samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Finalize the Python solution.",
+    "status": "done",
+    "result": ""
+  }
+]

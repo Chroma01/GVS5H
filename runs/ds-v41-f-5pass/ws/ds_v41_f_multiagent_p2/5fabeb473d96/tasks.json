@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive edge-contribution coefficients by relative position of edge index i to u<v: i<u gives 2(i-1)/(i(i+1)), i=u gives (u-1)/u for u>=2, u<i<v gives 1/i, i=v gives 1, and i>v gives 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution: read stdin, precompute modular inverses 1..N, factorial (N-1)!, prefixC and prefixInv arrays, process Q queries in O(1), and write answers modulo 998244353.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation on samples 1, 2, 3; all three public samples PASS.",
+    "status": "done",
+    "result": ""
+  }
+]

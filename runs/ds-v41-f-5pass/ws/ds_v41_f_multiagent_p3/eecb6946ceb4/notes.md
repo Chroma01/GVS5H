@@ -1,0 +1,8 @@
+- **Problem reduction:** Count fine triplets by fixing the middle element B. For each B in S, add (conv[2B] - 1) // 2, where conv[s] is the number of ordered pairs (x, y) in S with x + y = s. The -1 removes the (B, B) pair and //2 converts ordered to unordered.
+- **Algorithm:** Build a 0/1 indicator array of length L (power of two strictly greater than 2*max(S)). Compute its self-convolution via numpy.fft.rfft and numpy.fft.irfft. Round the inverse FFT result to nearest integers, then sum contributions for all B in S.
+- **Implementation details:** Read all input as text tokens. Use np.fromiter to convert to int64 array. Compute L by doubling while L <= 2*M. Use vectorized fancy indexing conv[2 * arr]. Output the integer sum.
+- **Precision:** Any convolution coefficient is at most max(S) <= 1e6 (for a given sum s, each x in S pairs with at most one y). Double-precision FFT roundoff error is far below 0.5 for L <= 2^21, so np.rint is safe. No CRT or coefficient splitting required.
+- **Complexity:** O(L log L) time and O(L) memory. L <= 2^21 = 2,097,152 for max(S)=1e6. numpy FFT runs in well under a second for this size.
+- **Edge cases:** N < 3 returns 0. All S_i >= 1, so index 0 is unused. Since L > 2*M, the maximum index 2*M is valid. Input elements are distinct as guaranteed.
+- **Testing:** Sample 1 yields 3, sample 2 yields 5, sample 3 yields 10. Manual check: sample 1 triplets (1,2,3), (1,3,5), (2,5,8).
+- **Alternatives considered:** O(N^2) pair enumeration for small N; complement inclusion-exclusion for dense S; pure-Python NTT (too slow for L=2^21); big-integer Kronecker substitution (slower and more memory-intensive than numpy FFT). Not used because numpy FFT is fast and sufficiently accurate.

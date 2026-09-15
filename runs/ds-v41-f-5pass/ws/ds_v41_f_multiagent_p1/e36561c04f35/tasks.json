@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduction: answer = min over multiset permutations S of (runs(S) + inv(A,S)); equivalently answer = m \u2212 (max #gain-1 \"Type2\" moves).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Exact brute-force oracle and initial differential stress (n\u22649 alphabets {1,2,3} exhaustive + random {1,2,3,4}), 14837 tests, 0 mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Real stdin/stdout solution with stack heuristic (Type2 plus guarded Type1), sample outputs 3,4,8 verified, no extra prints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Performance verified: O(sum N) with single buffer read, one line per test case, within constraints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Decisive differential stress test at larger n (exhaustive n=10,11 over {1,2,3} incl. random run lengths; 100k random n\u226414 over {1,2,3,4}; adversarial deep-lookahead patterns) \u2014 zero mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "No counterexample found, so the guarded stack heuristic stands as the final solution; samples and stress all pass.",
+    "status": "done",
+    "result": ""
+  }
+]

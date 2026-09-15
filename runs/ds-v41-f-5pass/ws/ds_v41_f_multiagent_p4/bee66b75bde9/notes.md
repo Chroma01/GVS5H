@@ -1,0 +1,7 @@
+- **Model:** A valid coloring is equivalent to row black-prefix lengths a_1 >= a_2 >= ... >= a_N, each in [0, N]. Column validity (black cells topmost in each column) holds iff that sequence is nonincreasing, so columns impose nothing extra.
+- **Cell constraints:** Black at (X, Y) forces a_X >= Y. White at (X, Y) forces a_X <= Y-1. Group by row: L_r = max over its black Y (default 0), U_r = min over its white (Y-1) (default N).
+- **Per-row check:** If any constrained row has L_r > U_r, answer is No.
+- **Feasibility sweep:** Sort constrained rows ascending. The largest possible value a_r satisfies a_r = min(U over rows <= r) because monotonicity only lets values decrease going down and we want values as large as possible to meet lower bounds. So maintain prefix_min of U and require prefix_min >= L_r at each constrained row. Unconstrained rows have [0, N] and can always be interpolated (set them equal to a neighboring constrained value), so only M rows matter.
+- **Init detail:** prefix_min starts at N; since U <= N always, the first row's value becomes U_1 automatically.
+- **Complexity:** O(M log M) time, O(M) space. Handles N up to 1e9 since only constrained rows are stored.
+- **Pitfall:** White is Y-1 (off-by-one); default U is N not N-1; same-row black/white conflict caught by L_r > U_r; equality on black (a_X = Y) is allowed.

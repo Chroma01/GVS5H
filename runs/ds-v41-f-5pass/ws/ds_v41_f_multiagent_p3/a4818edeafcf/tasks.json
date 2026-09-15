@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Compute prefix distinct pre[i] and suffix distinct suf[j] in O(N) using occurrence markers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute previous occurrence prev[k] via a single left-to-right scan with a last[] array.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build a difference-array segment tree storing per-node (sum, max_prefix) for O(log N) point update and prefix-max query.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Sweep j from 1 to N-1 applying the suffix-add and querying prefix max over i in [1,j-1] to update the answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify against Sample 1 (5), Sample 2 (9), and hand-checked edge cases; worker reported all samples PASSED.",
+    "status": "done",
+    "result": ""
+  }
+]

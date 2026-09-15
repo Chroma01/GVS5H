@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete: choose KMP prefix-function as the primary linear-time approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution using KMP on reverse(S) scanning S to find the longest palindromic suffix.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify sample tests and edge cases: single-character strings, already-palindromic strings, and strings with no nontrivial palindromic suffix.",
+    "status": "done",
+    "result": ""
+  }
+]

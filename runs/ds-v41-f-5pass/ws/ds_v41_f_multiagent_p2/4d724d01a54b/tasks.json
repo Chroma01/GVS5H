@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the cost expression: for each v, c_v = 1 + #{u<v : pos[u] < pos[v]}, cost(v) = sum_{i=c_v}^{v-1} i = T(v-1) - T(c_v-1); confirmed matches samples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement O(N log N) Fenwick-over-positions solution and compute the triangular-sum answer; handles N up to 2e5 and large 64-bit answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implementation on all three provided samples (results 4, 6, 0).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Ensure final program reads stdin, writes only the answer to stdout, no extra output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirmed decomposition proof: N moves monotonically right with fixed cost T(N-1)-T(p-1); remaining problem reduces to subproblem on 1..N-1 with identical boundary costs.",
+    "status": "done",
+    "result": ""
+  }
+]

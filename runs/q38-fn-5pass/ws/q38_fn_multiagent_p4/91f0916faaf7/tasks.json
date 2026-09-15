@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: reduce the problem to independent per-prime valuation paths with nonnegative heights, absolute-difference constraints, minimum zero, and weighted score.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the complete solution with the per-prime zero-flag height DP described above.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the implementation on the samples and edge cases such as N=2, all A_i=1, zero exponent edges, multiple zeros, and primes that never appear.",
+    "status": "done",
+    "result": ""
+  }
+]

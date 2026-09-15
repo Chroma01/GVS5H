@@ -1,0 +1,11 @@
+- Model: Each operation is a binary flip. Row flips and column flips commute, so the final value of cell (i,j) is original bit xor row_flip[i] xor col_flip[j].
+- Fixed column mask: If the column-flip mask is c, row i becomes row_mask[i] xor c. The row flip can be chosen independently to minimize ones, giving cost min(popcount(row_mask[i] xor c), W - popcount(row_mask[i] xor c)).
+- Frequency aggregation: Count how many times each W-bit row mask appears. For every column mask c, total cost is sum_m freq[m] * cost[m xor c]. This is an XOR convolution of freq and cost.
+- Fast Walsh-Hadamard Transform: The unnormalized FWHT diagonalizes XOR convolution. If F = FWHT(freq) and G = FWHT(cost), then FWHT(F * G) = N * convolution, where N = 2^W. Therefore the answer is min(FWHT(F * G)) // N.
+- Avoiding one transform: The cost array depends only on Hamming weight, so its Walsh transform can be computed analytically instead of building and transforming the full cost array. For a mask k of weight t, the transform value is a Krawtchouk sum over row masks d grouped by r = popcount(d) and j = popcount(d & k).
+- Krawtchouk formula: ct[t] = sum_r min(r, W-r) * sum_j (-1)^j * C(t,j) * C(W-t, r-j). W is at most 18, so this is negligible.
+- Implementation details: Parse rows as bytes and convert with int(s, 2). Build freq of length 2^W. Compute ct using a small binomial table. Apply FWHT to freq, multiply each transformed frequency by ct[popcount(mask)], apply FWHT again, and take min divided by N.
+- Normalization: The transform is self-inverse up to a factor of N. Since all exact convolution values are nonnegative and multiples of N after the second transform, min(a) // N is safe.
+- Edge cases: If H == 1, choose column flips equal to the row mask to make the whole row zero. If W == 1, choose the column flip if needed and then flip rows independently, also giving zero. These are handled before the transform.
+- Complexity: Input processing O(H). Transform and multiplication O(W * 2^W), with W <= 18 and 2^W <= 262144. Memory O(2^W).
+- Performance notes: The FWHT is integer-only to avoid precision issues. The h=1 stage is unrolled. The cost transform is precomputed by popcount, so only two FWHT passes are needed instead of three.

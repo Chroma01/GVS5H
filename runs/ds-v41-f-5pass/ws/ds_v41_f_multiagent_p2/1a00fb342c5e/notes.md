@@ -1,0 +1,10 @@
+- **Reformulation:** Constraints are XOR equations A_{X_i} XOR A_{Y_i} = Z_i. This is a signed/parity graph: vertices are variables, each edge carries label Z_i.
+- **Consistency:** Pick a root per connected component, set p[root]=0, propagate p[v] = p[u] XOR w along edges. Every edge (u,v,w) must satisfy p[u] XOR p[v] == w. Any violation (including conflicting parallel edges, or self-loop x==y with z!=0) means no solution -> print -1.
+- **Self-loops:** x==y enforces A_x XOR A_x = z, i.e. z must be 0; the BFS check p[u]^z==p[u] catches z!=0. Only append the reverse edge once when x!=y to avoid duplicate work.
+- **Minimization insight:** XOR acts independently per bit, so sum decomposes into per-bit cost. For a fixed bit and component, choosing the root's bit r sets that bit in exactly cnt (r=0) or size-cnt (r=1) vertices, where cnt = number of v with bit set in p[v]. Pick the smaller; choices across bits and components are fully independent.
+- **Final values:** A_v = p[v] XOR rootval[component(v)], where rootval assembles the chosen root bits. This is the global minimizer.
+- **Bit range:** Z <= 1e9 < 2^30, so bits 0..30 suffice (bit 30 always 0); p values stay below 2^30.
+- **Edge cases:** M=0 -> all zeros. Isolated vertices -> component of size 1, p=0, rootval=0 -> A=0. Guaranteed vertices 1..N all get a component.
+- **Complexity:** O((N+M) + 31*N) time, O(N+M) memory. Fully iterative (explicit stack), no recursion-depth risk.
+- **I/O:** Read all input at once with sys.stdin.buffer; output via join of strings.
+- **Samples verified:** S1 -> "0 3 4"; S2 cycle parity fails -> -1; S3 matches expected cost pattern.

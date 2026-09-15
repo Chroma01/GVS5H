@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement complete Python solution using layered min-cut feasibility as described.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify on provided samples and small brute-force random graphs, checking D=0, parallel edges, K larger than needed, and upper bound min(K, unweighted shortest path length).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "If sample or brute-force validation fails, debug cut orientation/capacities or switch to an alternative approach such as convex-cost min-cost flow dual.",
+    "status": "done",
+    "result": ""
+  }
+]

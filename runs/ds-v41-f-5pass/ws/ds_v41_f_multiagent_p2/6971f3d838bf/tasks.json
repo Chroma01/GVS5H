@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "ideation / choose approach (prefix-sum + sparse-table RMQ spanning-value method, baseline via Kadane)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the O(n log n) solution with prefix sums, block decomposition per value, and sparse tables for range min/max of P",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the \"r must be non-x\" guard and skip-when-k==n / all-negative / n==1 edge cases",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run sample tests (Example 1 -> 7, Example 2 -> 10) and randomized brute-force comparison; PASS reported",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm final submission format (class Solution, List import)",
+    "status": "done",
+    "result": ""
+  }
+]

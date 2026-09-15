@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and selection of the DP approach.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement positive-product DP keyed by (used, parity, product) -> bitmask of alternating sums, pruning product*x > limit, returning the max product p whose sum-mask contains k.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement zero-feasibility DP over ALL elements with state (parity, seen_zero) -> bitmask of alternating sums for non-empty zero-containing subsequences.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Combine: return positive best if >=1, else 0 if zero-feasible, else -1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run the three provided examples plus a randomized brute-force stress test against exhaustive subsequence enumeration (examples yield 6, -1, 9; no counterexamples found).",
+    "status": "done",
+    "result": ""
+  }
+]

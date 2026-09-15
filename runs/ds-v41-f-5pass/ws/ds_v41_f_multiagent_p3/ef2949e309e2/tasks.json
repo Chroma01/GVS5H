@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation and case analysis for unique middle mode (a+b>=2 always valid; a+b==1 needs 3 distinct non-x; a+b==0 never valid).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the per-middle-index O(n^2) counting solution using incremental left/right frequency maps and modular combinations.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run Examples 1\u20133 and confirm outputs 6, 4, 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Brute-force cross-check on 5000 random small arrays (n=5..9, small value alphabet): 0 mismatches, plus structured edge cases passed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Confirm performance/edge behavior at n=1000 (all equal, all distinct, alternating) is within O(n^2) with correct modular non-negative results.",
+    "status": "done",
+    "result": ""
+  }
+]

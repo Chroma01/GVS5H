@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "BFS oracle on ordered-pair configuration graph; answer = dist((S,T),(T,S)), -1 if unreachable.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Samples 1/2/3 print 3, -1, 4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Characterize answer as min over CYCLE term (2*dS[p]+2*dT[q]+|C|, p!=q in cycle C) and BRANCH term (deg>=3 vertex v: 2*dS[v]+2*dT[v]+extra, extra=2 if v separates S,T else 4); -1 for a path.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run existing `python prog.py stress`; report FIRST candidate-vs-oracle and solve-vs-oracle mismatches separately (exhaustive N=2..6, structured, random N=7,8). Do not rewrite code.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If a mismatch appears, analyze the reported (edges,S,T,oracle,got) case and decide whether the formula or only the efficient cycle enumeration is at fault.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If `solve` mismatches while `candidate` matches: the fundamental-cycle-of-BFS enumeration is too weak \u2014 switch the cycle term to a different reduction (e.g., shortest cycle through pairs p,q in C via 2-disjoint-path / minimum-cycle algorithms) and re-validate against `candidate`.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "If `candidate` itself mismatches: the CYCLE+BRANCH formula is wrong \u2014 replace with a different reduction/algorithm; do not keep patching extras.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Final submission: read stdin, write stdout; sanity-check performance for N,M<=2e5.",
+    "status": "pending",
+    "result": ""
+  }
+]

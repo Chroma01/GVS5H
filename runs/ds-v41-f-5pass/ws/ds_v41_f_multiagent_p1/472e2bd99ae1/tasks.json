@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Read N, K and arrays A,B,C; sort each descending (value A_iB_j+B_jC_k+C_kA_i is monotone non-increasing in each index, so the maximum corner is (0,0,0)).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the canonical spanning-tree heap traversal with no visited set: from popped (i,j,k) push (i+1,j,k) if in bounds; push (0,j+1,k) if i==0 and in bounds; push (0,0,k+1) if i==0 and j==0 and in bounds; pop exactly K times and output the K-th popped value.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Encode each cell as a single integer (value<<60)|(i<<40)|(j<<20)|k stored negated in the heap for fast comparisons and low memory; decode on pop with bit ops.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate on the three provided samples and stress-test against an O(N^3) brute force for small random N (equal values / heavy ties) to confirm the K-th pop value and that no cell is double-pushed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Benchmark worst case N=2e5, K=5e5 for time/memory; approach is O((N+K) log(N+K)) which fits the intended complexity.",
+    "status": "done",
+    "result": ""
+  }
+]

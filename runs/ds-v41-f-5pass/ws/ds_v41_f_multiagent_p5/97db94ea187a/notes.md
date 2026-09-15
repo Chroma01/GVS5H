@@ -1,0 +1,10 @@
+- **Approach:** Use unique BFS layer partition from vertex 1. Layers L0={1}, L1, ..., Lk. Condition: even layer total = odd layer total = N/2.
+- **Transition polynomial:** For consecutive layer sizes a (old) and b (new), T(a,b;x) = ((1+x)^a - 1)^b * (1+x)^{C(b,2)}. The first factor forces every new vertex to have at least one edge to the old layer; the second accounts for internal edges of the new layer.
+- **Labeling:** When adding a layer of size b, choose its b vertices from the remaining N-used: multiply by C(N-used, b).
+- **DP state:** (used, odd_sum, last_size, last_parity). Start dp[1,0,1,0]=1. Transition flips parity; if old parity is even, new layer is odd so odd_sum += b; else odd_sum unchanged. Prune odd_sum ≤ N/2 and used-odd_sum ≤ N/2.
+- **Evaluation/interpolation:** Degree ≤ D=N(N-1)/2. Evaluate A(x) at x=0..D (D+1 points). For point j, base=1+j. Precompute pow_any[v]=base^v mod P for v up to max(D,N). Vectorize all points with numpy int64. DP yields A(j) for all j.
+- **Recover coefficients:** Newton forward differences at 0: c_k = Δ^k A(0). A(x) = Σ c_k * C(x,k) = Σ (c_k/k!) * x^{\underline{k}}. Convert falling factorials to power basis in O(D^2) pure Python. Output coefficients for M=N-1..D.
+- **Numpy safety:** P≤1e9, products of two residues <1e18 fit int64. Mod after each multiply. Target accumulation <30*P before mod at next used iteration; no overflow.
+- **Complexity:** DP transitions ~100k vector ops of length D+1≤436. Interpolation O(D^2). Memory ~110MB for dp array.
+- **Edge cases:** N=2 outputs 1. D=1. P prime >D so modular inverses exist.
+- **Verification:** Hand-checked N=4 gives 12 9 3 0. DP matches sample logic.

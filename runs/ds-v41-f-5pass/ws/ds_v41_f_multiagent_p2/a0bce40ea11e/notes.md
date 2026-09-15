@@ -1,0 +1,9 @@
+- **Problem reduction:** Sum over all completions B of B^p mod p. Each zero is an independent variable over F_p^*. Expand (B^p)_{ij} over length-p walks; each walk is a monomial whose variables are the zero entries it uses, with exponents = usage counts.
+- **Summation over F_p^*:** sum_{x} x^e = 0 unless (p-1)|e, in which case it is p-1 ≡ -1. So a walk survives only if every used zero has usage divisible by p-1; then each of the K zeros contributes -1, giving a global factor (-1)^K = (p-1)^K mod p.
+- **Walk length:** exactly p steps. For p>2, 2(p-1)>p, so each surviving used zero is used exactly p-1 times (at most one distinct zero per walk), plus exactly one constant (nonzero) step.
+- **p=2:** only value is 1, unique completion B = all-ones J, B^2 = N*J. Answer = (N mod 2) in every cell.
+- **p>3 (p>=5):** consecutive uses of one edge force it to be a self-loop, so only diagonal zeros matter. Non-consecutive use is impossible (needs 2p-3 positions > p). The lone constant step must sit at position 0 or p-1, giving for each diagonal zero (u,u): add row u of A (walk u..u->j) and column u of A (walk j->u..u).
+- **p=3:** a variable can be used exactly twice. Diagonal zeros behave as above (row + column u). Off-diagonal zero (u,v) works only with uses at steps {0,2} and the constant edge (v,u): add A[v][u] to entry (u,v).
+- **Base term:** all-constant walks equal C^p mod p where C = A with zeros kept as 0; compute by binary exponentiation.
+- **Final formula:** ans = (-1)^K * (C^p + corrections) mod p. Verified against samples 1–3 and hand brute-force checks (p=3, p=5 with N=2).
+- **Perf:** N<=100, log p<=30 → ~60 modular matmuls. Use numpy int64 with a 15-bit split of the right factor to avoid int64 overflow, falling back to pure Python if numpy is missing.

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the feasibility conditions for a common final sum H, including implied bounds L_i=max(0,H-D_i), R_i=min(U_i,H) on each final upper tooth A_i.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement binary search on H with the O(N) interval-propagation feasibility check (lo=max(L_i,lo-X), hi=min(R_i,hi+X)) and output sum(U_i+D_i)-N*H at the largest feasible H.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Prove/verify downward monotonicity of feasibility in H so the binary search is valid, and confirm the upper bound H <= min_i(U_i+D_i).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Test the implementation against all four samples and boundary cases (X very large/small, near-zero final lengths, large sums needing 64-bit arithmetic).",
+    "status": "done",
+    "result": ""
+  }
+]

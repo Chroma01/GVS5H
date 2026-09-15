@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: binary search over L in [1,n] with an exact feasibility check.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement `Solution.minLength` (binary search + dp[last_bit][run_len] = min flips feasibility check).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run all provided examples and the listed edge cases in a single script, print expected vs actual, and report an explicit PASS/FAIL for every case.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Output the finalized `Solution.minLength` (confirmed complexity O(n^2 log n), no greedy fallback).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Exhaustive brute-force cross-check over all binary strings length 1..6 with every numOps in 0..n (all PASS, confirming the extend-transition cost fix).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "(fallback, dropped) O(n) greedy per-run counting \u2014 disproven by \"0110\",L=1 counterexample.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "(fallback, dropped) Direct DP over positions without binary search \u2014 unnecessary; current split is sound.",
+    "status": "done",
+    "result": ""
+  }
+]

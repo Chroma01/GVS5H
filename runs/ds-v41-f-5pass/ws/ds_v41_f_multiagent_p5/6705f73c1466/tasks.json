@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Read N and S from stdin; build the list of 1-based indices p of all '1' characters.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Handle trivial cases: single 1 -> 0, all ones -> 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Compute transformed values a_k = p_k - k for each 1 (k = 1..K); they are non-decreasing so no sort needed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Select median as a[K//2] of the a values.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Sum |a_k - median| over all k and print it.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verified all 3 public samples pass and edge cases are sound.",
+    "status": "done",
+    "result": ""
+  }
+]

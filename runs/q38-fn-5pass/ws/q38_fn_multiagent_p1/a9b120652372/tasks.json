@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive exact gap-alignment characterization and minimum-cost formula (parity/barriers, endpoint/global shift), with proof and pseudocode.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement position extraction, gap arrays, and basic impossibility checks such as count1(A) < count1(B) and span/gap feasibility.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the matcher/DP over A gaps and B gaps with states for parity, exact-match barriers, and endpoint/global-shift information.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement candidate cost evaluation and handle edge cases: single B piece, no exact matches, mixed-parity exact matches, and endpoint displacement accounting.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Optimize the final implementation to O(N) total time with fast I/O for sum N <= 10^6.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Add a brute-force BFS verifier for small N and random tests to validate the derived algorithm.",
+    "status": "done",
+    "result": ""
+  }
+]

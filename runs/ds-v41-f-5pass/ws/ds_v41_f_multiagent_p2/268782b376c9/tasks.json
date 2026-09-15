@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement the binary-search + O(n) feasibility solution and hand-check both provided examples.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Derive and algebraically validate the base-walk formulas: base moves 2n-1-f, base visits b_i=2 for f<=i<=n-2 else 1, deficits d_i=max(0,r_i-b_i).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Derive and validate prefix/suffix MWIS DP (A/B=W arrays, W[n-1]=A[n-1], combine P0[f]+max(R0[f],R1[f]) vs P1[f]+R0[f]).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Executed the solution: both examples PASS (maxScore([2,4],3)=4, maxScore([1,2,3],5)=2) and brute-force walk enumeration over n=2..5, m=1..10 (exhaustive small point sets + random) yielded ZERO mismatches.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Mismatch-isolation step not needed: no failing input was found, so the model's move-count formula and P/R DP combination are both consistent with brute force.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Verify edge cases (m<n returns 0, x=0, f=0, f=n-1, n=2, m=1, r_i>m) \u2014 covered by brute-force comparison and hand checks.",
+    "status": "done",
+    "result": ""
+  }
+]

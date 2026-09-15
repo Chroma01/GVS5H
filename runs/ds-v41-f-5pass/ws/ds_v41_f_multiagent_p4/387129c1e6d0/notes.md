@@ -1,0 +1,13 @@
+- **Problem:** Given N houses and M axis-aligned moves from start, find final point and number of distinct houses on the union of traversed segments.
+- **Final position:** Simulate moves; maintain (cx, cy). Python ints handle large values (~2e14) safely.
+- **Segment collection:** For each move record segment:
+  - L: horizontal at y=cy, interval [cx-c, cx]; then cx -= c.
+  - R: horizontal at y=cy, interval [cx, cx+c]; then cx += c.
+  - U: vertical at x=cx, interval [cy, cy+c]; then cy += c.
+  - D: vertical at x=cx, interval [cy-c, cy]; then cy -= c.
+- **Reduction:** Let H = houses covered by any horizontal segment, V = houses covered by any vertical segment, B = houses covered by both. Answer = H + V - B.
+- **Merging:** Group horizontal segments by y, vertical by x. Sort intervals by start. Merge if next_l <= cur_r + 1; this is safe for integer house coordinates (no integer strictly between cur_r and next_l when next_l = cur_r+1). Result is disjoint sorted intervals per row/column.
+- **Query:** For house (x,y), check row y intervals for x using bisect_right on starts; if index i >= 0 and x <= ends[i], horizontally covered. Similarly check column x intervals for y.
+- **Complexity:** Simulation O(M); merging O(M log M); queries O(N log M); memory O(N+M).
+- **Edge cases:** Inclusive endpoints handled by <=. Initial position has no house. Final point is endpoint of last segment and is covered by query. Houses at turns/crossings counted in both H and V but corrected by B. Duplicate segments merged.
+- **Implementation:** Use sys.stdin.buffer.readline for memory. Store merged intervals as (starts, ends) tuple per key. Localize bisect_right in loop.

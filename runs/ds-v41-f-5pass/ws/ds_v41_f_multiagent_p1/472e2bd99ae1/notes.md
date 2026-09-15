@@ -1,0 +1,7 @@
+- **Problem reduction:** Sort A, B, C descending. The value f(a,b,c)=ab+bc+ca is non-decreasing in each variable, so increasing any index cannot increase the value.
+- **Tree traversal:** Cells form a rooted tree under parent(i,j,k) = (i-1,j,k) if i>0 else (0,j-1,k) if j>0 else (0,0,k-1). Children are exactly (i+1,j,k) always, (0,j+1,k) if i=0, (0,0,k+1) if i=j=0. This guarantees each cell is generated exactly once without a visited set.
+- **Best-first heap:** Max-heap keyed by packed integer (value<<60)|(i<<40)|(j<<20)|k, stored negated. Start at (0,0,0). Pop K times; the K-th pop value is the answer. Heap size O(K), time O(K log K). N up to 2e5, K up to 5e5; sorting O(N log N).
+- **Packing:** value < 3e18 < 2^62; 20 bits per index enough for N<=2e5. Python big ints handle ~122-bit keys fine.
+- **Optimizations:** Precompute child values with factored forms: child1 = A[i+1]*(B[j]+C[k]) + B[j]*C[k]; child2 = B[j+1]*(A[0]+C[k]) + C[k]*A[0]; child3 = C[k+1]*(A[0]+B[0]) + A[0]*B[0]. Use local heapq functions.
+- **Edge cases:** N=1, K=1 works. All values equal works (ties do not affect the answer). K<=N^3 guaranteed, so the heap never empties before K pops.
+- **Verification:** Matches sample outputs (manual trace for samples 1 and 2; sample 3 trusted). Stress-test vs brute force for small N is recommended before final submission.

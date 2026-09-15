@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideate approaches and hypothesize the closed-form rule.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the closed-form solution in Python (read stdin, count odd A_i, apply N==1/N==2/N==3/N>=4 branches, print winner).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Verify the implementation on the three samples and edge cases (N=1,2,3, all even, all odd, exactly one odd, large A_i).",
+    "status": "done",
+    "result": ""
+  }
+]

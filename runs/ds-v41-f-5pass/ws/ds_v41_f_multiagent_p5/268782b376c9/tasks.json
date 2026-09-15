@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the feasibility formulation (c_i coupling, parity prefix, fixed-f LP, forced a_j>=1 for j>=f)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Solution.maxScore with binary search on T and the O(n) min-over-f MWIS split check",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Write brute-force DFS reference and validate both provided examples and 4000 random small inputs (zero mismatches)",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Re-run brute-force cross-check on multiple seeds with wider ranges (n=2..6, m=1..12, points=1..8); print explicit PASS/FAIL and mismatches",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Perf pass: time Solution.maxScore on worst case n=50000, m=1e9, points=10^6 to confirm fast runtime",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Final integration: emit solution with exact starter signature, `from typing import List`, enclosed in the required delimiters",
+    "status": "done",
+    "result": ""
+  }
+]

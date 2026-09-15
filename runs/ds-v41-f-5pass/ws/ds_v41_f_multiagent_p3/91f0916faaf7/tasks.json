@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive per-prime reduction: |e_i - e_{i+1}| = v_p(A_i) for each edge, min_i e_i = 0 for the gcd condition, and answer = product over primes p of W_p where W_p sums p^{sum e_i} over valid height walks touching zero.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove primes are independent and that heights touching zero are bounded by S_p = sum_i v_p(A_i), so the DP state space is finite.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the prime-wise (height, seen_zero) DP: factorize A_i, build exponent arrays, bound heights by S_p, init position 1 with weight p^h, transition h -> h \u00b1 d_i, multiply by p^{new height}, sum states with seen_zero true.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Multiply per-prime W_p results modulo 998244353 (absent primes give factor 1) and output the final answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test the implementation against all three provided samples (expected 939634344, 18, 192457116) and fix any discrepancies.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: model marginal costs P_i(2j-1), convex costs, and threshold binary search.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement the single-binary-search-on-\u03bb solution with exponential search for hi, cost_gt early-exit, and P sorted with break when P_i > L.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle edge cases: M < min P_i returns 0, exponential bounds, duplicates at cutoff, and early cost cap at M.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate correctness on both public samples (passed) and confirm the remaining // hi bound is strictly less than the count of marginal-cost-hi units.",
+    "status": "done",
+    "result": ""
+  }
+]

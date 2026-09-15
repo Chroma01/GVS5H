@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive visibility threshold formula, strict equality, and -1/0 conditions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement exact upper-hull insertion and tangent query as described.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run current solution on all sample tests and edge cases; found sample 4 exact-string mismatch due truncated rational output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Change output to print float(best_num / best_den) with 18 decimal places (keep -1 and 0 cases) and rerun sample tests.",
+    "status": "done",
+    "result": ""
+  }
+]

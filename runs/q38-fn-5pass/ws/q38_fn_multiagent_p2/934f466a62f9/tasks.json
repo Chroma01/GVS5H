@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement `calc(mu)` with parity corrections, top-candidate lists, and max-count tie-breaking.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement per-test-case binary search over `mu` and answer recovery.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Optimize Python parsing and per-calc candidate updates.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify the solution on the public samples.",
+    "status": "done",
+    "result": ""
+  }
+]

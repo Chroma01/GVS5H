@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "desc": "Parse input; derive potential model (l=min(S,T), r=max, up iff S<T; P[l]=P[r]; every interior strictly > P[l] for up, < P[l] for down).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Establish pairwise conflict conditions (same l, same r, or same-direction proper crossing) and implement O((M+Q) log M) solution (stable-sort same-l/same-r; region A/B segment trees + per-leaf heaps; nc[i]; suffix-min answering).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Confirm both public samples pass through the normal path (Yes/No; No/Yes/Yes).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the embedded stress harness and report the exact output line (ok counts, or mismatch with person list/range).",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "If PAIRWISE MISMATCH is reported: the pairwise criterion is insufficient \u2014 revisit the whole reduction and re-derive the feasible-set characterization, then rebuild the solver.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If FAST MISMATCH is reported: debug the crossing sweep / suffix-min against the reported person set and range, then re-run stress.",
+    "status": "pending",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Once stress is clean, benchmark at N,M,Q \u2248 2e5 to confirm runtime is acceptable and cut constant factors if needed.",
+    "status": "pending",
+    "result": ""
+  }
+]

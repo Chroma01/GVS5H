@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identified two valid reductions (forward monotone range-add segment tree; backward delete-then-duplicate multiset) and verified the backward transformation on Sample 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement backward Fenwick (order-statistics multiset) solution: parse input; M = max(maxR,maxX)+N+5; Fenwick with tree[i]=i&-i; reverse-process each contest doing kth(L) removal then kth(R+1) (pre-deletion) insertion; reconstruct final sorted sequence and answer queries by X-th smallest.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate on all 3 sample inputs (PASSED: 6,6,8 / 8,2002,2003,2402,500001,2800,1007 / sample 3 all correct).",
+    "status": "done",
+    "result": ""
+  }
+]

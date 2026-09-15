@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: select pair-state BFS with label-grouped incoming/outgoing adjacency and parity-aware initialization.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution using multi-source BFS over pair-states: parse input, build incoming/outgoing lists grouped by label, initialize dist[i][i]=0 and dist[u][v]=1 for edges, enqueue distance-0 states before distance-1 states, expand by matching labels to (prev,next) with +2, and print -1 for unreachable.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Optimize inner loops if needed: skip empty label buckets, use local variables, early stop when all N^2 states discovered, and consider bitset/batched expansion only if dense transitions are too slow.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify on samples and edge cases: N=1, no edges, self-loops, odd/even palindrome lengths, unreachable pairs.",
+    "status": "done",
+    "result": ""
+  }
+]

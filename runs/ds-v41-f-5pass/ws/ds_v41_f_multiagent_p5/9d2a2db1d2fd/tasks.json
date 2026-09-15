@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the reduction to a maximum-bottleneck path and the closed-form answer formula: answer = |Y-Z| if M>=min(Y,Z), else Y+Z-2M, where M is the largest maintainable floor along some cell path.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement offline DSU with small-to-large query sets: attach each query to both endpoint cells, process cells in descending F, union active neighbors, and merge query-id sets small-into-large; when a query id is found in both merged roots, set its bottleneck M to the merge height.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle same-cell queries immediately (M=F[cell]) and remove resolved queries from sets so total set work stays O((N+Q) log N).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement fast I/O (sys.stdin.buffer.read().split()) and efficient output of Q answers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate against Sample 1 (expect 10 and 2) and edge cases: same block, same row/column, equal heights.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Confirmed all public samples pass.",
+    "status": "done",
+    "result": ""
+  }
+]

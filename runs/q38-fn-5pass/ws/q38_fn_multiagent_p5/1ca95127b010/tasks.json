@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement ordered residue invariant comparison (ones modulo X, zeros modulo Y) and pass sample tests.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Brute-force validate the invariant for small N/X/Y against BFS; if it fails, switch to a linear canonical normalization fallback.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Ensure O(N) time/memory and handle edge cases X=1, Y=1, X+Y>N, all zeros/ones, large N.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Fallback only if needed: design an amortized-linear run-level normalizer (event-driven, not naive quadratic) and compare normal forms.",
+    "status": "done",
+    "result": ""
+  }
+]

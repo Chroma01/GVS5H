@@ -1,0 +1,8 @@
+- **Core reduction:** If the final common pair sum is H, the total cost is `sum(U_i + D_i) - N * H`. Since grinding only decreases lengths, minimizing cost is equivalent to maximizing feasible H.
+- **Closed-form maximum H:** The maximum feasible H is `min_{i,j} (D_i + U_j + X * |i - j|)`. Necessity follows from any valid final configuration: `H = u_i + d_i <= u_i + D_i <= u_j + X*|i-j| + D_i <= U_j + X*|i-j| + D_i`.
+- **Sufficiency:** For any H not exceeding that minimum, define intervals `I_i = [max(0, H-D_i), min(U_i, H)]`. The pairwise condition `L_i <= R_j + X*|i-j|` holds by case analysis on whether endpoints are clipped by 0, H, U_i, or D_i. This condition is sufficient for existence of an integer sequence with adjacent differences at most X; one construction is `u_i = max_j (L_j - X*|i-j|)`.
+- **O(N) computation:** For each i, `min_j (U_j + X*|i-j|)` equals `min(X*i + min_{j<=i}(U_j - X*j), -X*i + min_{j>=i}(U_j + X*j))` using 0-based indices. Build suffix minima of `U_j + X*j`, then scan left to right maintaining prefix minima of `U_j - X*j`.
+- **Final answer:** Compute `best_h = min_i (D_i + min_j(U_j + X*|i-j|))`, then output `total - N * best_h`.
+- **Implementation details:** Use Python integers for large values. The diagonal term `i = j` ensures `H <= U_i + D_i`, so each interval is nonempty. Final tooth lengths may be zero. The implementation stores U and D, builds only the suffix array, and computes prefix minima on the fly.
+- **Sample checks:** Sample 1 gives best H = 4 and answer 15. Sample 2 gives best H = 6 and answer 0. Sample 3 gives best H = 2 and answer 5999999994.
+- **Superseded approaches:** Binary search on H with interval propagation is no longer needed; the direct closed-form solution is linear and simpler.

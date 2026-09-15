@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Characterize all possible adjacent ratios S_i/S_{i+1} from f(S_i/S_{i+1})=A_i, deriving constraints on shared prime-exponent differences and reciprocal orientation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Decompose the problem by prime factors appearing in the input A_i, since different primes interact only through the global gcd normalization.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the per-prime first-global-minimum split DP for a single prime, computing forward strictly-positive and backward nonnegative walks and combining them without modular division.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Combine the per-prime F_p values by multiplication modulo 998244353 and produce the final answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Verify the implementation against all three samples, including N=2, A_i=1, and repeated prime cases.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Finalize the Python program to read from stdin, write to stdout, and handle edge cases such as zero-step edges and boundary indices k=1 or k=N.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Build adjacency lists for the original graph and its reverse, so moves from flipped states can be simulated without actually mutating edges.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement Dijkstra over states `(vertex, parity)` with distance array size `2 * (N + 1)`, initialized to infinity and source `(1, 0)` with distance 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Add transitions: for parity 0, follow original edges `u -> v` with cost 1; for parity 1, follow reversed edges `v -> u` with cost 1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Add the toggle transition from `(v, p)` to `(v, 1-p)` with cost X, using a large (arbitrary-precision) distance value, and skip stale priority-queue entries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Compute and output `min(dist[N][0], dist[N][1])`, verified against all four provided samples.",
+    "status": "done",
+    "result": ""
+  }
+]

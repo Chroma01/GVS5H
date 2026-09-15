@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and confirm the prefix-sum condition P_t - P_s = (R,C) for some s, including P_0 and the harmless s=t case.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Map characters N, W, S, E to coordinate deltas (-1,0),(0,-1),(1,0),(0,1) and define target T=(R,C).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement online prefix-sum algorithm: maintain a set seeded with P_0=(0,0) and current displacement P_t; for each char update P_t, output '1' iff P_t - T is in the set, then insert P_t; print result.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate implementation against all three provided samples (all PASSED) and confirm O(N) time and memory for N=200000.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduction established: black cells must form a down-closed (up-left closed) set, so feasibility iff no precolored white cell (r,c) lies in the down-closure of a precolored black cell (R,C), i.e. no pair with r<=R and c<=C.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement row-sweep: sort constraints by row; maintain minimum white column among all whites with row <= current row; for each black (R,C) fail if that minimum <= C.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Handle same-row ties: process whites of row R before blacks of row R (same-row white with smaller column violates); use <= not <.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Use sys.stdin.buffer for fast input and print Yes/No to stdout; handle no-black-cell case (always Yes).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Test all four provided samples (Yes, No, Yes, No) plus edge cases N=1 -- all public samples passed.",
+    "status": "done",
+    "result": ""
+  }
+]

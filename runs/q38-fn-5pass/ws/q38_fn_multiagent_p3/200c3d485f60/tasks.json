@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and document the closed-form counting formula for exactly k equal adjacent pairs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement modular combination C(n-1, k) using factorials and modular inverses, or an equivalent O(k) method.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement countGoodArrays using the closed-form formula and handle edge cases such as m=1, n=1, and k=n-1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Verify the solution against the provided examples and a few small brute-force cases.",
+    "status": "done",
+    "result": ""
+  }
+]

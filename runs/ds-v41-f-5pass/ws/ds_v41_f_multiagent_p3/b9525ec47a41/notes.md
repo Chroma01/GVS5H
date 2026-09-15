@@ -1,0 +1,11 @@
+- **Reduction:** in-degree d_i = 1 + x_{i-1} - x_i + z_i, where x_i orients cycle edge {i,i+1} (x_i=1 means i->i+1) and z_i∈{0,1} is the spoke contribution to i (free iff s_i=1, else 0). Then d_0+...+d_{N-1} = N + sum z_i, so d_N = N+k-(d_0+...+d_{N-1}) with k=#ones, and the full vector is determined by the length-N word d_0..d_{N-1}. Count distinct such words.
+- **NFA:** transitions labelled d_i from x_{i-1} to x_i. s=0: label0->(0,1), label1->(0,0),(1,1), label2->(1,0). s=1: label0->(0,1); label1->(0,0),(0,1),(1,1); label2->(0,0),(1,0),(1,1); label3->(1,0).
+- **Determinization:** state = relation R⊆{0,1}², R(p,q) = x_i=q possible when x_{-1}=p. Start = identity {(0,0),(1,1)}. Accept iff (0,0)∈R or (1,1)∈R (cyclic consistency x_{-1}=x_{N-1}). Each distinct word reaches exactly one relation, so counting words ending in accepting relations is correct.
+- **Reachable relations (bitmask p*2+q), 13 states:** {0,1,2,3,4,5,8,9,10,11,12,13,15}; empty (0) is dead, dropped.
+- **Complement symmetry:** C(R) swaps bits 0<->3 and 1<->2; label sets are symmetric (s=0: 0<->2; s=1: 0<->3, 1<->2), so dp[R]=dp[C(R)] at all times. This leaves 7 groups.
+- **Group variables:** x=15, y=9, u={5,10}, v={1,8}, w={2,4}, z={3,12}, q={11,13}. Start: y=1.
+- **'0' transitions:** u'=x+2u+q; v'=v+w+z; w'=y+v+w+z+q; x,y,z,q unchanged.
+- **'1' transitions:** x'=2x+2u+2q; y'=0; u'=x+2u+q; v'=v+w+z; w'=y+v+w+z+q; z'=v+w+2z; q'=y+q.
+- **Answer:** accepting groups are x, y, {u}, {v}, {z}, {q} (states 5,10,1,8,3,12,11,13,15,9 all accept); group w={2,4} rejects. Sum = x+y+2u+2v+2z+2q.
+- **Verification:** sample1 (N=3,"010") -> 14; sample2 hand-simulated -> 261339902; brute force N=3: "000"->7, "100"->14, "111"->38 all match.
+- **Complexity:** O(N) time, O(1) memory, single pass over bytes.

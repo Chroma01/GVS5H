@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement a brute-force BFS oracle on ordered pairs (a,b), a!=b, for small N to obtain exact answers.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement a random connected graph generator and a tester that compares brute-force answers against candidate structural formulas.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the small-N Chinese-postman candidate support formula for validation.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the existing oracle/tester in enumerate/random/summary modes with candidate comparison enabled and classify mismatches (candidate underestimates oracle; no overestimates observed).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Formalize the schedulability condition that distinguishes valid two-token passing gadgets from arbitrary Chinese-postman supports (cycle with two distinct attachments, branch/three-arm cases, terminal-hub extra excursions).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Derive a scalable formula for the minimum swap length using distances, bridge/block-cut structure, shortest cycles, and shortest private excursions/arms.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 7,
+    "desc": "Implement an efficient final solver for N,M up to 2e5 based on the derived formula, replacing brute_force in solve_from_data.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 8,
+    "desc": "Validate the final solver against the oracle on all small enumerated graphs and many random small graphs, and ensure public samples pass.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,11 @@
+- **Core reduction:** There is a single common sum S. Only the fixed-A multiset matters (A is freely permutable); fixed-B values stay anchored to positions. Let pA, pB be counts of fixed values, fA=N-pA wildcard A's, fB=N-pB free B positions.
+- **Lower bound on S:** Any fixed value v needs a non-negative partner, so S >= L where L = max over all fixed A and fixed B values. If no fixed values exist, T<=0 and answer is Yes.
+- **Feasibility for a fixed S:** Maximum number of fixed-A / fixed-B matches is M(S) = sum over distinct a of min(cntA[a], cntB[S-a]). Leftover fixed A (pA-M) must occupy free-B slots, requiring pA-M <= fB; leftover fixed B (pB-M) need wildcard A's, requiring pB-M <= fA. Both reduce to M(S) >= T with T = pA+pB-N. Positions with two free entries take A'=0, B'=S.
+- **T<=0 case:** Always Yes. Choose S=L (or 0 if no fixed values); the leftover-slot constraints become vacuous. Matches are never required.
+- **Candidate sums when T>0:** M(S)>=T>0 forces at least one matched pair, so S = a+b for some fixed A value a and fixed B value b, plus S>=L. Hence O(|dA|*|dB|) candidate pairs, at most ~4e6.
+- **Aggregation:** For each pair (a,b) with a+b>=L add weight min(cntA[a],cntB[b]) to dict[sum]. Answer Yes iff some sum reaches T. Each a maps to a unique b=S-a per S, so no double counting.
+- **Pruning:** b only considered when b >= L-a, via bisect on sorted distinct B values, halving typical work.
+- **Overflow:** values <=1e9 so a+b <=2e9 safely fits int32 in the numpy path.
+- **Implementation choices:** numpy path (broadcast sums, mask, unique + bincount over inverse) used when |dA|*|dB| is large; wrapped in try/except so any numpy failure silently falls back to the pure-Python dict loop. Both paths implement identical logic.
+- **Sentinel safety:** all stored accumulations are >=1 (counts positive), so dict.get returning None is a safe "absent" marker.
+- **Verified samples:** all three sample inputs produce Yes/No/No as required; hand-checked extra cases (reflection matches, partial matching with wildcards, duplicates) behave correctly.

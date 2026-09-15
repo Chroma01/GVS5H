@@ -1,0 +1,11 @@
+- **Candidate algorithm:** binary search smallest feasible max-run `L`. `L==1` needs the string to alternate -> min Hamming distance to `0101...`/`1010...`; `L>=2` costs `sum(r//(L+1))` over maximal runs.
+- **Differential test built:** for every binary string of length `n=1..9` (all `2^n` strings) and every `numOps=0..n`, compare candidate vs exhaustive brute force over all `2^n` flip subsets. Brute records `best[k]` = min longest run using exactly `k` flips, then prefix-min gives "at most `k`". Total 349,524 cases.
+- **Result:** candidate matches brute force on every case; no mismatches. The per-run `r//(L+1)` sum is not off for short/adjacent runs.
+- **Targeted probes (all pass):** `0110` (the L==1 danger case), `000111`, `1110111`, `001100`, `000000`, `010`, `0011`, `0001111`, each across all `numOps`. `0110,numOps=1`: L=1 costs 2 (>1), L=2 costs 0 -> answer 2; brute agrees.
+- **Provided examples confirmed:** `("000001",1)->2`, `("0000",2)->1`, `("0101",0)->1`.
+- **Why `L>=2` runs are independent:** a flip placed strictly inside a run is opposite to both its neighbours, so it never merges with the adjacent opposite-character run; merging only lengthens a run so it is never beneficial.
+- **Flip-count derivation:** `k` interior flips split a run of length `r` into `k+1` groups with `r-k` original chars; need `r-k <= L(k+1)` -> `k >= ceil((r-L)/(L+1))`, which equals `floor(r/(L+1))` (verified for r=1..7, L=2,3).
+- **Why `L==1` is special:** every position is then a boundary (whole string alternates), so per-run independence fails. Counterexample `0110,numOps=1`: per-run sum `floor(2/2)=1` falsely claims feasible, but both alternating targets need 2 flips.
+- **Edge cases covered by the sweep:** `n=1` (range collapses to 1), `numOps=0` (returns original longest run), `numOps=n` (alternation affordable -> 1). All match brute force.
+- **Complexity:** `O(n log n)` time, `O(n)` space; brute force is `O(2^n * n)` per string, fine for `n<=9`.
+- **Implementation notes:** precompute runs once; use `(ord(c)-48) != (k&1)` for the parity pattern (`mism` vs `0101...`, other pattern costs `n-mism`); early-exit the flip sum once it exceeds `numOps`.

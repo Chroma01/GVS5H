@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive and prove the exact feasibility characterization for normalized directed intervals, including sufficiency and integer strictness.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Parse input and convert all `M` people into normalized intervals `[l, r]` with type `+`/`-`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement iterative segment trees supporting point update, range maximum query, and range minimum query for active intervals by left and right endpoints.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement the sliding window with endpoint occupancy arrays, per-direction segment trees, `can_add`, `add`, `remove`, and compute `maxR[1..M]`.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Process the `Q` queries using `maxR`, output `Yes`/`No`, and test on samples plus edge cases such as shared endpoints, touching intervals, nested intervals, and opposite-direction crossings.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "If sliding-window proof or implementation stalls, implement a nearest-conflict precomputation fallback using sweeps and RMQ/suffix minima.",
+    "status": "done",
+    "result": ""
+  }
+]

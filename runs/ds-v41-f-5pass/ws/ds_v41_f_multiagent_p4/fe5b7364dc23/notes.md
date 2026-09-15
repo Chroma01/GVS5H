@@ -1,0 +1,9 @@
+- **Problem reduction:** The answer equals sum over 0 <= i < j <= N of (P[j] - P[i])^K, where P[0] = 0 and P[j] = A_1 + ... + A_j. Each subarray sum A[l..r] is P[r] - P[l-1].
+- **Binomial aggregation:** Expand (P[j] - P[i])^K = sum_{t=0}^K C(K,t) P[j]^t (-P[i])^(K-t). While scanning j from 1 to N, maintain M[s] = sum_{i<j} P[i]^s. Then the contribution for j is sum_t C(K,t) P[j]^t (-1)^(K-t) M[K-t].
+- **Initialization:** Before j = 1, the only earlier prefix is i = 0 with P[0] = 0. Set M[0] = 1 and M[s] = 0 for s > 0. This correctly treats 0^0 as 1 for the binomial expansion.
+- **Update:** After handling prefix j, add P[j]^s to M[s] for every s = 0..K. M[0] counts how many earlier prefixes exist, which is j after the update.
+- **Sign handling:** Since (-P[i])^s = (-1)^s P[i]^s, the code sets s = K - t and subtracts the term when s is odd. Accumulated negative values are reduced once per j using Python's modulo.
+- **Complexity:** O(NK) time and O(K) extra memory beyond the input array. Since K <= 10, this is easily fast enough for N <= 2e5.
+- **Modulo arithmetic:** Prefix sums, powers, binomial coefficients, and moment sums are all maintained modulo 998244353. Polynomial identities remain valid under this modulus.
+- **Verification:** Sample 1 gives 75, sample 2 gives 0, and sample 3 gives 428633385. A manual K = 1 check on sample 1 also gives 19, matching the direct subarray-sum total.
+- **Pitfalls addressed:** Only earlier prefixes i < j are included, M[0] must start at 1 for the empty prefix, and odd/even sign differences from (-P[i])^s are handled explicitly.

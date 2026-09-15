@@ -1,0 +1,9 @@
+- **Goal:** Count subarrays of nums that can be made non-decreasing with at most k unit increments.
+- **Minimal cost:** For subarray a[l..r], optimal final values are prefix maxima. Cost = sum over t of (max(a[l..t]) - a[t]). Increments only, so running maxima gives the minimum.
+- **Reversal:** Let c = nums[::-1]. A window c[L..R] corresponds to nums[l..r]. Its cost becomes sum over s of (max(c[s..R]) - c[s]) = suffix_sum - window_sum. So maintain suffix maxima for a window ending at R.
+- **Two pointers:** For each right R, keep smallest left L with cost <= k. Cost is monotone: extending the window left or right never decreases cost. Valid subarrays ending at R are R-L+1. Since extending R only increases cost, L never moves left.
+- **Monotonic deque:** Store blocks [value, count] from rightmost to leftmost, values increasing. sum_suffix_max tracks sum of max(c[s..R]). On new x=c[R]: pop front blocks with value <= x, accumulate counts, prepend [x, count+1]. On removing leftmost c[L]: the leftmost element belongs to the back block (largest value); subtract its value from sum_suffix_max, decrement back count, pop back if zero.
+- **Algorithm order:** For each right: add x to deque and sums. While suffix_sum - window_sum > k, remove c[left]. Add right-left+1 to answer.
+- **Complexity:** O(n) amortized time, O(n) space. Python ints safely handle costs up to about 1e14.
+- **Implementation notes:** Use collections.deque of mutable [value, count]. Merge equal suffix maxima with <=. Correct method name is popleft. At removal, subtract the back block value from suffix_sum, and subtract c[left] from window_sum.
+- **Verification:** Example 1 [6,3,1,2,4,4], k=7 -> 17 (pass). Example 2 [6,3,1,3,6], k=4 -> 12 (pass). Edge n=1 -> 1 (pass). All increasing -> n(n+1)/2 (pass). All decreasing [3,2,1], k=1 -> 5 (pass). k=0 on reverse [1,3,2,4] -> 5 (pass).

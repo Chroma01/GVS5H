@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement prefix DP solution in `maximumWeight`: attach 0-based original indices, sort intervals by right endpoint, compute compatible prefix counts with strict `right < left`, maintain DP states for exactly `k = 0..4` intervals storing `(max_score, lexicographically_smallest_sorted_index_tuple)`, and return the best tuple across all `k` after comparing score first and tuple lexicographic order second.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Run the current implementation against the provided sample tests and edge cases (strict boundary non-overlap, equal weights, fewer than 4 compatible intervals, and lexicographic tie-breaking across cardinalities), and report a pass/fail verdict with any failing case.",
+    "status": "done",
+    "result": ""
+  }
+]

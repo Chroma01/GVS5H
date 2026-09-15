@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: derive the two-chain reduction and the dominance DP state.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement chain assignment, `u`/`h` computation, and deterministic sorting.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement `can(d)` with the dominance DP, activation heaps, and Fenwick/segment-tree height queries.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Add binary search over the answer and integrate with the starter class.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Validate on the provided samples and on small random brute-force cases.",
+    "status": "done",
+    "result": ""
+  }
+]

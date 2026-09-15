@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "desc": "Derive the gap representation and verify that the operation swaps gaps i and i+2.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Prove swaps of gaps two apart generate independent permutations of odd-indexed and even-indexed gaps.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Express sum as N*X_1 + sum_{j=1}^{N-1} (N-j)*g_j and split by parity of j.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Apply rearrangement inequality: sort each parity class descending and assign to descending gap indices.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Implement O(N log N) gap-parity sorting solution and print answer.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 6,
+    "desc": "Validate against Sample 1 (21) and Sample 2 (41) -- both PASSED.",
+    "status": "done",
+    "result": ""
+  }
+]

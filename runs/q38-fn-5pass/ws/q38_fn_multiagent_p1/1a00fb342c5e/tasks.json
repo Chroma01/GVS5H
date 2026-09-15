@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement a complete, concise Python solution using iterative BFS/DFS with XOR potentials, contradiction detection, per-bit majority offset selection, and final output.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Verify the implementation on the provided samples and edge cases such as self-loops, isolated vertices, duplicate edges, M=0, and large XOR values.",
+    "status": "done",
+    "result": ""
+  }
+]

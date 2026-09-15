@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: identify per-element insertion-sort formula as the leading candidate.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement final O(N log N) solution (Fenwick over values, fast stdin/stdout).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run provided samples (3 2 1\u21924, 2 4 1 3 5\u21926, 1 2\u21920): PASSED.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Exhaustive brute-force validation for all permutations N\u22647 via Dijkstra: no counterexamples, formula confirmed.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Formula justification: leftward-insertion achieves exactly I_v*pos_v \u2212 I_v(I_v+1)/2 per value with INV swaps (minimum), and exhaustive search up to N=7 shows no cheaper schedule exists.",
+    "status": "done",
+    "result": ""
+  }
+]

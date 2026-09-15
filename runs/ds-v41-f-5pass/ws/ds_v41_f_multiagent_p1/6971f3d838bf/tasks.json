@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Analysed structure: only negative values are deletion candidates; subarrays avoiding removed elements are covered by the Kadane baseline, so only spanning candidates matter.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement block-decomposition solution: baseline Kadane + prefix sums + segment tree range max/min over P + per-negative-value block spanning formula; skip values with count==n; handle n==1.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Validate the implemented solution against a brute force on small random arrays and the provided examples/edge cases; report the first mismatch if any.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Discard the broken O(n) prefix-min \"W_v\" scheme due to counterexample [-1,-1000,50,-1,50].",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Timing sanity check at n=1e5 (worst-case many distinct negatives) confirming O(n log n) is acceptable.",
+    "status": "done",
+    "result": ""
+  }
+]

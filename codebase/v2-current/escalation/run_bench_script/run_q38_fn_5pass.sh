@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Qwen3.8 Flash Next ("fn"), served on the LAN via a litellm proxy ($LITELLM_HOST, alias
+# Qwen3.8 Flash Next ("fn"), served on the LAN via litellm (192.168.2.200:8216, alias
 # `large-model`): v2 single and manager (multiagent) engines, 5 passes each, reasoning on.
 #
 # Resumable. Re-run the same command after a stop, a dropped SSH session or a dead model
@@ -16,17 +16,14 @@
 #   kill "$(cat runs/q38-fn-5pass/driver.pid)"   stop it (safe: re-run later to resume)
 #   tail -f runs/q38-fn-5pass/logs/driver.log    watch progress
 #
-# Knobs: LITELLM_KEY and LITELLM_HOST (required; from escalation/.env), MODEL_ALIAS, CAP,
-#        PAR, ENGINES, PASSES, INFRA_RETRIES. escalation/.env is sourced first, so values
-#        set there override the shell environment.
+# Knobs (env): LITELLM_KEY (required; from escalation/.env), LITELLM_HOST, MODEL_ALIAS,
+#              CAP, PAR, ENGINES, PASSES, INFRA_RETRIES
 
 set -u
 SELF="$(readlink -f "${BASH_SOURCE[0]}")"
 cd "$(dirname "$SELF")/../.." || exit 1                 # codebase/v2-current
 ROOT="$(cd ../.. && pwd)"                               # repo root
 PYTHON=(uv run --no-project --python 3.12 --with 'datasets<4' --with numpy --with anthropic python)
-
-set -a; [ -f escalation/.env ] && . escalation/.env; set +a
 
 export LCB_RELEASE=release_v6
 export HF_HOME="${HF_HOME:-$HOME/.cache/huggingface}"
@@ -39,25 +36,21 @@ PAR=${PAR:-48}
 ENGINES=${ENGINES:-"single multiagent"}
 PASSES=${PASSES:-"1 2 3 4 5"}
 INFRA_RETRIES=${INFRA_RETRIES:-3}
+LITELLM_HOST=${LITELLM_HOST:-192.168.2.200:8216}
 MODEL_ALIAS=${MODEL_ALIAS:-large-model}
+BASE_URL="http://$LITELLM_HOST"
 IDS=escalation/lcb100_hardest_v6.json
 RUN="$ROOT/runs/q38-fn-5pass"
 OUT="$RUN/results"; WS="$RUN/ws"; CKPT="$RUN/ckpt"; LOGS="$RUN/logs"
+mkdir -p "$OUT" "$WS" "$CKPT" "$LOGS"
 
-if [ -z "${LITELLM_HOST:-}" ]; then
-  echo "FATAL: LITELLM_HOST is not set (host:port of the litellm proxy; put it in escalation/.env)."
-  exit 1
-fi
-BASE_URL="http://${LITELLM_HOST#http://}"
+set -a; [ -f escalation/.env ] && . escalation/.env; set +a
+LITELLM_CONFIG="${LITELLM_CONFIG:-/home/persis/litellm/config.yaml}"
+LITELLM_KEY="${LITELLM_KEY:-$(grep -m1 'master_key:' "$LITELLM_CONFIG" 2>/dev/null | awk '{print $2}' | tr -d '"'"'")}"
 if [ -z "${LITELLM_KEY:-}" ]; then
   echo "FATAL: LITELLM_KEY is not set (put it in escalation/.env or the environment)."
   echo "       The proxy at $LITELLM_HOST rejects every other bearer with 'No connected db'."
   exit 1
-fi
-mkdir -p "$OUT" "$WS" "$CKPT" "$LOGS"
-if ! grep -q BENCH_CHECKPOINT escalation/run_bench.py; then
-  echo "WARN: escalation/run_bench.py lacks the BENCH_CHECKPOINT hook; resume works at pass level only"
-  echo "      (an interrupted or infra-retried pass restarts from problem 1)."
 fi
 
 # --- single instance + detach -------------------------------------------------------------
@@ -183,8 +176,8 @@ echo; echo "==== SUMMARY ===="
 for eng in $ENGINES; do
   for p in $PASSES; do
     name="${TAG}_${eng}_p${p}"
-    line=$(grep -h "pass@1 =" "$LOGS/${name}.log" 2>/dev/null | tail -1)
-    printf '%-24s %-10s %s\n' "$name" "$(inspect "$OUT/${name}.json")" "${line:--}"
+    printf '%-24s %-10s ' "$name" "$(inspect "$OUT/${name}.json")"
+    grep -h "pass@1 =" "$LOGS/${name}.log" 2>/dev/null | tail -1 || echo
   done
 done
 rm -f "$RUN/driver.pid"

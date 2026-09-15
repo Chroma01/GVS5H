@@ -1,0 +1,15 @@
+- **Approach:** Compute the sum of minima and the sum of maxima separately by element contribution. For each index, monotonic stacks find the range of subarrays where that index is the chosen representative minimum or maximum. Multiply the element by the number of owned subarrays whose length is at most k.
+- **Tie-breaking:** For minima, use previous strictly smaller and next smaller-or-equal boundaries. For maxima, use previous strictly greater and next greater-or-equal boundaries. This assigns each subarray's minimum and maximum to the rightmost occurrence, making ownership disjoint and complete.
+- **Boundary meaning:** If the owned left length is `a` and right length is `b`, then a subarray corresponds to positive `x` and `y`, where `x` is the number of elements taken to the left including the index and `y` is the number taken to the right including the index. The length constraint is `x + y - 1 <= k`, i.e. `x + y <= k + 1`.
+- **Length cap count:** Count positive pairs with `x <= a`, `y <= b`, and `x + y <= k + 1` by inclusion-exclusion. Let `tri(t)` be the number of positive pairs with sum at most `t`, equal to `t * (t - 1) // 2` for `t >= 2` and `0` otherwise. The count is `tri(k + 1) - tri(k + 1 - a) - tri(k + 1 - b) + tri(k + 1 - a - b)`.
+- **Stack construction:** Four amortized linear passes are used: previous smaller pops `>=`, next smaller-or-equal pops `>`, previous greater pops `<=`, next greater-or-equal pops `<`.
+- **Complexity:** O(n) time and O(n) memory. Python integers safely handle the large possible answer.
+- **Edge behavior:** When `k = 1`, only singleton subarrays are counted, so the answer is `2 * sum(nums)`. When `k = n`, the length cap is non-binding and the pair count reduces to `a * b`. Duplicates are handled by rightmost tie-breaking. Negative values naturally contribute negative amounts.
+- **Sample validation:** The solution matches the provided samples: `[1, 2, 3], k = 2` gives `20`, and `[1, -3, 1], k = 2` gives `-6`.
+- **k = 1 validation:** Passes for `[1, 2, 3]` with expected `12`, `[5]` with expected `10`, and `[-5]` with expected `-10`.
+- **k = n validation:** Passes for `[1, 2, 3]` with expected `24` and `[1, 2, 3, 4]` with expected `50`.
+- **Duplicate validation:** Passes for `[2, 2, 2]` with `k = 2` expected `20` and `k = 3` expected `24`; also passes for `[-5, -5]` with `k = 2` expected `-30`.
+- **Negative validation:** Passes for `[-1, -2, -3]` with `k = 2` expected `-20` and `k = 3` expected `-24`.
+- **Other edge cases:** Passes for all-zero arrays, alternating positive/negative arrays, and mixed small arrays such as `[3, 1, 2], k = 2` expected `19`.
+- **Exhaustive check:** All arrays of length up to 4 over values `-1, 0, 1` for every valid `k` were compared against brute force, with no failures.
+- **Code status:** No algorithmic changes were needed; the current monotonic-stack contribution solution is correct for the tested cases.

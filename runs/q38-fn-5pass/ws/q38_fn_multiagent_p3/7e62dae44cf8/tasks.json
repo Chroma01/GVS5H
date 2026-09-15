@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation: choose min-heap boundary expansion as the algorithm.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement complete Python solution using min-heap boundary expansion with strict integer comparison and duplicate handling.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Run sample tests and verify outputs.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement perimeter mapping (4 sides, CCW, corners unique), sort coords, verify injectivity.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement feasible(D) with doubled array + two-pointer next-jump + all-starts greedy, including the one-lap and wrap-gap (<= pos[start]+L-D) success conditions.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Execute the solution on Examples 1-3 (verified outputs 2, 1, 1) and the embedded brute-force oracle (no mismatches).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate the arc-equivalence reduction (m >= D iff a_short >= D for D <= side) by case analysis over same/adjacent/opposite edges.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Bound check: optimum lies in [0, side] since k>=4 forces some cyclic gap <= L/k <= side; binary search over [0, side].",
+    "status": "done",
+    "result": ""
+  }
+]

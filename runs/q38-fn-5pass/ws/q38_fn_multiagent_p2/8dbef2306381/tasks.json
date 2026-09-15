@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "desc": "Ideation complete.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Implement full program: parse input; if A==B, check (N-1)%A==0 and no bad interval contains a square congruent to 1 modulo A.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "For A<B, build maximal good/bad runs over [2,N]; initialize mask=1; simulate bad runs (length>=B clears mask) and good runs (long-run saturation otherwise simulate with reachability mask); print Yes iff final bit 0 is set.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Validate on samples and edge cases (M=0, N=2, bad runs length >=B, short gaps, A=1, A=B); sample tests passed.",
+    "status": "done",
+    "result": ""
+  }
+]

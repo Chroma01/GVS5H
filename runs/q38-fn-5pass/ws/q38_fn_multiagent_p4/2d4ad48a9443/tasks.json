@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement next strictly greater indices and prefix sums.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Build binary-lifting tables for next-greater jumps and segment costs.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement cost_leq(left, right, k) with full-segment jumps plus partial segment cost.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Implement two-pointer counting loop.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Run sample tests and edge cases; solution passed.",
+    "status": "done",
+    "result": ""
+  }
+]

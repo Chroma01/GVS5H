@@ -19,6 +19,7 @@ PAR=${PAR:-32}
 ENGINES=${ENGINES:-"single multiagent"}
 PASSES=${PASSES:-"1 2 3 4 5"}
 INFRA_RETRIES=${INFRA_RETRIES:-3}
+PROBE_TIMEOUT=${PROBE_TIMEOUT:-120}    # per chat-probe attempt; the probe retries, it is not fatal
 DS_MODEL=${DS_MODEL:-deepseek-flash}   # served by DeepSeek-V4.1-Flash
 BASE_URL="https://api.deepseek.com"
 IDS=escalation/lcb100_hardest_v6.json
@@ -64,16 +65,42 @@ wait_server() {
     sleep 60
   done
 }
+chat_up() {   # true once the model actually emits a token. Streamed: /models can answer in 0.5s
+              # while generation is stalled, and a blocking probe cannot tell those apart.
+  curl -sN -m "$PROBE_TIMEOUT" "$BASE_URL/chat/completions" \
+    -H "Authorization: Bearer $DEEPSEEK_API" -H 'Content-Type: application/json' \
+    -d "{\"model\":\"$DS_MODEL\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with just: ok\"}],\"max_tokens\":64,\"stream\":true}" \
+    > "$LOGS/probe.sse" 2>/dev/null
+  grep -q '"content":"[^"]\|"reasoning_content":"[^"]' "$LOGS/probe.sse"
+}
+wait_chat() {   # not fatal: park here until the API generates, so the driver self-starts on recovery
+  local n=0
+  until chat_up; do
+    n=$((n + 1))
+    echo "[$(date +%H:%M:%S)] $DS_MODEL reachable but produced no token in ${PROBE_TIMEOUT}s (probe $n); waiting"
+    sleep 60
+  done
+}
 echo "[$(date +%H:%M:%S)] driver start  pid=$$  api=$BASE_URL model=$DS_MODEL engines=[$ENGINES] passes=[$PASSES]"
 wait_server
-if ! curl -sf -m 300 "$BASE_URL/chat/completions" \
-     -H "Authorization: Bearer $DEEPSEEK_API" -H 'Content-Type: application/json' \
-     -d "{\"model\":\"$DS_MODEL\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with just: ok\"}],\"max_tokens\":256}" \
-     > "$LOGS/probe.json"; then
-  echo "FATAL: chat probe on $DS_MODEL failed (see $LOGS/probe.json)"; rm -f "$RUN/driver.pid"; exit 1
-fi
-echo "  probe OK: $(python3 -c 'import json,sys; d=json.load(open(sys.argv[1])); u=d.get("usage") or {}; m=d["choices"][0]["message"]
-print("model=%s tokens=%s reasoning=%s" % (d.get("model"), u.get("completion_tokens"), "yes" if m.get("reasoning_content") else "NO"))' "$LOGS/probe.json")"
+wait_chat
+echo "  probe OK: $(python3 - "$LOGS/probe.sse" <<'PY'
+import json, sys
+model, content, reasoning = "", 0, 0
+for line in open(sys.argv[1]):
+    if not line.startswith("data: ") or line.strip() == "data: [DONE]":
+        continue
+    try:
+        d = json.loads(line[6:])
+    except json.JSONDecodeError:
+        continue
+    model = d.get("model") or model
+    delta = ((d.get("choices") or [{}])[0].get("delta")) or {}
+    content += len(delta.get("content") or "")
+    reasoning += len(delta.get("reasoning_content") or "")
+print("model=%s content_chars=%d reasoning=%s" % (model, content, "yes" if reasoning else "NO"))
+PY
+)"
 
 { echo "sha=$(git rev-parse HEAD)"
   git status --porcelain -- escalation/ | sed 's/^/dirty: /'

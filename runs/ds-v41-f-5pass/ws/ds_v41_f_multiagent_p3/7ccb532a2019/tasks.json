@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Reduce to 26 frequencies and derive fixed-k model: target x_i\u2208{0,k}, base cost \u03a3|f_i\u2212x_i|, adjacent change saving min(max(0,f_i\u2212x_i), max(0,x_{i+1}\u2212f_{i+1})).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Justify additivity/no double counting: a letter cannot have both surplus and deficit, and chains beyond one adjacent move tie delete+insert, so sum of edge savings is valid.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Implement the fixed-k two-state DP over 26 letters, enumerate k=0..max(f), handle k=0, return global minimum.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the brute-force cross-check (n\u22647 over {a,b,c} plus z-heavy strings, examples \"acab\"/\"wddw\"/\"aaabc\") and report PASS/FAIL with first counterexample; confirmed no z\u2192a wrap saving is taken.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "No mismatch appeared; DP transition/edge-saving formula validated against independent subset enumeration.",
+    "status": "done",
+    "result": ""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "desc": "Implement Python solution: read N,S,T; build mapping f[26]; print -1 if any source letter maps to two different targets; handle E==0 -> 0.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 2,
+    "desc": "Compute E (#sources with f[c]!=c) and image_size; if image_size==26 and E>0 print -1 (full-alphabet/bijection impossibility).",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 3,
+    "desc": "Build nontrivial-edge graph on 26 letters, compute indegrees, find all cycles, count isolated cycles (all cycle nodes indeg==1), and output E + isolated_cycles.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 4,
+    "desc": "Run the implementation on the 4 provided samples and confirm outputs 4, 0, -1, 4.",
+    "status": "done",
+    "result": ""
+  },
+  {
+    "id": 5,
+    "desc": "Brute-force validate the formula against a BFS minimum-operation search on small random/exhaustive strings (reduced alphabet including a spare letter, all-letters-used cases, multiple isolated cycles, chains into cycles); no counterexamples found.",
+    "status": "done",
+    "result": ""
+  }
+]

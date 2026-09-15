@@ -1,4 +1,4 @@
-# GVS5H: Five Qwen3.8-27B Models Match Claude Fable 5 on LiveCodeBench Hard
+# GVS5H: Five Qwen3.8 Models Match Claude Fable 5 on LiveCodeBench Hard
 
 ## Results
 

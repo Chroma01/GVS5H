@@ -5,8 +5,10 @@ import os
 
 FILLS = {
     "q38":   ("#d1dcff", "#005fb6"),
+    "q38fn": ("#e0d4fb", "#5a3fbe"),
     "terra": ("#ffd3c1", "#a23f17"),
     "luna":  ("#a7ebc9", "#006c48"),
+    "dsv41": ("#b9e8e4", "#00666b"),
     "fable": ("#ffd2cc", "#ad3132"),
     "q35":   ("#ffd0df", "#ad2666"),
     "mm3":   ("#c1e7b4", "#1b6d12"),
@@ -15,21 +17,23 @@ FILLS = {
     "opus":  ("#8aebfe", "#006877"),
 }
 
-SLOT = {"q38": 1, "terra": 2, "luna": 3, "fable": 4,
+SLOT = {"q38": 1, "terra": 2, "luna": 3, "fable": 4, "q38fn": 5, "dsv41": 6,
         "q35": 1, "mm3": 2, "kimi": 3, "q9": 4, "opus": 4}
 
-HATCH = {1: "", 2: "//", 3: "..", 4: "xx"}
-MARKER = {1: "o", 2: "s", 3: "^", 4: "D"}
+HATCH = {1: "", 2: "//", 3: "..", 4: "xx", 5: "\\\\", 6: "++"}
+MARKER = {1: "o", 2: "s", 3: "^", 4: "D", 5: "v", 6: "P"}
 
 HATCH_LW = 0.40
 SURFACE = "#ffffff"
 
 LABELS = {"q38": "Qwen3.8-27B", "terra": "GPT-5.6-Terra", "luna": "GPT-5.6-Luna",
           "fable": "Claude Fable 5", "q35": "Qwen3.6-35B", "mm3": "MiniMax-M3",
-          "kimi": "Kimi-K3", "q9": "Qwen3.5-9B", "opus": "Opus-5"}
+          "kimi": "Kimi-K3", "q9": "Qwen3.5-9B", "opus": "Opus-5",
+          "q38fn": "Qwen3.8-FlashNext", "dsv41": "DeepSeek-V4.1-Flash"}
 
 SETS = {
     "pinned  (Fig 1, 2, 3)": ["q38", "terra", "luna", "fable"],
+    "v2 six   (Fig v2)":     ["q38", "q38fn", "terra", "luna", "dsv41", "fable"],
     "scale off (Fig 4, 6)":  ["q9", "q35", "mm3", "kimi"],
     "scale on  (Fig 5)":     ["q35", "mm3", "kimi", "opus"],
 }

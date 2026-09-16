@@ -1,5 +1,8 @@
 # GVS5H: Five Qwen3.8 Models Match Claude Fable 5 on LiveCodeBench Hard
+<div align="center">
 <a href="https://trendshift.io/repositories/225068?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-225068" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/225068/daily?language=Python" alt="slee-persis%2FGVS5H | Trendshift" width="250" height="55"/></a>
+</div>
+
 ## Results
 
 ![Manager vs single call, four models — LCB-100, 5 passes, 128k max tokens, reasoning ON](assets/manager_vs_single_call.png)

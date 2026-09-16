@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["matplotlib", "numpy", "scipy"]
+# ///
+
 """Single call vs manager, accuracy and cost, LCB-100 x 5 passes at 128k, reasoning ON."""
 import json
+import logging
 import os
 
 import numpy as np
@@ -17,6 +23,8 @@ from plot_16k_reason_off_5_pass import (
 )
 
 import palette
+
+logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)

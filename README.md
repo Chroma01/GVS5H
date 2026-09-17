@@ -1,4 +1,5 @@
 # GVS5H: Five Qwen3.8 Models Match Claude Fable 5 on LiveCodeBench Hard
+
 <div align="center">
 <a href="https://trendshift.io/repositories/225068?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-225068" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/225068/daily?language=Python" alt="slee-persis%2FGVS5H | Trendshift" width="250" height="55"/></a>
 </div>
@@ -39,3 +40,6 @@ Code is under the [MIT License](LICENSE). The paper, figures and run data are un
 [CC BY 4.0](LICENSE-CC-BY-4.0). The LiveCodeBench fork, the benchmark problem statements
 and the LaTeX template files keep their own licenses. See [NOTICE.md](NOTICE.md) for
 which license covers which path.
+
+
+### GVS5H: Gorilla vs. 5 Humans

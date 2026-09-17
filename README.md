@@ -1,4 +1,4 @@
-# GVS5H: Five Qwen3.8 Models Match Claude Fable 5 on LiveCodeBench Hard
+# GVS5H: Five Qwen3.8 - 27B Models Match Claude Fable 5 on LiveCodeBench Hard
 ### GVS5H: Gorilla vs. 5 Humans
 <div align="center">
 <a href="https://trendshift.io/repositories/225068?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-225068" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/225068/daily?language=Python" alt="slee-persis%2FGVS5H | Trendshift" width="250" height="55"/></a>

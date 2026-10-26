@@ -2,11 +2,12 @@
 ### GVS5H: Gorilla vs. 5 Humans
 
 <div align="center">
-<img src="assets/gvs5h-mark-humans.png" alt="Five boys standing on one another's shoulders, together as tall as a single gorilla beside them" width="300"/>
+<a href="https://news.ycombinator.com/item?id=50228167" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Hacker%20News-%231-FF6600?style=for-the-badge&amp;logo=ycombinator&amp;logoColor=white" alt="#1 on Hacker News, 2026-10-25" height="55"/></a>
+<a href="https://trendshift.io/repositories/225068?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-225068" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/225068/daily?language=Python" alt="slee-persis%2FGVS5H | Trendshift" width="250" height="55"/></a>
 </div>
 
 <div align="center">
-<a href="https://trendshift.io/repositories/225068?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-225068" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/225068/daily?language=Python" alt="slee-persis%2FGVS5H | Trendshift" width="250" height="55"/></a>
+<img src="assets/gvs5h-mark-humans.png" alt="Five boys standing on one another's shoulders, together as tall as a single gorilla beside them" width="300"/>
 </div>
 
 ## Results

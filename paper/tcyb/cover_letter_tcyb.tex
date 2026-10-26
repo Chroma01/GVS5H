@@ -1,0 +1,68 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{microtype}
+
+% Business-letter layout: blocks separated by space, no first-line indent, ragged
+% bottom so the signature block is not stretched down the page.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\medskipamount}
+\raggedbottom
+\pagestyle{empty}
+
+\begin{document}
+
+6 October 2026
+
+\bigskip
+
+Dear Editors,
+
+We submit the manuscript ``GVS5H: Zero-Shot Self-Orchestration with Ledger-Based Control
+Improves Coding in Language Models'' for consideration in \textit{IEEE Transactions on Cybernetics}.
+
+Scaffolded and multi-agent language model systems are now standard practice across research and
+industry, on the premise that decomposing a problem improves on a single long response. This
+premise is seldom evaluated against a matched control, namely the same model given the same
+prompt in one call. The manuscript reports that comparison for eleven open- and closed-weight
+models on the 100 most recent hard problems in LiveCodeBench. The method requires no training
+and no task-specific prompting, and consists of one model called repeatedly in a fresh context,
+coordinating with itself through a small set of files on disk.
+
+Every model evaluated in both arms improved, by as much as 25.6 points. Several smaller
+open-weight models, once orchestrated, match or exceed the accuracy of much larger proprietary
+models at a small fraction of their cost. These results indicate that inference-time
+organization can substitute for model scale, which bears directly on the cost and the
+accessibility of capable code generation. We acknowledge that the improvement is not universal,
+and several configurations show no change or a decline.
+
+The manuscript addresses a question the field has not settled, which is how much of the reported
+benefit of multi-agent systems comes from coordination itself rather than from the models or the
+training behind it. The answer matters beyond the immediate subfield. Frontier-level coding ability
+has so far been available mainly through large proprietary models, and these results
+show that comparable accuracy can be obtained from smaller open-weight models that a single
+laboratory can host, which affects who is able to use and to study such systems. We believe this
+suits the broad readership of \textit{IEEE Transactions on Cybernetics}.
+
+The code needed to reproduce our results is available in our public GitHub repository. Since its
+release, we have been encouraged by the interest it has received, including on social media,
+which we hope reflects a broader interest in methods of this kind.
+
+On behalf of all authors, thank you for your consideration.
+
+\bigskip
+
+Sincerely,
+
+\bigskip
+
+Simon Lee
+
+Persis Capital Inc., Toronto, Ontario, Canada
+
+slee@persisholdings.com
+
+\end{document}

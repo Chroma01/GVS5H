@@ -1,10 +1,24 @@
-# GVS5H: Five Qwen3.8-27B Models Match Claude Fable 5 on LiveCodeBench Hard
-### GVS5H: Gorilla vs. 5 Humans
+<h1 align="center">Persis Capital Inc. Research Lab</h1>
 
-<div align="center">
+<p align="center">
+<a href="paper/paper_latest.pdf"><img src="https://img.shields.io/badge/Paper-PDF-B31B1B?logo=adobeacrobatreader&amp;logoColor=white" alt="Paper (PDF)"/></a>
+<a href="https://news.ycombinator.com/item?id=50228167"><img src="https://img.shields.io/badge/Hacker%20News-Discussion-FF6600?logo=ycombinator&amp;logoColor=white" alt="Hacker News discussion"/></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/Code-MIT-4C9A2A" alt="Code license: MIT"/></a>
+<a href="LICENSE-CC-BY-4.0"><img src="https://img.shields.io/badge/Paper%20%26%20data-CC%20BY%204.0-EF9421" alt="Paper and data license: CC BY 4.0"/></a>
+</p>
+
+<p align="center">
 <a href="https://news.ycombinator.com/item?id=50228167" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Hacker%20News-%231-FF6600?style=for-the-badge&amp;logo=ycombinator&amp;logoColor=white" alt="#1 on Hacker News, 2026-10-25" height="55"/></a>
 <a href="https://trendshift.io/repositories/225068?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-225068" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/225068/daily?language=Python" alt="slee-persis%2FGVS5H | Trendshift" width="250" height="55"/></a>
-</div>
+</p>
+
+<p align="center">
+<a href="#results">Results</a> | <a href="#running-the-code">Running the code</a> | <a href="#license">License</a>
+</p>
+
+---
+
+<h3 align="center">GVS5H (Gorilla vs. 5 Humans): Five Qwen3.8-27B Models Match Claude Fable 5 on LiveCodeBench Hard</h3>
 
 <div align="center">
 <img src="assets/gvs5h-mark-humans.png" alt="Five boys standing on one another's shoulders, together as tall as a single gorilla beside them" width="300"/>
